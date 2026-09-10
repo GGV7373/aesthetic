@@ -86,9 +86,17 @@ cannot play the test.
 ### The profile
 
 Every answer sits on a 7-point scale from +3 (Strongly agree) to −3 (Strongly
-disagree). For each dimension, `answer × weight` is summed and normalised against the
-sum of absolute weights, giving a value between 0 and 1 — plus a *confidence* saying
-how much evidence that dimension actually got in this run.
+disagree). Before anything is scored, 0.6 of each person's *own average response*
+is subtracted from every answer — an acquiescence guard, so someone who leans
+"agree" (or "disagree") on almost everything lands in the same place as someone
+with the same taste who doesn't. Then, for each dimension, `answer × weight` is
+summed and normalised against the sum of absolute weights, giving a value between
+0 and 1 — plus a *confidence* saying how much evidence that dimension got.
+
+The statement bank is also written with both directions in mind: for most
+dimensions there are statements where "agree" pushes the value up *and*
+statements where "agree" pushes it down, so no single response habit steers the
+result.
 
 ### The match
 
@@ -237,10 +245,10 @@ discriminates:
   distinct quota shapes:      400 of 400 runs
 
 — Scoring (600 simulated people) —
-  distinct winners:           46 / 77
+  distinct winners:           48 / 77
   distinct hidden picks:      60
   average top match:          81.1%
-  combination shown:          32% of the time
+  combination shown:          36% of the time
 ```
 
 ---

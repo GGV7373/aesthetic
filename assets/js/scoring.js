@@ -17,12 +17,26 @@
     var raw = {}, weightSum = {};
     keys.forEach(function (k) { raw[k] = 0; weightSum[k] = 0; });
 
+    /* Acquiescence guard. Some people lean towards "agree" (or "disagree") on
+       almost everything, whatever the statement. Take most of each person's own
+       average response out of every answer, so a yea-sayer and a nay-sayer with
+       the same underlying taste land in nearly the same place. Kept partial
+       (0.6) so a genuinely wide-ranging "yes" still reads as one. */
+    var sum = 0, count = 0;
+    questions.forEach(function (q) {
+      var a = answers[q.id];
+      if (a === undefined || a === null) return;
+      sum += a / 3;
+      count++;
+    });
+    var centre = count ? 0.6 * (sum / count) : 0;
+
     var answered = 0;
     questions.forEach(function (q) {
       var a = answers[q.id];
       if (a === undefined || a === null) return;
       answered++;
-      var response = a / 3; /* -1 .. 1 */
+      var response = clamp(a / 3 - centre, -1, 1); /* -1 .. 1, de-biased */
       Object.keys(q.dimensions).forEach(function (k) {
         if (raw[k] === undefined) { raw[k] = 0; weightSum[k] = 0; }
         var w = q.dimensions[k];
