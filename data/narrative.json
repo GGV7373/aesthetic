@@ -1,0 +1,735 @@
+{
+  "openers": [
+    "Svarene dine peker mot en person som",
+    "Profilen din tegner opp noen som",
+    "Det som går igjen i svarene dine, er en person som",
+    "Under de femti påstandene ligger det en som",
+    "Mønsteret i svarene dine tilhører noen som"
+  ],
+  "connectors": [
+    "Samtidig",
+    "Ved siden av dette",
+    "Like tydelig er det at du",
+    "Det som gjør bildet skarpere, er at du"
+  ],
+  "matchLead": [
+    "Derfor lander {name} øverst:",
+    "{name} treffer fordi",
+    "Grunnen til at {name} kommer først, er at",
+    "{name} passer på deg fordi"
+  ],
+  "dimensionPhrases": {
+    "nature": {
+      "high": [
+        "søker mot steder der naturen får siste ord",
+        "måler et sted etter hvor mye liv som finnes rundt det"
+      ],
+      "low": [
+        "trives best i omgivelser som mennesker har laget ferdig",
+        "ikke trenger natur rundt seg for å ha det bra"
+      ]
+    },
+    "organic": {
+      "high": [
+        "foretrekker materialer som lever og forandrer seg",
+        "liker overflater som bærer spor av tid"
+      ],
+      "low": [
+        "liker rene, stabile overflater som ikke forandrer seg",
+        "dras mot det syntetiske og forutsigbare"
+      ]
+    },
+    "rural": {
+      "high": [
+        "hører hjemme et sted med kort vei til jordet eller skogen",
+        "regner avstand til nærmeste nabo som en kvalitet"
+      ],
+      "low": [
+        "trenger noe større enn en bygd rundt seg",
+        "vil ha ting innen rekkevidde"
+      ]
+    },
+    "urban": {
+      "high": [
+        "blir vekket til live av byer og bevegelse",
+        "leser en by som et landskap"
+      ],
+      "low": [
+        "får lite ut av byens tempo",
+        "søker vekk fra steder der alle er"
+      ]
+    },
+    "technology": {
+      "high": [
+        "er genuint nysgjerrig på hvordan maskiner virker",
+        "ser teknologi som en del av det vakre"
+      ],
+      "low": [
+        "holder teknologien på armlengdes avstand",
+        "stoler mest på det som ikke trenger strøm"
+      ]
+    },
+    "digital": {
+      "high": [
+        "har et ekte forhold til skjermens verden",
+        "husker digitale rom like godt som fysiske"
+      ],
+      "low": [
+        "vil ha ting i hendene, ikke i en app",
+        "føler at det digitale tar mer enn det gir"
+      ]
+    },
+    "futurism": {
+      "high": [
+        "ser framover heller enn bakover",
+        "liker tanken på at alt kan bli annerledes"
+      ],
+      "low": [
+        "har lite tro på at det nye er bedre",
+        "leter etter svar i det som allerede finnes"
+      ]
+    },
+    "industrial": {
+      "high": [
+        "finner skjønnhet i det som er bygget for arbeid",
+        "liker stål, betong og synlig konstruksjon"
+      ],
+      "low": [
+        "viker unna det harde og maskinelle",
+        "vil ha mykhet der andre aksepterer stål"
+      ]
+    },
+    "history": {
+      "high": [
+        "velger steder med fortid framfor steder uten",
+        "leser bygninger og gjenstander som fortellinger"
+      ],
+      "low": [
+        "ikke føler seg bundet av det som var",
+        "lever i nåtid uten å savne noe"
+      ]
+    },
+    "nostalgia": {
+      "high": [
+        "bærer med seg en lengsel etter noe som var",
+        "blir rørt av spor fra tidligere liv, også andres"
+      ],
+      "low": [
+        "ser lite poeng i å savne det gamle",
+        "kaster uten sentimentalitet"
+      ]
+    },
+    "retro": {
+      "high": [
+        "dras mot formspråk fra tiår før ditt eget",
+        "liker uttrykk som er tydelig datert"
+      ],
+      "low": [
+        "vil at ting skal se ut som sin egen tid",
+        "har lite sans for kopier av gammelt"
+      ]
+    },
+    "tradition": {
+      "high": [
+        "setter pris på skikker og kontinuitet",
+        "liker at noe gjøres fordi det alltid har blitt gjort"
+      ],
+      "low": [
+        "er lite bundet av hvordan ting pleier å være",
+        "vil finne din egen måte framfor å arve en"
+      ]
+    },
+    "modernity": {
+      "high": [
+        "liker det nye, rene og velfungerende",
+        "vil ha ting som ikke bærer på andres slitasje"
+      ],
+      "low": [
+        "vil ha patina heller enn perfeksjon",
+        "unngår det som er for nytt og glatt"
+      ]
+    },
+    "mystery": {
+      "high": [
+        "liker best når noe forblir uforklart",
+        "trekkes mot det halvt skjulte"
+      ],
+      "low": [
+        "vil ha svar heller enn stemning",
+        "er lite tiltrukket av det gåtefulle"
+      ]
+    },
+    "fantasy": {
+      "high": [
+        "har en fot i verdener som ikke finnes",
+        "tenker i bilder heller enn i fakta"
+      ],
+      "low": [
+        "holder deg til det som faktisk er",
+        "har lite behov for oppdiktede verdener"
+      ]
+    },
+    "realism": {
+      "high": [
+        "vil ha ting som er ekte framfor ting som er pene",
+        "verdsetter funksjon og sannhet"
+      ],
+      "low": [
+        "lar stemning veie tyngre enn nøkternhet",
+        "vil heller ha det vakre enn det korrekte"
+      ]
+    },
+    "melancholy": {
+      "high": [
+        "finner noe godt i det tungsindige",
+        "liker skjønnhet som har sorg i seg"
+      ],
+      "low": [
+        "holder deg unna det tunge",
+        "trekkes mot det lyse og lette"
+      ]
+    },
+    "optimism": {
+      "high": [
+        "tror grunnleggende at ting går bra",
+        "har en lys grunnstemning"
+      ],
+      "low": [
+        "har få illusjoner om hvor det bærer",
+        "ser skyggene før du ser lyset"
+      ]
+    },
+    "darkness": {
+      "high": [
+        "er hjemme i lav belysning og lange skygger",
+        "liker mørke som stemning, ikke som trussel"
+      ],
+      "low": [
+        "trenger lys rundt deg",
+        "unngår det dystre"
+      ]
+    },
+    "whimsy": {
+      "high": [
+        "har beholdt en lekenhet som ikke går av moten",
+        "liker det rare og uforutsigbare"
+      ],
+      "low": [
+        "tar tingene alvorlig",
+        "har lite sans for det pjattete"
+      ]
+    },
+    "social": {
+      "high": [
+        "får energi av andre mennesker",
+        "vil ha folk rundt deg"
+      ],
+      "low": [
+        "blir tappet av for mye selskap",
+        "trenger færre mennesker enn de fleste"
+      ]
+    },
+    "community": {
+      "high": [
+        "vil høre til noe større enn deg selv",
+        "verdsetter å ha en rolle blant andre"
+      ],
+      "low": [
+        "klarer deg godt uten et kollektiv",
+        "holder deg litt utenfor gruppen"
+      ]
+    },
+    "solitude": {
+      "high": [
+        "trenger alenetid for å være hel",
+        "har lært å like å være for deg selv"
+      ],
+      "low": [
+        "søker sjelden ensomhet",
+        "vil helst ha noen i rommet"
+      ]
+    },
+    "individualism": {
+      "high": [
+        "heller vil skille deg ut enn å passe inn",
+        "vil bestemme selv, også når det koster"
+      ],
+      "low": [
+        "har lite behov for å markere deg",
+        "trives med å gjøre som andre"
+      ]
+    },
+    "order": {
+      "high": [
+        "får ro av system og gjentakelse",
+        "vil at ting skal ha sin plass"
+      ],
+      "low": [
+        "lever fint med uorden",
+        "blir kvalt av for mye system"
+      ]
+    },
+    "chaos": {
+      "high": [
+        "fungerer best når ting får være litt rotete",
+        "stoler på det uplanlagte"
+      ],
+      "low": [
+        "vil ha kontroll på hvordan ting utfolder seg",
+        "unngår det tilfeldige"
+      ]
+    },
+    "minimalism": {
+      "high": [
+        "vil ha færre, men bedre ting rundt deg",
+        "opplever tomrom som frihet"
+      ],
+      "low": [
+        "trenger ting rundt deg for å føle deg hjemme",
+        "vil heller fylle et rom enn å tømme det"
+      ]
+    },
+    "maximalism": {
+      "high": [
+        "vil ha rom fulle av ting som betyr noe",
+        "samler heller enn å rydde"
+      ],
+      "low": [
+        "holder mengden nede",
+        "blir urolig av overflod"
+      ]
+    },
+    "craft": {
+      "high": [
+        "verdsetter ting som er laget av noen",
+        "vil helst gjøre det selv"
+      ],
+      "low": [
+        "har lite behov for å lage ting selv",
+        "kjøper heller ferdig"
+      ]
+    },
+    "ornament": {
+      "high": [
+        "mener detaljer og utsmykning gjør ting bedre",
+        "liker at noe er pyntet uten grunn"
+      ],
+      "low": [
+        "vil ha det bart og uten pynt",
+        "ser pynt som støy"
+      ]
+    },
+    "comfort": {
+      "high": [
+        "prioriterer varme og lunhet i omgivelsene",
+        "vil ha steder å synke ned i"
+      ],
+      "low": [
+        "tåler at det er spartansk",
+        "velger vekk komfort når det står i veien"
+      ]
+    },
+    "adventure": {
+      "high": [
+        "blir rastløs av å bli for lenge på ett sted",
+        "vil se hva som er bak neste sving"
+      ],
+      "low": [
+        "har det best hjemme",
+        "trenger ikke eventyr for å ha det bra"
+      ]
+    },
+    "refinement": {
+      "high": [
+        "har sans for det forfinede og gjennomførte",
+        "legger merke til når noe er gjort ordentlig"
+      ],
+      "low": [
+        "foretrekker det røffe og uslipte",
+        "har lite til overs for det polerte"
+      ]
+    },
+    "intellect": {
+      "high": [
+        "vil forstå ting grundig, ikke bare oppleve dem",
+        "har en studerende måte å møte verden på"
+      ],
+      "low": [
+        "stoler mer på magefølelse enn på analyse",
+        "har lite behov for å studere det du liker"
+      ]
+    },
+    "architecture": {
+      "high": [
+        "legger merke til rom, lys og bygninger før du legger merke til folk",
+        "leser arkitektur som andre leser tekst"
+      ],
+      "low": [
+        "bryr deg lite om hvordan bygninger ser ut",
+        "merker knapt rommet du er i"
+      ]
+    }
+  },
+  "facetModifiers": {
+    "omgivelser": [
+      {
+        "dim": "solitude",
+        "dir": "high",
+        "text": "og det ligger langt nok unna til at ingen kommer forbi tilfeldig"
+      },
+      {
+        "dim": "social",
+        "dir": "high",
+        "text": "og det er alltid noen der — stedet fungerer bare med folk i"
+      },
+      {
+        "dim": "urban",
+        "dir": "high",
+        "text": "midt i noe som fortsatt har trafikk og lys hele natten"
+      },
+      {
+        "dim": "melancholy",
+        "dir": "high",
+        "text": "helst i grått vær, når fargene faller sammen"
+      },
+      {
+        "dim": "adventure",
+        "dir": "high",
+        "text": "og du blir sjelden lenge nok til å slå rot"
+      },
+      {
+        "dim": "comfort",
+        "dir": "high",
+        "text": "med noe varmt innenfor rekkevidde hele tiden"
+      }
+    ],
+    "arkitektur": [
+      {
+        "dim": "order",
+        "dir": "high",
+        "text": "men i din versjon står alt rett og symmetrisk"
+      },
+      {
+        "dim": "chaos",
+        "dir": "high",
+        "text": "i din versjon er det påbygget, lappet og aldri ferdig"
+      },
+      {
+        "dim": "architecture",
+        "dir": "high",
+        "text": "og du merker hver detalj — hvordan taket møter veggen, hvor lyset kommer inn"
+      },
+      {
+        "dim": "history",
+        "dir": "high",
+        "text": "og bygget har vært noe annet før det ble ditt"
+      },
+      {
+        "dim": "minimalism",
+        "dir": "high",
+        "text": "strippet ned til det færreste som trengs"
+      },
+      {
+        "dim": "ornament",
+        "dir": "high",
+        "text": "med detaljer ingen betalte for, men som du ville hatt likevel"
+      }
+    ],
+    "interior": [
+      {
+        "dim": "maximalism",
+        "dir": "high",
+        "text": "og hver flate er dekket av noe du har samlet"
+      },
+      {
+        "dim": "minimalism",
+        "dir": "high",
+        "text": "med få ting, men ingen av dem tilfeldige"
+      },
+      {
+        "dim": "nostalgia",
+        "dir": "high",
+        "text": "og halvparten av tingene er arvet eller funnet"
+      },
+      {
+        "dim": "craft",
+        "dir": "high",
+        "text": "og du har laget eller reparert flere av dem selv"
+      },
+      {
+        "dim": "darkness",
+        "dir": "high",
+        "text": "med lys som kommer fra lave lamper, aldri fra taket"
+      },
+      {
+        "dim": "comfort",
+        "dir": "high",
+        "text": "og alt er valgt for at man skal kunne bli sittende"
+      }
+    ],
+    "teknologi": [
+      {
+        "dim": "technology",
+        "dir": "high",
+        "text": "og du forstår hvordan den virker, ikke bare hvordan den brukes"
+      },
+      {
+        "dim": "technology",
+        "dir": "low",
+        "text": "og du holder den nede på et minimum"
+      },
+      {
+        "dim": "digital",
+        "dir": "high",
+        "text": "med minst én skjerm som alltid står på i bakgrunnen"
+      },
+      {
+        "dim": "digital",
+        "dir": "low",
+        "text": "og skjermene får ligge med forsiden ned"
+      },
+      {
+        "dim": "craft",
+        "dir": "high",
+        "text": "og det du eier, kan repareres av deg"
+      },
+      {
+        "dim": "futurism",
+        "dir": "high",
+        "text": "og du vil ha det nyeste før det er ferdig utviklet"
+      }
+    ],
+    "klaer": [
+      {
+        "dim": "individualism",
+        "dir": "high",
+        "text": "og plaggene sier tydelig at det er deg"
+      },
+      {
+        "dim": "individualism",
+        "dir": "low",
+        "text": "men uten noe som ber om oppmerksomhet"
+      },
+      {
+        "dim": "refinement",
+        "dir": "high",
+        "text": "alltid ett hakk mer gjennomført enn anledningen krever"
+      },
+      {
+        "dim": "refinement",
+        "dir": "low",
+        "text": "og det skal tåle å bli brukt hardt"
+      },
+      {
+        "dim": "comfort",
+        "dir": "high",
+        "text": "og ingenting du ikke kan sitte lenge i"
+      },
+      {
+        "dim": "ornament",
+        "dir": "high",
+        "text": "med minst én detalj som er der bare fordi den er fin"
+      }
+    ],
+    "musikk": [
+      {
+        "dim": "melancholy",
+        "dir": "high",
+        "text": "mest i moll, og gjerne litt for lenge om gangen"
+      },
+      {
+        "dim": "optimism",
+        "dir": "high",
+        "text": "og helst noe med løft i"
+      },
+      {
+        "dim": "solitude",
+        "dir": "high",
+        "text": "hørt alene, med hodetelefoner, høyt"
+      },
+      {
+        "dim": "social",
+        "dir": "high",
+        "text": "og aller helst med andre i rommet"
+      },
+      {
+        "dim": "retro",
+        "dir": "high",
+        "text": "fra et format som er eldre enn det trenger å være"
+      },
+      {
+        "dim": "chaos",
+        "dir": "high",
+        "text": "og det får gjerne være ujevnt og dårlig innspilt"
+      }
+    ],
+    "farger": [
+      {
+        "dim": "darkness",
+        "dir": "high",
+        "text": "men flere hakk mørkere enn standardversjonen"
+      },
+      {
+        "dim": "darkness",
+        "dir": "low",
+        "text": "i en lysere utgave enn folk forventer"
+      },
+      {
+        "dim": "maximalism",
+        "dir": "high",
+        "text": "og alle sammen på én gang"
+      },
+      {
+        "dim": "minimalism",
+        "dir": "high",
+        "text": "men bare to av dem, resten er nøytralt"
+      },
+      {
+        "dim": "organic",
+        "dir": "high",
+        "text": "alltid med jord eller plante i bunn"
+      },
+      {
+        "dim": "whimsy",
+        "dir": "high",
+        "text": "med en helt urimelig farge som får være med"
+      }
+    ],
+    "hverdag": [
+      {
+        "dim": "solitude",
+        "dir": "high",
+        "text": "og alt dette skjer helst uten publikum"
+      },
+      {
+        "dim": "community",
+        "dir": "high",
+        "text": "og det meste av det gjøres sammen med noen"
+      },
+      {
+        "dim": "order",
+        "dir": "high",
+        "text": "til omtrent samme tid hver dag"
+      },
+      {
+        "dim": "chaos",
+        "dir": "high",
+        "text": "uten særlig plan, og det er hele poenget"
+      },
+      {
+        "dim": "intellect",
+        "dir": "high",
+        "text": "med en bok eller et spørsmål liggende åpent hele tiden"
+      },
+      {
+        "dim": "adventure",
+        "dir": "high",
+        "text": "avbrutt av at du plutselig drar et sted"
+      }
+    ]
+  },
+  "hybrid": {
+    "intro": [
+      "To verdener ligger så tett i profilen din at ingen av dem kan stå alene.",
+      "Resultatet ditt deler seg i to omtrent like sterke retninger.",
+      "Du havner i skjæringspunktet mellom to estetikker som sjelden nevnes sammen."
+    ],
+    "unofficialNote": "Denne kombinasjonen har ikke noe etablert navn — den er satt sammen ut fra profilen din, ikke hentet fra en liste.",
+    "relatedNote": "Disse to ligger nær hverandre fra før og deler mye av det samme grunnlaget.",
+    "bridge": [
+      "{a} gir deg {qa}, mens {b} legger til {qb}.",
+      "Fra {a} tar du med deg {qa}. Fra {b} kommer {qb}.",
+      "{a} bestemmer stemningen — {qa}. {b} bestemmer detaljene — {qb}."
+    ]
+  },
+  "hidden": {
+    "intro": [
+      "Den skjulte estetikken er den som ikke følger logisk av de to første, men som profilen din likevel treffer.",
+      "Dette er retningen som ikke ligner de andre, men som svarene dine peker mot uansett.",
+      "Utenfor hovedsporet ditt ligger dette, og det passer bedre enn det burde."
+    ]
+  },
+  "strengthLabels": [
+    {
+      "min": 88,
+      "label": "Uvanlig presis match"
+    },
+    {
+      "min": 78,
+      "label": "Sterk match"
+    },
+    {
+      "min": 68,
+      "label": "Tydelig match"
+    },
+    {
+      "min": 56,
+      "label": "God match"
+    },
+    {
+      "min": 0,
+      "label": "Delvis match"
+    }
+  ],
+  "phraseGroups": [
+    [
+      "nature",
+      "organic",
+      "rural",
+      "urban"
+    ],
+    [
+      "technology",
+      "digital",
+      "futurism",
+      "industrial"
+    ],
+    [
+      "history",
+      "nostalgia",
+      "retro",
+      "tradition",
+      "modernity"
+    ],
+    [
+      "mystery",
+      "fantasy",
+      "realism"
+    ],
+    [
+      "melancholy",
+      "optimism",
+      "darkness"
+    ],
+    [
+      "social",
+      "community",
+      "solitude",
+      "individualism"
+    ],
+    [
+      "order",
+      "chaos"
+    ],
+    [
+      "minimalism",
+      "maximalism"
+    ],
+    [
+      "craft",
+      "ornament"
+    ],
+    [
+      "comfort",
+      "adventure"
+    ],
+    [
+      "refinement",
+      "intellect",
+      "architecture"
+    ],
+    [
+      "whimsy"
+    ]
+  ]
+}

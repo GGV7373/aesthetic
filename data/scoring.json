@@ -1,0 +1,358 @@
+{
+  "version": 1,
+  "questionsPerQuiz": 50,
+  "scale": [
+    {
+      "value": 3,
+      "label": "Helt enig",
+      "short": "Helt enig"
+    },
+    {
+      "value": 2,
+      "label": "Enig",
+      "short": "Enig"
+    },
+    {
+      "value": 1,
+      "label": "Litt enig",
+      "short": "Litt enig"
+    },
+    {
+      "value": 0,
+      "label": "Nøytral",
+      "short": "Nøytral"
+    },
+    {
+      "value": -1,
+      "label": "Litt uenig",
+      "short": "Litt uenig"
+    },
+    {
+      "value": -2,
+      "label": "Uenig",
+      "short": "Uenig"
+    },
+    {
+      "value": -3,
+      "label": "Veldig uenig",
+      "short": "Veldig uenig"
+    }
+  ],
+  "categories": [
+    {
+      "key": "nature",
+      "label": "Natur og miljø",
+      "quota": 9
+    },
+    {
+      "key": "history",
+      "label": "Historie og nostalgi",
+      "quota": 7
+    },
+    {
+      "key": "tech",
+      "label": "Teknologi og framtid",
+      "quota": 7
+    },
+    {
+      "key": "architecture",
+      "label": "Arkitektur og rom",
+      "quota": 6
+    },
+    {
+      "key": "social",
+      "label": "Sosialitet og ensomhet",
+      "quota": 5
+    },
+    {
+      "key": "mystery",
+      "label": "Mystikk og fantasi",
+      "quota": 5
+    },
+    {
+      "key": "order",
+      "label": "Orden og kaos",
+      "quota": 4
+    },
+    {
+      "key": "taste",
+      "label": "Farger, lys og materialer",
+      "quota": 4
+    },
+    {
+      "key": "values",
+      "label": "Verdier og temperament",
+      "quota": 3
+    }
+  ],
+  "dimensions": [
+    {
+      "key": "nature",
+      "label": "Natur",
+      "low": "Menneskeskapt",
+      "high": "Naturpreget",
+      "core": true
+    },
+    {
+      "key": "organic",
+      "label": "Organisk",
+      "low": "Syntetisk",
+      "high": "Organisk",
+      "core": false
+    },
+    {
+      "key": "rural",
+      "label": "Landlig",
+      "low": "Tettsted",
+      "high": "Landlig",
+      "core": true
+    },
+    {
+      "key": "urban",
+      "label": "Urbant",
+      "low": "Avsides",
+      "high": "Urbant",
+      "core": true
+    },
+    {
+      "key": "technology",
+      "label": "Teknologi",
+      "low": "Analogt",
+      "high": "Teknologisk",
+      "core": true
+    },
+    {
+      "key": "digital",
+      "label": "Digitalt",
+      "low": "Fysisk",
+      "high": "Digitalt",
+      "core": false
+    },
+    {
+      "key": "futurism",
+      "label": "Framtid",
+      "low": "Nåtid",
+      "high": "Framtid",
+      "core": true
+    },
+    {
+      "key": "industrial",
+      "label": "Industri",
+      "low": "Naturmateriale",
+      "high": "Industrielt",
+      "core": false
+    },
+    {
+      "key": "history",
+      "label": "Historie",
+      "low": "Samtidig",
+      "high": "Historisk",
+      "core": true
+    },
+    {
+      "key": "nostalgia",
+      "label": "Nostalgi",
+      "low": "Framoverlent",
+      "high": "Nostalgisk",
+      "core": true
+    },
+    {
+      "key": "retro",
+      "label": "Retro",
+      "low": "Ny form",
+      "high": "Retro form",
+      "core": false
+    },
+    {
+      "key": "tradition",
+      "label": "Tradisjon",
+      "low": "Brudd",
+      "high": "Tradisjon",
+      "core": false
+    },
+    {
+      "key": "modernity",
+      "label": "Modernitet",
+      "low": "Patina",
+      "high": "Nytt og rent",
+      "core": false
+    },
+    {
+      "key": "mystery",
+      "label": "Mystikk",
+      "low": "Forklart",
+      "high": "Uforklart",
+      "core": true
+    },
+    {
+      "key": "fantasy",
+      "label": "Fantasi",
+      "low": "Konkret",
+      "high": "Fantasi",
+      "core": true
+    },
+    {
+      "key": "realism",
+      "label": "Realisme",
+      "low": "Drømmende",
+      "high": "Nøktern",
+      "core": false
+    },
+    {
+      "key": "melancholy",
+      "label": "Melankoli",
+      "low": "Lettbeint",
+      "high": "Melankolsk",
+      "core": true
+    },
+    {
+      "key": "optimism",
+      "label": "Optimisme",
+      "low": "Tungsindig",
+      "high": "Lys",
+      "core": true
+    },
+    {
+      "key": "darkness",
+      "label": "Mørke",
+      "low": "Lyst",
+      "high": "Mørkt",
+      "core": true
+    },
+    {
+      "key": "whimsy",
+      "label": "Lekenhet",
+      "low": "Alvor",
+      "high": "Lekenhet",
+      "core": false
+    },
+    {
+      "key": "social",
+      "label": "Sosialt",
+      "low": "Tilbaketrukket",
+      "high": "Utadvendt",
+      "core": true
+    },
+    {
+      "key": "community",
+      "label": "Fellesskap",
+      "low": "På egen hånd",
+      "high": "Fellesskap",
+      "core": false
+    },
+    {
+      "key": "solitude",
+      "label": "Ensomhet",
+      "low": "Blant folk",
+      "high": "Alenehet",
+      "core": true
+    },
+    {
+      "key": "individualism",
+      "label": "Individualisme",
+      "low": "Passe inn",
+      "high": "Skille seg ut",
+      "core": false
+    },
+    {
+      "key": "order",
+      "label": "Orden",
+      "low": "Løst",
+      "high": "Ordnet",
+      "core": true
+    },
+    {
+      "key": "chaos",
+      "label": "Kaos",
+      "low": "Kontrollert",
+      "high": "Kaotisk",
+      "core": false
+    },
+    {
+      "key": "minimalism",
+      "label": "Minimalisme",
+      "low": "Fylt",
+      "high": "Nedstrippet",
+      "core": true
+    },
+    {
+      "key": "maximalism",
+      "label": "Maksimalisme",
+      "low": "Sparsomt",
+      "high": "Overflod",
+      "core": false
+    },
+    {
+      "key": "craft",
+      "label": "Håndverk",
+      "low": "Ferdigkjøpt",
+      "high": "Laget for hånd",
+      "core": true
+    },
+    {
+      "key": "ornament",
+      "label": "Ornamentikk",
+      "low": "Bart",
+      "high": "Utsmykket",
+      "core": false
+    },
+    {
+      "key": "comfort",
+      "label": "Komfort",
+      "low": "Spartansk",
+      "high": "Lunt",
+      "core": true
+    },
+    {
+      "key": "adventure",
+      "label": "Eventyr",
+      "low": "Hjemmekjær",
+      "high": "Eventyrlyst",
+      "core": true
+    },
+    {
+      "key": "refinement",
+      "label": "Forfinelse",
+      "low": "Røft",
+      "high": "Forfinet",
+      "core": false
+    },
+    {
+      "key": "intellect",
+      "label": "Intellekt",
+      "low": "Intuitivt",
+      "high": "Studerende",
+      "core": true
+    },
+    {
+      "key": "architecture",
+      "label": "Arkitektur",
+      "low": "Rom er bakgrunn",
+      "high": "Rom er alt",
+      "core": false
+    }
+  ],
+  "matching": {
+    "minSalience": 0.08,
+    "confidenceFull": 3,
+    "percentFloor": 0.419,
+    "percentCeil": 0.926,
+    "tailPercent": 14,
+    "tailExponent": 0.75,
+    "percentMin": 8,
+    "percentMax": 97,
+    "combinationThreshold": 4,
+    "hidden": {
+      "minRank": 4,
+      "maxRank": 18,
+      "minPercent": 45,
+      "noveltyWeight": 0.6
+    }
+  },
+  "selection": {
+    "avoidRepeatQuestions": true,
+    "maxHistorySessions": 6,
+    "repairZeroCoverage": true,
+    "spreadCategories": true
+  }
+}
