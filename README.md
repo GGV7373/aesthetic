@@ -44,6 +44,30 @@ Two things to keep in mind:
 
 ---
 
+## Built for the phone first
+
+The stylesheet is mobile first: the base rules are the phone layout and the wider
+breakpoints add to it. Concretely, on a phone:
+
+* **The Back / Next bar is pinned to the bottom of the screen.** On a 360x640 handset
+  the buttons used to sit 216px below the fold, so every one of 50 questions needed a
+  scroll before it could be answered. The bar now rides along the bottom with a
+  blurred backdrop, and Next is the wider of the two because it is pressed 50 times.
+* **The auto-advance switch moved up next to the question counter**, which keeps the
+  bottom bar down to the two things a thumb needs.
+* **Every tap target is at least 48px**, and taps get no 300ms delay and no grey flash.
+* **Hover styling is gated behind `(hover: hover) and (pointer: fine)`**, so tapping an
+  option on a touch screen never leaves a stuck hover state behind.
+* **The photo strip scrolls sideways with snap points** instead of stacking three tall
+  images that would push the rest of the result off the screen.
+* **The profile rows restack** — label and value on one line, meter under it — instead
+  of squeezing four columns into 360px.
+* Safe-area insets are respected, so nothing hides under a notch or a home indicator,
+  and `100dvh` is used so the mobile browser chrome doesn't crop the layout.
+
+Nothing about the desktop layout changed: past 40rem the bar goes static, the photos
+return to a three-column grid, and the hero foot goes back to two columns.
+
 ## How the test works
 
 The point is that no statement belongs to any one aesthetic. The chain is:

@@ -228,7 +228,7 @@
           writeStore(STORE_PREFS, prefs);
         }
       }),
-      el('span', { text: 'Advance automatically' })
+      el('span', { text: 'Auto-advance' })
     ]);
 
     var live = el('div', { class: 'sr-only', 'aria-live': 'polite' });
@@ -237,10 +237,10 @@
       el('header', { class: 'quiz__head' }, [
         el('p', { class: 'eyebrow', text: 'What aesthetic are you?' }),
         progressBar,
-        counter
+        el('div', { class: 'quiz__meta' }, [counter, autoToggle])
       ]),
       el('div', { class: 'quiz__card' }, [body]),
-      el('nav', { class: 'quiz__nav' }, [prevBtn, autoToggle, nextBtn]),
+      el('nav', { class: 'quiz__nav' }, [prevBtn, nextBtn]),
       live
     ]);
 
@@ -281,7 +281,7 @@
 
       markSelection(session.answers[q.id]);
       prevBtn.disabled = session.index === 0;
-      nextBtn.textContent = session.index === total - 1 ? 'See your result →' : 'Next →';
+      nextBtn.textContent = session.index === total - 1 ? 'See result →' : 'Next →';
       live.textContent = 'Question ' + (session.index + 1) + ' of ' + total + '.';
     }
 
@@ -371,11 +371,33 @@
       style: options.background ? 'background:' + options.background : null
     });
     var wrap = el('div', { class: 'bar' }, [fill]);
+    var target = Math.max(2, Math.min(100, value)) + '%';
+
+    var delay = options.delay || 40;
+
+    /* The bar is built before the screen is in the document, so the starting
+       width has to be laid out for real before it is changed - otherwise the
+       browser collapses both values into one frame and the transition never
+       runs. Two frames guarantee a layout in between. */
+    fill.style.width = '0%';
     global.requestAnimationFrame(function () {
-      global.setTimeout(function () {
-        fill.style.width = Math.max(2, Math.min(100, value)) + '%';
-      }, options.delay || 40);
+      global.requestAnimationFrame(function () {
+        global.setTimeout(function () { fill.style.width = target; }, delay);
+      });
     });
+
+    /* A transition started while the tab is throttled can be registered and then
+       never ticked - the bar would sit at zero for good, showing a number that
+       isn't the one in the text. If it hasn't moved by the time it should have
+       finished, drop the animation and pin the real value. */
+    global.setTimeout(function () {
+      if (!wrap.isConnected) return;
+      if (fill.getBoundingClientRect().width < 1 && value > 2) {
+        fill.style.transition = 'none';
+        fill.style.width = target;
+      }
+    }, delay + 1400);
+
     return wrap;
   }
 
@@ -392,7 +414,7 @@
           el('span', { text: AQ.narrative.strengthLabel(entry.percent, data) })
         ])
       ]),
-      meter(entry.percent, { background: AQ.visuals.swatch(a) }),
+      meter(entry.percent, { background: AQ.visuals.meterFill(a) }),
       el('p', { class: 'card__tagline', text: a.tagline }),
       el('p', { class: 'card__body', text: a.description }),
       opts.note ? el('p', { class: 'card__note', text: opts.note }) : null
@@ -509,7 +531,7 @@
         el('div', {}, [
           el('p', { class: 'hero__tagline', text: primary.tagline }),
           el('div', { class: 'hero__meter' }, [
-            meter(result.primary.percent, { background: AQ.visuals.swatch(primary), delay: 200 })
+            meter(result.primary.percent, { background: AQ.visuals.meterFill(primary), delay: 200 })
           ]),
           el('p', { class: 'fineprint', text: AQ.narrative.strengthLabel(result.primary.percent, data) })
         ])
@@ -563,7 +585,7 @@
         return el('li', { class: 'rank__row' }, [
           el('span', { class: 'rank__num', text: String(i + 1).padStart(2, '0') }),
           el('span', { class: 'rank__name', text: a.name }),
-          meter(entry.percent, { background: AQ.visuals.swatch(a), delay: 60 + i * 28 }),
+          meter(entry.percent, { background: AQ.visuals.meterFill(a), delay: 60 + i * 28 }),
           el('span', { class: 'rank__pct', text: entry.percent + '%' })
         ]);
       }))

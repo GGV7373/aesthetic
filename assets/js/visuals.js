@@ -114,11 +114,18 @@
     return svg.join('');
   }
 
-  /* Small variant for list rows. */
+  /* Decorative strip along the top of a card: the pale end may fade out. */
   function swatch(aesthetic) {
     var p = aesthetic.palette;
-    return 'linear-gradient(135deg, ' + p[1] + ' 0%, ' + p[2] + ' 55%, ' + p[3] + ' 100%)';
+    return 'linear-gradient(90deg, ' + p[1] + ' 0%, ' + p[2] + ' 55%, ' + p[3] + ' 100%)';
   }
 
-  AQ.visuals = { moodPlate: moodPlate, swatch: swatch };
+  /* Meters carry a number, so they have to stay readable against the cream
+     background — the lightest palette colour is left out on purpose. */
+  function meterFill(aesthetic) {
+    var p = aesthetic.palette;
+    return 'linear-gradient(90deg, ' + p[1] + ' 0%, ' + p[2] + ' 100%)';
+  }
+
+  AQ.visuals = { moodPlate: moodPlate, swatch: swatch, meterFill: meterFill };
 })(typeof window !== 'undefined' ? window : globalThis);
