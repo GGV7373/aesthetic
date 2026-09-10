@@ -41,7 +41,7 @@
   "groups": [
     {
       "key": "sound",
-      "label": "Sound and listening",
+      "label": "Sound and silence",
       "min": 2,
       "max": 3
     },
@@ -65,25 +65,25 @@
     },
     {
       "key": "home",
-      "label": "Home and living space",
+      "label": "Home and buildings",
       "min": 2,
       "max": 3
     },
     {
-      "key": "buildings",
-      "label": "Buildings and architecture",
+      "key": "food",
+      "label": "Food and the table",
       "min": 2,
       "max": 3
     },
     {
       "key": "past",
-      "label": "The past and memory",
+      "label": "The past",
       "min": 2,
       "max": 3
     },
     {
       "key": "tradition",
-      "label": "Tradition and community",
+      "label": "Tradition and belonging",
       "min": 2,
       "max": 3
     },
@@ -95,13 +95,19 @@
     },
     {
       "key": "future",
-      "label": "The future and progress",
+      "label": "The future",
       "min": 2,
       "max": 3
     },
     {
       "key": "craft-tools",
-      "label": "Tools and craft",
+      "label": "Making and mending",
+      "min": 2,
+      "max": 3
+    },
+    {
+      "key": "money",
+      "label": "Money and possessions",
       "min": 2,
       "max": 3
     },
@@ -125,13 +131,13 @@
     },
     {
       "key": "order",
-      "label": "Order and chaos",
+      "label": "Order and mess",
       "min": 2,
       "max": 3
     },
     {
       "key": "style",
-      "label": "Style, colour and materials",
+      "label": "Clothes and style",
       "min": 2,
       "max": 3
     },
