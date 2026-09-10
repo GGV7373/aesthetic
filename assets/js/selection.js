@@ -1,22 +1,61 @@
-/* Velger 50 av ~150 spørsmål per gjennomføring.
+/* Velger 50 av 180 spørsmål per gjennomføring.
 
-   Krav som styrer algoritmen:
-   - fast kvote per tema, slik at ingen enkelt-dimensjon dominerer
+   Spørsmålene ligger i 18 tematiske grupper med ti spørsmål i hver — hus og rom,
+   vær og lys, skjerm og nett, og så videre. Hver gjennomføring trekker 2–3 fra
+   hver gruppe. Det gir to ting samtidig: temaene er alltid dekket, og hvilke
+   spørsmål du faktisk får er nytt hver gang.
+
+   Resten av kravene:
    - aldri to nesten like spørsmål (samme "cluster") i samme quiz
    - spørsmål brukeren nettopp har hatt, velges bort så lenge det finnes ferske
    - alle dimensjoner skal ha minst litt dekning
-   - rekkefølgen randomiseres, og to spørsmål på rad kommer helst fra ulike temaer
-   - alt styres av seed, slik at en gjennomføring kan gjenskapes                */
+   - to spørsmål på rad kommer helst fra ulike grupper
+   - alt styres av seed, slik at en gjennomføring kan gjenskapes               */
 (function (global) {
   'use strict';
   var AQ = (global.AQ = global.AQ || {});
 
-  function groupByCategory(questions) {
+  function groupByKey(questions) {
     var map = {};
     questions.forEach(function (q) {
-      (map[q.category] = map[q.category] || []).push(q);
+      (map[q.group] = map[q.group] || []).push(q);
     });
     return map;
+  }
+
+  /* Fordeler de 50 plassene på gruppene. Alle får minimum først, så deles
+     resten ut tilfeldig til grupper som har plass — derfor får noen grupper to
+     spørsmål og andre tre, og hvilke det er varierer fra gang til gang. */
+  function drawQuotas(groups, total, rng) {
+    var quota = {};
+    var used = 0;
+    groups.forEach(function (g) {
+      quota[g.key] = g.min;
+      used += g.min;
+    });
+
+    var room = groups.filter(function (g) { return quota[g.key] < g.max; });
+    while (used < total && room.length) {
+      var pool = AQ.rng.shuffle(room, rng);
+      for (var i = 0; i < pool.length && used < total; i++) {
+        quota[pool[i].key]++;
+        used++;
+      }
+      room = groups.filter(function (g) { return quota[g.key] < g.max; });
+    }
+
+    /* Skulle minimumene overstige totalen, trimmes de tilfeldig ned igjen. */
+    while (used > total) {
+      var over = AQ.rng.shuffle(
+        groups.filter(function (g) { return quota[g.key] > 0; }),
+        rng
+      );
+      if (!over.length) break;
+      quota[over[0].key]--;
+      used--;
+    }
+
+    return quota;
   }
 
   /* Ferske spørsmål først, deretter tidligere brukte — begge grupper stokket. */
@@ -30,19 +69,18 @@
     return fresh.concat(used);
   }
 
-  function takeFromCategory(ordered, quota, usedClusters, chosenIds) {
+  function takeFromGroup(ordered, quota, usedClusters, chosenIds) {
     var picked = [];
     var i;
     /* Runde 1: respekter cluster-sperren. */
     for (i = 0; i < ordered.length && picked.length < quota; i++) {
       var q = ordered[i];
-      if (chosenIds[q.id]) continue;
-      if (usedClusters[q.cluster]) continue;
+      if (chosenIds[q.id] || usedClusters[q.cluster]) continue;
       picked.push(q);
       chosenIds[q.id] = true;
       usedClusters[q.cluster] = true;
     }
-    /* Runde 2: for få igjen — slipp cluster-kravet framfor å levere færre spørsmål. */
+    /* Runde 2: for få igjen — slipp cluster-kravet framfor å levere færre. */
     for (i = 0; i < ordered.length && picked.length < quota; i++) {
       var q2 = ordered[i];
       if (chosenIds[q2.id]) continue;
@@ -88,7 +126,7 @@
       }
       if (!candidate) return;
 
-      /* Kast ut spørsmålet som betyr minst: helst fra samme tema, og aldri et
+      /* Kast ut spørsmålet som betyr minst: helst fra samme gruppe, og aldri et
          som er eneste kilde til en dimensjon. */
       var currentCov = coverageOf(out, dimensionKeys);
       var victimIndex = -1;
@@ -99,7 +137,7 @@
         });
         if (breaksSomething) return;
         var score = Object.keys(q.dimensions).length;
-        if (q.category !== candidate.category) score += 10;
+        if (q.group !== candidate.group) score += 10;
         if (score < victimScore) { victimScore = score; victimIndex = idx; }
       });
       if (victimIndex < 0) return;
@@ -115,11 +153,11 @@
     return out;
   }
 
-  /* Sprer temaene, slik at rekkefølgen ikke avslører hva som måles. */
+  /* Sprer gruppene, slik at rekkefølgen ikke avslører hva som måles. */
   function spread(selected, rng) {
     var buckets = {};
     AQ.rng.shuffle(selected, rng).forEach(function (q) {
-      (buckets[q.category] = buckets[q.category] || []).push(q);
+      (buckets[q.group] = buckets[q.group] || []).push(q);
     });
 
     var out = [];
@@ -155,19 +193,21 @@
     var excluded = {};
     (options.excludeIds || []).forEach(function (id) { excluded[id] = true; });
 
-    var byCategory = groupByCategory(data.questions);
+    var byGroup = groupByKey(data.questions);
+    var quotas = drawQuotas(config.groups, total, rng);
     var chosenIds = {};
     var usedClusters = {};
     var selected = [];
 
-    /* Kvotene i seg selv stokkes, så samme tema ikke alltid plukkes først. */
-    AQ.rng.shuffle(config.categories, rng).forEach(function (cat) {
-      var pool = byCategory[cat.key] || [];
+    AQ.rng.shuffle(config.groups, rng).forEach(function (group) {
+      var pool = byGroup[group.key] || [];
       var ordered = prioritise(pool, excluded, rng);
-      selected = selected.concat(takeFromCategory(ordered, cat.quota, usedClusters, chosenIds));
+      selected = selected.concat(
+        takeFromGroup(ordered, quotas[group.key], usedClusters, chosenIds)
+      );
     });
 
-    /* Sikkerhetsnett hvis kvotene ikke summerer til ønsket antall. */
+    /* Sikkerhetsnett hvis en gruppe var for liten til å fylle kvoten sin. */
     if (selected.length < total) {
       var rest = prioritise(
         data.questions.filter(function (q) { return !chosenIds[q.id]; }),
@@ -193,9 +233,10 @@
     return {
       seed: seed,
       questions: ordered2,
+      quotas: quotas,
       coverage: coverageOf(ordered2, data.dimensionKeys)
     };
   };
 
-  AQ.selectionInternals = { coverageOf: coverageOf, spread: spread };
+  AQ.selectionInternals = { coverageOf: coverageOf, spread: spread, drawQuotas: drawQuotas };
 })(typeof window !== 'undefined' ? window : globalThis);

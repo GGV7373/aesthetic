@@ -27,16 +27,16 @@ if (dimKeys.size !== config.dimensions.length) errors.push('Duplikate dimensjons
 /* ---------- spørsmål ---------- */
 
 const ids = new Set();
-const perCategory = {};
+const perGroup = {};
 const clusterUse = {};
 
 questions.forEach((q) => {
   if (ids.has(q.id)) errors.push(`Spørsmål-id ${q.id} finnes flere ganger.`);
   ids.add(q.id);
   if (!q.text || q.text.length < 20) errors.push(`Spørsmål ${q.id} mangler tekst.`);
-  if (!q.category) errors.push(`Spørsmål ${q.id} mangler kategori.`);
+  if (!q.group) errors.push(`Spørsmål ${q.id} mangler gruppe.`);
   if (!q.cluster) errors.push(`Spørsmål ${q.id} mangler cluster.`);
-  perCategory[q.category] = (perCategory[q.category] || 0) + 1;
+  perGroup[q.group] = (perGroup[q.group] || 0) + 1;
   clusterUse[q.cluster] = (clusterUse[q.cluster] || 0) + 1;
 
   const dims = Object.keys(q.dimensions || {});
@@ -51,19 +51,20 @@ questions.forEach((q) => {
   });
 });
 
-/* ---------- kvoter ---------- */
+/* ---------- grupper ---------- */
 
-const quotaSum = config.categories.reduce((s, c) => s + c.quota, 0);
-if (quotaSum !== config.questionsPerQuiz) {
-  errors.push(`Kvotene summerer til ${quotaSum}, men quizen skal ha ${config.questionsPerQuiz}.`);
+const quotaLow = config.groups.reduce((s, g) => s + g.min, 0);
+const quotaHigh = config.groups.reduce((s, g) => s + g.max, 0);
+if (config.questionsPerQuiz < quotaLow || config.questionsPerQuiz > quotaHigh) {
+  errors.push(`Gruppene kan gi ${quotaLow}–${quotaHigh} spørsmål, men quizen skal ha ${config.questionsPerQuiz}.`);
 }
-config.categories.forEach((c) => {
-  const have = perCategory[c.key] || 0;
-  if (have < c.quota) errors.push(`Kategori "${c.key}": ${have} spørsmål, men kvote ${c.quota}.`);
-  else if (have < c.quota * 2) warnings.push(`Kategori "${c.key}" har lite å variere med (${have} for kvote ${c.quota}).`);
+config.groups.forEach((g) => {
+  const have = perGroup[g.key] || 0;
+  if (have < g.max) errors.push(`Gruppe "${g.key}": ${have} spørsmål, men kan trekke inntil ${g.max}.`);
+  else if (have < g.max * 3) warnings.push(`Gruppe "${g.key}" har lite å variere med (${have}).`);
 });
-Object.keys(perCategory).forEach((k) => {
-  if (!config.categories.some((c) => c.key === k)) errors.push(`Ukjent kategori "${k}" i spørsmål.`);
+Object.keys(perGroup).forEach((k) => {
+  if (!config.groups.some((g) => g.key === k)) errors.push(`Ukjent gruppe "${k}" i spørsmål.`);
 });
 
 /* Ingen cluster må være så stor at kvoten ikke kan fylles uten duplikater. */
@@ -161,9 +162,10 @@ data.dimensionMeta = {};
 config.dimensions.forEach((d) => (data.dimensionMeta[d.key] = d));
 
 /* 1. Utvalget: riktig antall, ingen duplikater, ingen dobbel cluster, spredte temaer. */
-let sameCategoryInARow = 0;
+let sameGroupInARow = 0;
 let duplicateClusters = 0;
 const questionUse = {};
+const quotaShapes = new Set();
 
 for (let i = 0; i < 400; i++) {
   const sel = AQ.selectQuestions(data, { seed: 'SEED' + i });
@@ -178,7 +180,14 @@ for (let i = 0; i < 400; i++) {
     if (clusters.has(q.cluster)) duplicateClusters++;
     clusters.add(q.cluster);
     questionUse[q.id] = (questionUse[q.id] || 0) + 1;
-    if (idx > 0 && sel.questions[idx - 1].category === q.category) sameCategoryInARow++;
+    if (idx > 0 && sel.questions[idx - 1].group === q.group) sameGroupInARow++;
+  });
+  quotaShapes.add(config.groups.map((g) => sel.quotas[g.key]).join(''));
+  config.groups.forEach((g) => {
+    const n = sel.questions.filter((q) => q.group === g.key).length;
+    if (n < g.min || n > g.max) {
+      errors.push(`Utvalg ${i}: gruppe "${g.key}" ga ${n} spørsmål (skal være ${g.min}–${g.max}).`);
+    }
   });
   data.dimensionKeys.forEach((k) => {
     if (!sel.coverage[k]) errors.push(`Utvalg ${i}: dimensjonen "${k}" har null dekning.`);
@@ -268,12 +277,14 @@ console.log('\n— Datafiler —');
 console.log(`  spørsmål:      ${questions.length}`);
 console.log(`  estetikker:    ${aesthetics.length}`);
 console.log(`  dimensjoner:   ${config.dimensions.length}`);
-console.log(`  kvotesum:      ${quotaSum} / ${config.questionsPerQuiz}`);
+console.log(`  grupper:       ${config.groups.length} à ${questions.length / config.groups.length}`);
+console.log(`  trekkes:       ${config.questionsPerQuiz} (2–3 per gruppe)`);
 
 console.log('\n— Utvalg (400 kjøringer) —');
 console.log(`  spørsmål i bruk:            ${useCounts.length} / ${questions.length}`);
 console.log(`  dupliserte clustere:        ${duplicateClusters}`);
-console.log(`  samme tema to på rad:       ${(sameCategoryInARow / 400).toFixed(2)} per quiz`);
+console.log(`  samme gruppe to på rad:     ${(sameGroupInARow / 400).toFixed(2)} per quiz`);
+console.log(`  ulike kvotefordelinger:     ${quotaShapes.size} av 400 kjøringer`);
 console.log(`  overlapp etter historikk:   ${overlap} spørsmål`);
 
 console.log('\n— Scoring (600 simulerte personer) —');

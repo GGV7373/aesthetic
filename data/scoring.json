@@ -4,331 +4,394 @@
   "scale": [
     {
       "value": 3,
-      "label": "Helt enig",
-      "short": "Helt enig"
+      "label": "Strongly agree",
+      "short": "Strongly agree"
     },
     {
       "value": 2,
-      "label": "Enig",
-      "short": "Enig"
+      "label": "Agree",
+      "short": "Agree"
     },
     {
       "value": 1,
-      "label": "Litt enig",
-      "short": "Litt enig"
+      "label": "Slightly agree",
+      "short": "Slightly agree"
     },
     {
       "value": 0,
-      "label": "Nøytral",
-      "short": "Nøytral"
+      "label": "Neutral",
+      "short": "Neutral"
     },
     {
       "value": -1,
-      "label": "Litt uenig",
-      "short": "Litt uenig"
+      "label": "Slightly disagree",
+      "short": "Slightly disagree"
     },
     {
       "value": -2,
-      "label": "Uenig",
-      "short": "Uenig"
+      "label": "Disagree",
+      "short": "Disagree"
     },
     {
       "value": -3,
-      "label": "Veldig uenig",
-      "short": "Veldig uenig"
+      "label": "Strongly disagree",
+      "short": "Strongly disagree"
     }
   ],
-  "categories": [
+  "groups": [
+    {
+      "key": "home",
+      "label": "Home and rooms",
+      "min": 2,
+      "max": 3
+    },
     {
       "key": "nature",
-      "label": "Natur og miljø",
-      "quota": 9
+      "label": "Nature and wilderness",
+      "min": 2,
+      "max": 3
     },
     {
-      "key": "history",
-      "label": "Historie og nostalgi",
-      "quota": 7
+      "key": "weather",
+      "label": "Weather, light and seasons",
+      "min": 2,
+      "max": 3
     },
     {
-      "key": "tech",
-      "label": "Teknologi og framtid",
-      "quota": 7
+      "key": "city-country",
+      "label": "City and country",
+      "min": 2,
+      "max": 3
     },
     {
-      "key": "architecture",
-      "label": "Arkitektur og rom",
-      "quota": 6
+      "key": "buildings",
+      "label": "Buildings and architecture",
+      "min": 2,
+      "max": 3
     },
     {
-      "key": "social",
-      "label": "Sosialitet og ensomhet",
-      "quota": 5
+      "key": "past",
+      "label": "The past and memory",
+      "min": 2,
+      "max": 3
     },
     {
-      "key": "mystery",
-      "label": "Mystikk og fantasi",
-      "quota": 5
+      "key": "tradition",
+      "label": "Tradition and community",
+      "min": 2,
+      "max": 3
+    },
+    {
+      "key": "screens",
+      "label": "Screens and the net",
+      "min": 2,
+      "max": 3
+    },
+    {
+      "key": "future",
+      "label": "The future and progress",
+      "min": 2,
+      "max": 3
+    },
+    {
+      "key": "craft-tools",
+      "label": "Tools and craft",
+      "min": 2,
+      "max": 3
+    },
+    {
+      "key": "people",
+      "label": "People and solitude",
+      "min": 2,
+      "max": 3
+    },
+    {
+      "key": "unexplained",
+      "label": "The unexplained",
+      "min": 2,
+      "max": 3
+    },
+    {
+      "key": "imagination",
+      "label": "Imagination and play",
+      "min": 2,
+      "max": 3
     },
     {
       "key": "order",
-      "label": "Orden og kaos",
-      "quota": 4
+      "label": "Order and chaos",
+      "min": 2,
+      "max": 3
     },
     {
-      "key": "taste",
-      "label": "Farger, lys og materialer",
-      "quota": 4
+      "key": "style",
+      "label": "Style, colour and materials",
+      "min": 2,
+      "max": 3
+    },
+    {
+      "key": "travel",
+      "label": "Travel and adventure",
+      "min": 2,
+      "max": 3
+    },
+    {
+      "key": "temperament",
+      "label": "Temperament",
+      "min": 2,
+      "max": 3
     },
     {
       "key": "values",
-      "label": "Verdier og temperament",
-      "quota": 3
+      "label": "Values and self-image",
+      "min": 2,
+      "max": 3
     }
   ],
   "dimensions": [
     {
       "key": "nature",
-      "label": "Natur",
-      "low": "Menneskeskapt",
-      "high": "Naturpreget",
+      "label": "Nature",
+      "low": "Built",
+      "high": "Wild",
       "core": true
     },
     {
       "key": "organic",
-      "label": "Organisk",
-      "low": "Syntetisk",
-      "high": "Organisk",
+      "label": "Organic",
+      "low": "Synthetic",
+      "high": "Living",
       "core": false
     },
     {
       "key": "rural",
-      "label": "Landlig",
-      "low": "Tettsted",
-      "high": "Landlig",
+      "label": "Rural",
+      "low": "Town",
+      "high": "Countryside",
       "core": true
     },
     {
       "key": "urban",
-      "label": "Urbant",
-      "low": "Avsides",
-      "high": "Urbant",
+      "label": "Urban",
+      "low": "Remote",
+      "high": "Urban",
       "core": true
     },
     {
       "key": "technology",
-      "label": "Teknologi",
-      "low": "Analogt",
-      "high": "Teknologisk",
+      "label": "Technology",
+      "low": "Analogue",
+      "high": "Technological",
       "core": true
     },
     {
       "key": "digital",
-      "label": "Digitalt",
-      "low": "Fysisk",
-      "high": "Digitalt",
+      "label": "Digital",
+      "low": "Physical",
+      "high": "Digital",
       "core": false
     },
     {
       "key": "futurism",
-      "label": "Framtid",
-      "low": "Nåtid",
-      "high": "Framtid",
+      "label": "Future",
+      "low": "Present",
+      "high": "Future",
       "core": true
     },
     {
       "key": "industrial",
-      "label": "Industri",
-      "low": "Naturmateriale",
-      "high": "Industrielt",
+      "label": "Industry",
+      "low": "Natural material",
+      "high": "Industrial",
       "core": false
     },
     {
       "key": "history",
-      "label": "Historie",
-      "low": "Samtidig",
-      "high": "Historisk",
+      "label": "History",
+      "low": "Contemporary",
+      "high": "Historical",
       "core": true
     },
     {
       "key": "nostalgia",
-      "label": "Nostalgi",
-      "low": "Framoverlent",
-      "high": "Nostalgisk",
+      "label": "Nostalgia",
+      "low": "Forward-looking",
+      "high": "Nostalgic",
       "core": true
     },
     {
       "key": "retro",
       "label": "Retro",
-      "low": "Ny form",
-      "high": "Retro form",
+      "low": "New forms",
+      "high": "Retro forms",
       "core": false
     },
     {
       "key": "tradition",
-      "label": "Tradisjon",
-      "low": "Brudd",
-      "high": "Tradisjon",
+      "label": "Tradition",
+      "low": "Break",
+      "high": "Continuity",
       "core": false
     },
     {
       "key": "modernity",
-      "label": "Modernitet",
+      "label": "Modernity",
       "low": "Patina",
-      "high": "Nytt og rent",
+      "high": "New and clean",
       "core": false
     },
     {
       "key": "mystery",
-      "label": "Mystikk",
-      "low": "Forklart",
-      "high": "Uforklart",
+      "label": "Mystery",
+      "low": "Explained",
+      "high": "Unexplained",
       "core": true
     },
     {
       "key": "fantasy",
-      "label": "Fantasi",
-      "low": "Konkret",
-      "high": "Fantasi",
+      "label": "Fantasy",
+      "low": "Concrete",
+      "high": "Imagined",
       "core": true
     },
     {
       "key": "realism",
-      "label": "Realisme",
-      "low": "Drømmende",
-      "high": "Nøktern",
+      "label": "Realism",
+      "low": "Dreaming",
+      "high": "Matter-of-fact",
       "core": false
     },
     {
       "key": "melancholy",
-      "label": "Melankoli",
-      "low": "Lettbeint",
-      "high": "Melankolsk",
+      "label": "Melancholy",
+      "low": "Light-hearted",
+      "high": "Melancholic",
       "core": true
     },
     {
       "key": "optimism",
-      "label": "Optimisme",
-      "low": "Tungsindig",
-      "high": "Lys",
+      "label": "Optimism",
+      "low": "Heavy",
+      "high": "Bright",
       "core": true
     },
     {
       "key": "darkness",
-      "label": "Mørke",
-      "low": "Lyst",
-      "high": "Mørkt",
+      "label": "Darkness",
+      "low": "Light",
+      "high": "Dark",
       "core": true
     },
     {
       "key": "whimsy",
-      "label": "Lekenhet",
-      "low": "Alvor",
-      "high": "Lekenhet",
+      "label": "Playfulness",
+      "low": "Serious",
+      "high": "Playful",
       "core": false
     },
     {
       "key": "social",
-      "label": "Sosialt",
-      "low": "Tilbaketrukket",
-      "high": "Utadvendt",
+      "label": "Social",
+      "low": "Withdrawn",
+      "high": "Outgoing",
       "core": true
     },
     {
       "key": "community",
-      "label": "Fellesskap",
-      "low": "På egen hånd",
-      "high": "Fellesskap",
+      "label": "Community",
+      "low": "On your own",
+      "high": "Together",
       "core": false
     },
     {
       "key": "solitude",
-      "label": "Ensomhet",
-      "low": "Blant folk",
-      "high": "Alenehet",
+      "label": "Solitude",
+      "low": "Among people",
+      "high": "Alone",
       "core": true
     },
     {
       "key": "individualism",
-      "label": "Individualisme",
-      "low": "Passe inn",
-      "high": "Skille seg ut",
+      "label": "Individualism",
+      "low": "Fit in",
+      "high": "Stand out",
       "core": false
     },
     {
       "key": "order",
-      "label": "Orden",
-      "low": "Løst",
-      "high": "Ordnet",
+      "label": "Order",
+      "low": "Loose",
+      "high": "Ordered",
       "core": true
     },
     {
       "key": "chaos",
-      "label": "Kaos",
-      "low": "Kontrollert",
-      "high": "Kaotisk",
+      "label": "Chaos",
+      "low": "Controlled",
+      "high": "Chaotic",
       "core": false
     },
     {
       "key": "minimalism",
-      "label": "Minimalisme",
-      "low": "Fylt",
-      "high": "Nedstrippet",
+      "label": "Minimalism",
+      "low": "Filled",
+      "high": "Stripped back",
       "core": true
     },
     {
       "key": "maximalism",
-      "label": "Maksimalisme",
-      "low": "Sparsomt",
-      "high": "Overflod",
+      "label": "Maximalism",
+      "low": "Sparse",
+      "high": "Abundant",
       "core": false
     },
     {
       "key": "craft",
-      "label": "Håndverk",
-      "low": "Ferdigkjøpt",
-      "high": "Laget for hånd",
+      "label": "Craft",
+      "low": "Bought ready-made",
+      "high": "Made by hand",
       "core": true
     },
     {
       "key": "ornament",
-      "label": "Ornamentikk",
-      "low": "Bart",
-      "high": "Utsmykket",
+      "label": "Ornament",
+      "low": "Bare",
+      "high": "Ornamented",
       "core": false
     },
     {
       "key": "comfort",
-      "label": "Komfort",
-      "low": "Spartansk",
-      "high": "Lunt",
+      "label": "Comfort",
+      "low": "Spartan",
+      "high": "Snug",
       "core": true
     },
     {
       "key": "adventure",
-      "label": "Eventyr",
-      "low": "Hjemmekjær",
-      "high": "Eventyrlyst",
+      "label": "Adventure",
+      "low": "Homebound",
+      "high": "Adventurous",
       "core": true
     },
     {
       "key": "refinement",
-      "label": "Forfinelse",
-      "low": "Røft",
-      "high": "Forfinet",
+      "label": "Refinement",
+      "low": "Rough",
+      "high": "Refined",
       "core": false
     },
     {
       "key": "intellect",
-      "label": "Intellekt",
-      "low": "Intuitivt",
-      "high": "Studerende",
+      "label": "Intellect",
+      "low": "Intuitive",
+      "high": "Studious",
       "core": true
     },
     {
       "key": "architecture",
-      "label": "Arkitektur",
-      "low": "Rom er bakgrunn",
-      "high": "Rom er alt",
+      "label": "Architecture",
+      "low": "Rooms are backdrop",
+      "high": "Rooms are everything",
       "core": false
     }
   ],
