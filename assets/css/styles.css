@@ -301,12 +301,11 @@ button, a, label, input { -webkit-tap-highlight-color: transparent; touch-action
   transition: width var(--slow) var(--ease);
 }
 
-/* Counter on the left, the auto-advance switch on the right: keeps the bottom
-   bar down to two buttons, which is what a thumb wants. */
+/* The question counter sits under the progress bar. Answering a statement
+   always advances on its own, so there is nothing else to put here. */
 .quiz__meta {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 1rem;
   margin-top: 0.75rem;
 }
@@ -321,23 +320,11 @@ button, a, label, input { -webkit-tap-highlight-color: transparent; touch-action
   white-space: nowrap;
 }
 
-.toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  font-size: 0.7rem;
-  letter-spacing: 0.02em;
-  color: var(--ink-faint);
-  cursor: pointer;
-  text-align: right;
-  line-height: 1.25;
-  transition: color var(--mid) var(--ease);
-}
-
-.toggle input { accent-color: var(--accent); cursor: pointer; width: 16px; height: 16px; flex: none; }
-
 .quiz__card {
   flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   background: var(--surface);
@@ -350,11 +337,14 @@ button, a, label, input { -webkit-tap-highlight-color: transparent; touch-action
   .quiz__card { padding: clamp(1.5rem, 4.5vw, 3rem); }
   .quiz__head { margin-bottom: clamp(1.8rem, 5vh, 3rem); }
   .quiz__counter { font-size: 0.7rem; letter-spacing: 0.26em; }
-  .toggle { font-size: 0.75rem; }
 }
 
 /* The whole block moves as one when the question changes. */
 .quiz__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
   transition: opacity var(--fast) var(--ease), transform var(--fast) var(--ease);
 }
 .quiz__body.is-out { opacity: 0; transform: translateY(-10px); }
@@ -483,6 +473,65 @@ button, a, label, input { -webkit-tap-highlight-color: transparent; touch-action
     border-top: 0;
   }
   .quiz__nav .btn { width: auto; min-width: 9rem; }
+}
+
+/* ---------- quiz: one-screen phone layout ---------- */
+/* Below 40rem the quiz is pinned to a single viewport height and the option
+   list flexes to fill whatever is left, so no statement ever needs a scroll
+   to be answered. The page frame is trimmed right down to buy that room. */
+@media (max-width: 39.99rem) {
+  #app:has(.screen--quiz) {
+    padding-top: max(0.85rem, env(safe-area-inset-top));
+    padding-bottom: 0;
+  }
+
+  .screen--quiz {
+    min-height: 0;
+    height: calc(100dvh - max(0.85rem, env(safe-area-inset-top)));
+  }
+
+  .quiz__head { margin-bottom: 0.8rem; }
+  .quiz__head .eyebrow { margin-bottom: 0.55rem; }
+  .quiz__meta { margin-top: 0.5rem; }
+
+  .quiz__card { padding: 0.95rem 0.85rem; }
+
+  .quiz__statement {
+    margin-bottom: 0.9rem;
+    font-size: clamp(1.25rem, 1rem + 1.8vw, 1.65rem);
+    line-height: 1.2;
+  }
+
+  /* Options share the leftover height evenly; they only scroll as a last
+     resort on unusually short screens. */
+  .options {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    overflow-y: auto;
+  }
+
+  .option {
+    flex: 1 1 0;
+    min-height: 44px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 0.95rem;
+  }
+
+  .quiz__nav {
+    margin-top: 0.65rem;
+    padding-top: 0.55rem;
+    padding-bottom: calc(0.55rem + env(safe-area-inset-bottom));
+  }
+
+  .quiz__nav .btn {
+    min-height: 44px;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+  }
 }
 
 /* ---------- result: welcome + hero ---------- */
@@ -970,7 +1019,6 @@ button, a, label, input { -webkit-tap-highlight-color: transparent; touch-action
   .option--selected:hover { background: rgba(122, 92, 51, 0.09); }
   .option--selected:hover::before { transform: scaleY(1); }
 
-  .toggle:hover { color: var(--ink-soft); }
   .photo:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
   .card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
   .facet:hover { background: #fffefb; }

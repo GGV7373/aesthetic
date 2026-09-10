@@ -5,6 +5,7 @@ pictures you like. 180 statements in the bank, 50 per run, 35 hidden dimensions 
 65 aesthetics, using Aesthetics Wiki as a reference.
 
 No framework, no build step, no dependencies. Open `index.html`.
+OR use the website at [estetikk.netlify.app](https://estetikk.netlify.app).
 
 ---
 
@@ -49,13 +50,14 @@ Two things to keep in mind:
 The stylesheet is mobile first: the base rules are the phone layout and the wider
 breakpoints add to it. Concretely, on a phone:
 
-* **The Back / Next bar is pinned to the bottom of the screen.** On a 360x640 handset
-  the buttons used to sit 216px below the fold, so every one of 50 questions needed a
-  scroll before it could be answered. The bar now rides along the bottom with a
-  blurred backdrop, and Next is the wider of the two because it is pressed 50 times.
-* **The auto-advance switch moved up next to the question counter**, which keeps the
-  bottom bar down to the two things a thumb needs.
-* **Every tap target is at least 48px**, and taps get no 300ms delay and no grey flash.
+* **The whole quiz is pinned to one viewport.** On a 360x640 handset the buttons used
+  to sit 216px below the fold, so every one of 50 questions needed a scroll before it
+  could be answered. Now the screen is locked to `100dvh`, the option list flexes to
+  fill whatever height is left, and the Back / Next bar rides along the bottom with a
+  blurred backdrop — Next is the wider of the two because it is pressed 50 times.
+* **Answering a statement advances on its own.** There is no switch for it; the counter
+  sits alone under the progress bar.
+* **Every tap target is at least 44px**, and taps get no 300ms delay and no grey flash.
 * **Hover styling is gated behind `(hover: hover) and (pointer: fine)`**, so tapping an
   option on a touch screen never leaves a stuck hover state behind.
 * **The photo strip scrolls sideways with snap points** instead of stacking three tall

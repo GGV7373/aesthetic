@@ -6,14 +6,12 @@
 
   var STORE_SESSION = 'aq.session.v3';
   var STORE_HISTORY = 'aq.previousQuestionIds.v3';
-  var STORE_PREFS = 'aq.prefs.v2';
 
   var SWAP_MS = 170;   /* how long a question takes to move out of the way */
   var ADVANCE_MS = 240; /* pause after an answer before moving on */
 
   var data = null;
   var session = null;
-  var prefs = { autoAdvance: true };
   var root;
 
   /* ---------- helpers ---------- */
@@ -220,24 +218,13 @@
       class: 'btn btn--primary', type: 'button', onclick: function () { go(1); }
     }, ['Next →']);
 
-    var autoToggle = el('label', { class: 'toggle' }, [
-      el('input', {
-        type: 'checkbox', checked: prefs.autoAdvance ? 'checked' : null,
-        onchange: function (e) {
-          prefs.autoAdvance = e.target.checked;
-          writeStore(STORE_PREFS, prefs);
-        }
-      }),
-      el('span', { text: 'Auto-advance' })
-    ]);
-
     var live = el('div', { class: 'sr-only', 'aria-live': 'polite' });
 
     var view = el('section', { class: 'screen screen--quiz' }, [
       el('header', { class: 'quiz__head' }, [
         el('p', { class: 'eyebrow', text: 'What aesthetic are you?' }),
         progressBar,
-        el('div', { class: 'quiz__meta' }, [counter, autoToggle])
+        el('div', { class: 'quiz__meta' }, [counter])
       ]),
       el('div', { class: 'quiz__card' }, [body]),
       el('nav', { class: 'quiz__nav' }, [prevBtn, nextBtn]),
@@ -311,7 +298,8 @@
       persistSession();
       markSelection(value);
 
-      if (prefs.autoAdvance && isNew) {
+      /* Answering a fresh statement always carries you to the next one. */
+      if (isNew) {
         global.setTimeout(function () {
           if (session.index < total - 1) go(1);
           else finish();
@@ -648,7 +636,6 @@
 
   function boot() {
     root = document.getElementById('app');
-    prefs = readStore(STORE_PREFS, prefs) || prefs;
 
     root.innerHTML = '';
     root.appendChild(el('p', { class: 'loading', text: 'Loading …' }));
