@@ -247,7 +247,7 @@
       "architecture": "a small whitewashed house, a low door, windows with glazing bars",
       "interior": "copper pans, dried herbs, a tablecloth you daren't actually use",
       "technology": "a radio, a freezer, and preferably nothing else",
-      "clothes": "a linen dress, a cardigan, an apron that gets real use",
+      "clothes": "linen layers, a cardigan, an apron that gets real use",
       "music": "a piano through an open window, folk songs, bees",
       "colours": "butter, dried lavender, apple green, unbleached linen",
       "everyday": "letters written by hand, Sundays with no plans, more jam than anyone needs"
@@ -582,7 +582,7 @@
       "#e6cfc2"
     ],
     "imageQuery": [
-      "woman writing letter painting",
+      "letter writing by candlelight painting",
       "old writing desk letters"
     ],
     "dimensions": {
@@ -619,7 +619,7 @@
       "architecture": "an old villa, a window seat big enough to sit in",
       "interior": "dried flowers between pages, letters in a drawer, far too many cushions",
       "technology": "preferably none; a phone lying face down",
-      "clothes": "soft layers, a lace collar, a coat that is impractical and worth it",
+      "clothes": "soft layers, a linen collar, a coat that is impractical and worth it",
       "music": "nocturnes, songs whose words you know by heart",
       "colours": "dried rose, wine red, yellowed paper, pale gold",
       "everyday": "underlining in books, writing things you never send, long evenings"
@@ -1737,7 +1737,7 @@
       "architecture": "a house with a wraparound porch, a leaning barn, a wooden chapel",
       "interior": "a quilt, a bible with notes in it, photographs of people nobody can name now",
       "technology": "what is needed, often forty years old and still running",
-      "clothes": "work clothes, a dress for Sunday, a hat that is part of the person",
+      "clothes": "work clothes, something kept back for Sunday, a hat that is part of the person",
       "music": "banjo, hymns sung without instruments, laments",
       "colours": "peat brown, fog grey, church white, dried blood",
       "everyday": "knowing everyone, saying little, keeping customs older than the house"
@@ -1790,7 +1790,7 @@
     },
     "related": [
       "appalachian-gothic",
-      "witchcore",
+      "goblincore",
       "cryptidcore",
       "medieval"
     ],
@@ -2352,7 +2352,7 @@
       "architecture": "a ranch house, a carport, a front garden that is purely for show",
       "interior": "a pastel kitchen, a three-piece suite, a television as furniture",
       "technology": "new white goods, a mixer, appliances owned with pride",
-      "clothes": "a full-skirted dress, pressed trousers, everything ironed",
+      "clothes": "a pressed shirt, pressed trousers, everything ironed",
       "music": "doo-wop, orchestral pop, the radio kept low",
       "colours": "mint green, powder pink, cream white, chrome silver",
       "everyday": "fixed dinners, neighbours calling round, everything exactly as last year"
@@ -3151,16 +3151,16 @@
       "dark-romanticism",
       "dreamcore",
       "gloomcore",
-      "witchcore"
+      "folk-horror"
     ],
     "world": {
       "setting": "an estate that has stood empty for two generations",
       "architecture": "a manor house, window casements that bang, a stair with one tread that creaks",
       "interior": "furniture under sheets, a clock that has stopped, a covered mirror",
       "technology": "nothing newer than a telephone with a cord",
-      "clothes": "white, a lace collar, garments too thin for the weather",
+      "clothes": "white, a thin collar, garments too light for the weather",
       "music": "a music box, singing far away, an organ in an empty room",
-      "colours": "sheet white, dust grey, pale blue, yellowed lace",
+      "colours": "sheet white, dust grey, pale blue, yellowed linen",
       "everyday": "reading other people's letters, keeping a room exactly as it was"
     }
   },
@@ -3291,7 +3291,7 @@
   {
     "key": "mori-kei",
     "name": "Mori Kei",
-    "tagline": "The girl who lives in the forest",
+    "tagline": "A life lived among the trees",
     "description": "A Japanese style built around layers of natural fabric, muted colours and a calm, slightly withdrawn way of living.",
     "keywords": [
       "layers",
@@ -3344,72 +3344,10 @@
       "architecture": "wood and paper, small rooms, windows at floor height",
       "interior": "baskets, ceramics, dried flowers, everything in natural tones",
       "technology": "a radio, a kettle, no screens in view",
-      "clothes": "several layers, loose cuts, knitwear over a dress over a shirt",
+      "clothes": "several loose layers, knitwear over a tunic over a shirt",
       "music": "acoustic, soft, almost whispered",
       "colours": "cream white, moss green, fog grey, dried brown",
       "everyday": "tea, letters, remaking something old, going out early"
-    }
-  },
-  {
-    "key": "witchcore",
-    "name": "Witchcore",
-    "tagline": "Knowledge that isn't on the syllabus",
-    "description": "Herbs, moons, old books and rituals you make up yourself. A practical mysticism - more craft than superstition.",
-    "keywords": [
-      "herbs",
-      "jars",
-      "moon",
-      "grimoire",
-      "candles"
-    ],
-    "palette": [
-      "#120e16",
-      "#332444",
-      "#7a5c74",
-      "#ded0c2"
-    ],
-    "imageQuery": [
-      "dried herbs hanging bunches",
-      "candlelit table old books"
-    ],
-    "dimensions": {
-      "mystery": 0.95,
-      "tradition": 0.75,
-      "nature": 0.8,
-      "craft": 0.8,
-      "darkness": 0.7,
-      "fantasy": 0.8,
-      "solitude": 0.75,
-      "history": 0.7,
-      "organic": 0.8,
-      "ornament": 0.65,
-      "maximalism": 0.6,
-      "community": 0.45,
-      "rural": 0.7,
-      "intellect": 0.65,
-      "melancholy": 0.6,
-      "order": 0.45,
-      "realism": 0.25,
-      "optimism": 0.4,
-      "individualism": 0.75,
-      "comfort": 0.55,
-      "refinement": 0.45
-    },
-    "related": [
-      "folk-horror",
-      "fairycore",
-      "ghostcore",
-      "goblincore"
-    ],
-    "world": {
-      "setting": "a garden of plants with more than one use, a treeline at dusk",
-      "architecture": "an old house with crooked rooms and too many shelves",
-      "interior": "labelled jars, drying plants overhead, cards and stones",
-      "technology": "almost none, but very good knives",
-      "clothes": "dark layers, a shawl, silver jewellery that means something",
-      "music": "drums, singing in a circle, a record of strange folk music",
-      "colours": "deep purple, dark green, wax, silver",
-      "everyday": "noting the moon, making salves, doing things with intent"
     }
   },
   {
@@ -3523,7 +3461,7 @@
       "medieval",
       "fairycore",
       "romanticism",
-      "witchcore"
+      "dark-romanticism"
     ],
     "world": {
       "setting": "a castle tower over a forest, a tournament on a plain, torches at dusk",
@@ -3607,7 +3545,7 @@
       "transience",
       "ghosts",
       "cemetery",
-      "black lace",
+      "black velvet",
       "verse"
     ],
     "palette": [
@@ -3654,7 +3592,7 @@
       "architecture": "a mortuary chapel, a manor with closed wings, gothic windows",
       "interior": "portraits that follow you, dried roses, heavy curtains",
       "technology": "none - preferably not even electric light",
-      "clothes": "black lace, velvet, jewellery with hair or onyx in it",
+      "clothes": "black velvet, high collars, jewellery with hair or onyx in it",
       "music": "a requiem, a cello alone, singing in a minor key",
       "colours": "ink black, blood red, corpse pale, oxidised silver",
       "everyday": "reading at night, thinking about death without being afraid"
@@ -4026,10 +3964,738 @@
       "architecture": "pale facades, arched windows, ceilings painted as sky",
       "interior": "gilded mouldings, mirrors everywhere, furniture with legs too short",
       "technology": "a clock that is mostly for show",
-      "clothes": "pastel silk, bows, everything that moves when you do",
+      "clothes": "pastel silk, fine embroidery, everything that moves when you do",
       "music": "harpsichord, chamber music, something to dance to",
       "colours": "powder pink, mint green, gold, ivory",
       "everyday": "company, conversation, and no regret at having a nice time"
+    }
+  },
+  {
+    "key": "techwear",
+    "name": "Techwear",
+    "tagline": "Dressed for a city that might rain acid",
+    "description": "Black technical clothing built from the same fabrics as mountain gear: taped seams, waterproof shells, straps and hidden pockets. Function and silhouette treated as one problem, usually solved in monochrome.",
+    "keywords": [
+      "taped seams",
+      "shell",
+      "straps",
+      "matte black",
+      "modular"
+    ],
+    "palette": [
+      "#0f1113",
+      "#1f2933",
+      "#4a5560",
+      "#9aa3ab"
+    ],
+    "imageQuery": [
+      "techwear outfit street black",
+      "technical jacket straps detail"
+    ],
+    "dimensions": {
+      "urban": 0.92,
+      "darkness": 0.85,
+      "minimalism": 0.82,
+      "modernity": 0.8,
+      "futurism": 0.78,
+      "technology": 0.72,
+      "industrial": 0.68,
+      "order": 0.72,
+      "refinement": 0.62,
+      "individualism": 0.65,
+      "nature": 0.1,
+      "organic": 0.08,
+      "ornament": 0.08,
+      "optimism": 0.22,
+      "comfort": 0.28,
+      "whimsy": 0.1
+    },
+    "related": [
+      "cyberpunk",
+      "brutalism",
+      "industrial",
+      "minimalism"
+    ],
+    "world": {
+      "setting": "a rain-slick city at night, an underpass where the light is all artificial",
+      "architecture": "concrete and glass, service corridors, a flat with almost nothing on the walls",
+      "interior": "a rack of black garments sorted by weight, gear laid out on a grid, one good chair",
+      "technology": "everything current, everything charged, cables managed and out of sight",
+      "clothes": "a hard shell over a mid-layer, cargo trousers with the straps tucked, low black shoes",
+      "music": "dark electronic, ambient with a pulse under it, heard on the move",
+      "colours": "black, gunmetal, slate, one cold grey",
+      "everyday": "checking the forecast, loading pockets in the same order, walking the city for hours"
+    }
+  },
+  {
+    "key": "gorpcore",
+    "name": "Gorpcore",
+    "tagline": "Dressed for a mountain you might not climb",
+    "description": "Technical outdoor gear worn anywhere: fleece, waterproof shells, trail shoes and webbing, with the brand tags left showing. Function treated as the whole of style.",
+    "keywords": [
+      "fleece",
+      "shell jacket",
+      "trail shoes",
+      "webbing",
+      "carabiner"
+    ],
+    "palette": [
+      "#1b2b2f",
+      "#3a5a40",
+      "#d98e04",
+      "#e7e3d8"
+    ],
+    "imageQuery": [
+      "gorpcore outfit street",
+      "hiking fleece jacket flat lay"
+    ],
+    "dimensions": {
+      "adventure": 0.9,
+      "nature": 0.72,
+      "realism": 0.82,
+      "modernity": 0.72,
+      "refinement": 0.15,
+      "ornament": 0.1,
+      "minimalism": 0.62,
+      "technology": 0.62,
+      "optimism": 0.62,
+      "order": 0.58,
+      "fantasy": 0.12,
+      "whimsy": 0.18,
+      "tradition": 0.25,
+      "mystery": 0.2
+    },
+    "related": [
+      "adventurecore",
+      "normcore",
+      "scandinavian-design",
+      "techwear"
+    ],
+    "world": {
+      "setting": "a city pavement on a wet Tuesday, a bus to a trailhead at the weekend",
+      "architecture": "a flat with gear drying on the radiators and a rack of packs by the door",
+      "interior": "dry bags, a foam mat rolled in the corner, maps folded to the panel you need",
+      "technology": "a head-torch, a GPS watch, a phone in a waterproof case",
+      "clothes": "a fleece under a shell, trail shoes on pavement, a small pack worn everywhere",
+      "music": "a podcast on the walk in, something with a beat for the last climb",
+      "colours": "moss green, storm grey, safety orange, faded sand",
+      "everyday": "reading the forecast first thing, packing the night before, walking further than the day needs"
+    }
+  },
+  {
+    "key": "blokecore",
+    "name": "Blokecore",
+    "tagline": "A retro football shirt and a pint",
+    "description": "Terrace culture as style: vintage football shirts, tracksuit tops, straight jeans and old trainers. Casual, unpretentious and tied to a club and a Saturday.",
+    "keywords": [
+      "football shirt",
+      "trainers",
+      "terrace",
+      "tracksuit top",
+      "pub"
+    ],
+    "palette": [
+      "#0b3d2e",
+      "#c8102e",
+      "#f4f4f4",
+      "#1c2b45"
+    ],
+    "imageQuery": [
+      "vintage football shirt outfit",
+      "football terrace crowd retro"
+    ],
+    "dimensions": {
+      "community": 0.85,
+      "social": 0.78,
+      "tradition": 0.75,
+      "nostalgia": 0.75,
+      "retro": 0.68,
+      "realism": 0.72,
+      "refinement": 0.12,
+      "comfort": 0.62,
+      "urban": 0.62,
+      "individualism": 0.22,
+      "ornament": 0.2,
+      "intellect": 0.22,
+      "minimalism": 0.45
+    },
+    "related": [
+      "normcore",
+      "americana",
+      "grunge",
+      "y2k"
+    ],
+    "world": {
+      "setting": "a terrace at three on a Saturday, a pub before and after",
+      "architecture": "a lower-league ground, a corner pub with the match on",
+      "interior": "framed shirts on the wall, a scarf collection, a shelf of old programmes",
+      "technology": "the radio for the scores, a group chat that only wakes up on matchday",
+      "clothes": "a retro shirt, a harrington or a trackie top, straight jeans, old trainers",
+      "music": "terrace chants, indie and britpop, whatever was in the charts that season",
+      "colours": "club green, club red, kit white, denim blue",
+      "everyday": "checking the fixtures, the same seat every home game, arguing about the away kit"
+    }
+  },
+  {
+    "key": "jock",
+    "name": "Jock",
+    "tagline": "Peaked in the gym and proud of it",
+    "description": "American school and college sports culture: letterman jackets, varsity numbers, locker rooms and the social gravity of the team. Wholesome, competitive and worn on the sleeve.",
+    "keywords": [
+      "letterman",
+      "varsity",
+      "locker room",
+      "bleachers",
+      "team"
+    ],
+    "palette": [
+      "#10233f",
+      "#c5a253",
+      "#f2f2f2",
+      "#7a1f2b"
+    ],
+    "imageQuery": [
+      "letterman jacket varsity",
+      "american high school bleachers"
+    ],
+    "dimensions": {
+      "social": 0.9,
+      "community": 0.85,
+      "optimism": 0.75,
+      "order": 0.68,
+      "tradition": 0.62,
+      "realism": 0.62,
+      "solitude": 0.1,
+      "individualism": 0.2,
+      "intellect": 0.22,
+      "refinement": 0.28,
+      "adventure": 0.55,
+      "mystery": 0.15,
+      "melancholy": 0.18,
+      "whimsy": 0.4
+    },
+    "related": [
+      "americana",
+      "fifties-suburbia",
+      "normcore",
+      "adventurecore"
+    ],
+    "world": {
+      "setting": "a floodlit field on a Friday night, a gym that smells of floor polish",
+      "architecture": "a brick school with a big gym wing, a stadium of aluminium stands",
+      "interior": "a letterman jacket on the door, trophies on a shelf, a signed ball",
+      "technology": "a stopwatch, game footage on a laptop, a scoreboard with a manual clock",
+      "clothes": "a varsity jacket, team shorts, clean high-tops",
+      "music": "a hype playlist in the locker room, the marching band, the crowd",
+      "colours": "school navy, gold, bleacher grey, home red",
+      "everyday": "practice before class, the game at the weekend, eating for the sport"
+    }
+  },
+  {
+    "key": "racing",
+    "name": "Racing",
+    "tagline": "Won on the straight, lost in the pit",
+    "description": "Motorsport as an aesthetic: sponsor liveries, pit boards, chequered flags and fireproof suits. Precision engineering pushed to failure, measured in tenths of a second.",
+    "keywords": [
+      "livery",
+      "pit lane",
+      "chequered flag",
+      "apex",
+      "telemetry"
+    ],
+    "palette": [
+      "#101010",
+      "#e10600",
+      "#f5f5f5",
+      "#f2c200"
+    ],
+    "imageQuery": [
+      "motorsport pit lane crew",
+      "race car livery sponsor detail"
+    ],
+    "dimensions": {
+      "technology": 0.9,
+      "industrial": 0.82,
+      "realism": 0.82,
+      "order": 0.78,
+      "adventure": 0.72,
+      "modernity": 0.68,
+      "craft": 0.65,
+      "intellect": 0.62,
+      "futurism": 0.55,
+      "nature": 0.08,
+      "organic": 0.08,
+      "comfort": 0.15,
+      "mystery": 0.15,
+      "fantasy": 0.08,
+      "refinement": 0.45
+    },
+    "related": [
+      "dieselpunk",
+      "industrial",
+      "atompunk",
+      "americana"
+    ],
+    "world": {
+      "setting": "a pit lane in the hour before a race, a grandstand over the first corner",
+      "architecture": "a pit garage, a paddock of trucks and awnings, a control tower",
+      "interior": "a wall of tyres sorted by compound, headsets on hooks, a data screen frozen on the last lap",
+      "technology": "telemetry live off the car, a torque gun, a laptop plugged into the loom",
+      "clothes": "a team shirt, a fireproof suit half unzipped, ear defenders round the neck",
+      "music": "engines through the wall, the pit-radio crackle, an anthem on the grid",
+      "colours": "livery red, sponsor white, carbon black, warning yellow",
+      "everyday": "walking the track on foot, setup changes between sessions, the same corner watched a hundred times"
+    }
+  },
+  {
+    "key": "tacticool",
+    "name": "Tacticool",
+    "tagline": "Kitted out for a callout that never comes",
+    "description": "Civilian gear built on a military template: plate-carrier vests, molle webbing, camo patterns and a torch on everything. Preparedness worn as style, whether or not it is ever needed.",
+    "keywords": [
+      "plate carrier",
+      "molle",
+      "multicam",
+      "everyday carry",
+      "red dot"
+    ],
+    "palette": [
+      "#2f2f28",
+      "#5b5a3f",
+      "#20211c",
+      "#a8a290"
+    ],
+    "imageQuery": [
+      "tactical vest molle gear",
+      "everyday carry knife torch flatlay"
+    ],
+    "dimensions": {
+      "realism": 0.9,
+      "order": 0.85,
+      "refinement": 0.1,
+      "ornament": 0.08,
+      "industrial": 0.58,
+      "minimalism": 0.55,
+      "individualism": 0.58,
+      "adventure": 0.58,
+      "darkness": 0.55,
+      "technology": 0.55,
+      "comfort": 0.2,
+      "whimsy": 0.08,
+      "fantasy": 0.1,
+      "optimism": 0.28,
+      "chaos": 0.15
+    },
+    "related": [
+      "industrial",
+      "cyberpunk",
+      "adventurecore",
+      "brutalism"
+    ],
+    "world": {
+      "setting": "a range on a grey morning, a car boot organised like a kit list",
+      "architecture": "a garage of shelving and labelled bins, a workbench under bright light",
+      "interior": "gear on pegboard, a go-bag by the door, everything packed to a checklist",
+      "technology": "torches, a red-dot sight, a radio scanner, a watch built like a tool",
+      "clothes": "a plate carrier over a plain shirt, ripstop trousers, boots laced tight",
+      "music": "not much: a podcast on the drive, comms chatter on the scanner",
+      "colours": "coyote tan, ranger green, flat black, camo blur",
+      "everyday": "checking the bag, dry drills, buying two of anything that matters"
+    }
+  },
+  {
+    "key": "western",
+    "name": "Western",
+    "tagline": "Big country and a long ride",
+    "description": "The visual world of the American frontier: denim and leather, worn hats, wide horizons and cattle towns. Rugged, self-reliant and heavy with myth.",
+    "keywords": [
+      "denim",
+      "leather",
+      "cattle town",
+      "prairie",
+      "worn hat"
+    ],
+    "palette": [
+      "#3a2417",
+      "#8a5a2b",
+      "#c9a25b",
+      "#d9cbb0"
+    ],
+    "imageQuery": [
+      "western frontier town dusty street",
+      "leather boots hat prairie"
+    ],
+    "dimensions": {
+      "rural": 0.92,
+      "nature": 0.72,
+      "tradition": 0.82,
+      "history": 0.72,
+      "realism": 0.78,
+      "adventure": 0.72,
+      "individualism": 0.72,
+      "solitude": 0.7,
+      "nostalgia": 0.68,
+      "refinement": 0.12,
+      "urban": 0.08,
+      "modernity": 0.12,
+      "digital": 0.05,
+      "craft": 0.6,
+      "ornament": 0.22,
+      "comfort": 0.3
+    },
+    "related": [
+      "americana",
+      "rustic",
+      "adventure-pulp",
+      "lumberjack"
+    ],
+    "world": {
+      "setting": "a wide plain under a huge sky, a one-street town with a rail out front",
+      "architecture": "clapboard fronts, a porch the length of the building, a barn bigger than the house",
+      "interior": "a wood stove, a rifle over the door, a table built to last generations",
+      "technology": "very little: a truck, a generator, hand tools kept sharp",
+      "clothes": "denim worn pale, a leather jacket or a duster, a hat shaped by years",
+      "music": "country, old cowboy songs, a guitar on a porch in the evening",
+      "colours": "dust brown, saddle tan, faded blue, dry-grass gold",
+      "everyday": "up before light with the animals, long distances taken for granted, weather that runs the day"
+    }
+  },
+  {
+    "key": "mod",
+    "name": "Mod",
+    "tagline": "Sharp suit, clean lines, soul records",
+    "description": "Early-1960s British youth style: tailored suits, parkas over the top, scooters covered in mirrors, and a devotion to soul and R&B. Neat, modern and competitive about detail.",
+    "keywords": [
+      "tailored suit",
+      "parka",
+      "scooter",
+      "soul records",
+      "target"
+    ],
+    "palette": [
+      "#0e2a4a",
+      "#c8102e",
+      "#f4f4f4",
+      "#1c1c1c"
+    ],
+    "imageQuery": [
+      "mod scooter mirrors parka",
+      "1960s tailored suit mod"
+    ],
+    "dimensions": {
+      "refinement": 0.85,
+      "order": 0.75,
+      "modernity": 0.7,
+      "urban": 0.75,
+      "social": 0.68,
+      "community": 0.62,
+      "individualism": 0.62,
+      "minimalism": 0.65,
+      "retro": 0.65,
+      "nostalgia": 0.55,
+      "chaos": 0.15,
+      "nature": 0.1,
+      "comfort": 0.28,
+      "ornament": 0.32,
+      "whimsy": 0.3
+    },
+    "related": [
+      "dandy",
+      "beatnik",
+      "old-hollywood",
+      "scandinavian-design"
+    ],
+    "world": {
+      "setting": "a city centre on a Saturday, a club night that runs till morning",
+      "architecture": "a coffee bar with chrome fittings, a tailor upstairs, a dance hall",
+      "interior": "a wardrobe kept sharp, a record box of soul singles, a mirror by the door",
+      "technology": "a record player that matters, a scooter maintained to a shine",
+      "clothes": "a slim three-button suit, desert boots, a fishtail parka for the scooter",
+      "music": "northern soul, R&B and ska, played loud and danced to properly",
+      "colours": "navy, red, white, black, a flash of target blue",
+      "everyday": "pressing a suit for the weekend, hunting rare singles, riding out in a pack"
+    }
+  },
+  {
+    "key": "metalhead",
+    "name": "Metalhead",
+    "tagline": "Loud, fast and here for the riff",
+    "description": "The heavy metal subculture: band shirts, battle jackets, long hair and a loyalty to volume. Dark imagery and technical playing over a genuinely warm community.",
+    "keywords": [
+      "battle jacket",
+      "band shirt",
+      "denim",
+      "patches",
+      "amplifier"
+    ],
+    "palette": [
+      "#0c0c0c",
+      "#1c1c1c",
+      "#7a1010",
+      "#c9c9c9"
+    ],
+    "imageQuery": [
+      "battle jacket metal patches",
+      "metal concert crowd stage"
+    ],
+    "dimensions": {
+      "darkness": 0.9,
+      "individualism": 0.75,
+      "chaos": 0.65,
+      "community": 0.62,
+      "maximalism": 0.62,
+      "refinement": 0.12,
+      "optimism": 0.15,
+      "order": 0.18,
+      "fantasy": 0.6,
+      "mystery": 0.6,
+      "melancholy": 0.58,
+      "ornament": 0.58,
+      "industrial": 0.5,
+      "craft": 0.5,
+      "comfort": 0.2,
+      "whimsy": 0.2
+    },
+    "related": [
+      "grunge",
+      "industrial",
+      "dark-romanticism",
+      "folk-horror"
+    ],
+    "world": {
+      "setting": "a sweaty venue with a low stage, a field festival in the rain",
+      "architecture": "a rehearsal room lined with egg boxes, a bar that has always been a metal bar",
+      "interior": "a wall of vinyl and CDs, a stack of amps, flyers and ticket stubs pinned up",
+      "technology": "a good amp, a guitar set up properly, a phone full of live recordings",
+      "clothes": "a denim or leather vest heavy with patches, a black band shirt, boots",
+      "music": "the whole point: heavy, technical, played and heard loud",
+      "colours": "black, blood red, denim blue, chrome",
+      "everyday": "learning the riff, driving hours to a show, defending the genre and meaning it"
+    }
+  },
+  {
+    "key": "skater",
+    "name": "Skater",
+    "tagline": "The city is only ledges and lines",
+    "description": "Skateboarding and its visual world: worn shoes, filmed tricks, car parks and plazas, and a loyalty to spots most people walk straight past.",
+    "keywords": [
+      "deck",
+      "griptape",
+      "ledge",
+      "plaza",
+      "fisheye"
+    ],
+    "palette": [
+      "#20242b",
+      "#d7b32c",
+      "#a83f2a",
+      "#e6e6e6"
+    ],
+    "imageQuery": [
+      "skateboarder concrete plaza",
+      "worn skate shoes griptape"
+    ],
+    "dimensions": {
+      "urban": 0.9,
+      "individualism": 0.78,
+      "chaos": 0.65,
+      "architecture": 0.65,
+      "refinement": 0.15,
+      "adventure": 0.62,
+      "community": 0.55,
+      "order": 0.18,
+      "whimsy": 0.55,
+      "modernity": 0.5,
+      "tradition": 0.22,
+      "comfort": 0.3,
+      "nature": 0.15,
+      "ornament": 0.18,
+      "intellect": 0.28
+    },
+    "related": [
+      "grunge",
+      "webcore",
+      "brutalism",
+      "blokecore"
+    ],
+    "world": {
+      "setting": "a marble plaza that empties after six, a flat car park with good ledges",
+      "architecture": "civic concrete read for its edges: banks, blocks, handrails, gaps",
+      "interior": "boards stacked by the door, a snapped deck on the wall, a shelf of tapes and zines",
+      "technology": "a phone on a small tripod, a fisheye lens, a clip trimmed to eight seconds",
+      "clothes": "loose trousers, a tee, shoes worn through where the board grips",
+      "music": "hip-hop and punk off a phone speaker, wheels over the joints in the pavement",
+      "colours": "concrete grey, griptape black, faded enamel, hazard yellow",
+      "everyday": "the same spot until the trick lands, bailing and trying again, driving across town for one ledge"
+    }
+  },
+  {
+    "key": "cassette-futurism",
+    "name": "Cassette Futurism",
+    "tagline": "The future as imagined in 1979",
+    "description": "A retro vision of high technology: beige plastic, CRT monitors, chunky switches, magnetic tape and monochrome readouts. The future the past expected, all wires and weight.",
+    "keywords": [
+      "CRT",
+      "beige plastic",
+      "magnetic tape",
+      "toggle switch",
+      "readout"
+    ],
+    "palette": [
+      "#1c1a17",
+      "#3f4a3a",
+      "#b9a06a",
+      "#d9d4c6"
+    ],
+    "imageQuery": [
+      "retro computer terminal beige",
+      "1970s spacecraft control panel"
+    ],
+    "dimensions": {
+      "retro": 0.9,
+      "nostalgia": 0.75,
+      "technology": 0.62,
+      "industrial": 0.58,
+      "digital": 0.55,
+      "order": 0.65,
+      "intellect": 0.62,
+      "modernity": 0.12,
+      "futurism": 0.5,
+      "organic": 0.1,
+      "ornament": 0.12,
+      "comfort": 0.28,
+      "darkness": 0.5,
+      "minimalism": 0.42,
+      "realism": 0.55
+    },
+    "related": [
+      "retrofuturism",
+      "atompunk",
+      "old-web",
+      "dieselpunk"
+    ],
+    "world": {
+      "setting": "a windowless control room lit by screens, a lab of grey steel cabinets",
+      "architecture": "a bunker of poured concrete and strip lighting, rooms built around the machines",
+      "interior": "racks of equipment with real switches, a CRT on every desk, tape reels turning",
+      "technology": "monochrome terminals, dot-matrix printouts, a computer the size of a wardrobe",
+      "clothes": "a technician's jumpsuit, an ID badge, sensible shoes for a long shift",
+      "music": "analogue synth drones, tape hiss, a countdown read aloud",
+      "colours": "beige, olive, amber readout, warning red",
+      "everyday": "booting the system from tape, logging every reading by hand, trusting the hardware because it is heavy"
+    }
+  },
+  {
+    "key": "spacecore",
+    "name": "Spacecore",
+    "tagline": "Look up, and mean it",
+    "description": "A love of space exploration rendered as an aesthetic: star fields, rockets, mission patches, telescopes and the deep quiet of the cosmos. Wonder backed by engineering.",
+    "keywords": [
+      "rocket",
+      "mission patch",
+      "nebula",
+      "telescope",
+      "launch"
+    ],
+    "palette": [
+      "#0a0e1a",
+      "#1b2a4a",
+      "#8a93b5",
+      "#e6e9f2"
+    ],
+    "imageQuery": [
+      "rocket launch night",
+      "nebula stars deep space"
+    ],
+    "dimensions": {
+      "futurism": 0.88,
+      "adventure": 0.75,
+      "technology": 0.78,
+      "intellect": 0.72,
+      "optimism": 0.72,
+      "mystery": 0.65,
+      "order": 0.65,
+      "minimalism": 0.58,
+      "solitude": 0.55,
+      "modernity": 0.62,
+      "nature": 0.15,
+      "organic": 0.1,
+      "ornament": 0.12,
+      "comfort": 0.22,
+      "darkness": 0.5,
+      "fantasy": 0.5
+    },
+    "related": [
+      "retrofuturism",
+      "atompunk",
+      "adventurecore",
+      "dreamcore"
+    ],
+    "world": {
+      "setting": "a desert launch site before dawn, a back garden with a telescope and a flask",
+      "architecture": "a launch gantry, a domed observatory, a mission room facing one big screen",
+      "interior": "star charts on the wall, a globe of the Moon, models of craft that really flew",
+      "technology": "a telescope on a tracking mount, a scanner tuned to the downlink, live telemetry",
+      "clothes": "a flight jacket with patches, a warm hat for night observing, plain and practical",
+      "music": "ambient and choral, a countdown, radio static from very far away",
+      "colours": "deep-space black, nebula blue, star white, booster orange",
+      "everyday": "checking what passes overhead tonight, following every launch, learning the sky by name"
+    }
+  },
+  {
+    "key": "mid-century-modern",
+    "name": "Mid-Century Modern",
+    "tagline": "Good design, built to stay good",
+    "description": "Postwar design at its most confident: clean lines, warm timber, tapered legs, big windows and honest materials. Optimistic, functional and still in production.",
+    "keywords": [
+      "teak",
+      "tapered legs",
+      "open plan",
+      "moulded chair",
+      "picture window"
+    ],
+    "palette": [
+      "#2c2417",
+      "#a8632b",
+      "#5c7a5c",
+      "#e8e1d0"
+    ],
+    "imageQuery": [
+      "mid century modern living room",
+      "teak sideboard moulded chair"
+    ],
+    "dimensions": {
+      "refinement": 0.75,
+      "order": 0.75,
+      "minimalism": 0.68,
+      "modernity": 0.68,
+      "optimism": 0.68,
+      "architecture": 0.8,
+      "craft": 0.58,
+      "comfort": 0.55,
+      "organic": 0.55,
+      "ornament": 0.22,
+      "maximalism": 0.15,
+      "chaos": 0.15,
+      "retro": 0.58,
+      "intellect": 0.55,
+      "nostalgia": 0.5
+    },
+    "related": [
+      "scandinavian-design",
+      "minimalism",
+      "atompunk",
+      "arts-and-crafts"
+    ],
+    "world": {
+      "setting": "a low house on a hillside, glass on the garden side, afternoon light across the floor",
+      "architecture": "a flat roof, post-and-beam framing, walls of window and a core of brick",
+      "interior": "a teak sideboard, a leather-and-plywood chair, a rug with a bold quiet pattern",
+      "technology": "a good record player in a wooden case, a rotary phone kept because it works",
+      "clothes": "well-cut and unfussy, natural fibres, nothing that shouts",
+      "music": "cool jazz, bossa nova, something warm on vinyl in the evening",
+      "colours": "walnut brown, burnt orange, olive, bone white",
+      "everyday": "keeping surfaces clear, buying few things and good ones, letting the light do the decorating"
     }
   }
 ]

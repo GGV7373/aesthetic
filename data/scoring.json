@@ -40,8 +40,14 @@
   ],
   "groups": [
     {
-      "key": "home",
-      "label": "Home and rooms",
+      "key": "sound",
+      "label": "Sound and listening",
+      "min": 2,
+      "max": 3
+    },
+    {
+      "key": "music",
+      "label": "Music and taste",
       "min": 2,
       "max": 3
     },
@@ -58,8 +64,8 @@
       "max": 3
     },
     {
-      "key": "city-country",
-      "label": "City and country",
+      "key": "home",
+      "label": "Home and living space",
       "min": 2,
       "max": 3
     },

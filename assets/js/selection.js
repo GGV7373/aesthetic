@@ -1,7 +1,7 @@
-/* Picks 50 of the 180 statements for each run.
+/* Picks 50 of the 190 statements for each run.
 
-   The statements sit in 18 themed groups of ten — home and rooms, weather and
-   light, screens and the net, and so on. Every run draws 2-3 from each group.
+   The statements sit in 19 themed groups of ten — sound and listening, music and
+   taste, screens and the net, and so on. Every run draws 2-3 from each group.
    That buys two things at once: the themes are always covered, and which
    statements you actually get is new each time.
 

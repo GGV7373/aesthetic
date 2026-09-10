@@ -144,7 +144,7 @@
         'technology, history, order, solitude, darkness and beauty.'
       ]),
       el('p', { class: 'lede lede--muted' }, [
-        'The questions sit in ' + data.config.groups.length + ' themed groups of ten — home, ' +
+        'The questions sit in ' + data.config.groups.length + ' themed groups of ten — music, ' +
         'weather, screens, the unexplained, and so on — and each run draws two or three ' +
         'from every group. No statement belongs to any one aesthetic, and you are never ' +
         'told what something measures until the result. Answer honestly rather than ' +

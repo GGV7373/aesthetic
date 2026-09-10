@@ -81,7 +81,7 @@
 
      The top gets an absolute value — how well the aesthetic actually fits the
      profile. The rest are placed by how far they fall below the top, measured
-     against this person's own spread. Without that last part all 65 would land
+     against this person's own spread. Without that last part all 77 would land
      within ten points of each other and the ranking would say nothing.      */
   function assignPercentages(ranked, matching) {
     if (!ranked.length) return ranked;

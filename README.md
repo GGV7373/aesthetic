@@ -1,8 +1,8 @@
 # What Aesthetic Are You?
 
 A personality test that finds which **aesthetic world** you belong to — not which
-pictures you like. 180 statements in the bank, 50 per run, 35 hidden dimensions and
-65 aesthetics, using Aesthetics Wiki as a reference.
+pictures you like. 190 statements in the bank, 50 per run, 35 hidden dimensions and
+77 aesthetics, using Aesthetics Wiki as a reference.
 
 No framework, no build step, no dependencies. Open `index.html`.
 OR use the website at [estetikk.netlify.app](https://estetikk.netlify.app).
@@ -75,7 +75,7 @@ return to a three-column grid, and the hero foot goes back to two columns.
 The point is that no statement belongs to any one aesthetic. The chain is:
 
 ```
-answers  →  35 dimensions  →  match against 65 aesthetic profiles
+answers  →  35 dimensions  →  match against 77 aesthetic profiles
 ```
 
 A question about old buildings never scores points for "Dark Academia". It moves
@@ -98,7 +98,7 @@ Each aesthetic is compared dimension by dimension. Every dimension is weighted b
 * **confidence** — how well the dimension was measured
 
 The top match gets an absolute percentage. The rest are placed by how far they fall
-below the top, measured against your own spread — without that, all 65 would land
+below the top, measured against your own spread — without that, all 77 would land
 within ten points of each other and the ranking would say nothing.
 
 ### The hidden aesthetic
@@ -118,21 +118,22 @@ the combination was assembled from your profile.
 
 ## Question selection
 
-The 180 statements sit in **18 themed groups of ten**. Each run draws **2–3 from every
+The 190 statements sit in **19 themed groups of ten**. Each run draws **2–3 from every
 group**, which is what makes two runs feel genuinely different while still covering
 every theme.
 
 | Group | Group |
 |---|---|
-| Home and rooms | Tools and craft |
+| Sound and listening | Music and taste |
 | Nature and wilderness | People and solitude |
 | Weather, light and seasons | The unexplained |
-| City and country | Imagination and play |
+| Home and living space | Imagination and play |
 | Buildings and architecture | Order and chaos |
 | The past and memory | Style, colour and materials |
 | Tradition and community | Travel and adventure |
 | Screens and the net | Temperament |
 | The future and progress | Values and self-image |
+| Tools and craft | |
 
 On top of that:
 
@@ -162,8 +163,8 @@ assets/js/
   images.js       optional Wikimedia Commons photos
   app.js          screens and flow
 data/
-  questions.json  180 statements with dimension weights
-  aesthetics.json 65 aesthetics: profile, palette, search terms, "world"
+  questions.json  190 statements with dimension weights
+  aesthetics.json 77 aesthetics: profile, palette, search terms, "world"
   scoring.json    scale, groups, dimensions, matching parameters
   narrative.json  phrase banks
   bundle.js       GENERATED — fallback for file://
@@ -204,7 +205,7 @@ score down.
 ```json
 {
   "id": 181,
-  "group": "home",
+  "group": "sound",
   "cluster": "unique-cluster",
   "text": "A statement that doesn't give away what it measures.",
   "dimensions": { "history": 2, "nostalgia": 2, "modernity": -1 }
@@ -230,16 +231,16 @@ discriminates:
 
 ```
 — Selection (400 runs) —
-  statements used:            180 / 180
+  statements used:            190 / 190
   duplicate clusters:         0
   same group twice in a row:  0.00 per quiz
-  distinct quota shapes:      378 of 400 runs
+  distinct quota shapes:      400 of 400 runs
 
 — Scoring (600 simulated people) —
-  distinct winners:           38 / 65
-  distinct hidden picks:      54
-  average top match:          80.5%
-  combination shown:          35% of the time
+  distinct winners:           46 / 77
+  distinct hidden picks:      60
+  average top match:          81.1%
+  combination shown:          32% of the time
 ```
 
 ---
