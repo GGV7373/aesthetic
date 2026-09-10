@@ -1,16 +1,16 @@
-/* Velger 50 av 180 spørsmål per gjennomføring.
+/* Picks 50 of the 180 statements for each run.
 
-   Spørsmålene ligger i 18 tematiske grupper med ti spørsmål i hver — hus og rom,
-   vær og lys, skjerm og nett, og så videre. Hver gjennomføring trekker 2–3 fra
-   hver gruppe. Det gir to ting samtidig: temaene er alltid dekket, og hvilke
-   spørsmål du faktisk får er nytt hver gang.
+   The statements sit in 18 themed groups of ten — home and rooms, weather and
+   light, screens and the net, and so on. Every run draws 2-3 from each group.
+   That buys two things at once: the themes are always covered, and which
+   statements you actually get is new each time.
 
-   Resten av kravene:
-   - aldri to nesten like spørsmål (samme "cluster") i samme quiz
-   - spørsmål brukeren nettopp har hatt, velges bort så lenge det finnes ferske
-   - alle dimensjoner skal ha minst litt dekning
-   - to spørsmål på rad kommer helst fra ulike grupper
-   - alt styres av seed, slik at en gjennomføring kan gjenskapes               */
+   The rest of the requirements:
+   - never two near-identical statements (same "cluster") in one quiz
+   - statements just seen are set aside while fresh ones remain
+   - every dimension has to get at least some coverage
+   - two statements in a row should come from different groups
+   - everything is driven by the seed, so a run can be recreated              */
 (function (global) {
   'use strict';
   var AQ = (global.AQ = global.AQ || {});
@@ -23,9 +23,9 @@
     return map;
   }
 
-  /* Fordeler de 50 plassene på gruppene. Alle får minimum først, så deles
-     resten ut tilfeldig til grupper som har plass — derfor får noen grupper to
-     spørsmål og andre tre, og hvilke det er varierer fra gang til gang. */
+  /* Hands the 50 slots out to the groups. Everyone gets their minimum first, then
+     the remainder goes out at random to groups with room — which is why some
+     groups give two statements and others three, and why that shifts each run. */
   function drawQuotas(groups, total, rng) {
     var quota = {};
     var used = 0;
@@ -44,7 +44,7 @@
       room = groups.filter(function (g) { return quota[g.key] < g.max; });
     }
 
-    /* Skulle minimumene overstige totalen, trimmes de tilfeldig ned igjen. */
+    /* Should the minimums exceed the total, trim back down at random. */
     while (used > total) {
       var over = AQ.rng.shuffle(
         groups.filter(function (g) { return quota[g.key] > 0; }),
@@ -58,7 +58,7 @@
     return quota;
   }
 
-  /* Ferske spørsmål først, deretter tidligere brukte — begge grupper stokket. */
+  /* Fresh statements first, then previously used ones — both halves shuffled. */
   function prioritise(pool, excluded, rng) {
     var shuffled = AQ.rng.shuffle(pool, rng);
     var fresh = [];
@@ -72,7 +72,7 @@
   function takeFromGroup(ordered, quota, usedClusters, chosenIds) {
     var picked = [];
     var i;
-    /* Runde 1: respekter cluster-sperren. */
+    /* Pass 1: respect the cluster lock. */
     for (i = 0; i < ordered.length && picked.length < quota; i++) {
       var q = ordered[i];
       if (chosenIds[q.id] || usedClusters[q.cluster]) continue;
@@ -80,7 +80,7 @@
       chosenIds[q.id] = true;
       usedClusters[q.cluster] = true;
     }
-    /* Runde 2: for få igjen — slipp cluster-kravet framfor å levere færre. */
+    /* Pass 2: too few left — drop the cluster rule rather than deliver fewer. */
     for (i = 0; i < ordered.length && picked.length < quota; i++) {
       var q2 = ordered[i];
       if (chosenIds[q2.id]) continue;
@@ -102,7 +102,7 @@
     return cov;
   }
 
-  /* Bytter inn spørsmål for dimensjoner som ellers ville hatt null dekning. */
+  /* Swaps in statements for dimensions that would otherwise get no coverage. */
   function repairCoverage(selected, allQuestions, dimensionKeys, chosenIds, rng) {
     var cov = coverageOf(selected, dimensionKeys);
     var missing = dimensionKeys.filter(function (k) { return !cov[k]; });
@@ -126,8 +126,8 @@
       }
       if (!candidate) return;
 
-      /* Kast ut spørsmålet som betyr minst: helst fra samme gruppe, og aldri et
-         som er eneste kilde til en dimensjon. */
+      /* Drop the statement that matters least: preferably from the same group, and
+         never one that is the only source for a dimension. */
       var currentCov = coverageOf(out, dimensionKeys);
       var victimIndex = -1;
       var victimScore = Infinity;
@@ -153,7 +153,7 @@
     return out;
   }
 
-  /* Sprer gruppene, slik at rekkefølgen ikke avslører hva som måles. */
+  /* Spreads the groups out, so the order gives nothing away about what is measured. */
   function spread(selected, rng) {
     var buckets = {};
     AQ.rng.shuffle(selected, rng).forEach(function (q) {
@@ -207,7 +207,7 @@
       );
     });
 
-    /* Sikkerhetsnett hvis en gruppe var for liten til å fylle kvoten sin. */
+    /* Safety net if a group was too small to fill its quota. */
     if (selected.length < total) {
       var rest = prioritise(
         data.questions.filter(function (q) { return !chosenIds[q.id]; }),

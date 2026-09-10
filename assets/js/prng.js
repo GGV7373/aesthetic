@@ -1,5 +1,5 @@
-/* Deterministisk tilfeldighet.
-   Samme seed => samme quiz. Gjør det mulig å gjenta en gjennomføring via ?seed= */
+/* Deterministic randomness.
+   Same seed => same quiz, which is what makes ?seed= able to replay a run. */
 (function (global) {
   'use strict';
   var AQ = (global.AQ = global.AQ || {});
@@ -24,7 +24,7 @@
     };
   }
 
-  /* Kort, lesbar seed-streng: 8 tegn fra et alfabet uten forvekslinger. */
+  /* Short, readable seed string: 8 characters from an alphabet with no lookalikes. */
   var ALPHABET = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
 
   function newSeedString() {
@@ -52,7 +52,7 @@
     return mulberry32(hashString(normaliseSeed(seedString) + '|' + (salt || '')));
   }
 
-  /* Fisher-Yates med gitt rng. Muterer ikke input. */
+  /* Fisher-Yates with a supplied rng. Does not mutate the input. */
   function shuffle(list, rng) {
     var arr = list.slice();
     for (var i = arr.length - 1; i > 0; i--) {

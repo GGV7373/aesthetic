@@ -1,9 +1,9 @@
-/* Stemningsbilder.
+/* Mood plates.
 
-   Ingen bilde-API er koblet til, og bilder fra Aesthetics Wiki kan ikke brukes
-   uten tillatelse. Derfor genereres hvert bilde her: et SVG bygget av
-   estetikkens egen palett og dimensjoner, med seed slik at samme estetikk ser
-   lik ut hver gang den vises.                                                */
+   Aesthetics Wiki images are not freely licensed, so each plate is generated
+   here instead: an SVG built from the aesthetic's own palette and dimensions,
+   seeded so the same aesthetic always looks the same. Photographs, when they
+   load, are layered on separately by images.js.                             */
 (function (global) {
   'use strict';
   var AQ = (global.AQ = global.AQ || {});
@@ -33,10 +33,10 @@
 
     var svg = [];
     svg.push('<svg viewBox="0 0 ' + W + ' ' + H + '" xmlns="http://www.w3.org/2000/svg" ' +
-      'preserveAspectRatio="xMidYMid slice" role="img" aria-label="Stemningsbilde for ' +
+      'preserveAspectRatio="xMidYMid slice" role="img" aria-label="Generated mood plate for ' +
       aesthetic.name + '">');
 
-    /* --- definisjoner --- */
+    /* --- definitions --- */
     svg.push('<defs>');
     var angle = Math.round(rand(rng, 20, 160));
     svg.push('<linearGradient id="' + id + 'bg" gradientTransform="rotate(' + angle + ' 0.5 0.5)">' +
@@ -60,10 +60,10 @@
       'numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>');
     svg.push('</defs>');
 
-    /* --- bunn --- */
+    /* --- ground --- */
     svg.push('<rect width="' + W + '" height="' + H + '" fill="url(#' + id + 'bg)"/>');
 
-    /* --- struktur: enten geometriske bånd eller organiske former --- */
+    /* --- structure: geometric bands for the ordered, organic shapes for the rest --- */
     var bands = 3 + Math.round(busy * 4);
     if (structured > 0.6) {
       for (var i = 0; i < bands; i++) {
@@ -88,7 +88,7 @@
       }
     }
 
-    /* --- lyskilder --- */
+    /* --- light sources --- */
     var blobs = 3 + Math.round(busy * 3);
     for (var k = 0; k < blobs; k++) {
       var gx = rand(rng, -0.1, 1.1) * W;
@@ -100,12 +100,12 @@
         ')" filter="url(#' + id + 'soft)"/>');
     }
 
-    /* --- horisont: en tynn strek som gir bildet retning --- */
+    /* --- horizon: a thin line that gives the image a direction --- */
     var hy = rand(rng, 0.45, 0.72) * H;
     svg.push('<rect x="0" y="' + hy.toFixed(0) + '" width="' + W + '" height="1" fill="' + p[3] +
       '" opacity="' + (0.1 + light * 0.18).toFixed(2) + '"/>');
 
-    /* --- korn og vignett --- */
+    /* --- grain and vignette --- */
     svg.push('<rect width="' + W + '" height="' + H + '" filter="url(#' + id +
       'grain)" opacity="0.16" style="mix-blend-mode:overlay"/>');
     svg.push('<rect width="' + W + '" height="' + H + '" fill="url(#' + id + 'vig)"/>');
@@ -114,7 +114,7 @@
     return svg.join('');
   }
 
-  /* Liten variant til listeoppføringer. */
+  /* Small variant for list rows. */
   function swatch(aesthetic) {
     var p = aesthetic.palette;
     return 'linear-gradient(135deg, ' + p[1] + ' 0%, ' + p[2] + ' 55%, ' + p[3] + ' 100%)';

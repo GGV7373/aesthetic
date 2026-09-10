@@ -1,21 +1,21 @@
-/* Setter sammen resultatteksten.
+/* Assembles the result text.
 
-   To ting skal føles personlige: forklaringen på hvorfor estetikken traff, og
-   beskrivelsen av hvordan nettopp din versjon av den ser ut. Begge bygges av
-   profilen — aldri av enkeltsvar, og aldri med tall fra scoringen.          */
+   Two things have to feel personal: why this aesthetic landed on top, and what
+   your particular version of it would look like. Both are built from the
+   profile — never from single answers, and never with numbers from the scoring. */
 (function (global) {
   'use strict';
   var AQ = (global.AQ = global.AQ || {});
 
   var FACETS = [
-    { key: 'omgivelser', label: 'Omgivelser' },
-    { key: 'arkitektur', label: 'Arkitektur' },
-    { key: 'interior', label: 'Interiør' },
-    { key: 'teknologi', label: 'Teknologi' },
-    { key: 'klaer', label: 'Klær' },
-    { key: 'musikk', label: 'Musikk' },
-    { key: 'farger', label: 'Farger' },
-    { key: 'hverdag', label: 'Hverdagsliv' }
+    { key: 'setting', label: 'Setting' },
+    { key: 'architecture', label: 'Architecture' },
+    { key: 'interior', label: 'Interior' },
+    { key: 'technology', label: 'Technology' },
+    { key: 'clothes', label: 'Clothes' },
+    { key: 'music', label: 'Music' },
+    { key: 'colours', label: 'Colours' },
+    { key: 'everyday', label: 'Everyday life' }
   ];
 
   var HIGH = 0.6;
@@ -38,7 +38,8 @@
     return pick(options, rng);
   }
 
-  /* Hvor mye en dimensjon faktisk sier om brukeren: avstand fra midten × datagrunnlag. */
+  /* How much a dimension actually says about someone: distance from the middle,
+     multiplied by how much data the quiz gathered for it. */
   function distinctive(profile, dimensionKeys) {
     return dimensionKeys
       .map(function (k) {
@@ -49,14 +50,14 @@
       .sort(function (a, b) { return b.strength - a.strength; });
   }
 
-  function joinNorwegian(parts) {
+  function joinList(parts) {
     if (parts.length === 1) return parts[0];
-    if (parts.length === 2) return parts[0] + ' og ' + parts[1];
-    return parts.slice(0, -1).join(', ') + ' og ' + parts[parts.length - 1];
+    if (parts.length === 2) return parts[0] + ' and ' + parts[1];
+    return parts.slice(0, -1).join(', ') + ' and ' + parts[parts.length - 1];
   }
 
-  /* "Trekkes mot ensomhet", "trenger få mennesker" og "søker vekk fra folk" er tre
-     måter å si det samme på. Én per gruppe i hver setning. */
+  /* "Drawn to solitude", "needs few people" and "avoids crowds" are three ways of
+     saying one thing. One phrase per group in each sentence. */
   function groupOf(data, key) {
     var groups = data.narrative.phraseGroups || [];
     for (var i = 0; i < groups.length; i++) {
@@ -75,7 +76,7 @@
     var used = {};
     var sentences = [];
 
-    /* 1. Hvem svarene peker mot, uavhengig av estetikk. */
+    /* 1. Who the answers point to, independent of any aesthetic. */
     var lead = [];
     var leadGroups = {};
     for (var i = 0; i < traits.length && lead.length < 3; i++) {
@@ -88,10 +89,10 @@
       lead.push(p);
     }
     if (lead.length) {
-      sentences.push(pick(narrative.openers, rng) + ' ' + joinNorwegian(lead) + '.');
+      sentences.push(pick(narrative.openers, rng) + ' ' + joinList(lead) + '.');
     }
 
-    /* 2. Hva som faktisk gjorde utslaget for toppestetikken. */
+    /* 2. What actually decided the top aesthetic. */
     var primaryParts = (result.primary.parts || []).filter(function (part) {
       return part.agreement > 0.72 && part.weight > 0.25;
     });
@@ -116,10 +117,10 @@
     }
     if (reasons.length) {
       var leadIn = pick(narrative.matchLead, rng).replace('{name}', result.primary.name);
-      sentences.push(leadIn + ' du ' + joinNorwegian(reasons) + '.');
+      sentences.push(leadIn + ' ' + joinList(reasons) + '.');
     }
 
-    /* 3. Der profilen din skiller seg fra den rene versjonen av estetikken. */
+    /* 3. Where the profile departs from the pure version of the aesthetic. */
     var tension = (result.primary.parts || [])
       .filter(function (part) { return part.agreement < 0.55 && part.weight > 0.3; })
       .sort(function (a, b) { return a.agreement - b.agreement; })[0];
@@ -127,8 +128,9 @@
       var meta = data.dimensionMeta[tension.key];
       var side = tension.user >= 0.5 ? meta.high : meta.low;
       sentences.push(
-        'Du er samtidig mer «' + side.toLowerCase() + '» enn den reneste versjonen av ' +
-          result.primary.name + ' pleier å være, og det er dét som gjør varianten din til din egen.'
+        narrative.tension
+          .replace('{side}', side.toLowerCase())
+          .replace('{name}', result.primary.name)
       );
     }
 
@@ -169,7 +171,7 @@
 
     function twoKeywords(x) {
       var kws = AQ.rng.shuffle(x.keywords || [], rng).slice(0, 2);
-      return kws.length ? joinNorwegian(kws) : x.tagline.toLowerCase();
+      return kws.length ? joinList(kws) : x.tagline.toLowerCase();
     }
 
     var bridge = pick(narrative.hybrid.bridge, rng)
@@ -178,7 +180,7 @@
       .replace('{qa}', twoKeywords(a))
       .replace('{qb}', twoKeywords(b));
 
-    /* Der de to trekker i hver sin retning — og hvilken vei du selv heller. */
+    /* Where the two pull in opposite directions — and which way you lean. */
     var contrasts = [];
     Object.keys(a.dimensions).forEach(function (k) {
       if (b.dimensions[k] === undefined) return;
@@ -192,12 +194,10 @@
       var c = contrasts[0];
       var meta = data.dimensionMeta[c.key];
       var mine = profile && profile.value[c.key] !== undefined ? profile.value[c.key] : 0.5;
-      var closerToA = Math.abs(c.a - mine);
-      var closerToB = Math.abs(c.b - mine);
-      var leaning = closerToA <= closerToB ? a.name : b.name;
+      var leaning = Math.abs(c.a - mine) <= Math.abs(c.b - mine) ? a.name : b.name;
       tension =
-        'De trekker fra hverandre på ' + meta.label.toLowerCase() +
-        ', og der lander du nærmest ' + leaning + '.';
+        'They pull apart on ' + meta.label.toLowerCase() +
+        ', and there you land closer to ' + leaning + '.';
     }
 
     return {

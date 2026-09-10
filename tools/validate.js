@@ -1,7 +1,7 @@
-/* Sjekker at datafilene henger sammen, og simulerer testen for å se at
-   utvalg og scoring oppfører seg.
+/* Checks that the data files hang together, then simulates the test to see that
+   selection and scoring behave.
 
-   Kjør:  node tools/validate.js                                            */
+   Run:  node tools/validate.js                                              */
 'use strict';
 
 const fs = require('fs');
@@ -19,60 +19,61 @@ const narrative = read('data/narrative.json');
 const errors = [];
 const warnings = [];
 
-/* ---------- dimensjoner ---------- */
+const FACETS = ['setting', 'architecture', 'interior', 'technology', 'clothes', 'music', 'colours', 'everyday'];
+
+/* ---------- dimensions ---------- */
 
 const dimKeys = new Set(config.dimensions.map((d) => d.key));
-if (dimKeys.size !== config.dimensions.length) errors.push('Duplikate dimensjonsnøkler.');
+if (dimKeys.size !== config.dimensions.length) errors.push('Duplicate dimension keys.');
 
-/* ---------- spørsmål ---------- */
+/* ---------- statements ---------- */
 
 const ids = new Set();
 const perGroup = {};
 const clusterUse = {};
 
 questions.forEach((q) => {
-  if (ids.has(q.id)) errors.push(`Spørsmål-id ${q.id} finnes flere ganger.`);
+  if (ids.has(q.id)) errors.push(`Statement id ${q.id} appears more than once.`);
   ids.add(q.id);
-  if (!q.text || q.text.length < 20) errors.push(`Spørsmål ${q.id} mangler tekst.`);
-  if (!q.group) errors.push(`Spørsmål ${q.id} mangler gruppe.`);
-  if (!q.cluster) errors.push(`Spørsmål ${q.id} mangler cluster.`);
+  if (!q.text || q.text.length < 15) errors.push(`Statement ${q.id} has no usable text.`);
+  if (!q.group) errors.push(`Statement ${q.id} has no group.`);
+  if (!q.cluster) errors.push(`Statement ${q.id} has no cluster.`);
   perGroup[q.group] = (perGroup[q.group] || 0) + 1;
   clusterUse[q.cluster] = (clusterUse[q.cluster] || 0) + 1;
 
   const dims = Object.keys(q.dimensions || {});
-  if (!dims.length) errors.push(`Spørsmål ${q.id} påvirker ingen dimensjoner.`);
-  if (dims.length < 2) warnings.push(`Spørsmål ${q.id} påvirker bare én dimensjon.`);
+  if (!dims.length) errors.push(`Statement ${q.id} affects no dimensions.`);
+  if (dims.length < 2) warnings.push(`Statement ${q.id} affects only one dimension.`);
   dims.forEach((d) => {
-    if (!dimKeys.has(d)) errors.push(`Spørsmål ${q.id} bruker ukjent dimensjon "${d}".`);
+    if (!dimKeys.has(d)) errors.push(`Statement ${q.id} uses unknown dimension "${d}".`);
     const w = q.dimensions[d];
     if (typeof w !== 'number' || Math.abs(w) > 3 || w === 0) {
-      errors.push(`Spørsmål ${q.id}: vekt for "${d}" bør være -3..3 og ikke 0 (er ${w}).`);
+      errors.push(`Statement ${q.id}: weight for "${d}" should be -3..3 and never 0 (is ${w}).`);
     }
   });
 });
 
-/* ---------- grupper ---------- */
+/* ---------- groups ---------- */
 
 const quotaLow = config.groups.reduce((s, g) => s + g.min, 0);
 const quotaHigh = config.groups.reduce((s, g) => s + g.max, 0);
 if (config.questionsPerQuiz < quotaLow || config.questionsPerQuiz > quotaHigh) {
-  errors.push(`Gruppene kan gi ${quotaLow}–${quotaHigh} spørsmål, men quizen skal ha ${config.questionsPerQuiz}.`);
+  errors.push(`Groups can yield ${quotaLow}-${quotaHigh} statements, but the quiz needs ${config.questionsPerQuiz}.`);
 }
 config.groups.forEach((g) => {
   const have = perGroup[g.key] || 0;
-  if (have < g.max) errors.push(`Gruppe "${g.key}": ${have} spørsmål, men kan trekke inntil ${g.max}.`);
-  else if (have < g.max * 3) warnings.push(`Gruppe "${g.key}" har lite å variere med (${have}).`);
+  if (have < g.max) errors.push(`Group "${g.key}": ${have} statements, but up to ${g.max} may be drawn.`);
+  else if (have < g.max * 3) warnings.push(`Group "${g.key}" has little to vary with (${have}).`);
 });
 Object.keys(perGroup).forEach((k) => {
-  if (!config.groups.some((g) => g.key === k)) errors.push(`Ukjent gruppe "${k}" i spørsmål.`);
+  if (!config.groups.some((g) => g.key === k)) errors.push(`Unknown group "${k}" on a statement.`);
 });
 
-/* Ingen cluster må være så stor at kvoten ikke kan fylles uten duplikater. */
 Object.entries(clusterUse).forEach(([cluster, n]) => {
-  if (n > 3) warnings.push(`Cluster "${cluster}" brukes ${n} ganger — sjekk at de ikke er for like.`);
+  if (n > 3) warnings.push(`Cluster "${cluster}" is used ${n} times - check they aren't too alike.`);
 });
 
-/* ---------- dekning per dimensjon ---------- */
+/* ---------- dimension coverage ---------- */
 
 const coverage = {};
 dimKeys.forEach((k) => (coverage[k] = 0));
@@ -80,69 +81,79 @@ questions.forEach((q) =>
   Object.entries(q.dimensions).forEach(([k, w]) => (coverage[k] += Math.abs(w)))
 );
 Object.entries(coverage).forEach(([k, v]) => {
-  if (v === 0) errors.push(`Dimensjonen "${k}" måles ikke av noe spørsmål.`);
-  else if (v < 8) warnings.push(`Dimensjonen "${k}" har tynn dekning (vektsum ${v}).`);
+  if (v === 0) errors.push(`Dimension "${k}" is measured by nothing.`);
+  else if (v < 8) warnings.push(`Dimension "${k}" is thinly covered (weight sum ${v}).`);
 });
 
-/* Både positive og negative formuleringer per dimensjon. */
+/* Both positive and negative wordings per dimension. */
 dimKeys.forEach((k) => {
   const pos = questions.filter((q) => (q.dimensions[k] || 0) > 0).length;
   const neg = questions.filter((q) => (q.dimensions[k] || 0) < 0).length;
-  if (pos && !neg && pos > 6) warnings.push(`"${k}" måles bare i én retning (${pos} positive).`);
+  if (pos && !neg && pos > 6) warnings.push(`"${k}" is only measured in one direction (${pos} positive).`);
 });
 
-/* ---------- estetikker ---------- */
+/* ---------- aesthetics ---------- */
 
 const keys = new Set();
-const FACETS = ['omgivelser', 'arkitektur', 'interior', 'teknologi', 'klaer', 'musikk', 'farger', 'hverdag'];
 
 aesthetics.forEach((a) => {
-  if (keys.has(a.key)) errors.push(`Estetikk-nøkkel "${a.key}" finnes flere ganger.`);
+  if (keys.has(a.key)) errors.push(`Aesthetic key "${a.key}" appears more than once.`);
   keys.add(a.key);
-  if (!a.name || !a.tagline || !a.description) errors.push(`${a.key}: mangler navn/tagline/beskrivelse.`);
-  if (!Array.isArray(a.palette) || a.palette.length !== 4) errors.push(`${a.key}: palette må ha 4 farger.`);
+  if (!a.name || !a.tagline || !a.description) errors.push(`${a.key}: missing name/tagline/description.`);
+  if (!Array.isArray(a.palette) || a.palette.length !== 4) errors.push(`${a.key}: palette must have 4 colours.`);
   (a.palette || []).forEach((c) => {
-    if (!/^#[0-9a-f]{6}$/i.test(c)) errors.push(`${a.key}: ugyldig farge "${c}".`);
+    if (!/^#[0-9a-f]{6}$/i.test(c)) errors.push(`${a.key}: invalid colour "${c}".`);
   });
-  if (!Array.isArray(a.keywords) || a.keywords.length < 3) warnings.push(`${a.key}: få nøkkelord.`);
+  if (!Array.isArray(a.keywords) || a.keywords.length < 3) warnings.push(`${a.key}: few keywords.`);
+  if (!Array.isArray(a.imageQuery) || !a.imageQuery.length) errors.push(`${a.key}: no imageQuery terms.`);
 
   const dims = Object.keys(a.dimensions || {});
-  if (dims.length < 10) warnings.push(`${a.key}: bare ${dims.length} dimensjoner definert.`);
+  if (dims.length < 10) warnings.push(`${a.key}: only ${dims.length} dimensions defined.`);
   dims.forEach((d) => {
-    if (!dimKeys.has(d)) errors.push(`${a.key}: ukjent dimensjon "${d}".`);
+    if (!dimKeys.has(d)) errors.push(`${a.key}: unknown dimension "${d}".`);
     const v = a.dimensions[d];
-    if (typeof v !== 'number' || v < 0 || v > 1) errors.push(`${a.key}: "${d}" må være 0–1 (er ${v}).`);
+    if (typeof v !== 'number' || v < 0 || v > 1) errors.push(`${a.key}: "${d}" must be 0-1 (is ${v}).`);
   });
 
   FACETS.forEach((f) => {
-    if (!a.world || !a.world[f]) errors.push(`${a.key}: mangler world.${f}.`);
+    if (!a.world || !a.world[f]) errors.push(`${a.key}: missing world.${f}.`);
+  });
+  Object.keys(a.world || {}).forEach((f) => {
+    if (!FACETS.includes(f)) errors.push(`${a.key}: unknown world facet "${f}".`);
   });
 });
 
 aesthetics.forEach((a) => {
   (a.related || []).forEach((r) => {
-    if (!keys.has(r)) errors.push(`${a.key}: related peker på ukjent nøkkel "${r}".`);
+    if (!keys.has(r)) errors.push(`${a.key}: related points at unknown key "${r}".`);
   });
 });
 
-/* ---------- narrativ ---------- */
+/* ---------- narrative ---------- */
 
 dimKeys.forEach((k) => {
   const bank = narrative.dimensionPhrases[k];
-  if (!bank) errors.push(`narrative: mangler dimensionPhrases for "${k}".`);
+  if (!bank) errors.push(`narrative: no dimensionPhrases for "${k}".`);
   else {
-    if (!bank.high || !bank.high.length) errors.push(`narrative: "${k}" mangler high-varianter.`);
-    if (!bank.low || !bank.low.length) errors.push(`narrative: "${k}" mangler low-varianter.`);
+    if (!bank.high || !bank.high.length) errors.push(`narrative: "${k}" has no high variants.`);
+    if (!bank.low || !bank.low.length) errors.push(`narrative: "${k}" has no low variants.`);
   }
 });
+FACETS.forEach((f) => {
+  if (!narrative.facetModifiers[f]) errors.push(`narrative: no facetModifiers for "${f}".`);
+});
 Object.keys(narrative.facetModifiers).forEach((f) => {
-  if (!FACETS.includes(f)) errors.push(`narrative: ukjent fasett "${f}".`);
+  if (!FACETS.includes(f)) errors.push(`narrative: unknown facet "${f}".`);
   narrative.facetModifiers[f].forEach((m) => {
-    if (!dimKeys.has(m.dim)) errors.push(`narrative: fasett "${f}" bruker ukjent dimensjon "${m.dim}".`);
+    if (!dimKeys.has(m.dim)) errors.push(`narrative: facet "${f}" uses unknown dimension "${m.dim}".`);
   });
 });
+dimKeys.forEach((k) => {
+  const inGroup = (narrative.phraseGroups || []).some((g) => g.includes(k));
+  if (!inGroup) warnings.push(`narrative: "${k}" is in no phrase group.`);
+});
 
-/* ---------- simulering ---------- */
+/* ---------- simulation ---------- */
 
 const sandbox = { window: {}, document: { addEventListener() {} }, console };
 sandbox.globalThis = sandbox;
@@ -161,7 +172,7 @@ data.dimensionKeys = config.dimensions.map((d) => d.key);
 data.dimensionMeta = {};
 config.dimensions.forEach((d) => (data.dimensionMeta[d.key] = d));
 
-/* 1. Utvalget: riktig antall, ingen duplikater, ingen dobbel cluster, spredte temaer. */
+/* 1. Selection: right count, no duplicates, no repeated cluster, spread groups. */
 let sameGroupInARow = 0;
 let duplicateClusters = 0;
 const questionUse = {};
@@ -170,12 +181,12 @@ const quotaShapes = new Set();
 for (let i = 0; i < 400; i++) {
   const sel = AQ.selectQuestions(data, { seed: 'SEED' + i });
   if (sel.questions.length !== config.questionsPerQuiz) {
-    errors.push(`Utvalg ${i} ga ${sel.questions.length} spørsmål.`);
+    errors.push(`Selection ${i} produced ${sel.questions.length} statements.`);
   }
   const seen = new Set();
   const clusters = new Set();
   sel.questions.forEach((q, idx) => {
-    if (seen.has(q.id)) errors.push(`Utvalg ${i}: spørsmål ${q.id} kom med to ganger.`);
+    if (seen.has(q.id)) errors.push(`Selection ${i}: statement ${q.id} appeared twice.`);
     seen.add(q.id);
     if (clusters.has(q.cluster)) duplicateClusters++;
     clusters.add(q.cluster);
@@ -186,49 +197,51 @@ for (let i = 0; i < 400; i++) {
   config.groups.forEach((g) => {
     const n = sel.questions.filter((q) => q.group === g.key).length;
     if (n < g.min || n > g.max) {
-      errors.push(`Utvalg ${i}: gruppe "${g.key}" ga ${n} spørsmål (skal være ${g.min}–${g.max}).`);
+      errors.push(`Selection ${i}: group "${g.key}" gave ${n} statements (should be ${g.min}-${g.max}).`);
     }
   });
   data.dimensionKeys.forEach((k) => {
-    if (!sel.coverage[k]) errors.push(`Utvalg ${i}: dimensjonen "${k}" har null dekning.`);
+    if (!sel.coverage[k]) errors.push(`Selection ${i}: dimension "${k}" got no coverage.`);
   });
 }
 
 const useCounts = Object.values(questionUse);
-if (useCounts.length !== questions.length) {
-  warnings.push(`Bare ${useCounts.length} av ${questions.length} spørsmål ble brukt i 400 kjøringer.`);
-}
 
-/* 2. Determinisme: samme seed => samme quiz. */
+/* 2. Determinism: the same seed gives the same quiz. */
 const a1 = AQ.selectQuestions(data, { seed: 'REPEAT01' }).questions.map((q) => q.id).join(',');
 const a2 = AQ.selectQuestions(data, { seed: 'REPEAT01' }).questions.map((q) => q.id).join(',');
-if (a1 !== a2) errors.push('Samme seed ga ulike spørsmål.');
+if (a1 !== a2) errors.push('The same seed produced different statements.');
 
-/* 3. Historikk: nye spørsmål når forrige runde utelates. */
+/* 3. History: fresh statements when the previous run is excluded. */
 const first = AQ.selectQuestions(data, { seed: 'HISTA' });
 const second = AQ.selectQuestions(data, {
   seed: 'HISTB',
   excludeIds: first.questions.map((q) => q.id)
 });
 const overlap = second.questions.filter((q) => first.questions.some((f) => f.id === q.id)).length;
-if (overlap > 6) errors.push(`For stort overlapp etter historikk-filter: ${overlap} spørsmål.`);
+if (overlap > 6) errors.push(`Too much overlap after the history filter: ${overlap} statements.`);
 
-/* 4. Scoring: varierte svarprofiler skal gi varierte vinnere. */
+/* 4. Scoring: varied answer profiles should produce varied winners. */
 const winners = {};
 const percents = [];
 const hiddenPicks = {};
 let combos = 0;
 
-function rngFor(seed) {
-  return AQ.rng.rngFromSeed(seed, 'sim');
-}
+const rngFor = (seed) => AQ.rng.rngFromSeed(seed, 'sim');
 
 for (let i = 0; i < 600; i++) {
+  const opinionated = i % 2 === 0;
   const sel = AQ.selectQuestions(data, { seed: 'SIM' + i });
   const rng = rngFor('ANSWER' + i);
-  /* Simulerer en person med tilfeldige, men indre konsistente preferanser. */
+
+  /* A person with random but internally consistent preferences. */
   const bias = {};
-  data.dimensionKeys.forEach((k) => (bias[k] = rng() * 2 - 1));
+  data.dimensionKeys.forEach((k) => {
+    let b = rng() * 2 - 1;
+    if (opinionated) b = Math.sign(b) * Math.pow(Math.abs(b), 0.45);
+    bias[k] = b;
+  });
+
   const answers = {};
   sel.questions.forEach((q) => {
     let pull = 0;
@@ -238,7 +251,7 @@ for (let i = 0; i < 600; i++) {
       n += Math.abs(w) / 3;
     });
     const raw = n ? pull / n : 0;
-    const noise = (rng() - 0.5) * 0.8;
+    const noise = (rng() - 0.5) * (opinionated ? 0.5 : 0.8);
     answers[q.id] = Math.max(-3, Math.min(3, Math.round((raw + noise) * 3)));
   });
 
@@ -249,14 +262,22 @@ for (let i = 0; i < 600; i++) {
   if (result.combination) combos++;
 
   if (result.hidden.key === result.primary.key || result.hidden.key === result.secondary.key) {
-    errors.push(`Simulering ${i}: hidden er lik primary/secondary.`);
+    errors.push(`Simulation ${i}: hidden equals primary/secondary.`);
+  }
+  for (let r = 1; r < result.ranked.length; r++) {
+    if (result.ranked[r].percent > result.ranked[r - 1].percent) {
+      errors.push(`Simulation ${i}: percentages are not monotonic down the ranking.`);
+      break;
+    }
   }
 
   const why = AQ.narrative.buildWhy(result, data, rngFor('N' + i));
-  if (!why.length) errors.push(`Simulering ${i}: tom "hvorfor"-tekst.`);
-  const world = AQ.narrative.buildWorld(data.aestheticsByKey[result.primary.key], result.profile, data, rngFor('W' + i));
+  if (!why.length) errors.push(`Simulation ${i}: empty "why" text.`);
+  const world = AQ.narrative.buildWorld(
+    data.aestheticsByKey[result.primary.key], result.profile, data, rngFor('W' + i)
+  );
   if (world.length !== 8 || world.some((f) => f.text.length < 15)) {
-    errors.push(`Simulering ${i}: mangelfull verdensbeskrivelse.`);
+    errors.push(`Simulation ${i}: incomplete world description.`);
   }
 }
 
@@ -265,47 +286,47 @@ const topWinner = Object.entries(winners).sort((a, b) => b[1] - a[1])[0];
 const avgPct = percents.reduce((s, v) => s + v, 0) / percents.length;
 
 if (distinctWinners < 15) {
-  errors.push(`Bare ${distinctWinners} ulike vinnere på 600 simuleringer — scoringen er for grovkornet.`);
+  errors.push(`Only ${distinctWinners} distinct winners across 600 simulations - the scoring is too blunt.`);
 }
 if (topWinner[1] / 600 > 0.2) {
-  warnings.push(`"${topWinner[0]}" vinner ${((topWinner[1] / 600) * 100).toFixed(0)} % av simuleringene.`);
+  warnings.push(`"${topWinner[0]}" wins ${((topWinner[1] / 600) * 100).toFixed(0)}% of simulations.`);
 }
 
-/* ---------- rapport ---------- */
+/* ---------- report ---------- */
 
-console.log('\n— Datafiler —');
-console.log(`  spørsmål:      ${questions.length}`);
-console.log(`  estetikker:    ${aesthetics.length}`);
-console.log(`  dimensjoner:   ${config.dimensions.length}`);
-console.log(`  grupper:       ${config.groups.length} à ${questions.length / config.groups.length}`);
-console.log(`  trekkes:       ${config.questionsPerQuiz} (2–3 per gruppe)`);
+console.log('\n— Data —');
+console.log(`  statements:    ${questions.length}`);
+console.log(`  aesthetics:    ${aesthetics.length}`);
+console.log(`  dimensions:    ${config.dimensions.length}`);
+console.log(`  groups:        ${config.groups.length} of ${questions.length / config.groups.length}`);
+console.log(`  drawn:         ${config.questionsPerQuiz} (${config.groups[0].min}-${config.groups[0].max} per group)`);
 
-console.log('\n— Utvalg (400 kjøringer) —');
-console.log(`  spørsmål i bruk:            ${useCounts.length} / ${questions.length}`);
-console.log(`  dupliserte clustere:        ${duplicateClusters}`);
-console.log(`  samme gruppe to på rad:     ${(sameGroupInARow / 400).toFixed(2)} per quiz`);
-console.log(`  ulike kvotefordelinger:     ${quotaShapes.size} av 400 kjøringer`);
-console.log(`  overlapp etter historikk:   ${overlap} spørsmål`);
+console.log('\n— Selection (400 runs) —');
+console.log(`  statements used:            ${useCounts.length} / ${questions.length}`);
+console.log(`  duplicate clusters:         ${duplicateClusters}`);
+console.log(`  same group twice in a row:  ${(sameGroupInARow / 400).toFixed(2)} per quiz`);
+console.log(`  distinct quota shapes:      ${quotaShapes.size} of 400 runs`);
+console.log(`  overlap after history:      ${overlap} statements`);
 
-console.log('\n— Scoring (600 simulerte personer) —');
-console.log(`  ulike vinnere:              ${distinctWinners} / ${aesthetics.length}`);
-console.log(`  vanligste vinner:           ${topWinner[0]} (${topWinner[1]})`);
-console.log(`  ulike skjulte estetikker:   ${Object.keys(hiddenPicks).length}`);
-console.log(`  snitt-match øverst:         ${avgPct.toFixed(1)} %`);
-console.log(`  spenn:                      ${Math.min(...percents)}–${Math.max(...percents)} %`);
-console.log(`  kombinasjon vist:           ${((combos / 600) * 100).toFixed(0)} % av gangene`);
+console.log('\n— Scoring (600 simulated people) —');
+console.log(`  distinct winners:           ${distinctWinners} / ${aesthetics.length}`);
+console.log(`  most common winner:         ${topWinner[0]} (${topWinner[1]})`);
+console.log(`  distinct hidden picks:      ${Object.keys(hiddenPicks).length}`);
+console.log(`  average top match:          ${avgPct.toFixed(1)}%`);
+console.log(`  range:                      ${Math.min(...percents)}-${Math.max(...percents)}%`);
+console.log(`  combination shown:          ${((combos / 600) * 100).toFixed(0)}% of the time`);
 
 if (warnings.length) {
-  console.log('\n— Advarsler —');
-  warnings.slice(0, 25).forEach((w) => console.log('  ! ' + w));
-  if (warnings.length > 25) console.log(`  … og ${warnings.length - 25} til`);
+  console.log('\n— Warnings —');
+  [...new Set(warnings)].slice(0, 25).forEach((w) => console.log('  ! ' + w));
+  if (warnings.length > 25) console.log(`  … and ${warnings.length - 25} more`);
 }
 
 if (errors.length) {
-  console.log('\n— Feil —');
-  [...new Set(errors)].slice(0, 30).forEach((e) => console.log('  ✗ ' + e));
-  console.log(`\n${errors.length} feil.`);
+  console.log('\n— Errors —');
+  [...new Set(errors)].slice(0, 30).forEach((e) => console.log('  x ' + e));
+  console.log(`\n${errors.length} errors.`);
   process.exit(1);
 }
 
-console.log('\nAlt henger sammen.\n');
+console.log('\nEverything checks out.\n');

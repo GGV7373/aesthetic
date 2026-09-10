@@ -1,19 +1,22 @@
-/* UI og flyt. All quizdata ligger i /data — denne filen vet ingenting om
-   hvilke estetikker som finnes, bare hvordan de skal vises.                */
+/* Screens and flow. All quiz data lives in /data — this file knows nothing about
+   which aesthetics exist, only how to present them.                          */
 (function (global) {
   'use strict';
   var AQ = (global.AQ = global.AQ || {});
 
-  var STORE_SESSION = 'aq.session.v2';
-  var STORE_HISTORY = 'aq.previousQuestionIds.v2';
-  var STORE_PREFS = 'aq.prefs.v1';
+  var STORE_SESSION = 'aq.session.v3';
+  var STORE_HISTORY = 'aq.previousQuestionIds.v3';
+  var STORE_PREFS = 'aq.prefs.v2';
+
+  var SWAP_MS = 170;   /* how long a question takes to move out of the way */
+  var ADVANCE_MS = 240; /* pause after an answer before moving on */
 
   var data = null;
   var session = null;
   var prefs = { autoAdvance: true };
   var root;
 
-  /* ---------- små hjelpere ---------- */
+  /* ---------- helpers ---------- */
 
   function el(tag, attrs, children) {
     var node = document.createElement(tag);
@@ -44,11 +47,11 @@
   }
 
   function writeStore(key, value) {
-    try { global.localStorage.setItem(key, JSON.stringify(value)); } catch (e) { /* privat modus */ }
+    try { global.localStorage.setItem(key, JSON.stringify(value)); } catch (e) { /* private mode */ }
   }
 
   function clearStore(key) {
-    try { global.localStorage.removeItem(key); } catch (e) { /* ignorer */ }
+    try { global.localStorage.removeItem(key); } catch (e) { /* ignore */ }
   }
 
   function queryParam(name) {
@@ -56,21 +59,19 @@
     return m ? decodeURIComponent(m[1]) : null;
   }
 
-  /* ---------- historikk: unngå de samme 50 spørsmålene på rad ---------- */
+  /* ---------- history: don't serve the same fifty twice in a row ---------- */
 
   function historyIds() {
     var hist = readStore(STORE_HISTORY, []);
     var max = (data.config.selection && data.config.selection.maxHistorySessions) || 4;
-    var recent = hist.slice(-max);
     var seen = {};
-    recent.forEach(function (run) {
+    hist.slice(-max).forEach(function (run) {
       (run || []).forEach(function (id) { seen[id] = true; });
     });
     var ids = Object.keys(seen).map(Number);
-    /* Er nesten alt brukt opp, nullstiller vi heller enn å låse utvalget. */
+    /* Nearly everything used up: fall back to excluding only the last run. */
     if (data.questions.length - ids.length < data.config.questionsPerQuiz) {
-      var lastRun = hist[hist.length - 1] || [];
-      return lastRun.slice();
+      return (hist[hist.length - 1] || []).slice();
     }
     return ids;
   }
@@ -81,10 +82,10 @@
     writeStore(STORE_HISTORY, hist.slice(-12));
   }
 
-  /* ---------- sesjon ---------- */
+  /* ---------- session ---------- */
 
-  /* replay: en seed brukeren har fått tilsendt skal gi nøyaktig samme quiz, og
-     kan derfor ikke filtreres mot hva denne nettleseren har sett før. */
+  /* replay: a seed somebody was given has to produce exactly the same quiz, so it
+     cannot be filtered against what this browser has seen before. */
   function startSession(seed, replay) {
     var selection = AQ.selectQuestions(data, {
       seed: seed || AQ.rng.newSeedString(),
@@ -105,7 +106,8 @@
   function persistSession() { writeStore(STORE_SESSION, session); }
 
   function sessionQuestions() {
-    return session.questionIds.map(function (id) { return data.questionsById[id]; })
+    return session.questionIds
+      .map(function (id) { return data.questionsById[id]; })
       .filter(Boolean);
   }
 
@@ -116,9 +118,11 @@
     return ok ? saved : null;
   }
 
-  /* ---------- skjermbytte ---------- */
+  /* ---------- screen swapping ---------- */
 
   function render(node) {
+    var current = root.firstChild;
+    if (current && current.dispatchEvent) current.dispatchEvent(new Event('aq:teardown'));
     root.innerHTML = '';
     root.appendChild(node);
     node.classList.add('fade-in');
@@ -129,58 +133,57 @@
 
   function screenIntro() {
     var saved = restoreSession();
-    var resumable = saved && Object.keys(saved.answers || {}).length > 0 &&
-      Object.keys(saved.answers).length < saved.questionIds.length;
-
-    var actions = el('div', { class: 'intro__actions' }, [
-      el('button', {
-        class: 'btn btn--primary',
-        type: 'button',
-        onclick: function () {
-          var urlSeed = queryParam('seed');
-          clearStore(STORE_SESSION);
-          startSession(urlSeed, !!urlSeed);
-          screenQuiz();
-        }
-      }, ['Start testen']),
-      resumable
-        ? el('button', {
-            class: 'btn btn--ghost',
-            type: 'button',
-            onclick: function () { session = saved; screenQuiz(); }
-          }, ['Fortsett der du slapp (' + Object.keys(saved.answers).length + ' svar)'])
-        : null
-    ]);
+    var answered = saved ? Object.keys(saved.answers || {}).length : 0;
+    var resumable = saved && answered > 0 && answered < saved.questionIds.length;
+    var urlSeed = queryParam('seed');
 
     var view = el('section', { class: 'screen screen--intro' }, [
-      el('p', { class: 'eyebrow', text: 'En estetisk profil i 50 påstander' }),
+      el('p', { class: 'eyebrow', text: 'An aesthetic profile in 50 statements' }),
       el('h1', { class: 'display', html: 'WHAT<br>AESTHETIC<br>ARE YOU?' }),
       el('p', { class: 'lede' }, [
-        'Dette er ikke en quiz om hva du liker å se på. Det er en test av hvilken ' +
-        'estetisk verden temperamentet ditt hører hjemme i — forholdet ditt til natur, ' +
-        'teknologi, historie, orden, ensomhet, mørke og skjønnhet.'
+        'This is not a quiz about what you like the look of. It is a test of which ' +
+        'aesthetic world your temperament belongs to — your relationship to nature, ' +
+        'technology, history, order, solitude, darkness and beauty.'
       ]),
       el('p', { class: 'lede lede--muted' }, [
-        'Du får 50 påstander trukket fra en bank på ' + data.questions.length +
-        ', balansert på tvers av ni temaer. Ingen påstand hører til én bestemt estetikk, ' +
-        'og du får ikke vite hva noe måler før resultatet. Svar ærlig heller enn ' +
-        'interessant — det er da testen blir presis.'
+        'The questions sit in ' + data.config.groups.length + ' themed groups of ten — home, ' +
+        'weather, screens, the unexplained, and so on — and each run draws two or three ' +
+        'from every group. No statement belongs to any one aesthetic, and you are never ' +
+        'told what something measures until the result. Answer honestly rather than ' +
+        'interestingly; that is when the test gets precise.'
       ]),
-      actions,
+      el('div', { class: 'intro__actions' }, [
+        el('button', {
+          class: 'btn btn--primary', type: 'button',
+          onclick: function () {
+            clearStore(STORE_SESSION);
+            startSession(urlSeed, !!urlSeed);
+            screenQuiz();
+          }
+        }, ['Start the test']),
+        resumable
+          ? el('button', {
+              class: 'btn btn--ghost', type: 'button',
+              onclick: function () { session = saved; screenQuiz(); }
+            }, ['Resume (' + answered + ' answered)'])
+          : null
+      ]),
       el('ul', { class: 'intro__facts' }, [
-        el('li', {}, [el('strong', { text: String(data.aesthetics.length) }), ' estetikker vurderes']),
-        el('li', {}, [el('strong', { text: String(data.config.dimensions.length) }), ' skjulte dimensjoner']),
-        el('li', {}, [el('strong', { text: '7' }), ' svarnivåer per påstand'])
+        el('li', {}, [el('strong', { text: String(data.questions.length) }), 'statements in the bank']),
+        el('li', {}, [el('strong', { text: String(data.aesthetics.length) }), 'aesthetics considered']),
+        el('li', {}, [el('strong', { text: String(data.config.dimensions.length) }), 'hidden dimensions']),
+        el('li', {}, [el('strong', { text: '7' }), 'answer levels per statement'])
       ]),
-      queryParam('seed')
+      urlSeed
         ? el('p', { class: 'fineprint' }, [
-            'Du har åpnet en delt gjennomføring (', el('code', { text: AQ.rng.normaliseSeed(queryParam('seed')) }),
-            '). Du får nøyaktig de samme 50 påstandene i samme rekkefølge som den som delte lenken.'
+            'You have opened a shared run (', el('code', { text: AQ.rng.normaliseSeed(urlSeed) }),
+            '). You will get exactly the same 50 statements, in the same order, as the ' +
+            'person who shared the link.'
           ])
         : null,
       el('p', { class: 'fineprint' }, [
-        'Alt regnes ut i nettleseren din. Ingenting sendes noe sted, og svarene lagres ' +
-        'bare lokalt slik at du kan fortsette hvis du lukker fanen.'
+        'Everything is worked out in your own browser. Nothing is sent anywhere, and your ' +
+        'answers are stored locally only so you can pick up where you left off.'
       ])
     ]);
 
@@ -192,34 +195,30 @@
   function screenQuiz() {
     var questions = sessionQuestions();
     var total = questions.length;
+    var busy = false;
+    var optionButtons = [];
 
     var progressFill = el('div', { class: 'progress__fill' });
     var progressBar = el('div', {
-      class: 'progress',
-      role: 'progressbar',
-      'aria-valuemin': '0',
-      'aria-valuemax': String(total),
-      'aria-valuenow': '0',
-      'aria-label': 'Framdrift'
+      class: 'progress', role: 'progressbar',
+      'aria-valuemin': '0', 'aria-valuemax': String(total), 'aria-valuenow': '0',
+      'aria-label': 'Progress'
     }, [progressFill]);
 
     var counter = el('p', { class: 'quiz__counter' });
     var statement = el('p', { class: 'quiz__statement' });
     var optionsWrap = el('div', {
-      class: 'options',
-      role: 'radiogroup',
-      'aria-label': 'Hvor enig er du?'
+      class: 'options', role: 'radiogroup', 'aria-label': 'How much do you agree?'
     });
+    var body = el('div', { class: 'quiz__body' }, [statement, optionsWrap]);
 
     var prevBtn = el('button', {
-      class: 'btn btn--ghost', type: 'button',
-      onclick: function () { go(-1); }
-    }, ['← Forrige']);
+      class: 'btn btn--ghost', type: 'button', onclick: function () { go(-1); }
+    }, ['← Back']);
 
     var nextBtn = el('button', {
-      class: 'btn btn--primary', type: 'button',
-      onclick: function () { go(1); }
-    }, ['Neste →']);
+      class: 'btn btn--primary', type: 'button', onclick: function () { go(1); }
+    }, ['Next →']);
 
     var autoToggle = el('label', { class: 'toggle' }, [
       el('input', {
@@ -229,44 +228,46 @@
           writeStore(STORE_PREFS, prefs);
         }
       }),
-      el('span', { text: 'Gå videre automatisk' })
+      el('span', { text: 'Advance automatically' })
     ]);
 
     var live = el('div', { class: 'sr-only', 'aria-live': 'polite' });
 
     var view = el('section', { class: 'screen screen--quiz' }, [
       el('header', { class: 'quiz__head' }, [
-        el('p', { class: 'eyebrow', text: 'WHAT AESTHETIC ARE YOU?' }),
+        el('p', { class: 'eyebrow', text: 'What aesthetic are you?' }),
         progressBar,
         counter
       ]),
-      el('div', { class: 'quiz__card' }, [statement, optionsWrap]),
+      el('div', { class: 'quiz__card' }, [body]),
       el('nav', { class: 'quiz__nav' }, [prevBtn, autoToggle, nextBtn]),
       live
     ]);
 
-    function paint() {
-      var q = questions[session.index];
-      var answered = Object.keys(session.answers).length;
+    /* Only the selected state changes here — no rebuilding, so nothing flickers. */
+    function markSelection(value) {
+      optionButtons.forEach(function (btn) {
+        var on = Number(btn.getAttribute('data-value')) === value;
+        btn.classList.toggle('option--selected', on);
+        btn.setAttribute('aria-checked', on ? 'true' : 'false');
+      });
+      nextBtn.disabled = value === undefined;
+    }
 
-      counter.textContent = 'Spørsmål ' + (session.index + 1) + ' / ' + total;
-      progressFill.style.width = ((session.index) / total) * 100 + '%';
+    function paintQuestion() {
+      var q = questions[session.index];
+
+      counter.textContent = 'Question ' + (session.index + 1) + ' of ' + total;
+      progressFill.style.width = (session.index / total) * 100 + '%';
       progressBar.setAttribute('aria-valuenow', String(session.index));
 
       statement.textContent = q.text;
-      statement.classList.remove('is-entering');
-      /* tvinger reflow slik at animasjonen kjører på nytt */
-      void statement.offsetWidth;
-      statement.classList.add('is-entering');
 
       optionsWrap.innerHTML = '';
-      data.config.scale.forEach(function (step, i) {
-        var selected = session.answers[q.id] === step.value;
+      optionButtons = data.config.scale.map(function (step, i) {
         var btn = el('button', {
-          class: 'option' + (selected ? ' option--selected' : ''),
-          type: 'button',
-          role: 'radio',
-          'aria-checked': selected ? 'true' : 'false',
+          class: 'option', type: 'button', role: 'radio',
+          'aria-checked': 'false',
           'data-value': String(step.value),
           onclick: function () { answer(step.value); }
         }, [
@@ -275,36 +276,55 @@
           el('span', { class: 'option__key', text: String(i + 1) })
         ]);
         optionsWrap.appendChild(btn);
+        return btn;
       });
 
+      markSelection(session.answers[q.id]);
       prevBtn.disabled = session.index === 0;
-      nextBtn.textContent = session.index === total - 1 ? 'Se resultatet →' : 'Neste →';
-      nextBtn.disabled = session.answers[q.id] === undefined;
-      live.textContent = 'Spørsmål ' + (session.index + 1) + ' av ' + total + '. ' +
-        (answered === total ? 'Alle besvart.' : '');
+      nextBtn.textContent = session.index === total - 1 ? 'See your result →' : 'Next →';
+      live.textContent = 'Question ' + (session.index + 1) + ' of ' + total + '.';
+    }
+
+    /* Moves the whole block out, swaps the content while it is invisible, and
+       lets it settle back. One motion instead of a jump. */
+    function transition(targetIndex, direction, done) {
+      if (busy) return;
+      busy = true;
+      body.classList.add(direction < 0 ? 'is-out-back' : 'is-out');
+      global.setTimeout(function () {
+        if (targetIndex !== null) {
+          session.index = targetIndex;
+          persistSession();
+          paintQuestion();
+        }
+        body.classList.remove('is-out', 'is-out-back');
+        busy = false;
+        if (done) done();
+      }, SWAP_MS);
     }
 
     function answer(value) {
+      if (busy) return;
       var q = questions[session.index];
       var isNew = session.answers[q.id] === undefined;
       session.answers[q.id] = value;
       persistSession();
-      paint();
+      markSelection(value);
+
       if (prefs.autoAdvance && isNew) {
         global.setTimeout(function () {
           if (session.index < total - 1) go(1);
           else finish();
-        }, 380);
+        }, ADVANCE_MS);
       }
     }
 
     function go(delta) {
+      if (busy) return;
       var target = session.index + delta;
       if (target < 0) return;
       if (target >= total) { finish(); return; }
-      session.index = target;
-      persistSession();
-      paint();
+      transition(target, delta);
     }
 
     function finish() {
@@ -312,13 +332,13 @@
         return session.answers[q.id] === undefined;
       });
       if (unanswered.length) {
-        session.index = questions.indexOf(unanswered[0]);
-        persistSession();
-        paint();
-        live.textContent = 'Du har ' + unanswered.length + ' ubesvarte påstander igjen.';
+        var jumpTo = questions.indexOf(unanswered[0]);
+        transition(jumpTo, jumpTo < session.index ? -1 : 1, function () {
+          live.textContent = unanswered.length + ' statements still unanswered.';
+        });
         return;
       }
-      screenResult();
+      transition(null, 1, screenResult);
     }
 
     function onKey(e) {
@@ -339,12 +359,12 @@
     });
 
     render(view);
-    paint();
+    paintQuestion();
   }
 
-  /* ---------- resultat ---------- */
+  /* ---------- result pieces ---------- */
 
-  function bar(value, options) {
+  function meter(value, options) {
     options = options || {};
     var fill = el('div', {
       class: 'bar__fill' + (options.subtle ? ' bar__fill--subtle' : ''),
@@ -354,7 +374,7 @@
     global.requestAnimationFrame(function () {
       global.setTimeout(function () {
         fill.style.width = Math.max(2, Math.min(100, value)) + '%';
-      }, options.delay || 30);
+      }, options.delay || 40);
     });
     return wrap;
   }
@@ -362,23 +382,54 @@
   function aestheticCard(entry, kind, opts) {
     opts = opts || {};
     var a = data.aestheticsByKey[entry.key];
-    var head = el('div', { class: 'card__head' }, [
-      el('p', { class: 'eyebrow', text: opts.label || '' }),
-      el('h3', { class: 'card__title', text: a.name }),
-      el('p', { class: 'card__percent' }, [
-        el('strong', { text: entry.percent + ' %' }),
-        el('span', { text: ' ' + AQ.narrative.strengthLabel(entry.percent, data) })
-      ])
-    ]);
-
     return el('article', { class: 'card card--' + kind }, [
       el('div', { class: 'card__swatch', style: 'background:' + AQ.visuals.swatch(a) }),
-      head,
-      bar(entry.percent, { background: AQ.visuals.swatch(a) }),
+      el('div', { class: 'card__head' }, [
+        el('p', { class: 'eyebrow', text: opts.label || '' }),
+        el('h3', { class: 'card__title', text: a.name }),
+        el('p', { class: 'card__percent' }, [
+          el('strong', { text: entry.percent + '%' }),
+          el('span', { text: AQ.narrative.strengthLabel(entry.percent, data) })
+        ])
+      ]),
+      meter(entry.percent, { background: AQ.visuals.swatch(a) }),
       el('p', { class: 'card__tagline', text: a.tagline }),
       el('p', { class: 'card__body', text: a.description }),
       opts.note ? el('p', { class: 'card__note', text: opts.note }) : null
     ]);
+  }
+
+  /* Photographs are a bonus layer. The block is only inserted if something
+     actually came back, so a blocked or slow network changes nothing. */
+  function photoStrip(aesthetic, mountBefore) {
+    if (!AQ.images) return;
+    AQ.images.forAesthetic(aesthetic).then(function (photos) {
+      if (!photos.length || !mountBefore.parentNode) return;
+
+      var grid = el('div', { class: 'photos__grid' }, photos.map(function (p) {
+        var img = el('img', {
+          src: p.thumb, alt: p.title, loading: 'lazy', decoding: 'async',
+          onload: function (e) { e.target.classList.add('is-loaded'); },
+          onerror: function (e) { e.target.closest('.photo').remove(); }
+        });
+        return el('a', {
+          class: 'photo', href: p.page, target: '_blank', rel: 'noopener noreferrer'
+        }, [
+          img,
+          el('span', { class: 'photo__credit', text: p.credit + ' · ' + p.license })
+        ]);
+      }));
+
+      var block = el('section', { class: 'photos' }, [
+        el('h2', { class: 'block__title', text: 'The mood, roughly' }),
+        el('p', { class: 'block__lede', text: 'Freely licensed photographs from Wikimedia ' +
+          'Commons, found by keyword. They are a rough approximation of the atmosphere, ' +
+          'not official images of the aesthetic.' }),
+        grid
+      ]);
+
+      mountBefore.parentNode.insertBefore(block, mountBefore);
+    });
   }
 
   function profileSection(profile) {
@@ -387,8 +438,8 @@
 
     function paint() {
       list.innerHTML = '';
-      var dims = data.config.dimensions.filter(function (d) { return showAll || d.core; });
-      dims
+      data.config.dimensions
+        .filter(function (d) { return showAll || d.core; })
         .map(function (d) {
           return { meta: d, value: profile.value[d.key], strength: Math.abs(profile.value[d.key] - 0.5) };
         })
@@ -397,8 +448,8 @@
           var pct = Math.round(row.value * 100);
           list.appendChild(el('div', { class: 'profile__row' }, [
             el('span', { class: 'profile__label', text: row.meta.label }),
-            bar(pct, { subtle: true, delay: 40 + i * 18 }),
-            el('span', { class: 'profile__value', text: pct + '' }),
+            meter(pct, { subtle: true, delay: 40 + i * 16 }),
+            el('span', { class: 'profile__value', text: String(pct) }),
             el('span', { class: 'profile__poles', text: row.meta.low + ' → ' + row.meta.high })
           ]));
         });
@@ -408,22 +459,25 @@
       class: 'btn btn--link', type: 'button',
       onclick: function (e) {
         showAll = !showAll;
-        e.target.textContent = showAll ? 'Vis bare hoveddimensjonene' : 'Vis alle ' +
-          data.config.dimensions.length + ' dimensjoner';
+        e.target.textContent = showAll
+          ? 'Show the main dimensions only'
+          : 'Show all ' + data.config.dimensions.length + ' dimensions';
         paint();
       }
-    }, ['Vis alle ' + data.config.dimensions.length + ' dimensjoner']);
+    }, ['Show all ' + data.config.dimensions.length + ' dimensions']);
 
     paint();
 
     return el('section', { class: 'block' }, [
-      el('h2', { class: 'block__title', text: 'YOUR PROFILE' }),
-      el('p', { class: 'block__lede', text: 'Dette er råmaterialet resultatet er regnet ut fra. ' +
-        'Ingen av dem ble vist deg underveis.' }),
+      el('h2', { class: 'block__title', text: 'Your profile' }),
+      el('p', { class: 'block__lede', text: 'This is the raw material the result was ' +
+        'calculated from. None of it was shown to you along the way.' }),
       list,
       toggle
     ]);
   }
+
+  /* ---------- result ---------- */
 
   function screenResult() {
     var questions = sessionQuestions();
@@ -435,111 +489,110 @@
     var world = AQ.narrative.buildWorld(primary, result.profile, data, rng);
     var hybrid = AQ.narrative.buildHybrid(result.combination, data, rng, result.profile);
 
-    /* --- hero --- */
-    var plate = el('div', { class: 'hero__plate', html: AQ.visuals.moodPlate(primary) });
-    var heroPercent = el('div', { class: 'hero__match' }, [
-      el('span', { class: 'hero__percentnum', text: result.primary.percent + '' }),
-      el('span', { class: 'hero__percentsign', text: '%' }),
-      el('span', { class: 'hero__matchword', text: 'MATCH' })
+    var welcome = el('div', { class: 'result__welcome' }, [
+      el('p', { class: 'eyebrow', text: 'Your result' }),
+      el('p', { class: 'result__greeting', text: 'Fifty statements later, here is the world ' +
+        'your answers keep pointing towards.' })
     ]);
 
     var hero = el('header', { class: 'hero' }, [
-      plate,
-      el('div', { class: 'hero__inner' }, [
-        el('p', { class: 'eyebrow', text: 'YOUR AESTHETIC' }),
-        el('h1', { class: 'hero__name', text: primary.name.toUpperCase() }),
-        heroPercent,
-        bar(result.primary.percent, { background: AQ.visuals.swatch(primary) }),
-        el('p', { class: 'hero__tagline', text: primary.tagline }),
-        el('p', { class: 'hero__strength', text: AQ.narrative.strengthLabel(result.primary.percent, data) })
+      el('div', { class: 'hero__banner' }, [
+        el('div', { class: 'hero__plate', html: AQ.visuals.moodPlate(primary) }),
+        el('h1', { class: 'hero__name', text: primary.name })
+      ]),
+      el('div', { class: 'hero__foot' }, [
+        el('div', { class: 'hero__score' }, [
+          el('span', { class: 'hero__percentnum', text: String(result.primary.percent) }),
+          el('span', { class: 'hero__percentsign', text: '%' }),
+          el('span', { class: 'hero__scorelabel', text: 'match' })
+        ]),
+        el('div', {}, [
+          el('p', { class: 'hero__tagline', text: primary.tagline }),
+          el('div', { class: 'hero__meter' }, [
+            meter(result.primary.percent, { background: AQ.visuals.swatch(primary), delay: 200 })
+          ]),
+          el('p', { class: 'fineprint', text: AQ.narrative.strengthLabel(result.primary.percent, data) })
+        ])
       ])
     ]);
 
-    /* --- hvorfor --- */
     var whyBlock = el('section', { class: 'block' }, [
-      el('h2', { class: 'block__title', text: 'HVORFOR?' }),
+      el('h2', { class: 'block__title', text: 'Why' }),
       el('div', { class: 'prose' }, why.map(function (s) { return el('p', { text: s }); })),
       el('p', { class: 'prose prose--muted', text: primary.description })
     ]);
 
-    /* --- sekundær og skjult --- */
     var sideBySide = el('div', { class: 'cards' }, [
-      aestheticCard(result.secondary, 'secondary', { label: 'SEKUNDÆR' }),
+      aestheticCard(result.secondary, 'secondary', { label: 'Runner-up' }),
       aestheticCard(result.hidden, 'hidden', {
-        label: 'HIDDEN',
-        note: AQ.narrative.hiddenIntro(data, rng)
+        label: 'Hidden', note: AQ.narrative.hiddenIntro(data, rng)
       })
     ]);
 
-    /* --- kombinasjon --- */
-    var comboBlock = null;
-    if (hybrid) {
-      comboBlock = el('section', { class: 'block block--combo' }, [
-        el('h2', { class: 'block__title', text: 'KOMBINASJON' }),
-        el('p', { class: 'combo__label', text: hybrid.label }),
-        el('div', { class: 'prose' }, [
-          el('p', { text: hybrid.intro }),
-          el('p', { text: hybrid.bridge }),
-          hybrid.tension ? el('p', { text: hybrid.tension }) : null,
-          el('p', { class: 'prose--muted', text: hybrid.note })
+    var comboBlock = hybrid
+      ? el('section', { class: 'block block--combo' }, [
+          el('h2', { class: 'block__title', text: 'Combination' }),
+          el('p', { class: 'combo__label', text: hybrid.label }),
+          el('div', { class: 'prose' }, [
+            el('p', { text: hybrid.intro }),
+            el('p', { text: hybrid.bridge }),
+            hybrid.tension ? el('p', { text: hybrid.tension }) : null,
+            el('p', { class: 'prose--muted', text: hybrid.note })
+          ])
         ])
-      ]);
-    }
+      : null;
 
-    /* --- din versjon --- */
     var worldBlock = el('section', { class: 'block' }, [
-      el('h2', { class: 'block__title', text: 'DIN VERSJON AV ' + primary.name.toUpperCase() }),
-      el('p', { class: 'block__lede', text: 'Slik ville estetikken sett ut om den ble bygget ' +
-        'rundt akkurat din profil, ikke rundt gjennomsnittet.' }),
+      el('h2', { class: 'block__title', text: 'Your version of ' + primary.name }),
+      el('p', { class: 'block__lede', text: 'How the aesthetic would look if it were built ' +
+        'around your profile rather than around the average.' }),
       el('div', { class: 'facets' }, world.map(function (f, i) {
-        return el('div', { class: 'facet', style: 'animation-delay:' + (i * 60) + 'ms' }, [
+        return el('div', { class: 'facet', style: 'animation-delay:' + (i * 55) + 'ms' }, [
           el('h4', { class: 'facet__label', text: f.label }),
           el('p', { class: 'facet__text', text: f.text })
         ]);
       }))
     ]);
 
-    /* --- rangering --- */
-    var top = result.ranked.slice(0, 10);
     var rankBlock = el('section', { class: 'block' }, [
-      el('h2', { class: 'block__title', text: 'HELE RANGERINGEN' }),
-      el('p', { class: 'block__lede', text: 'Ingen passer inn i bare én verden. Dette er de ti ' +
-        'nærmeste av ' + data.aesthetics.length + '.' }),
-      el('ol', { class: 'rank' }, top.map(function (entry, i) {
+      el('h2', { class: 'block__title', text: 'The full ranking' }),
+      el('p', { class: 'block__lede', text: 'Nobody fits inside only one world. These are ' +
+        'the ten closest of ' + data.aesthetics.length + '.' }),
+      el('ol', { class: 'rank' }, result.ranked.slice(0, 10).map(function (entry, i) {
         var a = data.aestheticsByKey[entry.key];
         return el('li', { class: 'rank__row' }, [
           el('span', { class: 'rank__num', text: String(i + 1).padStart(2, '0') }),
           el('span', { class: 'rank__name', text: a.name }),
-          bar(entry.percent, { background: AQ.visuals.swatch(a), delay: 60 + i * 30 }),
-          el('span', { class: 'rank__pct', text: entry.percent + ' %' })
+          meter(entry.percent, { background: AQ.visuals.swatch(a), delay: 60 + i * 28 }),
+          el('span', { class: 'rank__pct', text: entry.percent + '%' })
         ]);
       }))
     ]);
 
-    /* --- bunn --- */
     var seedLink = global.location.origin + global.location.pathname + '?seed=' + session.seed;
     var copyBtn = el('button', {
       class: 'btn btn--ghost', type: 'button',
       onclick: function (e) {
         var btn = e.currentTarget;
+        var label = 'Copy a link to this exact run';
         var done = function () {
-          btn.textContent = 'Lenken er kopiert';
-          global.setTimeout(function () { btn.textContent = 'Kopier lenke til denne gjennomføringen'; }, 2200);
+          btn.textContent = 'Link copied';
+          global.setTimeout(function () { btn.textContent = label; }, 2200);
         };
         if (global.navigator.clipboard && global.navigator.clipboard.writeText) {
           global.navigator.clipboard.writeText(seedLink).then(done, function () {
-            global.prompt('Kopier lenken:', seedLink);
+            global.prompt('Copy the link:', seedLink);
           });
         } else {
-          global.prompt('Kopier lenken:', seedLink);
+          global.prompt('Copy the link:', seedLink);
         }
       }
-    }, ['Kopier lenke til denne gjennomføringen']);
+    }, ['Copy a link to this exact run']);
 
     var footer = el('footer', { class: 'result__footer' }, [
       el('p', { class: 'fineprint' }, [
-        'Gjennomføring ', el('code', { text: session.seed }),
-        '. Samme kode gir samme 50 påstander i samme rekkefølge.'
+        'Run ', el('code', { text: session.seed }),
+        '. The same code gives the same 50 statements in the same order.'
       ]),
       el('div', { class: 'result__actions' }, [
         el('button', {
@@ -549,61 +602,48 @@
             startSession(null, false);
             screenQuiz();
           }
-        }, ['Ta testen på nytt med nye spørsmål']),
+        }, ['Take it again with new questions']),
         copyBtn
       ]),
       el('p', { class: 'fineprint' }, [
-        'Estetikkene tar utgangspunkt i Aesthetics Wiki som referanse. Beskrivelser, ' +
-        'dimensjoner og spørsmål er skrevet for denne testen, og stemningsbildene er ' +
-        'generert av koden — ingen bilder er hentet fra wikien.'
+        'The aesthetics use Aesthetics Wiki as a reference. Descriptions, dimensions and ' +
+        'statements were written for this test, and the mood plates are generated by the ' +
+        'code — no images are taken from the wiki.'
       ])
     ]);
 
     var view = el('section', { class: 'screen screen--result' }, [
-      hero,
-      whyBlock,
-      sideBySide,
-      comboBlock,
-      worldBlock,
-      profileSection(result.profile),
-      rankBlock,
-      footer
+      welcome, hero, whyBlock, sideBySide, comboBlock,
+      worldBlock, profileSection(result.profile), rankBlock, footer
     ]);
 
     clearStore(STORE_SESSION);
     render(view);
+    photoStrip(primary, whyBlock);
   }
 
-  /* ---------- oppstart ---------- */
+  /* ---------- boot ---------- */
 
   function boot() {
     root = document.getElementById('app');
     prefs = readStore(STORE_PREFS, prefs) || prefs;
 
-    /* Fjerner tastaturlyttere når en skjerm byttes ut. */
-    var originalRender = render;
-    render = function (node) {
-      var current = root.firstChild;
-      if (current && current.dispatchEvent) current.dispatchEvent(new Event('aq:teardown'));
-      originalRender(node);
-    };
-
     root.innerHTML = '';
-    root.appendChild(el('p', { class: 'loading', text: 'Laster …' }));
+    root.appendChild(el('p', { class: 'loading', text: 'Loading …' }));
 
     AQ.loadData().then(function (loaded) {
       data = loaded;
-      /* En seed i URL-en gjenskaper en gjennomføring — den plukkes opp når testen startes. */
+      /* A seed in the URL recreates a run — it is picked up when the test starts. */
       if (queryParam('seed')) clearStore(STORE_SESSION);
       screenIntro();
     }).catch(function (err) {
       root.innerHTML = '';
       root.appendChild(el('div', { class: 'screen' }, [
-        el('h1', { class: 'display', text: 'Kunne ikke laste testen' }),
+        el('h1', { class: 'display', text: 'Could not load the test' }),
         el('p', { class: 'lede', text: String(err && err.message ? err.message : err) }),
-        el('p', { class: 'lede lede--muted', text: 'Åpner du filen direkte fra disk, kjør ' +
-          '"node tools/build-bundle.js" én gang, eller start en lokal server med ' +
-          '"npx serve" i mappen.' })
+        el('p', { class: 'lede lede--muted', text: 'If you opened the file straight from ' +
+          'disk, run "node tools/build-bundle.js" once, or start a local server with ' +
+          '"node tools/serve.js".' })
       ]));
     });
   }

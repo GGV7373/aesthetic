@@ -1,9 +1,10 @@
-/* Skjult scoring.
+/* The hidden scoring.
 
-   Ingenting her handler om enkelt-estetikker. Svarene bygger først en profil på
-   35 dimensjoner; deretter måles profilen mot hver estetikks egen profil. Et
-   spørsmål om gamle bygninger gir altså aldri poeng til "Dark Academia" — det
-   flytter history/nostalgia/architecture, og estetikkene faller ut av det.   */
+   Nothing here is about individual aesthetics. The answers first build a profile
+   across 35 dimensions; the profile is then measured against each aesthetic's own
+   profile. A question about old buildings therefore never scores points for
+   "Dark Academia" — it moves history/nostalgia/architecture, and the aesthetics
+   fall out of that.                                                          */
 (function (global) {
   'use strict';
   var AQ = (global.AQ = global.AQ || {});
@@ -39,7 +40,7 @@
     return { value: value, confidence: confidence, weightSum: weightSum, answered: answered };
   }
 
-  /* Hvor definerende en dimensjon er for en estetikk: 0.5 er likegyldig, 0 og 1 er sterkt. */
+  /* How defining a dimension is for an aesthetic: 0.5 is indifferent, 0 and 1 are strong. */
   function salience(v, floor) {
     return Math.max(floor, Math.abs(v - 0.5) * 2);
   }
@@ -76,12 +77,12 @@
     };
   }
 
-  /* Prosentene settes etter at alt er rangert.
+  /* Percentages are assigned after everything is ranked.
 
-     Toppen får en absolutt verdi — hvor godt estetikken faktisk passer profilen.
-     Resten plasseres i forhold til hvor langt de faller under toppen, målt mot
-     brukerens egen spredning. Uten det siste ville alle 65 landet innenfor ti
-     prosentpoeng av hverandre, og rangeringen ville sagt ingenting.          */
+     The top gets an absolute value — how well the aesthetic actually fits the
+     profile. The rest are placed by how far they fall below the top, measured
+     against this person's own spread. Without that last part all 65 would land
+     within ten points of each other and the ranking would say nothing.      */
   function assignPercentages(ranked, matching) {
     if (!ranked.length) return ranked;
 
@@ -98,7 +99,7 @@
     var exponent = matching.tailExponent === undefined ? 0.75 : matching.tailExponent;
 
     ranked.forEach(function (entry) {
-      var relative = (best - entry.similarity) / span; /* 0 = best, 1 = svakest */
+      var relative = (best - entry.similarity) / span; /* 0 = best, 1 = weakest */
       var drop = (topPercent - tail) * Math.pow(relative, exponent);
       entry.percent = clamp(Math.round(topPercent - drop), matching.percentMin, matching.percentMax);
     });
@@ -106,7 +107,7 @@
     return ranked;
   }
 
-  /* Likhet mellom to estetikker — brukes til å finne noe uventet, ikke bare nest beste. */
+  /* Similarity between two aesthetics — used to find something unexpected, not just second place. */
   function aestheticDistance(a, b) {
     var keys = {};
     Object.keys(a.dimensions).forEach(function (k) { keys[k] = true; });

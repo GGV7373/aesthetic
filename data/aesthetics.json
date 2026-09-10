@@ -2,20 +2,24 @@
   {
     "key": "forestpunk",
     "name": "Forestpunk",
-    "tagline": "Der skogen tar tilbake det som ble bygget",
-    "description": "En verden der livet leves på naturens premisser og teknologien er lappet sammen, gjenbrukt og halvt begrodd. Selvberging, mose og gamle verktøy, med en undertone av motstand mot det glatte og masseproduserte.",
+    "tagline": "Where the forest takes back what was built",
+    "description": "A world lived on nature's terms, where the technology is patched, reused and half overgrown. Self-sufficiency, moss and old tools, with an undertone of resistance to anything smooth and mass-produced.",
     "keywords": [
-      "mose",
-      "gjenbruk",
-      "selvberging",
-      "skogsbunn",
-      "lavteknologi"
+      "moss",
+      "salvage",
+      "self-sufficiency",
+      "forest floor",
+      "low technology"
     ],
     "palette": [
       "#0d1610",
       "#22392a",
       "#6d8459",
       "#cfc3a3"
+    ],
+    "imageQuery": [
+      "mossy forest fog",
+      "abandoned cabin forest"
     ],
     "dimensions": {
       "nature": 0.95,
@@ -51,37 +55,37 @@
       "naturecore"
     ],
     "world": {
-      "omgivelser": "gammel skog som har spist en gårdsvei, tåke som ligger igjen til langt på dag",
-      "arkitektur": "hytter av rekved og bølgeblikk, tak som er halvt torv og halvt tilfeldighet",
-      "interior": "tørkede planter i taket, verktøy på vegg, alt reparert minst én gang",
-      "teknologi": "solcellepanel med sprekk i, radio som fungerer, ingenting som trenger nettverk",
-      "klaer": "ullag, voksbehandlet lerret, støvler som har gått for langt til å bli fine igjen",
-      "musikk": "drone, folkemelodier på slitte strenger, felt-opptak av regn",
-      "farger": "myrsvart, lavgrønt, oksidert kobber, gammelt lin",
-      "hverdag": "morgener med ved og kaffe, dager som måles i lys og ikke i klokke"
-    },
-    "imageQuery": [
-      "mossy forest fog",
-      "abandoned cabin forest"
-    ]
+      "setting": "old forest that has swallowed a farm track, fog that stays until midday",
+      "architecture": "shacks of driftwood and corrugated iron, roofs half turf and half accident",
+      "interior": "dried plants hanging from the ceiling, tools on the wall, everything mended at least once",
+      "technology": "a solar panel with a crack in it, a radio that works, nothing that needs a network",
+      "clothes": "layers of wool, waxed canvas, boots too far gone to be smart again",
+      "music": "drone, folk melodies on worn strings, field recordings of rain",
+      "colours": "bog black, lichen green, oxidised copper, old linen",
+      "everyday": "mornings of firewood and coffee, days measured in light rather than clocks"
+    }
   },
   {
     "key": "dark-naturalism",
     "name": "Dark Naturalism",
-    "tagline": "Naturen uten trøst",
-    "description": "Naturen sett uten idyll: våt jord, kadaver, kalde farger og stillhet som ikke er beroligende. Vakker fordi den er likegyldig, ikke fordi den er snill.",
+    "tagline": "Nature without consolation",
+    "description": "Nature seen without the idyll: wet earth, carrion, cold colours and a silence that isn't soothing. Beautiful because it is indifferent, not because it is kind.",
     "keywords": [
-      "myr",
-      "beinhvitt",
-      "regn",
-      "stillhet",
-      "råte"
+      "bog",
+      "bone white",
+      "rain",
+      "silence",
+      "rot"
     ],
     "palette": [
       "#0a0d0c",
       "#1d2622",
       "#4a5148",
       "#a89f8c"
+    ],
+    "imageQuery": [
+      "moorland winter fog",
+      "bare trees mist"
     ],
     "dimensions": {
       "nature": 0.9,
@@ -113,37 +117,37 @@
       "appalachian-gothic"
     ],
     "world": {
-      "omgivelser": "myrlandskap i november, svarte trestammer mot hvit himmel",
-      "arkitektur": "et utløe uten dør, en steinmur som ikke lenger gjerder inn noe",
-      "interior": "bare rom, ett vindu, ting samlet inn heller enn kjøpt",
-      "teknologi": "lommelykt, kikkert, ingenting som lyser mer enn nødvendig",
-      "klaer": "olje-jakke, grovt strikk, farger som forsvinner mot landskapet",
-      "musikk": "lange toner, vind i mikrofonen, sang uten akkompagnement",
-      "farger": "beinhvitt, torv, lavskygge, jerngrått",
-      "hverdag": "lange turer uten mål, notater om vær og fugler, ingen forklaringer"
-    },
-    "imageQuery": [
-      "moorland winter fog",
-      "bare trees mist"
-    ]
+      "setting": "moorland in November, black trunks against a white sky",
+      "architecture": "an open barn with no door, a stone wall that no longer encloses anything",
+      "interior": "bare rooms, one window, things gathered rather than bought",
+      "technology": "a torch, binoculars, nothing that gives off more light than it must",
+      "clothes": "oilskin, coarse knitwear, colours that vanish against the landscape",
+      "music": "long tones, wind in the microphone, unaccompanied singing",
+      "colours": "bone white, peat, lichen shadow, iron grey",
+      "everyday": "long walks with no destination, notes about weather and birds, no explanations"
+    }
   },
   {
     "key": "cryptidcore",
     "name": "Cryptidcore",
-    "tagline": "Noe står i skogkanten og ser tilbake",
-    "description": "Uskarpe bilder, lokale legender og steder ingen kan bekrefte. Fascinasjonen ligger ikke i beviset, men i at forklaringen aldri kommer.",
+    "tagline": "Something is standing at the treeline, looking back",
+    "description": "Blurred photographs, local legends and places nobody can confirm. The pull isn't in the proof - it's that the explanation never arrives.",
     "keywords": [
-      "uskarpe foto",
-      "legender",
-      "skogkant",
-      "rapporter",
-      "kornete film"
+      "blurred photos",
+      "legends",
+      "treeline",
+      "field reports",
+      "grainy film"
     ],
     "palette": [
       "#0c0f0d",
       "#243026",
       "#6b6247",
       "#c9c4ac"
+    ],
+    "imageQuery": [
+      "forest road night",
+      "dense woods dusk"
     ],
     "dimensions": {
       "mystery": 0.95,
@@ -174,37 +178,37 @@
       "adventurecore"
     ],
     "world": {
-      "omgivelser": "grusveier, campingplasser utenfor sesong, skiltet som mangler et bokstav",
-      "arkitektur": "bensinstasjon fra 70-tallet, jakthytte, et tårn ingen bruker lenger",
-      "interior": "kart med nåler i, opptaksutstyr, avisutklipp i perm",
-      "teknologi": "kassettopptaker, engangskamera, radioscanner som suser",
-      "klaer": "flanell, ryggsekk med for mange lommer, caps med falmet logo",
-      "musikk": "banjo og synth samtidig, opptak som starter for tidlig",
-      "farger": "furubark, kornete gråbrunt, blitzhvitt",
-      "hverdag": "kjøring om natten, notater klokka tre, ingen som tror på deg"
-    },
-    "imageQuery": [
-      "forest road night",
-      "dense woods dusk"
-    ]
+      "setting": "gravel roads, campgrounds out of season, a sign missing a letter",
+      "architecture": "a gas station from the seventies, a hunting cabin, a tower nobody uses now",
+      "interior": "a map with pins in it, recording gear, newspaper clippings in a binder",
+      "technology": "a cassette recorder, a disposable camera, a radio scanner full of hiss",
+      "clothes": "flannel, a rucksack with too many pockets, a cap with a faded logo",
+      "music": "banjo and synth at the same time, recordings that start too early",
+      "colours": "pine bark, grainy grey-brown, flash white",
+      "everyday": "driving at night, notes at three in the morning, nobody believing you"
+    }
   },
   {
     "key": "cottagecore",
     "name": "Cottagecore",
-    "tagline": "Et liv langsomt nok til å bake i",
-    "description": "Idealisert landliv: brød som hever, hage som gror, arbeid man kan se resultatet av. Trygghet og håndarbeid framfor karriere og tempo.",
+    "tagline": "A life slow enough to bake in",
+    "description": "Country living at its most idealised: bread rising, a garden growing, work whose results you can see. Safety and handwork rather than careers and pace.",
     "keywords": [
-      "hage",
+      "garden",
       "baking",
-      "lin",
-      "brev",
-      "sommerkveld"
+      "linen",
+      "letters",
+      "summer evening"
     ],
     "palette": [
       "#241c16",
       "#6b5a3e",
       "#c9a86a",
       "#f2e7cf"
+    ],
+    "imageQuery": [
+      "cottage garden flowers",
+      "thatched cottage england"
     ],
     "dimensions": {
       "nature": 0.8,
@@ -239,37 +243,37 @@
       "mori-kei"
     ],
     "world": {
-      "omgivelser": "kjøkkenhage som er litt for full, gjerde med rosebusk over",
-      "arkitektur": "lite hvitmalt hus, lav dør, vinduer med sprosser",
-      "interior": "kobberkjeler, tørkede urter, dukduk du ikke tør å bruke",
-      "teknologi": "en radio, en fryser, ellers helst ingenting",
-      "klaer": "linkjole, strikkejakke, forkle som faktisk brukes",
-      "musikk": "piano gjennom åpent vindu, folkeviser, bier",
-      "farger": "smør, tørket lavendel, eplegrønt, ubleket lin",
-      "hverdag": "brev som skrives for hånd, søndager uten planer, syltetøy i overskudd"
-    },
-    "imageQuery": [
-      "cottage garden flowers",
-      "thatched cottage england"
-    ]
+      "setting": "a kitchen garden slightly too full, a fence with a rose bush over it",
+      "architecture": "a small whitewashed house, a low door, windows with glazing bars",
+      "interior": "copper pans, dried herbs, a tablecloth you daren't actually use",
+      "technology": "a radio, a freezer, and preferably nothing else",
+      "clothes": "a linen dress, a cardigan, an apron that gets real use",
+      "music": "a piano through an open window, folk songs, bees",
+      "colours": "butter, dried lavender, apple green, unbleached linen",
+      "everyday": "letters written by hand, Sundays with no plans, more jam than anyone needs"
+    }
   },
   {
     "key": "cabincore",
     "name": "Cabincore",
-    "tagline": "Én hytte, ingen naboer, mye ved",
-    "description": "Tilbaketrekning til noe lite og varmt midt i noe stort og kaldt. Vinduet mot skogen betyr mer enn utsikten mot folk.",
+    "tagline": "One cabin, no neighbours, plenty of firewood",
+    "description": "Retreat into something small and warm in the middle of something large and cold. The window onto the forest matters more than the view of people.",
     "keywords": [
-      "peis",
-      "tømmer",
-      "regn på tak",
-      "ull",
-      "innsjø"
+      "hearth",
+      "timber",
+      "rain on the roof",
+      "wool",
+      "lake"
     ],
     "palette": [
       "#14100c",
       "#3a2b1e",
       "#8a6a45",
       "#e0cfae"
+    ],
+    "imageQuery": [
+      "log cabin lake",
+      "wooden cabin forest snow"
     ],
     "dimensions": {
       "nature": 0.85,
@@ -300,37 +304,37 @@
       "forestpunk"
     ],
     "world": {
-      "omgivelser": "vann som ligger blankt om morgenen, skog på alle kanter",
-      "arkitektur": "laftet tømmer, én stue, veranda med plass til to stoler og bare én person",
-      "interior": "ullpledd, bokhylle uten system, ovn som er sentrum i rommet",
-      "teknologi": "gasslampe, gammel platespiller, mobilen med én strek dekning",
-      "klaer": "tykk genser, slitte bukser, tøfler som aldri forlater huset",
-      "musikk": "fingerspill på akustisk gitar, regn, ved som knaker",
-      "farger": "tjærebrunt, ullhvitt, mørkegrønt, glørødt",
-      "hverdag": "bære inn ved, lese til det blir mørkt, ingen som venter svar"
-    },
-    "imageQuery": [
-      "log cabin lake",
-      "wooden cabin forest snow"
-    ]
+      "setting": "water lying flat in the morning, forest on every side",
+      "architecture": "notched timber, one main room, a porch with space for two chairs and only one person",
+      "interior": "wool blankets, a bookshelf with no system, a stove that is the centre of the room",
+      "technology": "a gas lamp, an old record player, a phone with one bar of signal",
+      "clothes": "a thick jumper, worn trousers, slippers that never leave the house",
+      "music": "fingerpicked guitar, rain, wood ticking in the stove",
+      "colours": "tar brown, wool white, deep green, ember red",
+      "everyday": "carrying wood in, reading until it goes dark, nobody waiting on a reply"
+    }
   },
   {
     "key": "naturecore",
     "name": "Naturecore",
-    "tagline": "Verden slik den er, uten filter",
-    "description": "Ren glede over naturens former: sopp, stein, fugler, tidevann. Mindre fantasi enn Fairycore, mindre dysterhet enn Dark Naturalism — bare oppmerksomhet.",
+    "tagline": "The world as it is, unfiltered",
+    "description": "Plain delight in the shapes nature makes: fungi, stone, birds, tides. Less fantasy than Fairycore, less gloom than Dark Naturalism - just attention.",
     "keywords": [
-      "sopp",
-      "fjære",
+      "fungi",
+      "tideline",
       "herbarium",
-      "årstider",
-      "fuglesang"
+      "seasons",
+      "birdsong"
     ],
     "palette": [
       "#12180f",
       "#31462a",
       "#7d9159",
       "#e2dcc0"
+    ],
+    "imageQuery": [
+      "forest mushrooms moss",
+      "wildflower meadow"
     ],
     "dimensions": {
       "nature": 0.95,
@@ -361,37 +365,37 @@
       "mori-kei"
     ],
     "world": {
-      "omgivelser": "en skråning med lav og lyng, fjære med tang og skjell",
-      "arkitektur": "feltstasjon, drivhus, noe bygget for å observere fra",
-      "interior": "presset planter i ramme, glasskrukker, stein på vinduskarmen",
-      "teknologi": "kikkert, feltbok, kamera med makroobjektiv",
-      "klaer": "praktiske lag, jordfarger, lommer til funn",
-      "musikk": "akustisk, feltopptak, stillhet mellom sporene",
-      "farger": "lyngrosa, lavgrått, bøkegrønt, skjellhvitt",
-      "hverdag": "turer med bok, årstider notert, funn i vindusposten"
-    },
-    "imageQuery": [
-      "forest mushrooms moss",
-      "wildflower meadow"
-    ]
+      "setting": "a slope of lichen and heather, a shoreline of weed and shells",
+      "architecture": "a field station, a greenhouse, something built to observe from",
+      "interior": "pressed plants in frames, glass jars, stones on the windowsill",
+      "technology": "binoculars, a field notebook, a camera with a macro lens",
+      "clothes": "practical layers, earth colours, pockets for finds",
+      "music": "acoustic, field recordings, silence between the tracks",
+      "colours": "heather pink, lichen grey, beech green, shell white",
+      "everyday": "walks with a book, seasons noted down, finds along the window"
+    }
   },
   {
     "key": "gloomcore",
     "name": "Gloomcore",
-    "tagline": "Overskyet, og det er fint",
-    "description": "Estetikken i grå dager, disig lys og tomme steder. Ikke sorg, men en behagelig dempet stemning der ingenting krever noe av deg.",
+    "tagline": "Overcast, and that's fine",
+    "description": "The look of grey days, hazy light and empty places. Not grief, but a pleasantly muted mood in which nothing is asked of you.",
     "keywords": [
-      "overskyet",
-      "disig",
-      "tomme rom",
-      "regnvindu",
-      "lav horisont"
+      "overcast",
+      "haze",
+      "empty rooms",
+      "rain on glass",
+      "low horizon"
     ],
     "palette": [
       "#101214",
       "#25292d",
       "#4c545a",
       "#9aa2a6"
+    ],
+    "imageQuery": [
+      "overcast sea pier",
+      "foggy street rain"
     ],
     "dimensions": {
       "melancholy": 0.95,
@@ -421,37 +425,37 @@
       "ghostcore"
     ],
     "world": {
-      "omgivelser": "strandpromenade i februar, parkeringsplass i regn, lav himmel",
-      "arkitektur": "betong og glass som speiler grått, busskur, tom terminal",
-      "interior": "få møbler, ett teppe, lys som ikke skrus på før det må",
-      "teknologi": "hodetelefoner, en telefon på lav lysstyrke",
-      "klaer": "regnjakke, grå gensere, ingenting som ber om oppmerksomhet",
-      "musikk": "ambient, shoegaze, sang du ikke hører ordene i",
-      "farger": "asfalt, dis, kaldt sølv, blekt blått",
-      "hverdag": "gå uten mål, se ut av vinduet lenge, la telefonen ligge"
-    },
-    "imageQuery": [
-      "overcast sea pier",
-      "foggy street rain"
-    ]
+      "setting": "a seafront in February, a car park in the rain, a low sky",
+      "architecture": "concrete and glass reflecting grey, a bus shelter, an empty terminal",
+      "interior": "few pieces of furniture, one rug, lights left off until they must go on",
+      "technology": "headphones, a phone on low brightness",
+      "clothes": "a rain jacket, grey jumpers, nothing asking for attention",
+      "music": "ambient, shoegaze, singing whose words you never catch",
+      "colours": "asphalt, haze, cold silver, pale blue",
+      "everyday": "walking with no destination, looking out of the window a long time, leaving the phone where it is"
+    }
   },
   {
     "key": "dark-academia",
     "name": "Dark Academia",
-    "tagline": "Kunnskap som besettelse",
-    "description": "Gamle bibliotek, døde språk og ambisjoner som blir litt for store. Skjønnhet, disiplin og en mistanke om at læring koster noe.",
+    "tagline": "Knowledge as obsession",
+    "description": "Old libraries, dead languages and ambitions that grow slightly too large. Beauty, discipline and a suspicion that learning costs something.",
     "keywords": [
-      "bibliotek",
+      "library",
       "latin",
       "tweed",
-      "kandelaber",
-      "essay"
+      "candelabra",
+      "essays"
     ],
     "palette": [
       "#14100d",
       "#33261c",
       "#6d5236",
       "#c9b48b"
+    ],
+    "imageQuery": [
+      "old library reading room",
+      "gothic university cloister"
     ],
     "dimensions": {
       "intellect": 0.95,
@@ -487,37 +491,37 @@
       "dandy"
     ],
     "world": {
-      "omgivelser": "universitetsgård i regn, trapper som er slitt i midten",
-      "arkitektur": "nygotikk, høye vinduer, korridorer som gir ekko",
-      "interior": "bokhyller til taket, grønn leselampe, papirstabler i system bare du forstår",
-      "teknologi": "skrivemaskin eller en laptop du skjuler, ellers helst papir",
-      "klaer": "tweed, ullfrakk, skjorte som er litt for formell for anledningen",
-      "musikk": "klaverstykker i moll, korverk, plateknitring",
-      "farger": "blekk, mørk oliven, brent umbra, gammelt papir",
-      "hverdag": "lese til to om natten, notatbøker som fylles fortere enn de leses"
-    },
-    "imageQuery": [
-      "old library reading room",
-      "gothic university cloister"
-    ]
+      "setting": "a university quad in the rain, stairs worn down in the middle",
+      "architecture": "neo-gothic, tall windows, corridors that carry an echo",
+      "interior": "shelves to the ceiling, a green reading lamp, paper stacks in an order only you understand",
+      "technology": "a typewriter, or a laptop you hide, otherwise paper",
+      "clothes": "tweed, a wool coat, a shirt slightly too formal for the occasion",
+      "music": "piano pieces in a minor key, choral works, the crackle of a record",
+      "colours": "ink, dark olive, burnt umber, old paper",
+      "everyday": "reading until two in the morning, notebooks filling faster than they are read"
+    }
   },
   {
     "key": "light-academia",
     "name": "Light Academia",
-    "tagline": "Å lære fordi verden er verdt å forstå",
-    "description": "Samme kjærlighet til bøker og bygninger som Dark Academia, men uten skyggen. Lyse lesesaler, vennskap, sommer og en tro på at kunnskap gjør godt.",
+    "tagline": "Learning because the world is worth understanding",
+    "description": "The same love of books and buildings as Dark Academia, without the shadow. Bright reading rooms, friendship, summer and a belief that knowledge does good.",
     "keywords": [
-      "lesesal",
-      "brev",
-      "poesi",
-      "morgensol",
-      "vennskap"
+      "reading room",
+      "letters",
+      "poetry",
+      "morning sun",
+      "friendship"
     ],
     "palette": [
       "#2a2418",
       "#6f5d3f",
       "#c2a878",
       "#f6efdd"
+    ],
+    "imageQuery": [
+      "library sunlight reading",
+      "classical university courtyard"
     ],
     "dimensions": {
       "intellect": 0.9,
@@ -549,37 +553,37 @@
       "scandinavian-design"
     ],
     "world": {
-      "omgivelser": "plen foran et gammelt bygg, sykkel mot en mur, sommer som varer for lenge",
-      "arkitektur": "lys stein, klassiske søyler, vinduer som slipper inn morgen",
-      "interior": "hvite vegger, treskrivebord, blomster i et glass",
-      "teknologi": "en laptop, men helst penn og et skikkelig papir",
-      "klaer": "lin, lyse strikkeplagg, skjorte med oppbrettede ermer",
-      "musikk": "strykekvartetter, tidlig jazz, noen som øver i etasjen over",
-      "farger": "elfenben, honning, sandstein, blekt blått",
-      "hverdag": "lese ute, diskutere for lenge, skrive brev du faktisk sender"
-    },
-    "imageQuery": [
-      "library sunlight reading",
-      "classical university courtyard"
-    ]
+      "setting": "a lawn in front of an old building, a bicycle against a wall, a summer that lasts too long",
+      "architecture": "pale stone, classical columns, windows that let the morning in",
+      "interior": "white walls, a wooden desk, flowers in a glass",
+      "technology": "a laptop, but preferably a pen and decent paper",
+      "clothes": "linen, light knitwear, a shirt with the sleeves rolled up",
+      "music": "string quartets, early jazz, someone practising upstairs",
+      "colours": "ivory, honey, sandstone, pale blue",
+      "everyday": "reading outdoors, arguing too long, writing letters you actually send"
+    }
   },
   {
     "key": "romantic-academia",
     "name": "Romantic Academia",
-    "tagline": "Studier som kjærlighetshistorie",
-    "description": "Litteraturen, lengselen og lidenskapen framfor eksamen. Kunnskap er noe man føler like mye som man forstår.",
+    "tagline": "Study as a love affair",
+    "description": "The literature, the longing and the passion rather than the exam. Knowledge is something you feel as much as understand.",
     "keywords": [
-      "poesi",
-      "brev",
-      "roser",
-      "dagbok",
-      "lengsel"
+      "poetry",
+      "letters",
+      "roses",
+      "diaries",
+      "longing"
     ],
     "palette": [
       "#1d141a",
       "#4b2b34",
       "#96636a",
       "#e6cfc2"
+    ],
+    "imageQuery": [
+      "woman writing letter painting",
+      "old writing desk letters"
     ],
     "dimensions": {
       "intellect": 0.8,
@@ -611,37 +615,37 @@
       "dark-romanticism"
     ],
     "world": {
-      "omgivelser": "overgrodd hage ved et bibliotek, benk under et tre du kommer tilbake til",
-      "arkitektur": "gammel villa, vindusnisje stor nok til å sitte i",
-      "interior": "tørkede blomster mellom boksider, brev i skuff, for mange puter",
-      "teknologi": "helst ingen; en telefon som ligger med skjermen ned",
-      "klaer": "myke lag, blondekrage, kåpe som er upraktisk og verdt det",
-      "musikk": "nocturner, sanger med tekst du kan utenat",
-      "farger": "tørket rose, vinrødt, gulnet papir, blekgull",
-      "hverdag": "understreke i bøker, skrive ting du ikke sender, lange kvelder"
-    },
-    "imageQuery": [
-      "antique books flowers",
-      "old writing desk letters"
-    ]
+      "setting": "an overgrown garden by a library, a bench under a tree you keep returning to",
+      "architecture": "an old villa, a window seat big enough to sit in",
+      "interior": "dried flowers between pages, letters in a drawer, far too many cushions",
+      "technology": "preferably none; a phone lying face down",
+      "clothes": "soft layers, a lace collar, a coat that is impractical and worth it",
+      "music": "nocturnes, songs whose words you know by heart",
+      "colours": "dried rose, wine red, yellowed paper, pale gold",
+      "everyday": "underlining in books, writing things you never send, long evenings"
+    }
   },
   {
     "key": "film-noir",
     "name": "Film Noir",
-    "tagline": "Byen om natten, og ingen som er uskyldig",
-    "description": "Hard skygge, våt asfalt og moralsk gråsone. Elegant, ensom og et hakk for sent til å redde noe.",
+    "tagline": "The city at night, and nobody innocent",
+    "description": "Hard shadow, wet asphalt and moral grey. Elegant, alone and one beat too late to save anything.",
     "keywords": [
-      "persienner",
-      "regn",
-      "sigarettrøyk",
-      "nattby",
-      "kontrast"
+      "venetian blinds",
+      "rain",
+      "cigarette smoke",
+      "night city",
+      "contrast"
     ],
     "palette": [
       "#08090b",
       "#1b1e24",
       "#4e545e",
       "#d7d3cb"
+    ],
+    "imageQuery": [
+      "night city street rain",
+      "city street 1940s night"
     ],
     "dimensions": {
       "urban": 0.92,
@@ -674,37 +678,37 @@
       "industrial-gothic"
     ],
     "world": {
-      "omgivelser": "gate der eneste lys kommer fra et skilt som blinker feil",
-      "arkitektur": "kontorbygg fra 40-tallet, trapperom, dør med frostet glass",
-      "interior": "persiennestriper på veggen, skrivebordslampe, ett glass",
-      "teknologi": "telefon med snor, bil med tunge dører, ingenting som lagrer noe",
-      "klaer": "frakk, hatt, klær som ser bedre ut våte",
-      "musikk": "sen saxofon, kontrabass, regn som rytmeseksjon",
-      "farger": "sotsvart, sigarettgrått, gult gatelys, hvit skjorte",
-      "hverdag": "vente, følge etter, komme til feil konklusjon på riktig sted"
-    },
-    "imageQuery": [
-      "night city street rain",
-      "city street 1940s night"
-    ]
+      "setting": "a street where the only light comes from a sign blinking wrong",
+      "architecture": "an office block from the forties, a stairwell, a door with frosted glass",
+      "interior": "blind-stripes across the wall, a desk lamp, one glass",
+      "technology": "a telephone with a cord, a car with heavy doors, nothing that stores anything",
+      "clothes": "an overcoat, a hat, clothes that look better wet",
+      "music": "late saxophone, double bass, rain as the rhythm section",
+      "colours": "soot black, cigarette grey, yellow streetlight, white shirt",
+      "everyday": "waiting, following, reaching the wrong conclusion in the right place"
+    }
   },
   {
     "key": "grunge",
     "name": "Grunge",
-    "tagline": "Ekte er viktigere enn pent",
-    "description": "Slitt, høyt og oppriktig. Motstand mot polering, både i klær, lyd og livsholdning.",
+    "tagline": "Real matters more than pretty",
+    "description": "Worn, loud and sincere. A refusal of polish - in clothes, in sound and in how you carry yourself.",
     "keywords": [
-      "flanell",
-      "forsterker",
-      "slitasje",
-      "kjeller",
-      "uinteressert i pynt"
+      "flannel",
+      "amplifier",
+      "wear",
+      "basement",
+      "uninterested in decoration"
     ],
     "palette": [
       "#131211",
       "#332f2a",
       "#6a5c4c",
       "#b8ada0"
+    ],
+    "imageQuery": [
+      "abandoned warehouse graffiti",
+      "worn brick wall urban"
     ],
     "dimensions": {
       "chaos": 0.85,
@@ -736,29 +740,25 @@
       "beatnik"
     ],
     "world": {
-      "omgivelser": "regnvåt forstad, øvingslokale i en kjeller, parkeringsplass ved en butikk",
-      "arkitektur": "murbygg med graffiti, lagerlokale gjort om til noe annet",
-      "interior": "madrass på gulvet, plakater med tape, forsterker som møbel",
-      "teknologi": "kassett, gitarpedaler, telefon med sprukket skjerm",
-      "klaer": "flanell over t-skjorte, hull som ikke ble laget med vilje",
-      "musikk": "vridd gitar, sang på grensen, opptak som ikke ble mikset ferdig",
-      "farger": "vasket svart, rustrødt, skittengrønt, gråbeige",
-      "hverdag": "sen kveld, dårlige planer, en samtale som betydde noe likevel"
-    },
-    "imageQuery": [
-      "abandoned warehouse graffiti",
-      "worn brick wall urban"
-    ]
+      "setting": "a rain-soaked suburb, a rehearsal room in a basement, a car park outside a shop",
+      "architecture": "a brick building with graffiti, a warehouse turned into something else",
+      "interior": "a mattress on the floor, posters taped up, an amplifier used as furniture",
+      "technology": "cassettes, guitar pedals, a phone with a cracked screen",
+      "clothes": "flannel over a t-shirt, holes that weren't put there on purpose",
+      "music": "bent guitar, singing at the edge, recordings never quite mixed",
+      "colours": "washed-out black, rust red, dirty green, grey-beige",
+      "everyday": "a late night, bad plans, one conversation that mattered anyway"
+    }
   },
   {
     "key": "old-web",
     "name": "Old Web",
-    "tagline": "Internett da det var noens hjem",
-    "description": "Håndkodede sider, gjestebøker, blinkende gifs og hjørner av nettet som ingen algoritme viste deg. Rotete, personlig og laget av folk som ikke prøvde å selge deg noe.",
+    "tagline": "The internet when it was somebody's home",
+    "description": "Hand-coded pages, guestbooks, blinking gifs and corners of the net no algorithm showed you. Messy, personal and made by people who weren't selling you anything.",
     "keywords": [
       "gifs",
-      "gjestebok",
-      "hjemmeside",
+      "guestbook",
+      "homepage",
       "webring",
       "under construction"
     ],
@@ -767,6 +767,10 @@
       "#1f2a55",
       "#5c7fd6",
       "#e6e6f2"
+    ],
+    "imageQuery": [
+      "vintage computer crt",
+      "1990s desktop computer"
     ],
     "dimensions": {
       "digital": 0.95,
@@ -799,37 +803,37 @@
       "frutiger-aero"
     ],
     "world": {
-      "omgivelser": "et rom med gardinene igjen og en skjerm som er dagens sterkeste lyskilde",
-      "arkitektur": "irrelevant — huset er en mappestruktur",
-      "interior": "CD-tårn, mus med ball i, en stol som ikke passer bordet",
-      "teknologi": "tårn-PC, modemlyd, sider laget i en teksteditor",
-      "klaer": "det du har på deg klokka to om natten",
-      "musikk": "MIDI-versjoner av sanger, spor lastet ned fra noen du aldri møtte",
-      "farger": "kongeblått, cyan, stjernebakgrunn, hvit Times New Roman",
-      "hverdag": "bygge noe ingen ber om, signere gjestebøker, glede seg over rot"
-    },
-    "imageQuery": [
-      "vintage computer crt",
-      "1990s desktop computer"
-    ]
+      "setting": "a room with the curtains shut and a screen as the brightest thing in it",
+      "architecture": "irrelevant - the house is a folder structure",
+      "interior": "a CD tower, a mouse with a ball in it, a chair that doesn't match the desk",
+      "technology": "a tower PC, the sound of a modem, pages written in a text editor",
+      "clothes": "whatever you have on at two in the morning",
+      "music": "MIDI versions of songs, tracks downloaded from someone you never met",
+      "colours": "royal blue, cyan, a starfield background, white Times New Roman",
+      "everyday": "building something nobody asked for, signing guestbooks, enjoying the mess"
+    }
   },
   {
     "key": "webcore",
     "name": "Webcore",
-    "tagline": "Grensesnittet som stemning",
-    "description": "Nostalgien etter tidlig digital kultur som visuelt språk: vinduer, ikoner, piksler og markører. Mer visuell lek enn faktisk teknologi.",
+    "tagline": "The interface as a mood",
+    "description": "Nostalgia for early digital culture as a visual language: windows, icons, pixels and cursors. More visual play than actual technology.",
     "keywords": [
-      "piksler",
-      "vinduer",
-      "ikoner",
-      "markør",
-      "nettleser"
+      "pixels",
+      "windows",
+      "icons",
+      "cursor",
+      "browser"
     ],
     "palette": [
       "#0b0d1c",
       "#20255c",
       "#6d7ef2",
       "#f0f2ff"
+    ],
+    "imageQuery": [
+      "crt monitor retro",
+      "old computer keyboard"
     ],
     "dimensions": {
       "digital": 0.95,
@@ -860,37 +864,37 @@
       "dreamcore"
     ],
     "world": {
-      "omgivelser": "et skrivebord som er halvt fysisk og halvt skjermbilde",
-      "arkitektur": "vinduer med tittellinje, mapper i mapper",
-      "interior": "musematte, høyttalere med tøy foran, klistremerker på alt",
-      "teknologi": "CRT-skjerm, disketter brukt som pynt, program du åpner uten grunn",
-      "klaer": "hettegenser, sokker som ikke matcher",
-      "musikk": "chiptune, systemlyder, sanger på 128 kbps",
-      "farger": "skjermblått, piksel-lilla, gråbeige plast",
-      "hverdag": "lage mapper for følelser, samle bilder, bygge en side ingen finner"
-    },
-    "imageQuery": [
-      "crt monitor retro",
-      "old computer keyboard"
-    ]
+      "setting": "a desk that is half physical and half screenshot",
+      "architecture": "windows with title bars, folders inside folders",
+      "interior": "a mousepad, speakers with fabric fronts, stickers on everything",
+      "technology": "a CRT monitor, floppy disks kept as decoration, a program you open for no reason",
+      "clothes": "a hoodie, socks that don't match",
+      "music": "chiptune, system sounds, songs at 128 kbps",
+      "colours": "screen blue, pixel purple, grey-beige plastic",
+      "everyday": "making folders for feelings, collecting images, building a page nobody finds"
+    }
   },
   {
     "key": "frutiger-aero",
     "name": "Frutiger Aero",
-    "tagline": "Framtiden var vennlig, våt og glass",
-    "description": "Optimismen fra 2004–2013: vanndråper, glassikoner, grønne enger og teknologi som lovet at alt skulle bli renere. Naturbilder som skjermsparer i et helt igjennom kunstig bilde.",
+    "tagline": "The future was friendly, wet and made of glass",
+    "description": "The optimism of 2004-2013: water droplets, glass icons, green meadows and technology promising everything would get cleaner. Nature photography as a screensaver inside a thoroughly artificial picture.",
     "keywords": [
-      "vanndråper",
+      "water droplets",
       "glass",
-      "skyer",
-      "bobler",
-      "grønt gress"
+      "clouds",
+      "bubbles",
+      "green grass"
     ],
     "palette": [
       "#052235",
       "#0d6d8c",
       "#4cc9d9",
       "#e8fbff"
+    ],
+    "imageQuery": [
+      "water droplets glass",
+      "blue sky green meadow"
     ],
     "dimensions": {
       "digital": 0.85,
@@ -923,37 +927,37 @@
       "webcore"
     ],
     "world": {
-      "omgivelser": "en eng under en umulig blå himmel, akvarium i en resepsjon",
-      "arkitektur": "glassfasader, buede former, offentlige bygg som ser ut som en brosjyre",
-      "interior": "hvit plast, blått lys, en fisk i et rundt kar",
-      "teknologi": "alt gjennomsiktig, alt med refleks, alt lover å synkronisere",
-      "klaer": "rene linjer, teknisk stoff, hvitt og turkis",
-      "musikk": "mykt elektronisk, systemtoner, noe som kunne vært en reklame",
-      "farger": "aqua, gressgrønt, glasshvitt, himmelblå",
-      "hverdag": "alt fungerer, alt oppdaterer seg, ingenting går i stykker"
-    },
-    "imageQuery": [
-      "water droplets glass",
-      "blue sky green meadow"
-    ]
+      "setting": "a meadow under an impossibly blue sky, an aquarium in a reception",
+      "architecture": "glass facades, curved forms, public buildings that look like a brochure",
+      "interior": "white plastic, blue light, a fish in a round tank",
+      "technology": "everything translucent, everything with a highlight, everything promising to sync",
+      "clothes": "clean lines, technical fabric, white and turquoise",
+      "music": "soft electronic, system tones, something that could have been an advert",
+      "colours": "aqua, grass green, glass white, sky blue",
+      "everyday": "everything works, everything updates, nothing breaks"
+    }
   },
   {
     "key": "frutiger-eco",
     "name": "Frutiger Eco",
-    "tagline": "Teknologien som gror",
-    "description": "Frutiger Aero med jord under neglene: bambus, solceller, mose på betong og et løfte om at det moderne kan være grønt uten å bli primitivt.",
+    "tagline": "Technology, growing",
+    "description": "Frutiger Aero with soil under its nails: bamboo, solar panels, moss on concrete and a promise that the modern can be green without becoming primitive.",
     "keywords": [
-      "bambus",
-      "solcelle",
-      "vertikal hage",
-      "resirkulert",
-      "lys grønn"
+      "bamboo",
+      "solar panel",
+      "vertical garden",
+      "recycled",
+      "pale green"
     ],
     "palette": [
       "#0b1d13",
       "#1f6b45",
       "#6fc48a",
       "#e9f7e6"
+    ],
+    "imageQuery": [
+      "green facade building plants",
+      "vertical garden wall"
     ],
     "dimensions": {
       "nature": 0.85,
@@ -984,37 +988,37 @@
       "scandinavian-design"
     ],
     "world": {
-      "omgivelser": "takhage over en travel gate, grønne vegger som faktisk vokser",
-      "arkitektur": "lyst tre og glass, bygg som puster",
-      "interior": "planter i hvert hjørne, naturlige materialer, lite plast",
-      "teknologi": "stille, effektiv, integrert i noe levende",
-      "klaer": "økologiske stoffer, myke former, dempet grønt",
-      "musikk": "lyse elektroniske flater, fuglelyd i miksen",
-      "farger": "bladgrønt, bambus, kalkhvitt, dagslys",
-      "hverdag": "sykle, dyrke litt, tro at det går bra til slutt"
-    },
-    "imageQuery": [
-      "green wall building",
-      "vertical garden architecture"
-    ]
+      "setting": "a roof garden above a busy street, green walls that actually grow",
+      "architecture": "pale timber and glass, buildings that breathe",
+      "interior": "plants in every corner, natural materials, little plastic",
+      "technology": "quiet, efficient, built into something living",
+      "clothes": "organic fabrics, soft shapes, muted green",
+      "music": "bright electronic surfaces, birdsong in the mix",
+      "colours": "leaf green, bamboo, chalk white, daylight",
+      "everyday": "cycling, growing a little, believing it works out in the end"
+    }
   },
   {
     "key": "vaporwave",
     "name": "Vaporwave",
-    "tagline": "Nostalgi for noe som aldri fantes",
-    "description": "Kjøpesenterets musikk sløvet ned til drøm, gresk statue i rosa lys, ironisk og oppriktig på samme tid. Lengsel etter en framtid som ble kansellert.",
+    "tagline": "Nostalgia for something that never existed",
+    "description": "Mall music slowed into a dream, a Greek statue in pink light, ironic and sincere at once. Longing for a future that got cancelled.",
     "keywords": [
-      "kjøpesenter",
+      "shopping mall",
       "statue",
-      "rutenett",
-      "solnedgang",
-      "sløvet lyd"
+      "grid",
+      "sunset",
+      "slowed audio"
     ],
     "palette": [
       "#160a2b",
       "#5b1a6b",
       "#e0559b",
       "#5ee2f0"
+    ],
+    "imageQuery": [
+      "empty shopping mall",
+      "neon sunset palm trees"
     ],
     "dimensions": {
       "nostalgia": 0.9,
@@ -1046,37 +1050,37 @@
       "retrofuturism"
     ],
     "world": {
-      "omgivelser": "tomt kjøpesenter etter stengetid, basseng belyst nedenfra",
-      "arkitektur": "atrium med rulletrapp, speilglass, palmer i potte",
-      "interior": "marmorplate, neonskilt, plante som kanskje er ekte",
-      "teknologi": "VHS, gammel Mac, romantiserte grensesnitt",
-      "klaer": "vindjakke fra 80-tallet, solbriller uten grunn",
-      "musikk": "sløvet soul, mall-jazz, ekko på alt",
-      "farger": "rosa neon, cyan, lavendel, solnedgangsoransje",
-      "hverdag": "være våken for sent, savne noe du ikke kan navngi"
-    },
-    "imageQuery": [
-      "empty shopping mall",
-      "neon sunset palm trees"
-    ]
+      "setting": "an empty mall after closing, a pool lit from below",
+      "architecture": "an atrium with an escalator, mirrored glass, palms in pots",
+      "interior": "a marble counter, a neon sign, a plant that may be real",
+      "technology": "VHS, an old Mac, interfaces remembered more fondly than they were",
+      "clothes": "a windbreaker from the eighties, sunglasses for no reason",
+      "music": "slowed soul, mall jazz, echo on everything",
+      "colours": "neon pink, cyan, lavender, sunset orange",
+      "everyday": "staying up too late, missing something you cannot name"
+    }
   },
   {
     "key": "y2k",
     "name": "Y2K",
-    "tagline": "Millenniet skulle skinne",
-    "description": "Kromfarget optimisme rundt år 2000: gjennomsiktig plast, bobleformer, mobiler som pynt og en tro på at framtiden ville være morsom.",
+    "tagline": "The millennium was supposed to shine",
+    "description": "Chrome-plated optimism around the year 2000: translucent plastic, bubble shapes, phones as jewellery and a belief that the future would be fun.",
     "keywords": [
-      "krom",
-      "gjennomsiktig plast",
+      "chrome",
+      "translucent plastic",
       "glitter",
-      "flippetelefon",
-      "boble"
+      "flip phone",
+      "bubble"
     ],
     "palette": [
       "#0e1230",
       "#3d3fa8",
       "#9fa8ff",
       "#f2f0ff"
+    ],
+    "imageQuery": [
+      "imac g3 translucent",
+      "flip phone 2000s"
     ],
     "dimensions": {
       "digital": 0.88,
@@ -1108,37 +1112,37 @@
       "old-web"
     ],
     "world": {
-      "omgivelser": "kjøpesenter i full drift, buss-stopp med reklame som glitrer",
-      "arkitektur": "kurver, blå glassfasader, alt som ser ut som en musikkvideo",
-      "interior": "gjennomsiktig plaststol, oppblåsbar sofa, lavalampe",
-      "teknologi": "MP3-spiller, flippetelefon, CD-brenner",
-      "klaer": "glitter, metallic, små solbriller, alt litt for skinnende",
-      "musikk": "eurodance, R&B med vokoder, ringetoner",
-      "farger": "krom, isblått, sølv, syrlig rosa",
-      "hverdag": "brenne CD-er til venner, gleden i noe helt overflatisk"
-    },
-    "imageQuery": [
-      "translucent plastic gadget",
-      "early 2000s mobile phone"
-    ]
+      "setting": "a mall in full swing, a bus stop with an advert that glitters",
+      "architecture": "curves, blue glass facades, everything looking like a music video",
+      "interior": "a translucent plastic chair, an inflatable sofa, a lava lamp",
+      "technology": "an MP3 player, a flip phone, a CD burner",
+      "clothes": "glitter, metallics, tiny sunglasses, everything a bit too shiny",
+      "music": "eurodance, R&B with a vocoder, ringtones",
+      "colours": "chrome, ice blue, silver, acid pink",
+      "everyday": "burning CDs for friends, taking joy in something entirely superficial"
+    }
   },
   {
     "key": "retrofuturism",
     "name": "Retrofuturism",
-    "tagline": "Framtiden slik fortiden så den",
-    "description": "Rakettfinner, flyvende biler og modeller av morgendagens by. Fascinasjonen for optimismen selv, med et vemod over at den ikke slo til.",
+    "tagline": "The future as the past imagined it",
+    "description": "Rocket fins, flying cars and scale models of tomorrow's city. A fascination with the optimism itself, and a sadness that it never arrived.",
     "keywords": [
-      "rakett",
-      "verdensutstilling",
-      "flyvende bil",
-      "kuppel",
-      "morgendagens by"
+      "rocket",
+      "world's fair",
+      "flying car",
+      "dome",
+      "city of tomorrow"
     ],
     "palette": [
       "#131a2e",
       "#2f4f8f",
       "#d9a441",
       "#efe6d3"
+    ],
+    "imageQuery": [
+      "world fair pavilion 1939",
+      "space age monorail"
     ],
     "dimensions": {
       "futurism": 0.82,
@@ -1169,37 +1173,37 @@
       "vaporwave"
     ],
     "world": {
-      "omgivelser": "et messeområde med monorail som aldri ble bygget ferdig",
-      "arkitektur": "kupler, kragarm, bygninger som ser ut som de skal lette",
-      "interior": "buede plastmøbler, kontrollpanel med altfor mange brytere",
-      "teknologi": "analog framtid: rør, brytere, nåler som slår ut",
-      "klaer": "skjørt snitt, sølvdetaljer, uniformer for et yrke som ikke finnes",
-      "musikk": "theremin, orkestrale fanfarer, tidlig synth",
-      "farger": "rakettrødt, himmelblått, messing, kremhvitt",
-      "hverdag": "tegne planer for et sted du aldri flytter til"
-    },
-    "imageQuery": [
-      "world fair pavilion",
-      "vintage rocket model"
-    ]
+      "setting": "a fairground with a monorail that was never finished",
+      "architecture": "domes, cantilevers, buildings that look ready to take off",
+      "interior": "curved plastic furniture, a control panel with far too many switches",
+      "technology": "an analogue future: valves, switches, needles that swing",
+      "clothes": "sharp tailoring, silver detailing, uniforms for a job that doesn't exist",
+      "music": "theremin, orchestral fanfares, early synthesiser",
+      "colours": "rocket red, sky blue, brass, cream white",
+      "everyday": "drawing plans for a place you will never move to"
+    }
   },
   {
     "key": "atompunk",
     "name": "Atompunk",
-    "tagline": "Atomalderens skinnende selvtillit",
-    "description": "Amerika mellom 1945 og 1965: romkappløp, formica, tillit til vitenskapen og en optimisme med en skygge av frykt under.",
+    "tagline": "The atomic age and its shining confidence",
+    "description": "America between 1945 and 1965: the space race, formica, faith in science and an optimism with a shadow of fear underneath.",
     "keywords": [
       "atom",
-      "romkappløp",
+      "space race",
       "formica",
       "googie",
-      "forstad"
+      "suburb"
     ],
     "palette": [
       "#141b26",
       "#2f6f8f",
       "#e2b13c",
       "#f4ecdc"
+    ],
+    "imageQuery": [
+      "googie architecture",
+      "1950s diner neon sign"
     ],
     "dimensions": {
       "futurism": 0.8,
@@ -1230,37 +1234,37 @@
       "americana"
     ],
     "world": {
-      "omgivelser": "motell med neon, testområde i ørkenen, forstadsgate med nyplantede trær",
-      "arkitektur": "googie: skrå tak, stjerneformer, skilt større enn bygget",
-      "interior": "formica, kromkanter, kjøkken som ser ut som et laboratorium",
-      "teknologi": "raketter, radioaktive lovnader, apparater med bare én knapp",
-      "klaer": "skjorte i pastell, sløyfe, frisyre med struktur",
-      "musikk": "exotica, space-age pop, vibrafon",
-      "farger": "turkis, koral, krom, kremgul",
-      "hverdag": "tro på ingeniører, planlegge en framtid med tallene i orden"
-    },
-    "imageQuery": [
-      "googie architecture",
-      "1950s diner neon sign"
-    ]
+      "setting": "a motel with neon, a test site in the desert, a suburban street with new trees",
+      "architecture": "googie: swept roofs, starbursts, a sign larger than the building",
+      "interior": "formica, chrome edging, a kitchen that looks like a laboratory",
+      "technology": "rockets, radioactive promises, appliances with a single button",
+      "clothes": "a pastel shirt, a bow tie, a haircut with structure",
+      "music": "exotica, space-age pop, vibraphone",
+      "colours": "turquoise, coral, chrome, cream yellow",
+      "everyday": "trusting engineers, planning a future with the numbers in order"
+    }
   },
   {
     "key": "decopunk",
     "name": "Decopunk",
-    "tagline": "Maskinalder med gullkant",
-    "description": "Art Deco strukket inn i det spekulative: strømlinjeformet metall, skyskrapere og elegant maskineri. Optimistisk, urban og forfengelig.",
+    "tagline": "The machine age with a gilt edge",
+    "description": "Art Deco stretched into the speculative: streamlined metal, skyscrapers and elegant machinery. Optimistic, urban and a little vain.",
     "keywords": [
-      "strømlinje",
-      "messing",
-      "skyskraper",
-      "luftskip",
-      "geometri"
+      "streamline",
+      "brass",
+      "skyscraper",
+      "airship",
+      "geometry"
     ],
     "palette": [
       "#0f1218",
       "#1e3a4c",
       "#c9a227",
       "#f0e9d8"
+    ],
+    "imageQuery": [
+      "art deco skyscraper",
+      "chrysler building detail"
     ],
     "dimensions": {
       "futurism": 0.72,
@@ -1292,37 +1296,37 @@
       "old-hollywood"
     ],
     "world": {
-      "omgivelser": "skyline i gyllent kveldslys, luftskip over en havn",
-      "arkitektur": "trinnvise fasader, forgylte portaler, heiser med messinggitter",
-      "interior": "palisander og krom, speilvegg, barskap som er et møbel",
-      "teknologi": "elegante maskiner, alt med kappe og logo",
-      "klaer": "skreddersøm, silke, en hatt som betyr noe",
-      "musikk": "storband, klarinett, orkester i en ballsal",
-      "farger": "gull, jadegrønt, dyp marine, elfenben",
-      "hverdag": "kvelder som starter sent, tro på at framgang også skal se bra ut"
-    },
-    "imageQuery": [
-      "art deco skyscraper",
-      "chrysler building detail"
-    ]
+      "setting": "a skyline in golden evening light, an airship over a harbour",
+      "architecture": "stepped facades, gilded portals, lifts with brass gates",
+      "interior": "rosewood and chrome, a mirrored wall, a drinks cabinet that counts as furniture",
+      "technology": "elegant machines, everything with a housing and a logo",
+      "clothes": "tailoring, silk, a hat that means something",
+      "music": "big band, clarinet, an orchestra in a ballroom",
+      "colours": "gold, jade green, deep navy, ivory",
+      "everyday": "evenings that start late, believing progress should also look good"
+    }
   },
   {
     "key": "dieselpunk",
     "name": "Dieselpunk",
-    "tagline": "Olje, nagler og alvor",
-    "description": "Mellomkrigstidens tunge maskiner: fly av metall, motorer man hører gjennom vegger, og en verden som er mer robust enn behagelig.",
+    "tagline": "Oil, rivets and seriousness",
+    "description": "The heavy machinery of the interwar years: aircraft made of metal, engines you hear through walls, and a world built to be robust rather than comfortable.",
     "keywords": [
-      "nagler",
-      "motor",
+      "rivets",
+      "engines",
       "hangar",
-      "olje",
-      "mellomkrigstid"
+      "oil",
+      "interwar"
     ],
     "palette": [
       "#111214",
       "#33302b",
       "#7a6244",
       "#c6bda9"
+    ],
+    "imageQuery": [
+      "vintage aircraft hangar",
+      "1930s industrial machinery"
     ],
     "dimensions": {
       "industrial": 0.9,
@@ -1354,37 +1358,37 @@
       "industrial"
     ],
     "world": {
-      "omgivelser": "havneområde med kraner, flystripe i tåke, verksted med portene åpne",
-      "arkitektur": "murbygg med jerndetaljer, hangarer, brede betongtrapper",
-      "interior": "stålskap, kart på veggen, lampe med metallskjerm",
-      "teknologi": "motorer du kan reparere med skiftenøkkel, radiosamband",
-      "klaer": "skinnjakke, arbeidsbukse, skjerf av praktiske grunner",
-      "musikk": "messing, marsjrytme, plate som knirker",
-      "farger": "oljesvart, khaki, oksidert messing, betonggrått",
-      "hverdag": "verktøy som holdes i orden, arbeid som setter spor i hendene"
-    },
-    "imageQuery": [
-      "vintage aircraft hangar",
-      "1930s industrial machinery"
-    ]
+      "setting": "a dockside with cranes, an airstrip in fog, a workshop with the doors open",
+      "architecture": "brick with iron detailing, hangars, wide concrete stairs",
+      "interior": "steel cabinets, a map on the wall, a lamp with a metal shade",
+      "technology": "engines you can fix with a spanner, radio contact",
+      "clothes": "a leather jacket, work trousers, a scarf for practical reasons",
+      "music": "brass, march rhythms, a record that crackles",
+      "colours": "oil black, khaki, oxidised brass, concrete grey",
+      "everyday": "keeping tools in order, work that leaves marks on your hands"
+    }
   },
   {
     "key": "steampunk",
     "name": "Steampunk",
-    "tagline": "Framtiden bygget i messing",
-    "description": "Viktoriansk oppfinnsomhet uten grenser: tannhjul, damp, luftskip og apparater som gjør for mye. Håndverk og overdådighet i samme maskin.",
+    "tagline": "The future built in brass",
+    "description": "Victorian inventiveness without limits: cogs, steam, airships and devices that do far too much. Craft and excess in the same machine.",
     "keywords": [
-      "tannhjul",
-      "messing",
-      "damp",
-      "oppfinnelse",
-      "luftskip"
+      "cogs",
+      "brass",
+      "steam",
+      "invention",
+      "airship"
     ],
     "palette": [
       "#160f0a",
       "#3d2a17",
       "#a8792f",
       "#e8d5ac"
+    ],
+    "imageQuery": [
+      "steam engine brass",
+      "victorian machinery gears"
     ],
     "dimensions": {
       "craft": 0.95,
@@ -1417,37 +1421,37 @@
       "dandy"
     ],
     "world": {
-      "omgivelser": "en by av broer og rørgater, damp fra gaterister",
-      "arkitektur": "jern og glass, drivhus på taket, klokketårn med synlig mekanikk",
-      "interior": "verksted i stuen, instrumenter i mahogni, kart og globus",
-      "teknologi": "alt mekanisk, alt synlig, alt litt større enn nødvendig",
-      "klaer": "vest, lommeur, briller på pannen som faktisk brukes",
-      "musikk": "kammermusikk med maskinlyd, harmonium, valser",
-      "farger": "messing, mahogni, flaskegrønt, gulnet elfenben",
-      "hverdag": "bygge noe unødvendig og bli lykkelig av det"
-    },
-    "imageQuery": [
-      "steam engine brass",
-      "victorian machinery gears"
-    ]
+      "setting": "a city of bridges and pipework, steam rising from gratings",
+      "architecture": "iron and glass, a greenhouse on the roof, a clock tower with visible mechanism",
+      "interior": "a workshop in the sitting room, mahogany instruments, maps and a globe",
+      "technology": "everything mechanical, everything visible, everything slightly larger than needed",
+      "clothes": "a waistcoat, a pocket watch, goggles on the forehead that actually get used",
+      "music": "chamber music with machine noise, harmonium, waltzes",
+      "colours": "brass, mahogany, bottle green, yellowed ivory",
+      "everyday": "building something unnecessary and being made happy by it"
+    }
   },
   {
     "key": "cyberpunk",
     "name": "Cyberpunk",
-    "tagline": "Høy teknologi, lavt liv",
-    "description": "Megabyen etter mørkets frembrudd: neon i regn, selskaper som styrer alt og folk som klarer seg i sprekkene. Vakkert og ugjestmildt på én gang.",
+    "tagline": "High tech, low life",
+    "description": "The megacity after dark: neon in rain, corporations running everything, and people making it work in the cracks. Beautiful and inhospitable at once.",
     "keywords": [
       "neon",
-      "megaby",
-      "implantat",
-      "regn",
-      "bakgate"
+      "megacity",
+      "implants",
+      "rain",
+      "back alley"
     ],
     "palette": [
       "#08060f",
       "#1b0f3a",
       "#7a2bd6",
       "#31f5e0"
+    ],
+    "imageQuery": [
+      "neon city night rain",
+      "tokyo alley neon signs"
     ],
     "dimensions": {
       "urban": 0.95,
@@ -1480,37 +1484,37 @@
       "y2k"
     ],
     "world": {
-      "omgivelser": "gate uten dagslys, reklame som er større enn husene, alltid regn",
-      "arkitektur": "tårn på tårn, provisoriske påbygg, betong under lysrør",
-      "interior": "lite rom, mange skjermer, kabler ingen tør å rydde",
-      "teknologi": "modifisert, ulovlig, koblet direkte på deg",
-      "klaer": "teknisk stoff, høy krage, refleks som skjuler mer enn den viser",
-      "musikk": "industriell elektronika, bass som går gjennom gulvet",
-      "farger": "neonlilla, giftgrønt, våt asfalt, magenta",
-      "hverdag": "jobbe om natten, stole på få, holde seg utenfor systemet"
-    },
-    "imageQuery": [
-      "neon city night rain",
-      "tokyo alley neon signs"
-    ]
+      "setting": "a street with no daylight, advertising larger than the buildings, always rain",
+      "architecture": "tower upon tower, improvised extensions, concrete under fluorescent light",
+      "interior": "a small room, many screens, cables nobody dares tidy",
+      "technology": "modified, illegal, wired straight into you",
+      "clothes": "technical fabric, a high collar, reflective material that hides more than it shows",
+      "music": "industrial electronica, bass through the floor",
+      "colours": "neon purple, toxic green, wet asphalt, magenta",
+      "everyday": "working nights, trusting few, staying outside the system"
+    }
   },
   {
     "key": "solarpunk",
     "name": "Solarpunk",
-    "tagline": "Om vi faktisk fikk det til",
-    "description": "En framtid som valgte fellesskap, sol og grønne byer framfor kollaps. Optimistisk uten å være naiv — det krever arbeid, og arbeidet er poenget.",
+    "tagline": "If we actually pulled it off",
+    "description": "A future that chose community, sun and green cities over collapse. Optimistic without being naive - it takes work, and the work is the point.",
     "keywords": [
-      "solceller",
-      "fellesskap",
-      "grønne byer",
-      "vindturbin",
-      "hage på tak"
+      "solar panels",
+      "community",
+      "green cities",
+      "wind turbine",
+      "roof garden"
     ],
     "palette": [
       "#0b2018",
       "#1f7a52",
       "#8fd07a",
       "#fdf3d0"
+    ],
+    "imageQuery": [
+      "rooftop garden city",
+      "solar panels garden"
     ],
     "dimensions": {
       "nature": 0.9,
@@ -1543,37 +1547,37 @@
       "art-nouveau"
     ],
     "world": {
-      "omgivelser": "en by med kanaler og frukttrær, vindturbiner på horisonten",
-      "arkitektur": "buede tak i tre, solceller som ser ut som kunst, fellesrom i midten",
-      "interior": "lyse rom, ting laget lokalt, verktøy som deles",
-      "teknologi": "åpen, reparerbar, laget for å vare og for å låne bort",
-      "klaer": "farger, håndlagde detaljer, plagg som repareres synlig",
-      "musikk": "akustisk og elektronisk sammen, mange som spiller samtidig",
-      "farger": "solgul, bladgrønn, terrakotta, himmelblå",
-      "hverdag": "dyrke, dele, bygge noe som andre også får bruke"
-    },
-    "imageQuery": [
-      "rooftop garden city",
-      "solar panels garden"
-    ]
+      "setting": "a city of canals and fruit trees, wind turbines on the horizon",
+      "architecture": "curved timber roofs, solar panels that look like art, a shared room at the centre",
+      "interior": "bright rooms, things made locally, tools that get lent out",
+      "technology": "open, repairable, built to last and to be borrowed",
+      "clothes": "colour, handmade detail, garments mended visibly",
+      "music": "acoustic and electronic together, several people playing at once",
+      "colours": "sun yellow, leaf green, terracotta, sky blue",
+      "everyday": "growing, sharing, building something other people also get to use"
+    }
   },
   {
     "key": "industrial",
     "name": "Industrial",
-    "tagline": "Ærlighet i stål og betong",
-    "description": "Skjønnhet i det som er laget for å fungere: rørgater, betong, maskiner og lokaler bygget for arbeid. Ingen pynt, men mye karakter.",
+    "tagline": "Honesty in steel and concrete",
+    "description": "Beauty in what was made to work: pipework, concrete, machinery and spaces built for labour. No decoration, plenty of character.",
     "keywords": [
-      "betong",
-      "stål",
-      "lager",
-      "rørgater",
-      "verksted"
+      "concrete",
+      "steel",
+      "warehouse",
+      "pipework",
+      "workshop"
     ],
     "palette": [
       "#101112",
       "#2a2c2e",
       "#5d5f61",
       "#b7b3ad"
+    ],
+    "imageQuery": [
+      "factory interior steel",
+      "industrial warehouse concrete"
     ],
     "dimensions": {
       "industrial": 0.95,
@@ -1605,37 +1609,37 @@
       "industrial-gothic"
     ],
     "world": {
-      "omgivelser": "industriområde ved elven, kraner mot kveldshimmel",
-      "arkitektur": "lagerhaller, stålbjelker som får være synlige, store vinduer i rutenett",
-      "interior": "betonggulv, hyller i metall, én god lampe over et arbeidsbord",
-      "teknologi": "maskiner med vekt, verktøy med formål",
-      "klaer": "arbeidsjakke, robuste sko, ingenting som ikke tåler noe",
-      "musikk": "repeterende elektronikk, metalliske lyder, ekko i store rom",
-      "farger": "betonggrått, rust, stålblått, svart",
-      "hverdag": "lage ting, rydde verktøy, respektere at noe er tungt"
-    },
-    "imageQuery": [
-      "factory interior steel",
-      "industrial warehouse concrete"
-    ]
+      "setting": "an industrial estate by the river, cranes against an evening sky",
+      "architecture": "warehouse halls, steel beams left visible, tall windows in a grid",
+      "interior": "a concrete floor, metal shelving, one good lamp over a workbench",
+      "technology": "machines with weight, tools with a purpose",
+      "clothes": "a work jacket, sturdy boots, nothing that can't take it",
+      "music": "repetitive electronics, metallic sounds, echo in large rooms",
+      "colours": "concrete grey, rust, steel blue, black",
+      "everyday": "making things, putting tools away, respecting that something is heavy"
+    }
   },
   {
     "key": "industrial-gothic",
     "name": "Industrial Gothic",
-    "tagline": "Fabrikken som katedral",
-    "description": "Forlatt industri med sakral tyngde: høye haller, sot, lys som faller ned gjennom knuste ruter. Storhet og forfall i samme rom.",
+    "tagline": "The factory as cathedral",
+    "description": "Abandoned industry with sacred weight: tall halls, soot, light falling through broken glass. Grandeur and decay in the same room.",
     "keywords": [
-      "forlatt fabrikk",
-      "sot",
-      "høye haller",
+      "abandoned factory",
+      "soot",
+      "tall halls",
       "rust",
-      "knust glass"
+      "broken glass"
     ],
     "palette": [
       "#0a0a0b",
       "#20211f",
       "#4a3f36",
       "#9d968a"
+    ],
+    "imageQuery": [
+      "abandoned factory hall",
+      "derelict industrial building"
     ],
     "dimensions": {
       "industrial": 0.9,
@@ -1667,37 +1671,37 @@
       "dark-academia"
     ],
     "world": {
-      "omgivelser": "et anlegg som ikke har gått på tjue år, bjørk som vokser i en hall",
-      "arkitektur": "buede vinduer i murstein, skorsteiner, trapper uten rekkverk",
-      "interior": "støv i lysstråler, maskiner som står igjen, rust som mønster",
-      "teknologi": "det som ble stående da alle gikk hjem",
-      "klaer": "mørkt, tungt, slitesterkt, litt formelt likevel",
-      "musikk": "orgel og maskinstøy, dype droner, klang fra store rom",
-      "farger": "sot, jernrødt, blygrått, blekt dagslys",
-      "hverdag": "gå inn steder du ikke burde, fotografere lyset før det flytter seg"
-    },
-    "imageQuery": [
-      "abandoned factory hall",
-      "derelict industrial building"
-    ]
+      "setting": "a plant that hasn't run in twenty years, birch growing inside a hall",
+      "architecture": "arched brick windows, chimneys, stairs without railings",
+      "interior": "dust in the light shafts, machines left where they stood, rust as pattern",
+      "technology": "whatever stayed behind when everyone went home",
+      "clothes": "dark, heavy, hard-wearing, and formal all the same",
+      "music": "organ and machine noise, deep drones, the ring of large rooms",
+      "colours": "soot, iron red, lead grey, pale daylight",
+      "everyday": "going into places you shouldn't, photographing the light before it moves"
+    }
   },
   {
     "key": "appalachian-gothic",
     "name": "Appalachian Gothic",
-    "tagline": "Fjell som holder på noe",
-    "description": "Isolerte daler, gamle slekter, salmer og historier som ikke fortelles til fremmede. Vakkert, varmt og litt truende samtidig.",
+    "tagline": "Mountains that are keeping something",
+    "description": "Isolated valleys, old families, hymns and stories that aren't told to strangers. Beautiful, warm and faintly threatening at the same time.",
     "keywords": [
-      "fjelldal",
-      "salmer",
-      "slekt",
-      "veranda",
-      "tåke mellom åser"
+      "mountain valley",
+      "hymns",
+      "kin",
+      "porch",
+      "fog between ridges"
     ],
     "palette": [
       "#0d1211",
       "#26332b",
       "#6a5b3f",
       "#c3b7a0"
+    ],
+    "imageQuery": [
+      "appalachian mountains fog",
+      "old farmhouse porch wood"
     ],
     "dimensions": {
       "rural": 0.95,
@@ -1729,37 +1733,37 @@
       "cryptidcore"
     ],
     "world": {
-      "omgivelser": "en dal med tåke som ligger til middag, kirkegård for én familie",
-      "arkitektur": "hus med veranda rundt, låve som heller, kapell av tre",
-      "interior": "quilt, bibel med notater, bilder av folk ingen kan navngi lenger",
-      "teknologi": "det nødvendige, ofte førti år gammelt og fortsatt i drift",
-      "klaer": "arbeidsklær, kjole til søndag, hatt som er en del av personen",
-      "musikk": "banjo, salmer sunget uten instrument, klagesanger",
-      "farger": "torvbrunt, tåkegrått, kirkehvit, tørket blod",
-      "hverdag": "kjenne alle, si lite, holde skikker som er eldre enn huset"
-    },
-    "imageQuery": [
-      "appalachian mountains fog",
-      "old farmhouse porch wood"
-    ]
+      "setting": "a valley where the fog stays until midday, a graveyard for one family",
+      "architecture": "a house with a wraparound porch, a leaning barn, a wooden chapel",
+      "interior": "a quilt, a bible with notes in it, photographs of people nobody can name now",
+      "technology": "what is needed, often forty years old and still running",
+      "clothes": "work clothes, a dress for Sunday, a hat that is part of the person",
+      "music": "banjo, hymns sung without instruments, laments",
+      "colours": "peat brown, fog grey, church white, dried blood",
+      "everyday": "knowing everyone, saying little, keeping customs older than the house"
+    }
   },
   {
     "key": "folk-horror",
     "name": "Folk Horror",
-    "tagline": "Bygda har egne regler",
-    "description": "Landskap, ritualer og lokalsamfunn der noe eldgammelt fortsatt gjelder. Solskinn kan være mer skremmende enn mørke.",
+    "tagline": "The village has its own rules",
+    "description": "Landscape, ritual and small communities where something very old still applies. Sunlight can be more frightening than the dark.",
     "keywords": [
       "ritual",
-      "steinsirkel",
-      "høst",
-      "maske",
-      "landsby"
+      "stone circle",
+      "harvest",
+      "masks",
+      "village"
     ],
     "palette": [
       "#12140d",
       "#333b1f",
       "#8a7b34",
       "#ded4ab"
+    ],
+    "imageQuery": [
+      "stone circle field",
+      "rural village church old"
     ],
     "dimensions": {
       "tradition": 0.92,
@@ -1791,37 +1795,37 @@
       "medieval"
     ],
     "world": {
-      "omgivelser": "åker med noe stående i midten, sti gjennom kornet, solnedgang som varer for lenge",
-      "arkitektur": "kirke uten prest, steingjerder, hus som vender fra veien",
-      "interior": "tørket kornkrans, bord dekket til flere enn som kommer",
-      "teknologi": "påfallende fraværende",
-      "klaer": "ull, plagg til bestemte dager, noe hjemmelaget over ansiktet",
-      "musikk": "unison sang, fele, trommer med feil takt",
-      "farger": "kornt gult, blodrødt, mosegrønt, kalkhvitt",
-      "hverdag": "gjøre ting fordi de alltid har blitt gjort"
-    },
-    "imageQuery": [
-      "stone circle field",
-      "rural village church old"
-    ]
+      "setting": "a field with something standing in the middle, a path through the corn, a sunset that lasts too long",
+      "architecture": "a church with no priest, stone walls, houses turned away from the road",
+      "interior": "a dried corn wreath, a table laid for more than are coming",
+      "technology": "conspicuously absent",
+      "clothes": "wool, garments for particular days, something homemade over the face",
+      "music": "unison singing, fiddle, drums on the wrong beat",
+      "colours": "corn yellow, blood red, moss green, chalk white",
+      "everyday": "doing things because they have always been done"
+    }
   },
   {
     "key": "adventurecore",
     "name": "Adventurecore",
-    "tagline": "Ut, videre, lenger",
-    "description": "Kart, telt, høyder og en trang til å se hva som er bak neste rygg. Optimistisk, praktisk og litt utålmodig.",
+    "tagline": "Out, onward, further",
+    "description": "Maps, tents, altitude and an urge to see what lies over the next ridge. Optimistic, practical and slightly impatient.",
     "keywords": [
-      "kart",
-      "telt",
-      "kompass",
-      "sekk",
-      "toppunkt"
+      "maps",
+      "tent",
+      "compass",
+      "pack",
+      "summit"
     ],
     "palette": [
       "#0f1a1d",
       "#2f5a55",
       "#c98b3a",
       "#f0e4c8"
+    ],
+    "imageQuery": [
+      "mountain hiking trail",
+      "camping tent mountains"
     ],
     "dimensions": {
       "adventure": 0.95,
@@ -1852,37 +1856,37 @@
       "naturecore"
     ],
     "world": {
-      "omgivelser": "høyfjell, kystløype, leirplass med utsikt til noe du skal gå til i morgen",
-      "arkitektur": "hytter du ikke eier, gapahuk, fyrtårn",
-      "interior": "sekk pakket to ganger, kart brettet feil, termos",
-      "teknologi": "kompass, hodelykt, GPS med lavt batteri",
-      "klaer": "lag på lag, slitte støvler, jakke med historie",
-      "musikk": "noe rytmisk å gå til, sang rundt bål",
-      "farger": "fjellblått, brent oransje, lysegrå stein, mosegrønt",
-      "hverdag": "planlegge neste tur før den forrige er over"
-    },
-    "imageQuery": [
-      "mountain hiking trail",
-      "camping tent mountains"
-    ]
+      "setting": "high mountains, a coastal path, a camp with a view of tomorrow's walk",
+      "architecture": "cabins you don't own, a lean-to, a lighthouse",
+      "interior": "a pack you've repacked twice, a map folded wrong, a flask",
+      "technology": "a compass, a head torch, a GPS on low battery",
+      "clothes": "layers, worn boots, a jacket with a history",
+      "music": "something with rhythm to walk to, singing round a fire",
+      "colours": "mountain blue, burnt orange, pale stone, moss green",
+      "everyday": "planning the next trip before this one is over"
+    }
   },
   {
     "key": "adventure-pulp",
     "name": "Adventure Pulp",
-    "tagline": "Skattekart, ruiner og en hatt",
-    "description": "Eventyrfortellingen fra 1930-tallets magasiner: ekspedisjoner, tapte templer og helter med moralsk fleksibilitet. Romantisk framfor realistisk.",
+    "tagline": "Treasure maps, ruins and a hat",
+    "description": "The adventure story of 1930s magazines: expeditions, lost temples and heroes with flexible morals. Romantic rather than realistic.",
     "keywords": [
-      "ekspedisjon",
-      "ruin",
-      "skattekart",
-      "magasin",
-      "propellfly"
+      "expedition",
+      "ruins",
+      "treasure map",
+      "magazines",
+      "propeller plane"
     ],
     "palette": [
       "#171208",
       "#42301a",
       "#b07c33",
       "#eddfba"
+    ],
+    "imageQuery": [
+      "desert caravan expedition",
+      "jungle temple ruins"
     ],
     "dimensions": {
       "adventure": 0.95,
@@ -1913,37 +1917,37 @@
       "retrofuturism"
     ],
     "world": {
-      "omgivelser": "jungel over en trapp av stein, ørkenleir, havn med for mange språk",
-      "arkitektur": "tempelruiner, kolonihotell med vifte i taket",
-      "interior": "kart i ruller, kikkert, ting samlet inn på tvilsomt vis",
-      "teknologi": "propellfly, dynamo-lykt, radiosender som knapt rekker fram",
-      "klaer": "lerret, skinnbelte, hatt som overlever alt",
-      "musikk": "orkester med messing, trommer i det fjerne",
-      "farger": "sandbrunt, jadegrønt, gulnet kart, mahogni",
-      "hverdag": "lete etter noe du kanskje ikke burde finne"
-    },
-    "imageQuery": [
-      "jungle temple ruins",
-      "vintage expedition map"
-    ]
+      "setting": "jungle above a stone staircase, a desert camp, a harbour with too many languages",
+      "architecture": "temple ruins, a colonial hotel with a ceiling fan",
+      "interior": "maps in rolls, binoculars, things acquired by questionable means",
+      "technology": "a propeller plane, a dynamo lamp, a radio that barely reaches",
+      "clothes": "canvas, a leather belt, a hat that survives everything",
+      "music": "an orchestra with brass, drums somewhere in the distance",
+      "colours": "sand brown, jade green, yellowed map, mahogany",
+      "everyday": "looking for something you probably shouldn't find"
+    }
   },
   {
     "key": "rustic",
     "name": "Rustic",
-    "tagline": "Laget for hånd og for å vare",
-    "description": "Landlig håndverkstradisjon: massivt tre, jern, keramikk og møbler som ble laget av noen som kunne faget. Ingen ironi, bare soliditet.",
+    "tagline": "Made by hand and made to last",
+    "description": "Rural craft tradition: solid timber, iron, ceramics and furniture made by someone who knew the trade. No irony, just solidity.",
     "keywords": [
-      "massivt tre",
-      "keramikk",
-      "smijern",
-      "låve",
-      "langbord"
+      "solid timber",
+      "ceramics",
+      "wrought iron",
+      "barn",
+      "long table"
     ],
     "palette": [
       "#1a130d",
       "#4a341f",
       "#98764a",
       "#e5d7ba"
+    ],
+    "imageQuery": [
+      "rustic wooden interior",
+      "old farm barn wood"
     ],
     "dimensions": {
       "craft": 0.92,
@@ -1974,37 +1978,37 @@
       "wabi-sabi"
     ],
     "world": {
-      "omgivelser": "gårdstun, steingjerde, epletrær som er eldre enn huset",
-      "arkitektur": "laftet eller bindingsverk, tykke vegger, dør som må dyttes",
-      "interior": "langbord, keramikk i bruk, hyller som noen har snekret",
-      "teknologi": "vedovn, håndverktøy, noe elektrisk fra 1985 som fortsatt går",
-      "klaer": "ull, lin, skinn, plagg som blir bedre av å brukes",
-      "musikk": "trekkspill, fele, sang på kjøkkenet",
-      "farger": "eik, jern, leire, ubleket lin",
-      "hverdag": "reparere framfor å kjøpe, sitte lenge ved bordet"
-    },
-    "imageQuery": [
-      "rustic wooden interior",
-      "old farm barn wood"
-    ]
+      "setting": "a farmyard, a stone wall, apple trees older than the house",
+      "architecture": "log or timber-frame, thick walls, a door you have to push",
+      "interior": "a long table, ceramics in use, shelves somebody built",
+      "technology": "a wood stove, hand tools, something electric from 1985 that still runs",
+      "clothes": "wool, linen, leather, garments improved by wear",
+      "music": "accordion, fiddle, singing in the kitchen",
+      "colours": "oak, iron, clay, unbleached linen",
+      "everyday": "mending rather than buying, sitting a long time at the table"
+    }
   },
   {
     "key": "lumberjack",
     "name": "Lumberjack",
-    "tagline": "Arbeid, skog og kaffe som er for sterk",
-    "description": "Kroppsarbeid i skogen som estetikk: flanell, økser, tømmer og en direkte, upretensiøs holdning til livet.",
+    "tagline": "Work, forest and coffee that's too strong",
+    "description": "Physical work in the woods as an aesthetic: flannel, axes, timber and a direct, unpretentious way of taking life.",
     "keywords": [
-      "flanell",
-      "øks",
-      "tømmer",
-      "termos",
-      "skogsvei"
+      "flannel",
+      "axe",
+      "timber",
+      "flask",
+      "forest road"
     ],
     "palette": [
       "#141210",
       "#3b2a22",
       "#8c4a35",
       "#ded2bd"
+    ],
+    "imageQuery": [
+      "logging forest timber",
+      "axe firewood forest"
     ],
     "dimensions": {
       "rural": 0.9,
@@ -2035,37 +2039,37 @@
       "adventurecore"
     ],
     "world": {
-      "omgivelser": "skogsvei i grålysning, tømmervelte, elv med drivtømmer",
-      "arkitektur": "skogsbrakke, låve, hus bygget av det som var nærmest",
-      "interior": "kaffekjele, øks på vegg, stoler som tåler arbeidsklær",
-      "teknologi": "motorsag, pickup, radio med én kanal",
-      "klaer": "flanell, seler, støvler med stålkappe",
-      "musikk": "country, viser, noe å synge på hjem fra jobb",
-      "farger": "rutet rødt, barkbrunt, granmørkt, kaffesvart",
-      "hverdag": "opp tidlig, jobbe hardt, si takk med et nikk"
-    },
-    "imageQuery": [
-      "logging forest timber",
-      "axe firewood forest"
-    ]
+      "setting": "a forest road at first light, a timber stack, a river carrying logs",
+      "architecture": "a forestry hut, a barn, a house built from whatever was nearest",
+      "interior": "a coffee pot, an axe on the wall, chairs that can take work clothes",
+      "technology": "a chainsaw, a pickup, a radio with one station",
+      "clothes": "flannel, braces, boots with steel toes",
+      "music": "country, ballads, something to sing on the way home from work",
+      "colours": "checked red, bark brown, spruce dark, coffee black",
+      "everyday": "up early, working hard, saying thank you with a nod"
+    }
   },
   {
     "key": "nautical",
     "name": "Nautical",
-    "tagline": "Alt på plass før avreise",
-    "description": "Sjøfartens orden og romantikk: knuter, messing, kart og disiplin. Eventyret er stort, men skipet må være ryddig.",
+    "tagline": "Everything stowed before you sail",
+    "description": "The order and romance of seafaring: knots, brass, charts and discipline. The adventure is large, but the ship has to be tidy.",
     "keywords": [
-      "knuter",
-      "sjøkart",
-      "messing",
-      "fyrtårn",
-      "seil"
+      "knots",
+      "charts",
+      "brass",
+      "lighthouse",
+      "sails"
     ],
     "palette": [
       "#0c1522",
       "#173a5e",
       "#b98b4a",
       "#eef1f2"
+    ],
+    "imageQuery": [
+      "sailing ship rigging",
+      "lighthouse coast"
     ],
     "dimensions": {
       "adventure": 0.8,
@@ -2097,37 +2101,37 @@
       "americana"
     ],
     "world": {
-      "omgivelser": "havn før daggry, fyrlykt, kai med tauverk i kveil",
-      "arkitektur": "sjøbod, fyr, hus i hvitt og blått mot vær",
-      "interior": "messinglampe, sjøkart under glass, alt festet",
-      "teknologi": "sekstant, kompass, motor som må vedlikeholdes",
-      "klaer": "ullgenser, oljehyre, striper som ikke er ironiske",
-      "musikk": "shanties, trekkspill, tåkelur",
-      "farger": "marineblått, messing, seilhvitt, tauverk",
-      "hverdag": "sjekke været, holde orden, dra ut likevel"
-    },
-    "imageQuery": [
-      "sailing ship rigging",
-      "lighthouse coast"
-    ]
+      "setting": "a harbour before dawn, a lighthouse, a quay with rope coiled on it",
+      "architecture": "a boathouse, a lighthouse, houses in white and blue against the weather",
+      "interior": "a brass lamp, a chart under glass, everything fastened down",
+      "technology": "a sextant, a compass, an engine that has to be maintained",
+      "clothes": "a wool jumper, oilskins, stripes worn without irony",
+      "music": "shanties, accordion, a foghorn",
+      "colours": "navy blue, brass, sail white, rope",
+      "everyday": "checking the weather, keeping order, going out anyway"
+    }
   },
   {
     "key": "ocean-grunge",
     "name": "Ocean Grunge",
-    "tagline": "Kysten utenfor sesong",
-    "description": "Havet uten ferie: kaldt vann, rusten kai, tåke og en dempet sorg. Skjønnhet i det forlatte og våte.",
+    "tagline": "The coast out of season",
+    "description": "The sea without the holiday: cold water, a rusting jetty, fog and a muted sadness. Beauty in the abandoned and the wet.",
     "keywords": [
-      "kald strand",
+      "cold beach",
       "rust",
-      "tåke",
-      "drivved",
-      "grå sjø"
+      "fog",
+      "driftwood",
+      "grey sea"
     ],
     "palette": [
       "#0b1114",
       "#233238",
       "#516066",
       "#c2c6c2"
+    ],
+    "imageQuery": [
+      "stormy beach winter",
+      "rusty pier sea"
     ],
     "dimensions": {
       "melancholy": 0.88,
@@ -2159,37 +2163,37 @@
       "dark-naturalism"
     ],
     "world": {
-      "omgivelser": "strand i mars, molo med tang, hus med saltslitt maling",
-      "arkitektur": "sjøbu som heller, badehus stengt for året, betongkai",
-      "interior": "drivved i vinduskarmen, fuktig ull, ovn som brukes",
-      "teknologi": "gammel radio, en bil som ikke burde kjøre der",
-      "klaer": "for stor genser, regnjakke, sand i alt",
-      "musikk": "shoegaze, ekko, gitar gjennom bølgelyd",
-      "farger": "sjøgrått, tanggrønt, rust, blek sand",
-      "hverdag": "gå på stranden når ingen andre gjør det"
-    },
-    "imageQuery": [
-      "stormy beach winter",
-      "rusty pier sea"
-    ]
+      "setting": "a beach in March, a breakwater with weed on it, houses with salt-worn paint",
+      "architecture": "a leaning boathouse, a bathing hut shut for the year, a concrete quay",
+      "interior": "driftwood on the windowsill, damp wool, a stove that gets used",
+      "technology": "an old radio, a car that shouldn't really be driven there",
+      "clothes": "an oversized jumper, a rain jacket, sand in everything",
+      "music": "shoegaze, echo, guitar through the sound of waves",
+      "colours": "sea grey, weed green, rust, pale sand",
+      "everyday": "walking the beach when nobody else does"
+    }
   },
   {
     "key": "oceanpunk",
     "name": "Oceanpunk",
-    "tagline": "En verden av vann og seil",
-    "description": "Sivilisasjoner bygget på hav og øyer: flytende byer, dykkerklokker og handel mellom steder ingen kart dekker helt.",
+    "tagline": "A world of water and sail",
+    "description": "Civilisations built on sea and islands: floating cities, diving bells and trade between places no chart quite covers.",
     "keywords": [
-      "flytende by",
-      "dykkerklokke",
-      "arkipel",
-      "seilskip",
-      "dyphav"
+      "floating city",
+      "diving bell",
+      "archipelago",
+      "sailing ship",
+      "deep water"
     ],
     "palette": [
       "#04141c",
       "#0f4a5c",
       "#3fa39a",
       "#e4e9d8"
+    ],
+    "imageQuery": [
+      "harbour wooden boats",
+      "coastal village stilt houses"
     ],
     "dimensions": {
       "adventure": 0.9,
@@ -2220,30 +2224,26 @@
       "solarpunk"
     ],
     "world": {
-      "omgivelser": "en by bygget av skip som ble bundet sammen, korallgrunner, storm i horisonten",
-      "arkitektur": "plattformer, gangbroer i tau, hus av skipsplank",
-      "interior": "alt hengende, alt sikret, glasskuler med lys i",
-      "teknologi": "dykkerdrakter i messing, vinsjer, navigasjon som er halvt hemmelig",
-      "klaer": "vanntett lerret, brede belter, farger som holder i salt",
-      "musikk": "trommer, sang i flerstemt kor, hvalens lyd i miksen",
-      "farger": "dyphavsblått, kobbergrønn, seilhvitt, korall",
-      "hverdag": "leve etter tidevann, handle med fremmede, stole på tau"
-    },
-    "imageQuery": [
-      "harbour wooden boats",
-      "coastal village stilt houses"
-    ]
+      "setting": "a city made of ships lashed together, coral shallows, a storm on the horizon",
+      "architecture": "platforms, rope walkways, houses of ship's planking",
+      "interior": "everything hanging, everything secured, glass globes with light inside",
+      "technology": "brass diving suits, winches, navigation that is half secret",
+      "clothes": "waterproof canvas, wide belts, colours that hold in salt",
+      "music": "drums, part-singing, whale song in the mix",
+      "colours": "deep sea blue, verdigris, sail white, coral",
+      "everyday": "living by the tide, trading with strangers, trusting rope"
+    }
   },
   {
     "key": "americana",
     "name": "Americana",
-    "tagline": "Landeveien og alt langs den",
-    "description": "Diner, motell, veiskilt og et land sett fra bilvinduet. Nostalgi for et fellesskap som var enklere i minnet enn i virkeligheten.",
+    "tagline": "The highway and everything along it",
+    "description": "Diners, motels, road signs and a country seen from a car window. Nostalgia for a community that was simpler in memory than in fact.",
     "keywords": [
       "diner",
-      "landevei",
-      "motell",
-      "veiskilt",
+      "highway",
+      "motel",
+      "road signs",
       "pickup"
     ],
     "palette": [
@@ -2251,6 +2251,10 @@
       "#3b2f2c",
       "#b0472f",
       "#f0e2c6"
+    ],
+    "imageQuery": [
+      "american diner neon",
+      "desert highway road"
     ],
     "dimensions": {
       "nostalgia": 0.85,
@@ -2282,37 +2286,37 @@
       "atompunk"
     ],
     "world": {
-      "omgivelser": "rett vei gjennom flatt land, bensinstasjon med ett lys på",
-      "arkitektur": "diner i krom, låve med reklame malt på, motell i en etasje",
-      "interior": "vinylbenker, jukeboks, kaffekopp som fylles uten at du ber om det",
-      "teknologi": "pickup med bånd i spilleren, skiltet som lyser halvt",
-      "klaer": "denim, skinnjakke, caps",
-      "musikk": "country, rock'n'roll, radio som mister signalet",
-      "farger": "kjørerødt, kremhvitt, veistøv, neonoransje",
-      "hverdag": "kjøre lenge, stoppe tilfeldig, snakke med fremmede"
-    },
-    "imageQuery": [
-      "american diner neon",
-      "desert highway road"
-    ]
+      "setting": "a straight road through flat country, a filling station with one light on",
+      "architecture": "a chrome diner, a barn with an advert painted on it, a single-storey motel",
+      "interior": "vinyl booths, a jukebox, a coffee cup refilled without asking",
+      "technology": "a pickup with a tape in the player, a sign that's half lit",
+      "clothes": "denim, a leather jacket, a cap",
+      "music": "country, rock and roll, a radio losing its signal",
+      "colours": "driving red, cream white, road dust, neon orange",
+      "everyday": "driving a long way, stopping at random, talking to strangers"
+    }
   },
   {
     "key": "fifties-suburbia",
     "name": "50s Suburbia",
-    "tagline": "Alt på plass, alle på plass",
-    "description": "Etterkrigstidens forstad: klippet plen, nye apparater, naboer og en orden som er trygg og litt anspent.",
+    "tagline": "Everything in its place, everyone in theirs",
+    "description": "The postwar suburb: a cut lawn, new appliances, neighbours and an order that is safe and faintly tense.",
     "keywords": [
-      "forstad",
-      "plen",
-      "kjøkkenapparater",
-      "naboer",
-      "pastell"
+      "suburb",
+      "lawn",
+      "appliances",
+      "neighbours",
+      "pastel"
     ],
     "palette": [
       "#1d2126",
       "#4a6b74",
       "#e0a89b",
       "#f7efe2"
+    ],
+    "imageQuery": [
+      "1950s suburban house",
+      "mid century kitchen"
     ],
     "dimensions": {
       "order": 0.9,
@@ -2344,37 +2348,37 @@
       "old-hollywood"
     ],
     "world": {
-      "omgivelser": "gate med like hus og ulike postkasser, sprinkler i gang",
-      "arkitektur": "ranch-hus, carport, hage foran som er til pynt",
-      "interior": "pastellkjøkken, sofagruppe, TV som møbel",
-      "teknologi": "nye hvitevarer, mixer, apparater med stolthet",
-      "klaer": "kjole med vidde, penbukse, alt strøket",
-      "musikk": "doo-wop, orkesterpop, radio på lavt volum",
-      "farger": "mintgrønn, pudderrosa, kremhvit, kromsølv",
-      "hverdag": "faste middager, naboer på besøk, alt akkurat som i fjor"
-    },
-    "imageQuery": [
-      "1950s suburban house",
-      "mid century kitchen"
-    ]
+      "setting": "a street of identical houses and different mailboxes, a sprinkler running",
+      "architecture": "a ranch house, a carport, a front garden that is purely for show",
+      "interior": "a pastel kitchen, a three-piece suite, a television as furniture",
+      "technology": "new white goods, a mixer, appliances owned with pride",
+      "clothes": "a full-skirted dress, pressed trousers, everything ironed",
+      "music": "doo-wop, orchestral pop, the radio kept low",
+      "colours": "mint green, powder pink, cream white, chrome silver",
+      "everyday": "fixed dinners, neighbours calling round, everything exactly as last year"
+    }
   },
   {
     "key": "old-hollywood",
     "name": "Old Hollywood",
-    "tagline": "Glamour som yrke",
-    "description": "Studiotidens elegantse: silhuetter, sølvlys, kjoler og en offentlig person som er nøye konstruert. Vakkert, formelt og litt uekte med vilje.",
+    "tagline": "Glamour as an occupation",
+    "description": "The elegance of the studio era: silhouettes, silver light, gowns and a public self carefully constructed. Beautiful, formal and deliberately unreal.",
     "keywords": [
-      "silke",
+      "silk",
       "studio",
       "premiere",
-      "sigarettholder",
-      "sølvlys"
+      "cigarette holder",
+      "silver light"
     ],
     "palette": [
       "#0d0c0e",
       "#2b2530",
       "#8a7a55",
       "#f2ece0"
+    ],
+    "imageQuery": [
+      "art deco cinema interior",
+      "hollywood 1930s portrait"
     ],
     "dimensions": {
       "refinement": 0.95,
@@ -2406,37 +2410,37 @@
       "dandy"
     ],
     "world": {
-      "omgivelser": "premiere med spotlys, hotellobby med marmor, bassengkant om natten",
-      "arkitektur": "art deco-teater, villa i spansk stil, trapper laget for å gå ned",
-      "interior": "speil med lys rundt, chaiselongue, garderobe større enn soverommet",
-      "teknologi": "kamera på skinner, telefon i bakelitt",
-      "klaer": "silke på skrå, smoking, hansker til albuen",
-      "musikk": "storband, crooner, orkester i en filmscene",
-      "farger": "sølv, champagne, dyp burgunder, svart-hvitt",
-      "hverdag": "være på, alltid, og gjøre det med stil"
-    },
-    "imageQuery": [
-      "art deco cinema interior",
-      "hollywood 1930s portrait"
-    ]
+      "setting": "a premiere under spotlights, a marble hotel lobby, a poolside at night",
+      "architecture": "an art deco theatre, a Spanish-style villa, staircases made for descending",
+      "interior": "a mirror ringed with bulbs, a chaise longue, a wardrobe larger than the bedroom",
+      "technology": "a camera on rails, a bakelite telephone",
+      "clothes": "bias-cut silk, black tie, gloves to the elbow",
+      "music": "big band, a crooner, an orchestra in a film scene",
+      "colours": "silver, champagne, deep burgundy, black and white",
+      "everyday": "being on, always, and doing it with style"
+    }
   },
   {
     "key": "beatnik",
     "name": "Beatnik",
-    "tagline": "Kaffe, dikt og opposisjon",
-    "description": "Motkulturen fra 50-tallet: jazzklubber, opplesninger, sparsom leilighet og en avvisning av forstadens forventninger.",
+    "tagline": "Coffee, poetry and opposition",
+    "description": "The counterculture of the fifties: jazz clubs, readings, a sparse flat and a refusal of what the suburb expects.",
     "keywords": [
-      "jazzklubb",
-      "opplesning",
+      "jazz club",
+      "readings",
       "espresso",
-      "svart rullekrage",
-      "notatbok"
+      "black roll-neck",
+      "notebook"
     ],
     "palette": [
       "#101010",
       "#2b2b2e",
       "#6a6055",
       "#ddd6c8"
+    ],
+    "imageQuery": [
+      "jazz club interior",
+      "1950s cafe bohemian"
     ],
     "dimensions": {
       "intellect": 0.85,
@@ -2468,37 +2472,37 @@
       "normcore"
     ],
     "world": {
-      "omgivelser": "kjellerklubb, fortauskafé i regn, leilighet med lite i",
-      "arkitektur": "gammel bygård, trapper som lukter støv og kaffe",
-      "interior": "madrass, skrivebord, altfor mange bøker og én stol",
-      "teknologi": "skrivemaskin, platespiller, ingenting mer",
-      "klaer": "svart rullekrage, smale bukser, alt slitt med vilje",
-      "musikk": "bebop, kontrabass, dikt lest til trommer",
-      "farger": "blekksvart, sigarettgrått, espresso, papirhvitt",
-      "hverdag": "skrive om natten, diskutere for lenge, eie lite"
-    },
-    "imageQuery": [
-      "jazz club interior",
-      "1950s cafe bohemian"
-    ]
+      "setting": "a basement club, a pavement cafe in the rain, a flat with little in it",
+      "architecture": "an old tenement, stairs that smell of dust and coffee",
+      "interior": "a mattress, a desk, far too many books and one chair",
+      "technology": "a typewriter, a record player, nothing more",
+      "clothes": "a black roll-neck, narrow trousers, everything worn on purpose",
+      "music": "bebop, double bass, poems read over drums",
+      "colours": "ink black, cigarette grey, espresso, paper white",
+      "everyday": "writing at night, arguing too long, owning little"
+    }
   },
   {
     "key": "dandy",
     "name": "Dandy",
-    "tagline": "Selvet som kunstverk",
-    "description": "Perfeksjonert personlig stil som livsholdning: snitt, detaljer og en dyrking av eleganse som er nesten prinsipiell.",
+    "tagline": "The self as an artwork",
+    "description": "Perfected personal style as a way of living: cut, detail and a cultivation of elegance that is almost a principle.",
     "keywords": [
-      "skreddersøm",
-      "lommeur",
-      "spaserstokk",
-      "manerer",
-      "detaljer"
+      "tailoring",
+      "pocket watch",
+      "cane",
+      "manners",
+      "detail"
     ],
     "palette": [
       "#131018",
       "#31283c",
       "#7c6a4a",
       "#efe6d6"
+    ],
+    "imageQuery": [
+      "gentlemen club interior london",
+      "tailor shop suits vintage"
     ],
     "dimensions": {
       "refinement": 0.95,
@@ -2530,37 +2534,37 @@
       "eclectic-grandpa"
     ],
     "world": {
-      "omgivelser": "byens beste gate, klubb med tunge dører, teaterfoajé",
-      "arkitektur": "klassisistisk fasade, høyt tak, trapp med gelender i messing",
-      "interior": "lenestol i skinn, bøker etter utseende og innhold, karaffel",
-      "teknologi": "et lommeur, kanskje en fyllepenn, ikke mer",
-      "klaer": "skreddersydd alt, slips med mening, sko som pusses",
-      "musikk": "kammermusikk, tidlig jazz, stemme i en salong",
-      "farger": "midnattsblå, tobakk, gammelt gull, kritthvitt",
-      "hverdag": "ta seg tid, si det presist, aldri se ut som du prøvde"
-    },
-    "imageQuery": [
-      "tailored suit vintage",
-      "gentlemen club interior"
-    ]
+      "setting": "the best street in the city, a club with heavy doors, a theatre foyer",
+      "architecture": "a classical facade, high ceilings, a staircase with a brass rail",
+      "interior": "a leather armchair, books chosen for looks and content, a decanter",
+      "technology": "a pocket watch, perhaps a fountain pen, no more",
+      "clothes": "everything tailored, a tie that means something, shoes that get polished",
+      "music": "chamber music, early jazz, a voice in a salon",
+      "colours": "midnight blue, tobacco, old gold, chalk white",
+      "everyday": "taking your time, saying it precisely, never looking like you tried"
+    }
   },
   {
     "key": "art-deco",
     "name": "Art Deco",
-    "tagline": "Geometri, luksus og framtidstro",
-    "description": "Mellomkrigstidens moderne luksus: symmetri, dyre materialer og en tro på at det nye også skal være vakkert.",
+    "tagline": "Geometry, luxury and faith in the future",
+    "description": "The modern luxury of the interwar years: symmetry, expensive materials and a belief that the new should also be beautiful.",
     "keywords": [
-      "geometri",
-      "gull",
-      "symmetri",
-      "solstråle",
-      "marmor"
+      "geometry",
+      "gold",
+      "symmetry",
+      "sunburst",
+      "marble"
     ],
     "palette": [
       "#0e1116",
       "#1b3540",
       "#c8a23c",
       "#f4eddc"
+    ],
+    "imageQuery": [
+      "art deco interior",
+      "art deco facade"
     ],
     "dimensions": {
       "ornament": 0.95,
@@ -2592,37 +2596,37 @@
       "dandy"
     ],
     "world": {
-      "omgivelser": "sentrumsgate der hver fasade vil imponere",
-      "arkitektur": "trinnvise tårn, solstråle over inngangen, lobby i marmor",
-      "interior": "innlagt tre, speil i geometriske felt, lamper som skulpturer",
-      "teknologi": "radiokabinett som møbel, heis med panel i messing",
-      "klaer": "rette snitt, perler, mønster med skarpe vinkler",
-      "musikk": "storband, klaver i en foajé",
-      "farger": "svart og gull, jade, onyx, elfenben",
-      "hverdag": "omgi seg med noe som er laget for å vare og for å vises"
-    },
-    "imageQuery": [
-      "art deco interior",
-      "art deco facade"
-    ]
+      "setting": "a city street where every facade means to impress",
+      "architecture": "stepped towers, a sunburst over the entrance, a marble lobby",
+      "interior": "inlaid wood, mirrors in geometric panels, lamps as sculpture",
+      "technology": "a radio cabinet as furniture, a lift with a brass panel",
+      "clothes": "straight cuts, pearls, patterns with sharp angles",
+      "music": "big band, a piano in a foyer",
+      "colours": "black and gold, jade, onyx, ivory",
+      "everyday": "surrounding yourself with things made to last and to be seen"
+    }
   },
   {
     "key": "art-nouveau",
     "name": "Art Nouveau",
-    "tagline": "Naturen som ornament",
-    "description": "Bølgende linjer, blomstermotiver og håndverk der ingenting er rett hvis det kan være levende. Kunst og bruksting som samme sak.",
+    "tagline": "Nature as ornament",
+    "description": "Sweeping lines, floral motifs and craft in which nothing is straight if it could be alive. Art and useful objects as the same thing.",
     "keywords": [
-      "bølgelinje",
-      "blomstermotiv",
-      "glassmaleri",
-      "smijern",
-      "vinranke"
+      "curved line",
+      "floral motif",
+      "stained glass",
+      "wrought iron",
+      "vine"
     ],
     "palette": [
       "#101a12",
       "#2b4a3a",
       "#a58a3e",
       "#f0e6cd"
+    ],
+    "imageQuery": [
+      "art nouveau facade",
+      "art nouveau stained glass"
     ],
     "dimensions": {
       "ornament": 0.95,
@@ -2654,37 +2658,37 @@
       "steampunk"
     ],
     "world": {
-      "omgivelser": "en boulevard der metroinngangen ser ut som en plante",
-      "arkitektur": "buede vinduer, smijern som vokser, fasader uten rette hjørner",
-      "interior": "glassmaleri, møbler i bøyd tre, tapet med ranker",
-      "teknologi": "lamper som er skulpturer, alt funksjonelt gjemt i noe vakkert",
-      "klaer": "flytende stoff, brosjer med insekter, hår som en del av linjen",
-      "musikk": "impresjonistisk klaver, harpe, fransk sang",
-      "farger": "sjøgrønn, gulnet gull, syrin, mørkt tre",
-      "hverdag": "insistere på at alt du bruker også kan være vakkert"
-    },
-    "imageQuery": [
-      "art nouveau facade",
-      "art nouveau stained glass"
-    ]
+      "setting": "a boulevard where the metro entrance looks like a plant",
+      "architecture": "arched windows, wrought iron that grows, facades with no right angles",
+      "interior": "stained glass, bentwood furniture, wallpaper full of vines",
+      "technology": "lamps that are sculptures, everything functional hidden inside something lovely",
+      "clothes": "flowing fabric, brooches shaped like insects, hair as part of the line",
+      "music": "impressionist piano, harp, French song",
+      "colours": "sea green, yellowed gold, lilac, dark wood",
+      "everyday": "insisting that everything you use can also be beautiful"
+    }
   },
   {
     "key": "brutalism",
     "name": "Brutalism",
-    "tagline": "Ærlig masse",
-    "description": "Betong som viser hvordan den ble støpt, bygg som ikke smisker og en tro på at arkitektur kan være et samfunnsprosjekt.",
+    "tagline": "Honest mass",
+    "description": "Concrete that shows how it was cast, buildings that don't flatter, and a belief that architecture can be a public project.",
     "keywords": [
-      "betong",
-      "masse",
-      "raster",
-      "monumentalt",
-      "form følger konstruksjon"
+      "concrete",
+      "mass",
+      "grid",
+      "monumental",
+      "form follows structure"
     ],
     "palette": [
       "#0f1011",
       "#26282a",
       "#5a5c5e",
       "#adaba6"
+    ],
+    "imageQuery": [
+      "brutalist architecture concrete",
+      "brutalist building"
     ],
     "dimensions": {
       "architecture": 0.95,
@@ -2716,37 +2720,37 @@
       "cyberpunk"
     ],
     "world": {
-      "omgivelser": "et kulturhus i overskyet lys, plassen foran, ingen som ser opp",
-      "arkitektur": "utkraging, ribbet betong, trapper som er en hendelse",
-      "interior": "grå flater, ett kraftig tre-element, lys fra en sprekk i taket",
-      "teknologi": "innebygd, upåfallende, laget for tiår",
-      "klaer": "enkle snitt, tunge stoffer, én farge",
-      "musikk": "minimalisme, orgel, elektronikk uten melodi",
-      "farger": "betong, kullgrått, matt sort, dagslys",
-      "hverdag": "sette pris på det andre synes er stygt"
-    },
-    "imageQuery": [
-      "brutalist architecture concrete",
-      "brutalist building"
-    ]
+      "setting": "an arts centre under an overcast sky, the square in front, nobody looking up",
+      "architecture": "cantilevers, board-marked concrete, stairs that are an event",
+      "interior": "grey planes, one strong timber element, light from a slot in the ceiling",
+      "technology": "built in, unobtrusive, made for decades",
+      "clothes": "simple cuts, heavy fabrics, one colour",
+      "music": "minimalism, organ, electronics without melody",
+      "colours": "concrete, charcoal, matt black, daylight",
+      "everyday": "appreciating what other people find ugly"
+    }
   },
   {
     "key": "scandinavian-design",
     "name": "Scandinavian Design",
-    "tagline": "Enkelhet med varme",
-    "description": "Lyst tre, funksjon og demokratisk skjønnhet. Det stramme mykes opp av materialer man vil ta på, og av lys som er dyrebart.",
+    "tagline": "Simplicity with warmth",
+    "description": "Pale wood, function and democratic beauty. The austerity is softened by materials you want to touch, and by light that is precious.",
     "keywords": [
-      "lyst tre",
-      "funksjon",
-      "ull",
-      "dagslys",
-      "enkelhet"
+      "pale wood",
+      "function",
+      "wool",
+      "daylight",
+      "simplicity"
     ],
     "palette": [
       "#1a1a18",
       "#4a4a44",
       "#b9a184",
       "#f4f1ea"
+    ],
+    "imageQuery": [
+      "scandinavian interior wood",
+      "nordic minimal interior"
     ],
     "dimensions": {
       "minimalism": 0.85,
@@ -2778,37 +2782,37 @@
       "wabi-sabi"
     ],
     "world": {
-      "omgivelser": "vinterlys gjennom store vinduer, en fjord eller en skogkant like ved",
-      "arkitektur": "rene volumer i tre, store glassflater mot lyset",
-      "interior": "få, gode møbler, ull og keramikk, plass rundt hver ting",
-      "teknologi": "diskret, godt designet, gjemt når den ikke brukes",
-      "klaer": "enkle snitt, naturfiber, dempede farger",
-      "musikk": "klart produsert, luftig, litt melankolsk",
-      "farger": "bjørk, kalkhvitt, grå ull, lyng",
-      "hverdag": "gjøre det enkelt, men gjøre det ordentlig"
-    },
-    "imageQuery": [
-      "scandinavian interior wood",
-      "nordic minimal interior"
-    ]
+      "setting": "winter light through large windows, a fjord or a treeline close by",
+      "architecture": "clean volumes in timber, large glazing facing the light",
+      "interior": "few good pieces, wool and ceramics, space around each thing",
+      "technology": "discreet, well designed, put away when not in use",
+      "clothes": "simple cuts, natural fibres, muted colours",
+      "music": "cleanly produced, airy, faintly melancholy",
+      "colours": "birch, chalk white, grey wool, heather",
+      "everyday": "keeping it simple, but doing it properly"
+    }
   },
   {
     "key": "maximalism",
     "name": "Maximalism",
-    "tagline": "Mer, og med mening",
-    "description": "Rom fulle av farge, mønster og samlinger der hver ting har en historie. Overflod som personlighet, ikke som rot.",
+    "tagline": "More, and with meaning",
+    "description": "Rooms full of colour, pattern and collections where everything has a story. Abundance as personality, not as mess.",
     "keywords": [
-      "mønster",
-      "samlinger",
-      "farge",
-      "gallerivegg",
-      "lag"
+      "pattern",
+      "collections",
+      "colour",
+      "gallery wall",
+      "layers"
     ],
     "palette": [
       "#1b0f16",
       "#5c1f3a",
       "#c2703a",
       "#f0d9a8"
+    ],
+    "imageQuery": [
+      "maximalist interior pattern",
+      "victorian cluttered interior"
     ],
     "dimensions": {
       "maximalism": 0.98,
@@ -2840,37 +2844,37 @@
       "rococo"
     ],
     "world": {
-      "omgivelser": "en leilighet som er tydelig noens, i en by med mange lag",
-      "arkitektur": "gamle rom med høyt tak, gjerne stukkatur å henge ting under",
-      "interior": "gallerivegg, mønstret tapet, tre tepper oppå hverandre",
-      "teknologi": "en platespiller, en gammel lampe, ingenting som er umerkelig",
-      "klaer": "farge på farge, arvede plagg, smykker med historier",
-      "musikk": "alt, i tilfeldig rekkefølge, høyt",
-      "farger": "smaragd, oker, dyp rosa, gull",
-      "hverdag": "samle, flytte om, fortelle hvor hver ting kommer fra"
-    },
-    "imageQuery": [
-      "maximalist interior pattern",
-      "victorian cluttered interior"
-    ]
+      "setting": "a flat that is unmistakably somebody's, in a city with many layers",
+      "architecture": "old rooms with high ceilings, ideally cornicing to hang things from",
+      "interior": "a gallery wall, patterned wallpaper, three rugs on top of each other",
+      "technology": "a record player, an old lamp, nothing that goes unnoticed",
+      "clothes": "colour on colour, inherited pieces, jewellery with histories",
+      "music": "everything, in no particular order, loud",
+      "colours": "emerald, ochre, deep pink, gold",
+      "everyday": "collecting, rearranging, telling people where each thing came from"
+    }
   },
   {
     "key": "minimalism",
     "name": "Minimalism",
-    "tagline": "Alt som ikke må være der, er borte",
-    "description": "Færre ting, bedre ting og plass til å tenke. Ro gjennom fravær, og en skjønnhet som ligger i proporsjoner heller enn i pynt.",
+    "tagline": "Everything that needn't be there is gone",
+    "description": "Fewer things, better things, and room to think. Calm through absence, and a beauty that lives in proportion rather than decoration.",
     "keywords": [
-      "tomrom",
-      "proporsjon",
-      "hvitt",
-      "orden",
-      "få ting"
+      "empty space",
+      "proportion",
+      "white",
+      "order",
+      "few things"
     ],
     "palette": [
       "#141414",
       "#333333",
       "#8c8c8c",
       "#f5f4f2"
+    ],
+    "imageQuery": [
+      "minimalist interior white",
+      "minimal architecture concrete"
     ],
     "dimensions": {
       "minimalism": 0.98,
@@ -2902,37 +2906,37 @@
       "wabi-sabi"
     ],
     "world": {
-      "omgivelser": "et sted med lite som skjer, og god plass mellom det som skjer",
-      "arkitektur": "rene flater, ett godt vindu, ingenting som roper",
-      "interior": "et bord, en stol, ett objekt som får all oppmerksomhet",
-      "teknologi": "usynlig når den ikke er i bruk",
-      "klaer": "samme snitt i flere eksemplarer, ingen logo",
-      "musikk": "få toner, mye rom mellom dem",
-      "farger": "hvit, grå, svart, én dempet aksent",
-      "hverdag": "kaste mer enn du kjøper, gjøre én ting om gangen"
-    },
-    "imageQuery": [
-      "minimalist interior white",
-      "minimal architecture concrete"
-    ]
+      "setting": "a place where little happens, and plenty of room between the things that do",
+      "architecture": "clean planes, one good window, nothing raising its voice",
+      "interior": "a table, a chair, one object that gets all the attention",
+      "technology": "invisible when it isn't being used",
+      "clothes": "the same cut in several copies, no logos",
+      "music": "few notes, a lot of room between them",
+      "colours": "white, grey, black, one muted accent",
+      "everyday": "discarding more than you buy, doing one thing at a time"
+    }
   },
   {
     "key": "dreamcore",
     "name": "Dreamcore",
-    "tagline": "Steder du kjenner igjen uten å ha vært der",
-    "description": "Drømmens logikk som estetikk: tomme svømmehaller, korridorer uten ende og en nostalgi rettet mot ting som aldri skjedde.",
+    "tagline": "Places you recognise without having been there",
+    "description": "The logic of dreams as an aesthetic: empty swimming pools, corridors with no end, and nostalgia aimed at things that never happened.",
     "keywords": [
-      "tom svømmehall",
-      "korridor",
-      "drømmelogikk",
-      "dis",
-      "déjà-vu"
+      "empty pool",
+      "corridor",
+      "dream logic",
+      "haze",
+      "deja vu"
     ],
     "palette": [
       "#0d0f1c",
       "#26305c",
       "#7d8fd6",
       "#efe9f7"
+    ],
+    "imageQuery": [
+      "empty swimming pool",
+      "empty hotel corridor"
     ],
     "dimensions": {
       "fantasy": 0.9,
@@ -2964,37 +2968,37 @@
       "ghostcore"
     ],
     "world": {
-      "omgivelser": "en lekeplass i skumring uten barn, et hotellkorridor som gjentar seg",
-      "arkitektur": "kjente typologier med feil proporsjoner",
-      "interior": "møbler i et rom uten grunn, tapet fra barndommen din eller noen andres",
-      "teknologi": "et TV-apparat som står på, uten program",
-      "klaer": "det du hadde på deg da du var elleve",
-      "musikk": "melodier gjennom vegg, kassett strukket ut",
-      "farger": "bassengblått, blekrosa, gulnet hvitt, dis",
-      "hverdag": "kjenne igjen noe, uten å kunne si hva"
-    },
-    "imageQuery": [
-      "empty swimming pool",
-      "empty hotel corridor"
-    ]
+      "setting": "a playground at dusk with no children, a hotel corridor that repeats",
+      "architecture": "familiar building types with the proportions wrong",
+      "interior": "furniture in a room for no reason, wallpaper from your childhood or somebody else's",
+      "technology": "a television left on, with no programme",
+      "clothes": "what you were wearing when you were eleven",
+      "music": "melodies through a wall, a cassette stretched out",
+      "colours": "pool blue, pale pink, yellowed white, haze",
+      "everyday": "recognising something without being able to say what"
+    }
   },
   {
     "key": "weirdcore",
     "name": "Weirdcore",
-    "tagline": "Noe er feil med dette bildet",
-    "description": "Lavoppløselige bilder gjort urovekkende med tekst, piler og forvrengning. Ubehag uten trussel, som en drøm som nesten ble et mareritt.",
+    "tagline": "Something is wrong with this picture",
+    "description": "Low-resolution images made unsettling with text, arrows and distortion. Discomfort without threat, like a dream that almost became a nightmare.",
     "keywords": [
-      "forvrengning",
-      "piler",
-      "lav oppløsning",
-      "øyne",
-      "feil"
+      "distortion",
+      "arrows",
+      "low resolution",
+      "eyes",
+      "wrong"
     ],
     "palette": [
       "#0f0a18",
       "#3b1f5c",
       "#8e56c9",
       "#e9dcff"
+    ],
+    "imageQuery": [
+      "empty playground dusk",
+      "empty corridor fluorescent"
     ],
     "dimensions": {
       "chaos": 0.85,
@@ -3026,37 +3030,37 @@
       "cryptidcore"
     ],
     "world": {
-      "omgivelser": "et sted som burde vært vanlig, tatt med feil kamera",
-      "arkitektur": "rom uten dør, trapp som ikke går noe sted",
-      "interior": "gjenstander plassert av noen som ikke forstår rommet",
-      "teknologi": "bilder komprimert til de blir en annen ting",
-      "klaer": "irrelevant; ansiktet er uansett uskarpt",
-      "musikk": "sløvet, pitchet, avbrutt",
-      "farger": "elektrisk lilla, syrlig grønn, overeksponert hvit",
-      "hverdag": "se lenge på noe helt vanlig til det slutter å være det"
-    },
-    "imageQuery": [
-      "empty playground dusk",
-      "empty corridor fluorescent"
-    ]
+      "setting": "a place that ought to be ordinary, photographed with the wrong camera",
+      "architecture": "a room with no door, a staircase that goes nowhere",
+      "interior": "objects placed by someone who doesn't understand the room",
+      "technology": "images compressed until they become another thing",
+      "clothes": "irrelevant; the face is out of focus anyway",
+      "music": "slowed, pitched, interrupted",
+      "colours": "electric purple, acid green, blown-out white",
+      "everyday": "looking at something ordinary until it stops being ordinary"
+    }
   },
   {
     "key": "analog-horror",
     "name": "Analog Horror",
-    "tagline": "Sendingen fortsetter etter sendeslutt",
-    "description": "Skrekk formidlet gjennom gamle medier: VHS-støy, nødmeldinger og opptak som ikke skulle eksistert. Frykten ligger i formatet.",
+    "tagline": "The broadcast continues after closedown",
+    "description": "Horror delivered through old media: VHS noise, emergency bulletins and recordings that shouldn't exist. The fear lives in the format.",
     "keywords": [
       "VHS",
-      "nødmelding",
-      "sendeslutt",
-      "opptak",
-      "signalstøy"
+      "emergency broadcast",
+      "closedown",
+      "recordings",
+      "signal noise"
     ],
     "palette": [
       "#0a0a0a",
       "#1e1a1a",
       "#5c2a26",
       "#c8c2b6"
+    ],
+    "imageQuery": [
+      "old television set living room",
+      "vhs cassette recorder"
     ],
     "dimensions": {
       "retro": 0.9,
@@ -3088,37 +3092,37 @@
       "film-noir"
     ],
     "world": {
-      "omgivelser": "et distrikt med en beredskapsplan ingen har lest",
-      "arkitektur": "offentlige bygg fotografert av et overvåkningskamera",
-      "interior": "en stue med TV-en på, ingen i sofaen",
-      "teknologi": "VHS, testbilde, en stemme som leser instrukser",
-      "klaer": "uniformer uten etat",
-      "musikk": "signaltoner, hvit støy, en melodi som stopper for tidlig",
-      "farger": "sendingsgrått, varsel-rødt, fosforgrønn tekst",
-      "hverdag": "se opptaket en gang til for å sjekke om du så feil"
-    },
-    "imageQuery": [
-      "television static screen",
-      "vhs tape recorder"
-    ]
+      "setting": "a district with an emergency plan nobody has read",
+      "architecture": "public buildings photographed by a security camera",
+      "interior": "a living room with the television on and nobody on the sofa",
+      "technology": "VHS, a test card, a voice reading instructions",
+      "clothes": "uniforms with no agency behind them",
+      "music": "signal tones, white noise, a melody that stops too early",
+      "colours": "broadcast grey, warning red, phosphor green text",
+      "everyday": "watching the recording once more to check whether you saw it wrong"
+    }
   },
   {
     "key": "ghostcore",
     "name": "Ghostcore",
-    "tagline": "Nærvær som ble igjen",
-    "description": "Stedet etter menneskene: hvite laken, gamle brev, rom som fortsatt husker. Mer vemodig og ømt enn skummelt.",
+    "tagline": "A presence that stayed behind",
+    "description": "The place after the people: white sheets, old letters, rooms that still remember. More wistful and tender than frightening.",
     "keywords": [
-      "hvite laken",
-      "gamle brev",
-      "tomme rom",
-      "støv",
-      "spor"
+      "white sheets",
+      "old letters",
+      "empty rooms",
+      "dust",
+      "traces"
     ],
     "palette": [
       "#0e0e11",
       "#282a30",
       "#6d6a72",
       "#e6e2da"
+    ],
+    "imageQuery": [
+      "abandoned mansion interior",
+      "furniture covered sheets"
     ],
     "dimensions": {
       "melancholy": 0.92,
@@ -3150,37 +3154,37 @@
       "witchcore"
     ],
     "world": {
-      "omgivelser": "en eiendom som har stått tom i to generasjoner",
-      "arkitektur": "herskapshus, vindusfløyer som slår, trapp med ett trinn som knirker",
-      "interior": "møbler under laken, ur som har stanset, speil dekket til",
-      "teknologi": "ingenting nyere enn en telefon med snor",
-      "klaer": "hvitt, blondekrage, plagg som er for tynne for været",
-      "musikk": "musikkboks, sang langt unna, orgel i et tomt rom",
-      "farger": "lakenhvitt, støvgrått, blekt blått, gulnet blonde",
-      "hverdag": "lese andres brev, holde et rom akkurat som det var"
-    },
-    "imageQuery": [
-      "abandoned mansion interior",
-      "furniture covered sheets"
-    ]
+      "setting": "an estate that has stood empty for two generations",
+      "architecture": "a manor house, window casements that bang, a stair with one tread that creaks",
+      "interior": "furniture under sheets, a clock that has stopped, a covered mirror",
+      "technology": "nothing newer than a telephone with a cord",
+      "clothes": "white, a lace collar, garments too thin for the weather",
+      "music": "a music box, singing far away, an organ in an empty room",
+      "colours": "sheet white, dust grey, pale blue, yellowed lace",
+      "everyday": "reading other people's letters, keeping a room exactly as it was"
+    }
   },
   {
     "key": "fairycore",
     "name": "Fairycore",
-    "tagline": "Naturen med et hemmelig folk i",
-    "description": "Blomster, mose, morgenlys og en overbevisning om at noe lite bor mellom røttene. Uskyldig, ømt og litt magisk.",
+    "tagline": "Nature with a secret people in it",
+    "description": "Flowers, moss, morning light and a conviction that something small lives among the roots. Innocent, tender and slightly magical.",
     "keywords": [
-      "blomsterkrans",
-      "mose",
-      "sopp",
-      "morgendugg",
-      "vinger"
+      "flower crown",
+      "moss",
+      "mushrooms",
+      "morning dew",
+      "wings"
     ],
     "palette": [
       "#16200f",
       "#3d5a2c",
       "#a3c46b",
       "#f6f0d4"
+    ],
+    "imageQuery": [
+      "forest mushrooms moss light",
+      "wildflowers morning dew"
     ],
     "dimensions": {
       "fantasy": 0.9,
@@ -3212,37 +3216,37 @@
       "mori-kei"
     ],
     "world": {
-      "omgivelser": "en lysning med dugg, bekk med steiner som ser plassert ut",
-      "arkitektur": "hus som er halvt inne i en bakke, dør under et tre",
-      "interior": "tørkede blomster, glasskrukker, lys i alle hjørner",
-      "teknologi": "nesten ingen, og gjerne skjult bak noe grønt",
-      "klaer": "lag av tyll og lin, blomster i håret, bare føtter",
-      "musikk": "harpe, fløyte, sang uten ord",
-      "farger": "moss, morgenrosa, honninggull, elfenben",
-      "hverdag": "stå opp tidlig for lyset, legge igjen noe fint til noen"
-    },
-    "imageQuery": [
-      "forest mushrooms moss light",
-      "wildflowers morning dew"
-    ]
+      "setting": "a clearing with dew on it, a stream with stones that look placed",
+      "architecture": "a house half inside a bank, a door beneath a tree",
+      "interior": "dried flowers, glass jars, candles in every corner",
+      "technology": "almost none, and preferably hidden behind something green",
+      "clothes": "layers of tulle and linen, flowers in the hair, bare feet",
+      "music": "harp, flute, singing without words",
+      "colours": "moss, morning pink, honey gold, ivory",
+      "everyday": "getting up early for the light, leaving something lovely for someone"
+    }
   },
   {
     "key": "goblincore",
     "name": "Goblincore",
-    "tagline": "Det skitne, skjeve og skinnende",
-    "description": "Kjærlighet til sopp, snegler, stein og ting andre kaller stygge. Samling, rot og glede uten behov for å være pen.",
+    "tagline": "The dirty, the crooked and the shiny",
+    "description": "A love of mushrooms, snails, stones and things other people call ugly. Collecting, mess and delight without any need to be pretty.",
     "keywords": [
-      "sopp",
-      "snegler",
-      "stein",
-      "samling",
-      "rot"
+      "mushrooms",
+      "snails",
+      "stones",
+      "collections",
+      "mess"
     ],
     "palette": [
       "#16140c",
       "#3a3a1e",
       "#7d6b33",
       "#cfc38f"
+    ],
+    "imageQuery": [
+      "mushrooms forest floor",
+      "moss stones stream"
     ],
     "dimensions": {
       "chaos": 0.8,
@@ -3274,30 +3278,26 @@
       "mori-kei"
     ],
     "world": {
-      "omgivelser": "under en råtten stokk, en bekk med skifer, regnvær",
-      "arkitektur": "noe lavt, mørkt og lunt, gjerne under noe annet",
-      "interior": "hyller med stein, skjell og bestikk du ikke har kjøpt",
-      "teknologi": "en lommelykt og en lupe",
-      "klaer": "for stort, jordete, med lommer fulle av funn",
-      "musikk": "fele, ujevn rytme, sang med bare halve ord",
-      "farger": "myrgrønn, leirgul, skiferblå, messingglans",
-      "hverdag": "plukke opp ting, snu på steiner, bry seg lite om hvordan det ser ut"
-    },
-    "imageQuery": [
-      "mushrooms forest floor",
-      "moss stones stream"
-    ]
+      "setting": "under a rotting log, a stream with shale in it, rain",
+      "architecture": "something low, dark and snug, ideally underneath something else",
+      "interior": "shelves of stones, shells and cutlery you didn't buy",
+      "technology": "a torch and a magnifying glass",
+      "clothes": "too big, muddy, with pockets full of finds",
+      "music": "fiddle, uneven rhythm, singing with only half the words",
+      "colours": "bog green, clay yellow, slate blue, brass shine",
+      "everyday": "picking things up, turning stones over, caring little how it looks"
+    }
   },
   {
     "key": "mori-kei",
     "name": "Mori Kei",
-    "tagline": "Jenta som bor i skogen",
-    "description": "Japansk stil bygget rundt lag av naturlige stoffer, dempede farger og en rolig, litt tilbaketrukket tilværelse.",
+    "tagline": "The girl who lives in the forest",
+    "description": "A Japanese style built around layers of natural fabric, muted colours and a calm, slightly withdrawn way of living.",
     "keywords": [
-      "lag på lag",
-      "naturfiber",
-      "dempet",
-      "skog",
+      "layers",
+      "natural fibre",
+      "muted",
+      "forest",
       "vintage"
     ],
     "palette": [
@@ -3305,6 +3305,10 @@
       "#3f3a2e",
       "#8f8367",
       "#efe8d8"
+    ],
+    "imageQuery": [
+      "forest path cottage japan",
+      "woodland path trees"
     ],
     "dimensions": {
       "nature": 0.85,
@@ -3336,37 +3340,37 @@
       "wabi-sabi"
     ],
     "world": {
-      "omgivelser": "en sti mellom trær, et lite hus i utkanten av en landsby",
-      "arkitektur": "tre og papir, små rom, vinduer i høyde med gulvet",
-      "interior": "kurver, keramikk, tørkede blomster, alt i naturlige toner",
-      "teknologi": "en radio, en kjele, ingen skjermer i synsfeltet",
-      "klaer": "flere lag, løse snitt, strikk over kjole over skjorte",
-      "musikk": "akustisk, mykt, nesten hvisket",
-      "farger": "kremhvitt, mosegrønt, tåkegrå, tørket brunt",
-      "hverdag": "te, brev, sy om noe gammelt, gå tidlig ut"
-    },
-    "imageQuery": [
-      "forest path trees",
-      "linen fabric natural"
-    ]
+      "setting": "a path between trees, a small house on the edge of a village",
+      "architecture": "wood and paper, small rooms, windows at floor height",
+      "interior": "baskets, ceramics, dried flowers, everything in natural tones",
+      "technology": "a radio, a kettle, no screens in view",
+      "clothes": "several layers, loose cuts, knitwear over a dress over a shirt",
+      "music": "acoustic, soft, almost whispered",
+      "colours": "cream white, moss green, fog grey, dried brown",
+      "everyday": "tea, letters, remaking something old, going out early"
+    }
   },
   {
     "key": "witchcore",
     "name": "Witchcore",
-    "tagline": "Kunnskap som ikke står i pensum",
-    "description": "Urter, måner, gamle bøker og ritualer man lager selv. En praktisk mystikk, mer håndverk enn overtro.",
+    "tagline": "Knowledge that isn't on the syllabus",
+    "description": "Herbs, moons, old books and rituals you make up yourself. A practical mysticism - more craft than superstition.",
     "keywords": [
-      "urter",
-      "krukker",
-      "måne",
+      "herbs",
+      "jars",
+      "moon",
       "grimoire",
-      "lys"
+      "candles"
     ],
     "palette": [
       "#120e16",
       "#332444",
       "#7a5c74",
       "#ded0c2"
+    ],
+    "imageQuery": [
+      "dried herbs hanging bunches",
+      "candlelit table old books"
     ],
     "dimensions": {
       "mystery": 0.95,
@@ -3398,37 +3402,37 @@
       "goblincore"
     ],
     "world": {
-      "omgivelser": "en hage med planter som har flere bruksområder, skogkant i skumring",
-      "arkitektur": "et gammelt hus med skjeve rom og for mange hyller",
-      "interior": "krukker med etiketter, tørkeplanter i taket, kort og steiner",
-      "teknologi": "nesten ingen, men veldig gode kniver",
-      "klaer": "mørke lag, sjal, sølvsmykker som betyr noe",
-      "musikk": "trommer, sang i sirkel, plate med rar folkemusikk",
-      "farger": "dyp lilla, mørkegrønn, voks, sølv",
-      "hverdag": "notere månefaser, lage salver, gjøre ting med intensjon"
-    },
-    "imageQuery": [
-      "dried herbs jars",
-      "candles old books"
-    ]
+      "setting": "a garden of plants with more than one use, a treeline at dusk",
+      "architecture": "an old house with crooked rooms and too many shelves",
+      "interior": "labelled jars, drying plants overhead, cards and stones",
+      "technology": "almost none, but very good knives",
+      "clothes": "dark layers, a shawl, silver jewellery that means something",
+      "music": "drums, singing in a circle, a record of strange folk music",
+      "colours": "deep purple, dark green, wax, silver",
+      "everyday": "noting the moon, making salves, doing things with intent"
+    }
   },
   {
     "key": "medieval",
     "name": "Medieval",
-    "tagline": "Stein, håndverk og hierarki",
-    "description": "Middelalderens faktiske verden: klostre, laugsarbeid, kalkmalte kirker og et liv organisert av årstider og tro.",
+    "tagline": "Stone, craft and hierarchy",
+    "description": "The actual medieval world: monasteries, guild work, limewashed churches and a life organised by seasons and faith.",
     "keywords": [
-      "kloster",
-      "steinhall",
-      "laug",
-      "manuskript",
-      "kalkmaleri"
+      "monastery",
+      "stone hall",
+      "guild",
+      "manuscript",
+      "wall painting"
     ],
     "palette": [
       "#141010",
       "#3a2b22",
       "#8a6a3a",
       "#ddd0b0"
+    ],
+    "imageQuery": [
+      "medieval monastery cloister",
+      "medieval stone hall"
     ],
     "dimensions": {
       "history": 0.95,
@@ -3460,37 +3464,37 @@
       "dark-academia"
     ],
     "world": {
-      "omgivelser": "et klosteranlegg, markedsplass, åkerlandskap i teiger",
-      "arkitektur": "tykke murer, rundbuer, tak båret av synlig treverk",
-      "interior": "langbord, tepper på vegg mot kulde, lys i jernholdere",
-      "teknologi": "vannmølle, smie, verktøy laget av den som bruker dem",
-      "klaer": "ull i naturfarger, belte med kniv, hodeplagg som viser rolle",
-      "musikk": "gregoriansk sang, lutt, sekkepipe på markedet",
-      "farger": "oker, brent siena, kalk, indigo",
-      "hverdag": "arbeid, måltid, bønn, årstidenes rekkefølge"
-    },
-    "imageQuery": [
-      "medieval monastery cloister",
-      "medieval stone hall"
-    ]
+      "setting": "a monastery precinct, a market square, strip fields",
+      "architecture": "thick walls, round arches, roofs carried on visible timber",
+      "interior": "a long table, hangings on the wall against the cold, candles in iron holders",
+      "technology": "a watermill, a forge, tools made by whoever uses them",
+      "clothes": "wool in natural colours, a belt with a knife, headwear that shows your role",
+      "music": "plainchant, lute, bagpipes at the market",
+      "colours": "ochre, burnt sienna, lime, indigo",
+      "everyday": "work, meals, prayer, and the order of the seasons"
+    }
   },
   {
     "key": "medievalcore",
     "name": "Medievalcore",
-    "tagline": "Middelalderen slik vi vil at den var",
-    "description": "Den romantiserte versjonen: borger, banner, ridderlighet og et håndverk uten skitt under neglene. Vakkert, høytidelig og litt fantasi.",
+    "tagline": "The Middle Ages as we'd like them to have been",
+    "description": "The romanticised version: castles, banners, chivalry and craft without dirt under the nails. Beautiful, ceremonial and a little invented.",
     "keywords": [
-      "borg",
-      "banner",
-      "ridderlighet",
-      "tårn",
-      "fakler"
+      "castle",
+      "banners",
+      "chivalry",
+      "towers",
+      "torches"
     ],
     "palette": [
       "#12100f",
       "#3b2438",
       "#8a6b30",
       "#e3d6b4"
+    ],
+    "imageQuery": [
+      "medieval castle tower",
+      "castle great hall"
     ],
     "dimensions": {
       "history": 0.88,
@@ -3522,37 +3526,37 @@
       "witchcore"
     ],
     "world": {
-      "omgivelser": "borgtårn over en skog, turnering på en slette, fakler i skumring",
-      "arkitektur": "spir, portrom, sal med banner langs veggene",
-      "interior": "ildsted stort nok til å stå i, tepper, våpen som pynt",
-      "teknologi": "irrelevant; alt viktig gjøres for hånd",
-      "klaer": "fløyel, brodert kant, kappe som slepes med vilje",
-      "musikk": "lutt og harpe, fanfarer, kor i en steinhall",
-      "farger": "dyp rød, gull, kongeblå, steingrå",
-      "hverdag": "seremonier, håndverk, lojalitet som organiserende prinsipp"
-    },
-    "imageQuery": [
-      "medieval castle tower",
-      "castle great hall"
-    ]
+      "setting": "a castle tower over a forest, a tournament on a plain, torches at dusk",
+      "architecture": "spires, a gatehouse, a hall with banners along the walls",
+      "interior": "a hearth big enough to stand in, tapestries, weapons as decoration",
+      "technology": "irrelevant; everything that matters is done by hand",
+      "clothes": "velvet, embroidered edging, a cloak that trails on purpose",
+      "music": "lute and harp, fanfares, a choir in a stone hall",
+      "colours": "deep red, gold, royal blue, stone grey",
+      "everyday": "ceremony, craft, loyalty as an organising principle"
+    }
   },
   {
     "key": "romanticism",
     "name": "Romanticism",
-    "tagline": "Følelsen større enn landskapet",
-    "description": "1800-tallets kult for naturens storhet, individets indre liv og det sublime. Fjell, ruiner og en trang til å bli overveldet.",
+    "tagline": "The feeling larger than the landscape",
+    "description": "The nineteenth-century cult of nature's grandeur, the inner life and the sublime. Mountains, ruins and an urge to be overwhelmed.",
     "keywords": [
-      "det sublime",
-      "ruin",
-      "fjell",
-      "stormfullt",
-      "individet"
+      "the sublime",
+      "ruins",
+      "mountains",
+      "storms",
+      "the individual"
     ],
     "palette": [
       "#12141c",
       "#334055",
       "#9a7a55",
       "#ece2cf"
+    ],
+    "imageQuery": [
+      "romantic landscape painting",
+      "caspar david friedrich"
     ],
     "dimensions": {
       "melancholy": 0.85,
@@ -3584,37 +3588,37 @@
       "medievalcore"
     ],
     "world": {
-      "omgivelser": "et fjellparti i storm, en ruin i kveldslys, hav som er for stort",
-      "arkitektur": "falne klostre, tårn på en klippe, hus med utsikt du kan miste deg i",
-      "interior": "staffeli ved vinduet, bøker, en kappe over en stol",
-      "teknologi": "ingen; det ville ødelagt stemningen",
-      "klaer": "kappe, høy krage, hår som er vær-avhengig",
-      "musikk": "klaverkonserter, lieder, orkester som bygger seg opp",
-      "farger": "stormblå, kobberbrunt, gyllen tåke, kalk",
-      "hverdag": "gå ut i dårlig vær med vilje, skrive ned hva du følte"
-    },
-    "imageQuery": [
-      "romantic landscape painting",
-      "caspar david friedrich"
-    ]
+      "setting": "a mountain in a storm, a ruin in evening light, a sea that is too large",
+      "architecture": "fallen abbeys, a tower on a cliff, a house with a view you can lose yourself in",
+      "interior": "an easel by the window, books, a cloak over a chair",
+      "technology": "none; it would spoil the mood",
+      "clothes": "a cloak, a high collar, hair at the mercy of the weather",
+      "music": "piano concertos, lieder, an orchestra building",
+      "colours": "storm blue, copper brown, golden haze, chalk",
+      "everyday": "going out in bad weather on purpose, writing down what you felt"
+    }
   },
   {
     "key": "dark-romanticism",
     "name": "Dark Romanticism",
-    "tagline": "Skjønnhet med død i seg",
-    "description": "Romantikkens skyggeside: forgjengelighet, synd, spøkelser og en fascinasjon for det man ikke burde se på. Ømt og makabert samtidig.",
+    "tagline": "Beauty with death in it",
+    "description": "Romanticism's shadow side: transience, sin, ghosts and a fascination with what you shouldn't look at. Tender and macabre at once.",
     "keywords": [
-      "forgjengelighet",
-      "spøkelse",
-      "kirkegård",
-      "svart blonde",
-      "vers"
+      "transience",
+      "ghosts",
+      "cemetery",
+      "black lace",
+      "verse"
     ],
     "palette": [
       "#0c0a0e",
       "#241a2b",
       "#5f4356",
       "#ded2cd"
+    ],
+    "imageQuery": [
+      "old cemetery gothic",
+      "overgrown graveyard"
     ],
     "dimensions": {
       "melancholy": 0.95,
@@ -3646,37 +3650,37 @@
       "folk-horror"
     ],
     "world": {
-      "omgivelser": "en kirkegård som er blitt en park, hage som er overlatt til seg selv",
-      "arkitektur": "gravkapell, herskapshus med lukkede fløyer, gotiske vinduer",
-      "interior": "portretter som følger deg, tørkede roser, tunge gardiner",
-      "teknologi": "ingen — helst ikke engang elektrisk lys",
-      "klaer": "svart blonde, fløyel, smykker med hår eller onyx i",
-      "musikk": "requiem, cello alene, sang i moll",
-      "farger": "blekksvart, blodrød, likblek, oksidert sølv",
-      "hverdag": "lese om natten, tenke på døden uten å bli redd"
-    },
-    "imageQuery": [
-      "old cemetery gothic",
-      "overgrown graveyard"
-    ]
+      "setting": "a cemetery gone to parkland, a garden left to itself",
+      "architecture": "a mortuary chapel, a manor with closed wings, gothic windows",
+      "interior": "portraits that follow you, dried roses, heavy curtains",
+      "technology": "none - preferably not even electric light",
+      "clothes": "black lace, velvet, jewellery with hair or onyx in it",
+      "music": "a requiem, a cello alone, singing in a minor key",
+      "colours": "ink black, blood red, corpse pale, oxidised silver",
+      "everyday": "reading at night, thinking about death without being afraid"
+    }
   },
   {
     "key": "eclectic-grandpa",
     "name": "Eclectic Grandpa",
-    "tagline": "Ingen som prøver, alt som fungerer",
-    "description": "Slitte cardigans, arvede møbler, samlinger og en total mangel på interesse for hva som er moderne. Koselig, personlig og litt komisk.",
+    "tagline": "Nobody trying, everything working",
+    "description": "Worn cardigans, inherited furniture, collections and a total lack of interest in what's current. Cosy, personal and slightly comic.",
     "keywords": [
       "cardigan",
-      "plater",
-      "lenestol",
-      "samlinger",
-      "hjemmesnekret"
+      "records",
+      "armchair",
+      "collections",
+      "home-built"
     ],
     "palette": [
       "#1a1512",
       "#463628",
       "#8f7a4a",
       "#e7ddc4"
+    ],
+    "imageQuery": [
+      "vintage living room armchair",
+      "record player shelf vintage"
     ],
     "dimensions": {
       "maximalism": 0.8,
@@ -3708,37 +3712,37 @@
       "normcore"
     ],
     "world": {
-      "omgivelser": "et hus som ikke har blitt pusset opp siden noe godt skjedde der",
-      "arkitektur": "rekkehus, kjeller med verksted, veranda med for mange planter",
-      "interior": "lenestol med søkk, plater i alfabetisk orden, klokker som ikke går likt",
-      "teknologi": "en radio fra 1978, forsterker med ekte brytere",
-      "klaer": "cardigan, ullbukse, sko som ble kjøpt for kvalitet",
-      "musikk": "jazz eller schlager, avhengig av dagen, på vinyl",
-      "farger": "tobakksbrunt, sennep, flaskegrønn, kremhvit",
-      "hverdag": "fikse ting selv, fortelle historier, ikke bry seg om moter"
-    },
-    "imageQuery": [
-      "vintage living room armchair",
-      "record player vintage"
-    ]
+      "setting": "a house that hasn't been redone since something good happened in it",
+      "architecture": "a terraced house, a workshop in the cellar, a porch with too many plants",
+      "interior": "an armchair with a dip in it, records in alphabetical order, clocks that disagree",
+      "technology": "a radio from 1978, an amplifier with real switches",
+      "clothes": "a cardigan, wool trousers, shoes bought for quality",
+      "music": "jazz or schlager depending on the day, on vinyl",
+      "colours": "tobacco brown, mustard, bottle green, cream white",
+      "everyday": "fixing things yourself, telling stories, ignoring fashion"
+    }
   },
   {
     "key": "normcore",
     "name": "Normcore",
-    "tagline": "Ingenting å bevise",
-    "description": "Bevisst vanlighet: praktiske klær, kjente merker og et fravær av signaler. Frihet i å slippe å uttrykke seg gjennom ting.",
+    "tagline": "Nothing to prove",
+    "description": "Deliberate ordinariness: practical clothes, familiar brands and an absence of signals. Freedom in not having to express yourself through objects.",
     "keywords": [
-      "vanlig",
-      "praktisk",
-      "uten signal",
-      "hverdag",
-      "funksjonelt"
+      "ordinary",
+      "practical",
+      "unsignalled",
+      "everyday",
+      "functional"
     ],
     "palette": [
       "#1a1b1c",
       "#3c4045",
       "#8b9095",
       "#e9e8e4"
+    ],
+    "imageQuery": [
+      "ordinary suburban street houses",
+      "plain apartment block"
     ],
     "dimensions": {
       "minimalism": 0.7,
@@ -3770,37 +3774,37 @@
       "eclectic-grandpa"
     ],
     "world": {
-      "omgivelser": "en helt vanlig gate i en helt vanlig by, og det er greit",
-      "arkitektur": "funksjonelle bygg, ingenting som ber om oppmerksomhet",
-      "interior": "møbler som fungerer, ryddig nok, ingen konsept",
-      "teknologi": "det alle andre har, kjøpt fordi det virker",
-      "klaer": "genser, jeans, joggesko, ingen historie",
-      "musikk": "det som spilles, uten skam",
-      "farger": "grå, marine, hvit, beige",
-      "hverdag": "gjøre vanlige ting godt, uten å gjøre et poeng av det"
-    },
-    "imageQuery": [
-      "ordinary suburban street",
-      "plain apartment building"
-    ]
+      "setting": "a perfectly ordinary street in a perfectly ordinary town, and that's fine",
+      "architecture": "functional buildings, nothing asking for attention",
+      "interior": "furniture that works, tidy enough, no concept",
+      "technology": "what everyone else has, bought because it does the job",
+      "clothes": "a jumper, jeans, trainers, no story",
+      "music": "whatever is on, without embarrassment",
+      "colours": "grey, navy, white, beige",
+      "everyday": "doing ordinary things well, without making a point of it"
+    }
   },
   {
     "key": "wabi-sabi",
     "name": "Wabi-Sabi",
-    "tagline": "Det ufullkomne, det forgjengelige",
-    "description": "Japansk estetikk der sprekker, slitasje og asymmetri er verdien. Stillhet, få ting og aksept for at alt er midlertidig.",
+    "tagline": "The imperfect, the impermanent",
+    "description": "A Japanese aesthetic in which cracks, wear and asymmetry are the value. Quiet, few things, and an acceptance that everything is temporary.",
     "keywords": [
-      "sprekk",
-      "asymmetri",
+      "cracks",
+      "asymmetry",
       "patina",
-      "stillhet",
-      "leire"
+      "stillness",
+      "clay"
     ],
     "palette": [
       "#171512",
       "#3c362f",
       "#847a68",
       "#eae4d8"
+    ],
+    "imageQuery": [
+      "japanese tea bowl",
+      "japanese garden moss"
     ],
     "dimensions": {
       "minimalism": 0.8,
@@ -3832,37 +3836,37 @@
       "rustic"
     ],
     "world": {
-      "omgivelser": "en liten hage med grus og mose, regn på et tak av tegl",
-      "arkitektur": "tre som har fått gråne, papirvegger, én utsikt om gangen",
-      "interior": "en skål med sprekk i reparert med gull, ett blomsterstilk i en vase",
-      "teknologi": "unngås der den ikke trengs",
-      "klaer": "grove, naturfargede stoffer, plagg som blir bedre av alder",
-      "musikk": "få toner, lang etterklang, stillhet som del av verket",
-      "farger": "leire, aske, ubrent tre, mose",
-      "hverdag": "lage te ordentlig, la ting eldes, kaste sjelden"
-    },
-    "imageQuery": [
-      "japanese tea bowl",
-      "japanese garden moss"
-    ]
+      "setting": "a small garden of gravel and moss, rain on a tiled roof",
+      "architecture": "timber left to go grey, paper walls, one view at a time",
+      "interior": "a bowl with a crack repaired in gold, a single stem in a vase",
+      "technology": "avoided where it isn't needed",
+      "clothes": "coarse, undyed fabrics, garments improved by age",
+      "music": "few notes, long reverberation, silence as part of the piece",
+      "colours": "clay, ash, unfinished wood, moss",
+      "everyday": "making tea properly, letting things age, rarely throwing anything out"
+    }
   },
   {
     "key": "arts-and-crafts",
     "name": "Arts and Crafts",
-    "tagline": "Ærlig arbeid, vakkert utført",
-    "description": "Bevegelsen mot industriell masseproduksjon: håndlagde møbler, mønster fra naturen og en moral om at ting skal lages godt av folk som har det bra.",
+    "tagline": "Honest work, beautifully done",
+    "description": "The movement against industrial mass production: handmade furniture, patterns drawn from nature and a conviction that things should be made well by people who are treated well.",
     "keywords": [
-      "håndlagd",
-      "mønster",
-      "eik",
-      "verksted",
-      "solide møbler"
+      "handmade",
+      "pattern",
+      "oak",
+      "workshop",
+      "solid furniture"
     ],
     "palette": [
       "#161310",
       "#3d3a24",
       "#8a6a3c",
       "#e6dcc0"
+    ],
+    "imageQuery": [
+      "arts and crafts interior",
+      "william morris wallpaper"
     ],
     "dimensions": {
       "craft": 0.95,
@@ -3894,37 +3898,37 @@
       "cottagecore"
     ],
     "world": {
-      "omgivelser": "en landsby med verksteder, hage tegnet av den som bor der",
-      "arkitektur": "lave tak, synlige bjelker, murstein og eik",
-      "interior": "innebygde benker, fliser med mønster, møbler med tapper og sinker",
-      "teknologi": "håndverktøy, én god maskin, ingenting mer",
-      "klaer": "solide stoffer, brodert detalj, praktiske snitt",
-      "musikk": "folkemusikk arrangert pent, sang i flerstemthet",
-      "farger": "salviegrønn, oker, rødbrun eik, kalk",
-      "hverdag": "lage noe godt, sakte, og bruke det hver dag"
-    },
-    "imageQuery": [
-      "arts and crafts interior",
-      "william morris wallpaper"
-    ]
+      "setting": "a village of workshops, a garden designed by whoever lives there",
+      "architecture": "low roofs, exposed beams, brick and oak",
+      "interior": "built-in benches, patterned tiles, furniture with visible joinery",
+      "technology": "hand tools, one good machine, nothing more",
+      "clothes": "solid fabrics, embroidered detail, practical cuts",
+      "music": "folk music arranged carefully, singing in parts",
+      "colours": "sage green, ochre, red-brown oak, lime",
+      "everyday": "making something good, slowly, and using it every day"
+    }
   },
   {
     "key": "kidcore",
     "name": "Kidcore",
-    "tagline": "90-tallets barnerom, med vilje",
-    "description": "Primærfarger, klistremerker, leker og en bevisst gjenerobring av barndommens glede. Naivt fordi det er befriende.",
+    "tagline": "The nineties bedroom, on purpose",
+    "description": "Primary colours, stickers, toys and a deliberate reclaiming of childhood joy. Naive because that is the liberating part.",
     "keywords": [
-      "primærfarger",
-      "klistremerker",
-      "leker",
-      "tegnefilm",
-      "barnerom"
+      "primary colours",
+      "stickers",
+      "toys",
+      "cartoons",
+      "bedroom"
     ],
     "palette": [
       "#141534",
       "#e0453c",
       "#f2c53d",
       "#3fb7e8"
+    ],
+    "imageQuery": [
+      "children toys colourful plastic",
+      "playground colourful equipment"
     ],
     "dimensions": {
       "whimsy": 0.98,
@@ -3956,37 +3960,37 @@
       "old-web"
     ],
     "world": {
-      "omgivelser": "en lekeplass med sterk plast, et rom med for mange plakater",
-      "arkitektur": "irrelevant; det viktige skjer på gulvet",
-      "interior": "klistremerker på alle flater, samlinger i esker, teppe med mønster",
-      "teknologi": "håndholdt spillkonsoll, kassettspiller i sterk farge",
-      "klaer": "regnbue, striper, altfor mange merker og pins",
-      "musikk": "poplåter, tegnefilmtemaer, alt med refreng",
-      "farger": "primærrød, gul, cyan, gressgrønn",
-      "hverdag": "gjøre ting fordi det er gøy, uten videre begrunnelse"
-    },
-    "imageQuery": [
-      "colorful toys plastic",
-      "playground colorful"
-    ]
+      "setting": "a playground in bright plastic, a room with far too many posters",
+      "architecture": "irrelevant; the important things happen on the floor",
+      "interior": "stickers on every surface, collections in boxes, a patterned rug",
+      "technology": "a handheld console, a cassette player in a loud colour",
+      "clothes": "rainbow, stripes, far too many badges and pins",
+      "music": "pop songs, cartoon themes, anything with a chorus",
+      "colours": "primary red, yellow, cyan, grass green",
+      "everyday": "doing things because they're fun, with no further justification"
+    }
   },
   {
     "key": "rococo",
     "name": "Rococo",
-    "tagline": "Overdådighet som lek",
-    "description": "1700-tallets lette, asymmetriske overflod: pastell, forgylling, skjell-former og en kultur som dyrket nytelse framfor tyngde.",
+    "tagline": "Excess as play",
+    "description": "The light, asymmetric abundance of the eighteenth century: pastel, gilding, shell forms and a culture that cultivated pleasure over gravity.",
     "keywords": [
-      "forgylling",
-      "pastell",
-      "asymmetri",
-      "salong",
-      "krøller"
+      "gilding",
+      "pastel",
+      "asymmetry",
+      "salon",
+      "curls"
     ],
     "palette": [
       "#1b1420",
       "#4d3358",
       "#c9a0b4",
       "#f6ecd8"
+    ],
+    "imageQuery": [
+      "rococo interior palace",
+      "rococo ornament gilded"
     ],
     "dimensions": {
       "ornament": 0.98,
@@ -4018,18 +4022,14 @@
       "romantic-academia"
     ],
     "world": {
-      "omgivelser": "en hage med hekker og en paviljong ingen trenger",
-      "arkitektur": "lyse fasader, buede vinduer, tak malt som himmel",
-      "interior": "forgylte lister, speil overalt, møbler med for korte ben",
-      "teknologi": "en klokke som er mest til pynt",
-      "klaer": "silke i pastell, sløyfer, alt som beveger seg når du gjør det",
-      "musikk": "cembalo, kammermusikk, noe å danse til",
-      "farger": "pudderrosa, mintgrønn, gull, elfenben",
-      "hverdag": "selskap, samtale, og ingen anger over å ha det fint"
-    },
-    "imageQuery": [
-      "rococo interior palace",
-      "rococo ornament gilded"
-    ]
+      "setting": "a garden with hedges and a pavilion nobody needs",
+      "architecture": "pale facades, arched windows, ceilings painted as sky",
+      "interior": "gilded mouldings, mirrors everywhere, furniture with legs too short",
+      "technology": "a clock that is mostly for show",
+      "clothes": "pastel silk, bows, everything that moves when you do",
+      "music": "harpsichord, chamber music, something to dance to",
+      "colours": "powder pink, mint green, gold, ivory",
+      "everyday": "company, conversation, and no regret at having a nice time"
+    }
   }
 ]

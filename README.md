@@ -1,206 +1,242 @@
 # What Aesthetic Are You?
 
-En personlighetstest som finner hvilken **estetisk verden** du hører hjemme i — ikke hvilke
-bilder du liker. 156 påstander i banken, 50 per gjennomføring, 35 skjulte dimensjoner og
-65 estetikker med utgangspunkt i Aesthetics Wiki som referansegrunnlag.
+A personality test that finds which **aesthetic world** you belong to — not which
+pictures you like. 180 statements in the bank, 50 per run, 35 hidden dimensions and
+65 aesthetics, using Aesthetics Wiki as a reference.
 
-Ingen rammeverk, ingen byggesteg, ingen avhengigheter. Åpne `index.html`.
+No framework, no build step, no dependencies. Open `index.html`.
 
 ---
 
-## Kjøre lokalt
+## Running it locally
 
 ```bash
 node tools/serve.js
 ```
 
-Åpner på `http://localhost:8123`.
+Opens at `http://localhost:8123`.
 
-Siden fungerer også ved å åpne `index.html` rett fra disk. Nettleseren blokkerer da `fetch`
-mot lokale filer, og appen faller automatisk tilbake på `data/bundle.js` — en generert kopi
-av JSON-filene:
+The page also works opened straight from disk. The browser blocks `fetch` against
+local files there, so the app falls back to `data/bundle.js` — a generated copy of
+the JSON:
 
 ```bash
 node tools/build-bundle.js
 ```
 
-Kjør den etter hver endring i `/data`.
+Run that after every change under `/data`.
+
+## Deploying to Netlify
+
+It is a static site, so there is nothing to build. `netlify.toml` sets
+`publish = "."` with an empty build command; point Netlify at the repository and it
+serves the root as-is.
+
+Two things to keep in mind:
+
+- **Commit `data/bundle.js`.** It is generated, but there is no build step on Netlify
+  to regenerate it. Run `node tools/build-bundle.js` before pushing whenever `/data`
+  changes.
+- **The photo strip calls Wikimedia Commons from the visitor's browser.** It is
+  optional — if you add a strict `Content-Security-Policy`, allow
+  `connect-src https://commons.wikimedia.org` and
+  `img-src https://upload.wikimedia.org`, or the strip just quietly stops appearing.
 
 ---
 
-## Slik virker testen
+## How the test works
 
-Poenget er at ingen påstand tilhører én estetikk. Kjeden er:
+The point is that no statement belongs to any one aesthetic. The chain is:
 
 ```
-svar  →  35 dimensjoner  →  match mot 65 estetikk-profiler
+answers  →  35 dimensions  →  match against 65 aesthetic profiles
 ```
 
-Et spørsmål om gamle bygninger gir aldri poeng til «Dark Academia». Det flytter
-`history`, `nostalgia`, `architecture` og `modernity` — og estetikkene faller ut av
-helheten. Derfor kan man ikke gjette hva et spørsmål måler, og derfor kan man ikke
-spille testen.
+A question about old buildings never scores points for "Dark Academia". It moves
+`history`, `nostalgia`, `architecture` and `modernity`, and the aesthetics fall out
+of the whole. That is why you cannot guess what a question measures, and why you
+cannot play the test.
 
-### Profilen
+### The profile
 
-Hvert svar ligger på en 7-punkts skala fra +3 (Helt enig) til −3 (Veldig uenig). For hver
-dimensjon summeres `svar × vekt`, normalisert mot summen av absoluttvekter. Resultatet er
-en verdi mellom 0 og 1, pluss en *confidence* som sier hvor mye datagrunnlag dimensjonen
-faktisk fikk i denne gjennomføringen.
+Every answer sits on a 7-point scale from +3 (Strongly agree) to −3 (Strongly
+disagree). For each dimension, `answer × weight` is summed and normalised against the
+sum of absolute weights, giving a value between 0 and 1 — plus a *confidence* saying
+how much evidence that dimension actually got in this run.
 
-### Matchen
+### The match
 
-For hver estetikk sammenlignes profilen dimensjon for dimensjon. Hver dimensjon vektes med
+Each aesthetic is compared dimension by dimension. Every dimension is weighted by
 
-* **salience** — hvor definerende den er for estetikken (0.5 er likegyldig, 0 og 1 er sterkt)
-* **confidence** — hvor godt dimensjonen ble målt
+* **salience** — how defining it is for that aesthetic (0.5 is indifferent, 0 and 1 are strong)
+* **confidence** — how well the dimension was measured
 
-Toppmatchen får en absolutt prosent. Resten plasseres relativt til hvor langt de faller under
-toppen, målt mot brukerens egen spredning — uten det siste ville alle 65 landet innenfor ti
-prosentpoeng av hverandre.
+The top match gets an absolute percentage. The rest are placed by how far they fall
+below the top, measured against your own spread — without that, all 65 would land
+within ten points of each other and the ranking would say nothing.
 
-### Skjult estetikk
+### The hidden aesthetic
 
-Velges fra plass 4–18, og scores på *fit × novelty*: den må passe rimelig godt, men samtidig
-ligge langt fra de to øverste i dimensjonsrommet, og er sperret hvis den står i `related` hos
-en av dem. Det er derfor den føles uventet i stedet for å bare være nummer tre.
+Picked from places 4–18 and scored on *fit × novelty*: it has to fit reasonably well
+while sitting far from the top two in dimension space, and it is blocked if it
+appears in either one's `related` list. That is why it feels unexpected rather than
+just being number three.
 
-### Kombinasjon
+### The combination
 
-Er nummer to innenfor 4 prosentpoeng, beskrives resultatet som en hybrid (`A × B`). Systemet
-later aldri som om et hybridnavn er offisielt — teksten sier eksplisitt at kombinasjonen er
-satt sammen ut fra profilen.
-
----
-
-## Spørsmålsutvalget
-
-Hver gjennomføring trekker 50 av 156 etter faste kvoter:
-
-| Tema | Kvote | I banken |
-|---|---|---|
-| Natur og miljø | 9 | 27 |
-| Historie og nostalgi | 7 | 21 |
-| Teknologi og framtid | 7 | 22 |
-| Arkitektur og rom | 6 | 19 |
-| Sosialitet og ensomhet | 5 | 15 |
-| Mystikk og fantasi | 5 | 15 |
-| Orden og kaos | 4 | 12 |
-| Farger, lys og materialer | 4 | 12 |
-| Verdier og temperament | 3 | 13 |
-
-I tillegg:
-
-* to spørsmål med samme `cluster` (nesten samme påstand) kommer aldri i samme quiz
-* dimensjoner uten dekning repareres ved å bytte inn et spørsmål som dekker dem
-* spørsmål fra de siste gjennomføringene velges bort så lenge det finnes ferske —
-  lagres lokalt i `aq.previousQuestionIds.v2`
-* rekkefølgen spres, så to påstander på rad sjelden kommer fra samme tema
-* alt styres av en seed. `?seed=ABC12XYZ` gjenskaper en gjennomføring nøyaktig, og
-  hopper da bevisst over historikkfilteret
+If second place is within 4 points, the result is described as a hybrid (`A × B`).
+The system never pretends a hybrid name is official — the text says explicitly that
+the combination was assembled from your profile.
 
 ---
 
-## Filer
+## Question selection
+
+The 180 statements sit in **18 themed groups of ten**. Each run draws **2–3 from every
+group**, which is what makes two runs feel genuinely different while still covering
+every theme.
+
+| Group | Group |
+|---|---|
+| Home and rooms | Tools and craft |
+| Nature and wilderness | People and solitude |
+| Weather, light and seasons | The unexplained |
+| City and country | Imagination and play |
+| Buildings and architecture | Order and chaos |
+| The past and memory | Style, colour and materials |
+| Tradition and community | Travel and adventure |
+| Screens and the net | Temperament |
+| The future and progress | Values and self-image |
+
+On top of that:
+
+* two statements with the same `cluster` (near-identical wording) never appear together
+* dimensions with no coverage are repaired by swapping a statement in
+* statements from recent runs are set aside while fresh ones remain — stored locally
+  in `aq.previousQuestionIds.v3`
+* the order is spread, so two statements in a row rarely come from the same group
+* everything is seeded. `?seed=ABC12XYZ` recreates a run exactly, and deliberately
+  skips the history filter when it does
+
+---
+
+## Files
 
 ```
 index.html
+netlify.toml
 assets/css/styles.css
 assets/js/
-  prng.js         seedet tilfeldighet (mulberry32)
-  data.js         laster JSON, faller tilbake på bundle
-  selection.js    utvalg av 50 spørsmål
-  scoring.js      profil + match (ingen tekst)
-  narrative.js    resultattekst (ingen tall)
-  visuals.js      genererte stemningsbilder
-  app.js          skjermer og flyt
+  prng.js         seeded randomness (mulberry32)
+  data.js         loads the JSON, falls back to the bundle
+  selection.js    picks the 50 statements
+  scoring.js      profile + matching (no text)
+  narrative.js    result text (no numbers)
+  visuals.js      generated mood plates
+  images.js       optional Wikimedia Commons photos
+  app.js          screens and flow
 data/
-  questions.json  156 påstander med dimensjonsvekter
-  aesthetics.json 65 estetikker med profil, palett og «verden»
-  scoring.json    skala, kvoter, dimensjoner, matching-parametre
-  narrative.json  formuleringsbanker
-  bundle.js       GENERERT — reserve for file://
+  questions.json  180 statements with dimension weights
+  aesthetics.json 65 aesthetics: profile, palette, search terms, "world"
+  scoring.json    scale, groups, dimensions, matching parameters
+  narrative.json  phrase banks
+  bundle.js       GENERATED — fallback for file://
 tools/
   build-bundle.js
   validate.js
   serve.js
 ```
 
-UI-koden vet ingenting om hvilke estetikker som finnes. Nye spørsmål og estetikker legges
-til i `/data` uten å røre JavaScript.
+The UI code knows nothing about which aesthetics exist. New statements and aesthetics
+go into `/data` without touching any JavaScript.
 
-### Legge til en estetikk
+### Adding an aesthetic
 
 ```json
 {
-  "key": "min-estetikk",
-  "name": "Min Estetikk",
-  "tagline": "En linje som fanger stemningen",
-  "description": "To setninger om hva dette er.",
+  "key": "my-aesthetic",
+  "name": "My Aesthetic",
+  "tagline": "One line that catches the mood",
+  "description": "Two sentences on what this is.",
   "keywords": ["...", "..."],
   "palette": ["#0d1610", "#22392a", "#6d8459", "#cfc3a3"],
+  "imageQuery": ["english search term", "second search term"],
   "dimensions": { "nature": 0.95, "solitude": 0.9, "urban": 0.08 },
   "related": ["forestpunk"],
   "world": {
-    "omgivelser": "...", "arkitektur": "...", "interior": "...", "teknologi": "...",
-    "klaer": "...", "musikk": "...", "farger": "...", "hverdag": "..."
+    "setting": "...", "architecture": "...", "interior": "...", "technology": "...",
+    "clothes": "...", "music": "...", "colours": "...", "everyday": "..."
   }
 }
 ```
 
-Utelatte dimensjoner tolkes som irrelevante, ikke som nøytrale — de trekker ikke ned.
+Omitted dimensions are treated as irrelevant, not as neutral — they do not drag the
+score down.
 
-### Legge til et spørsmål
+### Adding a statement
 
 ```json
 {
-  "id": 157,
-  "category": "nature",
-  "cluster": "unik-cluster",
-  "text": "En påstand som ikke røper hva den måler.",
+  "id": 181,
+  "group": "home",
+  "cluster": "unique-cluster",
+  "text": "A statement that doesn't give away what it measures.",
   "dimensions": { "history": 2, "nostalgia": 2, "modernity": -1 }
 }
 ```
 
-Vekter er −3 til 3. Skriv både positive og negative formuleringer per dimensjon, ellers
-kan brukeren svare det samme på alt og likevel få utslag.
+Weights run from −3 to 3. Write both positive and negative wordings per dimension, or
+someone can answer the same thing to everything and still get a strong reading. Adding
+statements to a group is free; adding a **new** group means updating `groups` in
+`scoring.json` so the min/max range still brackets 50.
 
 ---
 
-## Validering
+## Validation
 
 ```bash
 node tools/validate.js
 ```
 
-Sjekker referanser, kvoter, dimensjonsdekning og formuleringsbanker — og simulerer 400
-utvalg og 600 personer for å måle at utvalget faktisk er balansert og at scoringen skiller:
+It checks references, group sizes, dimension coverage and phrase banks, then simulates
+400 selections and 600 people to confirm the draw is balanced and the scoring
+discriminates:
 
 ```
-— Utvalg (400 kjøringer) —
-  spørsmål i bruk:            156 / 156
-  dupliserte clustere:        0
-  samme tema to på rad:       0.00 per quiz
+— Selection (400 runs) —
+  statements used:            180 / 180
+  duplicate clusters:         0
+  same group twice in a row:  0.00 per quiz
+  distinct quota shapes:      378 of 400 runs
 
-— Scoring (600 simulerte personer) —
-  ulike vinnere:              37 / 65
-  ulike skjulte estetikker:   50
-  snitt-match øverst:         79.5 %
-  kombinasjon vist:           35 % av gangene
+— Scoring (600 simulated people) —
+  distinct winners:           38 / 65
+  distinct hidden picks:      54
+  average top match:          80.5%
+  combination shown:          35% of the time
 ```
 
 ---
 
-## Bilder
+## Images
 
-Ingen bilde-API er koblet til. Bilder fra Aesthetics Wiki brukes ikke — de er ikke fritt
-tilgjengelige. I stedet genererer `visuals.js` et SVG per estetikk av dens egen palett og
-dimensjoner: strukturerte bånd for de ordnede, organiske former for resten, med korn og
-vignett. Samme estetikk gir alltid samme bilde.
+Two layers, and only the first is guaranteed.
 
-Skal ekte foto inn senere, er `AQ.visuals.moodPlate()` det eneste stedet som må endres.
+**Mood plates** are generated by `visuals.js`: an SVG per aesthetic built from its own
+palette and dimensions — geometric bands for the ordered ones, organic shapes for the
+rest, with grain and vignette. The same aesthetic always produces the same plate.
 
-## Personvern
+**Photographs** come from Wikimedia Commons, which is freely licensed and serves CORS
+headers. Each aesthetic carries two English search terms; results are filtered against
+maps, scanned book plates and the like, and every photo is shown with its creator and
+licence. Aesthetics Wiki images are not used — they are not freely licensed.
 
-Alt regnes ut i nettleseren. Ingen forespørsler ut, ingen sporing. `localStorage` brukes til
-pågående sesjon, spørsmålshistorikk og én innstilling.
+The photo strip is progressive enhancement. If the request is slow, blocked or empty,
+the section is simply never inserted. It is labelled honestly on the page: keyword
+matches approximating the atmosphere, not official images of the aesthetic.
+
+## Privacy
+
+Everything is computed in the browser. No tracking, and the only outbound request is
+the optional image search. `localStorage` holds the run in progress, the question
+history and one preference.

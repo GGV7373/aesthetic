@@ -1,5 +1,5 @@
-/* Bittelien statisk server for lokal utvikling.
-   Kjør:  node tools/serve.js  →  http://localhost:8123          */
+/* Tiny static server for local development.
+   Run:  node tools/serve.js  ->  http://localhost:8123          */
 'use strict';
 const http = require('http');
 const fs = require('fs');

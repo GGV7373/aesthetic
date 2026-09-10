@@ -1,7 +1,7 @@
-/* Laster quizdata. JSON-filene i /data er fasit.
-   Åpnes siden direkte fra filsystemet (file://) blokkerer nettleseren fetch mot
-   lokale filer — da faller vi tilbake på data/bundle.js, som genereres fra de
-   samme JSON-filene med `node tools/build-bundle.js`. */
+/* Loads the quiz data. The JSON files in /data are the source of truth.
+   When the page is opened straight from the file system (file://) the browser
+   blocks fetch against local files, so we fall back to data/bundle.js, which is
+   generated from those same JSON files by `node tools/build-bundle.js`. */
 (function (global) {
   'use strict';
   var AQ = (global.AQ = global.AQ || {});
@@ -18,7 +18,7 @@
       var s = document.createElement('script');
       s.src = src;
       s.onload = function () { resolve(); };
-      s.onerror = function () { reject(new Error('Klarte ikke laste ' + src)); };
+      s.onerror = function () { reject(new Error('Could not load ' + src)); };
       document.head.appendChild(s);
     });
   }
@@ -28,7 +28,7 @@
     return Promise.all(
       keys.map(function (key) {
         return fetch(FILES[key], { cache: 'no-cache' }).then(function (res) {
-          if (!res.ok) throw new Error(FILES[key] + ' ga ' + res.status);
+          if (!res.ok) throw new Error(FILES[key] + ' returned ' + res.status);
           return res.json();
         });
       })
@@ -42,7 +42,7 @@
   function fromBundle() {
     if (global.__AQ_BUNDLE__) return Promise.resolve(global.__AQ_BUNDLE__);
     return loadScript('data/bundle.js').then(function () {
-      if (!global.__AQ_BUNDLE__) throw new Error('bundle.js inneholdt ingen data');
+      if (!global.__AQ_BUNDLE__) throw new Error('bundle.js contained no data');
       return global.__AQ_BUNDLE__;
     });
   }
