@@ -9,7 +9,8 @@
    - never two near-identical statements (same "cluster") in one quiz
    - statements just seen are set aside while fresh ones remain
    - every dimension has to get at least some coverage
-   - two statements in a row should come from different groups
+   - the run is asked in themed blocks: a group's statements are asked together,
+     and the blocks themselves come in a different order each time
    - a person can nudge which groups are more likely to get the extra slot
      (their "3" instead of "2") by saying what matters to them - every group
      still keeps its guaranteed minimum either way
@@ -160,6 +161,27 @@
     return out;
   }
 
+  /* Asks the run in themed blocks: every statement drawn from a theme is asked
+     together, one block after another, so the quiz moves through one subject at
+     a time instead of jumping about.
+
+     The themes come in a different order every run, and the statements inside a
+     theme are shuffled too, so two runs of the same twenty themes still do not
+     feel like a repeat. Both draws come off the seeded rng, so a shared `?seed=`
+     link reproduces the blocks exactly. */
+  function blocks(selected, rng) {
+    var buckets = {};
+    selected.forEach(function (q) {
+      (buckets[q.group] = buckets[q.group] || []).push(q);
+    });
+
+    var out = [];
+    AQ.rng.shuffle(Object.keys(buckets), rng).forEach(function (key) {
+      AQ.rng.shuffle(buckets[key], rng).forEach(function (q) { out.push(q); });
+    });
+    return out;
+  }
+
   /* Spreads the groups out, so the order gives nothing away about what is measured. */
   function spread(selected, rng) {
     var buckets = {};
@@ -242,10 +264,16 @@
       selected = repairCoverage(selected, data.questions, data.dimensionKeys, chosenIds, rng);
     }
 
+    /* "blocks" asks one theme at a time; "spread" deliberately separates them;
+       "shuffle" does neither. Older data said spreadCategories: false for the
+       shuffle, so that still works. */
+    var order = (config.selection && config.selection.order) ||
+      (config.selection && config.selection.spreadCategories === false ? 'shuffle' : 'spread');
+
     var ordered2 =
-      config.selection && config.selection.spreadCategories === false
-        ? AQ.rng.shuffle(selected, rng)
-        : spread(selected, rng);
+      order === 'blocks' ? blocks(selected, rng)
+        : order === 'shuffle' ? AQ.rng.shuffle(selected, rng)
+          : spread(selected, rng);
 
     return {
       seed: seed,
@@ -255,5 +283,7 @@
     };
   };
 
-  AQ.selectionInternals = { coverageOf: coverageOf, spread: spread, drawQuotas: drawQuotas };
+  AQ.selectionInternals = {
+    coverageOf: coverageOf, spread: spread, blocks: blocks, drawQuotas: drawQuotas
+  };
 })(typeof window !== 'undefined' ? window : globalThis);

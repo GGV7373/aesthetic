@@ -56,7 +56,8 @@ breakpoints add to it. Concretely, on a phone:
   fill whatever height is left, and the Back / Next bar rides along the bottom with a
   blurred backdrop — Next is the wider of the two because it is pressed 50 times.
 * **Answering a statement advances on its own.** There is no switch for it; the counter
-  sits alone under the progress bar.
+  and the current theme share one line under the progress bar, and the theme name
+  truncates rather than pushing the counter off a narrow screen.
 * **Every tap target is at least 44px**, and taps get no 300ms delay and no grey flash.
 * **Hover styling is gated behind `(hover: hover) and (pointer: fine)`**, so tapping an
   option on a touch screen never leaves a stuck hover state behind.
@@ -214,7 +215,7 @@ changes** — only the words. The same run produces the same result either way.
 
 The 260 statements sit in **20 themed groups of thirteen**. Each run draws **2–3 from
 every group**, which is what makes two runs feel genuinely different while still
-covering every theme.
+covering every theme, and each group is then asked as one block (see below).
 
 | Group | Group |
 |---|---|
@@ -235,9 +236,34 @@ On top of that:
 * dimensions with no coverage are repaired by swapping a statement in
 * statements from recent runs are set aside while fresh ones remain — stored locally
   in `aq.previousQuestionIds.v3`
-* the order is spread, so two statements in a row rarely come from the same group
 * everything is seeded. `?seed=ABC12XYZ` recreates a run exactly, and deliberately
   skips the history filter when it does
+
+### Themed blocks
+
+The run is **asked one theme at a time**. All the statements drawn from a theme are
+asked together as a block, one statement per screen as usual, with the theme and your
+place in it shown beside the running count:
+
+```
+  Question 8 of 50        Music and taste · 2 of 3
+```
+
+So a run is always 20 blocks of 2–3, and picking **Sound & music** on the preferences
+screen makes that block more likely to be a 3 than a 2.
+
+The block order and the order within each block are both drawn off the seed, so no
+two runs open on the same theme but a shared `?seed=` link still reproduces
+everything exactly. Set by `selection.order` in `scoring.json`:
+
+| `order` | Behaviour |
+|---|---|
+| `"blocks"` | **default** — one theme at a time |
+| `"spread"` | the old behaviour: consecutive statements pushed into different themes |
+| `"shuffle"` | no ordering at all |
+
+The blocks are read back off the statement order rather than stored in the session,
+so a resumed run rebuilds them from the saved statement ids alone.
 
 ### Preferences
 
@@ -353,7 +379,8 @@ discriminates:
 — Selection (400 runs) —
   statements used:            260 / 260
   duplicate clusters:         0
-  same group twice in a row:  0.00 per quiz
+  themed blocks per quiz:     20.0
+  distinct opening themes:    20 of 20
   distinct quota shapes:      400 of 400 runs
 
 — Scoring (600 simulated people) —

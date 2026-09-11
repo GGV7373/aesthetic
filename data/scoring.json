@@ -498,7 +498,7 @@
     "avoidRepeatQuestions": true,
     "maxHistorySessions": 6,
     "repairZeroCoverage": true,
-    "spreadCategories": true,
+    "order": "blocks",
     "preferenceWeight": 3
   }
 }

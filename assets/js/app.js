@@ -354,11 +354,31 @@
       'aria-label': 'Progress'
     }, [progressFill]);
 
+    /* The run arrives in themed blocks — a theme's statements are asked
+       together — and each statement says which theme it is in and where you are
+       inside it. Read the blocks back off the order rather than passing them
+       through the session, so a resumed run rebuilds them from the stored
+       statement ids alone. */
+    var blocks = [];
+    questions.forEach(function (q, i) {
+      var last = blocks[blocks.length - 1];
+      if (last && last.group === q.group) { last.count++; return; }
+      blocks.push({ group: q.group, start: i, count: 1 });
+    });
+    var blockAt = [];
+    blocks.forEach(function (b) {
+      for (var i = b.start; i < b.start + b.count; i++) blockAt[i] = b;
+    });
+    var groupLabels = {};
+    data.config.groups.forEach(function (g) { groupLabels[g.key] = g.label; });
+
     var counter = el('p', { class: 'quiz__counter' });
+    var themeTag = el('p', { class: 'quiz__theme' });
     var statement = el('p', { class: 'quiz__statement' });
     var optionsWrap = el('div', {
       class: 'options', role: 'radiogroup', 'aria-label': 'How much do you agree?'
     });
+
     var body = el('div', { class: 'quiz__body' }, [statement, optionsWrap]);
 
     var prevBtn = el('button', {
@@ -375,7 +395,7 @@
       el('header', { class: 'quiz__head' }, [
         el('p', { class: 'eyebrow', text: 'What aesthetic are you?' }),
         progressBar,
-        el('div', { class: 'quiz__meta' }, [counter])
+        el('div', { class: 'quiz__meta' }, [counter, themeTag])
       ]),
       el('div', { class: 'quiz__card' }, [body]),
       el('nav', { class: 'quiz__nav' }, [prevBtn, nextBtn]),
@@ -394,8 +414,13 @@
 
     function paintQuestion() {
       var q = questions[session.index];
+      var block = blockAt[session.index];
 
       counter.textContent = 'Question ' + (session.index + 1) + ' of ' + total;
+      themeTag.textContent = block
+        ? groupLabels[block.group] + ' · ' +
+          (session.index - block.start + 1) + ' of ' + block.count
+        : '';
       progressFill.style.width = (session.index / total) * 100 + '%';
       progressBar.setAttribute('aria-valuenow', String(session.index));
 

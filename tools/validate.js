@@ -213,9 +213,11 @@ data.dimensionKeys = config.dimensions.map((d) => d.key);
 data.dimensionMeta = {};
 config.dimensions.forEach((d) => (data.dimensionMeta[d.key] = d));
 
-/* 1. Selection: right count, no duplicates, no repeated cluster, spread groups. */
-let sameGroupInARow = 0;
+/* 1. Selection: right count, no duplicates, no repeated cluster, themed blocks. */
+const blockOrder = (config.selection && config.selection.order) === 'blocks';
 let duplicateClusters = 0;
+let blockCounts = 0;
+const blockFirst = new Set();
 const questionUse = {};
 const quotaShapes = new Set();
 
@@ -232,8 +234,23 @@ for (let i = 0; i < 400; i++) {
     if (clusters.has(q.cluster)) duplicateClusters++;
     clusters.add(q.cluster);
     questionUse[q.id] = (questionUse[q.id] || 0) + 1;
-    if (idx > 0 && sel.questions[idx - 1].group === q.group) sameGroupInARow++;
   });
+
+  /* Every group's statements must land in exactly one unbroken run, or the
+     theme announcement in the quiz would fire more than once per theme. */
+  const runs = [];
+  sel.questions.forEach((q, idx) => {
+    if (idx > 0 && sel.questions[idx - 1].group === q.group) return;
+    runs.push(q.group);
+  });
+  blockCounts += runs.length;
+  blockFirst.add(runs[0]);
+  if (blockOrder && new Set(runs).size !== runs.length) {
+    errors.push(`Selection ${i}: a theme was split across more than one block.`);
+  }
+  if (blockOrder && runs.length !== config.groups.length) {
+    errors.push(`Selection ${i}: ${runs.length} blocks, expected ${config.groups.length}.`);
+  }
   quotaShapes.add(config.groups.map((g) => sel.quotas[g.key]).join(''));
   config.groups.forEach((g) => {
     const n = sel.questions.filter((q) => q.group === g.key).length;
@@ -345,7 +362,8 @@ console.log(`  drawn:         ${config.questionsPerQuiz} (${config.groups[0].min
 console.log('\n— Selection (400 runs) —');
 console.log(`  statements used:            ${useCounts.length} / ${questions.length}`);
 console.log(`  duplicate clusters:         ${duplicateClusters}`);
-console.log(`  same group twice in a row:  ${(sameGroupInARow / 400).toFixed(2)} per quiz`);
+console.log(`  themed blocks per quiz:     ${(blockCounts / 400).toFixed(1)}`);
+console.log(`  distinct opening themes:    ${blockFirst.size} of ${config.groups.length}`);
 console.log(`  distinct quota shapes:      ${quotaShapes.size} of 400 runs`);
 console.log(`  overlap after history:      ${overlap} statements`);
 
