@@ -129,6 +129,47 @@ aesthetics.forEach((a) => {
   });
 });
 
+/* ---------- gender-neutral by default ---------- */
+
+/* What the reader sees unless they ask for the gender-specific version has to
+   be neutral. The canonical gendered wording belongs in `gendered`, which is
+   the only place these words are allowed. */
+/* Bare "ma"/"pa" are left out on purpose — they collide with PA systems and
+   the like, and grandma/grandpa below already cover the real cases. */
+const GENDERED = /\b(girls?|boys?|m[ae]n|wom[ae]n|s?he|hers?|his|him|lad(?:y|ies)|gentlem[ae]n|feminine|masculine|femininity|masculinity|grand(?:mother|father|ma|pa)|mother|father|mum|mom|dad|wife|husband|sister|brother|daughter|sons?|guys?|blokes?|girlfriend|boyfriend|maiden|mistress)\b/i;
+const VARIANT_FIELDS = ['name', 'tagline', 'description'];
+
+aesthetics.forEach((a) => {
+  ['name', 'tagline', 'description'].forEach((f) => {
+    const hit = (a[f] || '').match(GENDERED);
+    if (hit) errors.push(`${a.key}: default ${f} uses gendered wording "${hit[0]}" — move it to "gendered".`);
+  });
+  (a.keywords || []).forEach((k) => {
+    const hit = k.match(GENDERED);
+    if (hit) errors.push(`${a.key}: keyword "${k}" uses gendered wording "${hit[0]}".`);
+  });
+  Object.entries(a.world || {}).forEach(([f, v]) => {
+    const hit = (v || '').match(GENDERED);
+    if (hit) errors.push(`${a.key}: world.${f} uses gendered wording "${hit[0]}".`);
+  });
+
+  if (a.gendered === undefined) return;
+  const extra = Object.keys(a.gendered).filter((f) => !VARIANT_FIELDS.includes(f));
+  if (extra.length) errors.push(`${a.key}: "gendered" may only override ${VARIANT_FIELDS.join('/')} (found ${extra.join(', ')}).`);
+  if (!Object.keys(a.gendered).length) errors.push(`${a.key}: "gendered" is empty — drop it.`);
+  VARIANT_FIELDS.forEach((f) => {
+    if (a.gendered[f] !== undefined && a.gendered[f] === a[f]) {
+      errors.push(`${a.key}: gendered.${f} is identical to the neutral one.`);
+    }
+  });
+});
+
+/* The statements are asked of everyone, so they get the same rule. */
+questions.forEach((q) => {
+  const hit = (q.text || '').match(GENDERED);
+  if (hit) errors.push(`Statement ${q.id} uses gendered wording "${hit[0]}".`);
+});
+
 /* ---------- narrative ---------- */
 
 dimKeys.forEach((k) => {

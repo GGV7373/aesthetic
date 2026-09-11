@@ -47,7 +47,57 @@
     });
   }
 
+  /* Gendered names.
+
+     A handful of aesthetics are known on the Aesthetics Wiki by a name that
+     assumes a gender — Soft Girl, Mob Wife, Eclectic Grandpa. Nothing about the
+     taste itself is gendered, and the test never asks, so the neutral name is
+     what the data carries and what everyone sees by default. The canonical
+     wording lives in the entry's `gendered` block and is swapped in only when
+     the reader turns it on.
+
+     Applied here, on the loaded data, so the rest of the app can go on reading
+     a.name / a.tagline / a.description without knowing any of this exists. */
+  var STORE_GENDERED = 'aq.genderedNames.v1';
+
+  function readFlag() {
+    try { return global.localStorage.getItem(STORE_GENDERED) === 'true'; }
+    catch (e) { return false; }
+  }
+
+  function applyNames(data, gendered) {
+    data.aesthetics.forEach(function (a) {
+      if (!a.neutral) {
+        a.neutral = { name: a.name, tagline: a.tagline, description: a.description };
+      }
+      var use = gendered && a.gendered ? a.gendered : {};
+      a.name = use.name || a.neutral.name;
+      a.tagline = use.tagline || a.neutral.tagline;
+      a.description = use.description || a.neutral.description;
+    });
+    data.genderedNames = !!gendered;
+    return data;
+  }
+
+  AQ.names = {
+    /* Is the gender-specific version switched on? */
+    gendered: function () { return readFlag(); },
+
+    /* Which aesthetics actually differ between the two versions. */
+    affected: function (data) {
+      return data.aesthetics.filter(function (a) { return a.gendered; });
+    },
+
+    /* Switch version and re-apply to already-loaded data. The caller re-renders. */
+    set: function (data, gendered) {
+      try { global.localStorage.setItem(STORE_GENDERED, gendered ? 'true' : 'false'); }
+      catch (e) { /* private mode: the choice just does not persist */ }
+      return applyNames(data, gendered);
+    }
+  };
+
   function index(data) {
+    applyNames(data, readFlag());
     data.questionsById = {};
     data.questions.forEach(function (q) { data.questionsById[q.id] = q; });
     data.aestheticsByKey = {};

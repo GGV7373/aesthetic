@@ -484,6 +484,8 @@
     "tailExponent": 0.75,
     "percentMin": 8,
     "percentMax": 97,
+    "stretchMin": 0.5,
+    "stretchMax": 3,
     "combinationThreshold": 4,
     "hidden": {
       "minRank": 4,

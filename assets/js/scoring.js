@@ -11,6 +11,31 @@
 
   function clamp(v, lo, hi) { return v < lo ? lo : v > hi ? hi : v; }
 
+  /* How far the catalogue's own profiles sit from neutral, on average.
+
+     This matters because the two sides of the match are not on the same scale.
+     An aesthetic says "nature 0.95"; a person answering fifty statements never
+     produces a 0.95 — their values pile up near the middle, because every
+     statement moves several dimensions at once and they pull against each
+     other. Compared directly, a vaguely drawn aesthetic (everything near 0.5)
+     agrees with everyone, and a sharply drawn one (Cottagecore, Dark Academia)
+     can lose to it even for a person who is unmistakably that aesthetic.
+
+     Measured from the data rather than hard-coded, so adding aesthetics keeps
+     it honest. */
+  function catalogueSpread(data) {
+    if (data.catalogueSpread !== undefined) return data.catalogueSpread;
+    var sum = 0, n = 0;
+    (data.aesthetics || []).forEach(function (a) {
+      Object.keys(a.dimensions || {}).forEach(function (k) {
+        sum += Math.abs(a.dimensions[k] - 0.5);
+        n++;
+      });
+    });
+    data.catalogueSpread = n ? sum / n : 0.22;
+    return data.catalogueSpread;
+  }
+
   /* answers: { questionId: -3..3 } */
   function buildProfile(questions, answers, data) {
     var keys = data.dimensionKeys;
@@ -51,7 +76,46 @@
       confidence[k] = clamp(weightSum[k] / (data.config.matching.confidenceFull || 3), 0, 1);
     });
 
-    return { value: value, confidence: confidence, weightSum: weightSum, answered: answered };
+    /* Put the profile on the same scale as the aesthetics it is about to be
+       compared with (see catalogueSpread). The person's own spread is measured
+       confidence-weighted, so a dimension that got one thin statement does not
+       decide how far everything else is stretched, and the whole profile is
+       then scaled by one factor. That keeps the shape — which dimensions are
+       high relative to which — and only changes the range it is expressed in.
+
+       It cuts both ways: someone who answered nearly everything neutrally gets
+       opened out, and someone more extreme than the catalogue gets pulled in,
+       so the ranking is decided by the shape of a taste rather than by how
+       strongly the person happened to press the buttons. */
+    var stretch = 1;
+    var devSum = 0, devWeight = 0;
+    keys.forEach(function (k) {
+      var c = confidence[k] || 0;
+      if (weightSum[k] <= 0 || c <= 0) return;
+      devSum += Math.abs(value[k] - 0.5) * c;
+      devWeight += c;
+    });
+    var own = devWeight > 0 ? devSum / devWeight : 0;
+    if (own > 0.01) {
+      var m = data.config.matching;
+      stretch = clamp(
+        catalogueSpread(data) / own,
+        m.stretchMin === undefined ? 0.5 : m.stretchMin,
+        m.stretchMax === undefined ? 3 : m.stretchMax
+      );
+      keys.forEach(function (k) {
+        if (weightSum[k] <= 0) return;
+        value[k] = clamp(0.5 + (value[k] - 0.5) * stretch, 0, 1);
+      });
+    }
+
+    return {
+      value: value,
+      confidence: confidence,
+      weightSum: weightSum,
+      answered: answered,
+      stretch: stretch
+    };
   }
 
   /* How defining a dimension is for an aesthetic: 0.5 is indifferent, 0 and 1 are strong. */
@@ -95,8 +159,9 @@
 
      The top gets an absolute value — how well the aesthetic actually fits the
      profile. The rest are placed by how far they fall below the top, measured
-     against this person's own spread. Without that last part all 77 would land
-     within ten points of each other and the ranking would say nothing.      */
+     against this person's own spread. Without that last part every aesthetic
+     would land within ten points of the next and the ranking would say
+     nothing.                                                               */
   function assignPercentages(ranked, matching) {
     if (!ranked.length) return ranked;
 

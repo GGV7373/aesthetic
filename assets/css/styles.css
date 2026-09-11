@@ -219,6 +219,36 @@ button, a, label, input { -webkit-tap-highlight-color: transparent; touch-action
 
 .btn--ghost { background: transparent; box-shadow: none; color: var(--ink-soft); }
 
+/* Still a full tap target on touch — only the padding and type come down. */
+.btn--small {
+  font-size: 0.68rem;
+  padding: 0.6rem 1rem;
+  letter-spacing: 0.1em;
+}
+
+/* The gender-neutral / gender-specific name switch. */
+.namemode {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.namemode .fineprint { margin: 0; max-width: 46ch; }
+
+@media (min-width: 40rem) {
+  .namemode {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+  .namemode .btn--small { flex: none; }
+}
+
 .btn--link {
   border: 0;
   background: none;

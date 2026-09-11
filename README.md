@@ -2,7 +2,7 @@
 
 A personality test that finds which **aesthetic world** you belong to — not which
 pictures you like. 260 statements in the bank, 50 per run, 35 hidden dimensions and
-77 aesthetics, using Aesthetics Wiki as a reference.
+167 aesthetics across 18 families, using Aesthetics Wiki as a reference.
 
 No framework, no build step, no dependencies. Open `index.html`.
 OR use the website at [estetikk.netlify.app](https://estetikk.netlify.app).
@@ -75,7 +75,7 @@ return to a three-column grid, and the hero foot goes back to two columns.
 The point is that no statement belongs to any one aesthetic. The chain is:
 
 ```
-answers  →  35 dimensions  →  match against 77 aesthetic profiles
+answers  →  35 dimensions  →  match against 167 aesthetic profiles
 ```
 
 A question about old buildings never scores points for "Dark Academia". It moves
@@ -93,6 +93,20 @@ with the same taste who doesn't. Then, for each dimension, `answer × weight` is
 summed and normalised against the sum of absolute weights, giving a value between
 0 and 1 — plus a *confidence* saying how much evidence that dimension got.
 
+The profile is then **stretched onto the catalogue's own scale**. The two sides of
+the match are not naturally comparable: an aesthetic says `nature: 0.95`, but fifty
+statements pulling on 35 dimensions never produce a 0.95 — real profiles pile up
+near the middle, about 1.85× closer to neutral than the aesthetics they are measured
+against. Compared directly, a vaguely drawn aesthetic agrees with everyone and a
+sharply drawn one loses even to the person who unmistakably *is* it. So each
+person's own spread is measured (confidence-weighted, so a thinly covered dimension
+does not set the scale) and the whole profile is scaled by one factor to match. That
+keeps the shape — which dimensions sit high relative to which — and changes only the
+range it is expressed in. It cuts both ways: a cautious answerer is opened out, and
+someone more extreme than the catalogue is pulled in, so the ranking turns on the
+shape of a taste rather than on how hard the buttons were pressed. Bounded by
+`stretchMin` / `stretchMax` in `scoring.json`.
+
 The statement bank is also written with both directions in mind: for most
 dimensions there are statements where "agree" pushes the value up *and*
 statements where "agree" pushes it down, so no single response habit steers the
@@ -106,10 +120,10 @@ Each aesthetic is compared dimension by dimension. Every dimension is weighted b
 * **confidence** — how well the dimension was measured
 
 The top match gets an absolute percentage. The rest are placed by how far they fall
-below the top, measured against your own spread — without that, all 77 would land
-within ten points of each other and the ranking would say nothing. The result page
-shows the closest 10 by default, with a "Show all 77 aesthetics" toggle underneath
-the list for anyone who wants the full ranking rather than just the top of it.
+below the top, measured against your own spread — without that, every aesthetic
+would land within ten points of the next and the ranking would say nothing. The
+result page shows the closest 10 by default, with a toggle underneath the list for
+anyone who wants the full ranking rather than just the top of it.
 
 ### The hidden aesthetic
 
@@ -123,6 +137,76 @@ just being number three.
 If second place is within 4 points, the result is described as a hybrid (`A × B`).
 The system never pretends a hybrid name is official — the text says explicitly that
 the combination was assembled from your profile.
+
+---
+
+## The 18 families
+
+`family` on every aesthetic groups the catalogue. It is metadata for browsing only —
+the scoring never reads it, so moving an aesthetic between families cannot change
+anyone's result.
+
+| Family | n | Examples |
+|---|---|---|
+| Internet and Liminal | 19 | Analog Horror, Doomer, Draincore, Dreamcore, … |
+| Subculture | 17 | Beatnik, Dark Cabaret, Emo, Greaser, … |
+| Art and Period | 16 | Art Deco, Art Nouveau, Arts and Crafts, Baroque, … |
+| Witchy and Folk | 14 | Appalachian Gothic, Cryptidcore, Dark Fantasy, Dark Naturalism, … |
+| Goth | 11 | Cybergoth, Dark Romanticism, Goth, Industrial Gothic, … |
+| Japanese Street and Kawaii | 11 | City Pop, Decora, Fairy Kei, Gyaru, … |
+| Soft and Romantic | 11 | Angelcore, Balletcore, Clean Girl, Coquette, … |
+| Global and Regional | 10 | Afrofuturism, Afropunk, Brazilcore, Gulf Futurism, … |
+| Punk and Futurism | 10 | Atompunk, Cassette Futurism, Cyberpunk, Decopunk, … |
+| Design and Everyday | 8 | Brutalism, Eclectic Grandpa, Maximalism, Mid-Century Modern, … |
+| Sport and Utility | 8 | Blokecore, Equestrian, Gorpcore, Jock, … |
+| Nature and Pastoral | 7 | Cabincore, Cottagecore, Forestpunk, Granola, … |
+| Status and Money | 7 | Corpcore, Dandy, Hypebeast, Mob Wife, … |
+| Cosy and Home | 5 | Cluttercore, Coastal Grandmother, Coffee House, Grandmillennial, … |
+| Americana and Screen | 4 | 50s Suburbia, Americana, Film Noir, Old Hollywood |
+| Academia | 3 | Dark Academia, Light Academia, Romantic Academia |
+| Adventure and Frontier | 3 | Adventure Pulp, Adventurecore, Western |
+| Sea and Coast | 3 | Nautical, Ocean Grunge, Oceanpunk |
+
+---
+
+## Gender-neutral by default
+
+The test never asks your gender, nothing in the scoring knows about it, and no
+aesthetic belongs to one — so what you see is gender-neutral throughout. The
+statement bank and all the result text are written that way, and `validate.js`
+fails the build if a gendered word appears in a statement or in an aesthetic's
+default name, tagline, description, keywords or world.
+
+Eight aesthetics are known on the Aesthetics Wiki by wording that assumes a
+gender. The neutral form is what the data carries; the canonical wording sits in
+a `gendered` block beside it:
+
+| Neutral (default) | Gender-specific |
+|---|---|
+| Soft Pastel | Soft Girl |
+| Clean Minimal | Clean Girl |
+| Coastal Linen | Coastal Grandmother |
+| Eclectic Vintage | Eclectic Grandpa |
+| Mob Glamour | Mob Wife |
+| Terracecore | Blokecore |
+| Coquette | *(description only)* |
+| Princesscore | *(description only)* |
+
+A switch at the foot of the intro screen and of the result page turns the
+gender-specific version on. It is remembered in `aq.genderedNames.v1` and applied
+in `data.js` when the data loads, so the rest of the app reads `a.name` and
+`a.description` without knowing the feature exists. **Nothing about the ranking
+changes** — only the words. The same run produces the same result either way.
+
+```json
+{
+  "key": "soft-girl",
+  "name": "Soft Pastel",
+  "gendered": { "name": "Soft Girl" }
+}
+```
+
+`gendered` may override `name`, `tagline` and `description`, and nothing else.
 
 ---
 
@@ -182,7 +266,7 @@ netlify.toml
 assets/css/styles.css
 assets/js/
   prng.js         seeded randomness (mulberry32)
-  data.js         loads the JSON, falls back to the bundle
+  data.js         loads the JSON, falls back to the bundle, applies the name version
   selection.js    picks the 50 statements
   scoring.js      profile + matching (no text)
   narrative.js    result text (no numbers)
@@ -210,6 +294,7 @@ go into `/data` without touching any JavaScript.
 {
   "key": "my-aesthetic",
   "name": "My Aesthetic",
+  "family": "Nature and Pastoral",
   "tagline": "One line that catches the mood",
   "description": "Two sentences on what this is.",
   "keywords": ["...", "..."],
@@ -226,6 +311,14 @@ go into `/data` without touching any JavaScript.
 
 Omitted dimensions are treated as irrelevant, not as neutral — they do not drag the
 score down.
+
+`family` groups the catalogue for browsing; it takes no part in scoring. Use one of
+the existing 18 rather than inventing a new one unless the aesthetic genuinely sits
+outside all of them.
+
+Write the profile at roughly the sharpness of the rest of the catalogue. Values
+below 0.05 or above 0.95 sit beyond what any profile reaches even after stretching,
+so they cost accuracy without buying identity.
 
 ### Adding a statement
 
@@ -264,11 +357,24 @@ discriminates:
   distinct quota shapes:      400 of 400 runs
 
 — Scoring (600 simulated people) —
-  distinct winners:           47 / 77
-  distinct hidden picks:      60
-  average top match:          80.9%
-  combination shown:          34% of the time
+  distinct winners:           113 / 167
+  distinct hidden picks:      141
+  average top match:          83.8%
+  combination shown:          40% of the time
 ```
+
+Two further checks are worth running by hand when the catalogue or the scoring
+changes, because they catch what the validator cannot:
+
+* **Recovery** — build a respondent whose answers follow an aesthetic's own profile
+  and confirm the test returns it. Currently **77%** come back first, **95%** in the
+  top three, **100%** in the top ten, and **no aesthetic is unreachable**. An entry
+  that cannot win for its own ideal respondent is shadowed by a neighbour and needs
+  its distinguishing dimensions sharpened.
+* **Winner spread** over a few thousand simulated people. The top ten should hold
+  roughly a quarter of all results (currently 24%); if a handful of aesthetics hold
+  most of the outcomes, something is drawn too vaguely and is absorbing its
+  neighbours.
 
 ---
 
@@ -293,4 +399,4 @@ matches approximating the atmosphere, not official images of the aesthetic.
 
 Everything is computed in the browser. No tracking, and the only outbound request is
 the optional image search. `localStorage` holds the run in progress, the question
-history and one preference.
+history, the topic preferences and the gender-neutral / gender-specific choice.
