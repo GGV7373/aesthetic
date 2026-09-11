@@ -64,12 +64,27 @@
     return arr;
   }
 
+  /* Weighted, without replacement (Efraimidis-Spirakis): each item gets a key of
+     rng() ^ (1/weight), and sorting by that key descending gives a random order
+     where heavier items tend to land earlier - without ever excluding a light
+     one. A flat weight of 1 for everyone reduces to a plain shuffle. */
+  function weightedShuffle(list, rng, weightOf) {
+    return list
+      .map(function (item) {
+        var w = Math.max(1e-6, weightOf ? weightOf(item) : 1);
+        return { item: item, key: Math.pow(rng(), 1 / w) };
+      })
+      .sort(function (a, b) { return b.key - a.key; })
+      .map(function (entry) { return entry.item; });
+  }
+
   AQ.rng = {
     hashString: hashString,
     mulberry32: mulberry32,
     newSeedString: newSeedString,
     normaliseSeed: normaliseSeed,
     rngFromSeed: rngFromSeed,
-    shuffle: shuffle
+    shuffle: shuffle,
+    weightedShuffle: weightedShuffle
   };
 })(typeof window !== "undefined" ? window : globalThis);

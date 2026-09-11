@@ -1,7 +1,7 @@
 # What Aesthetic Are You?
 
 A personality test that finds which **aesthetic world** you belong to — not which
-pictures you like. 200 statements in the bank, 50 per run, 35 hidden dimensions and
+pictures you like. 240 statements in the bank, 50 per run, 35 hidden dimensions and
 77 aesthetics, using Aesthetics Wiki as a reference.
 
 No framework, no build step, no dependencies. Open `index.html`.
@@ -126,9 +126,9 @@ the combination was assembled from your profile.
 
 ## Question selection
 
-The 200 statements sit in **20 themed groups of ten**. Each run draws **2–3 from every
-group**, which is what makes two runs feel genuinely different while still covering
-every theme.
+The 240 statements sit in **20 themed groups of twelve**. Each run draws **2–3 from
+every group**, which is what makes two runs feel genuinely different while still
+covering every theme.
 
 | Group | Group |
 |---|---|
@@ -153,6 +153,23 @@ On top of that:
 * everything is seeded. `?seed=ABC12XYZ` recreates a run exactly, and deliberately
   skips the history filter when it does
 
+### Preferences
+
+Before a fresh run (not a shared `?seed=` link, which must stay reproducible), a
+short screen asks what matters to you — living space, sound and music, food, human
+connection, technology, nature, history, style, mystery, craft and order, travel —
+grouped in `data/scoring.json` under `preferenceCategories`, each mapped to one or
+more of the 20 statement groups above.
+
+Picking up to five nudges `drawQuotas()` in `assets/js/selection.js`: groups behind a
+chosen category get a higher chance of winning the "extra" slot (three statements
+instead of two), via a weighted, seeded draw (`AQ.rng.weightedShuffle`). Every group
+still keeps its guaranteed minimum regardless of what is picked, so the theme
+coverage and the "no statement belongs to any one aesthetic" scoring are unaffected —
+this only shifts which topics you see slightly more of. Skipping the screen (or
+picking nothing) reproduces the old, unweighted draw exactly. The choice is
+remembered locally in `aq.preferences.v1` and offered again on every retake.
+
 ---
 
 ## Files
@@ -171,9 +188,9 @@ assets/js/
   images.js       optional Wikimedia Commons photos
   app.js          screens and flow
 data/
-  questions.json  200 statements with dimension weights
+  questions.json  240 statements with dimension weights
   aesthetics.json 77 aesthetics: profile, palette, search terms, "world"
-  scoring.json    scale, groups, dimensions, matching parameters
+  scoring.json    scale, groups, dimensions, preference categories, matching parameters
   narrative.json  phrase banks
   bundle.js       GENERATED — fallback for file://
 tools/
@@ -239,15 +256,15 @@ discriminates:
 
 ```
 — Selection (400 runs) —
-  statements used:            200 / 200
+  statements used:            240 / 240
   duplicate clusters:         0
   same group twice in a row:  0.00 per quiz
   distinct quota shapes:      400 of 400 runs
 
 — Scoring (600 simulated people) —
-  distinct winners:           48 / 77
+  distinct winners:           46 / 77
   distinct hidden picks:      60
-  average top match:          81.1%
+  average top match:          81.0%
   combination shown:          34% of the time
 ```
 

@@ -160,6 +160,74 @@
       "max": 3
     }
   ],
+  "preferenceCategories": [
+    {
+      "key": "living-space",
+      "label": "Living space",
+      "hint": "Rooms, light, what a home should feel like",
+      "groups": ["home"]
+    },
+    {
+      "key": "sound-music",
+      "label": "Sound & music",
+      "hint": "Silence, noise, what you listen to and how",
+      "groups": ["sound", "music"]
+    },
+    {
+      "key": "food",
+      "label": "Food & the table",
+      "hint": "Cooking, eating, sharing a meal",
+      "groups": ["food"]
+    },
+    {
+      "key": "connection",
+      "label": "Human connection",
+      "hint": "People, belonging, being alone or together",
+      "groups": ["people", "tradition"]
+    },
+    {
+      "key": "technology",
+      "label": "Technology",
+      "hint": "Screens, the internet, what's coming next",
+      "groups": ["screens", "future"]
+    },
+    {
+      "key": "nature-weather",
+      "label": "Nature & weather",
+      "hint": "Wilderness, seasons, the outdoors",
+      "groups": ["nature", "weather"]
+    },
+    {
+      "key": "history-memory",
+      "label": "History & memory",
+      "hint": "The past, old things, what's worth keeping",
+      "groups": ["past"]
+    },
+    {
+      "key": "style-self",
+      "label": "Style & self-image",
+      "hint": "Clothes, temperament, how you see yourself",
+      "groups": ["style", "values", "temperament"]
+    },
+    {
+      "key": "mystery-imagination",
+      "label": "Mystery & imagination",
+      "hint": "The unexplained, daydreaming, make-believe",
+      "groups": ["unexplained", "imagination"]
+    },
+    {
+      "key": "craft-order",
+      "label": "Craft, order & money",
+      "hint": "Making things, tidiness, possessions",
+      "groups": ["craft-tools", "money", "order"]
+    },
+    {
+      "key": "travel",
+      "label": "Travel & adventure",
+      "hint": "Going places, risk, the unfamiliar",
+      "groups": ["travel"]
+    }
+  ],
   "dimensions": [
     {
       "key": "nature",
@@ -428,6 +496,7 @@
     "avoidRepeatQuestions": true,
     "maxHistorySessions": 6,
     "repairZeroCoverage": true,
-    "spreadCategories": true
+    "spreadCategories": true,
+    "preferenceWeight": 3
   }
 }

@@ -6,6 +6,8 @@
 
   var STORE_SESSION = 'aq.session.v3';
   var STORE_HISTORY = 'aq.previousQuestionIds.v3';
+  var STORE_PREFS = 'aq.preferences.v1';
+  var PREFS_MAX_PICKS = 5;
 
   var SWAP_MS = 170;   /* how long a question takes to move out of the way */
   var ADVANCE_MS = 240; /* pause after an answer before moving on */
@@ -80,14 +82,29 @@
     writeStore(STORE_HISTORY, hist.slice(-12));
   }
 
+  /* Turns the categories someone picked on the preferences screen ("Food & the
+     table", "Technology", ...) into the underlying statement groups they cover. */
+  function groupsForPreferences(categoryKeys) {
+    var wanted = {};
+    (categoryKeys || []).forEach(function (k) { wanted[k] = true; });
+    var groups = {};
+    (data.config.preferenceCategories || []).forEach(function (cat) {
+      if (!wanted[cat.key]) return;
+      cat.groups.forEach(function (g) { groups[g] = true; });
+    });
+    return Object.keys(groups);
+  }
+
   /* ---------- session ---------- */
 
   /* replay: a seed somebody was given has to produce exactly the same quiz, so it
-     cannot be filtered against what this browser has seen before. */
-  function startSession(seed, replay) {
+     cannot be filtered against what this browser has seen before, or biased by
+     whatever this browser's own owner said mattered to them. */
+  function startSession(seed, replay, preferredGroups) {
     var selection = AQ.selectQuestions(data, {
       seed: seed || AQ.rng.newSeedString(),
-      excludeIds: replay ? [] : historyIds()
+      excludeIds: replay ? [] : historyIds(),
+      preferredGroups: replay ? [] : (preferredGroups || [])
     });
     session = {
       seed: selection.seed,
@@ -144,7 +161,7 @@
         'technology, history, order, solitude, darkness and beauty.'
       ]),
       el('p', { class: 'lede lede--muted' }, [
-        'The questions sit in ' + data.config.groups.length + ' themed groups of ten — music, ' +
+        'The questions sit in ' + data.config.groups.length + ' themed groups — music, ' +
         'weather, screens, the unexplained, and so on — and each run draws two or three ' +
         'from every group. No statement belongs to any one aesthetic, and you are never ' +
         'told what something measures until the result. Answer honestly rather than ' +
@@ -155,8 +172,13 @@
           class: 'btn btn--primary', type: 'button',
           onclick: function () {
             clearStore(STORE_SESSION);
-            startSession(urlSeed, !!urlSeed);
-            screenQuiz();
+            if (urlSeed) {
+              /* A shared run is fixed by its seed alone - skip straight in. */
+              startSession(urlSeed, true);
+              screenQuiz();
+            } else {
+              screenPreferences();
+            }
           }
         }, ['Start the test']),
         resumable
@@ -183,6 +205,94 @@
         'Everything is worked out in your own browser. Nothing is sent anywhere, and your ' +
         'answers are stored locally only so you can pick up where you left off.'
       ])
+    ]);
+
+    render(view);
+  }
+
+  /* ---------- preferences ---------- */
+
+  /* A short screen between the intro and the quiz: pick a handful of things that
+     matter to you (living space, music, food, other people, technology, ...) and
+     the statements you get lean a little more towards those themes. Every theme
+     is still covered - this only nudges which groups win the "extra" slot,
+     see AQ.selectQuestions / drawQuotas in selection.js. */
+  function screenPreferences() {
+    var categories = data.config.preferenceCategories || [];
+    var selected = {};
+    readStore(STORE_PREFS, []).forEach(function (k) { selected[k] = true; });
+
+    var chipButtons = {};
+    var continueBtn, note;
+
+    function pickedCount() {
+      return Object.keys(selected).filter(function (k) { return selected[k]; }).length;
+    }
+
+    function refresh() {
+      var n = pickedCount();
+      continueBtn.textContent = n ? 'Continue (' + n + ' chosen)' : 'Continue without choosing';
+      note.textContent = n >= PREFS_MAX_PICKS
+        ? 'That is five - the most you can pick at once.'
+        : 'Pick up to ' + PREFS_MAX_PICKS + '. None chosen is fine too.';
+    }
+
+    var chipsWrap = el('div', { class: 'chips', role: 'group', 'aria-label': 'What matters to you' },
+      categories.map(function (cat) {
+        var btn = el('button', {
+          class: 'chip' + (selected[cat.key] ? ' chip--selected' : ''),
+          type: 'button',
+          'aria-pressed': selected[cat.key] ? 'true' : 'false',
+          onclick: function () {
+            if (!selected[cat.key] && pickedCount() >= PREFS_MAX_PICKS) return;
+            selected[cat.key] = !selected[cat.key];
+            btn.classList.toggle('chip--selected', !!selected[cat.key]);
+            btn.setAttribute('aria-pressed', selected[cat.key] ? 'true' : 'false');
+            refresh();
+          }
+        }, [
+          el('span', { class: 'chip__label', text: cat.label }),
+          el('span', { class: 'chip__hint', text: cat.hint })
+        ]);
+        chipButtons[cat.key] = btn;
+        return btn;
+      })
+    );
+
+    note = el('p', { class: 'chips__note' });
+
+    function begin() {
+      var keys = Object.keys(selected).filter(function (k) { return selected[k]; });
+      writeStore(STORE_PREFS, keys);
+      startSession(null, false, groupsForPreferences(keys));
+      screenQuiz();
+    }
+
+    continueBtn = el('button', {
+      class: 'btn btn--primary', type: 'button', onclick: begin
+    }, ['Continue']);
+
+    var skipBtn = el('button', {
+      class: 'btn btn--ghost', type: 'button',
+      onclick: function () {
+        selected = {};
+        begin();
+      }
+    }, ['Skip — surprise me']);
+
+    refresh();
+
+    var view = el('section', { class: 'screen screen--preferences' }, [
+      el('p', { class: 'eyebrow', text: 'Before you start' }),
+      el('h1', { class: 'display display--sub', html: 'WHAT MATTERS<br>TO YOU?' }),
+      el('p', { class: 'lede' }, [
+        'Living space, music, food, other people, technology - what you care about ' +
+        'shapes which statements you get more of. The test still covers every theme ' +
+        'either way, and no single choice steers the result on its own.'
+      ]),
+      chipsWrap,
+      note,
+      el('div', { class: 'intro__actions' }, [continueBtn, skipBtn])
     ]);
 
     render(view);
@@ -609,8 +719,7 @@
           class: 'btn btn--primary', type: 'button',
           onclick: function () {
             clearStore(STORE_SESSION);
-            startSession(null, false);
-            screenQuiz();
+            screenPreferences();
           }
         }, ['Take it again with new questions']),
         copyBtn

@@ -1,8 +1,8 @@
-/* Picks 50 of the 200 statements for each run.
+/* Picks 50 statements out of the bank for each run.
 
-   The statements sit in 20 themed groups of ten — sound and silence, food and the
-   table, screens and the net, and so on. Every run draws 2-3 from each group.
-   That buys two things at once: the themes are always covered, and which
+   The statements sit in 20 themed groups of ten or more — sound and silence, food
+   and the table, screens and the net, and so on. Every run draws 2-3 from each
+   group. That buys two things at once: the themes are always covered, and which
    statements you actually get is new each time.
 
    The rest of the requirements:
@@ -10,6 +10,9 @@
    - statements just seen are set aside while fresh ones remain
    - every dimension has to get at least some coverage
    - two statements in a row should come from different groups
+   - a person can nudge which groups are more likely to get the extra slot
+     (their "3" instead of "2") by saying what matters to them - every group
+     still keeps its guaranteed minimum either way
    - everything is driven by the seed, so a run can be recreated              */
 (function (global) {
   'use strict';
@@ -25,8 +28,12 @@
 
   /* Hands the 50 slots out to the groups. Everyone gets their minimum first, then
      the remainder goes out at random to groups with room — which is why some
-     groups give two statements and others three, and why that shifts each run. */
-  function drawQuotas(groups, total, rng) {
+     groups give two statements and others three, and why that shifts each run.
+
+     weightOf(group), if given, biases who tends to pick up that extra slot —
+     a group someone said mattered to them is more likely to land it, but
+     never guaranteed to, and every group still keeps its minimum regardless. */
+  function drawQuotas(groups, total, rng, weightOf) {
     var quota = {};
     var used = 0;
     groups.forEach(function (g) {
@@ -36,7 +43,7 @@
 
     var room = groups.filter(function (g) { return quota[g.key] < g.max; });
     while (used < total && room.length) {
-      var pool = AQ.rng.shuffle(room, rng);
+      var pool = weightOf ? AQ.rng.weightedShuffle(room, rng, weightOf) : AQ.rng.shuffle(room, rng);
       for (var i = 0; i < pool.length && used < total; i++) {
         quota[pool[i].key]++;
         used++;
@@ -182,7 +189,7 @@
     return out;
   }
 
-  /* options: { seed, excludeIds: [], total } */
+  /* options: { seed, excludeIds: [], total, preferredGroups: [] } */
   AQ.selectQuestions = function (data, options) {
     options = options || {};
     var config = data.config;
@@ -193,8 +200,18 @@
     var excluded = {};
     (options.excludeIds || []).forEach(function (id) { excluded[id] = true; });
 
+    var preferred = null;
+    if (options.preferredGroups && options.preferredGroups.length) {
+      preferred = {};
+      options.preferredGroups.forEach(function (key) { preferred[key] = true; });
+    }
+    var preferenceWeight = (config.selection && config.selection.preferenceWeight) || 3;
+    var weightOf = preferred
+      ? function (g) { return preferred[g.key] ? preferenceWeight : 1; }
+      : null;
+
     var byGroup = groupByKey(data.questions);
-    var quotas = drawQuotas(config.groups, total, rng);
+    var quotas = drawQuotas(config.groups, total, rng, weightOf);
     var chosenIds = {};
     var usedClusters = {};
     var selected = [];
