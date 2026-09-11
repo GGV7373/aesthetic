@@ -1,7 +1,7 @@
 # What Aesthetic Are You?
 
 A personality test that finds which **aesthetic world** you belong to — not which
-pictures you like. 240 statements in the bank, 50 per run, 35 hidden dimensions and
+pictures you like. 260 statements in the bank, 50 per run, 35 hidden dimensions and
 77 aesthetics, using Aesthetics Wiki as a reference.
 
 No framework, no build step, no dependencies. Open `index.html`.
@@ -107,7 +107,9 @@ Each aesthetic is compared dimension by dimension. Every dimension is weighted b
 
 The top match gets an absolute percentage. The rest are placed by how far they fall
 below the top, measured against your own spread — without that, all 77 would land
-within ten points of each other and the ranking would say nothing.
+within ten points of each other and the ranking would say nothing. The result page
+shows the closest 10 by default, with a "Show all 77 aesthetics" toggle underneath
+the list for anyone who wants the full ranking rather than just the top of it.
 
 ### The hidden aesthetic
 
@@ -126,7 +128,7 @@ the combination was assembled from your profile.
 
 ## Question selection
 
-The 240 statements sit in **20 themed groups of twelve**. Each run draws **2–3 from
+The 260 statements sit in **20 themed groups of thirteen**. Each run draws **2–3 from
 every group**, which is what makes two runs feel genuinely different while still
 covering every theme.
 
@@ -188,7 +190,7 @@ assets/js/
   images.js       optional Wikimedia Commons photos
   app.js          screens and flow
 data/
-  questions.json  240 statements with dimension weights
+  questions.json  260 statements with dimension weights
   aesthetics.json 77 aesthetics: profile, palette, search terms, "world"
   scoring.json    scale, groups, dimensions, preference categories, matching parameters
   narrative.json  phrase banks
@@ -256,15 +258,15 @@ discriminates:
 
 ```
 — Selection (400 runs) —
-  statements used:            240 / 240
+  statements used:            260 / 260
   duplicate clusters:         0
   same group twice in a row:  0.00 per quiz
   distinct quota shapes:      400 of 400 runs
 
 — Scoring (600 simulated people) —
-  distinct winners:           46 / 77
+  distinct winners:           47 / 77
   distinct hidden picks:      60
-  average top match:          81.0%
+  average top match:          80.9%
   combination shown:          34% of the time
 ```
 

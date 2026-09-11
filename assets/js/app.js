@@ -597,6 +597,51 @@
     ]);
   }
 
+  var RANK_SHORT = 10;
+
+  function rankingSection(result) {
+    var total = result.ranked.length;
+    var showAll = false;
+    var list = el('ol', { class: 'rank' });
+    var lede = el('p', { class: 'block__lede' });
+
+    function paint() {
+      list.innerHTML = '';
+      lede.textContent = showAll
+        ? 'Nobody fits inside only one world. All ' + total + ', closest match first.'
+        : 'Nobody fits inside only one world. These are the ' + RANK_SHORT + ' closest of ' + total + '.';
+      result.ranked.slice(0, showAll ? total : RANK_SHORT).forEach(function (entry, i) {
+        var a = data.aestheticsByKey[entry.key];
+        list.appendChild(el('li', { class: 'rank__row' }, [
+          el('span', { class: 'rank__num', text: String(i + 1).padStart(2, '0') }),
+          el('span', { class: 'rank__name', text: a.name }),
+          meter(entry.percent, { background: AQ.visuals.meterFill(a), delay: 40 + i * 12 }),
+          el('span', { class: 'rank__pct', text: entry.percent + '%' })
+        ]));
+      });
+    }
+
+    var toggle = el('button', {
+      class: 'btn btn--link', type: 'button',
+      onclick: function (e) {
+        showAll = !showAll;
+        e.target.textContent = showAll
+          ? 'Show the ' + RANK_SHORT + ' closest only'
+          : 'Show all ' + total + ' aesthetics';
+        paint();
+      }
+    }, ['Show all ' + total + ' aesthetics']);
+
+    paint();
+
+    return el('section', { class: 'block' }, [
+      el('h2', { class: 'block__title', text: 'The full ranking' }),
+      lede,
+      list,
+      toggle
+    ]);
+  }
+
   /* ---------- result ---------- */
 
   function screenResult() {
@@ -674,21 +719,6 @@
       }))
     ]);
 
-    var rankBlock = el('section', { class: 'block' }, [
-      el('h2', { class: 'block__title', text: 'The full ranking' }),
-      el('p', { class: 'block__lede', text: 'Nobody fits inside only one world. These are ' +
-        'the ten closest of ' + data.aesthetics.length + '.' }),
-      el('ol', { class: 'rank' }, result.ranked.slice(0, 10).map(function (entry, i) {
-        var a = data.aestheticsByKey[entry.key];
-        return el('li', { class: 'rank__row' }, [
-          el('span', { class: 'rank__num', text: String(i + 1).padStart(2, '0') }),
-          el('span', { class: 'rank__name', text: a.name }),
-          meter(entry.percent, { background: AQ.visuals.meterFill(a), delay: 60 + i * 28 }),
-          el('span', { class: 'rank__pct', text: entry.percent + '%' })
-        ]);
-      }))
-    ]);
-
     var seedLink = global.location.origin + global.location.pathname + '?seed=' + session.seed;
     var copyBtn = el('button', {
       class: 'btn btn--ghost', type: 'button',
@@ -733,7 +763,7 @@
 
     var view = el('section', { class: 'screen screen--result' }, [
       welcome, hero, whyBlock, sideBySide, comboBlock,
-      worldBlock, profileSection(result.profile), rankBlock, footer
+      worldBlock, profileSection(result.profile), rankingSection(result), footer
     ]);
 
     clearStore(STORE_SESSION);
