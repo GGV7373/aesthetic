@@ -133,6 +133,53 @@
     return ok ? saved : null;
   }
 
+  /* ---------- browser history ---------- */
+
+  /* Without this the browser's Back button (and Alt+Left, and the back gesture
+     on a phone) leaves the test altogether, which after forty answered
+     statements is the worst thing the page could do.
+
+     So every screen, and every statement inside the quiz, gets a history entry.
+     Back then steps back through the run and Forward returns, matching the
+     on-screen buttons. The URL never changes — entries are told apart by their
+     state object, not their address, so a `?seed=` link survives intact. */
+  var restoringHistory = false;
+
+  /* Set by the quiz screen while it is on show, so a history step between two
+     statements can move the existing screen instead of rebuilding it. */
+  var quizJumpTo = null;
+
+  function pushStep(state) {
+    if (restoringHistory) return;
+    try { global.history.pushState(state, ''); } catch (e) { /* ignore */ }
+  }
+
+  function replaceStep(state) {
+    if (restoringHistory) return;
+    try { global.history.replaceState(state, ''); } catch (e) { /* ignore */ }
+  }
+
+  function routeTo(state) {
+    var screen = state && state.screen;
+    var haveRun = session && session.questionIds && session.questionIds.length;
+
+    if (screen === 'quiz' && haveRun) {
+      var last = session.questionIds.length - 1;
+      var index = Math.max(0, Math.min(last, state.index || 0));
+      if (quizJumpTo) quizJumpTo(index);
+      else { session.index = index; screenQuiz(); }
+      return;
+    }
+    if (screen === 'result' && haveRun) { screenResult(); return; }
+    if (screen === 'preferences') { screenPreferences(); return; }
+    screenIntro();
+  }
+
+  function onPopState(e) {
+    restoringHistory = true;
+    try { routeTo(e.state); } finally { restoringHistory = false; }
+  }
+
   /* ---------- screen swapping ---------- */
 
   function render(node) {
@@ -187,6 +234,8 @@
   }
 
   function screenIntro() {
+    replaceStep({ screen: 'intro' });
+
     var saved = restoreSession();
     var answered = saved ? Object.keys(saved.answers || {}).length : 0;
     var resumable = saved && answered > 0 && answered < saved.questionIds.length;
@@ -259,6 +308,8 @@
      is still covered - this only nudges which groups win the "extra" slot,
      see AQ.selectQuestions / drawQuotas in selection.js. */
   function screenPreferences() {
+    pushStep({ screen: 'preferences' });
+
     var categories = data.config.preferenceCategories || [];
     var selected = {};
     readStore(STORE_PREFS, []).forEach(function (k) { selected[k] = true; });
@@ -342,6 +393,8 @@
   /* ---------- quiz ---------- */
 
   function screenQuiz() {
+    pushStep({ screen: 'quiz', index: session.index });
+
     var questions = sessionQuestions();
     var total = questions.length;
     var busy = false;
@@ -485,10 +538,20 @@
 
     function go(delta) {
       if (busy) return;
+
+      /* Going back is handed to the browser so that the on-screen Back and the
+         browser's own Back are the same motion. The popstate handler that comes
+         back moves the screen; stepping back here as well would leave a
+         forward entry behind and the two would drift apart. */
+      if (delta < 0) {
+        if (session.index > 0) global.history.back();
+        return;
+      }
+
       var target = session.index + delta;
-      if (target < 0) return;
       if (target >= total) { finish(); return; }
       transition(target, delta);
+      pushStep({ screen: 'quiz', index: target });
     }
 
     function finish() {
@@ -500,6 +563,7 @@
         transition(jumpTo, jumpTo < session.index ? -1 : 1, function () {
           live.textContent = unanswered.length + ' statements still unanswered.';
         });
+        pushStep({ screen: 'quiz', index: jumpTo });
         return;
       }
       transition(null, 1, screenResult);
@@ -518,8 +582,21 @@
     }
 
     document.addEventListener('keydown', onKey);
+    quizJumpTo = function (index) {
+      if (index === session.index) return;
+      var direction = index > session.index ? 1 : -1;
+      /* Mid-animation: let the current move land first, or it is dropped and
+         the screen falls out of step with the history entry. */
+      if (busy) {
+        global.setTimeout(function () { transition(index, direction); }, SWAP_MS);
+        return;
+      }
+      transition(index, direction);
+    };
+
     view.addEventListener('aq:teardown', function () {
       document.removeEventListener('keydown', onKey);
+      quizJumpTo = null;
     });
 
     render(view);
@@ -711,6 +788,8 @@
   /* ---------- result ---------- */
 
   function screenResult() {
+    pushStep({ screen: 'result' });
+
     var questions = sessionQuestions();
     var result = AQ.score(questions, session.answers, data);
     var rng = AQ.rng.rngFromSeed(session.seed, 'narrative');
@@ -845,6 +924,8 @@
 
     root.innerHTML = '';
     root.appendChild(el('p', { class: 'loading', text: 'Loading …' }));
+
+    global.addEventListener('popstate', onPopState);
 
     AQ.loadData().then(function (loaded) {
       data = loaded;

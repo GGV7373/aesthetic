@@ -170,6 +170,36 @@ anyone's result.
 
 ---
 
+## The back button
+
+Browser **Back** — the toolbar button, `Alt`+`←`, and the back gesture on a phone —
+steps back through the test instead of leaving it. Every screen gets a history
+entry, and so does every statement, so Back and Forward move through a run exactly
+the way the on-screen buttons do:
+
+```
+intro → preferences → statement 1 → statement 2 → … → statement 50 → result
+```
+
+The URL never changes. Entries are told apart by their `history.state` object
+rather than their address, so a shared `?seed=` link is still intact after fifty
+steps back.
+
+Two details worth keeping if this code is touched:
+
+* **The on-screen Back calls `history.back()`** rather than moving the index
+  itself. If it stepped back directly it would leave a forward entry stranded and
+  the two Backs would drift apart after a few presses.
+* **`quizJumpTo` moves the existing quiz screen** instead of rebuilding it, so
+  stepping between statements does not re-run selection. It is set while the quiz
+  is on screen and cleared on teardown; with no quiz on screen the router falls
+  back to rendering one.
+
+Where the run is gone — a reload after finishing, since the result clears the saved
+session — Back lands on the intro rather than a broken screen.
+
+---
+
 ## Gender-neutral by default
 
 The test never asks your gender, nothing in the scoring knows about it, and no
