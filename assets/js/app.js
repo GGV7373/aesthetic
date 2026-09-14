@@ -194,7 +194,7 @@
 
     var view = el('section', { class: 'screen screen--intro' }, [
       el('p', { class: 'eyebrow', text: 'An aesthetic profile in 50 statements' }),
-      el('h1', { class: 'display', html: 'WHAT<br>AESTHETIC<br>ARE YOU?' }),
+      el('h1', { class: 'display', html: 'What aesthetic<br>are you?' }),
       el('p', { class: 'lede' }, [
         'This is not a quiz about what you like the look of. It is a test of which ' +
         'aesthetic world your temperament belongs to — your relationship to nature, ' +
@@ -325,7 +325,7 @@
 
     var view = el('section', { class: 'screen screen--preferences' }, [
       el('p', { class: 'eyebrow', text: 'Before you start' }),
-      el('h1', { class: 'display display--sub', html: 'WHAT MATTERS<br>TO YOU?' }),
+      el('h1', { class: 'display display--sub', html: 'What matters<br>to you?' }),
       el('p', { class: 'lede' }, [
         'Living space, music, food, other people, technology - what you care about ' +
         'shapes which statements you get more of. The test still covers every theme ' +
