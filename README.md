@@ -2,7 +2,7 @@
 
 A personality test that finds which **aesthetic world** you belong to — not which
 pictures you like. 260 statements in the bank, 50 per run, 35 hidden dimensions and
-167 aesthetics across 18 families, using Aesthetics Wiki as a reference.
+176 aesthetics across 18 families, using Aesthetics Wiki as a reference.
 
 No framework, no build step, no dependencies. Open `index.html`.
 OR use the website at [estetikk.netlify.app](https://estetikk.netlify.app).
@@ -76,7 +76,7 @@ return to a three-column grid, and the hero foot goes back to two columns.
 The point is that no statement belongs to any one aesthetic. The chain is:
 
 ```
-answers  →  35 dimensions  →  match against 167 aesthetic profiles
+answers  →  35 dimensions  →  match against 176 aesthetic profiles
 ```
 
 A question about old buildings never scores points for "Dark Academia". It moves
@@ -149,21 +149,21 @@ anyone's result.
 
 | Family | n | Examples |
 |---|---|---|
-| Internet and Liminal | 19 | Analog Horror, Doomer, Draincore, Dreamcore, … |
-| Subculture | 17 | Beatnik, Dark Cabaret, Emo, Greaser, … |
+| Internet and Liminal | 21 | After Hours, Analog Horror, Doomer, Draincore, … |
+| Subculture | 18 | Beatnik, Dark Cabaret, Emo, Greaser, … |
 | Art and Period | 16 | Art Deco, Art Nouveau, Arts and Crafts, Baroque, … |
 | Witchy and Folk | 14 | Appalachian Gothic, Cryptidcore, Dark Fantasy, Dark Naturalism, … |
+| Punk and Futurism | 12 | Atompunk, Cassette Futurism, Cyberpunk, Decopunk, … |
+| Soft and Romantic | 12 | Angelcore, Balletcore, Clean Minimal, Coquette, … |
 | Goth | 11 | Cybergoth, Dark Romanticism, Goth, Industrial Gothic, … |
 | Japanese Street and Kawaii | 11 | City Pop, Decora, Fairy Kei, Gyaru, … |
-| Soft and Romantic | 11 | Angelcore, Balletcore, Clean Girl, Coquette, … |
 | Global and Regional | 10 | Afrofuturism, Afropunk, Brazilcore, Gulf Futurism, … |
-| Punk and Futurism | 10 | Atompunk, Cassette Futurism, Cyberpunk, Decopunk, … |
-| Design and Everyday | 8 | Brutalism, Eclectic Grandpa, Maximalism, Mid-Century Modern, … |
-| Sport and Utility | 8 | Blokecore, Equestrian, Gorpcore, Jock, … |
+| Design and Everyday | 8 | Brutalism, Eclectic Vintage, Maximalism, Mid-Century Modern, … |
+| Sport and Utility | 8 | Equestrian, Gorpcore, Jock, Racing, … |
+| Americana and Screen | 7 | 50s Suburbia, Americana, Diner, Film Noir, … |
 | Nature and Pastoral | 7 | Cabincore, Cottagecore, Forestpunk, Granola, … |
-| Status and Money | 7 | Corpcore, Dandy, Hypebeast, Mob Wife, … |
-| Cosy and Home | 5 | Cluttercore, Coastal Grandmother, Coffee House, Grandmillennial, … |
-| Americana and Screen | 4 | 50s Suburbia, Americana, Film Noir, Old Hollywood |
+| Status and Money | 7 | Corpcore, Dandy, Hypebeast, Mob Glamour, … |
+| Cosy and Home | 5 | Cluttercore, Coastal Linen, Coffee House, Grandmillennial, … |
 | Academia | 3 | Dark Academia, Light Academia, Romantic Academia |
 | Adventure and Frontier | 3 | Adventure Pulp, Adventurecore, Western |
 | Sea and Coast | 3 | Nautical, Ocean Grunge, Oceanpunk |
@@ -208,13 +208,14 @@ statement bank and all the result text are written that way, and `validate.js`
 fails the build if a gendered word appears in a statement or in an aesthetic's
 default name, tagline, description, keywords or world.
 
-Eight aesthetics are known on the Aesthetics Wiki by wording that assumes a
+Nine aesthetics are known on the Aesthetics Wiki by wording that assumes a
 gender. The neutral form is what the data carries; the canonical wording sits in
 a `gendered` block beside it:
 
 | Neutral (default) | Gender-specific |
 |---|---|
 | Soft Pastel | Soft Girl |
+| Older Siblingcore | Olderbrothercore |
 | Clean Minimal | Clean Girl |
 | Coastal Linen | Coastal Grandmother |
 | Eclectic Vintage | Eclectic Grandpa |
@@ -414,10 +415,10 @@ discriminates:
   distinct quota shapes:      400 of 400 runs
 
 — Scoring (600 simulated people) —
-  distinct winners:           113 / 167
-  distinct hidden picks:      141
-  average top match:          83.8%
-  combination shown:          40% of the time
+  distinct winners:           110 / 176
+  distinct hidden picks:      146
+  average top match:          84.0%
+  combination shown:          42% of the time
 ```
 
 Two further checks are worth running by hand when the catalogue or the scoring

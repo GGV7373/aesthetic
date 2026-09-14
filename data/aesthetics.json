@@ -8033,30 +8033,30 @@
       "empty corridor fluorescent light"
     ],
     "dimensions": {
-      "melancholy": 0.88,
+      "melancholy": 0.78,
       "solitude": 0.95,
-      "mystery": 0.85,
-      "darkness": 0.65,
-      "nostalgia": 0.8,
+      "mystery": 0.92,
+      "darkness": 0.5,
+      "nostalgia": 0.6,
       "urban": 0.75,
-      "architecture": 0.82,
-      "realism": 0.6,
+      "architecture": 0.9,
+      "realism": 0.42,
       "social": 0.03,
       "community": 0.05,
       "nature": 0.08,
       "organic": 0.08,
-      "comfort": 0.15,
+      "comfort": 0.1,
       "optimism": 0.12,
       "maximalism": 0.15,
       "ornament": 0.15,
-      "minimalism": 0.7,
-      "order": 0.65,
+      "minimalism": 0.78,
+      "order": 0.72,
       "industrial": 0.55,
       "digital": 0.6,
       "modernity": 0.5,
       "retro": 0.68,
       "tradition": 0.15,
-      "fantasy": 0.55
+      "fantasy": 0.75
     },
     "related": [
       "dreamcore",
@@ -10824,6 +10824,640 @@
       "music": "accordion, a piano played hard, a voice that sneers and then breaks",
       "colours": "blood red, black, tarnished gold, powder white",
       "everyday": "rehearsing, performing, saying the unsayable while people applaud"
+    }
+  },
+  {
+    "key": "after-hours",
+    "name": "After Hours",
+    "family": "Internet and Liminal",
+    "tagline": "A place you know, with everyone gone from it",
+    "description": "Kenopsia: the forlorn feeling of somewhere usually full of people, found empty. A school at midnight, a park with the gates shut, a server nobody logs into any more. Melancholy, but oddly peaceful.",
+    "keywords": [
+      "kenopsia",
+      "empty at night",
+      "streetlight",
+      "nightwalking",
+      "abandoned places"
+    ],
+    "palette": [
+      "#0c0e13",
+      "#1c2531",
+      "#4a4330",
+      "#d8b269"
+    ],
+    "imageQuery": [
+      "empty street at night streetlight",
+      "empty school building night"
+    ],
+    "dimensions": {
+      "solitude": 0.95,
+      "melancholy": 0.9,
+      "darkness": 0.85,
+      "nostalgia": 0.9,
+      "mystery": 0.62,
+      "urban": 0.78,
+      "architecture": 0.58,
+      "social": 0.05,
+      "community": 0.08,
+      "optimism": 0.1,
+      "comfort": 0.38,
+      "nature": 0.15,
+      "organic": 0.15,
+      "rural": 0.2,
+      "whimsy": 0.25,
+      "fantasy": 0.35,
+      "tradition": 0.2,
+      "history": 0.4,
+      "modernity": 0.45,
+      "digital": 0.5,
+      "industrial": 0.45,
+      "order": 0.45,
+      "minimalism": 0.5,
+      "maximalism": 0.2,
+      "ornament": 0.25,
+      "intellect": 0.6,
+      "retro": 0.6,
+      "realism": 0.72
+    },
+    "related": [
+      "liminal-space",
+      "doomer",
+      "mallsoft",
+      "gloomcore",
+      "city-pop"
+    ],
+    "world": {
+      "setting": "a car park at two in the morning, every space empty and the lights still on",
+      "architecture": "a school, a mall, a station - built for crowds and currently holding none",
+      "interior": "a corridor with the strip lights humming, chairs stacked on tables",
+      "technology": "a vending machine glowing to nobody, a clock that is slightly wrong",
+      "clothes": "a coat pulled on over whatever you were already wearing",
+      "music": "lo-fi, a long ambient track, the hum of a fridge two rooms away",
+      "colours": "night black, sodium gold, window yellow, wet asphalt",
+      "everyday": "walking at night because it is quieter, being somewhere after everyone left"
+    }
+  },
+  {
+    "key": "neon-noir",
+    "name": "Neon Noir",
+    "family": "Americana and Screen",
+    "tagline": "Rain, neon, and nobody to trust",
+    "description": "Film noir rebuilt in colour: wet streets, purple and red signage, moral fog and a synthesiser underneath it. Beautiful, saturated, and lonely on purpose.",
+    "keywords": [
+      "neon signage",
+      "rain-slicked street",
+      "crime",
+      "nightlife",
+      "chiaroscuro"
+    ],
+    "palette": [
+      "#0a0714",
+      "#2a1350",
+      "#c2185b",
+      "#22d3ee"
+    ],
+    "imageQuery": [
+      "neon sign rain night street",
+      "city street night neon reflection"
+    ],
+    "dimensions": {
+      "darkness": 0.92,
+      "urban": 0.95,
+      "melancholy": 0.85,
+      "mystery": 0.85,
+      "solitude": 0.85,
+      "retro": 0.78,
+      "technology": 0.7,
+      "digital": 0.7,
+      "futurism": 0.68,
+      "nostalgia": 0.7,
+      "ornament": 0.7,
+      "nature": 0.05,
+      "rural": 0.05,
+      "organic": 0.08,
+      "optimism": 0.1,
+      "comfort": 0.2,
+      "tradition": 0.1,
+      "history": 0.3,
+      "order": 0.35,
+      "chaos": 0.6,
+      "minimalism": 0.3,
+      "maximalism": 0.6,
+      "refinement": 0.55,
+      "realism": 0.4,
+      "fantasy": 0.68,
+      "industrial": 0.6,
+      "intellect": 0.6,
+      "adventure": 0.6
+    },
+    "related": [
+      "film-noir",
+      "cyberpunk",
+      "synthwave",
+      "city-pop",
+      "vaporwave"
+    ],
+    "world": {
+      "setting": "a street at 3am in the rain, every surface doubling the signs above it",
+      "architecture": "low-rise blocks, fire escapes, a hotel sign with two letters dead",
+      "interior": "a bar lit red, blinds throwing stripes across the room, smoke in the beam",
+      "technology": "a payphone, a car radio, a camera that should not be there",
+      "clothes": "a long coat, a collar turned up, sunglasses worn far too late",
+      "music": "synth arpeggios, a saxophone in the distance, bass you feel more than hear",
+      "colours": "electric purple, hot red, cyan, wet black",
+      "everyday": "meetings arranged badly, nothing said plainly, driving between them in the rain"
+    }
+  },
+  {
+    "key": "industrial-decay",
+    "name": "Industrial Decay",
+    "family": "Punk and Futurism",
+    "tagline": "What the machines left when they stopped",
+    "description": "Abandoned factories, rust through paint, broken glass and light coming through a collapsed roof. The grandeur of very large things no longer working.",
+    "keywords": [
+      "abandoned factory",
+      "rust",
+      "urbex",
+      "broken glass",
+      "overgrown machinery"
+    ],
+    "palette": [
+      "#121110",
+      "#3a3330",
+      "#7d5b3c",
+      "#b9b4ab"
+    ],
+    "imageQuery": [
+      "abandoned factory interior",
+      "rusted industrial machinery decay"
+    ],
+    "dimensions": {
+      "industrial": 0.95,
+      "solitude": 0.88,
+      "melancholy": 0.85,
+      "architecture": 0.85,
+      "darkness": 0.8,
+      "mystery": 0.75,
+      "realism": 0.75,
+      "history": 0.75,
+      "urban": 0.75,
+      "nostalgia": 0.7,
+      "chaos": 0.7,
+      "adventure": 0.68,
+      "optimism": 0.08,
+      "comfort": 0.1,
+      "ornament": 0.2,
+      "maximalism": 0.25,
+      "minimalism": 0.55,
+      "order": 0.2,
+      "organic": 0.3,
+      "nature": 0.35,
+      "rural": 0.35,
+      "tradition": 0.35,
+      "modernity": 0.15,
+      "technology": 0.45,
+      "digital": 0.15,
+      "craft": 0.5,
+      "intellect": 0.6,
+      "fantasy": 0.4
+    },
+    "related": [
+      "industrial",
+      "brutalism",
+      "liminal-space",
+      "soft-apocalypse",
+      "doomer"
+    ],
+    "world": {
+      "setting": "a mill floor with the roof half gone and birch trees coming up through it",
+      "architecture": "brick and steel built to last a century, abandoned after forty years",
+      "interior": "rust, standing water, a control panel with every dial at zero",
+      "technology": "machines too heavy to remove, a crane still on its rails",
+      "clothes": "boots that can take broken glass, a jacket you do not mind tearing",
+      "music": "drone, field recordings, metal moving somewhere out of sight",
+      "colours": "rust orange, concrete grey, moss, shattered green glass",
+      "everyday": "going where you probably should not, photographing it, telling nobody where"
+    }
+  },
+  {
+    "key": "soft-apocalypse",
+    "name": "Soft Apocalypse",
+    "family": "Punk and Futurism",
+    "tagline": "The world ends slowly, and the trees come back",
+    "description": "Not a bang but a long quiet decline: cities going green, small groups growing food, limited power from the sun and wind. The collapse treated as a relief rather than a horror.",
+    "keywords": [
+      "overgrown city",
+      "slow collapse",
+      "salvage",
+      "community garden",
+      "reclaimed by nature"
+    ],
+    "palette": [
+      "#151d16",
+      "#31432f",
+      "#6f8256",
+      "#cfccb4"
+    ],
+    "imageQuery": [
+      "overgrown abandoned building plants",
+      "nature reclaiming city ruins"
+    ],
+    "dimensions": {
+      "nature": 0.9,
+      "organic": 0.88,
+      "community": 0.85,
+      "craft": 0.8,
+      "melancholy": 0.7,
+      "chaos": 0.7,
+      "adventure": 0.68,
+      "realism": 0.65,
+      "darkness": 0.6,
+      "nostalgia": 0.6,
+      "architecture": 0.6,
+      "mystery": 0.6,
+      "intellect": 0.6,
+      "rural": 0.6,
+      "futurism": 0.55,
+      "optimism": 0.5,
+      "minimalism": 0.5,
+      "history": 0.5,
+      "urban": 0.45,
+      "solitude": 0.5,
+      "industrial": 0.4,
+      "tradition": 0.4,
+      "comfort": 0.4,
+      "technology": 0.35,
+      "maximalism": 0.35,
+      "order": 0.25,
+      "ornament": 0.2,
+      "digital": 0.12,
+      "modernity": 0.15
+    },
+    "related": [
+      "solarpunk",
+      "forestpunk",
+      "industrial-decay",
+      "dark-naturalism",
+      "oceanpunk"
+    ],
+    "world": {
+      "setting": "a high street with saplings through the tarmac and beans up the lamp posts",
+      "architecture": "concrete frames left standing, roofs patched with whatever came to hand",
+      "interior": "a flat heated by one stove, jars on every shelf, a window box of herbs",
+      "technology": "a solar panel off a roof, a wind turbine made from a motor, a radio",
+      "clothes": "layers, mended repeatedly, boots kept going well past sensible",
+      "music": "one guitar, voices together, nothing recorded in a decade",
+      "colours": "ivy green, weathered concrete, sun-bleached canvas, rust",
+      "everyday": "growing food, fixing rather than replacing, meals eaten with everybody"
+    }
+  },
+  {
+    "key": "nostalgiacore",
+    "name": "Nostalgiacore",
+    "family": "Internet and Liminal",
+    "tagline": "Missing a time you are not sure was real",
+    "description": "Faded photographs, camcorder grain, a summer that has been remembered so often it is mostly invention now. Warm and sad at the same time, and aware of it.",
+    "keywords": [
+      "faded photographs",
+      "camcorder grain",
+      "childhood summer",
+      "home video",
+      "half-memory"
+    ],
+    "palette": [
+      "#191612",
+      "#4a3c2e",
+      "#9c8360",
+      "#e4d5b8"
+    ],
+    "imageQuery": [
+      "faded vintage photograph summer",
+      "old home video still grain"
+    ],
+    "dimensions": {
+      "nostalgia": 0.95,
+      "melancholy": 0.85,
+      "retro": 0.85,
+      "solitude": 0.72,
+      "history": 0.7,
+      "comfort": 0.6,
+      "fantasy": 0.62,
+      "mystery": 0.6,
+      "whimsy": 0.55,
+      "digital": 0.55,
+      "intellect": 0.55,
+      "darkness": 0.5,
+      "tradition": 0.5,
+      "maximalism": 0.5,
+      "ornament": 0.5,
+      "craft": 0.5,
+      "urban": 0.5,
+      "rural": 0.45,
+      "nature": 0.45,
+      "community": 0.45,
+      "social": 0.4,
+      "order": 0.4,
+      "minimalism": 0.35,
+      "realism": 0.35,
+      "optimism": 0.3,
+      "modernity": 0.15,
+      "futurism": 0.1
+    },
+    "related": [
+      "mallsoft",
+      "liminal-space",
+      "ghostcore",
+      "traumacore",
+      "old-web"
+    ],
+    "world": {
+      "setting": "a back garden in a photograph from a summer nobody can date exactly",
+      "architecture": "an ordinary house, remembered larger than it was",
+      "interior": "a box of photographs, a shoebox of tapes, curtains that were always that colour",
+      "technology": "a camcorder, a disposable camera, a television with a dial",
+      "clothes": "whatever was in the photograph, which is now the whole point",
+      "music": "a song from an advert, slowed down, with tape hiss underneath",
+      "colours": "faded amber, photo-paper cream, washed green, dust",
+      "everyday": "looking through old pictures too often, half-remembering, going quiet"
+    }
+  },
+  {
+    "key": "olderbrothercore",
+    "name": "Older Siblingcore",
+    "family": "Subculture",
+    "tagline": "The messy room with the good console in it",
+    "description": "A suburban teenager's bedroom around 2004: CRT television, stacked game cases, band posters over the wallpaper, energy drink cans and a camera flash too close. Scruffy, loud and entirely at ease.",
+    "gendered": {
+      "name": "Olderbrothercore"
+    },
+    "keywords": [
+      "CRT television",
+      "game cases",
+      "band posters",
+      "messy bedroom",
+      "flash photography"
+    ],
+    "palette": [
+      "#101214",
+      "#25303a",
+      "#4f7a24",
+      "#d3d7d2"
+    ],
+    "imageQuery": [
+      "2000s bedroom crt television games",
+      "retro game console setup"
+    ],
+    "dimensions": {
+      "nostalgia": 0.9,
+      "retro": 0.88,
+      "chaos": 0.82,
+      "individualism": 0.78,
+      "digital": 0.75,
+      "maximalism": 0.75,
+      "technology": 0.68,
+      "urban": 0.62,
+      "comfort": 0.6,
+      "community": 0.6,
+      "social": 0.6,
+      "darkness": 0.6,
+      "realism": 0.6,
+      "ornament": 0.55,
+      "melancholy": 0.5,
+      "adventure": 0.5,
+      "craft": 0.45,
+      "optimism": 0.45,
+      "intellect": 0.4,
+      "modernity": 0.3,
+      "history": 0.2,
+      "tradition": 0.12,
+      "order": 0.12,
+      "refinement": 0.1,
+      "nature": 0.1,
+      "rural": 0.08
+    },
+    "related": [
+      "skater",
+      "grunge",
+      "metalhead",
+      "mallgoth",
+      "emo"
+    ],
+    "world": {
+      "setting": "a bedroom at the end of the landing with the door shut and the bass audible",
+      "architecture": "a plain suburban house that has no idea what the upstairs looks like",
+      "interior": "posters over wallpaper, a desk lost under cases, a drab carpet, a beanbag",
+      "technology": "a CRT television, a games console, a tower PC, a shelf of discs",
+      "clothes": "band tee, baggy jeans, skate shoes worn through at the heel",
+      "music": "nu-metal, pop-punk, whatever was burned onto an unlabelled disc",
+      "colours": "matte black, console green, energy-drink blue, carpet beige",
+      "everyday": "playing until three, eating badly, being told to turn it down"
+    }
+  },
+  {
+    "key": "high-school-dream",
+    "name": "High School Dream",
+    "family": "Americana and Screen",
+    "tagline": "The school year as the films promised it",
+    "description": "Decorated lockers, pep rallies, a gym dressed for a dance and a friendship group that never breaks up. Not any real school - the idealised one from late-nineties teen films.",
+    "keywords": [
+      "lockers",
+      "pep rally",
+      "school colours",
+      "gymnasium",
+      "teen film"
+    ],
+    "palette": [
+      "#16233d",
+      "#2f5ba8",
+      "#c8342f",
+      "#f2e7cf"
+    ],
+    "imageQuery": [
+      "american high school gymnasium",
+      "school lockers hallway"
+    ],
+    "dimensions": {
+      "social": 0.92,
+      "community": 0.9,
+      "optimism": 0.88,
+      "nostalgia": 0.85,
+      "retro": 0.78,
+      "whimsy": 0.72,
+      "tradition": 0.7,
+      "comfort": 0.65,
+      "fantasy": 0.65,
+      "solitude": 0.08,
+      "darkness": 0.1,
+      "melancholy": 0.3,
+      "mystery": 0.2,
+      "nature": 0.2,
+      "rural": 0.25,
+      "individualism": 0.35,
+      "realism": 0.4,
+      "ornament": 0.6,
+      "maximalism": 0.6,
+      "order": 0.6,
+      "urban": 0.5,
+      "modernity": 0.45,
+      "refinement": 0.45,
+      "craft": 0.45,
+      "adventure": 0.6,
+      "history": 0.4,
+      "architecture": 0.55
+    },
+    "related": [
+      "americana",
+      "fifties-suburbia",
+      "preppy",
+      "y2k",
+      "mallgoth"
+    ],
+    "world": {
+      "setting": "a corridor between bells, everybody shouting, banners taped along the wall",
+      "architecture": "a low brick school with a gym that doubles as everything else",
+      "interior": "lockers in the school colours, a trophy cabinet, tables in the cafeteria",
+      "technology": "a phone passed around, a camcorder for the yearbook, a PA that crackles",
+      "clothes": "a letterman jacket, a team shirt on game day, everything colour-matched",
+      "music": "pop-punk over the pep rally, a slow song saved for the end of the dance",
+      "colours": "school navy and red, polished floor, locker blue, pennant gold",
+      "everyday": "the same table every lunchtime, the game on Friday, everything feeling enormous"
+    }
+  },
+  {
+    "key": "tweencore",
+    "name": "Tweencore",
+    "family": "Soft and Romantic",
+    "tagline": "Zebra print, peace signs and a slogan on everything",
+    "description": "The mall shops of 2004 to 2012 rendered as a whole world: neon animal print, silly bandz, moustache motifs and a joke printed on every surface. Loud, cheap and completely sincere.",
+    "keywords": [
+      "neon animal print",
+      "slogan tees",
+      "peace signs",
+      "silly bandz",
+      "mall shops"
+    ],
+    "palette": [
+      "#211a27",
+      "#e0219c",
+      "#7ed321",
+      "#f7e94f"
+    ],
+    "imageQuery": [
+      "colourful zebra print pattern",
+      "2000s mall accessory shop"
+    ],
+    "dimensions": {
+      "whimsy": 0.92,
+      "maximalism": 0.9,
+      "ornament": 0.85,
+      "optimism": 0.85,
+      "nostalgia": 0.85,
+      "social": 0.8,
+      "retro": 0.78,
+      "community": 0.75,
+      "urban": 0.65,
+      "comfort": 0.6,
+      "fantasy": 0.6,
+      "digital": 0.6,
+      "individualism": 0.55,
+      "craft": 0.5,
+      "modernity": 0.5,
+      "order": 0.25,
+      "realism": 0.2,
+      "melancholy": 0.2,
+      "refinement": 0.15,
+      "tradition": 0.12,
+      "history": 0.12,
+      "nature": 0.1,
+      "darkness": 0.1,
+      "minimalism": 0.05
+    },
+    "related": [
+      "kidcore",
+      "scene",
+      "y2k",
+      "soft-girl",
+      "mallgoth"
+    ],
+    "world": {
+      "setting": "a shopping centre on a Saturday with a group of twelve-year-olds and no adult",
+      "architecture": "a mall unit lit to the ceiling, everything within reach and on sale",
+      "interior": "a bedroom in four clashing patterns, a beaded curtain, a lava lamp",
+      "technology": "an iPod nano, a digital camera, a laptop with a stickered lid",
+      "clothes": "a graphic tee with a joke on it, bright layers, rubber bracelets to the elbow",
+      "music": "radio pop at full volume, whatever was on the Disney Channel",
+      "colours": "hot pink, lime green, cyan, zebra black and white",
+      "everyday": "trading bracelets, sleepovers, finding absolutely everything hilarious"
+    }
+  },
+  {
+    "key": "diner",
+    "name": "Diner",
+    "family": "Americana and Screen",
+    "tagline": "Bottomless coffee at two in the morning",
+    "description": "Chrome trim, vinyl booths, a neon sign and a counter that never quite closes. Warm and social in the daytime, and quietly lonely once it gets late.",
+    "keywords": [
+      "vinyl booths",
+      "chrome trim",
+      "neon sign",
+      "counter stools",
+      "bottomless coffee"
+    ],
+    "palette": [
+      "#141115",
+      "#8c1f2a",
+      "#d8c07a",
+      "#e9e4d8"
+    ],
+    "imageQuery": [
+      "american diner interior night",
+      "retro diner neon sign"
+    ],
+    "dimensions": {
+      "retro": 0.92,
+      "nostalgia": 0.88,
+      "comfort": 0.78,
+      "tradition": 0.7,
+      "social": 0.7,
+      "community": 0.68,
+      "ornament": 0.68,
+      "history": 0.65,
+      "realism": 0.65,
+      "order": 0.6,
+      "urban": 0.6,
+      "melancholy": 0.6,
+      "optimism": 0.55,
+      "maximalism": 0.55,
+      "craft": 0.55,
+      "solitude": 0.5,
+      "darkness": 0.5,
+      "rural": 0.45,
+      "industrial": 0.4,
+      "refinement": 0.35,
+      "organic": 0.3,
+      "chaos": 0.3,
+      "minimalism": 0.3,
+      "modernity": 0.15,
+      "futurism": 0.1,
+      "nature": 0.15,
+      "digital": 0.08
+    },
+    "related": [
+      "americana",
+      "greaser",
+      "fifties-suburbia",
+      "rockabilly",
+      "film-noir"
+    ],
+    "world": {
+      "setting": "a booth by the window at 2am with the car park empty and the sign still lit",
+      "architecture": "a long low building in chrome and glass, parking right up to the door",
+      "interior": "red vinyl benches, formica, a pie case turning slowly, stools at the counter",
+      "technology": "a jukebox, a coffee machine that has run since the sixties, a till that rings",
+      "clothes": "whatever you drove there in, and an apron behind the counter",
+      "music": "the jukebox playing to three people, doo-wop, a radio in the kitchen",
+      "colours": "cherry red, chrome, cream formica, neon pink",
+      "everyday": "coffee refilled without asking, conversations that go on too long, no rush"
     }
   }
 ]
