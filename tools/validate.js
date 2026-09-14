@@ -85,11 +85,34 @@ Object.entries(coverage).forEach(([k, v]) => {
   else if (v < 8) warnings.push(`Dimension "${k}" is thinly covered (weight sum ${v}).`);
 });
 
-/* Both positive and negative wordings per dimension. */
+/* Both directions, and enough of each.
+
+   A dimension measured only one way stops being a measurement: everyone who
+   leans towards "agree" scores high on it whatever they actually think. The
+   acquiescence guard in scoring.js softens that but cannot undo it, so the
+   weaker direction has to carry real weight — a quarter of the statements is
+   the floor. Thin dimensions have the same problem for a different reason: with
+   only a handful in the bank, a run may draw one, and one answer then decides
+   the whole dimension. */
+const MIN_PER_DIMENSION = 18;
+const MIN_MINORITY_SHARE = 0.25;
+
 dimKeys.forEach((k) => {
   const pos = questions.filter((q) => (q.dimensions[k] || 0) > 0).length;
   const neg = questions.filter((q) => (q.dimensions[k] || 0) < 0).length;
-  if (pos && !neg && pos > 6) warnings.push(`"${k}" is only measured in one direction (${pos} positive).`);
+  const total = pos + neg;
+  if (!total) return;
+
+  if (total < MIN_PER_DIMENSION) {
+    warnings.push(`"${k}" is carried by only ${total} statements (want ${MIN_PER_DIMENSION}+).`);
+  }
+  const share = Math.min(pos, neg) / total;
+  if (share < MIN_MINORITY_SHARE) {
+    warnings.push(
+      `"${k}" leans one way: ${pos} up / ${neg} down ` +
+      `(${Math.round(share * 100)}% weaker direction, want ${MIN_MINORITY_SHARE * 100}%+).`
+    );
+  }
 });
 
 /* ---------- aesthetics ---------- */

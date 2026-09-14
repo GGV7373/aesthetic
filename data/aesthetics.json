@@ -3368,16 +3368,16 @@
       "nature": 0.85,
       "organic": 0.85,
       "comfort": 0.85,
-      "craft": 0.8,
+      "craft": 0.88,
       "solitude": 0.72,
       "tradition": 0.6,
       "minimalism": 0.5,
-      "refinement": 0.62,
+      "refinement": 0.82,
       "melancholy": 0.5,
-      "ornament": 0.5,
-      "rural": 0.7,
+      "ornament": 0.68,
+      "rural": 0.55,
       "maximalism": 0.45,
-      "whimsy": 0.5,
+      "whimsy": 0.72,
       "order": 0.5,
       "individualism": 0.6,
       "nostalgia": 0.6,
@@ -3385,7 +3385,8 @@
       "darkness": 0.25,
       "optimism": 0.5,
       "mystery": 0.5,
-      "modernity": 0.3
+      "modernity": 0.3,
+      "adventure": 0.22
     },
     "related": [
       "cottagecore",
@@ -8324,7 +8325,9 @@
       "craft": 0.62,
       "comfort": 0.5,
       "realism": 0.2,
-      "darkness": 0.3
+      "darkness": 0.3,
+      "futurism": 0.15,
+      "technology": 0.35
     },
     "related": [
       "scene",

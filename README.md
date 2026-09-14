@@ -1,7 +1,7 @@
 # What Aesthetic Are You?
 
 A personality test that finds which **aesthetic world** you belong to — not which
-pictures you like. 260 statements in the bank, 50 per run, 35 hidden dimensions and
+pictures you like. 360 statements in the bank, 50 per run, 35 hidden dimensions and
 176 aesthetics across 18 families, using Aesthetics Wiki as a reference.
 
 No framework, no build step, no dependencies. Open `index.html`.
@@ -108,10 +108,16 @@ someone more extreme than the catalogue is pulled in, so the ranking turns on th
 shape of a taste rather than on how hard the buttons were pressed. Bounded by
 `stretchMin` / `stretchMax` in `scoring.json`.
 
-The statement bank is also written with both directions in mind: for most
-dimensions there are statements where "agree" pushes the value up *and*
-statements where "agree" pushes it down, so no single response habit steers the
-result.
+The statement bank is written with both directions in mind: **every** dimension
+has statements where "agree" pushes the value up *and* statements where "agree"
+pushes it down, so no single response habit steers the result. The weaker
+direction is never less than a quarter of a dimension's statements — without
+that floor, a dimension measured only one way turns into a test of how agreeable
+somebody is feeling. `validate.js` warns when a dimension drifts one-sided.
+
+Every dimension is also carried by at least 18 statements, so none of them comes
+down to a single lucky draw: the thinnest dimension now gets **2.6 statements per
+run**, where the thinnest used to get 1.4.
 
 ### The match
 
@@ -244,7 +250,7 @@ changes** — only the words. The same run produces the same result either way.
 
 ## Question selection
 
-The 260 statements sit in **20 themed groups of thirteen**. Each run draws **2–3 from
+The 360 statements sit in **20 themed groups of eighteen**. Each run draws **2–3 from
 every group**, which is what makes two runs feel genuinely different while still
 covering every theme, and each group is then asked as one block (see below).
 
@@ -331,7 +337,7 @@ assets/js/
   images.js       optional Wikimedia Commons photos
   app.js          screens and flow
 data/
-  questions.json  260 statements with dimension weights
+  questions.json  360 statements with dimension weights
   aesthetics.json 77 aesthetics: profile, palette, search terms, "world"
   scoring.json    scale, groups, dimensions, preference categories, matching parameters
   narrative.json  phrase banks
@@ -408,17 +414,17 @@ discriminates:
 
 ```
 — Selection (400 runs) —
-  statements used:            260 / 260
+  statements used:            360 / 360
   duplicate clusters:         0
   themed blocks per quiz:     20.0
   distinct opening themes:    20 of 20
   distinct quota shapes:      400 of 400 runs
 
 — Scoring (600 simulated people) —
-  distinct winners:           110 / 176
-  distinct hidden picks:      146
+  distinct winners:           115 / 176
+  distinct hidden picks:      141
   average top match:          84.0%
-  combination shown:          42% of the time
+  combination shown:          40% of the time
 ```
 
 Two further checks are worth running by hand when the catalogue or the scoring
