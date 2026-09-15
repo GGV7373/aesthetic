@@ -9,6 +9,24 @@ OR use the website at [estetikk.netlify.app](https://estetikk.netlify.app).
 
 ---
 
+## Contents
+
+* [Running it locally](#running-it-locally)
+* [Deploying to Netlify](#deploying-to-netlify)
+* [Built for the phone first](#built-for-the-phone-first)
+* [How the test works](#how-the-test-works)
+* [The 18 families](#the-18-families)
+* [The back button](#the-back-button)
+* [Gender-neutral by default](#gender-neutral-by-default)
+* [Question selection](#question-selection)
+* [Files](#files)
+* [Validation](#validation)
+* [Images](#images)
+* [Privacy](#privacy)
+* [License](#license)
+
+---
+
 ## Running it locally
 
 ```bash
@@ -464,3 +482,12 @@ matches approximating the atmosphere, not official images of the aesthetic.
 Everything is computed in the browser. No tracking, and the only outbound request is
 the optional image search. `localStorage` holds the run in progress, the question
 history, the topic preferences and the gender-neutral / gender-specific choice.
+
+---
+
+## License
+
+MIT — see [LICENSE](LICENSE). The photographs in the results come from Wikimedia
+Commons under their own licences, shown with each image's creator and licence as
+described under [Images](#images); the aesthetic profiles are original, written
+using Aesthetics Wiki only as a reference for names and general character.
