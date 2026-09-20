@@ -15,98 +15,128 @@
       "title": "running distance | dreamcore playlist",
       "author": "cunjur",
       "mood": "Soft, slightly unreal songs, like a melody heard through a wall.",
-      "aesthetics": ["dreamcore"]
+      "aesthetics": ["dreamcore", "psychedelia", "surrealism", "weirdcore"]
     },
     {
       "id": "4n2QXa1Ub3g",
       "title": "the princess x knight medieval playlist",
       "author": "Asteria",
       "mood": "Lutes, harps and a great hall: a princess-and-knight romance.",
-      "aesthetics": ["medievalcore", "medieval"]
+      "aesthetics": [
+        "medievalcore", "medieval", "arts-and-crafts", "princesscore", "royalcore",
+        "lolita"
+      ]
     },
     {
       "id": "56mJxMMi9bA",
       "title": "a dark fantasy playlist",
       "author": "nobody",
       "mood": "Low, ominous and epic, with something watching from the treeline.",
-      "aesthetics": ["dark-fantasy"]
+      "aesthetics": [
+        "dark-fantasy", "witchcore", "strega", "vulture-culture", "wuxia",
+        "folk-horror", "dark-romanticism"
+      ]
     },
     {
       "id": "Zhaz_30H_0w",
       "title": "you’re studying in an ancient university as the snowflakes fall [ dark academia playlist ]",
       "author": "Helder",
       "mood": "Snow on the windows of an old university, and piano for late-night reading.",
-      "aesthetics": ["dark-academia"]
+      "aesthetics": [
+        "dark-academia", "dandy", "neoclassicism", "royalcore", "coffee-house"
+      ]
     },
     {
       "id": "3UmmMnJacJs",
       "title": "a playlist for a peaceful spring (light academia)",
       "author": "nobody",
       "mood": "An airy spring morning, open windows and a book that is going well.",
-      "aesthetics": ["light-academia"]
+      "aesthetics": [
+        "light-academia", "old-money", "impressionism", "neoclassicism", "regency",
+        "scandinavian-design", "tenniscore", "balletcore", "clean-girl", "twee",
+        "coffee-house", "preppy"
+      ]
     },
     {
       "id": "3joV0nUpKhY",
       "title": "a romantic academia playlist for reading love stories",
       "author": "aameliaa",
       "mood": "Candlelight, love stories and a pen that will not stop.",
-      "aesthetics": ["romantic-academia"]
+      "aesthetics": [
+        "romantic-academia", "baroque", "regency", "rococo", "coquette",
+        "dark-academia", "romanticism"
+      ]
     },
     {
       "id": "PEI2zet48Uc",
       "title": "Jazz Noir • 1 Hour Jazz Noir Saxophone Music • Jazz Noir Music Playlist",
       "author": "Dr.SaxLove",
       "mood": "Late-night saxophone in a smoky, rain-slicked city.",
-      "aesthetics": ["film-noir"]
+      "aesthetics": [
+        "film-noir", "beatnik", "dark-cabaret", "trad-goth", "analog-horror",
+        "industrial-gothic"
+      ]
     },
     {
       "id": "kyBzJWjAXG4",
       "title": "Vintage Americana Summer - a playlist",
       "author": "Asteria",
       "mood": "A vintage summer, open roads and a radio on the porch.",
-      "aesthetics": ["americana"]
+      "aesthetics": [
+        "americana", "eclectic-grandpa", "blokecore", "grandmillennial", "diner",
+        "greaser", "rockabilly", "rustic", "nautical"
+      ]
     },
     {
       "id": "dmdkbhKtE6s",
       "title": "a nostalgic night in the 1950s | vintage oldies playing in another room (w/ cricket asmr)",
       "author": "Songs Playing from Radio",
       "mood": "Oldies playing in another room while the crickets keep time.",
-      "aesthetics": ["fifties-suburbia"]
+      "aesthetics": [
+        "fifties-suburbia", "mid-century-modern", "normcore", "jock",
+        "high-school-dream"
+      ]
     },
     {
       "id": "rbl1qzsgqmg",
       "title": "Old Hollywood Playlist | 50’s |",
       "author": "monami",
       "mood": "Crooners and big-band glamour from the golden age of film.",
-      "aesthetics": ["old-hollywood"]
+      "aesthetics": [
+        "old-hollywood", "dark-cabaret", "mod", "mob-wife", "art-deco", "rococo",
+        "guochao", "decopunk"
+      ]
     },
     {
       "id": "rcbMXunz5bg",
       "title": "jazz noir mix for yearning and bricked up",
       "author": "ackerlady",
       "mood": "Yearning jazz under neon and rain.",
-      "aesthetics": ["neon-noir"]
+      "aesthetics": ["neon-noir", "jirai-kei", "cyberpunk"]
     },
     {
       "id": "rEmLVVnN22Y",
       "title": "you're in an old-fashioned diner at 3 am, slow music plays on the jukebox",
       "author": "nobody",
       "mood": "The jukebox at 3 am, slow and a little lonely.",
-      "aesthetics": ["diner", "greaser", "rockabilly"]
+      "aesthetics": [
+        "diner", "greaser", "rockabilly", "beatnik", "mod", "mob-wife", "ostalgie",
+        "americana"
+      ]
     },
     {
       "id": "QRMPfEnltdM",
       "title": "Employee of The Month - Vaporwave Mix",
       "author": "Sega64",
       "mood": "Slowed-down office muzak and mall-jazz gloss.",
-      "aesthetics": ["vaporwave"]
+      "aesthetics": ["vaporwave", "yuppie", "synthwave"]
     },
     {
       "id": "ABGURyOP65g",
       "title": "where am i? weirdcore/dreamcore/traumacore playlist",
       "author": "• pipermint! •",
       "mood": "Dreamlike and slightly wrong, a place you almost remember.",
-      "aesthetics": ["weirdcore"]
+      "aesthetics": ["weirdcore", "surrealism", "cryptidcore"]
     },
     {
       "id": "72aPC_Y--nM",
@@ -120,70 +150,84 @@
       "title": "a playlist for exploring liminal spaces",
       "author": "nobody",
       "mood": "Empty corridors, humming lights, nobody else here.",
-      "aesthetics": ["liminal-space"]
+      "aesthetics": ["liminal-space", "corpcore", "de-stijl", "minimalism"]
     },
     {
       "id": "AXuqjQ94Rjc",
       "title": "why do I even exist? - traumacore playlist",
       "author": "aurora.heaven",
       "mood": "Distorted, half-remembered lullabies with tape hiss underneath.",
-      "aesthetics": ["traumacore"]
+      "aesthetics": [
+        "traumacore", "dollette", "jirai-kei", "yami-kawaii", "draincore"
+      ]
     },
     {
       "id": "iCZQTCPZwBQ",
       "title": "washing out our brains // glitchcore, hyperpop, draincore playlist",
       "author": "renga",
       "mood": "Hyperpop and glitch dissolving into a sad, looping blur.",
-      "aesthetics": ["draincore"]
+      "aesthetics": ["draincore", "nu-goth", "traumacore"]
     },
     {
       "id": "ngS94IcWxlw",
       "title": "Glitchcore // Alt Tiktok Playlist // MellowBaseline",
       "author": "MellowBaseline “Basline Boy” Playlists",
       "mood": "Fast, fractured pop, chopped up and put back wrong.",
-      "aesthetics": ["glitchcore"]
+      "aesthetics": ["glitchcore", "rave", "cybergoth", "afropunk"]
     },
     {
       "id": "4eVFS4arIx4",
       "title": "Criȝstall Coast (Seapunk Ambience) (No AI)",
       "author": "Temple Mystère",
       "mood": "A glassy, watery ambience for an imagined coast.",
-      "aesthetics": ["seapunk"]
+      "aesthetics": [
+        "seapunk", "rave", "memphis-design", "pastel-goth", "decora", "fairy-kei",
+        "yami-kawaii", "tropicalia", "old-web"
+      ]
     },
     {
       "id": "0QKQlf8r7ls",
       "title": "'Back To The 80's' | Marvel83' Edition | Best of Synthwave And Retro Electro Music Mix",
       "author": "ThePrimeThanatos",
       "mood": "Neon eighties highways, arpeggios and a solo at the four-minute mark.",
-      "aesthetics": ["synthwave"]
+      "aesthetics": [
+        "synthwave", "hypebeast", "city-pop", "visual-kei", "vaporwave"
+      ]
     },
     {
       "id": "a-GhYn5iiew",
       "title": "A DAY IN THE MALL, 1996 // Mallsoft Vaporwave VHS Nostalgia Mix",
       "author": "driftive dreams",
       "mood": "A day in a 1996 mall: muzak slowed down and drowned in reverb.",
-      "aesthetics": ["mallsoft"]
+      "aesthetics": [
+        "mallsoft", "corpcore", "gulf-futurism", "liminal-space", "after-hours"
+      ]
     },
     {
       "id": "kaXpcbG4POw",
       "title": "38-Min Frutiger Metro Music Playlist",
       "author": "Kênh Giải Trí NMP",
       "mood": "Start-up chimes and bright, glossy interface-era sound.",
-      "aesthetics": ["vectordelia"]
+      "aesthetics": [
+        "vectordelia", "psychedelia", "danish-pastel", "kawaii", "seapunk"
+      ]
     },
     {
       "id": "YCDAp-jg7ls",
       "title": "A Retro-futuristic Dreamscape by the ocean w/ Vintage oldies playing from another dimension",
       "author": "Nemo's Dreamscapes",
       "mood": "Vintage oldies drifting in from another dimension, by the ocean.",
-      "aesthetics": ["retrofuturism"]
+      "aesthetics": ["retrofuturism", "city-pop", "afrofuturism", "atompunk"]
     },
     {
       "id": "2IJZAKjglZI",
       "title": "Fallout Radio Station | Atomic City Music Mix | 12 HOURS | Study, Relax, Sleep",
       "author": "Geiger Broadcast",
       "mood": "Atomic-age radio: crooners, swing and the crackle of a wasteland station.",
-      "aesthetics": ["atompunk"]
+      "aesthetics": [
+        "atompunk", "yuppie", "mid-century-modern", "normcore", "racing",
+        "sovietwave", "retrofuturism", "spacecore"
+      ]
     },
     {
       "id": "cAcMjHy_EXw",
@@ -191,7 +235,9 @@
       "title": "Caravan Palace - Maniac",
       "author": "CaravanPalace",
       "mood": "Electro swing, big-band energy with a modern kick. Opens a playlist.",
-      "aesthetics": ["decopunk"]
+      "aesthetics": [
+        "decopunk", "art-deco", "streamline-moderne", "old-hollywood", "atompunk"
+      ]
     },
     {
       "id": "bEJOSvsfYNA",
@@ -199,77 +245,102 @@
       "title": "Fallout 3 Soundtrack - Into Each Life Some Rain Must Fall - The Ink Spots",
       "author": "FalloutMusicChannel",
       "mood": "Wartime crooners and crackling records. Opens a playlist.",
-      "aesthetics": ["dieselpunk"]
+      "aesthetics": [
+        "dieselpunk", "streamline-moderne", "racing", "cassette-futurism",
+        "industrial"
+      ]
     },
     {
       "id": "ioXEprtpx8Y",
       "title": "Steampunk Music Compilation | CLOCKWORK LANDS | 1-Hour Mix",
       "author": "TSOM",
       "mood": "Clockwork rhythms and a long ride through brass-and-steam lands.",
-      "aesthetics": ["steampunk"]
+      "aesthetics": [
+        "steampunk", "dandy", "art-nouveau", "victorian", "maximalism"
+      ]
     },
     {
       "id": "y2ECgOhoDGs",
       "title": "Synthwave Cyberpunk Mixtape | Volume One",
       "author": "MrSuicideSheep",
       "mood": "Rain-slick synthwave for a city that never turns its lights off.",
-      "aesthetics": ["cyberpunk"]
+      "aesthetics": [
+        "cyberpunk", "brutalism", "techwear", "cybergoth", "gulf-futurism",
+        "sinofuturism", "neon-noir"
+      ]
     },
     {
       "id": "7JhL2V70JaQ",
       "title": "solarpunk daydreams: a playlist",
       "author": "marble girl",
       "mood": "Sunlit daydreams, greenery and a hopeful future.",
-      "aesthetics": ["solarpunk"]
+      "aesthetics": [
+        "solarpunk", "hippie", "danish-pastel", "afrofuturism", "brazilcore",
+        "tropicalia"
+      ]
     },
     {
       "id": "baV2DXqWad8",
       "title": "Retro Future Dreams Cassette Futurism Music Playlist",
       "author": "Melodic Aesthetics",
       "mood": "Retro-future dreams on tape, with a synth for a heartbeat.",
-      "aesthetics": ["cassette-futurism"]
+      "aesthetics": [
+        "cassette-futurism", "ostalgie", "sovietwave", "dieselpunk"
+      ]
     },
     {
       "id": "Sa2jO_jOgIk",
       "title": "Traverse through the stars ~ (spacecore playlist)",
       "author": "ALaNax",
       "mood": "Drifting between the stars.",
-      "aesthetics": ["spacecore"]
+      "aesthetics": [
+        "spacecore", "bauhaus", "de-stijl", "sinofuturism", "retrofuturism"
+      ]
     },
     {
       "id": "JS54yn7ZIZc",
       "title": "Dirty Industrial City [Dark Melancholic Steampunk] [EPIC MUSIC]",
       "author": "Lemniskata Music",
       "mood": "A dirty, melancholic industrial city in epic strings and metal.",
-      "aesthetics": ["industrial-decay", "industrial", "industrial-gothic"]
+      "aesthetics": [
+        "industrial-decay", "industrial", "industrial-gothic", "bauhaus", "brutalism",
+        "tacticool", "techwear", "goth", "film-noir", "doomer"
+      ]
     },
     {
       "id": "YUoHI2gDf7k",
       "title": "Post apocalypse music vol.1",
       "author": "Chill house",
       "mood": "Post-apocalypse calm: chill house at the end of the world.",
-      "aesthetics": ["soft-apocalypse"]
+      "aesthetics": ["soft-apocalypse", "forestpunk"]
     },
     {
       "id": "GkSHE6wOzX0",
       "title": "3 Hours of Fantasy Music - Best of 2024 [no AI]",
       "author": "Blue Turtle",
       "mood": "Three hours of fantasy music for setting off with a map.",
-      "aesthetics": ["adventurecore", "adventure-pulp"]
+      "aesthetics": [
+        "adventurecore", "adventure-pulp", "gorpcore", "tacticool", "wuxia",
+        "steampunk", "naturecore", "oceanpunk"
+      ]
     },
     {
       "id": "djmuOu8kgvQ",
       "title": "1 Hour of Cowboy Western Trail Songs to Listen to While Travelling Through the Frontier",
       "author": "Vlaspatta Karamazov",
       "mood": "Cowboy trail songs for a long ride across the frontier.",
-      "aesthetics": ["western"]
+      "aesthetics": ["western", "equestrian", "southern-gothic", "lumberjack"]
     },
     {
       "id": "j4tncIl8PQ0",
       "title": "older brother core.",
       "author": "aurora.heaven",
       "mood": "Nu-metal and pop-punk from the unlabelled disc your older sibling left in the car.",
-      "aesthetics": ["olderbrothercore"]
+      "aesthetics": [
+        "olderbrothercore", "tweencore", "nostalgiacore", "frutiger-aero",
+        "frutiger-eco", "y2k", "metalhead", "punk", "pop-art", "blokecore",
+        "soft-girl", "gyaru", "kidcore", "scene", "webcore", "mallgoth"
+      ]
     },
     {
       "id": "qhH4D251i4Q",
@@ -279,8 +350,12 @@
       "aesthetics": [
         "forestpunk", "cabincore", "naturecore", "dark-naturalism", "gloomcore",
         "grunge", "lumberjack", "cryptidcore", "folk-horror", "appalachian-gothic",
-        "granola", "cottagecore", "hygge", "rustic", "goblincore",
-        "mori-kei"
+        "granola", "cottagecore", "hygge", "rustic", "goblincore", "mori-kei",
+        "strega", "vulture-culture", "hippie", "hipster", "metalhead",
+        "arts-and-crafts", "eclectic-grandpa", "equestrian", "gorpcore",
+        "southern-gothic", "twee", "grandmillennial", "soft-apocalypse",
+        "adventurecore", "western", "ocean-grunge", "fairycore", "wabi-sabi",
+        "japandi", "coastal-grandmother", "emo", "indie-sleaze", "skater"
       ]
     },
     {
@@ -292,7 +367,13 @@
         "ocean-grunge", "gloomcore", "whimsigothic", "angelcore", "ghostcore",
         "nautical", "oceanpunk", "dark-romanticism", "romantic-goth", "fairycore",
         "dreamcore", "wabi-sabi", "japandi", "romanticism", "coastal-grandmother",
-        "doomer", "after-hours"
+        "doomer", "after-hours", "witchcore", "old-money", "art-nouveau", "baroque",
+        "impressionism", "victorian", "maximalism", "minimalism",
+        "scandinavian-design", "goth", "trad-goth", "balletcore", "clean-girl",
+        "coquette", "dollette", "princesscore", "cluttercore", "lolita", "visual-kei",
+        "guochao", "medievalcore", "dark-fantasy", "romantic-academia", "mallsoft",
+        "industrial-decay", "adventure-pulp", "dark-naturalism", "cottagecore",
+        "hygge", "goblincore", "mori-kei", "midwest-emo"
       ]
     },
     {
@@ -302,9 +383,13 @@
       "mood": "Pop-punk, early-internet nostalgia and a summer that hasn't ended yet.",
       "aesthetics": [
         "nostalgiacore", "y2k", "high-school-dream", "tweencore", "scene",
-        "scenecore", "emo", "frutiger-aero", "frutiger-eco", "old-web",
-        "webcore", "indie-sleaze", "olderbrothercore", "mallgoth", "kidcore",
-        "midwest-emo", "preppy", "skater"
+        "scenecore", "emo", "frutiger-aero", "frutiger-eco", "old-web", "webcore",
+        "indie-sleaze", "olderbrothercore", "mallgoth", "kidcore", "midwest-emo",
+        "preppy", "skater", "hipster", "punk", "hypebeast", "memphis-design",
+        "pop-art", "jock", "tenniscore", "nu-goth", "pastel-goth", "soft-girl",
+        "cluttercore", "decora", "fairy-kei", "gyaru", "kawaii", "afropunk",
+        "brazilcore", "light-academia", "fifties-suburbia", "vectordelia",
+        "solarpunk", "grunge", "ghostcore"
       ]
     }
   ]

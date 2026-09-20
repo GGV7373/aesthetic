@@ -2,34 +2,35 @@
 #
 # Fill in:   Name = https://www.youtube.com/watch?v=...
 # Leave a line blank if you have no video yet. Lines starting with # are ignored.
+# One link per line here is the first video for that aesthetic; data/playlists.json can attach more.
 # Sorted by family (same order as the app), A-Z inside each family.
 #
 # Families: Nature and Pastoral, Witchy and Folk, Academia, Americana and Screen, Subculture, Internet and Liminal, Punk and Futurism, Goth, Adventure and Frontier, Sea and Coast, Status and Money, Art and Period, Design and Everyday, Japanese Street and Kawaii, Soft and Romantic, Sport and Utility, Cosy and Home, Global and Regional
 
 # ======== NATURE AND PASTORAL ========
-Cabincore = 
-Cottagecore = 
-Forestpunk = 
-Granola = 
-Lumberjack = 
-Naturecore = 
-Rustic = 
+Cabincore = https://www.youtube.com/watch?v=qhH4D251i4Q
+Cottagecore = https://www.youtube.com/watch?v=qhH4D251i4Q
+Forestpunk = https://www.youtube.com/watch?v=qhH4D251i4Q
+Granola = https://www.youtube.com/watch?v=qhH4D251i4Q
+Lumberjack = https://www.youtube.com/watch?v=qhH4D251i4Q
+Naturecore = https://www.youtube.com/watch?v=qhH4D251i4Q
+Rustic = https://www.youtube.com/watch?v=qhH4D251i4Q
 
 # ======== WITCHY AND FOLK ========
-Appalachian Gothic = 
-Cryptidcore = 
+Appalachian Gothic = https://www.youtube.com/watch?v=qhH4D251i4Q
+Cryptidcore = https://www.youtube.com/watch?v=qhH4D251i4Q
 Dark Fantasy = https://www.youtube.com/watch?v=56mJxMMi9bA&t
-Dark Naturalism = 
-Fairycore = 
-Folk Horror = 
-Ghostcore = 
-Gloomcore = 
-Goblincore = 
-Medieval = 
+Dark Naturalism = https://www.youtube.com/watch?v=qhH4D251i4Q
+Fairycore = https://www.youtube.com/watch?v=iEfVC2LOCv8
+Folk Horror = https://www.youtube.com/watch?v=qhH4D251i4Q
+Ghostcore = https://www.youtube.com/watch?v=iEfVC2LOCv8
+Gloomcore = https://www.youtube.com/watch?v=qhH4D251i4Q
+Goblincore = https://www.youtube.com/watch?v=qhH4D251i4Q
+Medieval = https://www.youtube.com/watch?v=4n2QXa1Ub3g
 Medievalcore = https://www.youtube.com/watch?v=4n2QXa1Ub3g
-Strega = 
-Vulture Culture = 
-Witchcore = 
+Strega = https://www.youtube.com/watch?v=qhH4D251i4Q
+Vulture Culture = https://www.youtube.com/watch?v=qhH4D251i4Q
+Witchcore = https://www.youtube.com/watch?v=iEfVC2LOCv8
 
 # ======== ACADEMIA ========
 Dark Academia = https://www.youtube.com/watch?v=Zhaz_30H_0w
@@ -41,52 +42,52 @@ Romantic Academia = https://www.youtube.com/watch?v=3joV0nUpKhY
 Americana = https://www.youtube.com/watch?v=kyBzJWjAXG4
 Diner = https://www.youtube.com/watch?v=rEmLVVnN22Y
 Film Noir = https://www.youtube.com/watch?v=PEI2zet48Uc
-High School Dream = 
+High School Dream = https://www.youtube.com/watch?v=hOiWsGaBfJY
 Neon Noir = https://www.youtube.com/watch?v=rcbMXunz5bg
 Old Hollywood = https://www.youtube.com/watch?v=rbl1qzsgqmg
 
 # ======== SUBCULTURE ========
-Beatnik = 
-Dark Cabaret = 
-Emo = 
-Greaser = 
-Grunge = 
-Hippie = 
-Hipster = 
-Indie Sleaze = 
-Metalhead = 
-Midwest Emo = 
-Mod = 
+Beatnik = https://www.youtube.com/watch?v=PEI2zet48Uc
+Dark Cabaret = https://www.youtube.com/watch?v=PEI2zet48Uc
+Emo = https://www.youtube.com/watch?v=hOiWsGaBfJY
+Greaser = https://www.youtube.com/watch?v=rEmLVVnN22Y
+Grunge = https://www.youtube.com/watch?v=qhH4D251i4Q
+Hippie = https://www.youtube.com/watch?v=7JhL2V70JaQ
+Hipster = https://www.youtube.com/watch?v=hOiWsGaBfJY
+Indie Sleaze = https://www.youtube.com/watch?v=hOiWsGaBfJY
+Metalhead = https://www.youtube.com/watch?v=j4tncIl8PQ0
+Midwest Emo = https://www.youtube.com/watch?v=hOiWsGaBfJY
+Mod = https://www.youtube.com/watch?v=rbl1qzsgqmg
 Olderbrothercore = https://www.youtube.com/watch?v=j4tncIl8PQ0
-Psychedelia = 
-Punk = 
-Rave = 
-Rockabilly = 
-Scene = 
-Skater = 
+Psychedelia = https://www.youtube.com/watch?v=f1-jV9Qwwf0
+Punk = https://www.youtube.com/watch?v=hOiWsGaBfJY
+Rave = https://www.youtube.com/watch?v=4eVFS4arIx4
+Rockabilly = https://www.youtube.com/watch?v=rEmLVVnN22Y
+Scene = https://www.youtube.com/watch?v=hOiWsGaBfJY
+Skater = https://www.youtube.com/watch?v=hOiWsGaBfJY
 
 # ======== INTERNET AND LIMINAL ========
-After Hours = 
+After Hours = https://www.youtube.com/watch?v=iEfVC2LOCv8
 Analog Horror = https://www.youtube.com/watch?v=72aPC_Y--nM
-Doomer = 
+Doomer = https://www.youtube.com/watch?v=iEfVC2LOCv8
 Draincore = https://www.youtube.com/watch?v=iCZQTCPZwBQ
 Dreamcore = https://www.youtube.com/watch?v=f1-jV9Qwwf0
-Frutiger Aero = 
-Frutiger Eco = 
+Frutiger Aero = https://www.youtube.com/watch?v=hOiWsGaBfJY
+Frutiger Eco = https://www.youtube.com/watch?v=hOiWsGaBfJY
 Glitchcore = https://www.youtube.com/watch?v=ngS94IcWxlw
 Liminal Space = https://www.youtube.com/watch?v=DqjWFZN82_A
 Mallsoft = https://www.youtube.com/watch?v=a-GhYn5iiew&t
-Nostalgiacore = 
-Old Web = 
-Scenecore = 
+Nostalgiacore = https://www.youtube.com/watch?v=hOiWsGaBfJY
+Old Web = https://www.youtube.com/watch?v=hOiWsGaBfJY
+Scenecore = https://www.youtube.com/watch?v=hOiWsGaBfJY
 Seapunk = https://www.youtube.com/watch?v=4eVFS4arIx4
 Synthwave = https://www.youtube.com/watch?v=0QKQlf8r7ls
 Traumacore = https://www.youtube.com/watch?v=AXuqjQ94Rjc
 Vaporwave = https://www.youtube.com/watch?v=QRMPfEnltdM
 Vectordelia = https://www.youtube.com/watch?v=kaXpcbG4POw
-Webcore = 
+Webcore = https://www.youtube.com/watch?v=hOiWsGaBfJY
 Weirdcore = https://www.youtube.com/watch?v=ABGURyOP65g
-Y2K = 
+Y2K = https://www.youtube.com/watch?v=hOiWsGaBfJY
 
 # ======== PUNK AND FUTURISM ========
 Atompunk = https://www.youtube.com/watch?v=2IJZAKjglZI
@@ -94,7 +95,7 @@ Cassette Futurism = https://www.youtube.com/watch?v=baV2DXqWad8
 Cyberpunk = https://www.youtube.com/watch?v=y2ECgOhoDGs
 Decopunk = https://www.youtube.com/watch?v=cAcMjHy_EXw&list=PLZH3YlV868rTY9BJl44rTpg_NQfdWfI0Z
 Dieselpunk = https://www.youtube.com/watch?v=bEJOSvsfYNA&list=PLGSqV9TD-Vaz6puuMVwpVRmQTgEfa3mqk
-Industrial = 
+Industrial = https://www.youtube.com/watch?v=JS54yn7ZIZc
 Industrial Decay = https://www.youtube.com/watch?v=JS54yn7ZIZc&t=876s
 Retrofuturism = https://www.youtube.com/watch?v=YCDAp-jg7ls
 Soft Apocalypse = https://www.youtube.com/watch?v=YUoHI2gDf7k
@@ -103,117 +104,117 @@ Spacecore = https://www.youtube.com/watch?v=Sa2jO_jOgIk
 Steampunk = https://www.youtube.com/watch?v=ioXEprtpx8Y
 
 # ======== GOTH ========
-Cybergoth = 
-Dark Romanticism = 
-Goth = 
-Industrial Gothic = 
-Mallgoth = 
-Nu-Goth = 
-Pastel Goth = 
-Romantic Goth = 
-Southern Gothic = 
-Trad Goth = 
-Whimsigothic = 
+Cybergoth = https://www.youtube.com/watch?v=ngS94IcWxlw
+Dark Romanticism = https://www.youtube.com/watch?v=iEfVC2LOCv8
+Goth = https://www.youtube.com/watch?v=iEfVC2LOCv8
+Industrial Gothic = https://www.youtube.com/watch?v=JS54yn7ZIZc
+Mallgoth = https://www.youtube.com/watch?v=hOiWsGaBfJY
+Nu-Goth = https://www.youtube.com/watch?v=iCZQTCPZwBQ
+Pastel Goth = https://www.youtube.com/watch?v=hOiWsGaBfJY
+Romantic Goth = https://www.youtube.com/watch?v=iEfVC2LOCv8
+Southern Gothic = https://www.youtube.com/watch?v=qhH4D251i4Q
+Trad Goth = https://www.youtube.com/watch?v=iEfVC2LOCv8
+Whimsigothic = https://www.youtube.com/watch?v=iEfVC2LOCv8
 
 # ======== ADVENTURE AND FRONTIER ========
-Adventure Pulp = 
+Adventure Pulp = https://www.youtube.com/watch?v=GkSHE6wOzX0
 Adventurecore = https://www.youtube.com/watch?v=GkSHE6wOzX0
 Western = https://www.youtube.com/watch?v=djmuOu8kgvQ&t
 
 # ======== SEA AND COAST ========
-Nautical = 
-Ocean Grunge = 
-Oceanpunk = 
+Nautical = https://www.youtube.com/watch?v=iEfVC2LOCv8
+Ocean Grunge = https://www.youtube.com/watch?v=iEfVC2LOCv8
+Oceanpunk = https://www.youtube.com/watch?v=iEfVC2LOCv8
 
 # ======== STATUS AND MONEY ========
-Corpcore = 
-Dandy = 
-Hypebeast = 
-Mob Wife = 
-Old Money = 
-Preppy = 
-Yuppie = 
+Corpcore = https://www.youtube.com/watch?v=a-GhYn5iiew
+Dandy = https://www.youtube.com/watch?v=Zhaz_30H_0w
+Hypebeast = https://www.youtube.com/watch?v=0QKQlf8r7ls
+Mob Wife = https://www.youtube.com/watch?v=rbl1qzsgqmg
+Old Money = https://www.youtube.com/watch?v=iEfVC2LOCv8
+Preppy = https://www.youtube.com/watch?v=hOiWsGaBfJY
+Yuppie = https://www.youtube.com/watch?v=2IJZAKjglZI
 
 # ======== ART AND PERIOD ========
-Art Deco = 
-Art Nouveau = 
-Arts and Crafts = 
-Baroque = 
-Bauhaus = 
-De Stijl = 
-Impressionism = 
-Memphis Design = 
-Neoclassicism = 
-Pop Art = 
-Regency = 
-Rococo = 
-Romanticism = 
-Streamline Moderne = 
-Surrealism = 
-Victorian = 
+Art Deco = https://www.youtube.com/watch?v=cAcMjHy_EXw&list=PLZH3YlV868rTY9BJl44rTpg_NQfdWfI0Z
+Art Nouveau = https://www.youtube.com/watch?v=ioXEprtpx8Y
+Arts and Crafts = https://www.youtube.com/watch?v=qhH4D251i4Q
+Baroque = https://www.youtube.com/watch?v=3joV0nUpKhY
+Bauhaus = https://www.youtube.com/watch?v=JS54yn7ZIZc
+De Stijl = https://www.youtube.com/watch?v=DqjWFZN82_A
+Impressionism = https://www.youtube.com/watch?v=iEfVC2LOCv8
+Memphis Design = https://www.youtube.com/watch?v=hOiWsGaBfJY
+Neoclassicism = https://www.youtube.com/watch?v=3UmmMnJacJs
+Pop Art = https://www.youtube.com/watch?v=hOiWsGaBfJY
+Regency = https://www.youtube.com/watch?v=3UmmMnJacJs
+Rococo = https://www.youtube.com/watch?v=rbl1qzsgqmg
+Romanticism = https://www.youtube.com/watch?v=iEfVC2LOCv8
+Streamline Moderne = https://www.youtube.com/watch?v=cAcMjHy_EXw&list=PLZH3YlV868rTY9BJl44rTpg_NQfdWfI0Z
+Surrealism = https://www.youtube.com/watch?v=ABGURyOP65g
+Victorian = https://www.youtube.com/watch?v=ioXEprtpx8Y
 
 # ======== DESIGN AND EVERYDAY ========
-Brutalism = 
-Eclectic Grandpa = 
-Maximalism = 
-Mid-Century Modern = 
-Minimalism = 
-Normcore = 
-Scandinavian Design = 
-Wabi-Sabi = 
+Brutalism = https://www.youtube.com/watch?v=JS54yn7ZIZc
+Eclectic Grandpa = https://www.youtube.com/watch?v=kyBzJWjAXG4
+Maximalism = https://www.youtube.com/watch?v=ioXEprtpx8Y
+Mid-Century Modern = https://www.youtube.com/watch?v=2IJZAKjglZI
+Minimalism = https://www.youtube.com/watch?v=iEfVC2LOCv8
+Normcore = https://www.youtube.com/watch?v=dmdkbhKtE6s
+Scandinavian Design = https://www.youtube.com/watch?v=iEfVC2LOCv8
+Wabi-Sabi = https://www.youtube.com/watch?v=iEfVC2LOCv8
 
 # ======== JAPANESE STREET AND KAWAII ========
-City Pop = 
-Decora = 
-Fairy Kei = 
-Gyaru = 
-Japandi = 
-Jirai Kei = 
-Kawaii = 
-Lolita = 
-Mori Kei = 
-Visual Kei = 
-Yami Kawaii = 
+City Pop = https://www.youtube.com/watch?v=YCDAp-jg7ls
+Decora = https://www.youtube.com/watch?v=hOiWsGaBfJY
+Fairy Kei = https://www.youtube.com/watch?v=hOiWsGaBfJY
+Gyaru = https://www.youtube.com/watch?v=hOiWsGaBfJY
+Japandi = https://www.youtube.com/watch?v=iEfVC2LOCv8
+Jirai Kei = https://www.youtube.com/watch?v=AXuqjQ94Rjc
+Kawaii = https://www.youtube.com/watch?v=hOiWsGaBfJY
+Lolita = https://www.youtube.com/watch?v=iEfVC2LOCv8
+Mori Kei = https://www.youtube.com/watch?v=qhH4D251i4Q
+Visual Kei = https://www.youtube.com/watch?v=iEfVC2LOCv8
+Yami Kawaii = https://www.youtube.com/watch?v=AXuqjQ94Rjc
 
 # ======== SOFT AND ROMANTIC ========
-Angelcore = 
-Balletcore = 
-Clean Girl = 
-Coquette = 
-Danish Pastel = 
-Dollette = 
-Kidcore = 
-Princesscore = 
-Royalcore = 
-Soft Girl = 
-Twee = 
-Tweencore = 
+Angelcore = https://www.youtube.com/watch?v=iEfVC2LOCv8
+Balletcore = https://www.youtube.com/watch?v=3UmmMnJacJs
+Clean Girl = https://www.youtube.com/watch?v=iEfVC2LOCv8
+Coquette = https://www.youtube.com/watch?v=3joV0nUpKhY
+Danish Pastel = https://www.youtube.com/watch?v=kaXpcbG4POw
+Dollette = https://www.youtube.com/watch?v=AXuqjQ94Rjc
+Kidcore = https://www.youtube.com/watch?v=hOiWsGaBfJY
+Princesscore = https://www.youtube.com/watch?v=4n2QXa1Ub3g
+Royalcore = https://www.youtube.com/watch?v=Zhaz_30H_0w
+Soft Girl = https://www.youtube.com/watch?v=j4tncIl8PQ0
+Twee = https://www.youtube.com/watch?v=3UmmMnJacJs
+Tweencore = https://www.youtube.com/watch?v=hOiWsGaBfJY
 
 # ======== SPORT AND UTILITY ========
-Blokecore = 
-Equestrian = 
-Gorpcore = 
-Jock = 
-Racing = 
-Tacticool = 
-Techwear = 
-Tenniscore = 
+Blokecore = https://www.youtube.com/watch?v=kyBzJWjAXG4
+Equestrian = https://www.youtube.com/watch?v=djmuOu8kgvQ
+Gorpcore = https://www.youtube.com/watch?v=GkSHE6wOzX0
+Jock = https://www.youtube.com/watch?v=dmdkbhKtE6s
+Racing = https://www.youtube.com/watch?v=bEJOSvsfYNA&list=PLGSqV9TD-Vaz6puuMVwpVRmQTgEfa3mqk
+Tacticool = https://www.youtube.com/watch?v=JS54yn7ZIZc
+Techwear = https://www.youtube.com/watch?v=y2ECgOhoDGs
+Tenniscore = https://www.youtube.com/watch?v=3UmmMnJacJs
 
 # ======== COSY AND HOME ========
-Cluttercore = 
-Coastal Grandmother = 
-Coffee House = 
-Grandmillennial = 
-Hygge = 
+Cluttercore = https://www.youtube.com/watch?v=iEfVC2LOCv8
+Coastal Grandmother = https://www.youtube.com/watch?v=iEfVC2LOCv8
+Coffee House = https://www.youtube.com/watch?v=3UmmMnJacJs
+Grandmillennial = https://www.youtube.com/watch?v=qhH4D251i4Q
+Hygge = https://www.youtube.com/watch?v=qhH4D251i4Q
 
 # ======== GLOBAL AND REGIONAL ========
-Afrofuturism = 
-Afropunk = 
-Brazilcore = 
-Gulf Futurism = 
-Guochao = 
-Ostalgie = 
-Sinofuturism = 
-Sovietwave = 
-Tropicália = 
-Wuxia = 
+Afrofuturism = https://www.youtube.com/watch?v=YCDAp-jg7ls
+Afropunk = https://www.youtube.com/watch?v=hOiWsGaBfJY
+Brazilcore = https://www.youtube.com/watch?v=7JhL2V70JaQ
+Gulf Futurism = https://www.youtube.com/watch?v=y2ECgOhoDGs
+Guochao = https://www.youtube.com/watch?v=rbl1qzsgqmg
+Ostalgie = https://www.youtube.com/watch?v=baV2DXqWad8
+Sinofuturism = https://www.youtube.com/watch?v=y2ECgOhoDGs
+Sovietwave = https://www.youtube.com/watch?v=baV2DXqWad8
+Tropicália = https://www.youtube.com/watch?v=7JhL2V70JaQ
+Wuxia = https://www.youtube.com/watch?v=56mJxMMi9bA
