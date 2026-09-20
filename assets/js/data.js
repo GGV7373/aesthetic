@@ -10,7 +10,8 @@
     questions: 'data/questions.json',
     aesthetics: 'data/aesthetics.json',
     config: 'data/scoring.json',
-    narrative: 'data/narrative.json'
+    narrative: 'data/narrative.json',
+    playlists: 'data/playlists.json'
   };
 
   function loadScript(src) {

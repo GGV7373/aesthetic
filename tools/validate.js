@@ -15,6 +15,7 @@ const questions = read('data/questions.json');
 const aesthetics = read('data/aesthetics.json');
 const config = read('data/scoring.json');
 const narrative = read('data/narrative.json');
+const playlists = read('data/playlists.json');
 
 const errors = [];
 const warnings = [];
@@ -150,6 +151,29 @@ aesthetics.forEach((a) => {
   (a.related || []).forEach((r) => {
     if (!keys.has(r)) errors.push(`${a.key}: related points at unknown key "${r}".`);
   });
+});
+
+/* ---------- playlists ---------- */
+
+const seenVideos = new Set();
+(playlists.curated || []).forEach((p) => {
+  if (!/^[A-Za-z0-9_-]{11}$/.test(p.id || '')) errors.push(`playlists: "${p.id}" is not an 11-character YouTube id.`);
+  if (seenVideos.has(p.id)) errors.push(`playlists: ${p.id} is listed more than once.`);
+  seenVideos.add(p.id);
+  if (p.list !== undefined && !/^[A-Za-z0-9_-]+$/.test(p.list)) errors.push(`playlists: ${p.id} has an invalid list id.`);
+  if (!p.title || !p.author || !p.mood) errors.push(`playlists: ${p.id} needs title, author and mood.`);
+  if (!Array.isArray(p.aesthetics) || !p.aesthetics.length) errors.push(`playlists: ${p.id} is attached to no aesthetic.`);
+  (p.aesthetics || []).forEach((k) => {
+    if (!keys.has(k)) errors.push(`playlists: ${p.id} points at unknown aesthetic "${k}".`);
+  });
+});
+if (!playlists.search || !playlists.search.base || !playlists.search.suffix) {
+  errors.push('playlists: "search" needs a base url and a suffix.');
+}
+['max', 'cutoff', 'relatedBonus', 'familyBonus'].forEach((f) => {
+  if (!playlists.borrow || typeof playlists.borrow[f] !== 'number' || playlists.borrow[f] < 0) {
+    errors.push(`playlists: borrow.${f} must be a number, 0 or more.`);
+  }
 });
 
 /* ---------- gender-neutral by default ---------- */

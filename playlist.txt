@@ -1,0 +1,219 @@
+# Playlist links, one per aesthetic.
+#
+# Fill in:   Name = https://www.youtube.com/watch?v=...
+# Leave a line blank if you have no video yet. Lines starting with # are ignored.
+# Sorted by family (same order as the app), A-Z inside each family.
+#
+# Families: Nature and Pastoral, Witchy and Folk, Academia, Americana and Screen, Subculture, Internet and Liminal, Punk and Futurism, Goth, Adventure and Frontier, Sea and Coast, Status and Money, Art and Period, Design and Everyday, Japanese Street and Kawaii, Soft and Romantic, Sport and Utility, Cosy and Home, Global and Regional
+
+# ======== NATURE AND PASTORAL ========
+Cabincore = 
+Cottagecore = 
+Forestpunk = 
+Granola = 
+Lumberjack = 
+Naturecore = 
+Rustic = 
+
+# ======== WITCHY AND FOLK ========
+Appalachian Gothic = 
+Cryptidcore = 
+Dark Fantasy = https://www.youtube.com/watch?v=56mJxMMi9bA&t
+Dark Naturalism = 
+Fairycore = 
+Folk Horror = 
+Ghostcore = 
+Gloomcore = 
+Goblincore = 
+Medieval = 
+Medievalcore = https://www.youtube.com/watch?v=4n2QXa1Ub3g
+Strega = 
+Vulture Culture = 
+Witchcore = 
+
+# ======== ACADEMIA ========
+Dark Academia = https://www.youtube.com/watch?v=Zhaz_30H_0w
+Light Academia = https://www.youtube.com/watch?v=3UmmMnJacJs
+Romantic Academia = https://www.youtube.com/watch?v=3joV0nUpKhY
+
+# ======== AMERICANA AND SCREEN ========
+50s Suburbia = https://www.youtube.com/watch?v=dmdkbhKtE6s&t
+Americana = https://www.youtube.com/watch?v=kyBzJWjAXG4
+Diner = https://www.youtube.com/watch?v=rEmLVVnN22Y
+Film Noir = https://www.youtube.com/watch?v=PEI2zet48Uc
+High School Dream = 
+Neon Noir = https://www.youtube.com/watch?v=rcbMXunz5bg
+Old Hollywood = https://www.youtube.com/watch?v=rbl1qzsgqmg
+
+# ======== SUBCULTURE ========
+Beatnik = 
+Dark Cabaret = 
+Emo = 
+Greaser = 
+Grunge = 
+Hippie = 
+Hipster = 
+Indie Sleaze = 
+Metalhead = 
+Midwest Emo = 
+Mod = 
+Olderbrothercore = https://www.youtube.com/watch?v=j4tncIl8PQ0
+Psychedelia = 
+Punk = 
+Rave = 
+Rockabilly = 
+Scene = 
+Skater = 
+
+# ======== INTERNET AND LIMINAL ========
+After Hours = 
+Analog Horror = https://www.youtube.com/watch?v=72aPC_Y--nM
+Doomer = 
+Draincore = https://www.youtube.com/watch?v=iCZQTCPZwBQ
+Dreamcore = https://www.youtube.com/watch?v=f1-jV9Qwwf0
+Frutiger Aero = 
+Frutiger Eco = 
+Glitchcore = https://www.youtube.com/watch?v=ngS94IcWxlw
+Liminal Space = https://www.youtube.com/watch?v=DqjWFZN82_A
+Mallsoft = https://www.youtube.com/watch?v=a-GhYn5iiew&t
+Nostalgiacore = 
+Old Web = 
+Scenecore = 
+Seapunk = https://www.youtube.com/watch?v=4eVFS4arIx4
+Synthwave = https://www.youtube.com/watch?v=0QKQlf8r7ls
+Traumacore = https://www.youtube.com/watch?v=AXuqjQ94Rjc
+Vaporwave = https://www.youtube.com/watch?v=QRMPfEnltdM
+Vectordelia = https://www.youtube.com/watch?v=kaXpcbG4POw
+Webcore = 
+Weirdcore = https://www.youtube.com/watch?v=ABGURyOP65g
+Y2K = 
+
+# ======== PUNK AND FUTURISM ========
+Atompunk = https://www.youtube.com/watch?v=2IJZAKjglZI
+Cassette Futurism = https://www.youtube.com/watch?v=baV2DXqWad8
+Cyberpunk = https://www.youtube.com/watch?v=y2ECgOhoDGs
+Decopunk = https://www.youtube.com/watch?v=cAcMjHy_EXw&list=PLZH3YlV868rTY9BJl44rTpg_NQfdWfI0Z
+Dieselpunk = https://www.youtube.com/watch?v=bEJOSvsfYNA&list=PLGSqV9TD-Vaz6puuMVwpVRmQTgEfa3mqk
+Industrial = 
+Industrial Decay = https://www.youtube.com/watch?v=JS54yn7ZIZc&t=876s
+Retrofuturism = https://www.youtube.com/watch?v=YCDAp-jg7ls
+Soft Apocalypse = https://www.youtube.com/watch?v=YUoHI2gDf7k
+Solarpunk = https://www.youtube.com/watch?v=7JhL2V70JaQ
+Spacecore = https://www.youtube.com/watch?v=Sa2jO_jOgIk
+Steampunk = https://www.youtube.com/watch?v=ioXEprtpx8Y
+
+# ======== GOTH ========
+Cybergoth = 
+Dark Romanticism = 
+Goth = 
+Industrial Gothic = 
+Mallgoth = 
+Nu-Goth = 
+Pastel Goth = 
+Romantic Goth = 
+Southern Gothic = 
+Trad Goth = 
+Whimsigothic = 
+
+# ======== ADVENTURE AND FRONTIER ========
+Adventure Pulp = 
+Adventurecore = https://www.youtube.com/watch?v=GkSHE6wOzX0
+Western = https://www.youtube.com/watch?v=djmuOu8kgvQ&t
+
+# ======== SEA AND COAST ========
+Nautical = 
+Ocean Grunge = 
+Oceanpunk = 
+
+# ======== STATUS AND MONEY ========
+Corpcore = 
+Dandy = 
+Hypebeast = 
+Mob Wife = 
+Old Money = 
+Preppy = 
+Yuppie = 
+
+# ======== ART AND PERIOD ========
+Art Deco = 
+Art Nouveau = 
+Arts and Crafts = 
+Baroque = 
+Bauhaus = 
+De Stijl = 
+Impressionism = 
+Memphis Design = 
+Neoclassicism = 
+Pop Art = 
+Regency = 
+Rococo = 
+Romanticism = 
+Streamline Moderne = 
+Surrealism = 
+Victorian = 
+
+# ======== DESIGN AND EVERYDAY ========
+Brutalism = 
+Eclectic Grandpa = 
+Maximalism = 
+Mid-Century Modern = 
+Minimalism = 
+Normcore = 
+Scandinavian Design = 
+Wabi-Sabi = 
+
+# ======== JAPANESE STREET AND KAWAII ========
+City Pop = 
+Decora = 
+Fairy Kei = 
+Gyaru = 
+Japandi = 
+Jirai Kei = 
+Kawaii = 
+Lolita = 
+Mori Kei = 
+Visual Kei = 
+Yami Kawaii = 
+
+# ======== SOFT AND ROMANTIC ========
+Angelcore = 
+Balletcore = 
+Clean Girl = 
+Coquette = 
+Danish Pastel = 
+Dollette = 
+Kidcore = 
+Princesscore = 
+Royalcore = 
+Soft Girl = 
+Twee = 
+Tweencore = 
+
+# ======== SPORT AND UTILITY ========
+Blokecore = 
+Equestrian = 
+Gorpcore = 
+Jock = 
+Racing = 
+Tacticool = 
+Techwear = 
+Tenniscore = 
+
+# ======== COSY AND HOME ========
+Cluttercore = 
+Coastal Grandmother = 
+Coffee House = 
+Grandmillennial = 
+Hygge = 
+
+# ======== GLOBAL AND REGIONAL ========
+Afrofuturism = 
+Afropunk = 
+Brazilcore = 
+Gulf Futurism = 
+Guochao = 
+Ostalgie = 
+Sinofuturism = 
+Sovietwave = 
+Tropicália = 
+Wuxia = 

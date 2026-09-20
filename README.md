@@ -22,6 +22,7 @@ OR use the website at [estetikk.netlify.app](https://estetikk.netlify.app).
 * [Files](#files)
 * [Validation](#validation)
 * [Images](#images)
+* [Music](#music)
 * [Privacy](#privacy)
 * [License](#license)
 
@@ -359,6 +360,7 @@ data/
   aesthetics.json 77 aesthetics: profile, palette, search terms, "world"
   scoring.json    scale, groups, dimensions, preference categories, matching parameters
   narrative.json  phrase banks
+  playlists.json  hand-picked YouTube videos per aesthetic, plus the search fallback
   bundle.js       GENERATED — fallback for file://
 tools/
   build-bundle.js
@@ -477,10 +479,65 @@ The photo strip is progressive enhancement. If the request is slow, blocked or e
 the section is simply never inserted. It is labelled honestly on the page: keyword
 matches approximating the atmosphere, not official images of the aesthetic.
 
+## Music
+
+The result page ends its main section with **Something to listen to**, for the top
+aesthetic. It has three parts:
+
+* the aesthetic's own `world.music` line, so the sound matches the rest of the result;
+* any hand-picked videos from `data/playlists.json` that are attached to it;
+* a button that searches YouTube for `"<name> aesthetic playlist"`, so every one of the
+  176 aesthetics has somewhere to go even without a curated pick. It searches on the
+  wiki's own name (`gendered.name` when there is one), because "Soft Girl" finds
+  playlists and the neutral "Soft Pastel" does not.
+
+Everything is a plain link that opens in a new tab. Nothing is embedded, so the result
+page makes no request to YouTube and no thumbnails are loaded.
+
+**Similar aesthetics share videos.** A video's `aesthetics` list is where it belongs
+directly, and one video can serve as many as you like. An aesthetic with no video of
+its own *borrows* one from each of its closest neighbours (up to `borrow.max`), and the
+card says "Borrowed from …". Closeness is the aesthetic's hand-written `related` list
+first, then the same family, then how alike the two dimension profiles are. Anything
+past `borrow.cutoff` gets only the search button, on the view that no video is better
+than a wrong one. The four numbers live under `borrow` in `data/playlists.json`:
+
+| Field | Meaning |
+|---|---|
+| `max` | most borrowed videos shown |
+| `cutoff` | how far apart two profiles may be and still share (lower = stricter) |
+| `relatedBonus` | how much being in each other's `related` list counts for |
+| `familyBonus` | how much sharing a family counts for |
+
+An aesthetic's own video always wins, so adding a dedicated video to `curated` replaces
+whatever it was borrowing. Currently 91 aesthetics have their own video, 76 borrow, and
+9 (Lolita, Visual Kei, Yuppie, Hypebeast, Bauhaus, De Stijl, Guochao, Tropicália,
+Brazilcore) are search-only.
+
+To add a video, append to `curated` in `data/playlists.json` and run
+`node tools/build-bundle.js`:
+
+```json
+{
+  "id": "qhH4D251i4Q",
+  "title": "pacific northwest playlist",
+  "author": "Leaner",
+  "mood": "One line on the feeling of it.",
+  "aesthetics": ["forestpunk", "cabincore"]
+}
+```
+
+`id` is the 11 characters after `v=` in the URL (drop any `&t=` timestamp). If the link
+is part of a YouTube playlist (`&list=PL…`), add it as `"list": "PL…"` and the card
+opens the whole playlist instead of one video.
+`node tools/validate.js` checks the id format and that every aesthetic key exists. One
+video can serve many aesthetics; an aesthetic can have several videos.
+
 ## Privacy
 
 Everything is computed in the browser. No tracking, and the only outbound request is
-the optional image search. `localStorage` holds the run in progress, the question
+the optional image search — the music links only go to YouTube if you click them.
+`localStorage` holds the run in progress, the question
 history, the topic preferences and the gender-neutral / gender-specific choice.
 
 ---
