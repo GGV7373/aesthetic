@@ -36,6 +36,12 @@ node tools/serve.js
 
 Opens at `http://localhost:8123`.
 
+**Preview any result without taking the quiz:** `?preview=<aesthetic-key>` (e.g.
+`?preview=after-hours`) jumps straight to that aesthetic's result screen — useful for
+checking the photos/music/layout across aesthetics. Gated to `localhost` and `file://`
+in `app.js`'s `isLocalDev()`, so it does nothing on the deployed site. An unknown key
+logs the full list of valid ones to the console.
+
 The page also works opened straight from disk. The browser blocks `fetch` against
 local files there, so the app falls back to `data/bundle.js` — a generated copy of
 the JSON:
@@ -61,6 +67,8 @@ Two things to keep in mind:
   optional — if you add a strict `Content-Security-Policy`, allow
   `connect-src https://commons.wikimedia.org` and
   `img-src https://upload.wikimedia.org`, or the strip just quietly stops appearing.
+- **Track thumbnails load from `https://i.ytimg.com`.** Allow it under `img-src` too, or
+  the thumbnail images silently fail and cards fall back to a plain colour tile.
 
 ---
 
@@ -80,7 +88,7 @@ breakpoints add to it. Concretely, on a phone:
 * **Every tap target is at least 44px**, and taps get no 300ms delay and no grey flash.
 * **Hover styling is gated behind `(hover: hover) and (pointer: fine)`**, so tapping an
   option on a touch screen never leaves a stuck hover state behind.
-* **The photo strip scrolls sideways with snap points** instead of stacking three tall
+* **The photo strip scrolls sideways with snap points** instead of stacking tall
   images that would push the rest of the result off the screen.
 * **The profile rows restack** — label and value on one line, meter under it — instead
   of squeezing four columns into 360px.
@@ -491,28 +499,28 @@ aesthetic. It has three parts:
   wiki's own name (`gendered.name` when there is one), because "Soft Girl" finds
   playlists and the neutral "Soft Pastel" does not.
 
-Everything is a plain link that opens in a new tab. Nothing is embedded, so the result
-page makes no request to YouTube and no thumbnails are loaded.
+Every link opens YouTube in a new tab; nothing is embedded. Each track card shows a
+thumbnail loaded from YouTube's own image CDN (`i.ytimg.com`) — the only request this
+page makes to a YouTube-owned host, and it is a static image, not a player.
 
 **Similar aesthetics share videos.** A video's `aesthetics` list is where it belongs
-directly, and one video can serve as many as you like. An aesthetic with no video of
-its own *borrows* one from each of its closest neighbours (up to `borrow.max`), and the
-card says "Borrowed from …". Closeness is the aesthetic's hand-written `related` list
-first, then the same family, then how alike the two dimension profiles are. Anything
-past `borrow.cutoff` gets only the search button, on the view that no video is better
-than a wrong one. The four numbers live under `borrow` in `data/playlists.json`:
+directly, and one video can serve as many as you like. On top of its own video(s), every
+aesthetic also gets up to `borrow.max` bonus picks from its closest neighbours, so a
+result never rides on just one or two tracks; those cards say "Borrowed from …".
+Closeness is the aesthetic's hand-written `related` list first, then the same family,
+then how alike the two dimension profiles are. Anything past `borrow.cutoff` is left out,
+on the view that no video is better than a wrong one. The four numbers live under
+`borrow` in `data/playlists.json`:
 
 | Field | Meaning |
 |---|---|
-| `max` | most borrowed videos shown |
+| `max` | most bonus videos borrowed from neighbours |
 | `cutoff` | how far apart two profiles may be and still share (lower = stricter) |
 | `relatedBonus` | how much being in each other's `related` list counts for |
 | `familyBonus` | how much sharing a family counts for |
 
-An aesthetic's own video always wins, so adding a dedicated video to `curated` replaces
-whatever it was borrowing. Currently 91 aesthetics have their own video, 76 borrow, and
-9 (Lolita, Visual Kei, Yuppie, Hypebeast, Bauhaus, De Stijl, Guochao, Tropicália,
-Brazilcore) are search-only.
+Every one of the 176 aesthetics already has at least one video of its own in
+`curated`.
 
 To add a video, append to `curated` in `data/playlists.json` and run
 `node tools/build-bundle.js`:

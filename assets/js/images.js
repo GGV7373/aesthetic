@@ -14,8 +14,8 @@
 
   var ENDPOINT = 'https://commons.wikimedia.org/w/api.php';
   var TIMEOUT = 8000;
-  var WANTED = 3;
-  var CACHE_PREFIX = 'aq.img.v1.';
+  var WANTED = 6;
+  var CACHE_PREFIX = 'aq.img.v2.';
 
   /* Commons search happily returns maps, coats of arms and scanned book plates.
      None of those say anything about a mood. Filtering the results works far
@@ -61,7 +61,7 @@
   function search(term) {
     var url = ENDPOINT +
       '?action=query&format=json&origin=*' +
-      '&generator=search&gsrnamespace=6&gsrlimit=12' +
+      '&generator=search&gsrnamespace=6&gsrlimit=20' +
       '&gsrsearch=' + encodeURIComponent('filetype:bitmap ' + term) +
       '&prop=imageinfo&iiprop=url|extmetadata|size&iiurlwidth=720';
 

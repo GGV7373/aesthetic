@@ -272,6 +272,40 @@
     };
   };
 
+  /* Debug shortcut (see app.js's local-only ?preview=<key>): scores as if
+     someone answered every statement exactly the way this aesthetic's own
+     dimensions read, so its result screen can be inspected without taking the
+     quiz. Not reachable from real answers - it is not a possible profile. */
+  AQ.scorePreview = function (aestheticKey, data) {
+    var aesthetic = data.aestheticsByKey[aestheticKey];
+    if (!aesthetic) return null;
+
+    var value = {}, confidence = {};
+    data.dimensionKeys.forEach(function (k) {
+      var has = aesthetic.dimensions[k] !== undefined;
+      value[k] = has ? aesthetic.dimensions[k] : 0.5;
+      confidence[k] = has ? 1 : 0;
+    });
+    var profile = { value: value, confidence: confidence, weightSum: confidence, answered: 0, stretch: 1 };
+    var matching = data.config.matching;
+
+    var ranked = assignPercentages(
+      data.aesthetics
+        .map(function (a) { return scoreAesthetic(a, profile, matching); })
+        .sort(function (x, y) { return y.similarity - x.similarity; }),
+      matching
+    );
+
+    return {
+      profile: profile,
+      ranked: ranked,
+      primary: ranked[0],
+      secondary: ranked[1],
+      hidden: pickHidden(ranked, data),
+      combination: detectCombination(ranked, data)
+    };
+  };
+
   AQ.scoringInternals = {
     buildProfile: buildProfile,
     assignPercentages: assignPercentages,

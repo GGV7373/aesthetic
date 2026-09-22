@@ -746,14 +746,20 @@
     return n ? sum / n : null;
   }
 
-  /* -> { own: [playlist], borrowed: [{ playlist, from: aesthetic }] } */
+  /* -> { own: [playlist], borrowed: [{ playlist, from: aesthetic }] }
+     Every aesthetic already has at least one playlist of its own, but a
+     result with just one or two tracks feels thin - so bonus picks from the
+     closest neighbours are always added on top, not only when an aesthetic
+     has none of its own. */
   function playlistsFor(aesthetic) {
     var index = playlistsByAesthetic();
     var own = index[aesthetic.key] || [];
-    if (own.length) return { own: own, borrowed: [] };
 
     var cfg = (data.playlists && data.playlists.borrow) || null;
-    if (!cfg) return { own: [], borrowed: [] };
+    if (!cfg) return { own: own, borrowed: [] };
+
+    var seen = {};
+    own.forEach(function (p) { seen[p.id] = true; });
 
     var related = relatedTo(aesthetic.key);
     var near = [];
@@ -768,8 +774,7 @@
     });
     near.sort(function (x, y) { return x.gap - y.gap; });
 
-    /* One video per neighbour, and never the same video twice. */
-    var seen = {};
+    /* One video per neighbour, and never one already shown. */
     var borrowed = [];
     near.forEach(function (n) {
       if (borrowed.length >= cfg.max) return;
@@ -778,7 +783,7 @@
       seen[pick.id] = true;
       borrowed.push({ playlist: pick, from: n.from });
     });
-    return { own: [], borrowed: borrowed };
+    return { own: own, borrowed: borrowed };
   }
 
   /* Search on the name the aesthetic is known by - the gender-neutral wording is
@@ -798,7 +803,13 @@
       href: 'https://www.youtube.com/watch?v=' + p.id + (p.list ? '&list=' + p.list : ''),
       target: '_blank', rel: 'noopener noreferrer'
     }, [
-      el('span', { class: 'track__play', 'aria-hidden': 'true', text: '▶' }),
+      el('span', { class: 'track__thumb' }, [
+        el('img', {
+          src: 'https://i.ytimg.com/vi/' + p.id + '/mqdefault.jpg', alt: '', loading: 'lazy',
+          decoding: 'async', onerror: function (e) { e.target.remove(); }
+        }),
+        el('span', { class: 'track__play', 'aria-hidden': 'true', text: '▶' })
+      ]),
       el('span', { class: 'track__body' }, [
         el('span', { class: 'track__title', text: p.title }),
         el('span', { class: 'track__mood', text: p.mood }),
@@ -820,8 +831,10 @@
       ? 'What ' + aesthetic.name + ' tends to sound like: ' + sound + '.'
       : 'Music that goes with ' + aesthetic.name + '.';
     if (found.borrowed.length) {
-      lede += ' It has no playlist of its own yet, so these come from the aesthetics ' +
-        'closest to it.';
+      lede += found.own.length
+        ? ' A few more come from the aesthetics closest to it, for variety.'
+        : ' It has no playlist of its own yet, so these come from the aesthetics ' +
+          'closest to it.';
     }
 
     return el('section', { class: 'block block--music' }, [
@@ -832,8 +845,9 @@
         class: 'btn btn--ghost music__search', href: playlistSearchUrl(aesthetic),
         target: '_blank', rel: 'noopener noreferrer'
       }, [cards.length ? 'Find more ' + aesthetic.name + ' playlists' : 'Find ' + aesthetic.name + ' playlists on YouTube']),
-      el('p', { class: 'fineprint', text: 'Links open YouTube in a new tab. Nothing from ' +
-        'YouTube is loaded on this page.' })
+      el('p', { class: 'fineprint', text: 'Links open YouTube in a new tab. The thumbnails ' +
+        'above are static images from YouTube’s own image server - nothing is embedded ' +
+        'or tracked beyond loading those pictures.' })
     ]);
   }
 
@@ -929,12 +943,15 @@
 
   /* ---------- result ---------- */
 
-  function screenResult() {
+  /* `preview`, when passed, is an already-scored result (see boot()'s local-only
+     ?preview=<key> shortcut) - it skips the real quiz entirely, so nothing here
+     may touch `session`. */
+  function screenResult(preview) {
     pushStep({ screen: 'result' });
 
-    var questions = sessionQuestions();
-    var result = AQ.score(questions, session.answers, data);
-    var rng = AQ.rng.rngFromSeed(session.seed, 'narrative');
+    var result = preview || AQ.score(sessionQuestions(), session.answers, data);
+    var seed = preview ? 'preview' : session.seed;
+    var rng = AQ.rng.rngFromSeed(seed, 'narrative');
 
     var primary = data.aestheticsByKey[result.primary.key];
     var why = AQ.narrative.buildWhy(result, data, rng);
@@ -942,7 +959,7 @@
     var hybrid = AQ.narrative.buildHybrid(result.combination, data, rng, result.profile);
 
     var welcome = el('div', { class: 'result__welcome' }, [
-      el('p', { class: 'eyebrow', text: 'Your result' }),
+      el('p', { class: 'eyebrow', text: preview ? 'Preview - debug only' : 'Your result' }),
       el('p', { class: 'result__greeting', text: 'Fifty statements later, here is the world ' +
         'your answers keep pointing towards.' })
     ]);
@@ -1006,7 +1023,7 @@
       }))
     ]);
 
-    var seedLink = global.location.origin + global.location.pathname + '?seed=' + session.seed;
+    var seedLink = global.location.origin + global.location.pathname + '?seed=' + seed;
     var copyBtn = el('button', {
       class: 'btn btn--ghost', type: 'button',
       onclick: function (e) {
@@ -1028,8 +1045,9 @@
 
     var footer = el('footer', { class: 'result__footer' }, [
       el('p', { class: 'fineprint' }, [
-        'Run ', el('code', { text: session.seed }),
-        '. The same code gives the same 50 statements in the same order.'
+        preview ? 'Preview of ' : 'Run ', el('code', { text: seed }),
+        preview ? '. Not a real result - nothing was answered.'
+          : '. The same code gives the same 50 statements in the same order.'
       ]),
       el('div', { class: 'result__actions' }, [
         el('button', {
@@ -1041,7 +1059,7 @@
         }, ['Take it again with new questions']),
         copyBtn
       ]),
-      genderedNamesToggle(screenResult),
+      genderedNamesToggle(function () { screenResult(preview); }),
       el('p', { class: 'fineprint' }, [
         'The aesthetics use Aesthetics Wiki as a reference. Descriptions, dimensions and ' +
         'statements were written for this test, and the mood plates are generated by the ' +
@@ -1055,12 +1073,20 @@
       rankingSection(result), footer
     ]);
 
-    clearStore(STORE_SESSION);
+    if (!preview) clearStore(STORE_SESSION);
     render(view);
     photoStrip(primary, whyBlock);
   }
 
   /* ---------- boot ---------- */
+
+  /* Gates debug-only shortcuts to a local checkout - matches tools/serve.js
+     (localhost) and opening index.html straight from disk (file://), never the
+     deployed site, so a preview link never leaks out as if it were a real result. */
+  function isLocalDev() {
+    var h = global.location.hostname;
+    return h === 'localhost' || h === '127.0.0.1' || global.location.protocol === 'file:';
+  }
 
   function boot() {
     root = document.getElementById('app');
@@ -1072,6 +1098,19 @@
 
     AQ.loadData().then(function (loaded) {
       data = loaded;
+
+      if (isLocalDev()) {
+        var previewKey = queryParam('preview');
+        if (previewKey) {
+          var preview = AQ.scorePreview(previewKey, data);
+          if (preview) { screenResult(preview); return; }
+          global.console.warn(
+            'aq debug: no aesthetic "' + previewKey + '". Valid keys:',
+            Object.keys(data.aestheticsByKey).sort()
+          );
+        }
+      }
+
       /* A seed in the URL recreates a run — it is picked up when the test starts. */
       if (queryParam('seed')) clearStore(STORE_SESSION);
       screenIntro();
