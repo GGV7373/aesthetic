@@ -11,7 +11,8 @@
     aesthetics: 'data/aesthetics.json',
     config: 'data/scoring.json',
     narrative: 'data/narrative.json',
-    playlists: 'data/playlists.json'
+    playlists: 'data/playlists.json',
+    images: 'data/images.json'
   };
 
   function loadScript(src) {

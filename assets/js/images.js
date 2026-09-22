@@ -1,9 +1,17 @@
 /* Reference photographs for the result page.
 
    Aesthetics Wiki images are not freely licensed, so they are not used here.
-   Instead each aesthetic carries a couple of English search terms, and those are
-   run against Wikimedia Commons, which serves freely licensed media with CORS
-   enabled and hands back the credit line in the same response.
+   data/images.json is the source, in two parts:
+
+   - `curated`: exact Commons files a person has checked and tagged with the
+     aesthetics they fit, the same shape as playlists.json's curated videos.
+     When an aesthetic has any, those are used as-is - no live search, so no
+     chance of a keyword returning something technically matching but wrong
+     (a "Xbox 360" search surfacing six product photos of the controller,
+     say, instead of anything resembling a bedroom).
+   - `search`: a couple of fallback English keywords per aesthetic, run live
+     against Wikimedia Commons (freely licensed, serves CORS) for whichever
+     aesthetics nobody has curated yet.
 
    This is decoration, not infrastructure: the generated mood plates are always
    drawn first, and if the request is slow, blocked or empty the page simply
@@ -94,12 +102,35 @@
     });
   }
 
-  /* Runs the search terms in order and stops as soon as there are enough. */
-  function forAesthetic(aesthetic) {
-    var terms = aesthetic.imageQuery || [];
+  var curatedIndex = null;
+
+  function curatedByAesthetic(data) {
+    if (curatedIndex) return curatedIndex;
+    curatedIndex = {};
+    ((data.images && data.images.curated) || []).forEach(function (photo) {
+      (photo.aesthetics || []).forEach(function (key) {
+        (curatedIndex[key] = curatedIndex[key] || []).push(photo);
+      });
+    });
+    return curatedIndex;
+  }
+
+  /* Curated photos always win outright, even if there are fewer than WANTED -
+     one confirmed-good photo beats padding out to six with live-search guesses.
+     Only an aesthetic with nothing curated yet falls back to keyword search,
+     stopping as soon as it has enough. `opts.skipCache` is for app.js's
+     local-only ?preview=<key> debug mode - without it, editing search terms
+     and reloading a preview would keep showing whatever got cached under the
+     old wording earlier in the same tab. */
+  function forAesthetic(aesthetic, data, opts) {
+    var curated = curatedByAesthetic(data)[aesthetic.key];
+    if (curated && curated.length) return Promise.resolve(curated.slice(0, WANTED));
+
+    var terms = (data.images && data.images.search && data.images.search[aesthetic.key]) || [];
     if (!terms.length) return Promise.resolve([]);
 
-    var cached = readCache(aesthetic.key);
+    var skipCache = opts && opts.skipCache;
+    var cached = skipCache ? null : readCache(aesthetic.key);
     if (cached) return Promise.resolve(cached);
 
     var found = [];
@@ -126,5 +157,8 @@
     return Promise.resolve(next(0)).catch(function () { return []; });
   }
 
-  AQ.images = { forAesthetic: forAesthetic };
+  /* searchTerm is the same lookup + filter used by forAesthetic, exposed raw
+     for tools/image-picker.html - trying out wording should use the exact
+     function the real result page runs, not a re-implementation of it. */
+  AQ.images = { forAesthetic: forAesthetic, searchTerm: search };
 })(typeof window !== 'undefined' ? window : globalThis);

@@ -18,10 +18,6 @@
       "#6d8459",
       "#cfc3a3"
     ],
-    "imageQuery": [
-      "mossy forest fog",
-      "abandoned cabin forest"
-    ],
     "dimensions": {
       "nature": 0.95,
       "organic": 0.9,
@@ -85,10 +81,6 @@
       "#4a5148",
       "#a89f8c"
     ],
-    "imageQuery": [
-      "moorland winter fog",
-      "bare trees mist"
-    ],
     "dimensions": {
       "nature": 0.9,
       "organic": 0.85,
@@ -148,10 +140,6 @@
       "#6b6247",
       "#c9c4ac"
     ],
-    "imageQuery": [
-      "forest road night",
-      "dense woods dusk"
-    ],
     "dimensions": {
       "mystery": 0.95,
       "fantasy": 0.75,
@@ -209,10 +197,6 @@
       "#6b5a3e",
       "#c9a86a",
       "#f2e7cf"
-    ],
-    "imageQuery": [
-      "cottage garden flowers",
-      "thatched cottage england"
     ],
     "dimensions": {
       "nature": 0.8,
@@ -276,10 +260,6 @@
       "#8a6a45",
       "#e0cfae"
     ],
-    "imageQuery": [
-      "log cabin lake",
-      "wooden cabin forest snow"
-    ],
     "dimensions": {
       "nature": 0.85,
       "rural": 0.9,
@@ -337,10 +317,6 @@
       "#31462a",
       "#7d9159",
       "#e2dcc0"
-    ],
-    "imageQuery": [
-      "forest mushrooms moss",
-      "wildflower meadow"
     ],
     "dimensions": {
       "nature": 0.95,
@@ -400,10 +376,6 @@
       "#4c545a",
       "#9aa2a6"
     ],
-    "imageQuery": [
-      "overcast sea pier",
-      "foggy street rain"
-    ],
     "dimensions": {
       "melancholy": 0.95,
       "darkness": 0.72,
@@ -460,10 +432,6 @@
       "#33261c",
       "#6d5236",
       "#c9b48b"
-    ],
-    "imageQuery": [
-      "old library reading room",
-      "gothic university cloister"
     ],
     "dimensions": {
       "intellect": 0.95,
@@ -528,10 +496,6 @@
       "#c2a878",
       "#f6efdd"
     ],
-    "imageQuery": [
-      "library sunlight reading",
-      "classical university courtyard"
-    ],
     "dimensions": {
       "intellect": 0.9,
       "history": 0.8,
@@ -591,10 +555,6 @@
       "#96636a",
       "#e6cfc2"
     ],
-    "imageQuery": [
-      "letter writing by candlelight painting",
-      "old writing desk letters"
-    ],
     "dimensions": {
       "intellect": 0.8,
       "history": 0.8,
@@ -653,10 +613,6 @@
       "#1b1e24",
       "#4e545e",
       "#d7d3cb"
-    ],
-    "imageQuery": [
-      "night city street rain",
-      "city street 1940s night"
     ],
     "dimensions": {
       "urban": 0.92,
@@ -718,10 +674,6 @@
       "#6a5c4c",
       "#b8ada0"
     ],
-    "imageQuery": [
-      "abandoned warehouse graffiti",
-      "worn brick wall urban"
-    ],
     "dimensions": {
       "chaos": 0.85,
       "individualism": 0.82,
@@ -780,10 +732,6 @@
       "#1f2a55",
       "#5c7fd6",
       "#e6e6f2"
-    ],
-    "imageQuery": [
-      "vintage computer crt",
-      "1990s desktop computer"
     ],
     "dimensions": {
       "digital": 0.95,
@@ -845,10 +793,6 @@
       "#6d7ef2",
       "#f0f2ff"
     ],
-    "imageQuery": [
-      "crt monitor retro",
-      "old computer keyboard"
-    ],
     "dimensions": {
       "digital": 0.95,
       "retro": 0.85,
@@ -906,10 +850,6 @@
       "#0d6d8c",
       "#4cc9d9",
       "#e8fbff"
-    ],
-    "imageQuery": [
-      "water droplets glass",
-      "blue sky green meadow"
     ],
     "dimensions": {
       "digital": 0.85,
@@ -971,10 +911,6 @@
       "#6fc48a",
       "#e9f7e6"
     ],
-    "imageQuery": [
-      "green facade building plants",
-      "vertical garden wall"
-    ],
     "dimensions": {
       "nature": 0.85,
       "organic": 0.85,
@@ -1032,10 +968,6 @@
       "#5b1a6b",
       "#e0559b",
       "#5ee2f0"
-    ],
-    "imageQuery": [
-      "empty shopping mall",
-      "neon sunset palm trees"
     ],
     "dimensions": {
       "nostalgia": 0.9,
@@ -1096,10 +1028,6 @@
       "#9fa8ff",
       "#f2f0ff"
     ],
-    "imageQuery": [
-      "imac g3 translucent",
-      "flip phone 2000s"
-    ],
     "dimensions": {
       "digital": 0.88,
       "futurism": 0.8,
@@ -1159,10 +1087,6 @@
       "#d9a441",
       "#efe6d3"
     ],
-    "imageQuery": [
-      "world fair pavilion 1939",
-      "space age monorail"
-    ],
     "dimensions": {
       "futurism": 0.82,
       "retro": 0.92,
@@ -1221,10 +1145,6 @@
       "#e2b13c",
       "#f4ecdc"
     ],
-    "imageQuery": [
-      "googie architecture",
-      "1950s diner neon sign"
-    ],
     "dimensions": {
       "futurism": 0.8,
       "retro": 0.9,
@@ -1282,10 +1202,6 @@
       "#1e3a4c",
       "#c9a227",
       "#f0e9d8"
-    ],
-    "imageQuery": [
-      "art deco skyscraper",
-      "chrysler building detail"
     ],
     "dimensions": {
       "futurism": 0.72,
@@ -1346,10 +1262,6 @@
       "#7a6244",
       "#c6bda9"
     ],
-    "imageQuery": [
-      "vintage aircraft hangar",
-      "1930s industrial machinery"
-    ],
     "dimensions": {
       "industrial": 0.9,
       "retro": 0.85,
@@ -1408,10 +1320,6 @@
       "#3d2a17",
       "#a8792f",
       "#e8d5ac"
-    ],
-    "imageQuery": [
-      "steam engine brass",
-      "victorian machinery gears"
     ],
     "dimensions": {
       "craft": 0.95,
@@ -1473,10 +1381,6 @@
       "#7a2bd6",
       "#31f5e0"
     ],
-    "imageQuery": [
-      "neon city night rain",
-      "tokyo alley neon signs"
-    ],
     "dimensions": {
       "urban": 0.95,
       "digital": 0.9,
@@ -1536,10 +1440,6 @@
       "#1f7a52",
       "#8fd07a",
       "#fdf3d0"
-    ],
-    "imageQuery": [
-      "rooftop garden city",
-      "solar panels garden"
     ],
     "dimensions": {
       "nature": 0.9,
@@ -1601,10 +1501,6 @@
       "#5d5f61",
       "#b7b3ad"
     ],
-    "imageQuery": [
-      "factory interior steel",
-      "industrial warehouse concrete"
-    ],
     "dimensions": {
       "industrial": 0.95,
       "urban": 0.8,
@@ -1663,10 +1559,6 @@
       "#20211f",
       "#4a3f36",
       "#9d968a"
-    ],
-    "imageQuery": [
-      "abandoned factory hall",
-      "derelict industrial building"
     ],
     "dimensions": {
       "industrial": 0.9,
@@ -1727,10 +1619,6 @@
       "#6a5b3f",
       "#c3b7a0"
     ],
-    "imageQuery": [
-      "appalachian mountains fog",
-      "old farmhouse porch wood"
-    ],
     "dimensions": {
       "rural": 0.95,
       "nature": 0.8,
@@ -1789,10 +1677,6 @@
       "#333b1f",
       "#8a7b34",
       "#ded4ab"
-    ],
-    "imageQuery": [
-      "stone circle field",
-      "rural village church old"
     ],
     "dimensions": {
       "tradition": 0.92,
@@ -1853,10 +1737,6 @@
       "#c98b3a",
       "#f0e4c8"
     ],
-    "imageQuery": [
-      "mountain hiking trail",
-      "camping tent mountains"
-    ],
     "dimensions": {
       "adventure": 0.95,
       "nature": 0.85,
@@ -1914,10 +1794,6 @@
       "#42301a",
       "#b07c33",
       "#eddfba"
-    ],
-    "imageQuery": [
-      "desert caravan expedition",
-      "jungle temple ruins"
     ],
     "dimensions": {
       "adventure": 0.95,
@@ -1977,10 +1853,6 @@
       "#98764a",
       "#e5d7ba"
     ],
-    "imageQuery": [
-      "rustic wooden interior",
-      "old farm barn wood"
-    ],
     "dimensions": {
       "craft": 0.92,
       "tradition": 0.85,
@@ -2039,10 +1911,6 @@
       "#8c4a35",
       "#ded2bd"
     ],
-    "imageQuery": [
-      "logging forest timber",
-      "axe firewood forest"
-    ],
     "dimensions": {
       "rural": 0.9,
       "craft": 0.85,
@@ -2100,10 +1968,6 @@
       "#173a5e",
       "#b98b4a",
       "#eef1f2"
-    ],
-    "imageQuery": [
-      "sailing ship rigging",
-      "lighthouse coast"
     ],
     "dimensions": {
       "adventure": 0.8,
@@ -2164,10 +2028,6 @@
       "#516066",
       "#c2c6c2"
     ],
-    "imageQuery": [
-      "stormy beach winter",
-      "rusty pier sea"
-    ],
     "dimensions": {
       "melancholy": 0.88,
       "nature": 0.8,
@@ -2227,10 +2087,6 @@
       "#3fa39a",
       "#e4e9d8"
     ],
-    "imageQuery": [
-      "harbour wooden boats",
-      "coastal village stilt houses"
-    ],
     "dimensions": {
       "adventure": 0.9,
       "fantasy": 0.8,
@@ -2288,10 +2144,6 @@
       "#3b2f2c",
       "#b0472f",
       "#f0e2c6"
-    ],
-    "imageQuery": [
-      "american diner neon",
-      "desert highway road"
     ],
     "dimensions": {
       "nostalgia": 0.85,
@@ -2352,10 +2204,6 @@
       "#e0a89b",
       "#f7efe2"
     ],
-    "imageQuery": [
-      "1950s suburban house",
-      "mid century kitchen"
-    ],
     "dimensions": {
       "order": 0.9,
       "tradition": 0.85,
@@ -2414,10 +2262,6 @@
       "#2b2530",
       "#8a7a55",
       "#f2ece0"
-    ],
-    "imageQuery": [
-      "art deco cinema interior",
-      "hollywood 1930s portrait"
     ],
     "dimensions": {
       "refinement": 0.95,
@@ -2478,10 +2322,6 @@
       "#6a6055",
       "#ddd6c8"
     ],
-    "imageQuery": [
-      "jazz club interior",
-      "1950s cafe bohemian"
-    ],
     "dimensions": {
       "intellect": 0.85,
       "individualism": 0.9,
@@ -2540,10 +2380,6 @@
       "#31283c",
       "#7c6a4a",
       "#efe6d6"
-    ],
-    "imageQuery": [
-      "gentlemen club interior london",
-      "tailor shop suits vintage"
     ],
     "dimensions": {
       "refinement": 0.95,
@@ -2604,10 +2440,6 @@
       "#c8a23c",
       "#f4eddc"
     ],
-    "imageQuery": [
-      "art deco interior",
-      "art deco facade"
-    ],
     "dimensions": {
       "ornament": 0.95,
       "order": 0.9,
@@ -2666,10 +2498,6 @@
       "#2b4a3a",
       "#a58a3e",
       "#f0e6cd"
-    ],
-    "imageQuery": [
-      "art nouveau facade",
-      "art nouveau stained glass"
     ],
     "dimensions": {
       "ornament": 0.95,
@@ -2730,10 +2558,6 @@
       "#5a5c5e",
       "#adaba6"
     ],
-    "imageQuery": [
-      "brutalist architecture concrete",
-      "brutalist building"
-    ],
     "dimensions": {
       "architecture": 0.95,
       "industrial": 0.85,
@@ -2792,10 +2616,6 @@
       "#4a4a44",
       "#b9a184",
       "#f4f1ea"
-    ],
-    "imageQuery": [
-      "scandinavian interior wood",
-      "nordic minimal interior"
     ],
     "dimensions": {
       "minimalism": 0.85,
@@ -2856,10 +2676,6 @@
       "#c2703a",
       "#f0d9a8"
     ],
-    "imageQuery": [
-      "maximalist interior pattern",
-      "victorian cluttered interior"
-    ],
     "dimensions": {
       "maximalism": 0.98,
       "ornament": 0.9,
@@ -2918,10 +2734,6 @@
       "#333333",
       "#8c8c8c",
       "#f5f4f2"
-    ],
-    "imageQuery": [
-      "minimalist interior white",
-      "minimal architecture concrete"
     ],
     "dimensions": {
       "minimalism": 0.98,
@@ -2982,10 +2794,6 @@
       "#7d8fd6",
       "#efe9f7"
     ],
-    "imageQuery": [
-      "empty swimming pool",
-      "empty hotel corridor"
-    ],
     "dimensions": {
       "fantasy": 0.9,
       "mystery": 0.85,
@@ -3044,10 +2852,6 @@
       "#3b1f5c",
       "#8e56c9",
       "#e9dcff"
-    ],
-    "imageQuery": [
-      "empty playground dusk",
-      "empty corridor fluorescent"
     ],
     "dimensions": {
       "chaos": 0.85,
@@ -3108,10 +2912,6 @@
       "#5c2a26",
       "#c8c2b6"
     ],
-    "imageQuery": [
-      "old television set living room",
-      "vhs cassette recorder"
-    ],
     "dimensions": {
       "retro": 0.9,
       "digital": 0.78,
@@ -3170,10 +2970,6 @@
       "#282a30",
       "#6d6a72",
       "#e6e2da"
-    ],
-    "imageQuery": [
-      "abandoned mansion interior",
-      "furniture covered sheets"
     ],
     "dimensions": {
       "melancholy": 0.92,
@@ -3234,10 +3030,6 @@
       "#a3c46b",
       "#f6f0d4"
     ],
-    "imageQuery": [
-      "forest mushrooms moss light",
-      "wildflowers morning dew"
-    ],
     "dimensions": {
       "fantasy": 0.9,
       "nature": 0.9,
@@ -3297,10 +3089,6 @@
       "#7d6b33",
       "#cfc38f"
     ],
-    "imageQuery": [
-      "mushrooms forest floor",
-      "moss stones stream"
-    ],
     "dimensions": {
       "chaos": 0.8,
       "nature": 0.85,
@@ -3359,10 +3147,6 @@
       "#3f3a2e",
       "#8f8367",
       "#efe8d8"
-    ],
-    "imageQuery": [
-      "forest path cottage japan",
-      "woodland path trees"
     ],
     "dimensions": {
       "nature": 0.85,
@@ -3424,10 +3208,6 @@
       "#8a6a3a",
       "#ddd0b0"
     ],
-    "imageQuery": [
-      "medieval monastery cloister",
-      "medieval stone hall"
-    ],
     "dimensions": {
       "history": 0.95,
       "tradition": 0.9,
@@ -3486,10 +3266,6 @@
       "#3b2438",
       "#8a6b30",
       "#e3d6b4"
-    ],
-    "imageQuery": [
-      "medieval castle tower",
-      "castle great hall"
     ],
     "dimensions": {
       "history": 0.88,
@@ -3550,10 +3326,6 @@
       "#9a7a55",
       "#ece2cf"
     ],
-    "imageQuery": [
-      "romantic landscape painting",
-      "caspar david friedrich"
-    ],
     "dimensions": {
       "melancholy": 0.85,
       "nature": 0.9,
@@ -3612,10 +3384,6 @@
       "#241a2b",
       "#5f4356",
       "#ded2cd"
-    ],
-    "imageQuery": [
-      "old cemetery gothic",
-      "overgrown graveyard"
     ],
     "dimensions": {
       "melancholy": 0.95,
@@ -3679,10 +3447,6 @@
       "#8f7a4a",
       "#e7ddc4"
     ],
-    "imageQuery": [
-      "vintage living room armchair",
-      "record player shelf vintage"
-    ],
     "dimensions": {
       "maximalism": 0.8,
       "nostalgia": 0.85,
@@ -3741,10 +3505,6 @@
       "#3c4045",
       "#8b9095",
       "#e9e8e4"
-    ],
-    "imageQuery": [
-      "ordinary suburban street houses",
-      "plain apartment block"
     ],
     "dimensions": {
       "minimalism": 0.7,
@@ -3805,10 +3565,6 @@
       "#847a68",
       "#eae4d8"
     ],
-    "imageQuery": [
-      "japanese tea bowl",
-      "japanese garden moss"
-    ],
     "dimensions": {
       "minimalism": 0.8,
       "organic": 0.85,
@@ -3867,10 +3623,6 @@
       "#3d3a24",
       "#8a6a3c",
       "#e6dcc0"
-    ],
-    "imageQuery": [
-      "arts and crafts interior",
-      "william morris wallpaper"
     ],
     "dimensions": {
       "craft": 0.95,
@@ -3931,10 +3683,6 @@
       "#f2c53d",
       "#3fb7e8"
     ],
-    "imageQuery": [
-      "children toys colourful plastic",
-      "playground colourful equipment"
-    ],
     "dimensions": {
       "whimsy": 0.98,
       "optimism": 0.9,
@@ -3993,10 +3741,6 @@
       "#4d3358",
       "#c9a0b4",
       "#f6ecd8"
-    ],
-    "imageQuery": [
-      "rococo interior palace",
-      "rococo ornament gilded"
     ],
     "dimensions": {
       "ornament": 0.98,
@@ -4057,10 +3801,6 @@
       "#4a5560",
       "#9aa3ab"
     ],
-    "imageQuery": [
-      "techwear outfit street black",
-      "technical jacket straps detail"
-    ],
     "dimensions": {
       "urban": 0.92,
       "darkness": 0.85,
@@ -4114,10 +3854,6 @@
       "#3a5a40",
       "#d98e04",
       "#e7e3d8"
-    ],
-    "imageQuery": [
-      "gorpcore outfit street",
-      "hiking fleece jacket flat lay"
     ],
     "dimensions": {
       "adventure": 0.9,
@@ -4174,10 +3910,6 @@
       "#f4f4f4",
       "#1c2b45"
     ],
-    "imageQuery": [
-      "vintage football shirt outfit",
-      "football terrace crowd retro"
-    ],
     "dimensions": {
       "community": 0.85,
       "social": 0.78,
@@ -4228,10 +3960,6 @@
       "#c5a253",
       "#f2f2f2",
       "#7a1f2b"
-    ],
-    "imageQuery": [
-      "letterman jacket varsity",
-      "american high school bleachers"
     ],
     "dimensions": {
       "social": 0.9,
@@ -4284,10 +4012,6 @@
       "#e10600",
       "#f5f5f5",
       "#f2c200"
-    ],
-    "imageQuery": [
-      "motorsport pit lane crew",
-      "race car livery sponsor detail"
     ],
     "dimensions": {
       "technology": 0.9,
@@ -4342,10 +4066,6 @@
       "#20211c",
       "#a8a290"
     ],
-    "imageQuery": [
-      "tactical vest molle gear",
-      "everyday carry knife torch flatlay"
-    ],
     "dimensions": {
       "realism": 0.9,
       "order": 0.85,
@@ -4398,10 +4118,6 @@
       "#8a5a2b",
       "#c9a25b",
       "#d9cbb0"
-    ],
-    "imageQuery": [
-      "western frontier town dusty street",
-      "leather boots hat prairie"
     ],
     "dimensions": {
       "rural": 0.92,
@@ -4457,10 +4173,6 @@
       "#f4f4f4",
       "#1c1c1c"
     ],
-    "imageQuery": [
-      "mod scooter mirrors parka",
-      "1960s tailored suit mod"
-    ],
     "dimensions": {
       "refinement": 0.85,
       "order": 0.75,
@@ -4513,10 +4225,6 @@
       "#1c1c1c",
       "#7a1010",
       "#c9c9c9"
-    ],
-    "imageQuery": [
-      "battle jacket metal patches",
-      "metal concert crowd stage"
     ],
     "dimensions": {
       "darkness": 0.9,
@@ -4572,10 +4280,6 @@
       "#a83f2a",
       "#e6e6e6"
     ],
-    "imageQuery": [
-      "skateboarder concrete plaza",
-      "worn skate shoes griptape"
-    ],
     "dimensions": {
       "urban": 0.9,
       "individualism": 0.78,
@@ -4629,10 +4333,6 @@
       "#b9a06a",
       "#d9d4c6"
     ],
-    "imageQuery": [
-      "retro computer terminal beige",
-      "1970s spacecraft control panel"
-    ],
     "dimensions": {
       "retro": 0.9,
       "nostalgia": 0.75,
@@ -4685,10 +4385,6 @@
       "#1b2a4a",
       "#8a93b5",
       "#e6e9f2"
-    ],
-    "imageQuery": [
-      "rocket launch night",
-      "nebula stars deep space"
     ],
     "dimensions": {
       "futurism": 0.88,
@@ -4744,10 +4440,6 @@
       "#5c7a5c",
       "#e8e1d0"
     ],
-    "imageQuery": [
-      "mid century modern living room",
-      "teak sideboard moulded chair"
-    ],
     "dimensions": {
       "refinement": 0.75,
       "order": 0.75,
@@ -4801,10 +4493,6 @@
       "#1d1a24",
       "#4a3d55",
       "#b9a7c4"
-    ],
-    "imageQuery": [
-      "gothic cemetery statue",
-      "victorian mourning dress"
     ],
     "dimensions": {
       "darkness": 0.95,
@@ -4870,10 +4558,6 @@
       "#6b2733",
       "#d8d2dc"
     ],
-    "imageQuery": [
-      "1980s goth subculture",
-      "post punk band live"
-    ],
     "dimensions": {
       "darkness": 0.92,
       "individualism": 0.88,
@@ -4934,10 +4618,6 @@
       "#2b1e33",
       "#5c3a52",
       "#c9b6b0"
-    ],
-    "imageQuery": [
-      "gothic abbey ruins dusk",
-      "victorian mourning jewellery"
     ],
     "dimensions": {
       "darkness": 0.85,
@@ -5000,10 +4680,6 @@
       "#6d5a86",
       "#c9a9d6",
       "#f3dbe8"
-    ],
-    "imageQuery": [
-      "pastel goth fashion",
-      "creepy cute pastel"
     ],
     "dimensions": {
       "darkness": 0.68,
@@ -5068,10 +4744,6 @@
       "#585860",
       "#cfcfd4"
     ],
-    "imageQuery": [
-      "all black minimal fashion",
-      "wide brim black hat"
-    ],
     "dimensions": {
       "darkness": 0.85,
       "minimalism": 0.82,
@@ -5134,10 +4806,6 @@
       "#1a1f3a",
       "#00d9c0",
       "#ff2ea6"
-    ],
-    "imageQuery": [
-      "cybergoth neon fashion",
-      "industrial dance club lights"
     ],
     "dimensions": {
       "darkness": 0.8,
@@ -5202,10 +4870,6 @@
       "#7b2f3d",
       "#d0cdd6"
     ],
-    "imageQuery": [
-      "2000s mall interior",
-      "nu metal band merch"
-    ],
     "dimensions": {
       "darkness": 0.75,
       "nostalgia": 0.85,
@@ -5269,10 +4933,6 @@
       "#8f7ab5",
       "#e6d9b8"
     ],
-    "imageQuery": [
-      "1990s celestial decor",
-      "wrought iron moon stars"
-    ],
     "dimensions": {
       "mystery": 0.88,
       "whimsy": 0.85,
@@ -5334,10 +4994,6 @@
       "#3d3a26",
       "#7d6b4a",
       "#ccc2a2"
-    ],
-    "imageQuery": [
-      "spanish moss oak tree",
-      "abandoned wooden farmhouse porch"
     ],
     "dimensions": {
       "darkness": 0.8,
@@ -5402,10 +5058,6 @@
       "#b5262b",
       "#e4e0d6"
     ],
-    "imageQuery": [
-      "punk leather jacket studs",
-      "diy zine collage"
-    ],
     "dimensions": {
       "chaos": 0.92,
       "individualism": 0.95,
@@ -5468,10 +5120,6 @@
       "#232431",
       "#5a3f63",
       "#d9d4dd"
-    ],
-    "imageQuery": [
-      "basement music show crowd",
-      "2000s band merch"
     ],
     "dimensions": {
       "melancholy": 0.92,
@@ -5536,10 +5184,6 @@
       "#ff2f9a",
       "#f8f45c"
     ],
-    "imageQuery": [
-      "neon hair extensions",
-      "colourful rubber bracelets"
-    ],
     "dimensions": {
       "chaos": 0.85,
       "maximalism": 0.92,
@@ -5602,10 +5246,6 @@
       "#7f6a2f",
       "#c98a3a",
       "#e9dcb8"
-    ],
-    "imageQuery": [
-      "1960s commune life",
-      "tie dye fabric texture"
     ],
     "dimensions": {
       "community": 0.95,
@@ -5671,10 +5311,6 @@
       "#a8875e",
       "#ded4c3"
     ],
-    "imageQuery": [
-      "speciality coffee shop interior",
-      "vinyl record shop"
-    ],
     "dimensions": {
       "craft": 0.88,
       "refinement": 0.75,
@@ -5737,10 +5373,6 @@
       "#241a4d",
       "#00e0a0",
       "#ffe14d"
-    ],
-    "imageQuery": [
-      "warehouse rave lights",
-      "1990s acid house crowd"
     ],
     "dimensions": {
       "chaos": 0.88,
@@ -5805,10 +5437,6 @@
       "#8d2f35",
       "#ded9cf"
     ],
-    "imageQuery": [
-      "1950s hot rod car",
-      "classic american diner night"
-    ],
     "dimensions": {
       "retro": 0.92,
       "nostalgia": 0.85,
@@ -5871,10 +5499,6 @@
       "#8e2230",
       "#d9b26a",
       "#efe6d8"
-    ],
-    "imageQuery": [
-      "rockabilly swing dance",
-      "vintage 1950s dress polka dot"
     ],
     "dimensions": {
       "retro": 0.95,
@@ -5939,10 +5563,6 @@
       "#f4a72c",
       "#31c9b0"
     ],
-    "imageQuery": [
-      "1960s psychedelic poster",
-      "liquid light show projection"
-    ],
     "dimensions": {
       "chaos": 0.9,
       "fantasy": 0.9,
@@ -6005,10 +5625,6 @@
       "#36323d",
       "#9c2f5e",
       "#efeae2"
-    ],
-    "imageQuery": [
-      "2000s party flash photography",
-      "indie band small venue"
     ],
     "dimensions": {
       "chaos": 0.85,
@@ -6076,10 +5692,6 @@
       "#d9a3b0",
       "#f6e6e8"
     ],
-    "imageQuery": [
-      "pink satin ribbon bow",
-      "vintage perfume bottle lace"
-    ],
     "dimensions": {
       "ornament": 0.92,
       "refinement": 0.85,
@@ -6142,10 +5754,6 @@
       "#8a7a7d",
       "#dcbfc0",
       "#f3ede6"
-    ],
-    "imageQuery": [
-      "ballet pointe shoes ribbon",
-      "dance studio barre mirror"
     ],
     "dimensions": {
       "refinement": 0.9,
@@ -6213,10 +5821,6 @@
       "#f2b3c4",
       "#fdf0f2"
     ],
-    "imageQuery": [
-      "pastel pink clouds sky",
-      "cute hair clips pastel"
-    ],
     "dimensions": {
       "whimsy": 0.9,
       "comfort": 0.85,
@@ -6279,10 +5883,6 @@
       "#7a5460",
       "#c99aa6",
       "#eddfe0"
-    ],
-    "imageQuery": [
-      "antique porcelain doll face",
-      "faded lace fabric close up"
     ],
     "dimensions": {
       "melancholy": 0.9,
@@ -6350,10 +5950,6 @@
       "#c3a8e0",
       "#f7eddb"
     ],
-    "imageQuery": [
-      "fairytale castle interior",
-      "tulle ballgown detail"
-    ],
     "dimensions": {
       "fantasy": 0.95,
       "ornament": 0.92,
@@ -6416,10 +6012,6 @@
       "#3f4f6b",
       "#8a7442",
       "#e3dbc8"
-    ],
-    "imageQuery": [
-      "stately home state room",
-      "oil portrait gallery hall"
     ],
     "dimensions": {
       "refinement": 0.95,
@@ -6484,10 +6076,6 @@
       "#d7cfd6",
       "#faf6ec"
     ],
-    "imageQuery": [
-      "marble angel statue",
-      "baroque cherub ceiling fresco"
-    ],
     "dimensions": {
       "fantasy": 0.88,
       "mystery": 0.82,
@@ -6551,10 +6139,6 @@
       "#c9b46f",
       "#f2ead6"
     ],
-    "imageQuery": [
-      "vintage bicycle with basket flowers",
-      "retro polka dot dress"
-    ],
     "dimensions": {
       "whimsy": 0.9,
       "comfort": 0.78,
@@ -6617,10 +6201,6 @@
       "#9ec4b8",
       "#f2c6a0",
       "#faf3e6"
-    ],
-    "imageQuery": [
-      "pastel scandinavian interior",
-      "wavy mirror pastel room"
     ],
     "dimensions": {
       "optimism": 0.85,
@@ -6687,10 +6267,6 @@
       "#cbb9a4",
       "#f6f1ea"
     ],
-    "imageQuery": [
-      "minimal gold hoop earrings",
-      "neutral linen bedding"
-    ],
     "dimensions": {
       "minimalism": 0.9,
       "order": 0.88,
@@ -6753,10 +6329,6 @@
       "#8a5b3c",
       "#c39a4e",
       "#e8dcc2"
-    ],
-    "imageQuery": [
-      "maximalist cluttered living room",
-      "shelves full of trinkets"
     ],
     "dimensions": {
       "maximalism": 0.95,
@@ -6821,10 +6393,6 @@
       "#ffd76b",
       "#fff6f0"
     ],
-    "imageQuery": [
-      "japanese kawaii character goods",
-      "pastel plush toys display"
-    ],
     "dimensions": {
       "whimsy": 0.95,
       "optimism": 0.88,
@@ -6887,10 +6455,6 @@
       "#a6a4d6",
       "#f3b8d6",
       "#fdf3df"
-    ],
-    "imageQuery": [
-      "1980s pastel toys vintage",
-      "harajuku pastel street fashion"
     ],
     "dimensions": {
       "whimsy": 0.95,
@@ -6955,10 +6519,6 @@
       "#ff5fa2",
       "#ffe94f"
     ],
-    "imageQuery": [
-      "decora harajuku fashion accessories",
-      "colourful hair clips many"
-    ],
     "dimensions": {
       "maximalism": 0.98,
       "ornament": 0.95,
@@ -7021,10 +6581,6 @@
       "#4a3b58",
       "#a3899f",
       "#efe7e2"
-    ],
-    "imageQuery": [
-      "lolita fashion dress petticoat",
-      "victorian style blouse lace"
     ],
     "dimensions": {
       "ornament": 0.95,
@@ -7089,10 +6645,6 @@
       "#e8b7c8",
       "#f6e7d0"
     ],
-    "imageQuery": [
-      "elaborate nail art long",
-      "shibuya street fashion night"
-    ],
     "dimensions": {
       "individualism": 0.92,
       "maximalism": 0.9,
@@ -7154,10 +6706,6 @@
       "#2b2036",
       "#7a2f4f",
       "#ddd6e2"
-    ],
-    "imageQuery": [
-      "japanese rock band stage costume",
-      "theatrical stage makeup dramatic"
     ],
     "dimensions": {
       "individualism": 0.95,
@@ -7222,10 +6770,6 @@
       "#c96f95",
       "#f2dfe6"
     ],
-    "imageQuery": [
-      "black pink frilled fashion",
-      "ribbon choker fashion"
-    ],
     "dimensions": {
       "melancholy": 0.92,
       "darkness": 0.78,
@@ -7288,10 +6832,6 @@
       "#6f5a86",
       "#e39ac0",
       "#f4eaf2"
-    ],
-    "imageQuery": [
-      "pastel plush toys bandage",
-      "pastel goth accessories"
     ],
     "dimensions": {
       "melancholy": 0.9,
@@ -7356,10 +6896,6 @@
       "#e0637f",
       "#f2c86b"
     ],
-    "imageQuery": [
-      "tokyo neon night street",
-      "1980s city skyline night"
-    ],
     "dimensions": {
       "retro": 0.92,
       "nostalgia": 0.9,
@@ -7422,10 +6958,6 @@
       "#6e6355",
       "#b9ab97",
       "#f1ece3"
-    ],
-    "imageQuery": [
-      "japandi interior wood",
-      "minimal japanese room tatami"
     ],
     "dimensions": {
       "minimalism": 0.92,
@@ -7490,10 +7022,6 @@
       "#a08a52",
       "#ece5d5"
     ],
-    "imageQuery": [
-      "new england sailing club",
-      "classic tailoring wool tweed"
-    ],
     "dimensions": {
       "refinement": 0.95,
       "tradition": 0.92,
@@ -7556,10 +7084,6 @@
       "#2f7d54",
       "#e0b23f",
       "#f5f0e3"
-    ],
-    "imageQuery": [
-      "ivy league campus autumn",
-      "striped polo shirt preppy"
     ],
     "dimensions": {
       "tradition": 0.88,
@@ -7624,10 +7148,6 @@
       "#8f6a3a",
       "#e6e2d8"
     ],
-    "imageQuery": [
-      "1980s office interior corporate",
-      "pinstripe suit tailoring"
-    ],
     "dimensions": {
       "refinement": 0.85,
       "order": 0.85,
@@ -7691,10 +7211,6 @@
       "#96a0ad",
       "#e7e9ec"
     ],
-    "imageQuery": [
-      "open plan office cubicles",
-      "corporate lobby interior grey"
-    ],
     "dimensions": {
       "order": 0.92,
       "minimalism": 0.75,
@@ -7757,10 +7273,6 @@
       "#2c2f3a",
       "#d63b2f",
       "#f0efe9"
-    ],
-    "imageQuery": [
-      "sneaker collection display",
-      "streetwear store interior"
     ],
     "dimensions": {
       "modernity": 0.88,
@@ -7828,10 +7340,6 @@
       "#9c7235",
       "#e8ddd0"
     ],
-    "imageQuery": [
-      "leopard print fur coat",
-      "gold chunky jewellery"
-    ],
     "dimensions": {
       "maximalism": 0.92,
       "ornament": 0.9,
@@ -7894,10 +7402,6 @@
       "#4f7a54",
       "#c9c07f",
       "#f7f5ee"
-    ],
-    "imageQuery": [
-      "grass tennis court club",
-      "vintage tennis racquet white"
     ],
     "dimensions": {
       "order": 0.9,
@@ -7962,10 +7466,6 @@
       "#8f7343",
       "#ddd2bc"
     ],
-    "imageQuery": [
-      "horse stable tack room",
-      "tweed riding jacket boots"
-    ],
     "dimensions": {
       "tradition": 0.9,
       "order": 0.85,
@@ -8028,10 +7528,6 @@
       "#4f5240",
       "#a8a878",
       "#e8e6d2"
-    ],
-    "imageQuery": [
-      "empty shopping mall interior",
-      "empty corridor fluorescent light"
     ],
     "dimensions": {
       "melancholy": 0.78,
@@ -8096,10 +7592,6 @@
       "#c99aa8",
       "#f0e2e4"
     ],
-    "imageQuery": [
-      "vintage childrens wallpaper pattern",
-      "old stuffed toy faded"
-    ],
     "dimensions": {
       "melancholy": 0.95,
       "darkness": 0.78,
@@ -8162,10 +7654,6 @@
       "#26292e",
       "#4c5460",
       "#b8bcc2"
-    ],
-    "imageQuery": [
-      "grainy black white urban night",
-      "empty concrete stairwell"
     ],
     "dimensions": {
       "melancholy": 0.92,
@@ -8230,10 +7718,6 @@
       "#59636e",
       "#aeb6bd"
     ],
-    "imageQuery": [
-      "post industrial city night street",
-      "foggy urban street lamp"
-    ],
     "dimensions": {
       "melancholy": 0.95,
       "solitude": 0.92,
@@ -8295,10 +7779,6 @@
       "#00d7d7",
       "#ff3d9a",
       "#ffe83d"
-    ],
-    "imageQuery": [
-      "neon gradient graphic 2000s",
-      "pixel art hearts colourful"
     ],
     "dimensions": {
       "maximalism": 0.95,
@@ -8366,10 +7846,6 @@
       "#ff2b6d",
       "#3dffd2"
     ],
-    "imageQuery": [
-      "glitch art distortion colourful",
-      "datamosh digital artifact"
-    ],
     "dimensions": {
       "digital": 0.98,
       "chaos": 0.95,
@@ -8432,10 +7908,6 @@
       "#0f8ba8",
       "#3fe0c8",
       "#e8f6f2"
-    ],
-    "imageQuery": [
-      "1990s 3d render ocean",
-      "aqua gradient retro graphic"
     ],
     "dimensions": {
       "digital": 0.92,
@@ -8500,10 +7972,6 @@
       "#ff2e88",
       "#ffb03a"
     ],
-    "imageQuery": [
-      "neon grid sunset retro",
-      "1980s sports car night neon"
-    ],
     "dimensions": {
       "retro": 0.95,
       "nostalgia": 0.92,
@@ -8566,10 +8034,6 @@
       "#4d5560",
       "#9fa9a3",
       "#ded6c4"
-    ],
-    "imageQuery": [
-      "1990s shopping mall fountain",
-      "mall escalator interior retro"
     ],
     "dimensions": {
       "melancholy": 0.9,
@@ -8634,10 +8098,6 @@
       "#38d6f0",
       "#f2f7fb"
     ],
-    "imageQuery": [
-      "2000s software box art",
-      "abstract vector swirl gradient"
-    ],
     "dimensions": {
       "digital": 0.95,
       "technology": 0.85,
@@ -8700,10 +8160,6 @@
       "#54301b",
       "#b08532",
       "#efe3cb"
-    ],
-    "imageQuery": [
-      "baroque church interior gilded",
-      "baroque ceiling fresco"
     ],
     "dimensions": {
       "ornament": 0.98,
@@ -8768,10 +8224,6 @@
       "#7d5a3a",
       "#d6c6a8"
     ],
-    "imageQuery": [
-      "victorian parlour interior",
-      "william morris wallpaper pattern"
-    ],
     "dimensions": {
       "ornament": 0.95,
       "maximalism": 0.9,
@@ -8834,10 +8286,6 @@
       "#6d7f8c",
       "#c2a86a",
       "#f2ece0"
-    ],
-    "imageQuery": [
-      "regency era drawing room",
-      "neoclassical english country house"
     ],
     "dimensions": {
       "refinement": 0.95,
@@ -8902,10 +8350,6 @@
       "#b0ad9a",
       "#f3f0e6"
     ],
-    "imageQuery": [
-      "neoclassical building columns",
-      "plaster cast sculpture gallery"
-    ],
     "dimensions": {
       "order": 0.95,
       "refinement": 0.92,
@@ -8968,10 +8412,6 @@
       "#1d4ea8",
       "#d92b1f",
       "#f0d43f"
-    ],
-    "imageQuery": [
-      "bauhaus building dessau",
-      "bauhaus geometric design poster"
     ],
     "dimensions": {
       "order": 0.95,
@@ -9036,10 +8476,6 @@
       "#d32f2f",
       "#fafafa"
     ],
-    "imageQuery": [
-      "de stijl mondrian composition",
-      "rietveld schroder house"
-    ],
     "dimensions": {
       "minimalism": 0.95,
       "order": 0.95,
@@ -9102,10 +8538,6 @@
       "#6d8f8c",
       "#d6b45f",
       "#f6efe0"
-    ],
-    "imageQuery": [
-      "impressionist garden painting",
-      "dappled light on water"
     ],
     "dimensions": {
       "organic": 0.9,
@@ -9170,10 +8602,6 @@
       "#c4854a",
       "#ecdfc8"
     ],
-    "imageQuery": [
-      "surrealist painting desert",
-      "strange juxtaposition art object"
-    ],
     "dimensions": {
       "fantasy": 0.98,
       "mystery": 0.92,
@@ -9236,10 +8664,6 @@
       "#e02b2b",
       "#f2c50f",
       "#2f7fd6"
-    ],
-    "imageQuery": [
-      "pop art screenprint bright",
-      "comic book halftone dots"
     ],
     "dimensions": {
       "modernity": 0.85,
@@ -9304,10 +8728,6 @@
       "#2bb5c9",
       "#f5d33a"
     ],
-    "imageQuery": [
-      "memphis design furniture 1980s",
-      "terrazzo pattern colourful"
-    ],
     "dimensions": {
       "maximalism": 0.95,
       "chaos": 0.82,
@@ -9370,10 +8790,6 @@
       "#43606e",
       "#9aa8ae",
       "#ecdfc6"
-    ],
-    "imageQuery": [
-      "streamline moderne building curved",
-      "art deco ocean liner interior"
     ],
     "dimensions": {
       "order": 0.88,
@@ -9438,10 +8854,6 @@
       "#7d6a3e",
       "#d8ccae"
     ],
-    "imageQuery": [
-      "dried herbs hanging kitchen",
-      "old book candle still life"
-    ],
     "dimensions": {
       "mystery": 0.92,
       "craft": 0.85,
@@ -9504,10 +8916,6 @@
       "#2e2a2e",
       "#5f5354",
       "#c3b6a8"
-    ],
-    "imageQuery": [
-      "layered black linen draping",
-      "silver amulet folk jewellery"
     ],
     "dimensions": {
       "darkness": 0.88,
@@ -9572,10 +8980,6 @@
       "#8a7d63",
       "#e3dccb"
     ],
-    "imageQuery": [
-      "natural history specimen case",
-      "animal skull collection shelf"
-    ],
     "dimensions": {
       "realism": 0.85,
       "intellect": 0.85,
@@ -9638,10 +9042,6 @@
       "#242e2a",
       "#4f4436",
       "#b8a887"
-    ],
-    "imageQuery": [
-      "dark forest fantasy landscape",
-      "medieval ruined castle fog"
     ],
     "dimensions": {
       "fantasy": 0.98,
@@ -9706,10 +9106,6 @@
       "#ab9459",
       "#e9e0c8"
     ],
-    "imageQuery": [
-      "sourdough bread baking home",
-      "hiking trail forest path"
-    ],
     "dimensions": {
       "nature": 0.92,
       "organic": 0.92,
@@ -9772,10 +9168,6 @@
       "#3b1f6b",
       "#0fa89a",
       "#e0a83c"
-    ],
-    "imageQuery": [
-      "afrofuturism art cosmic",
-      "west african textile pattern"
     ],
     "dimensions": {
       "futurism": 0.92,
@@ -9840,10 +9232,6 @@
       "#1f8f7a",
       "#e8c24a"
     ],
-    "imageQuery": [
-      "afropunk festival fashion",
-      "sculptural natural hairstyle"
-    ],
     "dimensions": {
       "individualism": 0.95,
       "chaos": 0.8,
@@ -9906,10 +9294,6 @@
       "#123a4a",
       "#12b48c",
       "#e0433f"
-    ],
-    "imageQuery": [
-      "chinese megacity neon night",
-      "futuristic asian city skyline"
     ],
     "dimensions": {
       "futurism": 0.95,
@@ -9974,10 +9358,6 @@
       "#1f6b5c",
       "#d9b45a"
     ],
-    "imageQuery": [
-      "chinese traditional pattern modern design",
-      "hanfu inspired modern fashion"
-    ],
     "dimensions": {
       "tradition": 0.85,
       "history": 0.85,
@@ -10040,10 +9420,6 @@
       "#2f4f45",
       "#7d8f6e",
       "#e6e0cd"
-    ],
-    "imageQuery": [
-      "bamboo forest mist",
-      "chinese mountain landscape fog"
     ],
     "dimensions": {
       "fantasy": 0.9,
@@ -10108,10 +9484,6 @@
       "#c2a26b",
       "#ecebe4"
     ],
-    "imageQuery": [
-      "gulf city skyline desert",
-      "modern glass tower desert"
-    ],
     "dimensions": {
       "futurism": 0.9,
       "modernity": 0.92,
@@ -10174,10 +9546,6 @@
       "#2e4257",
       "#8a7b5c",
       "#d5d8d0"
-    ],
-    "imageQuery": [
-      "soviet apartment blocks winter",
-      "soviet space programme poster"
     ],
     "dimensions": {
       "melancholy": 0.92,
@@ -10242,10 +9610,6 @@
       "#a8793a",
       "#ded3b8"
     ],
-    "imageQuery": [
-      "east german design vintage packaging",
-      "trabant car vintage"
-    ],
     "dimensions": {
       "nostalgia": 0.95,
       "retro": 0.9,
@@ -10308,10 +9672,6 @@
       "#0f8f6c",
       "#e8a01f",
       "#e0453f"
-    ],
-    "imageQuery": [
-      "brazilian tropical plants bright",
-      "1960s brazilian album art"
     ],
     "dimensions": {
       "maximalism": 0.92,
@@ -10376,10 +9736,6 @@
       "#f2c230",
       "#2f6fd0"
     ],
-    "imageQuery": [
-      "rio beach copacabana",
-      "brazil football shirt yellow"
-    ],
     "dimensions": {
       "social": 0.9,
       "community": 0.88,
@@ -10442,10 +9798,6 @@
       "#5c4f41",
       "#a8916f",
       "#f0e8da"
-    ],
-    "imageQuery": [
-      "candlelit cosy interior winter",
-      "wool blanket knitted texture"
     ],
     "dimensions": {
       "comfort": 0.98,
@@ -10513,10 +9865,6 @@
       "#bcae91",
       "#f6f3ec"
     ],
-    "imageQuery": [
-      "coastal white kitchen interior",
-      "hydrangea garden by sea"
-    ],
     "dimensions": {
       "comfort": 0.9,
       "refinement": 0.8,
@@ -10579,10 +9927,6 @@
       "#6d4a52",
       "#a8894a",
       "#f2e6d8"
-    ],
-    "imageQuery": [
-      "chintz floral interior traditional",
-      "blue white porcelain display"
     ],
     "dimensions": {
       "ornament": 0.92,
@@ -10647,10 +9991,6 @@
       "#8f7350",
       "#e6d9c2"
     ],
-    "imageQuery": [
-      "old cafe interior wood",
-      "espresso cup on wooden table"
-    ],
     "dimensions": {
       "intellect": 0.85,
       "comfort": 0.78,
@@ -10713,10 +10053,6 @@
       "#3f4c43",
       "#8a8560",
       "#ddd9c6"
-    ],
-    "imageQuery": [
-      "small american town empty street",
-      "basement house show band"
     ],
     "dimensions": {
       "melancholy": 0.92,
@@ -10781,10 +10117,6 @@
       "#8a2a35",
       "#ddd0bb"
     ],
-    "imageQuery": [
-      "cabaret stage red curtain",
-      "vintage theatre dressing room mirror"
-    ],
     "dimensions": {
       "darkness": 0.85,
       "ornament": 0.85,
@@ -10847,10 +10179,6 @@
       "#1c2531",
       "#4a4330",
       "#d8b269"
-    ],
-    "imageQuery": [
-      "empty street at night streetlight",
-      "empty school building night"
     ],
     "dimensions": {
       "solitude": 0.95,
@@ -10919,10 +10247,6 @@
       "#c2185b",
       "#22d3ee"
     ],
-    "imageQuery": [
-      "neon sign rain night street",
-      "city street night neon reflection"
-    ],
     "dimensions": {
       "darkness": 0.92,
       "urban": 0.95,
@@ -10989,10 +10313,6 @@
       "#3a3330",
       "#7d5b3c",
       "#b9b4ab"
-    ],
-    "imageQuery": [
-      "abandoned factory interior",
-      "rusted industrial machinery decay"
     ],
     "dimensions": {
       "industrial": 0.95,
@@ -11061,10 +10381,6 @@
       "#6f8256",
       "#cfccb4"
     ],
-    "imageQuery": [
-      "overgrown abandoned building plants",
-      "nature reclaiming city ruins"
-    ],
     "dimensions": {
       "nature": 0.9,
       "organic": 0.88,
@@ -11132,10 +10448,6 @@
       "#4a3c2e",
       "#9c8360",
       "#e4d5b8"
-    ],
-    "imageQuery": [
-      "faded vintage photograph summer",
-      "old home video still grain"
     ],
     "dimensions": {
       "nostalgia": 0.95,
@@ -11206,10 +10518,6 @@
       "#4f7a24",
       "#d3d7d2"
     ],
-    "imageQuery": [
-      "2000s bedroom crt television games",
-      "retro game console setup"
-    ],
     "dimensions": {
       "nostalgia": 0.9,
       "retro": 0.88,
@@ -11274,10 +10582,6 @@
       "#2f5ba8",
       "#c8342f",
       "#f2e7cf"
-    ],
-    "imageQuery": [
-      "american high school gymnasium",
-      "school lockers hallway"
     ],
     "dimensions": {
       "social": 0.92,
@@ -11345,10 +10649,6 @@
       "#7ed321",
       "#f7e94f"
     ],
-    "imageQuery": [
-      "colourful zebra print pattern",
-      "2000s mall accessory shop"
-    ],
     "dimensions": {
       "whimsy": 0.92,
       "maximalism": 0.9,
@@ -11411,10 +10711,6 @@
       "#8c1f2a",
       "#d8c07a",
       "#e9e4d8"
-    ],
-    "imageQuery": [
-      "american diner interior night",
-      "retro diner neon sign"
     ],
     "dimensions": {
       "retro": 0.92,

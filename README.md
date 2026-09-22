@@ -365,15 +365,17 @@ assets/js/
   app.js          screens and flow
 data/
   questions.json  360 statements with dimension weights
-  aesthetics.json 77 aesthetics: profile, palette, search terms, "world"
+  aesthetics.json 176 aesthetics: profile, palette, "world"
   scoring.json    scale, groups, dimensions, preference categories, matching parameters
   narrative.json  phrase banks
   playlists.json  hand-picked YouTube videos per aesthetic, plus the search fallback
+  images.json     curated Wikimedia Commons photos per aesthetic, plus the search fallback
   bundle.js       GENERATED — fallback for file://
 tools/
   build-bundle.js
   validate.js
   serve.js
+  image-picker.html  dev tool for curating data/images.json
 ```
 
 The UI code knows nothing about which aesthetics exist. New statements and aesthetics
@@ -390,7 +392,6 @@ go into `/data` without touching any JavaScript.
   "description": "Two sentences on what this is.",
   "keywords": ["...", "..."],
   "palette": ["#0d1610", "#22392a", "#6d8459", "#cfc3a3"],
-  "imageQuery": ["english search term", "second search term"],
   "dimensions": { "nature": 0.95, "solitude": 0.9, "urban": 0.08 },
   "related": ["forestpunk"],
   "world": {
@@ -399,6 +400,9 @@ go into `/data` without touching any JavaScript.
   }
 }
 ```
+
+Also add a `"my-aesthetic": ["english search term", "second search term"]` entry under `search`
+in `data/images.json` (see [Images](#images)), or it will never show a photo.
 
 Omitted dimensions are treated as irrelevant, not as neutral — they do not drag the
 score down.
@@ -479,9 +483,33 @@ palette and dimensions — geometric bands for the ordered ones, organic shapes 
 rest, with grain and vignette. The same aesthetic always produces the same plate.
 
 **Photographs** come from Wikimedia Commons, which is freely licensed and serves CORS
-headers. Each aesthetic carries two English search terms; results are filtered against
-maps, scanned book plates and the like, and every photo is shown with its creator and
-licence. Aesthetics Wiki images are not used — they are not freely licensed.
+headers, in `data/images.json` — laid out the same way `data/playlists.json` groups
+videos, so aesthetics and their photos live in one dedicated file, separate from the
+scoring-focused `data/aesthetics.json`:
+
+* **`curated`** — exact Commons files a person has checked, each tagged with the
+  aesthetics it fits (`{ thumb, page, title, credit, license, aesthetics: [...] }`).
+  When an aesthetic has any curated photos, those are used as-is — no live search, so
+  no chance of a keyword technically matching but showing the wrong thing (a search for
+  `"Xbox 360"` surfacing six product photos of the controller, say, instead of anything
+  resembling a bedroom).
+* **`search`** — a couple of fallback English keywords per aesthetic, run live against
+  Commons for whichever aesthetics nobody has curated a photo for yet. Results are
+  filtered against maps, scanned book plates and the like, and every photo is shown with
+  its creator and licence.
+
+Aesthetics Wiki images are not used anywhere — they are not freely licensed.
+
+Commons' search is closer to an AND of every word than a fuzzy match, so a long,
+descriptive search phrase (`"2000s bedroom crt television games"`) routinely returns
+nothing, while two or three concrete, photographable nouns (`"CRT television"`) do well
+— though "well" can still mean technically-on-topic but tonally wrong, which is what
+curating is for. **`tools/image-picker.html`** (open it through `node tools/serve.js`,
+not straight from disk) lets you pick an aesthetic, try out search phrases, and see the
+exact Commons results and filtering the real result page would use — same
+`AQ.images.searchTerm()`. Click **Pin this photo** on any result that actually fits to
+add it to `curated`, then **Download images.json** to save the whole file over
+`data/images.json`.
 
 The photo strip is progressive enhancement. If the request is slow, blocked or empty,
 the section is simply never inserted. It is labelled honestly on the page: keyword

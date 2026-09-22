@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Image picker - dev tool</title>
+<style>
+  :root { color-scheme: light; }
+  body {
+    margin: 0; padding: 1.5rem; max-width: 64rem; margin-inline: auto;
+    font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #e9edf3; color: #191c22;
+  }
+  h1 { font-size: 1.3rem; margin: 0 0 0.3rem; }
+  h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: #a34f2a; margin: 1.4rem 0 0.6rem; }
+  p.lede { color: #575147; margin: 0 0 1.4rem; max-width: 46rem; }
+  select, input[type=text], button, textarea {
+    font: inherit; padding: 0.5rem 0.7rem; border-radius: 8px;
+    border: 1px solid rgba(25,28,34,0.25); background: #fafbfe; color: inherit;
+  }
+  select { width: 100%; margin-bottom: 1rem; }
+  .topbar { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
+  .ref {
+    background: #fafbfe; border: 1px solid rgba(25,28,34,0.12); border-radius: 10px;
+    padding: 0.9rem 1.1rem; margin-bottom: 1.2rem; font-size: 0.9rem;
+  }
+  .ref dl { display: grid; grid-template-columns: 6rem 1fr; gap: 0.3rem 0.8rem; margin: 0.5rem 0 0; }
+  .ref dt { color: #5f6673; }
+  .ref dd { margin: 0; }
+  .terms { display: grid; gap: 0.7rem; margin-bottom: 1rem; }
+  .term-row { display: flex; gap: 0.5rem; align-items: center; }
+  .term-row input { flex: 1; }
+  .term-row button { flex: none; }
+  .actions { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
+  button.primary { background: #a34f2a; color: #fff; border-color: transparent; cursor: pointer; }
+  button.small { padding: 0.3rem 0.55rem; font-size: 0.72rem; }
+  button { cursor: pointer; }
+  .results { display: grid; gap: 1.2rem; }
+  .term-block h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: #a34f2a; margin: 0 0 0.5rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr)); gap: 0.7rem; }
+  figure {
+    margin: 0; background: #fafbfe; border: 1px solid rgba(25,28,34,0.12); border-radius: 8px;
+    overflow: hidden; display: flex; flex-direction: column;
+  }
+  figure img { display: block; width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+  figcaption { padding: 0.4rem 0.5rem; font-size: 0.68rem; color: #5f6673; flex: 1; }
+  figure .pin-row { padding: 0 0.5rem 0.5rem; }
+  figure .pin-row button { width: 100%; }
+  figure.is-pinned { outline: 2px solid #4f7a24; }
+  .status { color: #5f6673; font-size: 0.85rem; }
+  .empty { color: #5f6673; font-style: italic; font-size: 0.85rem; }
+  .curated-list { display: grid; gap: 0.5rem; margin-bottom: 1rem; }
+  .curated-row {
+    display: flex; align-items: center; gap: 0.6rem; background: #fafbfe;
+    border: 1px solid rgba(25,28,34,0.12); border-radius: 8px; padding: 0.4rem 0.6rem;
+  }
+  .curated-row img { width: 3.2rem; height: 2.4rem; object-fit: cover; border-radius: 4px; flex: none; }
+  .curated-row .meta { flex: 1; font-size: 0.78rem; color: #5f6673; }
+  .curated-row .meta a { color: inherit; }
+  output {
+    display: block; white-space: pre-wrap; background: #fafbfe; border: 1px solid rgba(25,28,34,0.12);
+    border-radius: 8px; padding: 0.7rem 0.9rem; font-family: ui-monospace, monospace; font-size: 0.78rem;
+    max-height: 12rem; overflow: auto;
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div>
+    <h1>Image picker</h1>
+    <p class="lede">
+      Local dev tool, not part of the site. Pick an aesthetic, try out search phrases, and see the
+      exact Wikimedia Commons photos the real result page would use - same
+      <code>AQ.images.searchTerm()</code>, same rejection rules. Pin the ones that actually fit; a
+      curated photo always wins over a live-search guess. Everything you pin lives in one file,
+      <code>data/images.json</code>, grouped the same way <code>data/playlists.json</code> groups videos.
+    </p>
+  </div>
+  <button id="export" type="button" class="primary">Download images.json</button>
+</div>
+
+<select id="picker"></select>
+
+<div class="ref" id="ref"></div>
+
+<h3>Curated photos for this aesthetic</h3>
+<div class="curated-list" id="curated-list"></div>
+
+<h3>Fallback search terms (used only when nothing is curated)</h3>
+<div class="terms" id="terms"></div>
+<div class="actions">
+  <button id="add-term" type="button">+ Add a phrase</button>
+  <button id="preview" type="button" class="primary">Preview on Commons</button>
+</div>
+
+<div id="results" class="results"></div>
+
+<h3>Current data/images.json</h3>
+<output id="json">-</output>
+
+<script src="../assets/js/images.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  var picker = document.getElementById('picker');
+  var ref = document.getElementById('ref');
+  var curatedListEl = document.getElementById('curated-list');
+  var termsEl = document.getElementById('terms');
+  var resultsEl = document.getElementById('results');
+  var jsonEl = document.getElementById('json');
+  var aesthetics = [];
+  var images = { curated: [], search: {} };
+
+  function el(tag, attrs, children) {
+    var node = document.createElement(tag);
+    Object.keys(attrs || {}).forEach(function (k) {
+      if (k === 'text') node.textContent = attrs[k];
+      else node.setAttribute(k, attrs[k]);
+    });
+    (children || []).forEach(function (c) { node.appendChild(c); });
+    return node;
+  }
+
+  function current() {
+    return aesthetics.find(function (a) { return a.key === picker.value; });
+  }
+
+  function renderRef(a) {
+    ref.innerHTML = '';
+    var dl = el('dl');
+    [
+      ['Tagline', a.tagline],
+      ['Keywords', (a.keywords || []).join(', ')],
+      ['Setting', a.world && a.world.setting],
+      ['Interior', a.world && a.world.interior],
+      ['Clothes', a.world && a.world.clothes],
+      ['Colours', a.world && a.world.colours]
+    ].forEach(function (pair) {
+      if (!pair[1]) return;
+      dl.appendChild(el('dt', { text: pair[0] }));
+      dl.appendChild(el('dd', { text: pair[1] }));
+    });
+    ref.appendChild(el('strong', { text: a.name + ' (' + a.key + ')' }));
+    ref.appendChild(dl);
+  }
+
+  function renderCurated(key) {
+    curatedListEl.innerHTML = '';
+    var mine = images.curated.filter(function (p) { return p.aesthetics.indexOf(key) >= 0; });
+    if (!mine.length) {
+      curatedListEl.appendChild(el('p', { class: 'empty', text: 'Nothing pinned yet - relying on the fallback search below.' }));
+      return;
+    }
+    mine.forEach(function (p) {
+      var img = el('img', { src: p.thumb, alt: p.title || '' });
+      var meta = el('div', { class: 'meta' }, [
+        el('a', { href: p.page, target: '_blank', rel: 'noopener noreferrer', text: p.title || p.page }),
+        document.createTextNode(' · ' + p.credit + ' · ' + p.license)
+      ]);
+      var unpin = el('button', { type: 'button', class: 'small', text: 'Unpin' });
+      unpin.addEventListener('click', function () {
+        p.aesthetics = p.aesthetics.filter(function (k) { return k !== key; });
+        if (!p.aesthetics.length) images.curated = images.curated.filter(function (x) { return x !== p; });
+        refreshCurrent();
+      });
+      curatedListEl.appendChild(el('div', { class: 'curated-row' }, [img, meta, unpin]));
+    });
+  }
+
+  function renderTerms(key) {
+    termsEl.innerHTML = '';
+    var terms = (images.search[key] && images.search[key].length) ? images.search[key].slice() : ['', ''];
+    terms.forEach(addTermRow);
+  }
+
+  function addTermRow(value) {
+    var input = el('input', { type: 'text', value: value || '', placeholder: 'two or three concrete, photographable words' });
+    var remove = el('button', { type: 'button', text: '✕' });
+    remove.addEventListener('click', function () { row.remove(); updateSearchTerms(); });
+    input.addEventListener('input', updateSearchTerms);
+    var row = el('div', { class: 'term-row' }, [input, remove]);
+    termsEl.appendChild(row);
+    return row;
+  }
+
+  function termInputs() {
+    return Array.prototype.slice.call(termsEl.querySelectorAll('input'));
+  }
+
+  function updateSearchTerms() {
+    var key = picker.value;
+    var terms = termInputs().map(function (i) { return i.value.trim(); }).filter(Boolean);
+    images.search[key] = terms;
+    updateJson();
+  }
+
+  function updateJson() {
+    jsonEl.textContent = JSON.stringify(images, null, 2);
+  }
+
+  function refreshCurrent() {
+    var a = current();
+    renderCurated(a.key);
+    updateJson();
+  }
+
+  function select(key) {
+    picker.value = key;
+    var a = current();
+    renderRef(a);
+    renderCurated(a.key);
+    renderTerms(a.key);
+    resultsEl.innerHTML = '';
+    updateJson();
+  }
+
+  function pin(hit, key) {
+    var existing = images.curated.filter(function (p) { return p.page === hit.page; })[0];
+    if (existing) {
+      if (existing.aesthetics.indexOf(key) < 0) existing.aesthetics.push(key);
+    } else {
+      images.curated.push({
+        thumb: hit.thumb, page: hit.page, title: hit.title,
+        credit: hit.credit, license: hit.license, aesthetics: [key]
+      });
+    }
+    refreshCurrent();
+  }
+
+  function isPinned(hit, key) {
+    return images.curated.some(function (p) { return p.page === hit.page && p.aesthetics.indexOf(key) >= 0; });
+  }
+
+  function renderResultBlock(term, key) {
+    var block = el('div', { class: 'term-block' }, [
+      el('h4', { text: term }),
+      el('p', { class: 'status', text: 'Searching Commons...' })
+    ]);
+    resultsEl.appendChild(block);
+
+    AQ.images.searchTerm(term).then(function (hits) {
+      block.innerHTML = '';
+      block.appendChild(el('h4', { text: term + ' (' + hits.length + ' usable)' }));
+      if (!hits.length) {
+        block.appendChild(el('p', { class: 'empty', text: 'Nothing usable came back for this phrase - try fewer or more concrete words.' }));
+        return;
+      }
+      var grid = el('div', { class: 'grid' });
+      hits.forEach(function (h) {
+        var img = el('img', { src: h.thumb, alt: h.title, loading: 'lazy' });
+        var cap = el('figcaption', { text: h.credit + ' · ' + h.license });
+        var pinned = isPinned(h, key);
+        var pinBtn = el('button', { type: 'button', class: 'small', text: pinned ? 'Pinned ✓' : 'Pin this photo' });
+        pinBtn.addEventListener('click', function () { pin(h, key); pinBtn.textContent = 'Pinned ✓'; fig.classList.add('is-pinned'); });
+        var fig = el('figure', { class: pinned ? 'is-pinned' : '' }, [img, cap, el('div', { class: 'pin-row' }, [pinBtn])]);
+        grid.appendChild(fig);
+      });
+      block.appendChild(grid);
+    }).catch(function () {
+      block.innerHTML = '';
+      block.appendChild(el('h4', { text: term }));
+      block.appendChild(el('p', { class: 'empty', text: 'Request failed - try again.' }));
+    });
+  }
+
+  document.getElementById('add-term').addEventListener('click', function () { addTermRow(''); updateSearchTerms(); });
+  document.getElementById('preview').addEventListener('click', function () {
+    var key = picker.value;
+    resultsEl.innerHTML = '';
+    termInputs().map(function (i) { return i.value.trim(); }).filter(Boolean).forEach(function (term) {
+      renderResultBlock(term, key);
+    });
+  });
+
+  document.getElementById('export').addEventListener('click', function () {
+    var blob = new Blob([JSON.stringify(images, null, 2) + '\n'], { type: 'application/json' });
+    var a = el('a', { href: URL.createObjectURL(blob), download: 'images.json' });
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+  });
+
+  Promise.all([
+    fetch('../data/aesthetics.json', { cache: 'no-cache' }).then(function (r) { return r.json(); }),
+    fetch('../data/images.json', { cache: 'no-cache' }).then(function (r) { return r.json(); })
+  ]).then(function (results) {
+    var aesthData = results[0];
+    images = results[1] || { curated: [], search: {} };
+    if (!images.curated) images.curated = [];
+    if (!images.search) images.search = {};
+
+    aesthetics = (aesthData.aesthetics || aesthData).slice().sort(function (a, b) { return a.name.localeCompare(b.name); });
+    aesthetics.forEach(function (a) {
+      picker.appendChild(el('option', { value: a.key, text: a.name + ' (' + a.key + ')' }));
+    });
+    picker.addEventListener('change', function () { select(picker.value); });
+    select(aesthetics[0].key);
+  }).catch(function (err) {
+    ref.textContent = 'Could not load data files - run this through node tools/serve.js, not straight from disk. (' + err.message + ')';
+  });
+})();
+</script>
+</body>
+</html>

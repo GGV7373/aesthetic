@@ -16,6 +16,7 @@ const aesthetics = read('data/aesthetics.json');
 const config = read('data/scoring.json');
 const narrative = read('data/narrative.json');
 const playlists = read('data/playlists.json');
+const images = read('data/images.json');
 
 const errors = [];
 const warnings = [];
@@ -129,7 +130,6 @@ aesthetics.forEach((a) => {
     if (!/^#[0-9a-f]{6}$/i.test(c)) errors.push(`${a.key}: invalid colour "${c}".`);
   });
   if (!Array.isArray(a.keywords) || a.keywords.length < 3) warnings.push(`${a.key}: few keywords.`);
-  if (!Array.isArray(a.imageQuery) || !a.imageQuery.length) errors.push(`${a.key}: no imageQuery terms.`);
 
   const dims = Object.keys(a.dimensions || {});
   if (dims.length < 10) warnings.push(`${a.key}: only ${dims.length} dimensions defined.`);
@@ -174,6 +174,30 @@ if (!playlists.search || !playlists.search.base || !playlists.search.suffix) {
   if (!playlists.borrow || typeof playlists.borrow[f] !== 'number' || playlists.borrow[f] < 0) {
     errors.push(`playlists: borrow.${f} must be a number, 0 or more.`);
   }
+});
+
+/* ---------- images ---------- */
+
+const seenPhotos = new Set();
+(images.curated || []).forEach((p) => {
+  const label = p.page || p.title || '?';
+  if (!p.thumb || !p.page) errors.push(`images: a curated entry (${label}) needs thumb and page urls.`);
+  if (seenPhotos.has(p.page)) errors.push(`images: "${label}" is listed more than once.`);
+  seenPhotos.add(p.page);
+  if (!p.credit || !p.license) errors.push(`images: ${label} needs a credit and a license.`);
+  if (!Array.isArray(p.aesthetics) || !p.aesthetics.length) errors.push(`images: ${label} is attached to no aesthetic.`);
+  (p.aesthetics || []).forEach((k) => {
+    if (!keys.has(k)) errors.push(`images: ${label} points at unknown aesthetic "${k}".`);
+  });
+});
+
+const curatedKeys = new Set();
+(images.curated || []).forEach((p) => (p.aesthetics || []).forEach((k) => curatedKeys.add(k)));
+
+keys.forEach((k) => {
+  if (curatedKeys.has(k)) return;
+  const terms = (images.search || {})[k];
+  if (!Array.isArray(terms) || !terms.length) warnings.push(`images: "${k}" has no curated photo and no search terms - it will never show one.`);
 });
 
 /* ---------- gender-neutral by default ---------- */
