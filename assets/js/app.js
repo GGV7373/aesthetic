@@ -1119,8 +1119,8 @@
     var wikiBlock = wikiSection(primary);
 
     var view = el('section', { class: 'screen screen--result' }, [
-      welcome, hero, wikiBlock, whyBlock, sideBySide, comboBlock,
-      worldBlock, musicSection(primary), profileSection(result.profile),
+      welcome, hero, musicSection(primary), wikiBlock, whyBlock, sideBySide, comboBlock,
+      worldBlock, profileSection(result.profile),
       rankingSection(result), footer
     ]);
 
