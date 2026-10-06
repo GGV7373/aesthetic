@@ -9,9 +9,11 @@
      chance of a keyword returning something technically matching but wrong
      (a "Xbox 360" search surfacing six product photos of the controller,
      say, instead of anything resembling a bedroom).
-   - `search`: a couple of fallback English keywords per aesthetic, run live
-     against Wikimedia Commons (freely licensed, serves CORS) for whichever
-     aesthetics nobody has curated yet.
+   - `search`: an override of the search wording for one aesthetic, for when
+     its own keywords turn out to search badly. Anything not listed falls back
+     to the aesthetic's `keywords` in aesthetics.json - already the two or
+     three concrete nouns Commons search wants - run live against Wikimedia
+     Commons (freely licensed, serves CORS).
 
    This is decoration, not infrastructure: the generated mood plates are always
    drawn first, and if the request is slow, blocked or empty the page simply
@@ -23,6 +25,13 @@
   var ENDPOINT = 'https://commons.wikimedia.org/w/api.php';
   var TIMEOUT = 8000;
   var WANTED = 6;
+  /* Taking the whole strip from the first keyword that returns anything lets a
+     single ambiguous word own the result: "chrome" for Y2K fills all six slots
+     with screenshots of the browser. Capping each keyword at two spreads the
+     strip over three or more of the aesthetic's words, so one bad word costs
+     two photos instead of all of them - and six near-identical shots of the
+     same reading room turn into six different things. */
+  var PER_TERM = 2;
   var CACHE_PREFIX = 'aq.img.v2.';
 
   /* Commons search happily returns maps, coats of arms and scanned book plates.
@@ -126,7 +135,8 @@
     var curated = curatedByAesthetic(data)[aesthetic.key];
     if (curated && curated.length) return Promise.resolve(curated.slice(0, WANTED));
 
-    var terms = (data.images && data.images.search && data.images.search[aesthetic.key]) || [];
+    var override = data.images && data.images.search && data.images.search[aesthetic.key];
+    var terms = (override && override.length ? override : aesthetic.keywords) || [];
     if (!terms.length) return Promise.resolve([]);
 
     var skipCache = opts && opts.skipCache;
@@ -145,10 +155,12 @@
       return search(terms[i])
         .catch(function () { return []; })
         .then(function (hits) {
+          var taken = 0;
           hits.forEach(function (hit) {
-            if (found.length >= WANTED || seen[hit.thumb]) return;
+            if (taken >= PER_TERM || found.length >= WANTED || seen[hit.thumb]) return;
             seen[hit.thumb] = true;
             found.push(hit);
+            taken++;
           });
           return next(i + 1);
         });

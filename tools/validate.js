@@ -194,10 +194,16 @@ const seenPhotos = new Set();
 const curatedKeys = new Set();
 (images.curated || []).forEach((p) => (p.aesthetics || []).forEach((k) => curatedKeys.add(k)));
 
-keys.forEach((k) => {
-  if (curatedKeys.has(k)) return;
-  const terms = (images.search || {})[k];
-  if (!Array.isArray(terms) || !terms.length) warnings.push(`images: "${k}" has no curated photo and no search terms - it will never show one.`);
+/* An aesthetic with no curated photo searches Commons for its own `keywords`.
+   `search` only has to carry the ones where that wording searches badly. */
+Object.keys(images.search || {}).forEach((k) => {
+  if (!keys.has(k)) errors.push(`images: search override for unknown aesthetic "${k}".`);
+});
+
+aesthetics.forEach((a) => {
+  if (curatedKeys.has(a.key)) return;
+  const terms = (images.search || {})[a.key] || a.keywords;
+  if (!Array.isArray(terms) || !terms.length) warnings.push(`images: "${a.key}" has no curated photo, no search override and no keywords - it will never show one.`);
 });
 
 /* ---------- gender-neutral by default ---------- */
