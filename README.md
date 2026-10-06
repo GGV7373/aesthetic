@@ -69,6 +69,12 @@ Two things to keep in mind:
   `img-src https://upload.wikimedia.org`, or the strip just quietly stops appearing.
 - **Track thumbnails load from `https://i.ytimg.com`.** Allow it under `img-src` too, or
   the thumbnail images silently fail and cards fall back to a plain colour tile.
+- **The link-preview card is an absolute URL.** `og:image`, `og:url` and the canonical
+  link in `index.html` all point at `https://estetikk.netlify.app` — scrapers do not
+  resolve relative paths. Deploying somewhere else means editing those three.
+  `assets/og.png` itself is a 1200x630 screenshot of `tools/og-image.html`, which is
+  that card at full size in the site's own fonts and colours; re-shoot it if the
+  numbers on it go stale.
 
 ---
 
@@ -356,6 +362,7 @@ remembered locally in `aq.preferences.v1` and offered again on every retake.
 ```
 index.html
 netlify.toml
+assets/og.png       link-preview card (1200x630), built from tools/og-image.html
 assets/css/styles.css
 assets/js/
   prng.js         seeded randomness (mulberry32)
@@ -372,13 +379,15 @@ data/
   scoring.json    scale, groups, dimensions, preference categories, matching parameters
   narrative.json  phrase banks
   playlists.json  hand-picked YouTube videos per aesthetic, plus the search fallback
-  images.json     curated Wikimedia Commons photos per aesthetic, plus the search fallback
+  images.json     curated Wikimedia Commons photos; search wording overrides (both start empty)
   bundle.js       GENERATED — fallback for file://
 tools/
   build-bundle.js
   validate.js
   serve.js
   image-picker.html  dev tool for curating data/images.json
+  og-image.html      source for assets/og.png
+  playlist.txt       working notes: one playlist link per aesthetic
 ```
 
 The UI code knows nothing about which aesthetics exist. New statements and aesthetics
@@ -496,10 +505,22 @@ scoring-focused `data/aesthetics.json`:
   no chance of a keyword technically matching but showing the wrong thing (a search for
   `"Xbox 360"` surfacing six product photos of the controller, say, instead of anything
   resembling a bedroom).
-* **`search`** — a couple of fallback English keywords per aesthetic, run live against
-  Commons for whichever aesthetics nobody has curated a photo for yet. Results are
-  filtered against maps, scanned book plates and the like, and every photo is shown with
-  its creator and licence.
+* **`search`** — an override of the search wording for a single aesthetic, for when its
+  own keywords turn out to search badly. It starts empty, because an aesthetic with no
+  curated photo already falls back to its **`keywords`** in `data/aesthetics.json` —
+  the same two or three concrete, photographable nouns (`garden`, `baking`, `linen`)
+  that Commons search wants. Results are filtered against maps, scanned book plates and
+  the like, and every photo is shown with its creator and licence.
+
+So a new aesthetic shows photographs the moment its `keywords` are written, with nothing
+else to fill in. Curating is how you make them *good*, not how you make them appear.
+
+**No single keyword takes more than two of the six slots.** Filling the strip from the
+first word that returns anything lets an ambiguous one own the whole result — `chrome`
+for Y2K comes back as six screenshots of the browser, `atom` for Atompunk as the text
+editor. Capping each word at two spreads the strip across three or more of the
+aesthetic's words, so a bad word costs two photos rather than all six, and the strip
+stops showing six near-identical shots of the same reading room.
 
 Aesthetics Wiki images are not used anywhere — they are not freely licensed.
 
@@ -571,6 +592,10 @@ is part of a YouTube playlist (`&list=PL…`), add it as `"list": "PL…"` and t
 opens the whole playlist instead of one video.
 `node tools/validate.js` checks the id format and that every aesthetic key exists. One
 video can serve many aesthetics; an aesthetic can have several videos.
+
+`tools/playlist.txt` is the working list behind that file — one `Name = url` line per
+aesthetic, grouped by family — kept for hunting down which aesthetics still want a
+better video. Nothing reads it at runtime; `data/playlists.json` is the real source.
 
 ## Privacy
 

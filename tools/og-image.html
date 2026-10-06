@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!-- Source for assets/og.png, the link-preview card.
+
+     Social scrapers will not run JavaScript and most will not take an SVG, so
+     the card has to be a flat PNG. Rather than keep a design file around, this
+     is the card at its real size (1200x630) in the site's own CSS variables —
+     open it through `node tools/serve.js`, screenshot the body at 1200x630 and
+     save over assets/og.png. The colours and type then cannot drift from the
+     site, because they are the same two fonts and the same two hex values. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>og.png source — 1200x630</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..500&family=Inter:wght@350;400;450;500;600&display=swap">
+<style>
+  html, body { margin: 0; padding: 0; }
+  body {
+    width: 1200px; height: 630px; overflow: hidden;
+    background: #e9edf3;
+    color: #191c22;
+    font-family: "Inter", system-ui, sans-serif;
+    display: flex; flex-direction: column; justify-content: center;
+    /* The stats sit in the bottom 150px; the padding keeps the centred block
+       off them rather than relying on the text happening to be short. */
+    padding: 0 86px 150px; box-sizing: border-box;
+    position: relative;
+  }
+
+  /* The same warm clay the site uses as its only warm colour, bled in from the
+     right so the card is not a flat rectangle of paper in a dark timeline. */
+  body::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(58% 86% at 103% 46%, rgba(163, 79, 42, 0.26), transparent 68%);
+  }
+
+  .eyebrow {
+    font-size: 21px; font-weight: 600; letter-spacing: 0.11em;
+    text-transform: uppercase; color: #a34f2a; margin: 0 0 26px;
+    max-width: none; white-space: nowrap;
+  }
+  h1 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600; font-size: 104px; line-height: 0.98;
+    letter-spacing: -0.015em; margin: 0 0 30px; max-width: 15ch;
+  }
+  p {
+    font-size: 28px; line-height: 1.45; color: #454b56;
+    margin: 0; max-width: 36ch;
+  }
+
+  .stats {
+    position: absolute; left: 86px; right: 86px; bottom: 60px;
+    display: flex; gap: 58px;
+    border-top: 1px solid rgba(25, 28, 34, 0.12); padding-top: 26px;
+  }
+  .stats b {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 500; font-size: 40px; display: block; line-height: 1;
+  }
+  .stats span { font-size: 17px; color: #5f6673; }
+</style>
+</head>
+<body>
+  <p class="eyebrow">An aesthetic profile in 50 statements</p>
+  <h1>What aesthetic are you?</h1>
+  <p>Not what you like the look of — which aesthetic world your temperament belongs to.</p>
+
+  <div class="stats">
+    <div><b>360</b><span>statements</span></div>
+    <div><b>176</b><span>aesthetics</span></div>
+    <div><b>35</b><span>hidden dimensions</span></div>
+    <div><b>18</b><span>families</span></div>
+  </div>
+</body>
+</html>
