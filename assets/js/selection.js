@@ -11,9 +11,9 @@
    - every dimension has to get at least some coverage
    - the run is asked in themed blocks: a group's statements are asked together,
      and the blocks themselves come in a different order each time
-   - a person can nudge which groups are more likely to get the extra slot
-     (their "3" instead of "2") by saying what matters to them - every group
-     still keeps its guaranteed minimum either way
+   - a person can say what matters to them: those groups then get 4-6
+     statements each and the rest drop to as few as one - every group is
+     still asked at least once either way
    - everything is driven by the seed, so a run can be recreated              */
 (function (global) {
   'use strict';
@@ -44,7 +44,9 @@
 
     var room = groups.filter(function (g) { return quota[g.key] < g.max; });
     while (used < total && room.length) {
-      var pool = weightOf ? AQ.rng.weightedShuffle(room, rng, weightOf) : AQ.rng.shuffle(room, rng);
+      /* Weighted: one slot per draw, so the weight decides every slot rather
+         than only who goes first in a round everyone gets a turn in. */
+      var pool = weightOf ? AQ.rng.weightedShuffle(room, rng, weightOf).slice(0, 1) : AQ.rng.shuffle(room, rng);
       for (var i = 0; i < pool.length && used < total; i++) {
         quota[pool[i].key]++;
         used++;
@@ -64,6 +66,35 @@
     }
 
     return quota;
+  }
+
+  /* With preferences, the chosen groups get a much bigger share and the rest
+     shrink to a taste: chosen ones go to preferredMin-preferredMax (default 4-6),
+     the others drop to otherMin (default 1) and keep their usual max, so they
+     only fill up if the chosen ones run out of room. If there are so many chosen
+     groups that their minimums alone overflow the run, those minimums come down
+     one at a time until it fits. */
+  function reshapeGroups(groups, preferred, sel, total) {
+    sel = sel || {};
+    var pMin = sel.preferredMin || 4;
+    var pMax = sel.preferredMax || 6;
+    var oMin = sel.otherMin === undefined ? 1 : sel.otherMin;
+    var out = groups.map(function (g) {
+      return preferred[g.key]
+        ? { key: g.key, min: Math.max(g.min, pMin), max: Math.max(g.max, pMax) }
+        : { key: g.key, min: Math.min(g.min, oMin), max: g.max };
+    });
+    var sum = out.reduce(function (s, g) { return s + g.min; }, 0);
+    while (sum > total) {
+      var biggest = null;
+      out.forEach(function (g) {
+        if (preferred[g.key] && g.min > oMin + 1 && (!biggest || g.min > biggest.min)) biggest = g;
+      });
+      if (!biggest) break;
+      biggest.min--;
+      sum--;
+    }
+    return out;
   }
 
   /* Fresh statements first, then previously used ones — both halves shuffled. */
@@ -135,11 +166,15 @@
       if (!candidate) return;
 
       /* Drop the statement that matters least: preferably from the same group, and
-         never one that is the only source for a dimension. */
+         never one that is the only source for a dimension or a group's only
+         statement. */
       var currentCov = coverageOf(out, dimensionKeys);
+      var perGroup = {};
+      out.forEach(function (q) { perGroup[q.group] = (perGroup[q.group] || 0) + 1; });
       var victimIndex = -1;
       var victimScore = Infinity;
       out.forEach(function (q, idx) {
+        if (perGroup[q.group] < 2 && q.group !== candidate.group) return;
         var breaksSomething = Object.keys(q.dimensions).some(function (k) {
           return currentCov[k] - Math.abs(q.dimensions[k]) <= 0;
         });
@@ -233,7 +268,8 @@
       : null;
 
     var byGroup = groupByKey(data.questions);
-    var quotas = drawQuotas(config.groups, total, rng, weightOf);
+    var quotas = drawQuotas(preferred ? reshapeGroups(config.groups, preferred, config.selection, total) : config.groups,
+      total, rng, weightOf);
     var chosenIds = {};
     var usedClusters = {};
     var selected = [];
@@ -284,6 +320,6 @@
   };
 
   AQ.selectionInternals = {
-    coverageOf: coverageOf, spread: spread, blocks: blocks, drawQuotas: drawQuotas
+    coverageOf: coverageOf, spread: spread, blocks: blocks, drawQuotas: drawQuotas, reshapeGroups: reshapeGroups
   };
 })(typeof window !== 'undefined' ? window : globalThis);

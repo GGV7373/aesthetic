@@ -59,6 +59,13 @@
     return m ? decodeURIComponent(m[1]) : null;
   }
 
+  /* The topic groups a shared link was made with - unknown keys are dropped. */
+  function urlGroups() {
+    var known = {};
+    data.config.groups.forEach(function (g) { known[g.key] = true; });
+    return (queryParam('groups') || '').split(',').filter(function (k) { return known[k]; });
+  }
+
   /* ---------- history: don't serve the same fifty twice in a row ---------- */
 
   function historyIds() {
@@ -98,16 +105,18 @@
   /* ---------- session ---------- */
 
   /* replay: a seed somebody was given has to produce exactly the same quiz, so it
-     cannot be filtered against what this browser has seen before, or biased by
-     whatever this browser's own owner said mattered to them. */
+     cannot be filtered against what this browser has seen before. The topics the
+     sharer picked travel in the link (`&groups=`) and are passed in here, rather
+     than this browser's own saved preferences. */
   function startSession(seed, replay, preferredGroups) {
     var selection = AQ.selectQuestions(data, {
       seed: seed || AQ.rng.newSeedString(),
       excludeIds: replay ? [] : historyIds(),
-      preferredGroups: replay ? [] : (preferredGroups || [])
+      preferredGroups: preferredGroups || []
     });
     session = {
       seed: selection.seed,
+      groups: preferredGroups || [],
       questionIds: selection.questions.map(function (q) { return q.id; }),
       answers: {},
       index: 0,
@@ -263,7 +272,7 @@
             clearStore(STORE_SESSION);
             if (urlSeed) {
               /* A shared run is fixed by its seed alone - skip straight in. */
-              startSession(urlSeed, true);
+              startSession(urlSeed, true, urlGroups());
               screenQuiz();
             } else {
               screenPreferences();
@@ -304,9 +313,8 @@
 
   /* A short screen between the intro and the quiz: pick a handful of things that
      matter to you (living space, music, food, other people, technology, ...) and
-     the statements you get lean a little more towards those themes. Every theme
-     is still covered - this only nudges which groups win the "extra" slot,
-     see AQ.selectQuestions / drawQuotas in selection.js. */
+     most of the statements come from those themes, the rest get one or two
+     each. See reshapeGroups / drawQuotas in selection.js. */
   function screenPreferences() {
     pushStep({ screen: 'preferences' });
 
@@ -378,9 +386,9 @@
       el('p', { class: 'eyebrow', text: 'Before you start' }),
       el('h1', { class: 'display display--sub', html: 'What matters<br>to you?' }),
       el('p', { class: 'lede' }, [
-        'Living space, music, food, other people, technology - what you care about ' +
-        'shapes which statements you get more of. The test still covers every theme ' +
-        'either way, and no single choice steers the result on its own.'
+        'Pick what you care about and most of your questions will be about those ' +
+        'things. Everything else still gets a question or two, so the result ' +
+        'stays fair.'
       ]),
       chipsWrap,
       note,
@@ -1043,7 +1051,8 @@
       }))
     ]);
 
-    var seedLink = global.location.origin + global.location.pathname + '?seed=' + seed;
+    var seedLink = global.location.origin + global.location.pathname + '?seed=' + seed +
+      (!preview && session.groups && session.groups.length ? '&groups=' + session.groups.join(',') : '');
     var copyBtn = el('button', {
       class: 'btn btn--ghost', type: 'button',
       onclick: function (e) {

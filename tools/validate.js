@@ -334,6 +334,25 @@ for (let i = 0; i < 400; i++) {
   });
 }
 
+/* Preferences: chosen groups get the big share, everyone else at least one. */
+[['home'], ['people', 'tradition', 'screens', 'future', 'nature', 'weather', 'past', 'unexplained', 'imagination'],
+  ['style', 'values', 'temperament', 'screens', 'future', 'nature', 'weather', 'unexplained', 'imagination', 'people', 'tradition']
+].forEach((pref, p) => {
+  for (let i = 0; i < 50; i++) {
+    const sel = AQ.selectQuestions(data, { seed: 'PREF' + p + '-' + i, preferredGroups: pref });
+    if (sel.questions.length !== config.questionsPerQuiz) errors.push(`Preference run ${p}/${i}: ${sel.questions.length} statements.`);
+    const n = (k) => sel.questions.filter((q) => q.group === k).length;
+    const low = Math.min(...pref.map(n));
+    config.groups.forEach((g) => {
+      if (!n(g.key)) errors.push(`Preference run ${p}/${i}: group "${g.key}" got nothing.`);
+      if (!pref.includes(g.key) && n(g.key) > low) errors.push(`Preference run ${p}/${i}: unchosen "${g.key}" got more than a chosen group.`);
+    });
+    data.dimensionKeys.forEach((k) => {
+      if (!sel.coverage[k]) errors.push(`Preference run ${p}/${i}: dimension "${k}" got no coverage.`);
+    });
+  }
+});
+
 const useCounts = Object.values(questionUse);
 
 /* 2. Determinism: the same seed gives the same quiz. */

@@ -313,8 +313,8 @@ place in it shown beside the running count:
   Question 8 of 50        Music and taste · 2 of 3
 ```
 
-So a run is always 20 blocks of 2–3, and picking **Sound & music** on the preferences
-screen makes that block more likely to be a 3 than a 2.
+So a run is always 20 blocks — 2–3 each by default, or 4–6 for the themes picked on
+the preferences screen and as few as 1 for the rest.
 
 The block order and the order within each block are both drawn off the seed, so no
 two runs open on the same theme but a shared `?seed=` link still reproduces
@@ -331,19 +331,22 @@ so a resumed run rebuilds them from the saved statement ids alone.
 
 ### Preferences
 
-Before a fresh run (not a shared `?seed=` link, which must stay reproducible), a
+Before a fresh run (a shared `?seed=` link skips it and uses the sharer's topics,
+carried in the link as `&groups=`, so it still reproduces exactly), a
 short screen asks what matters to you — living space, sound and music, food, human
 connection, technology, nature, history, style, mystery, craft and order, travel —
 grouped in `data/scoring.json` under `preferenceCategories`, each mapped to one or
 more of the 20 statement groups above.
 
-Picking up to five nudges `drawQuotas()` in `assets/js/selection.js`: groups behind a
-chosen category get a higher chance of winning the "extra" slot (three statements
-instead of two), via a weighted, seeded draw (`AQ.rng.weightedShuffle`). Every group
-still keeps its guaranteed minimum regardless of what is picked, so the theme
-coverage and the "no statement belongs to any one aesthetic" scoring are unaffected —
-this only shifts which topics you see slightly more of. Skipping the screen (or
-picking nothing) reproduces the old, unweighted draw exactly. The choice is
+Picking up to five reshapes the quotas (`reshapeGroups()` in
+`assets/js/selection.js`): groups behind a chosen category get `preferredMin`–
+`preferredMax` statements (4–6), every other group drops to `otherMin` (1) and only
+gets more if the chosen ones run out of room. The leftover slots are handed out one
+at a time by a weighted, seeded draw (`AQ.rng.weightedShuffle`, `preferenceWeight`).
+Every group is still asked at least once and zero-coverage dimensions are still
+repaired, so the "no statement belongs to any one aesthetic" scoring is unaffected.
+Picking a lot of categories lowers the chosen groups' minimum until the run fits.
+Skipping the screen (or picking nothing) reproduces the old, unweighted draw exactly. The choice is
 remembered locally in `aq.preferences.v1` and offered again on every retake.
 
 ---
