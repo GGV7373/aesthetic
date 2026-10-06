@@ -499,6 +499,9 @@
     "maxHistorySessions": 6,
     "repairZeroCoverage": true,
     "order": "blocks",
-    "preferenceWeight": 3
+    "preferenceWeight": 3,
+    "preferredMin": 4,
+    "preferredMax": 6,
+    "otherMin": 1
   }
 }
