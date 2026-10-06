@@ -522,7 +522,10 @@ editor. Capping each word at two spreads the strip across three or more of the
 aesthetic's words, so a bad word costs two photos rather than all six, and the strip
 stops showing six near-identical shots of the same reading room.
 
-Aesthetics Wiki images are not used anywhere — they are not freely licensed.
+Aesthetics Wiki images are not shown anywhere — they are not freely licensed. Instead
+every result links to the aesthetic's wiki page ("See … pictures on Aesthetics Wiki"),
+built from its canonical name; an optional `wiki` field in `data/aesthetics.json`
+overrides the page title where it differs (`brazilcore`, `coffee-house`).
 
 Commons' search is closer to an AND of every word than a fuzzy match, so a long,
 descriptive search phrase (`"2000s bedroom crt television games"`) routinely returns
