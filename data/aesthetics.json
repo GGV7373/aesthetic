@@ -399,7 +399,6 @@
     },
     "related": [
       "dark-naturalism",
-      "ocean-grunge",
       "film-noir",
       "ghostcore"
     ],
@@ -698,7 +697,6 @@
       "modernity": 0.35
     },
     "related": [
-      "ocean-grunge",
       "industrial",
       "old-web",
       "beatnik"
@@ -1348,7 +1346,6 @@
     "related": [
       "dieselpunk",
       "decopunk",
-      "adventure-pulp",
       "dandy"
     ],
     "world": {
@@ -1760,7 +1757,6 @@
       "melancholy": 0.25
     },
     "related": [
-      "adventure-pulp",
       "nautical",
       "lumberjack",
       "naturecore"
@@ -1774,64 +1770,6 @@
       "music": "something with rhythm to walk to, singing round a fire",
       "colours": "mountain blue, burnt orange, pale stone, moss green",
       "everyday": "planning the next trip before this one is over"
-    }
-  },
-  {
-    "key": "adventure-pulp",
-    "name": "Adventure Pulp",
-    "family": "Adventure and Frontier",
-    "tagline": "Treasure maps, ruins and a hat",
-    "description": "The adventure story of 1930s magazines: expeditions, lost temples and heroes with flexible morals. Romantic rather than realistic.",
-    "keywords": [
-      "expedition",
-      "ruins",
-      "treasure map",
-      "magazines",
-      "propeller plane"
-    ],
-    "palette": [
-      "#171208",
-      "#42301a",
-      "#b07c33",
-      "#eddfba"
-    ],
-    "dimensions": {
-      "adventure": 0.95,
-      "retro": 0.85,
-      "fantasy": 0.72,
-      "optimism": 0.78,
-      "history": 0.7,
-      "nostalgia": 0.7,
-      "individualism": 0.75,
-      "mystery": 0.72,
-      "craft": 0.6,
-      "ornament": 0.55,
-      "maximalism": 0.6,
-      "chaos": 0.55,
-      "nature": 0.6,
-      "realism": 0.35,
-      "order": 0.4,
-      "intellect": 0.6,
-      "community": 0.45,
-      "rural": 0.5,
-      "technology": 0.5,
-      "darkness": 0.4
-    },
-    "related": [
-      "adventurecore",
-      "steampunk",
-      "nautical",
-      "retrofuturism"
-    ],
-    "world": {
-      "setting": "jungle above a stone staircase, a desert camp, a harbour with too many languages",
-      "architecture": "temple ruins, a colonial hotel with a ceiling fan",
-      "interior": "maps in rolls, binoculars, things acquired by questionable means",
-      "technology": "a propeller plane, a dynamo lamp, a radio that barely reaches",
-      "clothes": "canvas, a leather belt, a hat that survives everything",
-      "music": "an orchestra with brass, drums somewhere in the distance",
-      "colours": "sand brown, jade green, yellowed map, mahogany",
-      "everyday": "looking for something you probably shouldn't find"
     }
   },
   {
@@ -1993,9 +1931,7 @@
       "minimalism": 0.5
     },
     "related": [
-      "ocean-grunge",
       "oceanpunk",
-      "adventure-pulp",
       "americana"
     ],
     "world": {
@@ -2007,65 +1943,6 @@
       "music": "shanties, accordion, a foghorn",
       "colours": "navy blue, brass, sail white, rope",
       "everyday": "checking the weather, keeping order, going out anyway"
-    }
-  },
-  {
-    "key": "ocean-grunge",
-    "name": "Ocean Grunge",
-    "family": "Sea and Coast",
-    "tagline": "The coast out of season",
-    "description": "The sea without the holiday: cold water, a rusting jetty, fog and a muted sadness. Beauty in the abandoned and the wet.",
-    "keywords": [
-      "cold beach",
-      "rust",
-      "fog",
-      "driftwood",
-      "grey sea"
-    ],
-    "palette": [
-      "#0b1114",
-      "#233238",
-      "#516066",
-      "#c2c6c2"
-    ],
-    "dimensions": {
-      "melancholy": 0.88,
-      "nature": 0.8,
-      "chaos": 0.68,
-      "solitude": 0.82,
-      "darkness": 0.62,
-      "realism": 0.7,
-      "craft": 0.45,
-      "nostalgia": 0.6,
-      "comfort": 0.4,
-      "refinement": 0.2,
-      "order": 0.22,
-      "mystery": 0.62,
-      "rural": 0.6,
-      "urban": 0.35,
-      "industrial": 0.5,
-      "adventure": 0.55,
-      "optimism": 0.18,
-      "tradition": 0.45,
-      "individualism": 0.65,
-      "history": 0.5,
-      "ornament": 0.2
-    },
-    "related": [
-      "grunge",
-      "gloomcore",
-      "nautical",
-      "dark-naturalism"
-    ],
-    "world": {
-      "setting": "a beach in March, a breakwater with weed on it, houses with salt-worn paint",
-      "architecture": "a leaning boathouse, a bathing hut shut for the year, a concrete quay",
-      "interior": "driftwood on the windowsill, damp wool, a stove that gets used",
-      "technology": "an old radio, a car that shouldn't really be driven there",
-      "clothes": "an oversized jumper, a rain jacket, sand in everything",
-      "music": "shoegaze, echo, guitar through the sound of waves",
-      "colours": "sea grey, weed green, rust, pale sand",
-      "everyday": "walking the beach when nobody else does"
     }
   },
   {
@@ -2112,7 +1989,6 @@
     "related": [
       "nautical",
       "steampunk",
-      "adventure-pulp",
       "solarpunk"
     ],
     "world": {
@@ -4140,7 +4016,6 @@
     "related": [
       "americana",
       "rustic",
-      "adventure-pulp",
       "lumberjack"
     ],
     "world": {
@@ -9765,7 +9640,6 @@
     "related": [
       "tropicalia",
       "blokecore",
-      "ocean-grunge",
       "nautical",
       "hippie"
     ],
@@ -9974,70 +9848,6 @@
     }
   },
   {
-    "key": "coffee-house",
-    "name": "Coffee House",
-    "family": "Cosy and Home",
-    "tagline": "A long table, a notebook and the third refill",
-    "description": "Dark wood, steam on the window and hours spent writing in public. The café as a room you borrow for thinking in.",
-    "keywords": [
-      "dark wood",
-      "notebook",
-      "espresso",
-      "rain window",
-      "long afternoons"
-    ],
-    "palette": [
-      "#211a16",
-      "#4a3a2c",
-      "#8f7350",
-      "#e6d9c2"
-    ],
-    "dimensions": {
-      "intellect": 0.85,
-      "comfort": 0.78,
-      "urban": 0.75,
-      "solitude": 0.7,
-      "craft": 0.7,
-      "tradition": 0.65,
-      "history": 0.65,
-      "refinement": 0.65,
-      "industrial": 0.2,
-      "futurism": 0.08,
-      "digital": 0.35,
-      "chaos": 0.25,
-      "nature": 0.25,
-      "rural": 0.2,
-      "order": 0.62,
-      "minimalism": 0.5,
-      "maximalism": 0.45,
-      "ornament": 0.5,
-      "melancholy": 0.62,
-      "darkness": 0.45,
-      "optimism": 0.45,
-      "social": 0.55,
-      "community": 0.6,
-      "nostalgia": 0.68
-    },
-    "related": [
-      "beatnik",
-      "dark-academia",
-      "hipster",
-      "light-academia",
-      "normcore"
-    ],
-    "world": {
-      "setting": "a café on a wet afternoon with the windows steamed and no rush to leave",
-      "architecture": "a narrow room with a tiled floor, a counter, and tables too close together",
-      "interior": "dark wood, bentwood chairs, newspapers on a rail, a clock that is slightly off",
-      "technology": "a hissing espresso machine and a laptop somebody is ignoring",
-      "clothes": "a heavy coat over a jumper, a scarf kept on indoors",
-      "music": "a jazz record, low, under the noise of the machine",
-      "colours": "espresso brown, cream, brass, tobacco",
-      "everyday": "reading, writing, watching, making one coffee last two hours"
-    },
-    "wiki": "Café Aesthetic"
-  },
-  {
     "key": "midwest-emo",
     "name": "Midwest Emo",
     "family": "Subculture",
@@ -10098,69 +9908,6 @@
       "music": "guitars in odd tunings, a voice that goes slightly out of range",
       "colours": "faded green, dust, cassette brown, evening blue",
       "everyday": "driving to the next town for a show, writing about here while still here"
-    }
-  },
-  {
-    "key": "dark-cabaret",
-    "name": "Dark Cabaret",
-    "family": "Subculture",
-    "tagline": "Weimar theatre with the lights kept low",
-    "description": "Accordion, smeared greasepaint and a song that goes somewhere unpleasant in the third verse. Theatrical, sardonic and thoroughly adult.",
-    "keywords": [
-      "cabaret",
-      "accordion",
-      "greasepaint",
-      "burlesque",
-      "Weimar"
-    ],
-    "palette": [
-      "#120f12",
-      "#33202b",
-      "#8a2a35",
-      "#ddd0bb"
-    ],
-    "dimensions": {
-      "darkness": 0.85,
-      "ornament": 0.85,
-      "individualism": 0.85,
-      "history": 0.75,
-      "melancholy": 0.75,
-      "refinement": 0.62,
-      "maximalism": 0.8,
-      "mystery": 0.72,
-      "nature": 0.05,
-      "rural": 0.05,
-      "organic": 0.15,
-      "digital": 0.05,
-      "futurism": 0.05,
-      "modernity": 0.2,
-      "industrial": 0.35,
-      "urban": 0.8,
-      "tradition": 0.45,
-      "nostalgia": 0.78,
-      "retro": 0.8,
-      "order": 0.4,
-      "chaos": 0.62,
-      "social": 0.7,
-      "community": 0.65,
-      "intellect": 0.7
-    },
-    "related": [
-      "goth",
-      "old-hollywood",
-      "visual-kei",
-      "romantic-goth",
-      "film-noir"
-    ],
-    "world": {
-      "setting": "a small theatre where the front row is close enough to be uncomfortable",
-      "architecture": "a cellar venue with a stage barely raised and a red curtain",
-      "interior": "bulb-lit mirrors, feather boas on a hook, a piano with rings on the lid",
-      "technology": "a single spotlight and an accordion that has seen better decades",
-      "clothes": "corsetry, tailcoats, fishnets, greasepaint applied heavily",
-      "music": "accordion, a piano played hard, a voice that sneers and then breaks",
-      "colours": "blood red, black, tarnished gold, powder white",
-      "everyday": "rehearsing, performing, saying the unsayable while people applaud"
     }
   },
   {
@@ -10228,73 +9975,6 @@
       "music": "lo-fi, a long ambient track, the hum of a fridge two rooms away",
       "colours": "night black, sodium gold, window yellow, wet asphalt",
       "everyday": "walking at night because it is quieter, being somewhere after everyone left"
-    }
-  },
-  {
-    "key": "neon-noir",
-    "name": "Neon Noir",
-    "family": "Americana and Screen",
-    "tagline": "Rain, neon, and nobody to trust",
-    "description": "Film noir rebuilt in colour: wet streets, purple and red signage, moral fog and a synthesiser underneath it. Beautiful, saturated, and lonely on purpose.",
-    "keywords": [
-      "neon signage",
-      "rain-slicked street",
-      "crime",
-      "nightlife",
-      "chiaroscuro"
-    ],
-    "palette": [
-      "#0a0714",
-      "#2a1350",
-      "#c2185b",
-      "#22d3ee"
-    ],
-    "dimensions": {
-      "darkness": 0.92,
-      "urban": 0.95,
-      "melancholy": 0.85,
-      "mystery": 0.85,
-      "solitude": 0.85,
-      "retro": 0.78,
-      "technology": 0.7,
-      "digital": 0.7,
-      "futurism": 0.68,
-      "nostalgia": 0.7,
-      "ornament": 0.7,
-      "nature": 0.05,
-      "rural": 0.05,
-      "organic": 0.08,
-      "optimism": 0.1,
-      "comfort": 0.2,
-      "tradition": 0.1,
-      "history": 0.3,
-      "order": 0.35,
-      "chaos": 0.6,
-      "minimalism": 0.3,
-      "maximalism": 0.6,
-      "refinement": 0.55,
-      "realism": 0.4,
-      "fantasy": 0.68,
-      "industrial": 0.6,
-      "intellect": 0.6,
-      "adventure": 0.6
-    },
-    "related": [
-      "film-noir",
-      "cyberpunk",
-      "synthwave",
-      "city-pop",
-      "vaporwave"
-    ],
-    "world": {
-      "setting": "a street at 3am in the rain, every surface doubling the signs above it",
-      "architecture": "low-rise blocks, fire escapes, a hotel sign with two letters dead",
-      "interior": "a bar lit red, blinds throwing stripes across the room, smoke in the beam",
-      "technology": "a payphone, a car radio, a camera that should not be there",
-      "clothes": "a long coat, a collar turned up, sunglasses worn far too late",
-      "music": "synth arpeggios, a saxophone in the distance, bass you feel more than hear",
-      "colours": "electric purple, hot red, cyan, wet black",
-      "everyday": "meetings arranged badly, nothing said plainly, driving between them in the rain"
     }
   },
   {

@@ -43,12 +43,10 @@ Americana = https://www.youtube.com/watch?v=kyBzJWjAXG4
 Diner = https://www.youtube.com/watch?v=rEmLVVnN22Y
 Film Noir = https://www.youtube.com/watch?v=PEI2zet48Uc
 High School Dream = https://www.youtube.com/watch?v=hOiWsGaBfJY
-Neon Noir = https://www.youtube.com/watch?v=rcbMXunz5bg
 Old Hollywood = https://www.youtube.com/watch?v=rbl1qzsgqmg
 
 # ======== SUBCULTURE ========
 Beatnik = https://www.youtube.com/watch?v=PEI2zet48Uc
-Dark Cabaret = https://www.youtube.com/watch?v=PEI2zet48Uc
 Emo = https://www.youtube.com/watch?v=hOiWsGaBfJY
 Greaser = https://www.youtube.com/watch?v=rEmLVVnN22Y
 Grunge = https://www.youtube.com/watch?v=qhH4D251i4Q
@@ -117,13 +115,11 @@ Trad Goth = https://www.youtube.com/watch?v=iEfVC2LOCv8
 Whimsigothic = https://www.youtube.com/watch?v=iEfVC2LOCv8
 
 # ======== ADVENTURE AND FRONTIER ========
-Adventure Pulp = https://www.youtube.com/watch?v=GkSHE6wOzX0
 Adventurecore = https://www.youtube.com/watch?v=GkSHE6wOzX0
 Western = https://www.youtube.com/watch?v=djmuOu8kgvQ&t
 
 # ======== SEA AND COAST ========
 Nautical = https://www.youtube.com/watch?v=iEfVC2LOCv8
-Ocean Grunge = https://www.youtube.com/watch?v=iEfVC2LOCv8
 Oceanpunk = https://www.youtube.com/watch?v=iEfVC2LOCv8
 
 # ======== STATUS AND MONEY ========
@@ -203,7 +199,6 @@ Tenniscore = https://www.youtube.com/watch?v=3UmmMnJacJs
 # ======== COSY AND HOME ========
 Cluttercore = https://www.youtube.com/watch?v=iEfVC2LOCv8
 Coastal Grandmother = https://www.youtube.com/watch?v=iEfVC2LOCv8
-Coffee House = https://www.youtube.com/watch?v=3UmmMnJacJs
 Grandmillennial = https://www.youtube.com/watch?v=qhH4D251i4Q
 Hygge = https://www.youtube.com/watch?v=qhH4D251i4Q
 

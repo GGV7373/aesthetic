@@ -2,7 +2,7 @@
 
 A personality test that finds which **aesthetic world** you belong to — not which
 pictures you like. 360 statements in the bank, 50 per run, 35 hidden dimensions and
-176 aesthetics across 18 families, using Aesthetics Wiki as a reference.
+171 aesthetics across 18 families, using Aesthetics Wiki as a reference.
 
 No framework, no build step, no dependencies. Open `index.html`.
 OR use the website at [estetikk.netlify.app](https://estetikk.netlify.app).
@@ -109,7 +109,7 @@ return to a three-column grid, and the hero foot goes back to two columns.
 The point is that no statement belongs to any one aesthetic. The chain is:
 
 ```
-answers  →  35 dimensions  →  match against 176 aesthetic profiles
+answers  →  35 dimensions  →  match against 171 aesthetic profiles
 ```
 
 A question about old buildings never scores points for "Dark Academia". It moves
@@ -189,7 +189,7 @@ anyone's result.
 | Family | n | Examples |
 |---|---|---|
 | Internet and Liminal | 21 | After Hours, Analog Horror, Doomer, Draincore, … |
-| Subculture | 18 | Beatnik, Dark Cabaret, Emo, Greaser, … |
+| Subculture | 17 | Beatnik, Emo, Greaser, Grunge, … |
 | Art and Period | 16 | Art Deco, Art Nouveau, Arts and Crafts, Baroque, … |
 | Witchy and Folk | 14 | Appalachian Gothic, Cryptidcore, Dark Fantasy, Dark Naturalism, … |
 | Punk and Futurism | 12 | Atompunk, Cassette Futurism, Cyberpunk, Decopunk, … |
@@ -199,13 +199,13 @@ anyone's result.
 | Global and Regional | 10 | Afrofuturism, Afropunk, Brazilcore, Gulf Futurism, … |
 | Design and Everyday | 8 | Brutalism, Eclectic Vintage, Maximalism, Mid-Century Modern, … |
 | Sport and Utility | 8 | Equestrian, Gorpcore, Jock, Racing, … |
-| Americana and Screen | 7 | 50s Suburbia, Americana, Diner, Film Noir, … |
+| Americana and Screen | 6 | 50s Suburbia, Americana, Diner, Film Noir, … |
 | Nature and Pastoral | 7 | Cabincore, Cottagecore, Forestpunk, Granola, … |
 | Status and Money | 7 | Corpcore, Dandy, Hypebeast, Mob Glamour, … |
-| Cosy and Home | 5 | Cluttercore, Coastal Linen, Coffee House, Grandmillennial, … |
+| Cosy and Home | 4 | Cluttercore, Coastal Linen, Grandmillennial, Hygge |
 | Academia | 3 | Dark Academia, Light Academia, Romantic Academia |
-| Adventure and Frontier | 3 | Adventure Pulp, Adventurecore, Western |
-| Sea and Coast | 3 | Nautical, Ocean Grunge, Oceanpunk |
+| Adventure and Frontier | 2 | Adventurecore, Western |
+| Sea and Coast | 2 | Nautical, Oceanpunk |
 
 ---
 
@@ -375,7 +375,7 @@ assets/js/
   app.js          screens and flow
 data/
   questions.json  360 statements with dimension weights
-  aesthetics.json 176 aesthetics: profile, palette, "world"
+  aesthetics.json 171 aesthetics: profile, palette, "world"
   scoring.json    scale, groups, dimensions, preference categories, matching parameters
   narrative.json  phrase banks
   playlists.json  hand-picked YouTube videos per aesthetic, plus the search fallback
@@ -550,7 +550,7 @@ aesthetic. It has three parts:
 * the aesthetic's own `world.music` line, so the sound matches the rest of the result;
 * any hand-picked videos from `data/playlists.json` that are attached to it;
 * a button that searches YouTube for `"<name> aesthetic playlist"`, so every one of the
-  176 aesthetics has somewhere to go even without a curated pick. It searches on the
+  171 aesthetics has somewhere to go even without a curated pick. It searches on the
   wiki's own name (`gendered.name` when there is one), because "Soft Girl" finds
   playlists and the neutral "Soft Pastel" does not.
 
@@ -574,7 +574,7 @@ on the view that no video is better than a wrong one. The four numbers live unde
 | `relatedBonus` | how much being in each other's `related` list counts for |
 | `familyBonus` | how much sharing a family counts for |
 
-Every one of the 176 aesthetics already has at least one video of its own in
+Every one of the 171 aesthetics already has at least one video of its own in
 `curated`.
 
 To add a video, append to `curated` in `data/playlists.json` and run
