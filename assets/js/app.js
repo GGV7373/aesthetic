@@ -688,6 +688,7 @@
       meter(entry.percent, { background: AQ.visuals.meterFill(a) }),
       el('p', { class: 'card__tagline', text: a.tagline }),
       el('p', { class: 'card__body', text: a.description }),
+      wikiLink(a, 'wikilink', ['See ' + a.name + ' on the wiki ↗']),
       opts.note ? el('p', { class: 'card__note', text: opts.note }) : null
     ]);
   }
@@ -909,6 +910,14 @@
     return 'https://aesthetics.fandom.com/wiki/' + encodeURIComponent(title.replace(/ /g, '_'));
   }
 
+  /* A link to an aesthetic's Aesthetics Wiki page, opened in a new tab. */
+  function wikiLink(a, cls, children) {
+    return el('a', {
+      class: cls, href: wikiUrl(a), target: '_blank', rel: 'noopener noreferrer',
+      title: 'See ' + a.name + ' on Aesthetics Wiki'
+    }, children);
+  }
+
   function wikiSection(aesthetic) {
     return el('section', { class: 'block' }, [
       el('a', {
@@ -982,7 +991,7 @@
         var a = data.aestheticsByKey[entry.key];
         list.appendChild(el('li', { class: 'rank__row' }, [
           el('span', { class: 'rank__num', text: String(i + 1).padStart(2, '0') }),
-          el('span', { class: 'rank__name', text: a.name }),
+          wikiLink(a, 'rank__name', [a.name]),
           meter(entry.percent, { background: AQ.visuals.meterFill(a), delay: 40 + i * 12 }),
           el('span', { class: 'rank__pct', text: entry.percent + '%' })
         ]));
@@ -1039,7 +1048,7 @@
       var entry = result.trio[k];
       var a = data.aestheticsByKey[entry.key];
       return el('article', { class: 'trio__panel', style: 'animation-delay:' + (i * 120) + 'ms' }, [
-        el('div', { class: 'trio__banner' }, [
+        wikiLink(a, 'trio__banner', [
           el('div', { class: 'trio__plate', html: AQ.visuals.moodPlate(a) }),
           el('p', { class: 'trio__lens', text: lenses[k].label }),
           el('h2', { class: 'trio__name', text: a.name })
@@ -1047,14 +1056,17 @@
         el('div', { class: 'trio__foot' }, [
           el('p', { class: 'trio__pct' }, [el('strong', { text: entry.percent + '%' }), ' match']),
           el('p', { class: 'trio__tagline', text: a.tagline }),
-          el('p', { class: 'trio__body', text: a.description })
+          el('p', { class: 'trio__body', text: a.description }),
+          wikiLink(a, 'wikilink', ['See ' + a.name + ' on the wiki ↗'])
         ])
       ]);
     }));
     var summary = el('p', { class: 'trio__summary' }, lensKeys.map(function (k, i) {
       return el('span', {}, [
         i ? ' · ' : '',
-        el('strong', { text: data.aestheticsByKey[result.trio[k].key].name }),
+        wikiLink(data.aestheticsByKey[result.trio[k].key], 'trio__summarylink', [
+          el('strong', { text: data.aestheticsByKey[result.trio[k].key].name })
+        ]),
         ' ' + lenses[k].verb
       ]);
     }));
