@@ -13,9 +13,9 @@
    ========================================================================== */
 
 :root {
-  --bg:          #e9edf3;
-  --bg-sunk:     #dce2ec;
-  --surface:     #fafbfe;
+  --bg:          #fbf0ea;
+  --bg-sunk:     #efe3dc;
+  --surface:     #fffcfa;
 
   /* The greys carry a trace of the paper's blue. Warm browny greys on a cool
      ground look like a stain rather than a colour. */
@@ -49,6 +49,12 @@
   --radius-lg: 18px;
   --radius-pill: 999px;
   --tap: 48px;
+
+  /* The colour clouds behind everything. The result screen swaps these for
+     the winning aesthetic's own palette (see screenResult in app.js). */
+  --mood1: #e07a4f;
+  --mood2: #8a6fd8;
+  --mood3: #3fb5a8;
 
   --ease: cubic-bezier(0.32, 0.72, 0.24, 1);
   --fast: 180ms;
@@ -84,7 +90,10 @@ body {
   body { font-size: 1.0625rem; line-height: 1.68; }
 }
 
-/* Two faint washes and a fine grain, so the paper isn't flat. */
+/* Two fixed layers behind the page. Both are position: fixed rather than
+   background-attachment: fixed, and neither blends with what is under it, so
+   the browser paints them once and only moves them - scrolling never has to
+   repaint the background (that is what made phones stutter). */
 body::before,
 body::after {
   content: "";
@@ -94,17 +103,33 @@ body::after {
   z-index: 0;
 }
 
+/* The paper: a warm peach-to-lilac-to-mint wash, a fine dot grid and grain. */
 body::before {
   background:
-    radial-gradient(58rem 38rem at 12% -8%, rgba(110, 132, 174, 0.18), transparent 68%),
-    radial-gradient(46rem 34rem at 96% 4%, rgba(142, 152, 188, 0.18), transparent 70%),
-    radial-gradient(64rem 44rem at 52% 108%, rgba(118, 140, 176, 0.16), transparent 68%);
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E"),
+    radial-gradient(circle at 1px 1px, rgba(60, 40, 70, 0.09) 1px, transparent 0) 0 0 / 22px 22px,
+    linear-gradient(160deg, #fdf0e6 0%, #f6eaf6 48%, #e6f4f0 100%);
 }
 
+/* The colour clouds. Blurred once, then only transformed while they drift. */
 body::after {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
-  opacity: 0.055;
-  mix-blend-mode: multiply;
+  inset: -20%;
+  background:
+    radial-gradient(36rem 30rem at 12% 8%, var(--mood1), transparent 68%),
+    radial-gradient(32rem 28rem at 90% 16%, var(--mood2), transparent 68%),
+    radial-gradient(40rem 32rem at 30% 92%, var(--mood3), transparent 68%),
+    radial-gradient(28rem 24rem at 86% 78%, var(--mood1), transparent 70%);
+  filter: blur(60px) saturate(1.25);
+  opacity: 0.5;
+  transition: opacity 1.2s var(--ease);
+  animation: drift 26s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes drift {
+  0%   { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); }
+  50%  { transform: translate3d(3%, -2%, 0) rotate(6deg) scale(1.06); }
+  100% { transform: translate3d(-3%, 3%, 0) rotate(-4deg) scale(1.02); }
 }
 
 #app {
@@ -151,6 +176,19 @@ button, a, label, input { -webkit-tap-highlight-color: transparent; touch-action
   letter-spacing: -0.022em;
   text-wrap: balance;
 }
+
+.display em {
+  font-style: italic;
+  background: linear-gradient(100deg, var(--mood1), var(--mood2), var(--mood3), var(--mood1));
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 9s linear infinite;
+  padding-right: 0.06em;
+}
+
+@keyframes shimmer { to { background-position: 300% 0; } }
 
 .lede {
   max-width: 46ch;
@@ -227,14 +265,15 @@ button, a, label, input { -webkit-tap-highlight-color: transparent; touch-action
 }
 
 .btn:disabled { opacity: 0.38; cursor: default; box-shadow: none; }
+.btn--primary:disabled { opacity: 0.55; filter: grayscale(0.5); }
 
 .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
 .btn--primary {
   border-color: transparent;
   color: #fdfcfb;
-  background: linear-gradient(180deg, var(--accent), var(--accent-deep));
-  box-shadow: 0 1px 2px rgba(28, 40, 62, 0.14), 0 8px 18px -10px rgba(132, 61, 30, 0.5);
+  background: linear-gradient(120deg, var(--accent), var(--accent-deep) 55%, #5e3aa0);
+  box-shadow: 0 1px 2px rgba(28, 40, 62, 0.14), 0 10px 26px -10px rgba(132, 61, 30, 0.6);
 }
 
 .btn--ghost {
@@ -548,6 +587,20 @@ button, a, label, input { -webkit-tap-highlight-color: transparent; touch-action
 
 .option__label { transition: transform var(--mid) var(--ease); }
 
+/* The scale reads at a glance: teal for agree, purple for disagree, and the
+   dot grows towards either end. The chosen option lights up in its own colour. */
+.option { --opt: var(--accent); }
+.option:nth-child(1) { --opt: #1f8a7c; --dot: 20px; }
+.option:nth-child(2) { --opt: #2f9e8f; --dot: 17px; }
+.option:nth-child(3) { --opt: #4fae9f; --dot: 14px; }
+.option:nth-child(4) { --opt: #6b6f7a; --dot: 11px; }
+.option:nth-child(5) { --opt: #9a78d0; --dot: 14px; }
+.option:nth-child(6) { --opt: #8660c6; --dot: 17px; }
+.option:nth-child(7) { --opt: #7048b5; --dot: 20px; }
+.option { grid-template-columns: 22px 1fr auto; }
+.option .option__dot { width: var(--dot, 12px); height: var(--dot, 12px); border-color: var(--opt); justify-self: center; }
+.option::before { background: var(--opt); }
+
 /* The number shortcut is keyboard-only, so it stays out of the way on touch. */
 .option__key {
   font-size: 0.68rem;
@@ -560,18 +613,18 @@ button, a, label, input { -webkit-tap-highlight-color: transparent; touch-action
 
 .option--selected {
   color: var(--ink);
-  background: var(--accent-soft);
-  border-color: var(--accent-tint);
+  background: color-mix(in srgb, var(--opt) 12%, var(--surface));
+  border-color: color-mix(in srgb, var(--opt) 45%, transparent);
   box-shadow: 0 1px 2px rgba(28, 40, 62, 0.06);
   font-weight: 500;
 }
 .option--selected::before { transform: scaleY(1); }
 .option--selected .option__label { transform: translateX(3px); }
 .option--selected .option__dot {
-  background: var(--accent);
-  border-color: var(--accent);
+  background: var(--opt);
+  border-color: var(--opt);
   transform: scale(1.12);
-  box-shadow: 0 0 0 4px var(--accent-soft);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--opt) 18%, transparent);
 }
 
 /* Back and Next ride along the bottom of the screen instead of sitting under
@@ -585,7 +638,7 @@ button, a, label, input { -webkit-tap-highlight-color: transparent; touch-action
   gap: 0.6rem;
   margin: 1.1rem calc(var(--gutter) * -1) 0;
   padding: 0.75rem var(--gutter) calc(0.75rem + env(safe-area-inset-bottom));
-  background: rgba(233, 237, 243, 0.9);
+  background: rgba(253, 240, 232, 0.72);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-top: 1px solid var(--line);
@@ -627,7 +680,9 @@ button, a, label, input { -webkit-tap-highlight-color: transparent; touch-action
   .quiz__head .eyebrow { margin-bottom: 0.55rem; }
   .quiz__meta { margin-top: 0.5rem; }
 
-  .quiz__card { padding: 0.95rem 0.85rem; }
+  /* The card hugs its question and answers and sits centred in the space
+     left over, rather than stretching and leaving a hole in the middle. */
+  .quiz__card { padding: 0.95rem 0.85rem; flex: 0 1 auto; margin: auto 0; }
 
   .quiz__statement {
     margin-bottom: 0.9rem;
@@ -638,17 +693,17 @@ button, a, label, input { -webkit-tap-highlight-color: transparent; touch-action
   /* Options share the leftover height evenly; they only scroll as a last
      resort on unusually short screens. */
   .options {
-    flex: 1;
+    flex: 0 1 auto;
     min-height: 0;
     display: flex;
     flex-direction: column;
-    gap: 1px;
+    gap: 6px;
     overflow-y: auto;
   }
 
   .option {
-    flex: 1 1 0;
-    min-height: 44px;
+    flex: 0 0 auto;
+    min-height: 48px;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     font-size: 0.95rem;
@@ -1038,7 +1093,28 @@ button, a, label, input { -webkit-tap-highlight-color: transparent; touch-action
 
 @media (min-width: 40rem) { .card { padding: 1.7rem; } }
 
-.card__swatch { position: absolute; inset: 0 0 auto 0; height: 4px; }
+/* Each card glows faintly in its own aesthetic's colours (--c1/--c2 are set
+   inline by aestheticCard). */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(22rem 14rem at 100% 0%, var(--c2, transparent), transparent 70%),
+    radial-gradient(16rem 12rem at 0% 100%, var(--c1, transparent), transparent 70%);
+  opacity: 0.16;
+  transition: opacity var(--mid) var(--ease);
+}
+.card > * { position: relative; z-index: 1; }
+.card > .card__swatch { position: absolute; }
+
+.cards > .card { animation: rise var(--slow) var(--ease) both; }
+.cards > .card:nth-child(2) { animation-delay: 90ms; }
+.cards > .card:nth-child(3) { animation-delay: 180ms; }
+
+.card__swatch { position: absolute; inset: 0 0 auto 0; height: 6px; }
 
 .card__head { margin-bottom: 0.9rem; }
 
@@ -1253,8 +1329,10 @@ button, a, label, input { -webkit-tap-highlight-color: transparent; touch-action
   }
   .btn:active:not(:disabled) { transform: translateY(0); }
   .btn--primary:hover:not(:disabled) {
-    background: linear-gradient(180deg, #b55a30, var(--accent-deep));
+    background: linear-gradient(120deg, #b55a30, var(--accent-deep) 50%, #6c45b5);
     border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(28, 40, 62, 0.14), 0 16px 34px -12px rgba(132, 61, 30, 0.7);
   }
   .btn--ghost:hover:not(:disabled) { background: var(--surface); color: var(--ink); }
   .btn--link:hover { background: none; transform: none; box-shadow: none; color: var(--ink); }
@@ -1263,13 +1341,14 @@ button, a, label, input { -webkit-tap-highlight-color: transparent; touch-action
   .option:hover::before { transform: scaleY(0.55); }
   .option:hover .option__key { opacity: 0.55; }
   .option:hover { border-color: var(--line-strong); }
-  .option--selected:hover { background: var(--accent-soft); border-color: var(--accent-tint); }
+  .option--selected:hover { background: color-mix(in srgb, var(--opt) 16%, var(--surface)); border-color: var(--opt); }
   .option--selected:hover::before { transform: scaleY(1); }
 
   .hero__credit:hover { color: #fff; }
   .photo:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
   .track:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
-  .card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+  .card:hover { transform: translateY(-4px) rotate(-0.3deg); box-shadow: var(--shadow-lg); }
+  .card:hover::before { opacity: 0.3; }
   .facet:hover { background: #ffffff; }
   .rank__row:hover { background: var(--surface); }
 

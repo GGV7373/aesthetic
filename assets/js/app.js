@@ -195,9 +195,20 @@
     var current = root.firstChild;
     if (current && current.dispatchEvent) current.dispatchEvent(new Event('aq:teardown'));
     root.innerHTML = '';
+    setMood(null);
     root.appendChild(node);
     node.classList.add('fade-in');
     global.scrollTo({ top: 0, behavior: 'auto' });
+  }
+
+  /* Tints the background clouds with an aesthetic's palette; null puts the
+     default colours back. */
+  function setMood(aesthetic) {
+    var style = document.documentElement.style;
+    ['--mood1', '--mood2', '--mood3'].forEach(function (v, i) {
+      if (aesthetic) style.setProperty(v, aesthetic.palette[i + 1]);
+      else style.removeProperty(v);
+    });
   }
 
   /* ---------- intro ---------- */
@@ -252,7 +263,7 @@
 
     var view = el('section', { class: 'screen screen--intro' }, [
       el('p', { class: 'eyebrow', text: 'An aesthetic profile in 50 statements' }),
-      el('h1', { class: 'display', html: 'What aesthetic<br>are you?' }),
+      el('h1', { class: 'display', html: 'What <em>aesthetic</em><br>are you?' }),
       el('p', { class: 'lede' }, [
         'This is not a quiz about what you like the look of. It is a test of which ' +
         'aesthetic world your temperament belongs to — your relationship to nature, ' +
@@ -384,7 +395,7 @@
 
     var view = el('section', { class: 'screen screen--preferences' }, [
       el('p', { class: 'eyebrow', text: 'Before you start' }),
-      el('h1', { class: 'display display--sub', html: 'What matters<br>to you?' }),
+      el('h1', { class: 'display display--sub', html: 'What <em>matters</em><br>to you?' }),
       el('p', { class: 'lede' }, [
         'Pick what you care about and most of your questions will be about those ' +
         'things. Everything else still gets a question or two, so the result ' +
@@ -653,7 +664,10 @@
   function aestheticCard(entry, kind, opts) {
     opts = opts || {};
     var a = data.aestheticsByKey[entry.key];
-    return el('article', { class: 'card card--' + kind }, [
+    return el('article', {
+      class: 'card card--' + kind,
+      style: '--c1:' + a.palette[1] + ';--c2:' + a.palette[2]
+    }, [
       el('div', { class: 'card__swatch', style: 'background:' + AQ.visuals.swatch(a) }),
       el('div', { class: 'card__head' }, [
         el('p', { class: 'eyebrow', text: opts.label || '' }),
@@ -1134,6 +1148,7 @@
 
     if (!preview) clearStore(STORE_SESSION);
     render(view);
+    setMood(primary);
     photoStrip(primary, heroBanner, wikiBlock, !!preview);
   }
 

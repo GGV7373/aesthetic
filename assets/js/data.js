@@ -29,7 +29,10 @@
     var keys = Object.keys(FILES);
     return Promise.all(
       keys.map(function (key) {
-        return fetch(FILES[key], { cache: 'no-cache' }).then(function (res) {
+        /* No cache option here: it would make the browser skip the preloaded
+           copy from index.html. Freshness comes from the server's
+           Cache-Control header instead (see netlify.toml). */
+        return fetch(FILES[key]).then(function (res) {
           if (!res.ok) throw new Error(FILES[key] + ' returned ' + res.status);
           return res.json();
         });
