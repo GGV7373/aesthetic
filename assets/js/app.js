@@ -910,6 +910,18 @@
     return 'https://aesthetics.fandom.com/wiki/' + encodeURIComponent(title.replace(/ /g, '_'));
   }
 
+  /* The generated mood plate as an <img> rather than inline SVG. Its blur and
+     grain filters are heavy; as an image the browser runs them once and then
+     only moves pixels, instead of re-running them on every scroll and hover. */
+  function plate(a, cls) {
+    return el('div', { class: cls }, [
+      el('img', {
+        src: 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(AQ.visuals.moodPlate(a)),
+        alt: '', decoding: 'async'
+      })
+    ]);
+  }
+
   /* A link to an aesthetic's Aesthetics Wiki page, opened in a new tab. */
   function wikiLink(a, cls, children) {
     return el('a', {
@@ -1049,7 +1061,7 @@
       var a = data.aestheticsByKey[entry.key];
       return el('article', { class: 'trio__panel', style: 'animation-delay:' + (i * 120) + 'ms' }, [
         wikiLink(a, 'trio__banner', [
-          el('div', { class: 'trio__plate', html: AQ.visuals.moodPlate(a) }),
+          plate(a, 'trio__plate'),
           el('p', { class: 'trio__lens', text: lenses[k].label }),
           el('h2', { class: 'trio__name', text: a.name })
         ]),
@@ -1081,7 +1093,7 @@
     ]);
 
     var heroBanner = el('div', { class: 'hero__banner' }, [
-      el('div', { class: 'hero__plate', html: AQ.visuals.moodPlate(primary) }),
+      plate(primary, 'hero__plate'),
       el('h2', { class: 'hero__name', text: primary.name })
     ]);
     var hero = el('header', { class: 'hero' }, [

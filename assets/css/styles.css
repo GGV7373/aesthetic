@@ -111,7 +111,8 @@ body::before {
     linear-gradient(160deg, #fdf0e6 0%, #f6eaf6 48%, #e6f4f0 100%);
 }
 
-/* The colour clouds. Blurred once, then only transformed while they drift. */
+/* The colour clouds. Plain soft gradients - no blur filter, which on a layer
+   this size cost frames on every screen - so drifting is only a transform. */
 body::after {
   inset: -20%;
   background:
@@ -119,7 +120,6 @@ body::after {
     radial-gradient(32rem 28rem at 90% 16%, var(--mood2), transparent 68%),
     radial-gradient(40rem 32rem at 30% 92%, var(--mood3), transparent 68%),
     radial-gradient(28rem 24rem at 86% 78%, var(--mood1), transparent 70%);
-  filter: blur(60px) saturate(1.25);
   opacity: 0.5;
   transition: opacity 1.2s var(--ease);
   animation: drift 26s ease-in-out infinite alternate;
@@ -785,7 +785,7 @@ button, a, label, input { -webkit-tap-highlight-color: transparent; touch-action
 }
 
 .hero__plate { position: absolute; inset: 0; z-index: -3; }
-.hero__plate svg { width: 100%; height: 100%; display: block; }
+.hero__plate img { width: 100%; height: 100%; display: block; object-fit: cover; }
 
 /* A real photograph, when Commons has one, fades in on top of the generated
    plate - the plate paints instantly and never leaves a blank hero waiting on
@@ -925,7 +925,7 @@ button, a, label, input { -webkit-tap-highlight-color: transparent; touch-action
 @media (min-width: 52rem) { .trio__banner { min-height: 15rem; } }
 
 .trio__plate { position: absolute; inset: 0; z-index: -2; }
-.trio__plate svg { width: 100%; height: 100%; display: block; }
+.trio__plate img { width: 100%; height: 100%; display: block; object-fit: cover; }
 
 .trio__banner::after {
   content: "";
@@ -986,7 +986,7 @@ button, a, label, input { -webkit-tap-highlight-color: transparent; touch-action
 /* ---------- links to Aesthetics Wiki ---------- */
 
 .trio__banner { color: inherit; text-decoration: none; }
-.trio__banner .trio__plate svg { transition: transform var(--slow) var(--ease); }
+.trio__banner .trio__plate img { transition: transform var(--slow) var(--ease); }
 .trio__banner:focus-visible { outline: 2px solid var(--accent); outline-offset: -4px; }
 
 .wikilink {
@@ -1007,7 +1007,7 @@ button, a, label, input { -webkit-tap-highlight-color: transparent; touch-action
 a.rank__name { color: inherit; text-decoration: none; }
 
 @media (hover: hover) {
-  .trio__banner:hover .trio__plate svg { transform: scale(1.04); }
+  .trio__banner:hover .trio__plate img { transform: scale(1.04); }
   .wikilink:hover { text-decoration-color: currentColor; }
   .trio__summarylink:hover { text-decoration-color: currentColor; }
   a.rank__name:hover { color: var(--accent); text-decoration: underline; }
