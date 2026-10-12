@@ -251,6 +251,24 @@
     };
   }
 
+  /* One aesthetic per lens (style / living / feeling): the best-ranked one
+     whose lens - its own `lens`, or else its family's - matches. */
+  function lensOf(a, data) {
+    if (a.lens) return a.lens;
+    var lenses = data.config.lenses || {};
+    for (var k in lenses) if (lenses[k].families.indexOf(a.family) >= 0) return k;
+    return null;
+  }
+
+  function pickTrio(ranked, data) {
+    var trio = {};
+    ranked.forEach(function (entry) {
+      var lens = lensOf(data.aestheticsByKey[entry.key], data);
+      if (lens && !trio[lens]) trio[lens] = entry;
+    });
+    return trio;
+  }
+
   AQ.score = function (questions, answers, data) {
     var profile = buildProfile(questions, answers, data);
     var matching = data.config.matching;
@@ -268,7 +286,8 @@
       primary: ranked[0],
       secondary: ranked[1],
       hidden: pickHidden(ranked, data),
-      combination: detectCombination(ranked, data)
+      combination: detectCombination(ranked, data),
+      trio: pickTrio(ranked, data)
     };
   };
 
@@ -302,7 +321,8 @@
       primary: ranked[0],
       secondary: ranked[1],
       hidden: pickHidden(ranked, data),
-      combination: detectCombination(ranked, data)
+      combination: detectCombination(ranked, data),
+      trio: pickTrio(ranked, data)
     };
   };
 
@@ -310,6 +330,7 @@
     buildProfile: buildProfile,
     assignPercentages: assignPercentages,
     aestheticDistance: aestheticDistance,
-    salience: salience
+    salience: salience,
+    lensOf: lensOf
   };
 })(typeof window !== 'undefined' ? window : globalThis);

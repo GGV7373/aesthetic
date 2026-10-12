@@ -1039,6 +1039,14 @@
       el('p', { class: 'prose prose--muted', text: primary.description })
     ]);
 
+    var lenses = data.config.lenses || {};
+    var trioBlock = el('section', { class: 'block' }, [
+      el('h2', { class: 'block__title', text: 'Your 3 in one' }),
+      el('div', { class: 'cards cards--trio' }, Object.keys(lenses).map(function (k) {
+        return result.trio[k] ? aestheticCard(result.trio[k], 'trio', { label: lenses[k].label }) : null;
+      }))
+    ]);
+
     var sideBySide = el('div', { class: 'cards' }, [
       aestheticCard(result.secondary, 'secondary', { label: 'Runner-up' }),
       aestheticCard(result.hidden, 'hidden', {
@@ -1119,7 +1127,7 @@
     var wikiBlock = wikiSection(primary);
 
     var view = el('section', { class: 'screen screen--result' }, [
-      welcome, hero, musicSection(primary), wikiBlock, whyBlock, sideBySide, comboBlock,
+      welcome, hero, trioBlock, musicSection(primary), wikiBlock, whyBlock, sideBySide, comboBlock,
       worldBlock, profileSection(result.profile),
       rankingSection(result), footer
     ]);

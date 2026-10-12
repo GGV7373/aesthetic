@@ -1021,6 +1021,10 @@ button, a, label, input { -webkit-tap-highlight-color: transparent; touch-action
   .cards { grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-bottom: clamp(2.8rem, 8vh, 4.5rem); }
 }
 
+@media (min-width: 60rem) {
+  .cards--trio { grid-template-columns: 1fr 1fr 1fr; }
+}
+
 .card {
   position: relative;
   border: 1px solid var(--line);

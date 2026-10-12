@@ -503,5 +503,19 @@
     "preferredMin": 4,
     "preferredMax": 6,
     "otherMin": 1
+  },
+  "lenses": {
+    "style": {
+      "label": "Your style",
+      "families": ["Subculture", "Goth", "Japanese Street and Kawaii", "Soft and Romantic", "Sport and Utility", "Status and Money"]
+    },
+    "living": {
+      "label": "Your living",
+      "families": ["Nature and Pastoral", "Cosy and Home", "Design and Everyday", "Sea and Coast", "Adventure and Frontier", "Art and Period", "Academia"]
+    },
+    "feeling": {
+      "label": "Your feeling",
+      "families": ["Internet and Liminal", "Witchy and Folk", "Americana and Screen", "Punk and Futurism", "Global and Regional"]
+    }
   }
 }

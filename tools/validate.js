@@ -28,6 +28,16 @@ const FACETS = ['setting', 'architecture', 'interior', 'technology', 'clothes', 
 const dimKeys = new Set(config.dimensions.map((d) => d.key));
 if (dimKeys.size !== config.dimensions.length) errors.push('Duplicate dimension keys.');
 
+/* ---------- lenses (style / living / feeling) ---------- */
+
+const lenses = config.lenses || {};
+aesthetics.forEach((a) => {
+  const hits = Object.keys(lenses).filter((k) => lenses[k].families.includes(a.family));
+  if (a.lens ? !lenses[a.lens] : hits.length !== 1) {
+    errors.push(`Aesthetic "${a.key}" must belong to exactly one lens (family "${a.family}", lens ${a.lens || '-'}).`);
+  }
+});
+
 /* ---------- statements ---------- */
 
 const ids = new Set();
