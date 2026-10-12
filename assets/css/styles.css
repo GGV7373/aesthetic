@@ -367,6 +367,36 @@ button, a, label, input { -webkit-tap-highlight-color: transparent; touch-action
   .intro__facts strong { font-size: 2.2rem; }
 }
 
+/* The three things the test gives you, named up front. */
+.lensrow {
+  display: grid;
+  gap: 0.6rem;
+  list-style: none;
+  margin: 1.6rem 0 0.4rem;
+  padding: 0;
+}
+
+.lensrow__item {
+  display: grid;
+  gap: 0.15rem;
+  padding: 0.85rem 1rem 0.85rem 1.1rem;
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--surface) 75%, transparent);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--mood1);
+  box-shadow: var(--shadow-sm);
+  animation: rise var(--slow) var(--ease) both;
+}
+.lensrow__item:nth-child(2) { border-left-color: var(--mood2); }
+.lensrow__item:nth-child(3) { border-left-color: var(--mood3); }
+
+.lensrow__item strong { font-family: var(--serif); font-size: 1.25rem; font-weight: 600; line-height: 1.2; }
+.lensrow__item span { font-size: 0.88rem; color: var(--ink-soft); }
+
+@media (min-width: 40rem) {
+  .lensrow { grid-template-columns: repeat(3, 1fr); gap: 0.9rem; margin-top: 2rem; }
+}
+
 /* ---------- preferences ---------- */
 
 .display--sub { font-size: clamp(2.1rem, 8vw, 3.6rem); margin-bottom: 1rem; }
@@ -859,6 +889,100 @@ button, a, label, input { -webkit-tap-highlight-color: transparent; touch-action
   }
 }
 
+/* ---------- result: the three ---------- */
+
+.trio {
+  display: grid;
+  gap: 1rem;
+  margin: 0 0 1.2rem;
+}
+
+@media (min-width: 52rem) {
+  .trio { grid-template-columns: repeat(3, 1fr); gap: 1.1rem; }
+}
+
+.trio__panel {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-lg);
+  animation: rise var(--slow) var(--ease) both;
+}
+
+.trio__banner {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 11rem;
+  padding: 1.1rem 1.2rem;
+}
+
+@media (min-width: 52rem) { .trio__banner { min-height: 15rem; } }
+
+.trio__plate { position: absolute; inset: 0; z-index: -2; }
+.trio__plate svg { width: 100%; height: 100%; display: block; }
+
+.trio__banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(0deg, rgba(12, 11, 10, 0.7) 0%, rgba(12, 11, 10, 0.2) 55%, transparent 85%);
+}
+
+.trio__lens {
+  margin: 0 0 0.3rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.trio__name {
+  margin: 0;
+  color: #fbfcff;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(1.9rem, 7vw, 2.6rem);
+  line-height: 1;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.45);
+}
+
+.trio__foot { padding: 1rem 1.2rem 1.25rem; }
+
+.trio__pct { margin: 0 0 0.5rem; font-size: 0.78rem; color: var(--ink-faint); letter-spacing: 0.04em; }
+.trio__pct strong {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--accent);
+  margin-right: 0.15rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.trio__tagline { margin: 0 0 0.4rem; font-family: var(--serif); font-style: italic; font-size: 1.08rem; line-height: 1.35; }
+.trio__body { margin: 0; font-size: 0.88rem; color: var(--ink-soft); line-height: 1.55; }
+
+.trio__summary {
+  margin: 0 0 2.8rem;
+  font-family: var(--serif);
+  font-size: clamp(1.1rem, 1rem + 0.6vw, 1.35rem);
+  line-height: 1.5;
+  color: var(--ink-soft);
+  text-wrap: balance;
+}
+.trio__summary strong { color: var(--ink); font-weight: 600; }
+
+.block--closer { margin-bottom: 1.2rem; }
+
 /* ---------- photo strip ---------- */
 
 .photos { margin: 0 0 2.5rem; animation: fade var(--slow) var(--ease) both; }
@@ -1074,10 +1198,6 @@ button, a, label, input { -webkit-tap-highlight-color: transparent; touch-action
 
 @media (min-width: 46rem) {
   .cards { grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-bottom: clamp(2.8rem, 8vh, 4.5rem); }
-}
-
-@media (min-width: 60rem) {
-  .cards--trio { grid-template-columns: 1fr 1fr 1fr; }
 }
 
 .card {

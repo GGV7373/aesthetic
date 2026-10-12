@@ -1,8 +1,11 @@
 # What Aesthetic Are You?
 
-A personality test that finds which **aesthetic world** you belong to — not which
-pictures you like. 360 statements in the bank, 50 per run, 35 hidden dimensions and
-176 aesthetics across 18 families, using Aesthetics Wiki as a reference.
+A personality test that gives you three aesthetics — your **style** (what you would
+wear), your **living** (where and how you would live) and your **feeling** (the mood
+you carry) — from your temperament, not from which pictures you like. 360 statements
+in the bank, 50 per run, 35 hidden dimensions and 176 aesthetics across 18 families,
+using Aesthetics Wiki as a reference. Each family belongs to one of the three
+(`lenses` in `data/scoring.json`; an aesthetic can override with its own `lens`).
 
 No framework, no build step, no dependencies. Open `index.html`.
 OR use the website at [estetikk.netlify.app](https://estetikk.netlify.app).

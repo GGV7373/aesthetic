@@ -201,12 +201,12 @@
     global.scrollTo({ top: 0, behavior: 'auto' });
   }
 
-  /* Tints the background clouds with an aesthetic's palette; null puts the
-     default colours back. */
-  function setMood(aesthetic) {
+  /* Tints the background clouds with three colours; null puts the default
+     colours back. */
+  function setMood(colours) {
     var style = document.documentElement.style;
     ['--mood1', '--mood2', '--mood3'].forEach(function (v, i) {
-      if (aesthetic) style.setProperty(v, aesthetic.palette[i + 1]);
+      if (colours) style.setProperty(v, colours[i]);
       else style.removeProperty(v);
     });
   }
@@ -262,13 +262,21 @@
     var urlSeed = queryParam('seed');
 
     var view = el('section', { class: 'screen screen--intro' }, [
-      el('p', { class: 'eyebrow', text: 'An aesthetic profile in 50 statements' }),
-      el('h1', { class: 'display', html: 'What <em>aesthetic</em><br>are you?' }),
+      el('p', { class: 'eyebrow', text: 'What aesthetic are you? Three answers in 50 statements' }),
+      el('h1', { class: 'display', html: 'Your <em>style</em>,<br>your <em>living</em>,<br>your <em>feeling</em>.' }),
       el('p', { class: 'lede' }, [
-        'This is not a quiz about what you like the look of. It is a test of which ' +
-        'aesthetic world your temperament belongs to — your relationship to nature, ' +
-        'technology, history, order, solitude, darkness and beauty.'
+        'Nobody is just one aesthetic. This test gives you three: the one you would wear, ' +
+        'the one you would live in, and the one you feel. All three come from your ' +
+        'temperament — your relationship to nature, technology, history, order, solitude, ' +
+        'darkness and beauty — not from what you like the look of.'
       ]),
+      el('ul', { class: 'lensrow' }, Object.keys(data.config.lenses).map(function (k, i) {
+        var lens = data.config.lenses[k];
+        return el('li', { class: 'lensrow__item', style: 'animation-delay:' + (i * 90) + 'ms' }, [
+          el('strong', { text: lens.name }),
+          el('span', { text: lens.hint })
+        ]);
+      })),
       el('p', { class: 'lede lede--muted' }, [
         'The questions sit in ' + data.config.groups.length + ' themed groups — music, ' +
         'weather, screens, the unexplained, and so on — and each run draws two or three ' +
@@ -1021,13 +1029,48 @@
 
     var welcome = el('div', { class: 'result__welcome' }, [
       el('p', { class: 'eyebrow', text: preview ? 'Preview - debug only' : 'Your result' }),
-      el('p', { class: 'result__greeting', text: 'Fifty statements later, here is the world ' +
-        'your answers keep pointing towards.' })
+      el('h1', { class: 'result__greeting', text: 'Fifty statements later, here are your three.' })
+    ]);
+
+    /* The headline of the result: style, living and feeling side by side. */
+    var lenses = data.config.lenses;
+    var lensKeys = Object.keys(lenses).filter(function (k) { return result.trio[k]; });
+    var trio = el('div', { class: 'trio' }, lensKeys.map(function (k, i) {
+      var entry = result.trio[k];
+      var a = data.aestheticsByKey[entry.key];
+      return el('article', { class: 'trio__panel', style: 'animation-delay:' + (i * 120) + 'ms' }, [
+        el('div', { class: 'trio__banner' }, [
+          el('div', { class: 'trio__plate', html: AQ.visuals.moodPlate(a) }),
+          el('p', { class: 'trio__lens', text: lenses[k].label }),
+          el('h2', { class: 'trio__name', text: a.name })
+        ]),
+        el('div', { class: 'trio__foot' }, [
+          el('p', { class: 'trio__pct' }, [el('strong', { text: entry.percent + '%' }), ' match']),
+          el('p', { class: 'trio__tagline', text: a.tagline }),
+          el('p', { class: 'trio__body', text: a.description })
+        ])
+      ]);
+    }));
+    var summary = el('p', { class: 'trio__summary' }, lensKeys.map(function (k, i) {
+      return el('span', {}, [
+        i ? ' · ' : '',
+        el('strong', { text: data.aestheticsByKey[result.trio[k].key].name }),
+        ' ' + lenses[k].verb
+      ]);
+    }));
+
+    var primaryLens = lensKeys.filter(function (k) { return result.trio[k].key === primary.key; })[0];
+    var closer = el('div', { class: 'block block--closer' }, [
+      el('h2', { class: 'block__title', text: 'A closer look at your strongest' }),
+      el('p', { class: 'block__lede', text: primary.name + ' is the closest match of all ' +
+        result.ranked.length + ' aesthetics' +
+        (primaryLens ? ', and it is your ' + lenses[primaryLens].name.toLowerCase() + '.' : '.') +
+        ' Its music, pictures and world are below.' })
     ]);
 
     var heroBanner = el('div', { class: 'hero__banner' }, [
       el('div', { class: 'hero__plate', html: AQ.visuals.moodPlate(primary) }),
-      el('h1', { class: 'hero__name', text: primary.name })
+      el('h2', { class: 'hero__name', text: primary.name })
     ]);
     var hero = el('header', { class: 'hero' }, [
       heroBanner,
@@ -1051,14 +1094,6 @@
       el('h2', { class: 'block__title', text: 'Why' }),
       el('div', { class: 'prose' }, why.map(function (s) { return el('p', { text: s }); })),
       el('p', { class: 'prose prose--muted', text: primary.description })
-    ]);
-
-    var lenses = data.config.lenses || {};
-    var trioBlock = el('section', { class: 'block' }, [
-      el('h2', { class: 'block__title', text: 'Your 3 in one' }),
-      el('div', { class: 'cards cards--trio' }, Object.keys(lenses).map(function (k) {
-        return result.trio[k] ? aestheticCard(result.trio[k], 'trio', { label: lenses[k].label }) : null;
-      }))
     ]);
 
     var sideBySide = el('div', { class: 'cards' }, [
@@ -1141,14 +1176,15 @@
     var wikiBlock = wikiSection(primary);
 
     var view = el('section', { class: 'screen screen--result' }, [
-      welcome, hero, trioBlock, musicSection(primary), wikiBlock, whyBlock, sideBySide, comboBlock,
+      welcome, trio, summary, closer, hero, musicSection(primary), wikiBlock, whyBlock, sideBySide, comboBlock,
       worldBlock, profileSection(result.profile),
       rankingSection(result), footer
     ]);
 
     if (!preview) clearStore(STORE_SESSION);
     render(view);
-    setMood(primary);
+    /* One cloud per result: style, living and feeling each tint the page. */
+    setMood(lensKeys.map(function (k) { return data.aestheticsByKey[result.trio[k].key].palette[2]; }));
     photoStrip(primary, heroBanner, wikiBlock, !!preview);
   }
 

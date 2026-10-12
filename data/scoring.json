@@ -506,15 +506,24 @@
   },
   "lenses": {
     "style": {
+      "name": "Style",
       "label": "Your style",
+      "hint": "What you would wear and how you would look",
+      "verb": "to wear",
       "families": ["Subculture", "Goth", "Japanese Street and Kawaii", "Soft and Romantic", "Sport and Utility", "Status and Money"]
     },
     "living": {
+      "name": "Living",
       "label": "Your living",
+      "hint": "Where you would live, and who with",
+      "verb": "to live in",
       "families": ["Nature and Pastoral", "Cosy and Home", "Design and Everyday", "Sea and Coast", "Adventure and Frontier", "Art and Period", "Academia"]
     },
     "feeling": {
+      "name": "Feeling",
       "label": "Your feeling",
+      "hint": "The mood you carry around with you",
+      "verb": "to feel",
       "families": ["Internet and Liminal", "Witchy and Folk", "Americana and Screen", "Punk and Futurism", "Global and Regional"]
     }
   }
