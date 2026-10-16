@@ -1,0 +1,681 @@
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Aesthetic Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: a sky ground, one left-aligned column, a sticky top bar, and a scrolling home page
+   with hero search, featured quizzes, theme tags, result lists, steps and a footer. */
+:root{
+  --sky-1:#e8f0ff; --sky-2:#f6e8f3; --panel:#ffffff;
+  --ink:#1d2030; --muted:#5b6175; --warm:#b5532d;
+  --card:rgba(255,255,255,.62); --line:rgba(29,32,48,.12);
+  --track:rgba(29,32,48,.10); --bubble-hi:rgba(255,255,255,.9);
+  --chip:rgba(255,255,255,.7);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --sky-1:#161c38; --sky-2:#2a1733; --panel:#1b1f36;
+    --ink:#eef0fb; --muted:#a9afc7; --warm:#ffb38f;
+    --card:rgba(255,255,255,.06); --line:rgba(255,255,255,.14);
+    --track:rgba(255,255,255,.12); --chip:rgba(255,255,255,.08);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --sky-1:#161c38; --sky-2:#2a1733; --panel:#1b1f36;
+  --ink:#eef0fb; --muted:#a9afc7; --warm:#ffb38f;
+  --card:rgba(255,255,255,.06); --line:rgba(255,255,255,.14);
+  --track:rgba(255,255,255,.12); --chip:rgba(255,255,255,.08);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{
+  min-height:100vh;margin:0;
+  background:linear-gradient(180deg,var(--sky-1) 0%,var(--sky-2) 100%);
+  background-attachment:fixed;
+  color:var(--ink);
+  font:400 16px/1.6 Inter,system-ui,-apple-system,sans-serif;
+  overflow-x:hidden;
+}
+a{color:inherit}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;letter-spacing:-.02em;line-height:1.08;margin:0;text-wrap:balance}
+p{margin:0}
+:focus-visible{outline:3px solid var(--warm);outline-offset:3px}
+
+/* ---- decorative bubbles ---- */
+.bubbles{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.bubble{
+  position:absolute;border-radius:50%;opacity:.35;
+  background:
+    radial-gradient(circle at 30% 28%, var(--bubble-hi) 0 6%, transparent 22%),
+    conic-gradient(from 200deg,#9ff3ff,#ffb3e6,#c9b8ff,#b6ffd9,#9ff3ff);
+  box-shadow:inset -8px -12px 26px rgba(255,255,255,.35),0 10px 30px rgba(120,120,200,.15);
+  animation:drift 14s ease-in-out infinite alternate;
+}
+.b1{width:260px;height:260px;left:-80px;top:4%}
+.b2{width:140px;height:140px;right:4%;top:12%;animation-duration:11s}
+.b3{width:90px;height:90px;right:18%;top:46%;animation-duration:9s}
+.b4{width:200px;height:200px;left:6%;top:70%;animation-duration:17s}
+@keyframes drift{from{transform:translateY(0)}to{transform:translateY(-22px)}}
+@media (prefers-reduced-motion: reduce){.bubble{animation:none}}
+
+/* ---- top bar ---- */
+.topbar{
+  position:sticky;top:env(safe-area-inset-top,0px);z-index:5;
+  background:var(--card);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));
+}
+.topbar-in{max-width:1080px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px;flex-wrap:wrap;padding-block:10px}
+.logo{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:20px;text-decoration:none}
+.logo em{font-style:italic;font-weight:400}
+.nav{display:flex;gap:6px;flex-wrap:wrap}
+.nav button,.nav a{
+  appearance:none;background:transparent;border:0;color:var(--ink);
+  font:500 14px Inter,system-ui,sans-serif;padding:8px 12px;border-radius:999px;cursor:pointer;text-decoration:none;
+}
+.nav button:hover,.nav a:hover{background:var(--chip)}
+
+/* ---- page ---- */
+main{position:relative;z-index:1;max-width:1080px;margin:0 auto;
+  padding-block:0 72px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));
+}
+section{padding-block:56px 0}
+.kicker{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--warm)}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+.sec-head h2{font-size:clamp(28px,4vw,38px);margin-top:6px}
+.muted{color:var(--muted)}
+.small{font-size:14px;color:var(--muted)}
+.meta{font-size:13px;color:var(--muted)}
+
+/* ---- hero ---- */
+.hero{padding-block:56px 8px;display:grid;gap:36px;grid-template-columns:1fr;align-items:center}
+.hero h1{font-size:clamp(46px,8vw,88px);margin:14px 0 18px}
+.hero h1 em{font-style:italic;font-weight:400}
+.lede{font-size:18px;max-width:34em}
+.search{margin-top:28px;display:flex;gap:10px;flex-wrap:wrap}
+.search input{
+  flex:1 1 240px;min-width:0;border-radius:999px;border:1px solid var(--line);
+  background:var(--panel);color:var(--ink);font:400 16px Inter,system-ui,sans-serif;padding:14px 20px;
+}
+.search input:focus{border-color:var(--warm);outline:none;box-shadow:0 0 0 3px rgba(181,83,45,.2)}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.tag{
+  appearance:none;border:1px solid var(--line);background:var(--chip);color:var(--ink);
+  font:500 14px Inter,system-ui,sans-serif;padding:7px 14px;border-radius:999px;cursor:pointer;
+}
+.tag:hover{border-color:#9ff3ff}
+.hero-art{position:relative;height:300px;border-radius:28px;overflow:hidden;
+  background:linear-gradient(160deg,#cfe7ff 0%,#fbe3f1 55%,#d8f7ec 100%);
+  border:1px solid var(--line);
+}
+.hero-art .orb{position:absolute;border-radius:50%;
+  background:radial-gradient(circle at 30% 28%,#fff 0 6%,transparent 22%),
+  conic-gradient(from 200deg,#9ff3ff,#ffb3e6,#c9b8ff,#b6ffd9,#9ff3ff);
+  box-shadow:inset -10px -14px 30px rgba(255,255,255,.4),0 14px 36px rgba(120,120,200,.25);
+  opacity:.9}
+.hero-art .o1{width:170px;height:170px;left:12%;bottom:-30px}
+.hero-art .o2{width:110px;height:110px;right:14%;top:18%}
+.hero-art .o3{width:64px;height:64px;left:52%;top:52%}
+.hero-art .hill{position:absolute;left:-10%;right:-10%;bottom:-40px;height:120px;border-radius:50%;background:linear-gradient(180deg,#b9f0c6,#7fd6a0)}
+.hero-art .arc{position:absolute;left:30%;top:-120px;width:340px;height:340px;border-radius:50%;border:14px solid rgba(255,255,255,.55)}
+@media (min-width:860px){
+  .hero{grid-template-columns:1.1fr .9fr}
+}
+
+/* ---- quiz cards ---- */
+.qgrid{display:grid;gap:18px;grid-template-columns:1fr}
+.qcard{
+  background:var(--card);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;
+}
+.art{height:150px;position:relative;overflow:hidden}
+.art-aesthetic{background:linear-gradient(170deg,#bfe3ff 0%,#ffd6ef 60%,#d7d0ff 100%)}
+.art-core{background:linear-gradient(170deg,#c9f5d6 0%,#e9ffd9 60%,#fdf2c4 100%)}
+.art-year{background:linear-gradient(170deg,#ffd9b8 0%,#ffb3c8 50%,#b8c6ff 100%)}
+.art::before,.art::after{content:"";position:absolute;border-radius:50%}
+.art-aesthetic::before{width:90px;height:90px;right:18%;top:20%;background:radial-gradient(circle at 30% 28%,#fff 0 6%,transparent 22%),conic-gradient(from 200deg,#9ff3ff,#ffb3e6,#c9b8ff,#9ff3ff);opacity:.9}
+.art-aesthetic::after{width:60px;height:60px;left:14%;bottom:18%;background:radial-gradient(circle at 30% 28%,#fff 0 6%,transparent 22%),conic-gradient(from 200deg,#9ff3ff,#ffb3e6,#c9b8ff,#9ff3ff);opacity:.8}
+.art-core::before{width:200px;height:200px;left:-40px;bottom:-120px;background:#8fd9a3;opacity:.7}
+.art-core::after{width:120px;height:120px;right:10%;top:-30px;background:#fff6c2;opacity:.9}
+.art-year::before{width:160px;height:160px;right:-30px;bottom:-70px;background:#fff1cf;opacity:.8}
+.art-year::after{width:70px;height:70px;left:20%;top:24%;background:radial-gradient(circle at 30% 28%,#fff 0 6%,transparent 22%),conic-gradient(from 200deg,#ffd6a5,#ffb3c8,#c9b8ff,#ffd6a5);opacity:.9}
+.qbody{padding:22px;display:flex;flex-direction:column;gap:10px;align-items:flex-start;flex:1}
+.qbody h3{font-size:24px}
+.btn{
+  appearance:none;border:0;border-radius:999px;padding:12px 22px;margin-top:auto;
+  font:600 15px Inter,system-ui,sans-serif;color:#1d2030;
+  background:linear-gradient(120deg,#9ff3ff,#ffc2e8 50%,#c9b8ff);
+  box-shadow:0 10px 26px rgba(120,120,220,.26);
+  cursor:pointer;text-decoration:none;display:inline-block;
+}
+.btn:hover{filter:brightness(1.05)}
+.btn:disabled{opacity:.45;cursor:default;filter:none}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);box-shadow:none}
+
+/* ---- lists ---- */
+.two{display:grid;gap:18px;grid-template-columns:1fr}
+.panel{background:var(--card);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:22px;padding:8px 22px}
+.row-link{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);text-decoration:none}
+.row-link:last-child{border-bottom:0}
+.row-link:hover h3{text-decoration:underline;text-underline-offset:4px}
+.row-link h3{font-size:19px}
+.row-link p{font-size:14px;color:var(--muted);margin-top:2px}
+.num{font-family:Fraunces,Georgia,serif;font-size:22px;color:var(--warm);min-width:2ch;font-variant-numeric:tabular-nums}
+.chev{color:var(--muted);font-size:20px}
+
+/* ---- steps ---- */
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:18px;grid-template-columns:1fr;counter-reset:s}
+.steps li{counter-increment:s;padding:24px;border-radius:22px;background:var(--card);border:1px solid var(--line);position:relative}
+.steps li::before{content:counter(s);font-family:Fraunces,Georgia,serif;font-size:44px;line-height:1;color:var(--warm);display:block;margin-bottom:10px;font-variant-numeric:tabular-nums}
+.steps h3{font-size:22px;margin-bottom:6px}
+.steps p{color:var(--muted)}
+
+/* ---- tips ---- */
+.tips{display:grid;gap:18px;grid-template-columns:1fr}
+.tip{padding:24px;border-radius:22px;background:var(--panel);border:1px solid var(--line)}
+.tip h3{font-size:20px;margin-bottom:8px}
+.tip p{color:var(--muted)}
+
+/* ---- saved ---- */
+.saved-item{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.saved-item:last-of-type{border-bottom:0}
+.saved-item span:last-child{white-space:nowrap}
+
+/* ---- empty + footer ---- */
+.empty{padding:22px;border-radius:18px;border:1px dashed var(--line);color:var(--muted)}
+footer.site{margin-top:72px;padding-block:40px 56px;border-top:1px solid var(--line);display:grid;gap:28px;grid-template-columns:1fr}
+footer.site h4{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 10px;font-weight:600}
+footer.site ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+footer.site a{text-decoration:none}
+footer.site a:hover{text-decoration:underline}
+.fine{font-size:13px;color:var(--muted);max-width:44em}
+
+/* ---- quiz + result views ---- */
+.view{max-width:720px;margin:0 auto;padding-block:40px 72px}
+.progress{height:6px;border-radius:99px;background:var(--track);overflow:hidden;margin-top:14px}
+.progress span{display:block;height:100%;background:linear-gradient(90deg,#9ff3ff,#ffb3e6,#c9b8ff);transition:width .3s}
+.q{font-size:clamp(28px,5vw,40px);margin:18px 0 4px}
+.opts{display:grid;gap:10px;margin-top:22px}
+.opt{
+  appearance:none;width:100%;text-align:left;
+  font:500 16px Inter,system-ui,sans-serif;color:var(--ink);
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:14px 18px;cursor:pointer;transition:transform .12s,border-color .12s;
+}
+.opt:hover{border-color:#9ff3ff;transform:translateX(3px)}
+.opt.sel{border-color:var(--warm)}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:22px}
+.result-name{font-size:clamp(52px,10vw,92px);margin:8px 0 6px}
+.lede2{font-size:18px;margin-bottom:24px}
+.card{background:var(--card);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:22px;padding:22px;margin:14px 0}
+.block + .block{margin-top:20px}
+.block h3{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--warm);margin:0 0 6px;font-family:Inter,system-ui,sans-serif;font-weight:600}
+.mrow{display:flex;justify-content:space-between;gap:12px;margin-top:12px;font-size:15px}
+.bar{height:8px;border-radius:99px;background:var(--track);overflow:hidden;margin-top:6px}
+.bar span{display:block;height:100%;background:linear-gradient(90deg,#9ff3ff,#c9b8ff)}
+.dim{display:grid;grid-template-columns:110px 1fr;gap:12px;align-items:center;margin-top:10px;font-size:14px}
+.dim .bar{margin-top:0}
+
+/* ---- wider screens ---- */
+@media (min-width:720px){
+  .qgrid{grid-template-columns:repeat(3,1fr)}
+  .two{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:repeat(3,1fr)}
+  .tips{grid-template-columns:repeat(3,1fr)}
+  footer.site{grid-template-columns:2fr 1fr 1fr 1fr}
+}
+</style>
+
+<div class="bubbles" aria-hidden="true">
+  <span class="bubble b1"></span>
+  <span class="bubble b2"></span>
+  <span class="bubble b3"></span>
+  <span class="bubble b4"></span>
+</div>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="logo" href="#/">Aesthetic <em>Hub</em></a>
+    <nav class="nav" aria-label="Main">
+      <button type="button" data-act="scroll" data-target="quizzes">Quizzes</button>
+      <button type="button" data-act="scroll" data-target="aesthetics">Aesthetics</button>
+      <button type="button" data-act="scroll" data-target="how">How it works</button>
+      <button type="button" data-act="scroll" data-target="saved">Saved</button>
+    </nav>
+  </div>
+</header>
+
+<main id="app"></main>
+
+<script>
+(function(){
+  var DIMS = ['Nature','Technology','History','Order','Solitude','Darkness','Beauty'];
+  var SCALE = ['Not me at all','Not really','Slightly no','Unsure','Slightly yes','Mostly me','Totally me'];
+
+  /* Each statement has a weight (-1..1) per dimension, in DIMS order.
+     Each result has a target profile (0..1) per dimension, in DIMS order. */
+  var QUIZZES = {
+    aesthetic: {
+      short: 'Aesthetic',
+      title: 'Which aesthetic are you?',
+      blurb: 'Find the aesthetic world your temperament belongs to. Twelve statements, one honest answer each.',
+      resultLabel: 'Your aesthetic is',
+      tags: ['nature','future','vintage','night','clothes','home','dark','colour'],
+      questions: [
+        {q:'I feel most like myself outdoors, away from buildings and screens.', w:[1,-1,0,0,0,0,0]},
+        {q:'Old objects with a story are more beautiful than new ones.', w:[0,0,1,0,0,0,0.3]},
+        {q:'I love the glow of screens late at night.', w:[0,1,0,0,0,0.3,0]},
+        {q:'A tidy, symmetrical room calms me down.', w:[0,0,0,1,0,0,0.3]},
+        {q:'I like being alone with my thoughts more than being in a crowd.', w:[0,0,0,0,1,0,0]},
+        {q:'Grey, rainy days feel cosy to me, not sad.', w:[0.3,0,0,0,0,0.8,0]},
+        {q:'Chrome, neon and glossy plastic make me happy.', w:[0,1,0,0,0,0,0.8]},
+        {q:'I would rather wear something practical than something trendy.', w:[0,0,0,0.6,0,0,-0.5]},
+        {q:'Flowers, fields and sunlight are my favourite kind of beauty.', w:[0.8,0,0,0,0,-0.5,1]},
+        {q:'I am drawn to things that feel a bit eerie or unexplained.', w:[0,0.2,0,0,0,1,0]},
+        {q:'I like vintage things and things from my grandparents’ era.', w:[0,-0.5,1,0,0,0,0]},
+        {q:'Clean lines and bare walls look more beautiful to me than decoration.', w:[0,0,-0.5,1,0,0,-0.4]}
+      ],
+      results: [
+        {name:'Cottagecore', tag:'Soft, slow and close to the ground.', live:'A small house with a garden, or anywhere with a kitchen that smells like bread.', wear:'Linen, knitwear, florals and anything handmade.', feel:'Calm and rooted, happiest when the day moves slowly.', p:[0.95,0.05,0.7,0.4,0.5,0.1,0.8]},
+        {name:'Vaporwave', tag:'Nostalgia for a future that never happened.', live:'A city at night, near a 24-hour arcade and a view of the water.', wear:'Pastel tracksuits, mesh, chrome and anything with a sun on it.', feel:'Dreamy and a little wistful, in the best way.', p:[0.15,0.95,0.3,0.25,0.5,0.45,0.85]},
+        {name:'Dark Academia', tag:'Libraries, old books and late-night thinking.', live:'An old town with stone walls and a good library nearby.', wear:'Tweed, wool coats, turtlenecks and leather satchels.', feel:'Curious and reflective, a bit of a night owl.', p:[0.3,0.15,0.95,0.8,0.8,0.7,0.6]},
+        {name:'Y2K', tag:'Early-internet optimism with glitter on top.', live:'A suburb with a big sky, a mall and a skate park.', wear:'Low-rise jeans, baby tees, silver and butterfly clips.', feel:'Playful, bold and a bit nostalgic for dial-up.', p:[0.1,0.9,0.35,0.5,0.3,0.2,0.65]},
+        {name:'Solarpunk', tag:'A green future that actually works.', live:'A bright city with rooftop gardens and bike lanes.', wear:'Natural fabrics, earth tones and sensible sneakers.', feel:'Hopeful and energised, excited about what comes next.', p:[0.9,0.75,0.3,0.6,0.3,0.05,0.85]},
+        {name:'Gorpcore', tag:'Built for the trail, worn on the street.', live:'Near a forest or mountain, with a good trail a short walk away.', wear:'Technical jackets, fleece, cargo pants and running shoes.', feel:'Active, practical and at ease outdoors.', p:[0.95,0.5,0.2,0.6,0.6,0.3,0.4]},
+        {name:'Liminal', tag:'The empty mall, the hallway at night, the in-between.', live:'A quiet suburb, a motel or a train station at dusk.', wear:'Oversized grey hoodies, soft neutrals and worn-in denim.', feel:'Quiet, a little uneasy and very observant.', p:[0.4,0.6,0.3,0.25,0.95,0.85,0.5]},
+        {name:'Brutalist Minimal', tag:'Concrete, clean lines and nothing extra.', live:'A loft or flat with bare walls and big windows.', wear:'Black, grey and one good coat. No logos.', feel:'Focused and calm, happiest with less clutter.', p:[0.1,0.55,0.4,0.95,0.8,0.5,0.25]}
+      ]
+    },
+
+    core: {
+      short: '-core',
+      title: 'Which -core are you?',
+      blurb: 'Eight statements to find the -core that fits your daily mood, your room and your sense of humour.',
+      resultLabel: 'Your -core is',
+      tags: ['nature','weather','magic','dark','home','food'],
+      questions: [
+        {q:'I would happily spend a whole day in the woods looking for mushrooms.', w:[1,-0.5,0,0,0,0,0]},
+        {q:'Messy, overgrown and cluttered spaces feel charming to me.', w:[0.5,0,0,-1,0,0,0.3]},
+        {q:'Sparkles, glitter and tiny magical details matter to me.', w:[0,0,0,0,0,-0.5,1]},
+        {q:'I am more into the dark, moody side of things.', w:[0,0,0,0,0,1,0]},
+        {q:'I check the weather forecast for fun.', w:[0.8,0,0,0,0,0,0]},
+        {q:'Dreamy, half-remembered places feel more real than actual ones.', w:[0,0.2,0,0,0.5,0.3,0.5]},
+        {q:'I love baking, tea and slow mornings at home.', w:[0.3,-0.5,0.5,0.5,0,-0.3,0.5]},
+        {q:'I would rather be lost in my own head than at a party.', w:[0,0,0,0,1,0.3,0]}
+      ],
+      results: [
+        {name:'Cottagecore', tag:'Bread, flowers and a slow kitchen.', live:'A cottage, or a flat with a windowsill full of herbs.', wear:'Smocks, aprons, cardigans and straw hats.', feel:'Content and unhurried, happiest with a warm kitchen.', p:[0.9,0.05,0.6,0.5,0.5,0.05,0.85]},
+        {name:'Goblincore', tag:'Mud, mushrooms and things you found on the ground.', live:'A house near a forest, with a shelf for your finds.', wear:'Earth tones, layers, a backpack full of odd things.', feel:'Scruffy, curious and completely at home outside.', p:[0.95,0.1,0.2,0.05,0.5,0.55,0.4]},
+        {name:'Fairycore', tag:'Glitter, moss and tiny magic.', live:'A garden with fairy lights and a stream nearby.', wear:'Sheer fabrics, flower crowns, wings if you have them.', feel:'Whimsical and gentle, always looking for the small magic.', p:[0.85,0.2,0.35,0.2,0.4,0.2,0.95]},
+        {name:'Darkcore', tag:'Shadows, velvet and quiet nights.', live:'A flat with dim lamps, heavy curtains and a good record player.', wear:'Black velvet, lace, silver rings and boots.', feel:'Brooding and introspective, comfortable in the dark.', p:[0.2,0.3,0.6,0.5,0.8,0.95,0.4]},
+        {name:'Weathercore', tag:'Rain, fog and the sky doing its thing.', live:'Somewhere with real seasons and a window that faces the weather.', wear:'Raincoats, wool, muted blues and grey.', feel:'Reflective and calm, you notice every change in the sky.', p:[0.9,0.25,0.3,0.4,0.6,0.5,0.5]},
+        {name:'Dreamcore', tag:'Half-remembered places and soft, uncanny nostalgia.', live:'A quiet room with old photos and a window onto an empty street.', wear:'Soft pastels, faded denim and something a bit too big.', feel:'Floaty and nostalgic, living half in memory.', p:[0.4,0.6,0.5,0.2,0.75,0.4,0.8]}
+      ]
+    },
+
+    year: {
+      short: 'Year',
+      title: 'Which year should you move to?',
+      blurb: 'Eight statements that point to the decade where you would fit best. Past, present or future.',
+      resultLabel: 'You should move to',
+      tags: ['vintage','future','music','night','city','history'],
+      questions: [
+        {q:'I would rather hear a record crackle than stream a perfect song.', w:[0.2,-1,0.5,0,0,0,0.3]},
+        {q:'I want my home to look like it is from a film.', w:[0,0,0.8,0.5,0,0.3,0.5]},
+        {q:'Neon signs and arcades make me feel at home.', w:[0,0.7,0,0,0,0.5,0.7]},
+        {q:'I am excited about flying cars and space stations.', w:[0,1,0,0,0,0,0.3]},
+        {q:'Typewriters and handwritten letters are romantic.', w:[0,-0.8,1,0,0.4,0,0]},
+        {q:'I would be happy with no phone signal for a week.', w:[0.7,-1,0,0,0.5,0,0]},
+        {q:'Big band music, dancing and cocktails sound like my kind of night.', w:[0,0,0.7,0.3,-0.5,0,0.5]},
+        {q:'Calm, clean cities would make me very happy.', w:[0.4,0.3,-0.3,1,0,-0.5,0.5]}
+      ],
+      results: [
+        {name:'1926', tag:'The Jazz Age.', live:'A city apartment with a record player and a rooftop bar nearby.', wear:'Art deco prints, pearls, wide-leg trousers and a hat.', feel:'Glamorous, a bit reckless, always up for a dance.', p:[0.2,0.1,0.9,0.5,0.5,0.4,0.8]},
+        {name:'1974', tag:'Analogue woods.', live:'A cabin or small town with a record shop and a lot of trees.', wear:'Corduroy, earth tones, big knits and flared denim.', feel:'Unhurried and a little bohemian, happiest with a good book.', p:[0.8,0.15,0.7,0.5,0.7,0.3,0.6]},
+        {name:'1986', tag:'Neon nights.', live:'A bright city block with arcades, diners and late buses.', wear:'Bold colours, shoulder pads, neon and sunglasses.', feel:'Energetic and playful, most alive after dark.', p:[0.1,0.8,0.5,0.3,0.4,0.6,0.85]},
+        {name:'1999', tag:'Chrome future.', live:'A suburb with a big sky, a mall and an internet cafe.', wear:'Silver, denim on denim, butterfly clips and frosted tips.', feel:'Optimistic and curious, sure the future is shiny.', p:[0.1,0.95,0.3,0.45,0.35,0.3,0.7]},
+        {name:'2009', tag:'Soft indie.', live:'A flat with fairy lights, a bike and a record shop nearby.', wear:'Cardigans, skinny jeans, thrifted knits and canvas sneakers.', feel:'Thoughtful and a bit sentimental, always has a playlist ready.', p:[0.5,0.5,0.4,0.4,0.6,0.3,0.7]},
+        {name:'2157', tag:'Solar city.', live:'A bright city with rooftop gardens, trains and a park on every block.', wear:'Light fabrics, soft white, earthy greens and sensible shoes.', feel:'Hopeful and calm, excited about what comes next.', p:[0.8,0.9,0.2,0.8,0.3,0.05,0.85]}
+      ]
+    }
+  };
+
+  /* ---------- storage (every access guarded) ---------- */
+  var store = {
+    get: function(k, d){
+      try { var v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch(e){ return d; }
+    },
+    set: function(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} },
+    del: function(k){ try { localStorage.removeItem(k); } catch(e){} }
+  };
+
+  function progressKey(id){ return 'aeh:progress:' + id; }
+
+  function getProgress(id){
+    var n = QUIZZES[id].questions.length;
+    var p = store.get(progressKey(id), null);
+    if (!p || !p.answers || p.answers.length !== n) {
+      return { answers: Array(n).fill(null), i: 0 };
+    }
+    return p;
+  }
+  function setProgress(id, p){ store.set(progressKey(id), p); }
+  function answeredCount(p){
+    var c = 0; for (var i = 0; i < p.answers.length; i++){ if (p.answers[i] !== null) c++; } return c;
+  }
+
+  /* ---------- scoring ---------- */
+  function scoreQuiz(qz, answers){
+    var num = [0,0,0,0,0,0,0], den = [0,0,0,0,0,0,0];
+    qz.questions.forEach(function(q, i){
+      var a = answers[i];
+      if (a === null || a === undefined) return;
+      var r = (a - 3) / 3;            // answer 0..6 -> -1..1
+      q.w.forEach(function(w, k){ num[k] += w * r; den[k] += Math.abs(w); });
+    });
+    var user = DIMS.map(function(_, k){ return den[k] ? (num[k] / den[k] + 1) / 2 : 0.5; });
+    var ranked = qz.results.map(function(res){
+      var d = 0;
+      res.p.forEach(function(pv, k){ d += (user[k] - pv) * (user[k] - pv); });
+      return { res: res, match: Math.round(100 * (1 - Math.sqrt(d) / Math.sqrt(7))) };
+    }).sort(function(a, b){ return b.match - a.match; });
+    return { user: user, ranked: ranked };
+  }
+
+  /* ---------- helpers ---------- */
+  function view(html){
+    document.getElementById('app').innerHTML = html;
+    window.scrollTo(0, 0);
+  }
+  function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+  /* ---------- home ---------- */
+  function renderHome(){
+    var saved = store.get('aeh:saved', []);
+
+    var quizCards = Object.keys(QUIZZES).map(function(id){
+      var qz = QUIZZES[id], n = qz.questions.length;
+      var p = getProgress(id), done = answeredCount(p);
+      var label = done === 0 ? 'Start the quiz' : (done === n ? 'See your result' : 'Continue (' + done + ' of ' + n + ')');
+      var href = done === n ? '#/result/' + id : '#/quiz/' + id;
+      var key = (qz.title + ' ' + qz.blurb + ' ' + qz.tags.join(' ')).toLowerCase();
+      return '<article class="qcard" data-s="' + esc(key) + '">' +
+        '<div class="art art-' + id + '" aria-hidden="true"></div>' +
+        '<div class="qbody">' +
+          '<p class="meta">' + n + ' statements &middot; about ' + Math.ceil(n * 0.25) + ' min</p>' +
+          '<h3>' + qz.title + '</h3>' +
+          '<p class="small">' + qz.blurb + '</p>' +
+          '<a class="btn" href="' + href + '">' + label + '</a>' +
+        '</div>' +
+      '</article>';
+    }).join('');
+
+    var aesRows = QUIZZES.aesthetic.results.map(function(r, i){
+      var key = (r.name + ' ' + r.tag + ' aesthetic').toLowerCase();
+      return '<a class="row-link" href="#/quiz/aesthetic" data-s="' + esc(key) + '">' +
+        '<span class="num">' + (i + 1) + '</span>' +
+        '<span style="flex:1"><h3>' + r.name + '</h3><p>' + r.tag + '</p></span>' +
+        '<span class="chev" aria-hidden="true">&rsaquo;</span>' +
+      '</a>';
+    }).join('');
+
+    var coreRows = QUIZZES.core.results.map(function(r, i){
+      var key = (r.name + ' ' + r.tag + ' -core').toLowerCase();
+      return '<a class="row-link" href="#/quiz/core" data-s="' + esc(key) + '">' +
+        '<span class="num">' + (i + 1) + '</span>' +
+        '<span style="flex:1"><h3>' + r.name + '</h3><p>' + r.tag + '</p></span>' +
+        '<span class="chev" aria-hidden="true">&rsaquo;</span>' +
+      '</a>';
+    }).join('');
+
+    var yearRows = QUIZZES.year.results.map(function(r, i){
+      var key = (r.name + ' ' + r.tag + ' year vintage future music city').toLowerCase();
+      return '<a class="row-link" href="#/quiz/year" data-s="' + esc(key) + '">' +
+        '<span class="num">' + (i + 1) + '</span>' +
+        '<span style="flex:1"><h3>' + r.name + '</h3><p>' + r.tag + '</p></span>' +
+        '<span class="chev" aria-hidden="true">&rsaquo;</span>' +
+      '</a>';
+    }).join('');
+
+    var tagList = ['Nature','Night','Future','Vintage','Home','Clothes','Weather','Music','Dark','Colour'];
+    var tagButtons = tagList.map(function(t){
+      return '<button type="button" class="tag" data-act="tag" data-tag="' + t + '">' + t + '</button>';
+    }).join('');
+
+    var savedHtml = '';
+    if (saved.length) {
+      savedHtml = '<section id="saved">' +
+        '<div class="sec-head"><div><p class="kicker">On this device</p><h2>Your saved results</h2></div>' +
+        '<button class="btn ghost" type="button" data-act="clear-saved">Clear all</button></div>' +
+        '<div class="panel">' +
+          saved.slice().reverse().map(function(s){
+            return '<div class="saved-item"><span><b>' + esc(s.name) + '</b> <span class="meta">' + esc(s.quizTitle) + '</span></span><span class="meta">' + esc(s.date) + '</span></div>';
+          }).join('') +
+        '</div>' +
+      '</section>';
+    }
+
+    view(
+      '<div class="hero">' +
+        '<div>' +
+          '<p class="kicker">Short personality quizzes</p>' +
+          '<h1>Find your <em>world.</em></h1>' +
+          '<p class="lede">Answer honestly, get your result, and see where you would live, what you would wear and how you probably feel. There are no right answers.</p>' +
+          '<form class="search" role="search" onsubmit="return false">' +
+            '<input type="search" id="q" placeholder="Search a theme, like nature or night" aria-label="Search quizzes and results" autocomplete="off">' +
+          '</form>' +
+          '<div class="tags">' + tagButtons + '</div>' +
+        '</div>' +
+        '<div class="hero-art" aria-hidden="true">' +
+          '<span class="orb o2"></span><span class="orb o3"></span><span class="orb o1"></span>' +
+          '<span class="arc"></span><span class="hill"></span>' +
+        '</div>' +
+      '</div>' +
+
+      '<div id="empty" class="empty" hidden>Nothing matches that yet. Try a shorter word, or clear the search.</div>' +
+
+      '<section id="quizzes">' +
+        '<div class="sec-head"><div><p class="kicker">Start here</p><h2>Three quizzes</h2></div>' +
+        '<p class="small">Each one takes a few minutes.</p></div>' +
+        '<div class="qgrid">' + quizCards + '</div>' +
+      '</section>' +
+
+      '<section id="aesthetics">' +
+        '<div class="sec-head"><div><p class="kicker">Browse</p><h2>Every aesthetic</h2></div>' +
+        '<p class="small">Tap one to take the aesthetic quiz.</p></div>' +
+        '<div class="two">' +
+          '<div class="panel"><p class="kicker" style="margin:14px 0 4px">Aesthetics</p>' + aesRows + '</div>' +
+          '<div class="panel"><p class="kicker" style="margin:14px 0 4px">-cores</p>' + coreRows + '</div>' +
+        '</div>' +
+        '<div class="panel" style="margin-top:18px"><p class="kicker" style="margin:14px 0 4px">Years</p>' + yearRows + '</div>' +
+      '</section>' +
+
+      '<section id="how">' +
+        '<div class="sec-head"><div><p class="kicker">How it works</p><h2>Three steps</h2></div></div>' +
+        '<ol class="steps">' +
+          '<li><h3>Answer</h3><p>Rate each statement from "Not me at all" to "Totally me". Go with your first instinct.</p></li>' +
+          '<li><h3>Read your result</h3><p>See the match, where you would live, what you would wear and how you feel.</p></li>' +
+          '<li><h3>Save it</h3><p>Keep the result on this device and come back to it whenever you like.</p></li>' +
+        '</ol>' +
+      '</section>' +
+
+      '<section>' +
+        '<div class="sec-head"><div><p class="kicker">Tips</p><h2>Before you start</h2></div></div>' +
+        '<div class="tips">' +
+          '<div class="tip"><h3>Use your gut</h3><p>The answer that feels right is usually more useful than the one you wish were true.</p></div>' +
+          '<div class="tip"><h3>Don’t overthink</h3><p>Each statement is one quick call. Skip the debate and keep moving.</p></div>' +
+          '<div class="tip"><h3>Retake it</h3><p>Your mood changes, and so can your result. Take it again in a few months.</p></div>' +
+        '</div>' +
+      '</section>' +
+
+      savedHtml +
+
+      '<footer class="site">' +
+        '<div><p class="logo" style="margin-bottom:10px">Aesthetic <em>Hub</em></p>' +
+          '<p class="fine">Everything is worked out in your browser. Your progress and saved results stay on this device only.</p></div>' +
+        '<div><h4>Quizzes</h4><ul><li><a href="#/quiz/aesthetic">Aesthetic</a></li><li><a href="#/quiz/core">-core</a></li><li><a href="#/quiz/year">Year</a></li></ul></div>' +
+        '<div><h4>Explore</h4><ul><li><a href="#" data-act="scroll" data-target="aesthetics">Every aesthetic</a></li><li><a href="#" data-act="scroll" data-target="how">How it works</a></li><li><a href="#" data-act="scroll" data-target="saved">Saved results</a></li></ul></div>' +
+        '<div><h4>About</h4><ul><li><span class="small">Made for fun, not science.</span></li></ul></div>' +
+      '</footer>'
+    );
+  }
+
+  /* ---------- quiz ---------- */
+  function renderQuiz(id){
+    var qz = QUIZZES[id], n = qz.questions.length;
+    var p = getProgress(id);
+    if (p.i >= n) { location.hash = '#/result/' + id; return; }
+    var sel = p.answers[p.i];
+    var opts = SCALE.map(function(s, v){
+      return '<button type="button" class="opt' + (sel === v ? ' sel' : '') + '" data-act="answer" data-v="' + v + '" aria-pressed="' + (sel === v) + '">' + s + '</button>';
+    }).join('');
+    view(
+      '<div class="view">' +
+        '<p class="meta"><a href="#/">&larr; Home</a> &middot; ' + qz.short + ' &middot; ' + (p.i + 1) + ' of ' + n + '</p>' +
+        '<div class="progress" aria-hidden="true"><span style="width:' + (p.i / n * 100) + '%"></span></div>' +
+        '<h2 class="q">' + qz.questions[p.i].q + '</h2>' +
+        '<div class="opts" data-quiz="' + id + '">' + opts + '</div>' +
+        '<div class="row"><button type="button" class="btn ghost" data-act="back" data-quiz="' + id + '"' + (p.i === 0 ? ' disabled' : '') + '>Back</button></div>' +
+      '</div>'
+    );
+  }
+
+  /* ---------- result ---------- */
+  function renderResult(id){
+    var qz = QUIZZES[id], n = qz.questions.length;
+    var p = getProgress(id);
+    if (answeredCount(p) < n) { location.hash = '#/quiz/' + id; return; }
+    var s = scoreQuiz(qz, p.answers);
+    var top = s.ranked[0].res;
+
+    var matches = s.ranked.slice(0, 4).map(function(m){
+      return '<div class="mrow"><span>' + m.res.name + '</span><b>' + m.match + '%</b></div>' +
+             '<div class="bar"><span style="width:' + m.match + '%"></span></div>';
+    }).join('');
+
+    var profile = DIMS.map(function(name, k){
+      var v = Math.round(s.user[k] * 100);
+      return '<div class="dim"><span>' + name + '</span><div class="bar"><span style="width:' + v + '%"></span></div></div>';
+    }).join('');
+
+    view(
+      '<div class="view">' +
+        '<p class="meta"><a href="#/">&larr; Home</a> &middot; ' + qz.short + '</p>' +
+        '<p class="kicker" style="margin-top:28px">' + qz.resultLabel + '</p>' +
+        '<h1 class="result-name">' + top.name + '</h1>' +
+        '<p class="lede2">' + top.tag + '</p>' +
+        '<div class="card">' +
+          '<div class="block"><h3>Where to live</h3><p>' + top.live + '</p></div>' +
+          '<div class="block"><h3>What to wear</h3><p>' + top.wear + '</p></div>' +
+          '<div class="block"><h3>How you feel</h3><p>' + top.feel + '</p></div>' +
+        '</div>' +
+        '<div class="card"><h2 style="font-size:22px">Closest matches</h2>' + matches + '</div>' +
+        '<div class="card"><h2 style="font-size:22px">Your profile</h2>' + profile + '</div>' +
+        '<div class="row">' +
+          '<button type="button" class="btn" data-act="save" data-quiz="' + id + '">Save result</button>' +
+          '<button type="button" class="btn ghost" data-act="retake" data-quiz="' + id + '">Take it again</button>' +
+          '<a class="btn ghost" href="#/">Home</a>' +
+        '</div>' +
+      '</div>'
+    );
+  }
+
+  /* ---------- search filter (no re-render, so typing keeps focus) ---------- */
+  function applyFilter(){
+    var inp = document.getElementById('q');
+    if (!inp) return;
+    var q = inp.value.trim().toLowerCase();
+    var shown = 0;
+    document.querySelectorAll('[data-s]').forEach(function(el){
+      var m = !q || el.getAttribute('data-s').indexOf(q) !== -1;
+      el.hidden = !m;
+      if (m) shown++;
+    });
+    var empty = document.getElementById('empty');
+    if (empty) empty.hidden = !q || shown > 0;
+  }
+
+  /* ---------- actions ---------- */
+  var app = document.getElementById('app');
+
+  app.addEventListener('input', function(e){
+    if (e.target && e.target.id === 'q') applyFilter();
+  });
+
+  app.addEventListener('click', function(e){
+    var b = e.target.closest('[data-act]');
+    if (!b || b.disabled) return;
+    var act = b.dataset.act;
+
+    if (act === 'scroll') {
+      e.preventDefault();
+      var el = document.getElementById(b.dataset.target);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
+    if (act === 'tag') {
+      var inp = document.getElementById('q');
+      if (inp) { inp.value = b.dataset.tag; applyFilter(); }
+      return;
+    }
+    if (act === 'clear-saved') {
+      store.del('aeh:saved');
+      renderHome();
+      return;
+    }
+
+    var holder = b.closest('[data-quiz]');
+    var id = (holder && holder.dataset.quiz) || b.dataset.quiz;
+    if (!id || !QUIZZES[id]) return;
+
+    if (act === 'answer') {
+      var p = getProgress(id);
+      p.answers[p.i] = Number(b.dataset.v);
+      p.i = Math.min(p.i + 1, QUIZZES[id].questions.length);
+      setProgress(id, p);
+      if (p.i >= QUIZZES[id].questions.length) { location.hash = '#/result/' + id; }
+      else { route(); }
+    }
+    else if (act === 'back') {
+      var q = getProgress(id);
+      if (q.i > 0) { q.i -= 1; setProgress(id, q); route(); }
+    }
+    else if (act === 'save') {
+      var r = getProgress(id);
+      var top = scoreQuiz(QUIZZES[id], r.answers).ranked[0].res;
+      var saved = store.get('aeh:saved', []);
+      var date = new Date().toLocaleDateString('en-GB');
+      var exists = saved.some(function(x){ return x.quiz === id && x.name === top.name && x.date === date; });
+      if (!exists) {
+        saved.push({ quiz: id, quizTitle: QUIZZES[id].short, name: top.name, date: date });
+        store.set('aeh:saved', saved);
+      }
+      b.textContent = 'Saved';
+      b.disabled = true;
+    }
+    else if (act === 'retake') {
+      store.del(progressKey(id));
+      location.hash = '#/quiz/' + id;
+      route();
+    }
+  });
+
+  function route(){
+    var parts = location.hash.replace(/^#\/?/, '').split('/');
+    var kind = parts[0], id = parts[1];
+    if ((kind === 'quiz' || kind === 'result') && QUIZZES[id]) {
+      if (kind === 'quiz') { renderQuiz(id); } else { renderResult(id); }
+    } else {
+      renderHome();
+    }
+  }
+
+  window.addEventListener('hashchange', route);
+  route();
+})();
+</script>
