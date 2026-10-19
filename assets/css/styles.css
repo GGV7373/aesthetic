@@ -949,130 +949,6 @@ button, a, label, input { -webkit-tap-highlight-color: transparent; touch-action
   }
 }
 
-/* ---------- result: the three ---------- */
-
-.trio {
-  display: grid;
-  gap: 1rem;
-  margin: 0 0 1.2rem;
-}
-
-@media (min-width: 52rem) {
-  .trio { grid-template-columns: repeat(3, 1fr); gap: 1.1rem; }
-}
-
-.trio__panel {
-  display: flex;
-  flex-direction: column;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow-lg);
-  animation: rise var(--slow) var(--ease) both;
-}
-
-.trio__banner {
-  position: relative;
-  isolation: isolate;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  min-height: 11rem;
-  padding: 1.1rem 1.2rem;
-}
-
-@media (min-width: 52rem) { .trio__banner { min-height: 15rem; } }
-
-.trio__plate { position: absolute; inset: 0; z-index: -2; }
-.trio__plate img { width: 100%; height: 100%; display: block; object-fit: cover; }
-
-.trio__banner::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(0deg, rgba(12, 11, 10, 0.7) 0%, rgba(12, 11, 10, 0.2) 55%, transparent 85%);
-}
-
-.trio__lens {
-  margin: 0 0 0.3rem;
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.85);
-}
-
-.trio__name {
-  margin: 0;
-  color: #fbfcff;
-  font-family: var(--serif);
-  font-weight: 600;
-  font-size: clamp(1.9rem, 7vw, 2.6rem);
-  line-height: 1;
-  letter-spacing: -0.015em;
-  text-wrap: balance;
-  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.45);
-}
-
-.trio__foot { padding: 1rem 1.2rem 1.25rem; }
-
-.trio__pct { margin: 0 0 0.5rem; font-size: 0.78rem; color: var(--ink-faint); letter-spacing: 0.04em; }
-.trio__pct strong {
-  font-family: var(--serif);
-  font-size: 1.6rem;
-  font-weight: 500;
-  color: var(--accent);
-  margin-right: 0.15rem;
-  font-variant-numeric: tabular-nums;
-}
-
-.trio__tagline { margin: 0 0 0.4rem; font-family: var(--serif); font-style: italic; font-size: 1.08rem; line-height: 1.35; }
-.trio__body { margin: 0; font-size: 0.88rem; color: var(--ink-soft); line-height: 1.55; }
-
-.trio__summary {
-  margin: 0 0 2.8rem;
-  font-family: var(--serif);
-  font-size: clamp(1.1rem, 1rem + 0.6vw, 1.35rem);
-  line-height: 1.5;
-  color: var(--ink-soft);
-  text-wrap: balance;
-}
-.trio__summary strong { color: var(--ink); font-weight: 600; }
-
-.block--closer { margin-bottom: 1.2rem; }
-
-/* ---------- links to Aesthetics Wiki ---------- */
-
-.trio__banner { color: inherit; text-decoration: none; }
-.trio__banner .trio__plate img { transition: transform var(--slow) var(--ease); }
-.trio__banner:focus-visible { outline: 2px solid var(--accent); outline-offset: -4px; }
-
-.wikilink {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  margin-top: 0.6rem;
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--accent);
-  text-decoration: underline;
-  text-decoration-color: var(--accent-tint);
-  text-underline-offset: 0.2em;
-}
-
-.trio__summarylink { color: inherit; text-decoration: underline; text-decoration-color: var(--line-strong); text-underline-offset: 0.18em; }
-
-a.rank__name { color: inherit; text-decoration: none; }
-
-@media (hover: hover) {
-  .trio__banner:hover .trio__plate img { transform: scale(1.04); }
-  .wikilink:hover { text-decoration-color: currentColor; }
-  .trio__summarylink:hover { text-decoration-color: currentColor; }
-  a.rank__name:hover { color: var(--accent); text-decoration: underline; }
-}
-
 /* ---------- photo strip ---------- */
 
 .photos { margin: 0 0 2.5rem; animation: fade var(--slow) var(--ease) both; }
@@ -1278,114 +1154,6 @@ a.rank__name { color: inherit; text-decoration: none; }
 
 .bar__fill--subtle { background: linear-gradient(90deg, #cd8f6e, var(--accent)); }
 
-/* ---------- cards ---------- */
-
-.cards {
-  display: grid;
-  gap: 0.9rem;
-  margin: 0 0 2.6rem;
-}
-
-@media (min-width: 46rem) {
-  .cards { grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-bottom: clamp(2.8rem, 8vh, 4.5rem); }
-}
-
-.card {
-  position: relative;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  padding: 1.35rem 1.2rem;
-  background: var(--surface);
-  box-shadow: var(--shadow-sm);
-  overflow: hidden;
-  transition: transform var(--mid) var(--ease), box-shadow var(--mid) var(--ease);
-}
-
-@media (min-width: 40rem) { .card { padding: 1.7rem; } }
-
-/* Each card glows faintly in its own aesthetic's colours (--c1/--c2 are set
-   inline by aestheticCard). */
-.card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(22rem 14rem at 100% 0%, var(--c2, transparent), transparent 70%),
-    radial-gradient(16rem 12rem at 0% 100%, var(--c1, transparent), transparent 70%);
-  opacity: 0.16;
-  transition: opacity var(--mid) var(--ease);
-}
-.card > * { position: relative; z-index: 1; }
-.card > .card__swatch { position: absolute; }
-
-.cards > .card { animation: rise var(--slow) var(--ease) both; }
-.cards > .card:nth-child(2) { animation-delay: 90ms; }
-.cards > .card:nth-child(3) { animation-delay: 180ms; }
-
-.card__swatch { position: absolute; inset: 0 0 auto 0; height: 6px; }
-
-.card__head { margin-bottom: 0.9rem; }
-
-.card__title {
-  margin: 0 0 0.35rem;
-  font-family: var(--serif);
-  font-weight: 600;
-  font-size: clamp(1.55rem, 1.3rem + 1.2vw, 2.1rem);
-  line-height: 1.12;
-}
-
-.card__percent { margin: 0; font-size: 0.76rem; color: var(--ink-faint); letter-spacing: 0.04em; }
-.card__percent strong {
-  font-size: 1.1rem;
-  color: var(--accent);
-  font-weight: 600;
-  margin-right: 0.5rem;
-  font-variant-numeric: tabular-nums;
-}
-
-.card__tagline {
-  margin: 0.9rem 0 0.5rem;
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 1.1rem;
-}
-
-.card__body { margin: 0; font-size: 0.9rem; color: var(--ink-soft); }
-
-.card__note {
-  margin: 0.9rem 0 0;
-  padding-top: 0.85rem;
-  border-top: 1px solid var(--line);
-  font-size: 0.8rem;
-  color: var(--ink-faint);
-  font-style: italic;
-}
-
-/* ---------- combination ---------- */
-
-.block--combo {
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  padding: 1.35rem 1.2rem;
-  background:
-    radial-gradient(28rem 16rem at 92% 0%, rgba(163, 79, 42, 0.06), transparent 70%),
-    var(--surface);
-  box-shadow: var(--shadow-sm);
-}
-
-@media (min-width: 40rem) { .block--combo { padding: clamp(1.5rem, 4.5vw, 2.5rem); } }
-
-.combo__label {
-  margin: 0 0 1.1rem;
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: clamp(1.6rem, 1.2rem + 2.4vw, 2.9rem);
-  line-height: 1.12;
-  text-wrap: balance;
-}
-
 /* ---------- facets ---------- */
 
 .facets {
@@ -1475,49 +1243,6 @@ a.rank__name { color: inherit; text-decoration: none; }
   .profile__poles { text-align: right; font-size: 0.64rem; }
 }
 
-/* ---------- ranking ---------- */
-
-.rank { list-style: none; margin: 0; padding: 0; }
-
-.rank__row {
-  display: grid;
-  grid-template-columns: 1.8rem 1fr 3.2rem;
-  grid-template-areas: "num name pct" "num bar bar";
-  align-items: center;
-  gap: 0.35rem 0.7rem;
-  padding: 0.8rem 0.4rem;
-  border-radius: var(--radius);
-  border-bottom: 1px solid var(--line);
-  transition: background var(--mid) var(--ease);
-}
-
-.rank__num {
-  grid-area: num;
-  font-family: var(--serif);
-  font-size: 1.1rem;
-  color: var(--ink-faint);
-  font-variant-numeric: tabular-nums;
-}
-.rank__name { grid-area: name; font-size: 0.98rem; }
-.rank__row .bar { grid-area: bar; height: 4px; }
-.rank__pct {
-  grid-area: pct;
-  text-align: right;
-  font-size: 0.8rem;
-  color: var(--ink-soft);
-  font-variant-numeric: tabular-nums;
-}
-
-@media (min-width: 40rem) {
-  .rank__row {
-    grid-template-columns: 2.2rem 13rem 1fr 3.6rem;
-    grid-template-areas: "num name bar pct";
-    gap: 0.4rem 0.9rem;
-    padding: 0.85rem 0.6rem;
-  }
-  .rank__name { font-size: 1rem; }
-}
-
 /* ---------- footer ---------- */
 
 .result__footer { border-top: 1px solid var(--line); padding-top: 1.8rem; }
@@ -1557,10 +1282,10 @@ a.rank__name { color: inherit; text-decoration: none; }
   .hero__credit:hover { color: #fff; }
   .photo:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
   .track:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
-  .card:hover { transform: translateY(-4px) rotate(-0.3deg); box-shadow: var(--shadow-lg); }
-  .card:hover::before { opacity: 0.3; }
+  
+  
   .facet:hover { background: #ffffff; }
-  .rank__row:hover { background: var(--surface); }
+  
 
   .chip:hover { border-color: var(--ink-faint); }
   .chip--selected:hover { border-color: var(--accent); }

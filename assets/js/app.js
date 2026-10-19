@@ -1003,12 +1003,6 @@
   }
 
   /* A link to an aesthetic's Aesthetics Wiki page, opened in a new tab. */
-  function wikiLink(a, cls, children) {
-    return el('a', {
-      class: cls, href: wikiUrl(a), target: '_blank', rel: 'noopener noreferrer',
-      title: 'See ' + a.name + ' on Aesthetics Wiki'
-    }, children);
-  }
 
   function wikiSection(aesthetic) {
     return el('section', { class: 'block' }, [
@@ -1166,7 +1160,7 @@
           onclick: function () {
             clearStore(STORE_SESSION);
             if (familyQuiz) { startFamilySession(familyQuiz.key); screenQuiz(); }
-            else screenPreferences();
+            else { chosenLength = runLength; screenPreferences(); }
           }
         }, [familyQuiz ? 'Take it again' : 'Take it again with new questions']),
         copyBtn
