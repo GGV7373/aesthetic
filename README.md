@@ -1,11 +1,16 @@
 # What Aesthetic Are You?
 
-A personality test that gives you three aesthetics — your **style** (what you would
-wear), your **living** (where and how you would live) and your **feeling** (the mood
-you carry) — from your temperament, not from which pictures you like. 360 statements
-in the bank, 50 per run, 35 hidden dimensions and 176 aesthetics across 18 families,
-using Aesthetics Wiki as a reference. Each family belongs to one of the three
-(`lenses` in `data/scoring.json`; an aesthetic can override with its own `lens`).
+Short personality quizzes that match your temperament to **one aesthetic**, not to
+which pictures you like. The landing page offers two kinds:
+
+* **The full test**: all 200 aesthetics across 18 families, in three lengths: short
+  (30 statements), standard (50) or long (100), drawn from a bank of 360 statements
+  that measure 35 hidden dimensions.
+* **Family quizzes**: a quicker quiz that stays inside one family. Internet (30
+  statements, 24 aesthetics), nature (20, 10), witchy and folk (24, 17) and goth
+  (25, 11).
+
+Aesthetics Wiki is used as a reference for names and general character.
 
 No framework, no build step, no dependencies. Open `index.html`.
 OR use the website at [estetikk.netlify.app](https://estetikk.netlify.app).
@@ -18,6 +23,7 @@ OR use the website at [estetikk.netlify.app](https://estetikk.netlify.app).
 * [Deploying to Netlify](#deploying-to-netlify)
 * [Built for the phone first](#built-for-the-phone-first)
 * [How the test works](#how-the-test-works)
+* [Family quizzes](#family-quizzes)
 * [The 18 families](#the-18-families)
 * [The back button](#the-back-button)
 * [Gender-neutral by default](#gender-neutral-by-default)
@@ -112,7 +118,7 @@ return to a three-column grid, and the hero foot goes back to two columns.
 The point is that no statement belongs to any one aesthetic. The chain is:
 
 ```
-answers  →  35 dimensions  →  match against 176 aesthetic profiles
+answers  →  35 dimensions  →  match against 200 aesthetic profiles
 ```
 
 A question about old buildings never scores points for "Dark Academia". It moves
@@ -164,51 +170,96 @@ Each aesthetic is compared dimension by dimension. Every dimension is weighted b
 
 The top match gets an absolute percentage. The rest are placed by how far they fall
 below the top, measured against your own spread — without that, every aesthetic
-would land within ten points of the next and the ranking would say nothing. The
-result page shows the closest 10 by default, with a toggle underneath the list for
-anyone who wants the full ranking rather than just the top of it.
+would land within ten points of the next and the ranking would say nothing.
 
-### The hidden aesthetic
+The result page shows **only the top match**: its mood plate and photos, the match
+percentage, music, why it fits, and how it would look built around your own profile.
+Runners-up are deliberately not shown.
 
-Picked from places 4–18 and scored on *fit × novelty*: it has to fit reasonably well
-while sitting far from the top two in dimension space, and it is blocked if it
-appears in either one's `related` list. That is why it feels unexpected rather than
-just being number three.
+---
 
-### The combination
+## Family quizzes
 
-If second place is within 4 points, the result is described as a hybrid (`A × B`).
-The system never pretends a hybrid name is official — the text says explicitly that
-the combination was assembled from your profile.
+`data/quizzes.json` holds the smaller quizzes. Each one has its own statements and
+names the `family` its answer comes from:
+
+```json
+{
+  "key": "goth",
+  "title": "Which goth aesthetic are you?",
+  "family": "Goth",
+  "groupLabel": "Goth",
+  "resultLabel": "Your goth aesthetic",
+  "blurb": "Trad Goth, Romantic Goth, Nu-Goth, Cybergoth and more. ...",
+  "questions": [
+    { "id": 9301, "group": "goth", "cluster": "goth-1", "text": "...", "dimensions": { "industrial": 2 } }
+  ]
+}
+```
+
+Every statement in the quiz is asked, in an order drawn from the seed. The statement
+ids start at 9001 so they never collide with the main bank, and they are kept out of
+`data.questions`, so the full test never draws them. The landing page gets a card per
+quiz, and the result page, retake and shared links (`?seed=…&quiz=goth`) work the same
+way as for the full test. A new family quiz is one more entry in the file plus
+`node tools/build-bundle.js`. No JavaScript changes.
+
+### Keeping it fair
+
+Every member of a family shares the family's base traits: all internet aesthetics are
+digital, all goth ones are dark. Matched against the raw profiles, the member that sits
+nearest neutral wins for most people whatever they answer. `AQ.familyData()` in
+`scoring.js` fixes that before scoring, in two steps:
+
+1. every dimension is **centred on the family's own average**, so only what sets a
+   member apart from its siblings counts;
+2. every member's differences are **scaled to the same overall size**, so a boldly
+   drawn member (Cybergoth) is not out-voted by a quietly drawn one (plain Goth).
+
+The statements are written to match. Each one asks about one thing, either answer is
+fine to give, and many are reverse-keyed (agreeing pushes a dimension down).
+`validate.js` fails if a quiz drifts lopsided: fewer than 80% of its members reachable
+by someone answering exactly like them, or one member winning more than four times its
+fair share of random runs. Current numbers:
+
+| Quiz | Reachable | Most common result vs fair share |
+|---|---|---|
+| Internet | 23 / 24 | 2.9× |
+| Nature | 10 / 10 | 2.3× |
+| Witchy and folk | 17 / 17 | 2.2× |
+| Goth | 11 / 11 | 1.6× |
+
+The one internet miss is Webcore, whose profile is nearly identical to Old Web's.
+Sharpening the two profiles in `data/aesthetics.json` is the fix, not more statements.
 
 ---
 
 ## The 18 families
 
-`family` on every aesthetic groups the catalogue. It is metadata for browsing only —
-the scoring never reads it, so moving an aesthetic between families cannot change
-anyone's result.
+`family` on every aesthetic groups the catalogue. The full test never reads it, so
+moving an aesthetic between families cannot change a full-test result. The family
+quizzes do use it: it decides which aesthetics a family quiz can return.
 
 | Family | n | Examples |
 |---|---|---|
-| Internet and Liminal | 21 | After Hours, Analog Horror, Doomer, Draincore, … |
-| Subculture | 18 | Beatnik, Dark Cabaret, Emo, Greaser, … |
+| Internet and Liminal | 24 | After Hours, Analog Horror, Arcadecore, Doomer, … |
+| Subculture | 24 | Beatnik, Biker, Bohemian, Dark Cabaret, … |
+| Witchy and Folk | 17 | Appalachian Gothic, Cryptidcore, Dark Fantasy, Dark Naturalism, … |
 | Art and Period | 16 | Art Deco, Art Nouveau, Arts and Crafts, Baroque, … |
-| Witchy and Folk | 14 | Appalachian Gothic, Cryptidcore, Dark Fantasy, Dark Naturalism, … |
+| Soft and Romantic | 14 | Angelcore, Balletcore, Barbiecore, Clean Minimal, … |
 | Punk and Futurism | 12 | Atompunk, Cassette Futurism, Cyberpunk, Decopunk, … |
-| Soft and Romantic | 12 | Angelcore, Balletcore, Clean Minimal, Coquette, … |
+| Design and Everyday | 11 | Brutalism, Eclectic Vintage, Kitsch, Maximalism, … |
 | Goth | 11 | Cybergoth, Dark Romanticism, Goth, Industrial Gothic, … |
 | Japanese Street and Kawaii | 11 | City Pop, Decora, Fairy Kei, Gyaru, … |
 | Global and Regional | 10 | Afrofuturism, Afropunk, Brazilcore, Gulf Futurism, … |
-| Design and Everyday | 8 | Brutalism, Eclectic Vintage, Maximalism, Mid-Century Modern, … |
+| Nature and Pastoral | 10 | Autumn, Cabincore, Cottagecore, Forestpunk, … |
+| Americana and Screen | 8 | 50s Suburbia, Americana, Diner, Film Noir, … |
 | Sport and Utility | 8 | Equestrian, Gorpcore, Jock, Racing, … |
-| Americana and Screen | 7 | 50s Suburbia, Americana, Diner, Film Noir, … |
-| Nature and Pastoral | 7 | Cabincore, Cottagecore, Forestpunk, Granola, … |
+| Cosy and Home | 7 | Cluttercore, Coastal Linen, Coffee House, Cozycore, … |
 | Status and Money | 7 | Corpcore, Dandy, Hypebeast, Mob Glamour, … |
-| Cosy and Home | 5 | Cluttercore, Coastal Linen, Coffee House, Grandmillennial, … |
+| Sea and Coast | 4 | Nautical, Ocean Grunge, Oceanpunk, Tiki |
 | Academia | 3 | Dark Academia, Light Academia, Romantic Academia |
 | Adventure and Frontier | 3 | Adventure Pulp, Adventurecore, Western |
-| Sea and Coast | 3 | Nautical, Ocean Grunge, Oceanpunk |
 
 ---
 
@@ -220,7 +271,7 @@ entry, and so does every statement, so Back and Forward move through a run exact
 the way the on-screen buttons do:
 
 ```
-intro → preferences → statement 1 → statement 2 → … → statement 50 → result
+intro → preferences → statement 1 → statement 2 → … → last statement → result
 ```
 
 The URL never changes. Entries are told apart by their `history.state` object
@@ -286,9 +337,15 @@ changes** — only the words. The same run produces the same result either way.
 
 ## Question selection
 
-The 360 statements sit in **20 themed groups of eighteen**. Each run draws **2–3 from
-every group**, which is what makes two runs feel genuinely different while still
-covering every theme, and each group is then asked as one block (see below).
+The 360 statements sit in **20 themed groups of eighteen**. A standard run of 50 draws
+**2–3 from every group**, which is what makes two runs feel genuinely different while
+still covering every theme, and each group is then asked as one block (see below).
+
+**Run lengths.** The landing page offers short (30), standard (50) and long (100).
+The group min/max in `scoring.json` are sized for 50; for the other lengths
+`selection.js` scales them by the same factor, so a short run asks 1–2 per theme, a
+long one 4–6, and all 20 themes are still asked. A shared link carries the length as
+`&n=30` or `&n=100`, and "Take it again" keeps the length you picked.
 
 | Group | Group |
 |---|---|
@@ -370,15 +427,16 @@ assets/css/styles.css
 assets/js/
   prng.js         seeded randomness (mulberry32)
   data.js         loads the JSON, falls back to the bundle, applies the name version
-  selection.js    picks the 50 statements
-  scoring.js      profile + matching (no text)
+  selection.js    picks the statements for a run (30, 50 or 100)
+  scoring.js      profile + matching (no text), family balancing for family quizzes
   narrative.js    result text (no numbers)
   visuals.js      generated mood plates
   images.js       optional Wikimedia Commons photos
   app.js          screens and flow
 data/
   questions.json  360 statements with dimension weights
-  aesthetics.json 176 aesthetics: profile, palette, "world"
+  aesthetics.json 200 aesthetics: profile, palette, "world"
+  quizzes.json    the family quizzes: their statements and which family they pick from
   scoring.json    scale, groups, dimensions, preference categories, matching parameters
   narrative.json  phrase banks
   playlists.json  hand-picked YouTube videos per aesthetic, plus the search fallback
@@ -445,7 +503,8 @@ so they cost accuracy without buying identity.
 Weights run from −3 to 3. Write both positive and negative wordings per dimension, or
 someone can answer the same thing to everything and still get a strong reading. Adding
 statements to a group is free; adding a **new** group means updating `groups` in
-`scoring.json` so the min/max range still brackets 50.
+`scoring.json` so the min/max range still brackets 50 (the other lengths are scaled
+from it). Statements for a family quiz go in `data/quizzes.json` instead.
 
 ---
 
@@ -455,9 +514,10 @@ statements to a group is free; adding a **new** group means updating `groups` in
 node tools/validate.js
 ```
 
-It checks references, group sizes, dimension coverage and phrase banks, then simulates
-400 selections and 600 people to confirm the draw is balanced and the scoring
-discriminates:
+It checks references, group sizes, dimension coverage and phrase banks, checks the
+family quizzes (ids, dimensions, fairness) and the 30- and 100-statement runs, then
+simulates 400 selections and 600 people to confirm the draw is balanced and the
+scoring discriminates:
 
 ```
 — Selection (400 runs) —
@@ -466,24 +526,23 @@ discriminates:
   themed blocks per quiz:     20.0
   distinct opening themes:    20 of 20
   distinct quota shapes:      400 of 400 runs
+  overlap after history:      0 statements
 
 — Scoring (600 simulated people) —
-  distinct winners:           115 / 176
-  distinct hidden picks:      141
-  average top match:          84.0%
-  combination shown:          40% of the time
+  distinct winners:           129 / 200
+  average top match:          84.6%
+  range:                      69-97%
 ```
 
 Two further checks are worth running by hand when the catalogue or the scoring
 changes, because they catch what the validator cannot:
 
 * **Recovery** — build a respondent whose answers follow an aesthetic's own profile
-  and confirm the test returns it. Currently **77%** come back first, **95%** in the
-  top three, **100%** in the top ten, and **no aesthetic is unreachable**. An entry
-  that cannot win for its own ideal respondent is shadowed by a neighbour and needs
-  its distinguishing dimensions sharpened.
+  and confirm the test returns it. An entry that cannot win for its own ideal
+  respondent is shadowed by a neighbour and needs its distinguishing dimensions
+  sharpened. (The family quizzes run this check automatically, see above.)
 * **Winner spread** over a few thousand simulated people. The top ten should hold
-  roughly a quarter of all results (currently 24%); if a handful of aesthetics hold
+  roughly a quarter of all results; if a handful of aesthetics hold
   most of the outcomes, something is drawn too vaguely and is absorbing its
   neighbours.
 
@@ -553,7 +612,7 @@ aesthetic. It has three parts:
 * the aesthetic's own `world.music` line, so the sound matches the rest of the result;
 * any hand-picked videos from `data/playlists.json` that are attached to it;
 * a button that searches YouTube for `"<name> aesthetic playlist"`, so every one of the
-  176 aesthetics has somewhere to go even without a curated pick. It searches on the
+  200 aesthetics has somewhere to go even without a curated pick. It searches on the
   wiki's own name (`gendered.name` when there is one), because "Soft Girl" finds
   playlists and the neutral "Soft Pastel" does not.
 
@@ -577,8 +636,8 @@ on the view that no video is better than a wrong one. The four numbers live unde
 | `relatedBonus` | how much being in each other's `related` list counts for |
 | `familyBonus` | how much sharing a family counts for |
 
-Every one of the 176 aesthetics already has at least one video of its own in
-`curated`.
+176 of the 200 aesthetics have at least one video of their own in `curated`; the
+rest rely on borrowed picks and the search button until someone adds one.
 
 To add a video, append to `curated` in `data/playlists.json` and run
 `node tools/build-bundle.js`:
