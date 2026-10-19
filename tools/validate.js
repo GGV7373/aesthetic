@@ -300,18 +300,20 @@ data.dimensionKeys = config.dimensions.map((d) => d.key);
 data.dimensionMeta = {};
 config.dimensions.forEach((d) => (data.dimensionMeta[d.key] = d));
 
-/* 0a. The internet quiz: its own statements, scored only against its family. */
-const internet = read('data/internet.json');
-const mainIds = new Set(questions.map((q) => q.id));
-const netIds = new Set();
-internet.questions.forEach((q) => {
-  if (mainIds.has(q.id) || netIds.has(q.id)) errors.push(`Internet statement ${q.id}: id already used.`);
-  netIds.add(q.id);
-  Object.keys(q.dimensions).forEach((k) => {
-    if (!dimKeys.has(k)) errors.push(`Internet statement ${q.id}: unknown dimension "${k}".`);
+/* 0a. The family quizzes: their own statements, scored only against their family. */
+const familyQuizzes = read('data/quizzes.json').quizzes;
+const usedIds = new Set(questions.map((q) => q.id));
+familyQuizzes.forEach((qz) => {
+  if (!aesthetics.some((a) => a.family === qz.family)) errors.push(`Quiz ${qz.key}: no aesthetics in family "${qz.family}".`);
+  qz.questions.forEach((q) => {
+    if (usedIds.has(q.id)) errors.push(`Quiz ${qz.key}, statement ${q.id}: id already used.`);
+    usedIds.add(q.id);
+    if (q.group !== qz.key) errors.push(`Quiz ${qz.key}, statement ${q.id}: group should be "${qz.key}".`);
+    Object.keys(q.dimensions).forEach((k) => {
+      if (!dimKeys.has(k)) errors.push(`Quiz ${qz.key}, statement ${q.id}: unknown dimension "${k}".`);
+    });
   });
 });
-if (!aesthetics.some((a) => a.family === internet.family)) errors.push(`No aesthetics in family "${internet.family}".`);
 
 /* 0b. The short and long runs offered on the intro: right count, no duplicates,
    every theme still asked. */

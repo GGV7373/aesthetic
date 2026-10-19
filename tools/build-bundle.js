@@ -17,7 +17,7 @@ const SOURCES = {
   narrative: 'data/narrative.json',
   playlists: 'data/playlists.json',
   images: 'data/images.json',
-  internet: 'data/internet.json'
+  quizzes: 'data/quizzes.json'
 };
 
 const payload = {};
