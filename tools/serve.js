@@ -21,7 +21,13 @@ http.createServer((req, res) => {
   const file = path.join(ROOT, rel);
   if (!file.startsWith(ROOT)) { res.writeHead(403).end('Forbidden'); return; }
   fs.readFile(file, (err, buf) => {
-    if (err) { res.writeHead(404, { 'Content-Type': 'text/plain' }).end('404'); return; }
+    if (err) {
+      /* Same as Netlify: any missing path gets /404.html with a 404 status. */
+      fs.readFile(path.join(ROOT, '404.html'), (e, page) => {
+        res.writeHead(404, { 'Content-Type': e ? 'text/plain' : TYPES['.html'] }).end(e ? '404' : page);
+      });
+      return;
+    }
     res.writeHead(200, {
       'Content-Type': TYPES[path.extname(file)] || 'application/octet-stream',
       'Cache-Control': 'no-store'

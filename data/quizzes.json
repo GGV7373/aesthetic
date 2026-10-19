@@ -1,0 +1,1115 @@
+{
+  "quizzes": [
+    {
+      "key": "internet",
+      "title": "Which internet aesthetic are you?",
+      "family": "Internet and Liminal",
+      "groupLabel": "The internet",
+      "resultLabel": "Your internet aesthetic",
+      "blurb": "Old Web, Frutiger Aero, Dreamcore, Vaporwave and more. Statements about screens, feeds and online moods.",
+      "questions": [
+        {
+          "id": 9001,
+          "group": "internet",
+          "cluster": "internet-1",
+          "text": "The future, as I picture it, looks bright and friendly.",
+          "dimensions": {
+            "optimism": 2,
+            "futurism": 1,
+            "darkness": -1
+          }
+        },
+        {
+          "id": 9002,
+          "group": "internet",
+          "cluster": "internet-2",
+          "text": "I'm more at home in a quiet, empty place than in a busy one.",
+          "dimensions": {
+            "solitude": 2,
+            "social": -2,
+            "community": -1
+          }
+        },
+        {
+          "id": 9003,
+          "group": "internet",
+          "cluster": "internet-3",
+          "text": "Online, I mostly hang out with one close group of friends.",
+          "dimensions": {
+            "community": 2,
+            "social": 1,
+            "solitude": -1
+          }
+        },
+        {
+          "id": 9004,
+          "group": "internet",
+          "cluster": "internet-4",
+          "text": "Bare, simple screens look better to me than busy ones.",
+          "dimensions": {
+            "minimalism": 2,
+            "maximalism": -2,
+            "ornament": -1
+          }
+        },
+        {
+          "id": 9005,
+          "group": "internet",
+          "cluster": "internet-5",
+          "text": "A slightly unsettling picture interests me more than a pretty one.",
+          "dimensions": {
+            "mystery": 2,
+            "darkness": 1,
+            "optimism": -1,
+            "comfort": -1
+          }
+        },
+        {
+          "id": 9006,
+          "group": "internet",
+          "cluster": "internet-6",
+          "text": "Glossy plants, clear water and sunlit glass make me feel good.",
+          "dimensions": {
+            "nature": 2,
+            "organic": 1,
+            "optimism": 1
+          }
+        },
+        {
+          "id": 9007,
+          "group": "internet",
+          "cluster": "internet-7",
+          "text": "I prefer things that look old and worn to things that look shiny and new.",
+          "dimensions": {
+            "retro": 1,
+            "nostalgia": 1,
+            "history": 1,
+            "futurism": -2,
+            "modernity": -1
+          }
+        },
+        {
+          "id": 9008,
+          "group": "internet",
+          "cluster": "internet-8",
+          "text": "Random, messy layouts appeal to me more than tidy ones.",
+          "dimensions": {
+            "chaos": 2,
+            "order": -2
+          }
+        },
+        {
+          "id": 9009,
+          "group": "internet",
+          "cluster": "internet-9",
+          "text": "I'm drawn to sad songs and grey moods.",
+          "dimensions": {
+            "melancholy": 2,
+            "optimism": -1
+          }
+        },
+        {
+          "id": 9010,
+          "group": "internet",
+          "cluster": "internet-10",
+          "text": "Cute, sweet and pink things suit me.",
+          "dimensions": {
+            "whimsy": 2,
+            "ornament": 1,
+            "comfort": 1,
+            "darkness": -1
+          }
+        },
+        {
+          "id": 9011,
+          "group": "internet",
+          "cluster": "internet-11",
+          "text": "Dreams often feel more real to me than daily life.",
+          "dimensions": {
+            "fantasy": 2,
+            "realism": -2
+          }
+        },
+        {
+          "id": 9012,
+          "group": "internet",
+          "cluster": "internet-12",
+          "text": "Quiet, slightly bleak photos of real life at night appeal to me.",
+          "dimensions": {
+            "realism": 2,
+            "darkness": 1,
+            "whimsy": -1,
+            "fantasy": -1
+          }
+        },
+        {
+          "id": 9013,
+          "group": "internet",
+          "cluster": "internet-13",
+          "text": "Late nights in the city feel like my natural time.",
+          "dimensions": {
+            "urban": 2,
+            "darkness": 1,
+            "solitude": 1
+          }
+        },
+        {
+          "id": 9014,
+          "group": "internet",
+          "cluster": "internet-14",
+          "text": "The countryside feels more like me than a big city.",
+          "dimensions": {
+            "rural": 2,
+            "nature": 1,
+            "urban": -2
+          }
+        },
+        {
+          "id": 9015,
+          "group": "internet",
+          "cluster": "internet-15",
+          "text": "Loud, bright arcades and gadgets make me happy.",
+          "dimensions": {
+            "technology": 2,
+            "maximalism": 1,
+            "social": 1
+          }
+        },
+        {
+          "id": 9016,
+          "group": "internet",
+          "cluster": "internet-16",
+          "text": "A calm, cosy routine suits me better than an adventure.",
+          "dimensions": {
+            "comfort": 2,
+            "adventure": -2,
+            "chaos": -1
+          }
+        },
+        {
+          "id": 9017,
+          "group": "internet",
+          "cluster": "internet-17",
+          "text": "I'd rather build my own page from scratch than use a ready-made design.",
+          "dimensions": {
+            "individualism": 2,
+            "craft": 1
+          }
+        },
+        {
+          "id": 9018,
+          "group": "internet",
+          "cluster": "internet-18",
+          "text": "I spend a lot of time thinking about the past.",
+          "dimensions": {
+            "nostalgia": 2,
+            "history": 1,
+            "futurism": -1
+          }
+        },
+        {
+          "id": 9019,
+          "group": "internet",
+          "cluster": "internet-19",
+          "text": "Neon-lit futures from old films are my favourite look.",
+          "dimensions": {
+            "retro": 1,
+            "futurism": 2,
+            "adventure": 1
+          }
+        },
+        {
+          "id": 9020,
+          "group": "internet",
+          "cluster": "internet-20",
+          "text": "Life often feels flat and grey to me.",
+          "dimensions": {
+            "melancholy": 2,
+            "optimism": -2,
+            "whimsy": -1
+          }
+        },
+        {
+          "id": 9021,
+          "group": "internet",
+          "cluster": "internet-21",
+          "text": "I'm hopeful about what the internet can do for people.",
+          "dimensions": {
+            "optimism": 2,
+            "digital": 1,
+            "community": 1
+          }
+        },
+        {
+          "id": 9022,
+          "group": "internet",
+          "cluster": "internet-22",
+          "text": "Empty, symmetrical rooms and hallways have a calm beauty to me.",
+          "dimensions": {
+            "architecture": 2,
+            "order": 1,
+            "minimalism": 1,
+            "social": -1
+          }
+        },
+        {
+          "id": 9023,
+          "group": "internet",
+          "cluster": "internet-23",
+          "text": "Scary stories and creepy videos make a fun night for me.",
+          "dimensions": {
+            "darkness": 2,
+            "mystery": 1,
+            "comfort": -1
+          }
+        },
+        {
+          "id": 9024,
+          "group": "internet",
+          "cluster": "internet-24",
+          "text": "Being around lots of people gives me energy.",
+          "dimensions": {
+            "social": 2,
+            "solitude": -2
+          }
+        },
+        {
+          "id": 9025,
+          "group": "internet",
+          "cluster": "internet-25",
+          "text": "Concrete, machines and factories have their own beauty.",
+          "dimensions": {
+            "industrial": 2,
+            "urban": 1
+          }
+        },
+        {
+          "id": 9026,
+          "group": "internet",
+          "cluster": "internet-26",
+          "text": "Old habits, like writing letters by hand, still matter to me.",
+          "dimensions": {
+            "tradition": 2,
+            "modernity": -1,
+            "digital": -1
+          }
+        },
+        {
+          "id": 9027,
+          "group": "internet",
+          "cluster": "internet-27",
+          "text": "Things made by hand feel more special than things made on a computer.",
+          "dimensions": {
+            "craft": 2,
+            "digital": -1
+          }
+        },
+        {
+          "id": 9028,
+          "group": "internet",
+          "cluster": "internet-28",
+          "text": "Glitter text, loud band pages and a crowded friends list sound like the best internet.",
+          "dimensions": {
+            "maximalism": 2,
+            "social": 1,
+            "community": 1,
+            "futurism": -1,
+            "ornament": 1
+          }
+        },
+        {
+          "id": 9029,
+          "group": "internet",
+          "cluster": "internet-29",
+          "text": "I like to keep things light and playful.",
+          "dimensions": {
+            "whimsy": 2,
+            "optimism": 1,
+            "melancholy": -1
+          }
+        },
+        {
+          "id": 9030,
+          "group": "internet",
+          "cluster": "internet-30",
+          "text": "Shiny, glossy and colourful graphics feel like home.",
+          "dimensions": {
+            "ornament": 2,
+            "maximalism": 1,
+            "digital": 1
+          }
+        }
+      ]
+    },
+    {
+      "key": "nature",
+      "title": "Which nature aesthetic are you?",
+      "family": "Nature and Pastoral",
+      "groupLabel": "Nature",
+      "resultLabel": "Your nature aesthetic",
+      "blurb": "Cottagecore, Cabincore, Forestpunk, Gardencore and more. Statements about land, weather and the work of your hands.",
+      "questions": [
+        {
+          "id": 9101,
+          "group": "nature",
+          "cluster": "nature-1",
+          "text": "I'd happily live somewhere with no neighbours for miles.",
+          "dimensions": {
+            "solitude": 2,
+            "rural": 1,
+            "community": -1,
+            "social": -1
+          }
+        },
+        {
+          "id": 9102,
+          "group": "nature",
+          "cluster": "nature-2",
+          "text": "Baking bread from scratch sounds like a perfect afternoon.",
+          "dimensions": {
+            "comfort": 2,
+            "craft": 2,
+            "tradition": 1
+          }
+        },
+        {
+          "id": 9103,
+          "group": "nature",
+          "cluster": "nature-3",
+          "text": "I'd rather fix something old than buy something new.",
+          "dimensions": {
+            "craft": 2,
+            "individualism": 1,
+            "tradition": 1
+          }
+        },
+        {
+          "id": 9104,
+          "group": "nature",
+          "cluster": "nature-4",
+          "text": "A garden full of vegetables and flowers would make me happy.",
+          "dimensions": {
+            "nature": 2,
+            "organic": 2,
+            "optimism": 1
+          }
+        },
+        {
+          "id": 9105,
+          "group": "nature",
+          "cluster": "nature-5",
+          "text": "Hard physical work outdoors feels good to me.",
+          "dimensions": {
+            "realism": 2,
+            "adventure": 1,
+            "craft": 1,
+            "comfort": -1
+          }
+        },
+        {
+          "id": 9106,
+          "group": "nature",
+          "cluster": "nature-6",
+          "text": "Cold, wintry days are my favourite part of the year.",
+          "dimensions": {
+            "comfort": 2,
+            "nostalgia": 2
+          }
+        },
+        {
+          "id": 9107,
+          "group": "nature",
+          "cluster": "nature-7",
+          "text": "I like nature wild and messy, not trimmed and tidy.",
+          "dimensions": {
+            "nature": 2,
+            "chaos": 1,
+            "order": -2
+          }
+        },
+        {
+          "id": 9108,
+          "group": "nature",
+          "cluster": "nature-8",
+          "text": "I would like to share food and tools with my neighbours.",
+          "dimensions": {
+            "community": 2,
+            "social": 1
+          }
+        },
+        {
+          "id": 9109,
+          "group": "nature",
+          "cluster": "nature-9",
+          "text": "Old family recipes and traditions matter to me.",
+          "dimensions": {
+            "tradition": 2,
+            "history": 1,
+            "nostalgia": 1
+          }
+        },
+        {
+          "id": 9110,
+          "group": "nature",
+          "cluster": "nature-10",
+          "text": "I would be happy with a lot less technology in my life.",
+          "dimensions": {
+            "technology": -2,
+            "digital": -2,
+            "nature": 1
+          }
+        },
+        {
+          "id": 9111,
+          "group": "nature",
+          "cluster": "nature-11",
+          "text": "A long hike in the mountains beats a day on the sofa.",
+          "dimensions": {
+            "adventure": 2,
+            "nature": 1,
+            "comfort": -2
+          }
+        },
+        {
+          "id": 9112,
+          "group": "nature",
+          "cluster": "nature-12",
+          "text": "Wide open fields and a big sky make me feel free.",
+          "dimensions": {
+            "rural": 2,
+            "nature": 1,
+            "solitude": 1,
+            "nostalgia": 1
+          }
+        },
+        {
+          "id": 9113,
+          "group": "nature",
+          "cluster": "nature-13",
+          "text": "There is something dark and wild about the forest that I like.",
+          "dimensions": {
+            "darkness": 2,
+            "mystery": 1,
+            "nature": 1
+          }
+        },
+        {
+          "id": 9114,
+          "group": "nature",
+          "cluster": "nature-14",
+          "text": "I want to see nature as it really is, without any filter.",
+          "dimensions": {
+            "realism": 2,
+            "nature": 2,
+            "fantasy": -1
+          }
+        },
+        {
+          "id": 9115,
+          "group": "nature",
+          "cluster": "nature-15",
+          "text": "A crackling fire in a small cabin is my idea of happiness.",
+          "dimensions": {
+            "comfort": 2,
+            "solitude": 2,
+            "rural": 1
+          }
+        },
+        {
+          "id": 9116,
+          "group": "nature",
+          "cluster": "nature-16",
+          "text": "I try to live simply and waste as little as I can.",
+          "dimensions": {
+            "organic": 2,
+            "craft": 1,
+            "community": 1,
+            "adventure": 1,
+            "modernity": -1
+          }
+        },
+        {
+          "id": 9117,
+          "group": "nature",
+          "cluster": "nature-17",
+          "text": "Falling leaves make me feel nostalgic.",
+          "dimensions": {
+            "nostalgia": 2,
+            "melancholy": 1,
+            "darkness": 1,
+            "nature": 1
+          }
+        },
+        {
+          "id": 9118,
+          "group": "nature",
+          "cluster": "nature-18",
+          "text": "I care more about what I can make with my hands than what I can buy.",
+          "dimensions": {
+            "craft": 3,
+            "rural": 1
+          }
+        },
+        {
+          "id": 9119,
+          "group": "nature",
+          "cluster": "nature-19",
+          "text": "Watching things grow makes me hopeful.",
+          "dimensions": {
+            "optimism": 2,
+            "organic": 1,
+            "nature": 1
+          }
+        },
+        {
+          "id": 9120,
+          "group": "nature",
+          "cluster": "nature-20",
+          "text": "Chopping wood on a cold morning sounds like a good start to the day.",
+          "dimensions": {
+            "rural": 2,
+            "realism": 1,
+            "tradition": 1,
+            "refinement": -2
+          }
+        }
+      ]
+    },
+    {
+      "key": "witchy",
+      "title": "Which witchy or folk aesthetic are you?",
+      "family": "Witchy and Folk",
+      "groupLabel": "Witchy and folk",
+      "resultLabel": "Your witchy or folk aesthetic",
+      "blurb": "Witchcore, Fairycore, Goblincore, Folk Horror and more. Statements about magic, old stories and the woods.",
+      "questions": [
+        {
+          "id": 9201,
+          "group": "witchy",
+          "cluster": "witchy-1",
+          "text": "Nature is beautiful because it is harsh, not because it is cute.",
+          "dimensions": {
+            "realism": 1,
+            "darkness": 1,
+            "whimsy": -2
+          }
+        },
+        {
+          "id": 9202,
+          "group": "witchy",
+          "cluster": "witchy-2",
+          "text": "I'd feel at home in a small village where everyone knows each other.",
+          "dimensions": {
+            "community": 2,
+            "rural": 1,
+            "individualism": -1,
+            "urban": -1
+          }
+        },
+        {
+          "id": 9203,
+          "group": "witchy",
+          "cluster": "witchy-3",
+          "text": "Grey, rainy days put me in a good mood.",
+          "dimensions": {
+            "melancholy": 2,
+            "optimism": -1,
+            "whimsy": -1
+          }
+        },
+        {
+          "id": 9204,
+          "group": "witchy",
+          "cluster": "witchy-4",
+          "text": "Very old buildings and places pull me in.",
+          "dimensions": {
+            "history": 2,
+            "architecture": 1,
+            "nostalgia": 1
+          }
+        },
+        {
+          "id": 9205,
+          "group": "witchy",
+          "cluster": "witchy-5",
+          "text": "I like learning how things really work, like bones, plants or rocks.",
+          "dimensions": {
+            "intellect": 2,
+            "realism": 2,
+            "fantasy": -1
+          }
+        },
+        {
+          "id": 9206,
+          "group": "witchy",
+          "cluster": "witchy-6",
+          "text": "Tiny magical details, like fairy rings and glowing mushrooms, make me happy.",
+          "dimensions": {
+            "whimsy": 2,
+            "fantasy": 1,
+            "optimism": 1,
+            "darkness": -1
+          }
+        },
+        {
+          "id": 9207,
+          "group": "witchy",
+          "cluster": "witchy-7",
+          "text": "Messy and crooked feels more like me than neat and polished.",
+          "dimensions": {
+            "chaos": 1,
+            "order": -2,
+            "refinement": -2
+          }
+        },
+        {
+          "id": 9208,
+          "group": "witchy",
+          "cluster": "witchy-8",
+          "text": "Dark electronic music and city nights feel magical to me.",
+          "dimensions": {
+            "digital": 2,
+            "urban": 1,
+            "darkness": 1
+          }
+        },
+        {
+          "id": 9209,
+          "group": "witchy",
+          "cluster": "witchy-9",
+          "text": "I'd rather live far away from any city.",
+          "dimensions": {
+            "rural": 2,
+            "urban": -2
+          }
+        },
+        {
+          "id": 9210,
+          "group": "witchy",
+          "cluster": "witchy-10",
+          "text": "Stories with real danger and long quests excite me.",
+          "dimensions": {
+            "adventure": 2,
+            "fantasy": 1
+          }
+        },
+        {
+          "id": 9211,
+          "group": "witchy",
+          "cluster": "witchy-11",
+          "text": "A home full of jars, dried herbs and handmade things sounds right for me.",
+          "dimensions": {
+            "craft": 1,
+            "comfort": 1,
+            "organic": 1,
+            "minimalism": -1
+          }
+        },
+        {
+          "id": 9212,
+          "group": "witchy",
+          "cluster": "witchy-12",
+          "text": "I'd choose old customs over modern life.",
+          "dimensions": {
+            "tradition": 2,
+            "modernity": -2
+          }
+        },
+        {
+          "id": 9213,
+          "group": "witchy",
+          "cluster": "witchy-13",
+          "text": "Elegant, flowing things that look almost unreal appeal to me.",
+          "dimensions": {
+            "refinement": 2,
+            "fantasy": 1,
+            "realism": -1
+          }
+        },
+        {
+          "id": 9214,
+          "group": "witchy",
+          "cluster": "witchy-14",
+          "text": "Computers and machines feel like the opposite of magic to me.",
+          "dimensions": {
+            "digital": -2,
+            "industrial": -1,
+            "futurism": -1
+          }
+        },
+        {
+          "id": 9215,
+          "group": "witchy",
+          "cluster": "witchy-15",
+          "text": "I'm often alone, and I like it that way.",
+          "dimensions": {
+            "solitude": 2,
+            "social": -2
+          }
+        },
+        {
+          "id": 9216,
+          "group": "witchy",
+          "cluster": "witchy-16",
+          "text": "I think the world is mostly a kind place.",
+          "dimensions": {
+            "optimism": 2,
+            "darkness": -1
+          }
+        },
+        {
+          "id": 9217,
+          "group": "witchy",
+          "cluster": "witchy-17",
+          "text": "Things I can't explain interest me more than things I can.",
+          "dimensions": {
+            "mystery": 2,
+            "realism": -1
+          }
+        },
+        {
+          "id": 9218,
+          "group": "witchy",
+          "cluster": "witchy-18",
+          "text": "I'd rather wear something rich and decorated than something plain.",
+          "dimensions": {
+            "ornament": 2,
+            "minimalism": -1
+          }
+        },
+        {
+          "id": 9219,
+          "group": "witchy",
+          "cluster": "witchy-19",
+          "text": "I often miss people and places from my past.",
+          "dimensions": {
+            "nostalgia": 2,
+            "melancholy": 1
+          }
+        },
+        {
+          "id": 9220,
+          "group": "witchy",
+          "cluster": "witchy-20",
+          "text": "Plants, soil and forests are where I feel best.",
+          "dimensions": {
+            "nature": 2,
+            "organic": 1,
+            "urban": -1
+          }
+        },
+        {
+          "id": 9221,
+          "group": "witchy",
+          "cluster": "witchy-21",
+          "text": "I like a calm and orderly life.",
+          "dimensions": {
+            "order": 2,
+            "chaos": -1
+          }
+        },
+        {
+          "id": 9222,
+          "group": "witchy",
+          "cluster": "witchy-22",
+          "text": "Being comfortable matters more to me than looking impressive.",
+          "dimensions": {
+            "comfort": 2,
+            "refinement": -1
+          }
+        },
+        {
+          "id": 9223,
+          "group": "witchy",
+          "cluster": "witchy-23",
+          "text": "I like to stand out and go my own way.",
+          "dimensions": {
+            "individualism": 2,
+            "community": -1
+          }
+        },
+        {
+          "id": 9224,
+          "group": "witchy",
+          "cluster": "witchy-24",
+          "text": "Dark and frightening things are part of what makes the world beautiful.",
+          "dimensions": {
+            "darkness": 2,
+            "optimism": -1
+          }
+        }
+      ]
+    },
+    {
+      "key": "goth",
+      "title": "Which goth aesthetic are you?",
+      "family": "Goth",
+      "groupLabel": "Goth",
+      "resultLabel": "Your goth aesthetic",
+      "blurb": "Trad Goth, Romantic Goth, Nu-Goth, Cybergoth and more. Statements about darkness, style and where you belong.",
+      "questions": [
+        {
+          "id": 9301,
+          "group": "goth",
+          "cluster": "goth-1",
+          "text": "Old factories and concrete have a grim kind of beauty.",
+          "dimensions": {
+            "industrial": 2,
+            "architecture": 1
+          }
+        },
+        {
+          "id": 9302,
+          "group": "goth",
+          "cluster": "goth-2",
+          "text": "Lace, velvet and heavy fabrics are what I'd love to wear.",
+          "dimensions": {
+            "ornament": 2,
+            "refinement": 1,
+            "minimalism": -1
+          }
+        },
+        {
+          "id": 9303,
+          "group": "goth",
+          "cluster": "goth-3",
+          "text": "Clean, simple and sharp looks better to me than decorated.",
+          "dimensions": {
+            "minimalism": 2,
+            "ornament": -2
+          }
+        },
+        {
+          "id": 9304,
+          "group": "goth",
+          "cluster": "goth-4",
+          "text": "A futuristic, high-tech style is more me than anything old-fashioned.",
+          "dimensions": {
+            "futurism": 2,
+            "digital": 1,
+            "history": -2
+          }
+        },
+        {
+          "id": 9305,
+          "group": "goth",
+          "cluster": "goth-5",
+          "text": "Cute things with a creepy twist are my favourite.",
+          "dimensions": {
+            "whimsy": 2,
+            "optimism": 1
+          }
+        },
+        {
+          "id": 9306,
+          "group": "goth",
+          "cluster": "goth-6",
+          "text": "Memories of hanging out at the mall in band shirts make me smile.",
+          "dimensions": {
+            "nostalgia": 2,
+            "retro": 1,
+            "refinement": -1
+          }
+        },
+        {
+          "id": 9307,
+          "group": "goth",
+          "cluster": "goth-7",
+          "text": "Going out with my scene matters a lot to me.",
+          "dimensions": {
+            "community": 2,
+            "social": 2
+          }
+        },
+        {
+          "id": 9308,
+          "group": "goth",
+          "cluster": "goth-8",
+          "text": "Old small towns far from the city feel haunted in a way I like.",
+          "dimensions": {
+            "nature": 1,
+            "urban": -2,
+            "tradition": 1
+          }
+        },
+        {
+          "id": 9309,
+          "group": "goth",
+          "cluster": "goth-9",
+          "text": "Sad poems move me more than happy songs.",
+          "dimensions": {
+            "melancholy": 2,
+            "optimism": -1
+          }
+        },
+        {
+          "id": 9310,
+          "group": "goth",
+          "cluster": "goth-10",
+          "text": "A cosy, cluttered room with candles and crystals sounds perfect.",
+          "dimensions": {
+            "comfort": 2,
+            "mystery": 1,
+            "minimalism": -1
+          }
+        },
+        {
+          "id": 9311,
+          "group": "goth",
+          "cluster": "goth-11",
+          "text": "I'm drawn to the past more than to the future.",
+          "dimensions": {
+            "history": 2,
+            "futurism": -1
+          }
+        },
+        {
+          "id": 9312,
+          "group": "goth",
+          "cluster": "goth-12",
+          "text": "Gardens, forests and graveyards feel calmer to me than cities.",
+          "dimensions": {
+            "nature": 2,
+            "solitude": 1,
+            "urban": -1
+          }
+        },
+        {
+          "id": 9313,
+          "group": "goth",
+          "cluster": "goth-13",
+          "text": "Elegant and refined matters more to me than tough and rough.",
+          "dimensions": {
+            "refinement": 2,
+            "realism": -1
+          }
+        },
+        {
+          "id": 9314,
+          "group": "goth",
+          "cluster": "goth-14",
+          "text": "Rough and raw looks better to me than pretty and polished.",
+          "dimensions": {
+            "realism": 2,
+            "refinement": -1
+          }
+        },
+        {
+          "id": 9315,
+          "group": "goth",
+          "cluster": "goth-15",
+          "text": "I like things neat, tidy and under control.",
+          "dimensions": {
+            "order": 2,
+            "chaos": -1
+          }
+        },
+        {
+          "id": 9316,
+          "group": "goth",
+          "cluster": "goth-16",
+          "text": "Old records and the original eighties scene are my thing.",
+          "dimensions": {
+            "retro": 2
+          }
+        },
+        {
+          "id": 9317,
+          "group": "goth",
+          "cluster": "goth-17",
+          "text": "I'd rather keep to myself than be part of a scene.",
+          "dimensions": {
+            "solitude": 2,
+            "community": -1,
+            "social": -1
+          }
+        },
+        {
+          "id": 9318,
+          "group": "goth",
+          "cluster": "goth-18",
+          "text": "Traditions that have lasted a long time matter to me.",
+          "dimensions": {
+            "tradition": 2,
+            "modernity": -1
+          }
+        },
+        {
+          "id": 9319,
+          "group": "goth",
+          "cluster": "goth-19",
+          "text": "Being different from everyone around me is important to me.",
+          "dimensions": {
+            "individualism": 2
+          }
+        },
+        {
+          "id": 9320,
+          "group": "goth",
+          "cluster": "goth-20",
+          "text": "The unknown and the unexplained are a big part of what I love.",
+          "dimensions": {
+            "mystery": 2
+          }
+        },
+        {
+          "id": 9321,
+          "group": "goth",
+          "cluster": "goth-21",
+          "text": "Bright colours have a place in a dark wardrobe.",
+          "dimensions": {
+            "whimsy": 1,
+            "maximalism": 1,
+            "optimism": 1,
+            "darkness": -1
+          }
+        },
+        {
+          "id": 9322,
+          "group": "goth",
+          "cluster": "goth-22",
+          "text": "I'm more excited about what comes next than nostalgic about what came before.",
+          "dimensions": {
+            "modernity": 2,
+            "futurism": 1,
+            "nostalgia": -2
+          }
+        },
+        {
+          "id": 9323,
+          "group": "goth",
+          "cluster": "goth-23",
+          "text": "I'd rather be alone in nature than out at a club.",
+          "dimensions": {
+            "nature": 1,
+            "solitude": 2,
+            "community": -1,
+            "urban": -1
+          }
+        },
+        {
+          "id": 9324,
+          "group": "goth",
+          "cluster": "goth-24",
+          "text": "New trends and pop culture are a big part of my style.",
+          "dimensions": {
+            "modernity": 2,
+            "history": -1
+          }
+        },
+        {
+          "id": 9325,
+          "group": "goth",
+          "cluster": "goth-25",
+          "text": "Ruins overgrown with ivy are more beautiful to me than any new building.",
+          "dimensions": {
+            "nature": 1,
+            "history": 1,
+            "melancholy": 1,
+            "modernity": -1
+          }
+        }
+      ]
+    }
+  ]
+}

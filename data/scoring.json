@@ -485,14 +485,7 @@
     "percentMin": 8,
     "percentMax": 97,
     "stretchMin": 0.5,
-    "stretchMax": 3,
-    "combinationThreshold": 4,
-    "hidden": {
-      "minRank": 4,
-      "maxRank": 18,
-      "minPercent": 45,
-      "noveltyWeight": 0.6
-    }
+    "stretchMax": 3
   },
   "selection": {
     "avoidRepeatQuestions": true,

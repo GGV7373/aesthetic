@@ -186,90 +186,58 @@
     return ranked;
   }
 
-  /* Similarity between two aesthetics — used to find something unexpected, not just second place. */
-  function aestheticDistance(a, b) {
+  /* The data a family quiz (internet, goth, ...) scores against.
+
+     Every member of a family shares the family's base traits - all internet
+     aesthetics are digital, all goth ones dark - so against raw profiles the
+     member nearest neutral wins for most people, whatever they answer. Two
+     steps keep it fair:
+     1. each dimension is centred on the family's own average, so only what
+        sets a member apart from its siblings counts;
+     2. every member's differences are scaled to the same overall size, so a
+        boldly drawn member (Cybergoth) is not out-voted by a quietly drawn
+        one (plain Goth) - the direction of a profile decides, not its volume.
+     Display data (aestheticsByKey) is left untouched. */
+  AQ.familyData = function (data, family) {
+    var members = data.aesthetics.filter(function (a) { return a.family === family; });
     var keys = {};
-    Object.keys(a.dimensions).forEach(function (k) { keys[k] = true; });
-    Object.keys(b.dimensions).forEach(function (k) { keys[k] = true; });
-    var list = Object.keys(keys);
-    if (!list.length) return 1;
-    var sum = 0, weight = 0;
-    list.forEach(function (k) {
-      var av = a.dimensions[k] === undefined ? 0.5 : a.dimensions[k];
-      var bv = b.dimensions[k] === undefined ? 0.5 : b.dimensions[k];
-      var w = Math.max(salience(av, 0.1), salience(bv, 0.1));
-      sum += w * Math.abs(av - bv);
-      weight += w;
-    });
-    return weight > 0 ? sum / weight : 1;
-  }
+    members.forEach(function (a) { Object.keys(a.dimensions).forEach(function (k) { keys[k] = true; }); });
+    keys = Object.keys(keys);
+    var raw = function (a, k) { return a.dimensions[k] === undefined ? 0.5 : a.dimensions[k]; };
 
-  function pickHidden(ranked, data) {
-    var cfg = data.config.matching.hidden;
-    var top1 = data.aestheticsByKey[ranked[0].key];
-    var top2 = ranked[1] ? data.aestheticsByKey[ranked[1].key] : null;
-
-    var blocked = {};
-    blocked[ranked[0].key] = true;
-    if (top2) blocked[top2.key] = true;
-    (top1.related || []).forEach(function (k) { blocked[k] = true; });
-    if (top2) (top2.related || []).forEach(function (k) { blocked[k] = true; });
-
-    var slice = ranked.slice(cfg.minRank - 1, cfg.maxRank);
-    var best = null;
-
-    slice.forEach(function (entry) {
-      var a = data.aestheticsByKey[entry.key];
-      if (!a) return;
-      var novelty = aestheticDistance(top1, a);
-      if (top2) novelty = Math.min(novelty, aestheticDistance(top2, a));
-      var fit = entry.percent / 100;
-      var score =
-        fit * (1 - cfg.noveltyWeight) + novelty * cfg.noveltyWeight - (blocked[entry.key] ? 0.25 : 0);
-      if (entry.percent < cfg.minPercent) score -= 0.2;
-      if (!best || score > best.score) best = { entry: entry, score: score, novelty: novelty };
+    var mean = {};
+    keys.forEach(function (k) {
+      var s = 0;
+      members.forEach(function (a) { s += raw(a, k); });
+      mean[k] = s / members.length;
     });
 
-    return best ? best.entry : ranked[2] || ranked[ranked.length - 1];
-  }
+    var spread = catalogueSpread(data);
+    var centred = members.map(function (a) {
+      var size = 0;
+      keys.forEach(function (k) { size += Math.abs(raw(a, k) - mean[k]); });
+      var scale = size ? spread / (size / keys.length) : 1;
+      var dims = {};
+      keys.forEach(function (k) { dims[k] = clamp(0.5 + (raw(a, k) - mean[k]) * scale, 0.02, 0.98); });
+      return Object.assign({}, a, { dimensions: dims });
+    });
 
-  function detectCombination(ranked, data) {
-    var threshold = data.config.matching.combinationThreshold;
-    if (!ranked[1]) return null;
-    if (ranked[0].percent - ranked[1].percent > threshold) return null;
-    var a = data.aestheticsByKey[ranked[0].key];
-    var b = data.aestheticsByKey[ranked[1].key];
-    var relatedAlready =
-      (a.related || []).indexOf(b.key) >= 0 || (b.related || []).indexOf(a.key) >= 0;
-    return {
-      a: ranked[0],
-      b: ranked[1],
-      label: a.name + ' × ' + b.name,
-      gap: ranked[0].percent - ranked[1].percent,
-      related: relatedAlready,
-      distance: aestheticDistance(a, b)
-    };
-  }
+    return Object.assign({}, data, { aesthetics: centred, catalogueSpread: spread });
+  };
 
-  AQ.score = function (questions, answers, data) {
-    var profile = buildProfile(questions, answers, data);
+  function rank(profile, data) {
     var matching = data.config.matching;
-
     var ranked = assignPercentages(
       data.aesthetics
         .map(function (a) { return scoreAesthetic(a, profile, matching); })
         .sort(function (x, y) { return y.similarity - x.similarity; }),
       matching
     );
+    return { profile: profile, ranked: ranked, primary: ranked[0] };
+  }
 
-    return {
-      profile: profile,
-      ranked: ranked,
-      primary: ranked[0],
-      secondary: ranked[1],
-      hidden: pickHidden(ranked, data),
-      combination: detectCombination(ranked, data)
-    };
+  AQ.score = function (questions, answers, data) {
+    return rank(buildProfile(questions, answers, data), data);
   };
 
   /* Debug shortcut (see app.js's local-only ?preview=<key>): scores as if
@@ -286,30 +254,6 @@
       value[k] = has ? aesthetic.dimensions[k] : 0.5;
       confidence[k] = has ? 1 : 0;
     });
-    var profile = { value: value, confidence: confidence, weightSum: confidence, answered: 0, stretch: 1 };
-    var matching = data.config.matching;
-
-    var ranked = assignPercentages(
-      data.aesthetics
-        .map(function (a) { return scoreAesthetic(a, profile, matching); })
-        .sort(function (x, y) { return y.similarity - x.similarity; }),
-      matching
-    );
-
-    return {
-      profile: profile,
-      ranked: ranked,
-      primary: ranked[0],
-      secondary: ranked[1],
-      hidden: pickHidden(ranked, data),
-      combination: detectCombination(ranked, data)
-    };
-  };
-
-  AQ.scoringInternals = {
-    buildProfile: buildProfile,
-    assignPercentages: assignPercentages,
-    aestheticDistance: aestheticDistance,
-    salience: salience
+    return rank({ value: value, confidence: confidence, weightSum: confidence, answered: 0, stretch: 1 }, data);
   };
 })(typeof window !== 'undefined' ? window : globalThis);

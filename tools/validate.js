@@ -290,6 +290,65 @@ data.dimensionKeys = config.dimensions.map((d) => d.key);
 data.dimensionMeta = {};
 config.dimensions.forEach((d) => (data.dimensionMeta[d.key] = d));
 
+/* 0a. The family quizzes: their own statements, scored only against their family. */
+const familyQuizzes = read('data/quizzes.json').quizzes;
+const usedIds = new Set(questions.map((q) => q.id));
+familyQuizzes.forEach((qz) => {
+  if (!aesthetics.some((a) => a.family === qz.family)) errors.push(`Quiz ${qz.key}: no aesthetics in family "${qz.family}".`);
+  qz.questions.forEach((q) => {
+    if (usedIds.has(q.id)) errors.push(`Quiz ${qz.key}, statement ${q.id}: id already used.`);
+    usedIds.add(q.id);
+    if (q.group !== qz.key) errors.push(`Quiz ${qz.key}, statement ${q.id}: group should be "${qz.key}".`);
+    Object.keys(q.dimensions).forEach((k) => {
+      if (!dimKeys.has(k)) errors.push(`Quiz ${qz.key}, statement ${q.id}: unknown dimension "${k}".`);
+    });
+  });
+});
+
+/* 0a'. Family quizzes stay fair: someone who answers each statement the way a
+   member's profile reads gets that member for most members, and with random
+   answers no member wins far more (or less) than its fair share. */
+familyQuizzes.forEach((qz) => {
+  const fd = AQ.familyData(data, qz.family);
+  let self = 0;
+  fd.aesthetics.forEach((a) => {
+    const ans = {};
+    qz.questions.forEach((q) => {
+      let s = 0;
+      Object.entries(q.dimensions).forEach(([k, w]) => { s += w * ((a.dimensions[k] ?? 0.5) - 0.5); });
+      ans[q.id] = Math.max(-3, Math.min(3, Math.round(s * 3)));
+    });
+    if (AQ.score(qz.questions, ans, fd).primary.key === a.key) self++;
+  });
+  if (self / fd.aesthetics.length < 0.8) errors.push(`Quiz ${qz.key}: only ${self}/${fd.aesthetics.length} members reachable by their own profile.`);
+
+  const wins = {};
+  const rng = AQ.rng.rngFromSeed('FAIR-' + qz.key, 'validate');
+  const runs = 1500;
+  for (let i = 0; i < runs; i++) {
+    const ans = {};
+    qz.questions.forEach((q) => { ans[q.id] = Math.floor(rng() * 7) - 3; });
+    const top = AQ.score(qz.questions, ans, fd).primary.key;
+    wins[top] = (wins[top] || 0) + 1;
+  }
+  const fair = runs / fd.aesthetics.length;
+  const most = Math.max(...Object.values(wins));
+  if (most > 4 * fair) errors.push(`Quiz ${qz.key}: one member wins ${(100 * most / runs).toFixed(0)}% of random runs (fair share ${(100 / fd.aesthetics.length).toFixed(0)}%).`);
+  console.log(`  quiz ${qz.key.padEnd(9)} ${self}/${fd.aesthetics.length} reachable, random max ${(most / fair).toFixed(1)}x fair, ${Object.keys(wins).length}/${fd.aesthetics.length} ever win`);
+});
+
+/* 0b. The short and long runs offered on the intro: right count, no duplicates,
+   every theme still asked. */
+[30, 100].forEach((n) => {
+  for (let i = 0; i < 100; i++) {
+    const sel = AQ.selectQuestions(data, { seed: 'LEN' + n + '-' + i, total: n });
+    const ids = new Set(sel.questions.map((q) => q.id));
+    const groups = new Set(sel.questions.map((q) => q.group));
+    if (sel.questions.length !== n || ids.size !== n) errors.push(`Length ${n}, run ${i}: ${ids.size} distinct of ${sel.questions.length}.`);
+    if (groups.size !== config.groups.length) errors.push(`Length ${n}, run ${i}: only ${groups.size} themes asked.`);
+  }
+});
+
 /* 1. Selection: right count, no duplicates, no repeated cluster, themed blocks. */
 const blockOrder = (config.selection && config.selection.order) === 'blocks';
 let duplicateClusters = 0;
@@ -378,8 +437,6 @@ if (overlap > 6) errors.push(`Too much overlap after the history filter: ${overl
 /* 4. Scoring: varied answer profiles should produce varied winners. */
 const winners = {};
 const percents = [];
-const hiddenPicks = {};
-let combos = 0;
 
 const rngFor = (seed) => AQ.rng.rngFromSeed(seed, 'sim');
 
@@ -411,13 +468,8 @@ for (let i = 0; i < 600; i++) {
 
   const result = AQ.score(sel.questions, answers, data);
   winners[result.primary.key] = (winners[result.primary.key] || 0) + 1;
-  hiddenPicks[result.hidden.key] = (hiddenPicks[result.hidden.key] || 0) + 1;
   percents.push(result.primary.percent);
-  if (result.combination) combos++;
 
-  if (result.hidden.key === result.primary.key || result.hidden.key === result.secondary.key) {
-    errors.push(`Simulation ${i}: hidden equals primary/secondary.`);
-  }
   for (let r = 1; r < result.ranked.length; r++) {
     if (result.ranked[r].percent > result.ranked[r - 1].percent) {
       errors.push(`Simulation ${i}: percentages are not monotonic down the ranking.`);
@@ -466,10 +518,8 @@ console.log(`  overlap after history:      ${overlap} statements`);
 console.log('\n— Scoring (600 simulated people) —');
 console.log(`  distinct winners:           ${distinctWinners} / ${aesthetics.length}`);
 console.log(`  most common winner:         ${topWinner[0]} (${topWinner[1]})`);
-console.log(`  distinct hidden picks:      ${Object.keys(hiddenPicks).length}`);
 console.log(`  average top match:          ${avgPct.toFixed(1)}%`);
 console.log(`  range:                      ${Math.min(...percents)}-${Math.max(...percents)}%`);
-console.log(`  combination shown:          ${((combos / 600) * 100).toFixed(0)}% of the time`);
 
 if (warnings.length) {
   console.log('\n— Warnings —');

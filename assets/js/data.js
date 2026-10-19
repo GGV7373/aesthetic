@@ -12,7 +12,8 @@
     config: 'data/scoring.json',
     narrative: 'data/narrative.json',
     playlists: 'data/playlists.json',
-    images: 'data/images.json'
+    images: 'data/images.json',
+    quizzes: 'data/quizzes.json'
   };
 
   function loadScript(src) {
@@ -29,7 +30,10 @@
     var keys = Object.keys(FILES);
     return Promise.all(
       keys.map(function (key) {
-        return fetch(FILES[key], { cache: 'no-cache' }).then(function (res) {
+        /* No cache option here: it would make the browser skip the preloaded
+           copy from index.html. Freshness comes from the server's
+           Cache-Control header instead (see netlify.toml). */
+        return fetch(FILES[key]).then(function (res) {
           if (!res.ok) throw new Error(FILES[key] + ' returned ' + res.status);
           return res.json();
         });
@@ -102,6 +106,15 @@
     applyNames(data, readFlag());
     data.questionsById = {};
     data.questions.forEach(function (q) { data.questionsById[q.id] = q; });
+    /* The family quizzes (internet, nature, ...) have their own statements:
+       findable by id, but kept out of data.questions so the main test never
+       draws them. */
+    data.familyQuizzes = (data.quizzes && data.quizzes.quizzes) || [];
+    data.quizByKey = {};
+    data.familyQuizzes.forEach(function (qz) {
+      data.quizByKey[qz.key] = qz;
+      qz.questions.forEach(function (q) { data.questionsById[q.id] = q; });
+    });
     data.aestheticsByKey = {};
     data.aesthetics.forEach(function (a) { data.aestheticsByKey[a.key] = a; });
     data.dimensionKeys = data.config.dimensions.map(function (d) { return d.key; });

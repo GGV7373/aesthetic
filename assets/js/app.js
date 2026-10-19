@@ -9,6 +9,14 @@
   var STORE_PREFS = 'aq.preferences.v1';
   var PREFS_MAX_PICKS = 5;
 
+  /* The three run lengths offered on the intro. 50 is the standard the group
+     quotas in the data are sized for; selection.js scales them for the rest. */
+  var LENGTHS = [
+    { n: 30, label: 'Short', minutes: 5 },
+    { n: 50, label: 'Standard', minutes: 8 },
+    { n: 100, label: 'Long', minutes: 15 }
+  ];
+
   var SWAP_MS = 170;   /* how long a question takes to move out of the way */
   var ADVANCE_MS = 240; /* pause after an answer before moving on */
 
@@ -66,9 +74,18 @@
     return (queryParam('groups') || '').split(',').filter(function (k) { return known[k]; });
   }
 
+  /* The run length a shared link was made with (`&n=`), or the standard one. */
+  function urlLength() {
+    var n = Number(queryParam('n'));
+    return LENGTHS.some(function (l) { return l.n === n; }) ? n : data.config.questionsPerQuiz;
+  }
+
+  /* Picked on the intro, used when the preferences screen starts the run. */
+  var chosenLength = null;
+
   /* ---------- history: don't serve the same fifty twice in a row ---------- */
 
-  function historyIds() {
+  function historyIds(total) {
     var hist = readStore(STORE_HISTORY, []);
     var max = (data.config.selection && data.config.selection.maxHistorySessions) || 4;
     var seen = {};
@@ -77,7 +94,7 @@
     });
     var ids = Object.keys(seen).map(Number);
     /* Nearly everything used up: fall back to excluding only the last run. */
-    if (data.questions.length - ids.length < data.config.questionsPerQuiz) {
+    if (data.questions.length - ids.length < total) {
       return (hist[hist.length - 1] || []).slice();
     }
     return ids;
@@ -108,11 +125,13 @@
      cannot be filtered against what this browser has seen before. The topics the
      sharer picked travel in the link (`&groups=`) and are passed in here, rather
      than this browser's own saved preferences. */
-  function startSession(seed, replay, preferredGroups) {
+  function startSession(seed, replay, preferredGroups, total) {
+    total = total || data.config.questionsPerQuiz;
     var selection = AQ.selectQuestions(data, {
       seed: seed || AQ.rng.newSeedString(),
-      excludeIds: replay ? [] : historyIds(),
-      preferredGroups: preferredGroups || []
+      excludeIds: replay ? [] : historyIds(total),
+      preferredGroups: preferredGroups || [],
+      total: total
     });
     session = {
       seed: selection.seed,
@@ -125,6 +144,34 @@
     rememberRun(selection.questions);
     persistSession();
     return session;
+  }
+
+  /* A family quiz (data/quizzes.json): its own statements, all asked in a
+     seeded order, and only that family's aesthetics as possible answers. */
+  function startFamilySession(key, seed) {
+    seed = AQ.rng.normaliseSeed(seed) || AQ.rng.newSeedString();
+    var rng = AQ.rng.rngFromSeed(seed, 'selection');
+    session = {
+      seed: seed,
+      quiz: key,
+      groups: [],
+      questionIds: AQ.rng.shuffle(data.quizByKey[key].questions, rng).map(function (q) { return q.id; }),
+      answers: {},
+      index: 0,
+      startedAt: Date.now()
+    };
+    persistSession();
+    return session;
+  }
+
+  /* The data a family quiz scores against: only that family's aesthetics,
+     balanced against each other (see AQ.familyData in scoring.js). */
+  var familyData = {};
+  function scoringDataFor(s) {
+    var qz = s && s.quiz && data.quizByKey[s.quiz];
+    if (!qz) return data;
+    if (!familyData[qz.key]) familyData[qz.key] = AQ.familyData(data, qz.family);
+    return familyData[qz.key];
   }
 
   function persistSession() { writeStore(STORE_SESSION, session); }
@@ -195,9 +242,20 @@
     var current = root.firstChild;
     if (current && current.dispatchEvent) current.dispatchEvent(new Event('aq:teardown'));
     root.innerHTML = '';
+    setMood(null);
     root.appendChild(node);
     node.classList.add('fade-in');
     global.scrollTo({ top: 0, behavior: 'auto' });
+  }
+
+  /* Tints the background clouds with three colours; null puts the default
+     colours back. */
+  function setMood(colours) {
+    var style = document.documentElement.style;
+    ['--mood1', '--mood2', '--mood3'].forEach(function (v, i) {
+      if (colours) style.setProperty(v, colours[i]);
+      else style.removeProperty(v);
+    });
   }
 
   /* ---------- intro ---------- */
@@ -231,7 +289,7 @@
     return el('div', { class: 'namemode' }, [
       el('p', { class: 'fineprint' }, [
         on
-          ? 'Showing the gender-specific version — ' + renamed.length +
+          ? 'Showing the gender-specific version: ' + renamed.length +
             ' aesthetics use the gendered name they are known by (' + examples +
             '), and ' + (affected.length - renamed.length) + ' are worded differently.'
           : 'Everything is gender-neutral: the test never asks, and no aesthetic belongs ' +
@@ -249,56 +307,120 @@
     var answered = saved ? Object.keys(saved.answers || {}).length : 0;
     var resumable = saved && answered > 0 && answered < saved.questionIds.length;
     var urlSeed = queryParam('seed');
+    var urlQuiz = data.quizByKey[queryParam('quiz')];
 
-    var view = el('section', { class: 'screen screen--intro' }, [
-      el('p', { class: 'eyebrow', text: 'An aesthetic profile in 50 statements' }),
-      el('h1', { class: 'display', html: 'What aesthetic<br>are you?' }),
+    function sectionHead(kicker, title) {
+      return el('div', { class: 'intro__head' }, [
+        el('p', { class: 'eyebrow', text: kicker }),
+        el('h2', { class: 'intro__h2', text: title })
+      ]);
+    }
+
+    var hero = el('div', { class: 'intro__hero' }, [
+      el('p', { class: 'eyebrow', text: 'Aesthetic quizzes' }),
+      el('h1', { class: 'display', html: 'Find the <em>world</em><br>you <em>belong</em> in.' }),
       el('p', { class: 'lede' }, [
-        'This is not a quiz about what you like the look of. It is a test of which ' +
-        'aesthetic world your temperament belongs to — your relationship to nature, ' +
-        'technology, history, order, solitude, darkness and beauty.'
+        'Short personality quizzes that match your temperament, meaning your relationship ' +
+        'to nature, technology, history, order, solitude, darkness and beauty, to one ' +
+        'aesthetic. Not what you like the look of, but how you are.'
       ]),
-      el('p', { class: 'lede lede--muted' }, [
-        'The questions sit in ' + data.config.groups.length + ' themed groups — music, ' +
-        'weather, screens, the unexplained, and so on — and each run draws two or three ' +
-        'from every group. No statement belongs to any one aesthetic, and you are never ' +
-        'told what something measures until the result. Answer honestly rather than ' +
-        'interestingly; that is when the test gets precise.'
-      ]),
-      el('div', { class: 'intro__actions' }, [
+      urlSeed || resumable
+        ? el('div', { class: 'intro__actions' }, [
+            urlSeed
+              ? el('button', {
+                  class: 'btn btn--primary', type: 'button',
+                  onclick: function () {
+                    /* A shared run is fixed by its seed and length - skip straight in. */
+                    clearStore(STORE_SESSION);
+                    if (urlQuiz) startFamilySession(urlQuiz.key, urlSeed);
+                    else startSession(urlSeed, true, urlGroups(), urlLength());
+                    screenQuiz();
+                  }
+                }, ['Start the shared run'])
+              : null,
+            resumable
+              ? el('button', {
+                  class: 'btn btn--ghost', type: 'button',
+                  onclick: function () { session = saved; screenQuiz(); }
+                }, ['Resume (' + answered + ' answered)'])
+              : null
+          ])
+        : null,
+      urlSeed
+        ? el('p', { class: 'fineprint' }, [
+            'You have opened a shared run (', el('code', { text: AQ.rng.normaliseSeed(urlSeed) }),
+            '). You will get exactly the same ' +
+            (urlQuiz ? urlQuiz.questions.length : urlLength()) +
+            ' statements, in the same order, as the person who shared the link.'
+          ])
+        : null
+    ]);
+
+    /* The full test: every aesthetic, three lengths. */
+    var mainCard = el('article', { class: 'intro__card intro__card--main' }, [
+      el('p', { class: 'eyebrow', text: 'The full test' }),
+      el('h3', { class: 'intro__cardtitle', text: 'Which aesthetic are you?' }),
+      el('p', { text: 'All ' + data.aesthetics.length + ' aesthetics, from Cottagecore to ' +
+        'Cybergoth. Pick a few topics you care about, then answer. Longer runs give a more ' +
+        'precise result.' }),
+      el('div', { class: 'intro__lengths' }, LENGTHS.map(function (l) {
+        return el('button', {
+          class: 'btn ' + (l.n === data.config.questionsPerQuiz ? 'btn--primary' : 'btn--ghost'),
+          type: 'button',
+          onclick: function () {
+            clearStore(STORE_SESSION);
+            chosenLength = l.n;
+            screenPreferences();
+          }
+        }, [l.label + ' · ' + l.n]);
+      })),
+      el('p', { class: 'fineprint' }, [
+        LENGTHS.map(function (l) { return l.label + ' takes about ' + l.minutes + ' minutes'; }).join(', ') + '.'
+      ])
+    ]);
+
+    /* One card per family quiz. */
+    var familyCards = data.familyQuizzes.map(function (qz) {
+      return el('article', { class: 'intro__card' }, [
+        el('p', { class: 'eyebrow', text: data.aesthetics.filter(function (a) { return a.family === qz.family; }).length + ' aesthetics' }),
+        el('h3', { class: 'intro__cardtitle', text: qz.title }),
+        el('p', { text: qz.blurb }),
         el('button', {
           class: 'btn btn--primary', type: 'button',
           onclick: function () {
             clearStore(STORE_SESSION);
-            if (urlSeed) {
-              /* A shared run is fixed by its seed alone - skip straight in. */
-              startSession(urlSeed, true, urlGroups());
-              screenQuiz();
-            } else {
-              screenPreferences();
-            }
+            startFamilySession(qz.key);
+            screenQuiz();
           }
-        }, ['Start the test']),
-        resumable
-          ? el('button', {
-              class: 'btn btn--ghost', type: 'button',
-              onclick: function () { session = saved; screenQuiz(); }
-            }, ['Resume (' + answered + ' answered)'])
-          : null
+        }, ['Start · ' + qz.questions.length])
+      ]);
+    });
+
+    var view = el('section', { class: 'screen screen--intro' }, [
+      hero,
+      el('section', { class: 'intro__section' }, [
+        sectionHead('Start here', 'Pick a quiz'),
+        el('div', { class: 'intro__grid' }, [mainCard].concat(familyCards))
+      ]),
+      el('section', { class: 'intro__section' }, [
+        sectionHead('How it works', 'Three steps'),
+        el('ol', { class: 'intro__steps' }, [
+          el('li', {}, [el('h3', { text: 'Pick a quiz' }),
+            el('p', { text: 'The full test covers every aesthetic. The smaller quizzes stay ' +
+              'inside one family, like internet or goth.' })]),
+          el('li', {}, [el('h3', { text: 'Answer honestly' }),
+            el('p', { text: 'Rate each statement from strongly disagree to strongly agree. ' +
+              'Go with your first instinct rather than the interesting answer.' })]),
+          el('li', {}, [el('h3', { text: 'Meet your aesthetic' }),
+            el('p', { text: 'You are never told what a statement measures until the result.' })])
+        ])
       ]),
       el('ul', { class: 'intro__facts' }, [
-        el('li', {}, [el('strong', { text: String(data.questions.length) }), 'statements in the bank']),
-        el('li', {}, [el('strong', { text: String(data.aesthetics.length) }), 'aesthetics considered']),
+        el('li', {}, [el('strong', { text: String(data.aesthetics.length) }), 'aesthetics']),
+        el('li', {}, [el('strong', { text: String(1 + data.familyQuizzes.length) }), 'quizzes']),
         el('li', {}, [el('strong', { text: String(data.config.dimensions.length) }), 'hidden dimensions']),
         el('li', {}, [el('strong', { text: '7' }), 'answer levels per statement'])
       ]),
-      urlSeed
-        ? el('p', { class: 'fineprint' }, [
-            'You have opened a shared run (', el('code', { text: AQ.rng.normaliseSeed(urlSeed) }),
-            '). You will get exactly the same 50 statements, in the same order, as the ' +
-            'person who shared the link.'
-          ])
-        : null,
       el('p', { class: 'fineprint' }, [
         'Everything is worked out in your own browser. Nothing is sent anywhere, and your ' +
         'answers are stored locally only so you can pick up where you left off.'
@@ -364,7 +486,7 @@
     function begin() {
       var keys = Object.keys(selected).filter(function (k) { return selected[k]; });
       writeStore(STORE_PREFS, keys);
-      startSession(null, false, groupsForPreferences(keys));
+      startSession(null, false, groupsForPreferences(keys), chosenLength);
       screenQuiz();
     }
 
@@ -384,7 +506,7 @@
 
     var view = el('section', { class: 'screen screen--preferences' }, [
       el('p', { class: 'eyebrow', text: 'Before you start' }),
-      el('h1', { class: 'display display--sub', html: 'What matters<br>to you?' }),
+      el('h1', { class: 'display display--sub', html: 'What <em>matters</em><br>to you?' }),
       el('p', { class: 'lede' }, [
         'Pick what you care about and most of your questions will be about those ' +
         'things. Everything else still gets a question or two, so the result ' +
@@ -432,6 +554,7 @@
     });
     var groupLabels = {};
     data.config.groups.forEach(function (g) { groupLabels[g.key] = g.label; });
+    data.familyQuizzes.forEach(function (qz) { groupLabels[qz.key] = qz.groupLabel; });
 
     var counter = el('p', { class: 'quiz__counter' });
     var themeTag = el('p', { class: 'quiz__theme' });
@@ -482,7 +605,7 @@
         ? groupLabels[block.group] + ' · ' +
           (session.index - block.start + 1) + ' of ' + block.count
         : '';
-      progressFill.style.width = (session.index / total) * 100 + '%';
+      progressFill.style.transform = 'scaleX(' + session.index / total + ')';
       progressBar.setAttribute('aria-valuenow', String(session.index));
 
       statement.textContent = q.text;
@@ -620,18 +743,18 @@
       style: options.background ? 'background:' + options.background : null
     });
     var wrap = el('div', { class: 'bar' }, [fill]);
-    var target = Math.max(2, Math.min(100, value)) + '%';
+    var target = 'scaleX(' + Math.max(2, Math.min(100, value)) / 100 + ')';
 
     var delay = options.delay || 40;
 
     /* The bar is built before the screen is in the document, so the starting
-       width has to be laid out for real before it is changed - otherwise the
+       scale has to be painted for real before it is changed - otherwise the
        browser collapses both values into one frame and the transition never
        runs. Two frames guarantee a layout in between. */
-    fill.style.width = '0%';
+    fill.style.transform = 'scaleX(0)';
     global.requestAnimationFrame(function () {
       global.requestAnimationFrame(function () {
-        global.setTimeout(function () { fill.style.width = target; }, delay);
+        global.setTimeout(function () { fill.style.transform = target; }, delay);
       });
     });
 
@@ -643,7 +766,7 @@
       if (!wrap.isConnected) return;
       if (fill.getBoundingClientRect().width < 1 && value > 2) {
         fill.style.transition = 'none';
-        fill.style.width = target;
+        fill.style.transform = target;
       }
     }, delay + 1400);
 
@@ -867,6 +990,20 @@
     return 'https://aesthetics.fandom.com/wiki/' + encodeURIComponent(title.replace(/ /g, '_'));
   }
 
+  /* The generated mood plate as an <img> rather than inline SVG. Its blur and
+     grain filters are heavy; as an image the browser runs them once and then
+     only moves pixels, instead of re-running them on every scroll and hover. */
+  function plate(a, cls) {
+    return el('div', { class: cls }, [
+      el('img', {
+        src: 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(AQ.visuals.moodPlate(a)),
+        alt: '', decoding: 'async'
+      })
+    ]);
+  }
+
+  /* A link to an aesthetic's Aesthetics Wiki page, opened in a new tab. */
+
   function wikiSection(aesthetic) {
     return el('section', { class: 'block' }, [
       el('a', {
@@ -931,22 +1068,25 @@
   function screenResult(preview) {
     pushStep({ screen: 'result' });
 
-    var result = preview || AQ.score(sessionQuestions(), session.answers, data);
+    var result = preview || AQ.score(sessionQuestions(), session.answers, scoringDataFor(session));
     var seed = preview ? 'preview' : session.seed;
     var rng = AQ.rng.rngFromSeed(seed, 'narrative');
 
     var primary = data.aestheticsByKey[result.primary.key];
+    var runLength = preview ? data.config.questionsPerQuiz : session.questionIds.length;
+    var familyQuiz = !preview && data.quizByKey[session.quiz];
     var why = AQ.narrative.buildWhy(result, data, rng);
     var world = AQ.narrative.buildWorld(primary, result.profile, data, rng);
 
     var welcome = el('div', { class: 'result__welcome' }, [
-      el('p', { class: 'eyebrow', text: preview ? 'Preview - debug only' : 'Your result' }),
-      el('p', { class: 'result__greeting', text: 'Fifty statements later, here is the world ' +
+      el('p', { class: 'eyebrow', text: preview ? 'Preview - debug only'
+        : familyQuiz ? familyQuiz.resultLabel : 'Your result' }),
+      el('p', { class: 'result__greeting', text: runLength + ' statements later, here is the world ' +
         'your answers keep pointing towards.' })
     ]);
 
     var heroBanner = el('div', { class: 'hero__banner' }, [
-      el('div', { class: 'hero__plate', html: AQ.visuals.moodPlate(primary) }),
+      plate(primary, 'hero__plate'),
       el('h1', { class: 'hero__name', text: primary.name })
     ]);
     var hero = el('header', { class: 'hero' }, [
@@ -986,6 +1126,8 @@
     ]);
 
     var seedLink = global.location.origin + global.location.pathname + '?seed=' + seed +
+      (familyQuiz ? '&quiz=' + familyQuiz.key
+        : runLength !== data.config.questionsPerQuiz ? '&n=' + runLength : '') +
       (!preview && session.groups && session.groups.length ? '&groups=' + session.groups.join(',') : '');
     var copyBtn = el('button', {
       class: 'btn btn--ghost', type: 'button',
@@ -1010,16 +1152,17 @@
       el('p', { class: 'fineprint' }, [
         preview ? 'Preview of ' : 'Run ', el('code', { text: seed }),
         preview ? '. Not a real result - nothing was answered.'
-          : '. The same code gives the same 50 statements in the same order.'
+          : '. The same code gives the same ' + runLength + ' statements in the same order.'
       ]),
       el('div', { class: 'result__actions' }, [
         el('button', {
           class: 'btn btn--primary', type: 'button',
           onclick: function () {
             clearStore(STORE_SESSION);
-            screenPreferences();
+            if (familyQuiz) { startFamilySession(familyQuiz.key); screenQuiz(); }
+            else { chosenLength = runLength; screenPreferences(); }
           }
-        }, ['Take it again with new questions']),
+        }, [familyQuiz ? 'Take it again' : 'Take it again with new questions']),
         copyBtn
       ]),
       genderedNamesToggle(function () { screenResult(preview); }),

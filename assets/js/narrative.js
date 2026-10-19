@@ -163,52 +163,6 @@
     });
   }
 
-  function buildHybrid(combination, data, rng, profile) {
-    if (!combination) return null;
-    var narrative = data.narrative;
-    var a = data.aestheticsByKey[combination.a.key];
-    var b = data.aestheticsByKey[combination.b.key];
-
-    function twoKeywords(x) {
-      var kws = AQ.rng.shuffle(x.keywords || [], rng).slice(0, 2);
-      return kws.length ? joinList(kws) : x.tagline.toLowerCase();
-    }
-
-    var bridge = pick(narrative.hybrid.bridge, rng)
-      .replace('{a}', a.name)
-      .replace('{b}', b.name)
-      .replace('{qa}', twoKeywords(a))
-      .replace('{qb}', twoKeywords(b));
-
-    /* Where the two pull in opposite directions — and which way you lean. */
-    var contrasts = [];
-    Object.keys(a.dimensions).forEach(function (k) {
-      if (b.dimensions[k] === undefined) return;
-      var diff = Math.abs(a.dimensions[k] - b.dimensions[k]);
-      if (diff > 0.35) contrasts.push({ key: k, diff: diff, a: a.dimensions[k], b: b.dimensions[k] });
-    });
-    contrasts.sort(function (x, y) { return y.diff - x.diff; });
-
-    var tension = null;
-    if (contrasts.length) {
-      var c = contrasts[0];
-      var meta = data.dimensionMeta[c.key];
-      var mine = profile && profile.value[c.key] !== undefined ? profile.value[c.key] : 0.5;
-      var leaning = Math.abs(c.a - mine) <= Math.abs(c.b - mine) ? a.name : b.name;
-      tension =
-        'They pull apart on ' + meta.label.toLowerCase() +
-        ', and there you land closer to ' + leaning + '.';
-    }
-
-    return {
-      label: combination.label,
-      intro: pick(narrative.hybrid.intro, rng),
-      bridge: bridge,
-      tension: tension,
-      note: combination.related ? narrative.hybrid.relatedNote : narrative.hybrid.unofficialNote
-    };
-  }
-
   function strengthLabel(percent, data) {
     var list = data.narrative.strengthLabels;
     for (var i = 0; i < list.length; i++) {
@@ -221,8 +175,6 @@
     facets: FACETS,
     buildWhy: buildWhy,
     buildWorld: buildWorld,
-    buildHybrid: buildHybrid,
-    hiddenIntro: function (data, rng) { return pick(data.narrative.hidden.intro, rng); },
     strengthLabel: strengthLabel,
     distinctive: distinctive
   };
