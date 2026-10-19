@@ -242,7 +242,7 @@
     return el('div', { class: 'namemode' }, [
       el('p', { class: 'fineprint' }, [
         on
-          ? 'Showing the gender-specific version — ' + renamed.length +
+          ? 'Showing the gender-specific version: ' + renamed.length +
             ' aesthetics use the gendered name they are known by (' + examples +
             '), and ' + (affected.length - renamed.length) + ' are worded differently.'
           : 'Everything is gender-neutral: the test never asks, and no aesthetic belongs ' +
@@ -263,26 +263,23 @@
 
     function sectionHead(kicker, title) {
       return el('div', { class: 'intro__head' }, [
-        el('p', { class: 'eyebrow eyebrow--neon', text: kicker }),
+        el('p', { class: 'eyebrow', text: kicker }),
         el('h2', { class: 'intro__h2', text: title })
       ]);
     }
 
-    /* Hub layout - copy on the left, an art panel on the right - with the
-       Vaporwave sun, grid floor and neon labels as accents. */
     var hero = el('div', { class: 'intro__hero' }, [
       el('div', { class: 'intro__copy' }, [
-        el('p', { class: 'eyebrow eyebrow--neon', text: 'What aesthetic are you? Three answers in 50 statements' }),
-        el('h1', { class: 'display', html: 'Your <em>style</em>,<br>your <em>living</em>,<br>your <em>feeling</em>.' }),
+        el('p', { class: 'eyebrow', text: 'What aesthetic are you? One answer in 50 statements' }),
+        el('h1', { class: 'display', html: 'Find the <em>world</em><br>you <em>belong</em> in.' }),
         el('p', { class: 'lede' }, [
-          'Nobody is just one aesthetic. This test gives you three: the one you would wear, ' +
-          'the one you would live in, and the one you feel. All three come from your ' +
-          'temperament — your relationship to nature, technology, history, order, solitude, ' +
-          'darkness and beauty — not from what you like the look of.'
+          'This test finds the one aesthetic that fits you best, out of ' + data.aesthetics.length +
+          '. It comes from your temperament, meaning your relationship to nature, technology, ' +
+          'history, order, solitude, darkness and beauty, and not from what you like the look of.'
         ]),
         el('div', { class: 'intro__actions' }, [
           el('button', {
-            class: 'btn btn--primary btn--neon', type: 'button',
+            class: 'btn btn--primary', type: 'button',
             onclick: function () {
               clearStore(STORE_SESSION);
               if (urlSeed) {
@@ -301,28 +298,11 @@
               }, ['Resume (' + answered + ' answered)'])
             : null
         ])
-      ]),
-      el('div', { class: 'intro__art', 'aria-hidden': 'true' }, [
-        el('span', { class: 'intro__orb intro__orb--a' }),
-        el('span', { class: 'intro__orb intro__orb--b' }),
-        el('span', { class: 'intro__sun' }),
-        el('span', { class: 'intro__floor' })
       ])
     ]);
 
     var view = el('section', { class: 'screen screen--intro' }, [
       hero,
-      el('section', { class: 'intro__section' }, [
-        sectionHead('You get three', 'One test, three worlds'),
-        el('ul', { class: 'lensrow' }, Object.keys(data.config.lenses).map(function (k, i) {
-          var lens = data.config.lenses[k];
-          return el('li', { class: 'lensrow__item', style: 'animation-delay:' + (i * 90) + 'ms' }, [
-            el('span', { class: 'lensrow__art', 'aria-hidden': 'true' }),
-            el('strong', { text: lens.name }),
-            el('span', { text: lens.hint })
-          ]);
-        }))
-      ]),
       el('section', { class: 'intro__section' }, [
         sectionHead('How it works', 'Three steps'),
         el('ol', { class: 'intro__steps' }, [
@@ -330,9 +310,9 @@
             el('p', { text: 'Choose what matters to you and most statements come from those ' +
               'themes. Or skip it and be surprised.' })]),
           el('li', {}, [el('h3', { text: 'Answer 50 statements' }),
-            el('p', { text: 'Drawn from ' + data.config.groups.length + ' themed groups — music, ' +
+            el('p', { text: 'Drawn from ' + data.config.groups.length + ' themed groups, like music, ' +
               'weather, screens, the unexplained. Answer honestly rather than interestingly.' })]),
-          el('li', {}, [el('h3', { text: 'Read your three' }),
+          el('li', {}, [el('h3', { text: 'Meet your aesthetic' }),
             el('p', { text: 'You are never told what a statement measures until the result.' })])
         ])
       ]),
@@ -700,30 +680,6 @@
     return wrap;
   }
 
-  function aestheticCard(entry, kind, opts) {
-    opts = opts || {};
-    var a = data.aestheticsByKey[entry.key];
-    return el('article', {
-      class: 'card card--' + kind,
-      style: '--c1:' + a.palette[1] + ';--c2:' + a.palette[2]
-    }, [
-      el('div', { class: 'card__swatch', style: 'background:' + AQ.visuals.swatch(a) }),
-      el('div', { class: 'card__head' }, [
-        el('p', { class: 'eyebrow', text: opts.label || '' }),
-        el('h3', { class: 'card__title', text: a.name }),
-        el('p', { class: 'card__percent' }, [
-          el('strong', { text: entry.percent + '%' }),
-          el('span', { text: AQ.narrative.strengthLabel(entry.percent, data) })
-        ])
-      ]),
-      meter(entry.percent, { background: AQ.visuals.meterFill(a) }),
-      el('p', { class: 'card__tagline', text: a.tagline }),
-      el('p', { class: 'card__body', text: a.description }),
-      wikiLink(a, 'wikilink', ['See ' + a.name + ' on the wiki ↗']),
-      opts.note ? el('p', { class: 'card__note', text: opts.note }) : null
-    ]);
-  }
-
   /* Photographs are a bonus layer, fetched once and split two ways: the first
      (usually the strongest match) becomes the hero's background photo, layered
      over the generated mood plate once it loads; the rest fill the strip
@@ -1017,51 +973,6 @@
     ]);
   }
 
-  var RANK_SHORT = 10;
-
-  function rankingSection(result) {
-    var total = result.ranked.length;
-    var showAll = false;
-    var list = el('ol', { class: 'rank' });
-    var lede = el('p', { class: 'block__lede' });
-
-    function paint() {
-      list.innerHTML = '';
-      lede.textContent = showAll
-        ? 'Nobody fits inside only one world. All ' + total + ', closest match first.'
-        : 'Nobody fits inside only one world. These are the ' + RANK_SHORT + ' closest of ' + total + '.';
-      result.ranked.slice(0, showAll ? total : RANK_SHORT).forEach(function (entry, i) {
-        var a = data.aestheticsByKey[entry.key];
-        list.appendChild(el('li', { class: 'rank__row' }, [
-          el('span', { class: 'rank__num', text: String(i + 1).padStart(2, '0') }),
-          wikiLink(a, 'rank__name', [a.name]),
-          meter(entry.percent, { background: AQ.visuals.meterFill(a), delay: 40 + i * 12 }),
-          el('span', { class: 'rank__pct', text: entry.percent + '%' })
-        ]));
-      });
-    }
-
-    var toggle = el('button', {
-      class: 'btn btn--link', type: 'button',
-      onclick: function (e) {
-        showAll = !showAll;
-        e.target.textContent = showAll
-          ? 'Show the ' + RANK_SHORT + ' closest only'
-          : 'Show all ' + total + ' aesthetics';
-        paint();
-      }
-    }, ['Show all ' + total + ' aesthetics']);
-
-    paint();
-
-    return el('section', { class: 'block' }, [
-      el('h2', { class: 'block__title', text: 'The full ranking' }),
-      lede,
-      list,
-      toggle
-    ]);
-  }
-
   /* ---------- result ---------- */
 
   /* `preview`, when passed, is an already-scored result (see boot()'s local-only
@@ -1077,55 +988,16 @@
     var primary = data.aestheticsByKey[result.primary.key];
     var why = AQ.narrative.buildWhy(result, data, rng);
     var world = AQ.narrative.buildWorld(primary, result.profile, data, rng);
-    var hybrid = AQ.narrative.buildHybrid(result.combination, data, rng, result.profile);
 
     var welcome = el('div', { class: 'result__welcome' }, [
       el('p', { class: 'eyebrow', text: preview ? 'Preview - debug only' : 'Your result' }),
-      el('h1', { class: 'result__greeting', text: 'Fifty statements later, here are your three.' })
-    ]);
-
-    /* The headline of the result: style, living and feeling side by side. */
-    var lenses = data.config.lenses;
-    var lensKeys = Object.keys(lenses).filter(function (k) { return result.trio[k]; });
-    var trio = el('div', { class: 'trio' }, lensKeys.map(function (k, i) {
-      var entry = result.trio[k];
-      var a = data.aestheticsByKey[entry.key];
-      return el('article', { class: 'trio__panel', style: 'animation-delay:' + (i * 120) + 'ms' }, [
-        wikiLink(a, 'trio__banner', [
-          plate(a, 'trio__plate'),
-          el('p', { class: 'trio__lens', text: lenses[k].label }),
-          el('h2', { class: 'trio__name', text: a.name })
-        ]),
-        el('div', { class: 'trio__foot' }, [
-          el('p', { class: 'trio__pct' }, [el('strong', { text: entry.percent + '%' }), ' match']),
-          el('p', { class: 'trio__tagline', text: a.tagline }),
-          el('p', { class: 'trio__body', text: a.description }),
-          wikiLink(a, 'wikilink', ['See ' + a.name + ' on the wiki ↗'])
-        ])
-      ]);
-    }));
-    var summary = el('p', { class: 'trio__summary' }, lensKeys.map(function (k, i) {
-      return el('span', {}, [
-        i ? ' · ' : '',
-        wikiLink(data.aestheticsByKey[result.trio[k].key], 'trio__summarylink', [
-          el('strong', { text: data.aestheticsByKey[result.trio[k].key].name })
-        ]),
-        ' ' + lenses[k].verb
-      ]);
-    }));
-
-    var primaryLens = lensKeys.filter(function (k) { return result.trio[k].key === primary.key; })[0];
-    var closer = el('div', { class: 'block block--closer' }, [
-      el('h2', { class: 'block__title', text: 'A closer look at your strongest' }),
-      el('p', { class: 'block__lede', text: primary.name + ' is the closest match of all ' +
-        result.ranked.length + ' aesthetics' +
-        (primaryLens ? ', and it is your ' + lenses[primaryLens].name.toLowerCase() + '.' : '.') +
-        ' Its music, pictures and world are below.' })
+      el('p', { class: 'result__greeting', text: 'Fifty statements later, here is the world ' +
+        'your answers keep pointing towards.' })
     ]);
 
     var heroBanner = el('div', { class: 'hero__banner' }, [
       plate(primary, 'hero__plate'),
-      el('h2', { class: 'hero__name', text: primary.name })
+      el('h1', { class: 'hero__name', text: primary.name })
     ]);
     var hero = el('header', { class: 'hero' }, [
       heroBanner,
@@ -1150,26 +1022,6 @@
       el('div', { class: 'prose' }, why.map(function (s) { return el('p', { text: s }); })),
       el('p', { class: 'prose prose--muted', text: primary.description })
     ]);
-
-    var sideBySide = el('div', { class: 'cards' }, [
-      aestheticCard(result.secondary, 'secondary', { label: 'Runner-up' }),
-      aestheticCard(result.hidden, 'hidden', {
-        label: 'Hidden', note: AQ.narrative.hiddenIntro(data, rng)
-      })
-    ]);
-
-    var comboBlock = hybrid
-      ? el('section', { class: 'block block--combo' }, [
-          el('h2', { class: 'block__title', text: 'Combination' }),
-          el('p', { class: 'combo__label', text: hybrid.label }),
-          el('div', { class: 'prose' }, [
-            el('p', { text: hybrid.intro }),
-            el('p', { text: hybrid.bridge }),
-            hybrid.tension ? el('p', { text: hybrid.tension }) : null,
-            el('p', { class: 'prose--muted', text: hybrid.note })
-          ])
-        ])
-      : null;
 
     var worldBlock = el('section', { class: 'block' }, [
       el('h2', { class: 'block__title', text: 'Your version of ' + primary.name }),
@@ -1231,15 +1083,12 @@
     var wikiBlock = wikiSection(primary);
 
     var view = el('section', { class: 'screen screen--result' }, [
-      welcome, trio, summary, closer, hero, musicSection(primary), wikiBlock, whyBlock, sideBySide, comboBlock,
-      worldBlock, profileSection(result.profile),
-      rankingSection(result), footer
+      welcome, hero, musicSection(primary), wikiBlock, whyBlock,
+      worldBlock, profileSection(result.profile), footer
     ]);
 
     if (!preview) clearStore(STORE_SESSION);
     render(view);
-    /* One cloud per result: style, living and feeling each tint the page. */
-    setMood(lensKeys.map(function (k) { return data.aestheticsByKey[result.trio[k].key].palette[2]; }));
     photoStrip(primary, heroBanner, wikiBlock, !!preview);
   }
 
