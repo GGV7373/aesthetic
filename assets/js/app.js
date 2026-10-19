@@ -261,49 +261,80 @@
     var resumable = saved && answered > 0 && answered < saved.questionIds.length;
     var urlSeed = queryParam('seed');
 
-    var view = el('section', { class: 'screen screen--intro' }, [
-      el('p', { class: 'eyebrow', text: 'What aesthetic are you? Three answers in 50 statements' }),
-      el('h1', { class: 'display', html: 'Your <em>style</em>,<br>your <em>living</em>,<br>your <em>feeling</em>.' }),
-      el('p', { class: 'lede' }, [
-        'Nobody is just one aesthetic. This test gives you three: the one you would wear, ' +
-        'the one you would live in, and the one you feel. All three come from your ' +
-        'temperament — your relationship to nature, technology, history, order, solitude, ' +
-        'darkness and beauty — not from what you like the look of.'
-      ]),
-      el('ul', { class: 'lensrow' }, Object.keys(data.config.lenses).map(function (k, i) {
-        var lens = data.config.lenses[k];
-        return el('li', { class: 'lensrow__item', style: 'animation-delay:' + (i * 90) + 'ms' }, [
-          el('strong', { text: lens.name }),
-          el('span', { text: lens.hint })
-        ]);
-      })),
-      el('p', { class: 'lede lede--muted' }, [
-        'The questions sit in ' + data.config.groups.length + ' themed groups — music, ' +
-        'weather, screens, the unexplained, and so on — and each run draws two or three ' +
-        'from every group. No statement belongs to any one aesthetic, and you are never ' +
-        'told what something measures until the result. Answer honestly rather than ' +
-        'interestingly; that is when the test gets precise.'
-      ]),
-      el('div', { class: 'intro__actions' }, [
-        el('button', {
-          class: 'btn btn--primary', type: 'button',
-          onclick: function () {
-            clearStore(STORE_SESSION);
-            if (urlSeed) {
-              /* A shared run is fixed by its seed alone - skip straight in. */
-              startSession(urlSeed, true, urlGroups());
-              screenQuiz();
-            } else {
-              screenPreferences();
+    function sectionHead(kicker, title) {
+      return el('div', { class: 'intro__head' }, [
+        el('p', { class: 'eyebrow eyebrow--neon', text: kicker }),
+        el('h2', { class: 'intro__h2', text: title })
+      ]);
+    }
+
+    /* Hub layout - copy on the left, an art panel on the right - with the
+       Vaporwave sun, grid floor and neon labels as accents. */
+    var hero = el('div', { class: 'intro__hero' }, [
+      el('div', { class: 'intro__copy' }, [
+        el('p', { class: 'eyebrow eyebrow--neon', text: 'What aesthetic are you? Three answers in 50 statements' }),
+        el('h1', { class: 'display', html: 'Your <em>style</em>,<br>your <em>living</em>,<br>your <em>feeling</em>.' }),
+        el('p', { class: 'lede' }, [
+          'Nobody is just one aesthetic. This test gives you three: the one you would wear, ' +
+          'the one you would live in, and the one you feel. All three come from your ' +
+          'temperament — your relationship to nature, technology, history, order, solitude, ' +
+          'darkness and beauty — not from what you like the look of.'
+        ]),
+        el('div', { class: 'intro__actions' }, [
+          el('button', {
+            class: 'btn btn--primary btn--neon', type: 'button',
+            onclick: function () {
+              clearStore(STORE_SESSION);
+              if (urlSeed) {
+                /* A shared run is fixed by its seed alone - skip straight in. */
+                startSession(urlSeed, true, urlGroups());
+                screenQuiz();
+              } else {
+                screenPreferences();
+              }
             }
-          }
-        }, ['Start the test']),
-        resumable
-          ? el('button', {
-              class: 'btn btn--ghost', type: 'button',
-              onclick: function () { session = saved; screenQuiz(); }
-            }, ['Resume (' + answered + ' answered)'])
-          : null
+          }, ['Start the test']),
+          resumable
+            ? el('button', {
+                class: 'btn btn--ghost', type: 'button',
+                onclick: function () { session = saved; screenQuiz(); }
+              }, ['Resume (' + answered + ' answered)'])
+            : null
+        ])
+      ]),
+      el('div', { class: 'intro__art', 'aria-hidden': 'true' }, [
+        el('span', { class: 'intro__orb intro__orb--a' }),
+        el('span', { class: 'intro__orb intro__orb--b' }),
+        el('span', { class: 'intro__sun' }),
+        el('span', { class: 'intro__floor' })
+      ])
+    ]);
+
+    var view = el('section', { class: 'screen screen--intro' }, [
+      hero,
+      el('section', { class: 'intro__section' }, [
+        sectionHead('You get three', 'One test, three worlds'),
+        el('ul', { class: 'lensrow' }, Object.keys(data.config.lenses).map(function (k, i) {
+          var lens = data.config.lenses[k];
+          return el('li', { class: 'lensrow__item', style: 'animation-delay:' + (i * 90) + 'ms' }, [
+            el('span', { class: 'lensrow__art', 'aria-hidden': 'true' }),
+            el('strong', { text: lens.name }),
+            el('span', { text: lens.hint })
+          ]);
+        }))
+      ]),
+      el('section', { class: 'intro__section' }, [
+        sectionHead('How it works', 'Three steps'),
+        el('ol', { class: 'intro__steps' }, [
+          el('li', {}, [el('h3', { text: 'Pick a few topics' }),
+            el('p', { text: 'Choose what matters to you and most statements come from those ' +
+              'themes. Or skip it and be surprised.' })]),
+          el('li', {}, [el('h3', { text: 'Answer 50 statements' }),
+            el('p', { text: 'Drawn from ' + data.config.groups.length + ' themed groups — music, ' +
+              'weather, screens, the unexplained. Answer honestly rather than interestingly.' })]),
+          el('li', {}, [el('h3', { text: 'Read your three' }),
+            el('p', { text: 'You are never told what a statement measures until the result.' })])
+        ])
       ]),
       el('ul', { class: 'intro__facts' }, [
         el('li', {}, [el('strong', { text: String(data.questions.length) }), 'statements in the bank']),

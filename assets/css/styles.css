@@ -329,20 +329,200 @@ button, a, label, input { -webkit-tap-highlight-color: transparent; touch-action
 
 /* ---------- intro ---------- */
 
+/* A mix of the two redesigns in /redesing: the Hub layout (hero with an art
+   panel, glass cards, numbered steps) with Vaporwave accents (sun over a
+   grid floor, neon labels and button, VT323 numbers). Scoped to the intro so
+   no other screen changes. */
+.screen--intro {
+  --neon-pink: #ff71ce;
+  --neon-cyan: #01cdfe;
+  --neon-mint: #05ffa1;
+  --neon-lilac: #b967ff;
+  --neon-sun: #fffb96;
+  --pixel: "VT323", ui-monospace, "Courier New", monospace;
+  --glass: color-mix(in srgb, var(--surface) 62%, transparent);
+}
+
+.eyebrow--neon {
+  font-family: var(--pixel);
+  font-size: 1.05rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: #c2188f;
+}
+
+.intro__hero {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
 .intro__actions {
   display: grid;
   gap: 0.7rem;
-  margin: 2rem 0 1.8rem;
+  margin: 2rem 0 0;
 }
+
+.btn--neon {
+  color: #1d0a33;
+  font-weight: 600;
+  background: linear-gradient(100deg, var(--neon-cyan), #ffc2e8 50%, var(--neon-lilac));
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.6) inset, 0 10px 28px -8px rgba(185, 103, 255, 0.7);
+}
+
+/* The art panel: pastel sky, a striped vaporwave sun, a perspective grid. */
+.intro__art {
+  position: relative;
+  height: 260px;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(1, 205, 254, 0.45);
+  background: linear-gradient(180deg, #cfe7ff 0%, #fbe3f1 52%, #ffb8e0 100%);
+  box-shadow: var(--shadow-lg), 0 0 32px -6px rgba(185, 103, 255, 0.45);
+}
+
+.intro__sun {
+  position: absolute;
+  left: 50%;
+  bottom: 34%;
+  width: 46%;
+  aspect-ratio: 1;
+  transform: translate(-50%, 50%);
+  border-radius: 50%;
+  background: linear-gradient(180deg, var(--neon-sun), var(--neon-pink) 62%, var(--neon-lilac));
+  box-shadow: 0 0 42px rgba(255, 113, 206, 0.65);
+  /* The classic sun bands: transparent stripes on the lower half. */
+  -webkit-mask-image: linear-gradient(180deg, #000 0 50%, transparent 50% 54%, #000 54% 62%,
+    transparent 62% 67%, #000 67% 74%, transparent 74% 80%, #000 80% 86%, transparent 86%);
+  mask-image: linear-gradient(180deg, #000 0 50%, transparent 50% 54%, #000 54% 62%,
+    transparent 62% 67%, #000 67% 74%, transparent 74% 80%, #000 80% 86%, transparent 86%);
+}
+
+.intro__floor {
+  position: absolute;
+  left: -50%;
+  right: -50%;
+  bottom: 0;
+  height: 34%;
+  background:
+    linear-gradient(rgba(1, 205, 254, 0.7) 1px, transparent 1px) 0 0 / 40px 22px,
+    linear-gradient(90deg, rgba(255, 113, 206, 0.7) 1px, transparent 1px) 0 0 / 40px 22px,
+    linear-gradient(180deg, #7a3fa0, #2a0c4a);
+  transform: perspective(240px) rotateX(48deg);
+  transform-origin: 50% 100%;
+}
+
+/* Iridescent soap bubbles from the Hub design. */
+.intro__orb {
+  position: absolute;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 28%, #fff 0 6%, transparent 22%),
+    conic-gradient(from 200deg, #9ff3ff, #ffb3e6, #c9b8ff, #b6ffd9, #9ff3ff);
+  box-shadow: inset -8px -12px 26px rgba(255, 255, 255, 0.4), 0 10px 30px rgba(120, 120, 200, 0.25);
+  opacity: 0.85;
+  animation: bob 9s ease-in-out infinite alternate;
+}
+.intro__orb--a { width: 84px; height: 84px; left: 9%; top: 12%; }
+.intro__orb--b { width: 52px; height: 52px; right: 11%; top: 22%; animation-duration: 7s; }
+
+@keyframes bob { to { transform: translateY(-14px); } }
+
+.intro__section { margin-top: 3.2rem; }
+
+.intro__head { margin-bottom: 1.1rem; }
+.intro__head .eyebrow { margin-bottom: 0.3rem; }
+
+.intro__h2 {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(1.7rem, 5vw, 2.4rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+/* The three things the test gives you, as glass cards with a colour strip. */
+.lensrow {
+  display: grid;
+  gap: 0.9rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.lensrow__item {
+  display: grid;
+  gap: 0.2rem;
+  overflow: hidden;
+  padding: 0 1.1rem 1.1rem;
+  border-radius: var(--radius-lg);
+  background: var(--glass);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-md);
+  animation: rise var(--slow) var(--ease) both;
+}
+
+.lensrow__art {
+  height: 72px;
+  margin: 0 -1.1rem 0.8rem;
+  background:
+    repeating-linear-gradient(180deg, transparent 0 7px, rgba(255, 255, 255, 0.35) 7px 9px),
+    linear-gradient(170deg, #bfe3ff, #ffd6ef 60%, #d7d0ff);
+}
+.lensrow__item:nth-child(2) .lensrow__art {
+  background:
+    repeating-linear-gradient(180deg, transparent 0 7px, rgba(255, 255, 255, 0.35) 7px 9px),
+    linear-gradient(170deg, #c9f5d6, #e9ffd9 60%, #fdf2c4);
+}
+.lensrow__item:nth-child(3) .lensrow__art {
+  background:
+    repeating-linear-gradient(180deg, transparent 0 7px, rgba(255, 255, 255, 0.35) 7px 9px),
+    linear-gradient(170deg, #ffd9b8, #ffb3c8 50%, #b8c6ff);
+}
+
+.lensrow__item strong { font-family: var(--serif); font-size: 1.3rem; font-weight: 600; line-height: 1.2; }
+.lensrow__item > span:last-child { font-size: 0.9rem; color: var(--ink-soft); }
+
+.intro__steps {
+  display: grid;
+  gap: 0.9rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: step;
+}
+
+.intro__steps li {
+  counter-increment: step;
+  padding: 1.2rem 1.25rem;
+  border-radius: var(--radius-lg);
+  background: var(--glass);
+  border: 1px solid var(--line);
+}
+
+.intro__steps li::before {
+  content: counter(step, decimal-leading-zero);
+  display: block;
+  margin-bottom: 0.3rem;
+  font-family: var(--pixel);
+  font-size: 2.4rem;
+  line-height: 1;
+  color: #c2188f;
+  text-shadow: 0 0 10px rgba(255, 113, 206, 0.45);
+}
+
+.intro__steps h3 { margin: 0 0 0.3rem; font-family: var(--serif); font-size: 1.2rem; font-weight: 600; }
+.intro__steps p { margin: 0; font-size: 0.92rem; color: var(--ink-soft); }
 
 .intro__facts {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.2rem 1rem;
   list-style: none;
-  margin: 2rem 0 0;
+  margin: 3rem 0 0;
   padding: 1.5rem 0 0;
-  border-top: 1px solid var(--line);
+  border-top: 1px dashed rgba(194, 24, 143, 0.4);
   font-size: 0.78rem;
   color: var(--ink-faint);
   letter-spacing: 0.03em;
@@ -351,50 +531,30 @@ button, a, label, input { -webkit-tap-highlight-color: transparent; touch-action
 
 .intro__facts strong {
   display: block;
-  font-family: var(--serif);
-  font-size: 2rem;
+  font-family: var(--pixel);
+  font-size: 2.6rem;
   font-weight: 400;
-  color: var(--ink);
-  line-height: 1.15;
+  line-height: 1;
+  background: linear-gradient(90deg, #c2188f, #7b3fd0, #0a8fb5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 @media (min-width: 40rem) {
-  .intro__actions { display: flex; flex-wrap: wrap; gap: 0.85rem; margin: 2.4rem 0 2rem; }
-  .intro__facts {
-    display: flex; flex-wrap: wrap; gap: 1.5rem 3rem;
-    font-size: 0.8rem; padding-top: 1.8rem;
-  }
-  .intro__facts strong { font-size: 2.2rem; }
+  .intro__actions { display: flex; flex-wrap: wrap; gap: 0.85rem; margin-top: 2.4rem; }
+  .intro__art { height: 340px; }
+  .lensrow, .intro__steps { grid-template-columns: repeat(3, 1fr); }
+  .intro__facts { display: flex; flex-wrap: wrap; gap: 1.5rem 3rem; font-size: 0.8rem; padding-top: 1.8rem; }
 }
 
-/* The three things the test gives you, named up front. */
-.lensrow {
-  display: grid;
-  gap: 0.6rem;
-  list-style: none;
-  margin: 1.6rem 0 0.4rem;
-  padding: 0;
+@media (min-width: 60rem) {
+  .intro__hero { grid-template-columns: 1.15fr 0.85fr; gap: 3rem; }
+  .intro__art { height: 420px; }
 }
 
-.lensrow__item {
-  display: grid;
-  gap: 0.15rem;
-  padding: 0.85rem 1rem 0.85rem 1.1rem;
-  border-radius: var(--radius);
-  background: color-mix(in srgb, var(--surface) 75%, transparent);
-  border: 1px solid var(--line);
-  border-left: 4px solid var(--mood1);
-  box-shadow: var(--shadow-sm);
-  animation: rise var(--slow) var(--ease) both;
-}
-.lensrow__item:nth-child(2) { border-left-color: var(--mood2); }
-.lensrow__item:nth-child(3) { border-left-color: var(--mood3); }
-
-.lensrow__item strong { font-family: var(--serif); font-size: 1.25rem; font-weight: 600; line-height: 1.2; }
-.lensrow__item span { font-size: 0.88rem; color: var(--ink-soft); }
-
-@media (min-width: 40rem) {
-  .lensrow { grid-template-columns: repeat(3, 1fr); gap: 0.9rem; margin-top: 2rem; }
+@media (hover: hover) {
+  .btn--neon:hover { filter: brightness(1.05) saturate(1.15); }
 }
 
 /* ---------- preferences ---------- */
