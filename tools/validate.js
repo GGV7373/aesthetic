@@ -315,6 +315,38 @@ familyQuizzes.forEach((qz) => {
   });
 });
 
+/* 0a'. Family quizzes stay fair: someone who answers each statement the way a
+   member's profile reads gets that member for most members, and with random
+   answers no member wins far more (or less) than its fair share. */
+familyQuizzes.forEach((qz) => {
+  const fd = AQ.familyData(data, qz.family);
+  let self = 0;
+  fd.aesthetics.forEach((a) => {
+    const ans = {};
+    qz.questions.forEach((q) => {
+      let s = 0;
+      Object.entries(q.dimensions).forEach(([k, w]) => { s += w * ((a.dimensions[k] ?? 0.5) - 0.5); });
+      ans[q.id] = Math.max(-3, Math.min(3, Math.round(s * 3)));
+    });
+    if (AQ.score(qz.questions, ans, fd).primary.key === a.key) self++;
+  });
+  if (self / fd.aesthetics.length < 0.8) errors.push(`Quiz ${qz.key}: only ${self}/${fd.aesthetics.length} members reachable by their own profile.`);
+
+  const wins = {};
+  const rng = AQ.rng.rngFromSeed('FAIR-' + qz.key, 'validate');
+  const runs = 1500;
+  for (let i = 0; i < runs; i++) {
+    const ans = {};
+    qz.questions.forEach((q) => { ans[q.id] = Math.floor(rng() * 7) - 3; });
+    const top = AQ.score(qz.questions, ans, fd).primary.key;
+    wins[top] = (wins[top] || 0) + 1;
+  }
+  const fair = runs / fd.aesthetics.length;
+  const most = Math.max(...Object.values(wins));
+  if (most > 4 * fair) errors.push(`Quiz ${qz.key}: one member wins ${(100 * most / runs).toFixed(0)}% of random runs (fair share ${(100 / fd.aesthetics.length).toFixed(0)}%).`);
+  console.log(`  quiz ${qz.key.padEnd(9)} ${self}/${fd.aesthetics.length} reachable, random max ${(most / fair).toFixed(1)}x fair, ${Object.keys(wins).length}/${fd.aesthetics.length} ever win`);
+});
+
 /* 0b. The short and long runs offered on the intro: right count, no duplicates,
    every theme still asked. */
 [30, 100].forEach((n) => {

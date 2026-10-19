@@ -164,17 +164,13 @@
     return session;
   }
 
-  /* The data a family quiz scores against: everything as usual, but only the
-     aesthetics in that family can win. */
+  /* The data a family quiz scores against: only that family's aesthetics,
+     balanced against each other (see AQ.familyData in scoring.js). */
   var familyData = {};
   function scoringDataFor(s) {
     var qz = s && s.quiz && data.quizByKey[s.quiz];
     if (!qz) return data;
-    if (!familyData[qz.key]) {
-      familyData[qz.key] = Object.assign({}, data, {
-        aesthetics: data.aesthetics.filter(function (a) { return a.family === qz.family; })
-      });
-    }
+    if (!familyData[qz.key]) familyData[qz.key] = AQ.familyData(data, qz.family);
     return familyData[qz.key];
   }
 

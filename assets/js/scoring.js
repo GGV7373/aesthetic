@@ -269,6 +269,45 @@
     return trio;
   }
 
+  /* The data a family quiz (internet, goth, ...) scores against.
+
+     Every member of a family shares the family's base traits - all internet
+     aesthetics are digital, all goth ones dark - so against raw profiles the
+     member nearest neutral wins for most people, whatever they answer. Two
+     steps keep it fair:
+     1. each dimension is centred on the family's own average, so only what
+        sets a member apart from its siblings counts;
+     2. every member's differences are scaled to the same overall size, so a
+        boldly drawn member (Cybergoth) is not out-voted by a quietly drawn
+        one (plain Goth) - the direction of a profile decides, not its volume.
+     Display data (aestheticsByKey) is left untouched. */
+  AQ.familyData = function (data, family, target) {
+    var members = data.aesthetics.filter(function (a) { return a.family === family; });
+    var keys = {};
+    members.forEach(function (a) { Object.keys(a.dimensions).forEach(function (k) { keys[k] = true; }); });
+    keys = Object.keys(keys);
+    var raw = function (a, k) { return a.dimensions[k] === undefined ? 0.5 : a.dimensions[k]; };
+
+    var mean = {};
+    keys.forEach(function (k) {
+      var s = 0;
+      members.forEach(function (a) { s += raw(a, k); });
+      mean[k] = s / members.length;
+    });
+
+    var spread = target || catalogueSpread(data);
+    var centred = members.map(function (a) {
+      var size = 0;
+      keys.forEach(function (k) { size += Math.abs(raw(a, k) - mean[k]); });
+      var scale = size ? spread / (size / keys.length) : 1;
+      var dims = {};
+      keys.forEach(function (k) { dims[k] = clamp(0.5 + (raw(a, k) - mean[k]) * scale, 0.02, 0.98); });
+      return Object.assign({}, a, { dimensions: dims });
+    });
+
+    return Object.assign({}, data, { aesthetics: centred, catalogueSpread: spread });
+  };
+
   AQ.score = function (questions, answers, data) {
     var profile = buildProfile(questions, answers, data);
     var matching = data.config.matching;
