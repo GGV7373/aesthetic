@@ -1,16 +1,8 @@
 # What Aesthetic Are You?
 
-Short personality quizzes that match your temperament to **one aesthetic**, not to
-which pictures you like. The landing page offers two kinds:
-
-* **The full test**: all 200 aesthetics across 18 families, in three lengths: short
-  (30 statements), standard (50) or long (100), drawn from a bank of 360 statements
-  that measure 35 hidden dimensions.
-* **Family quizzes**: a quicker quiz that stays inside one family. Internet (30
-  statements, 24 aesthetics), nature (20, 10), witchy and folk (24, 17) and goth
-  (25, 11).
-
-Aesthetics Wiki is used as a reference for names and general character.
+A personality test that finds which **aesthetic world** you belong to — not which
+pictures you like. 360 statements in the bank, 50 per run, 35 hidden dimensions and
+171 aesthetics across 18 families, using Aesthetics Wiki as a reference.
 
 No framework, no build step, no dependencies. Open `index.html`.
 OR use the website at [estetikk.netlify.app](https://estetikk.netlify.app).
@@ -118,7 +110,7 @@ return to a three-column grid, and the hero foot goes back to two columns.
 The point is that no statement belongs to any one aesthetic. The chain is:
 
 ```
-answers  →  35 dimensions  →  match against 200 aesthetic profiles
+answers  →  35 dimensions  →  match against 171 aesthetic profiles
 ```
 
 A question about old buildings never scores points for "Dark Academia". It moves
@@ -242,9 +234,8 @@ quizzes do use it: it decides which aesthetics a family quiz can return.
 
 | Family | n | Examples |
 |---|---|---|
-| Internet and Liminal | 24 | After Hours, Analog Horror, Arcadecore, Doomer, … |
-| Subculture | 24 | Beatnik, Biker, Bohemian, Dark Cabaret, … |
-| Witchy and Folk | 17 | Appalachian Gothic, Cryptidcore, Dark Fantasy, Dark Naturalism, … |
+| Internet and Liminal | 21 | After Hours, Analog Horror, Doomer, Draincore, … |
+| Subculture | 17 | Beatnik, Emo, Greaser, Grunge, … |
 | Art and Period | 16 | Art Deco, Art Nouveau, Arts and Crafts, Baroque, … |
 | Soft and Romantic | 14 | Angelcore, Balletcore, Barbiecore, Clean Minimal, … |
 | Punk and Futurism | 12 | Atompunk, Cassette Futurism, Cyberpunk, Decopunk, … |
@@ -255,11 +246,13 @@ quizzes do use it: it decides which aesthetics a family quiz can return.
 | Nature and Pastoral | 10 | Autumn, Cabincore, Cottagecore, Forestpunk, … |
 | Americana and Screen | 8 | 50s Suburbia, Americana, Diner, Film Noir, … |
 | Sport and Utility | 8 | Equestrian, Gorpcore, Jock, Racing, … |
-| Cosy and Home | 7 | Cluttercore, Coastal Linen, Coffee House, Cozycore, … |
+| Americana and Screen | 6 | 50s Suburbia, Americana, Diner, Film Noir, … |
+| Nature and Pastoral | 7 | Cabincore, Cottagecore, Forestpunk, Granola, … |
 | Status and Money | 7 | Corpcore, Dandy, Hypebeast, Mob Glamour, … |
-| Sea and Coast | 4 | Nautical, Ocean Grunge, Oceanpunk, Tiki |
+| Cosy and Home | 4 | Cluttercore, Coastal Linen, Grandmillennial, Hygge |
 | Academia | 3 | Dark Academia, Light Academia, Romantic Academia |
-| Adventure and Frontier | 3 | Adventure Pulp, Adventurecore, Western |
+| Adventure and Frontier | 2 | Adventurecore, Western |
+| Sea and Coast | 2 | Nautical, Oceanpunk |
 
 ---
 
@@ -435,8 +428,7 @@ assets/js/
   app.js          screens and flow
 data/
   questions.json  360 statements with dimension weights
-  aesthetics.json 200 aesthetics: profile, palette, "world"
-  quizzes.json    the family quizzes: their statements and which family they pick from
+  aesthetics.json 171 aesthetics: profile, palette, "world"
   scoring.json    scale, groups, dimensions, preference categories, matching parameters
   narrative.json  phrase banks
   playlists.json  hand-picked YouTube videos per aesthetic, plus the search fallback
@@ -612,7 +604,7 @@ aesthetic. It has three parts:
 * the aesthetic's own `world.music` line, so the sound matches the rest of the result;
 * any hand-picked videos from `data/playlists.json` that are attached to it;
 * a button that searches YouTube for `"<name> aesthetic playlist"`, so every one of the
-  200 aesthetics has somewhere to go even without a curated pick. It searches on the
+  171 aesthetics has somewhere to go even without a curated pick. It searches on the
   wiki's own name (`gendered.name` when there is one), because "Soft Girl" finds
   playlists and the neutral "Soft Pastel" does not.
 
@@ -636,8 +628,8 @@ on the view that no video is better than a wrong one. The four numbers live unde
 | `relatedBonus` | how much being in each other's `related` list counts for |
 | `familyBonus` | how much sharing a family counts for |
 
-176 of the 200 aesthetics have at least one video of their own in `curated`; the
-rest rely on borrowed picks and the search button until someone adds one.
+Every one of the 171 aesthetics already has at least one video of its own in
+`curated`.
 
 To add a video, append to `curated` in `data/playlists.json` and run
 `node tools/build-bundle.js`:
