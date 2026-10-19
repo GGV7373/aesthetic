@@ -1,4 +1,4 @@
-/* Picks 50 statements out of the bank for each run.
+/* Picks the statements for each run: 50 by default, or whatever `total` asks for.
 
    The statements sit in 20 themed groups of ten or more — sound and silence, food
    and the table, screens and the net, and so on. Every run draws 2-3 from each
@@ -254,6 +254,17 @@
     var rng = AQ.rng.rngFromSeed(seed, 'selection');
     var total = options.total || config.questionsPerQuiz;
 
+    /* The per-group min/max in the data are sized for the standard length.
+       A shorter or longer run scales them, so every theme stays covered. */
+    var groups = config.groups;
+    if (total !== config.questionsPerQuiz) {
+      var f = total / config.questionsPerQuiz;
+      groups = groups.map(function (g) {
+        var min = Math.max(1, Math.round(g.min * f));
+        return { key: g.key, min: min, max: Math.max(min, Math.ceil(g.max * f)) };
+      });
+    }
+
     var excluded = {};
     (options.excludeIds || []).forEach(function (id) { excluded[id] = true; });
 
@@ -268,7 +279,7 @@
       : null;
 
     var byGroup = groupByKey(data.questions);
-    var quotas = drawQuotas(preferred ? reshapeGroups(config.groups, preferred, config.selection, total) : config.groups,
+    var quotas = drawQuotas(preferred ? reshapeGroups(groups, preferred, config.selection, total) : groups,
       total, rng, weightOf);
     var chosenIds = {};
     var usedClusters = {};

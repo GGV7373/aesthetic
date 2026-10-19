@@ -300,6 +300,18 @@ data.dimensionKeys = config.dimensions.map((d) => d.key);
 data.dimensionMeta = {};
 config.dimensions.forEach((d) => (data.dimensionMeta[d.key] = d));
 
+/* 0. The short and long runs offered on the intro: right count, no duplicates,
+   every theme still asked. */
+[30, 100].forEach((n) => {
+  for (let i = 0; i < 100; i++) {
+    const sel = AQ.selectQuestions(data, { seed: 'LEN' + n + '-' + i, total: n });
+    const ids = new Set(sel.questions.map((q) => q.id));
+    const groups = new Set(sel.questions.map((q) => q.group));
+    if (sel.questions.length !== n || ids.size !== n) errors.push(`Length ${n}, run ${i}: ${ids.size} distinct of ${sel.questions.length}.`);
+    if (groups.size !== config.groups.length) errors.push(`Length ${n}, run ${i}: only ${groups.size} themes asked.`);
+  }
+});
+
 /* 1. Selection: right count, no duplicates, no repeated cluster, themed blocks. */
 const blockOrder = (config.selection && config.selection.order) === 'blocks';
 let duplicateClusters = 0;

@@ -9,6 +9,14 @@
   var STORE_PREFS = 'aq.preferences.v1';
   var PREFS_MAX_PICKS = 5;
 
+  /* The three run lengths offered on the intro. 50 is the standard the group
+     quotas in the data are sized for; selection.js scales them for the rest. */
+  var LENGTHS = [
+    { n: 30, label: 'Short', minutes: 5 },
+    { n: 50, label: 'Standard', minutes: 8 },
+    { n: 100, label: 'Long', minutes: 15 }
+  ];
+
   var SWAP_MS = 170;   /* how long a question takes to move out of the way */
   var ADVANCE_MS = 240; /* pause after an answer before moving on */
 
@@ -66,9 +74,18 @@
     return (queryParam('groups') || '').split(',').filter(function (k) { return known[k]; });
   }
 
+  /* The run length a shared link was made with (`&n=`), or the standard one. */
+  function urlLength() {
+    var n = Number(queryParam('n'));
+    return LENGTHS.some(function (l) { return l.n === n; }) ? n : data.config.questionsPerQuiz;
+  }
+
+  /* Picked on the intro, used when the preferences screen starts the run. */
+  var chosenLength = null;
+
   /* ---------- history: don't serve the same fifty twice in a row ---------- */
 
-  function historyIds() {
+  function historyIds(total) {
     var hist = readStore(STORE_HISTORY, []);
     var max = (data.config.selection && data.config.selection.maxHistorySessions) || 4;
     var seen = {};
@@ -77,7 +94,7 @@
     });
     var ids = Object.keys(seen).map(Number);
     /* Nearly everything used up: fall back to excluding only the last run. */
-    if (data.questions.length - ids.length < data.config.questionsPerQuiz) {
+    if (data.questions.length - ids.length < total) {
       return (hist[hist.length - 1] || []).slice();
     }
     return ids;
@@ -108,11 +125,13 @@
      cannot be filtered against what this browser has seen before. The topics the
      sharer picked travel in the link (`&groups=`) and are passed in here, rather
      than this browser's own saved preferences. */
-  function startSession(seed, replay, preferredGroups) {
+  function startSession(seed, replay, preferredGroups, total) {
+    total = total || data.config.questionsPerQuiz;
     var selection = AQ.selectQuestions(data, {
       seed: seed || AQ.rng.newSeedString(),
-      excludeIds: replay ? [] : historyIds(),
-      preferredGroups: preferredGroups || []
+      excludeIds: replay ? [] : historyIds(total),
+      preferredGroups: preferredGroups || [],
+      total: total
     });
     session = {
       seed: selection.seed,
@@ -270,33 +289,46 @@
 
     var hero = el('div', { class: 'intro__hero' }, [
       el('div', { class: 'intro__copy' }, [
-        el('p', { class: 'eyebrow', text: 'What aesthetic are you? One answer in 50 statements' }),
+        el('p', { class: 'eyebrow', text: 'What aesthetic are you? One answer, three lengths' }),
         el('h1', { class: 'display', html: 'Find the <em>world</em><br>you <em>belong</em> in.' }),
         el('p', { class: 'lede' }, [
           'This test finds the one aesthetic that fits you best, out of ' + data.aesthetics.length +
           '. It comes from your temperament, meaning your relationship to nature, technology, ' +
           'history, order, solitude, darkness and beauty, and not from what you like the look of.'
         ]),
-        el('div', { class: 'intro__actions' }, [
-          el('button', {
-            class: 'btn btn--primary', type: 'button',
-            onclick: function () {
-              clearStore(STORE_SESSION);
-              if (urlSeed) {
-                /* A shared run is fixed by its seed alone - skip straight in. */
-                startSession(urlSeed, true, urlGroups());
+        el('div', { class: 'intro__actions' }, (urlSeed
+          ? [el('button', {
+              class: 'btn btn--primary', type: 'button',
+              onclick: function () {
+                /* A shared run is fixed by its seed and length - skip straight in. */
+                clearStore(STORE_SESSION);
+                startSession(urlSeed, true, urlGroups(), urlLength());
                 screenQuiz();
-              } else {
-                screenPreferences();
               }
-            }
-          }, ['Start the test']),
+            }, ['Start the shared run'])]
+          : LENGTHS.map(function (l) {
+              return el('button', {
+                class: 'btn ' + (l.n === data.config.questionsPerQuiz ? 'btn--primary' : 'btn--ghost'),
+                type: 'button',
+                onclick: function () {
+                  clearStore(STORE_SESSION);
+                  chosenLength = l.n;
+                  screenPreferences();
+                }
+              }, [l.label + ' · ' + l.n]);
+            })
+        ).concat([
           resumable
             ? el('button', {
                 class: 'btn btn--ghost', type: 'button',
                 onclick: function () { session = saved; screenQuiz(); }
               }, ['Resume (' + answered + ' answered)'])
             : null
+        ])),
+        urlSeed ? null : el('p', { class: 'fineprint' }, [
+          LENGTHS.map(function (l) {
+            return l.label + ' is ' + l.n + ' statements, about ' + l.minutes + ' minutes';
+          }).join('. ') + '. Longer runs give a more precise result.'
         ])
       ])
     ]);
@@ -309,7 +341,7 @@
           el('li', {}, [el('h3', { text: 'Pick a few topics' }),
             el('p', { text: 'Choose what matters to you and most statements come from those ' +
               'themes. Or skip it and be surprised.' })]),
-          el('li', {}, [el('h3', { text: 'Answer 50 statements' }),
+          el('li', {}, [el('h3', { text: 'Answer the statements' }),
             el('p', { text: 'Drawn from ' + data.config.groups.length + ' themed groups, like music, ' +
               'weather, screens, the unexplained. Answer honestly rather than interestingly.' })]),
           el('li', {}, [el('h3', { text: 'Meet your aesthetic' }),
@@ -325,7 +357,7 @@
       urlSeed
         ? el('p', { class: 'fineprint' }, [
             'You have opened a shared run (', el('code', { text: AQ.rng.normaliseSeed(urlSeed) }),
-            '). You will get exactly the same 50 statements, in the same order, as the ' +
+            '). You will get exactly the same ' + urlLength() + ' statements, in the same order, as the ' +
             'person who shared the link.'
           ])
         : null,
@@ -394,7 +426,7 @@
     function begin() {
       var keys = Object.keys(selected).filter(function (k) { return selected[k]; });
       writeStore(STORE_PREFS, keys);
-      startSession(null, false, groupsForPreferences(keys));
+      startSession(null, false, groupsForPreferences(keys), chosenLength);
       screenQuiz();
     }
 
@@ -986,12 +1018,13 @@
     var rng = AQ.rng.rngFromSeed(seed, 'narrative');
 
     var primary = data.aestheticsByKey[result.primary.key];
+    var runLength = preview ? data.config.questionsPerQuiz : session.questionIds.length;
     var why = AQ.narrative.buildWhy(result, data, rng);
     var world = AQ.narrative.buildWorld(primary, result.profile, data, rng);
 
     var welcome = el('div', { class: 'result__welcome' }, [
       el('p', { class: 'eyebrow', text: preview ? 'Preview - debug only' : 'Your result' }),
-      el('p', { class: 'result__greeting', text: 'Fifty statements later, here is the world ' +
+      el('p', { class: 'result__greeting', text: runLength + ' statements later, here is the world ' +
         'your answers keep pointing towards.' })
     ]);
 
@@ -1036,6 +1069,7 @@
     ]);
 
     var seedLink = global.location.origin + global.location.pathname + '?seed=' + seed +
+      (runLength !== data.config.questionsPerQuiz ? '&n=' + runLength : '') +
       (!preview && session.groups && session.groups.length ? '&groups=' + session.groups.join(',') : '');
     var copyBtn = el('button', {
       class: 'btn btn--ghost', type: 'button',
@@ -1060,7 +1094,7 @@
       el('p', { class: 'fineprint' }, [
         preview ? 'Preview of ' : 'Run ', el('code', { text: seed }),
         preview ? '. Not a real result - nothing was answered.'
-          : '. The same code gives the same 50 statements in the same order.'
+          : '. The same code gives the same ' + runLength + ' statements in the same order.'
       ]),
       el('div', { class: 'result__actions' }, [
         el('button', {
