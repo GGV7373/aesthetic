@@ -605,7 +605,7 @@
         ? groupLabels[block.group] + ' · ' +
           (session.index - block.start + 1) + ' of ' + block.count
         : '';
-      progressFill.style.width = (session.index / total) * 100 + '%';
+      progressFill.style.transform = 'scaleX(' + session.index / total + ')';
       progressBar.setAttribute('aria-valuenow', String(session.index));
 
       statement.textContent = q.text;
@@ -743,18 +743,18 @@
       style: options.background ? 'background:' + options.background : null
     });
     var wrap = el('div', { class: 'bar' }, [fill]);
-    var target = Math.max(2, Math.min(100, value)) + '%';
+    var target = 'scaleX(' + Math.max(2, Math.min(100, value)) / 100 + ')';
 
     var delay = options.delay || 40;
 
     /* The bar is built before the screen is in the document, so the starting
-       width has to be laid out for real before it is changed - otherwise the
+       scale has to be painted for real before it is changed - otherwise the
        browser collapses both values into one frame and the transition never
        runs. Two frames guarantee a layout in between. */
-    fill.style.width = '0%';
+    fill.style.transform = 'scaleX(0)';
     global.requestAnimationFrame(function () {
       global.requestAnimationFrame(function () {
-        global.setTimeout(function () { fill.style.width = target; }, delay);
+        global.setTimeout(function () { fill.style.transform = target; }, delay);
       });
     });
 
@@ -766,7 +766,7 @@
       if (!wrap.isConnected) return;
       if (fill.getBoundingClientRect().width < 1 && value > 2) {
         fill.style.transition = 'none';
-        fill.style.width = target;
+        fill.style.transform = target;
       }
     }, delay + 1400);
 

@@ -539,11 +539,13 @@ button, a, label, input { -webkit-tap-highlight-color: transparent; touch-action
 
 .progress__fill {
   position: absolute;
-  inset: 0 auto 0 0;
-  width: 0;
+  inset: 0;
   border-radius: 3px;
   background: linear-gradient(90deg, #b08f57, var(--accent));
-  transition: width var(--slow) var(--ease);
+  /* scaleX, not width: a width transition lays out the page every frame. */
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--slow) var(--ease);
 }
 
 /* The question counter sits under the progress bar. Answering a statement
@@ -1145,11 +1147,12 @@ button, a, label, input { -webkit-tap-highlight-color: transparent; touch-action
 
 .bar__fill {
   position: absolute;
-  inset: 0 auto 0 0;
-  width: 0;
+  inset: 0;
   border-radius: 4px;
   background: var(--accent);
-  transition: width 900ms var(--ease);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 900ms var(--ease);
 }
 
 .bar__fill--subtle { background: linear-gradient(90deg, #cd8f6e, var(--accent)); }
