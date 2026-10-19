@@ -382,7 +382,7 @@
     /* One card per family quiz. */
     var familyCards = data.familyQuizzes.map(function (qz) {
       return el('article', { class: 'intro__card' }, [
-        el('p', { class: 'eyebrow', text: scoringDataFor({ quiz: qz.key }).aesthetics.length + ' aesthetics' }),
+        el('p', { class: 'eyebrow', text: data.aesthetics.filter(function (a) { return a.family === qz.family; }).length + ' aesthetics' }),
         el('h3', { class: 'intro__cardtitle', text: qz.title }),
         el('p', { text: qz.blurb }),
         el('button', {

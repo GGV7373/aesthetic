@@ -235,27 +235,6 @@
       { "dim": "adventure", "dir": "high", "text": "interrupted by you suddenly going somewhere" }
     ]
   },
-  "hybrid": {
-    "intro": [
-      "Two worlds sit so close together in your profile that neither can stand alone.",
-      "Your result splits into two roughly equal directions.",
-      "You land in the overlap between two aesthetics that are rarely named together."
-    ],
-    "unofficialNote": "This combination has no established name — it was put together from your profile, not taken from a list.",
-    "relatedNote": "These two already sit close to one another and share much of the same ground.",
-    "bridge": [
-      "{a} gives you {qa}, while {b} adds {qb}.",
-      "From {a} you take {qa}. From {b} comes {qb}.",
-      "{a} sets the mood — {qa}. {b} sets the detail — {qb}."
-    ]
-  },
-  "hidden": {
-    "intro": [
-      "The hidden aesthetic is the one that doesn't follow from the first two, but that your profile hits anyway.",
-      "This is the direction that looks nothing like the others, and that your answers point to regardless.",
-      "Outside your main track lies this — and it fits better than it has any right to."
-    ]
-  },
   "strengthLabels": [
     { "min": 88, "label": "Unusually precise match" },
     { "min": 78, "label": "Strong match" },

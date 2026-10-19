@@ -28,16 +28,6 @@ const FACETS = ['setting', 'architecture', 'interior', 'technology', 'clothes', 
 const dimKeys = new Set(config.dimensions.map((d) => d.key));
 if (dimKeys.size !== config.dimensions.length) errors.push('Duplicate dimension keys.');
 
-/* ---------- lenses (style / living / feeling) ---------- */
-
-const lenses = config.lenses || {};
-aesthetics.forEach((a) => {
-  const hits = Object.keys(lenses).filter((k) => lenses[k].families.includes(a.family));
-  if (a.lens ? !lenses[a.lens] : hits.length !== 1) {
-    errors.push(`Aesthetic "${a.key}" must belong to exactly one lens (family "${a.family}", lens ${a.lens || '-'}).`);
-  }
-});
-
 /* ---------- statements ---------- */
 
 const ids = new Set();
@@ -447,8 +437,6 @@ if (overlap > 6) errors.push(`Too much overlap after the history filter: ${overl
 /* 4. Scoring: varied answer profiles should produce varied winners. */
 const winners = {};
 const percents = [];
-const hiddenPicks = {};
-let combos = 0;
 
 const rngFor = (seed) => AQ.rng.rngFromSeed(seed, 'sim');
 
@@ -480,13 +468,8 @@ for (let i = 0; i < 600; i++) {
 
   const result = AQ.score(sel.questions, answers, data);
   winners[result.primary.key] = (winners[result.primary.key] || 0) + 1;
-  hiddenPicks[result.hidden.key] = (hiddenPicks[result.hidden.key] || 0) + 1;
   percents.push(result.primary.percent);
-  if (result.combination) combos++;
 
-  if (result.hidden.key === result.primary.key || result.hidden.key === result.secondary.key) {
-    errors.push(`Simulation ${i}: hidden equals primary/secondary.`);
-  }
   for (let r = 1; r < result.ranked.length; r++) {
     if (result.ranked[r].percent > result.ranked[r - 1].percent) {
       errors.push(`Simulation ${i}: percentages are not monotonic down the ranking.`);
@@ -535,10 +518,8 @@ console.log(`  overlap after history:      ${overlap} statements`);
 console.log('\n— Scoring (600 simulated people) —');
 console.log(`  distinct winners:           ${distinctWinners} / ${aesthetics.length}`);
 console.log(`  most common winner:         ${topWinner[0]} (${topWinner[1]})`);
-console.log(`  distinct hidden picks:      ${Object.keys(hiddenPicks).length}`);
 console.log(`  average top match:          ${avgPct.toFixed(1)}%`);
 console.log(`  range:                      ${Math.min(...percents)}-${Math.max(...percents)}%`);
-console.log(`  combination shown:          ${((combos / 600) * 100).toFixed(0)}% of the time`);
 
 if (warnings.length) {
   console.log('\n— Warnings —');

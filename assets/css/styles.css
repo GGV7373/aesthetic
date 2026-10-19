@@ -177,19 +177,6 @@ button, a, label, input { -webkit-tap-highlight-color: transparent; touch-action
   text-wrap: balance;
 }
 
-.display em {
-  font-style: italic;
-  background: linear-gradient(100deg, var(--mood1), var(--mood2), var(--mood3), var(--mood1));
-  background-size: 300% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: shimmer 9s linear infinite;
-  padding-right: 0.06em;
-}
-
-@keyframes shimmer { to { background-position: 300% 0; } }
-
 .lede {
   max-width: 46ch;
   margin: 0 0 1.1rem;
@@ -333,13 +320,6 @@ button, a, label, input { -webkit-tap-highlight-color: transparent; touch-action
    type and colours. Scoped to the intro so no other screen changes. */
 .screen--intro {
   --glass: color-mix(in srgb, var(--surface) 62%, transparent);
-}
-
-/* Plain ink here rather than the shimmering gradient - calmer to read. */
-.screen--intro .display em {
-  background: none;
-  color: inherit;
-  animation: none;
 }
 
 .intro__actions {
