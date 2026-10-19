@@ -650,26 +650,6 @@
     return wrap;
   }
 
-  function aestheticCard(entry, kind, opts) {
-    opts = opts || {};
-    var a = data.aestheticsByKey[entry.key];
-    return el('article', { class: 'card card--' + kind }, [
-      el('div', { class: 'card__swatch', style: 'background:' + AQ.visuals.swatch(a) }),
-      el('div', { class: 'card__head' }, [
-        el('p', { class: 'eyebrow', text: opts.label || '' }),
-        el('h3', { class: 'card__title', text: a.name }),
-        el('p', { class: 'card__percent' }, [
-          el('strong', { text: entry.percent + '%' }),
-          el('span', { text: AQ.narrative.strengthLabel(entry.percent, data) })
-        ])
-      ]),
-      meter(entry.percent, { background: AQ.visuals.meterFill(a) }),
-      el('p', { class: 'card__tagline', text: a.tagline }),
-      el('p', { class: 'card__body', text: a.description }),
-      opts.note ? el('p', { class: 'card__note', text: opts.note }) : null
-    ]);
-  }
-
   /* Photographs are a bonus layer, fetched once and split two ways: the first
      (usually the strongest match) becomes the hero's background photo, layered
      over the generated mood plate once it loads; the rest fill the strip
@@ -943,51 +923,6 @@
     ]);
   }
 
-  var RANK_SHORT = 10;
-
-  function rankingSection(result) {
-    var total = result.ranked.length;
-    var showAll = false;
-    var list = el('ol', { class: 'rank' });
-    var lede = el('p', { class: 'block__lede' });
-
-    function paint() {
-      list.innerHTML = '';
-      lede.textContent = showAll
-        ? 'Nobody fits inside only one world. All ' + total + ', closest match first.'
-        : 'Nobody fits inside only one world. These are the ' + RANK_SHORT + ' closest of ' + total + '.';
-      result.ranked.slice(0, showAll ? total : RANK_SHORT).forEach(function (entry, i) {
-        var a = data.aestheticsByKey[entry.key];
-        list.appendChild(el('li', { class: 'rank__row' }, [
-          el('span', { class: 'rank__num', text: String(i + 1).padStart(2, '0') }),
-          el('span', { class: 'rank__name', text: a.name }),
-          meter(entry.percent, { background: AQ.visuals.meterFill(a), delay: 40 + i * 12 }),
-          el('span', { class: 'rank__pct', text: entry.percent + '%' })
-        ]));
-      });
-    }
-
-    var toggle = el('button', {
-      class: 'btn btn--link', type: 'button',
-      onclick: function (e) {
-        showAll = !showAll;
-        e.target.textContent = showAll
-          ? 'Show the ' + RANK_SHORT + ' closest only'
-          : 'Show all ' + total + ' aesthetics';
-        paint();
-      }
-    }, ['Show all ' + total + ' aesthetics']);
-
-    paint();
-
-    return el('section', { class: 'block' }, [
-      el('h2', { class: 'block__title', text: 'The full ranking' }),
-      lede,
-      list,
-      toggle
-    ]);
-  }
-
   /* ---------- result ---------- */
 
   /* `preview`, when passed, is an already-scored result (see boot()'s local-only
@@ -1003,7 +938,6 @@
     var primary = data.aestheticsByKey[result.primary.key];
     var why = AQ.narrative.buildWhy(result, data, rng);
     var world = AQ.narrative.buildWorld(primary, result.profile, data, rng);
-    var hybrid = AQ.narrative.buildHybrid(result.combination, data, rng, result.profile);
 
     var welcome = el('div', { class: 'result__welcome' }, [
       el('p', { class: 'eyebrow', text: preview ? 'Preview - debug only' : 'Your result' }),
@@ -1038,26 +972,6 @@
       el('div', { class: 'prose' }, why.map(function (s) { return el('p', { text: s }); })),
       el('p', { class: 'prose prose--muted', text: primary.description })
     ]);
-
-    var sideBySide = el('div', { class: 'cards' }, [
-      aestheticCard(result.secondary, 'secondary', { label: 'Runner-up' }),
-      aestheticCard(result.hidden, 'hidden', {
-        label: 'Hidden', note: AQ.narrative.hiddenIntro(data, rng)
-      })
-    ]);
-
-    var comboBlock = hybrid
-      ? el('section', { class: 'block block--combo' }, [
-          el('h2', { class: 'block__title', text: 'Combination' }),
-          el('p', { class: 'combo__label', text: hybrid.label }),
-          el('div', { class: 'prose' }, [
-            el('p', { text: hybrid.intro }),
-            el('p', { text: hybrid.bridge }),
-            hybrid.tension ? el('p', { text: hybrid.tension }) : null,
-            el('p', { class: 'prose--muted', text: hybrid.note })
-          ])
-        ])
-      : null;
 
     var worldBlock = el('section', { class: 'block' }, [
       el('h2', { class: 'block__title', text: 'Your version of ' + primary.name }),
@@ -1119,9 +1033,8 @@
     var wikiBlock = wikiSection(primary);
 
     var view = el('section', { class: 'screen screen--result' }, [
-      welcome, hero, musicSection(primary), wikiBlock, whyBlock, sideBySide, comboBlock,
-      worldBlock, profileSection(result.profile),
-      rankingSection(result), footer
+      welcome, hero, musicSection(primary), wikiBlock, whyBlock,
+      worldBlock, profileSection(result.profile), footer
     ]);
 
     if (!preview) clearStore(STORE_SESSION);
