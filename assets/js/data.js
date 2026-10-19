@@ -12,7 +12,8 @@
     config: 'data/scoring.json',
     narrative: 'data/narrative.json',
     playlists: 'data/playlists.json',
-    images: 'data/images.json'
+    images: 'data/images.json',
+    internet: 'data/internet.json'
   };
 
   function loadScript(src) {
@@ -105,6 +106,9 @@
     applyNames(data, readFlag());
     data.questionsById = {};
     data.questions.forEach(function (q) { data.questionsById[q.id] = q; });
+    /* The internet quiz's own statements: findable by id, but kept out of
+       data.questions so the main test never draws them. */
+    if (data.internet) data.internet.questions.forEach(function (q) { data.questionsById[q.id] = q; });
     data.aestheticsByKey = {};
     data.aesthetics.forEach(function (a) { data.aestheticsByKey[a.key] = a; });
     data.dimensionKeys = data.config.dimensions.map(function (d) { return d.key; });

@@ -146,6 +146,37 @@
     return session;
   }
 
+  /* The internet quiz: its own 30 statements (data/internet.json), all asked
+     in a seeded order, and only the internet aesthetics as possible answers. */
+  function startInternetSession(seed) {
+    seed = AQ.rng.normaliseSeed(seed) || AQ.rng.newSeedString();
+    var rng = AQ.rng.rngFromSeed(seed, 'selection');
+    session = {
+      seed: seed,
+      quiz: 'internet',
+      groups: [],
+      questionIds: AQ.rng.shuffle(data.internet.questions, rng).map(function (q) { return q.id; }),
+      answers: {},
+      index: 0,
+      startedAt: Date.now()
+    };
+    persistSession();
+    return session;
+  }
+
+  /* The data the internet quiz scores against: everything as usual, but only
+     the aesthetics in the internet family can win. */
+  var internetData = null;
+  function scoringDataFor(s) {
+    if (!s || s.quiz !== 'internet') return data;
+    if (!internetData) {
+      internetData = Object.assign({}, data, {
+        aesthetics: data.aesthetics.filter(function (a) { return a.family === data.internet.family; })
+      });
+    }
+    return internetData;
+  }
+
   function persistSession() { writeStore(STORE_SESSION, session); }
 
   function sessionQuestions() {
@@ -302,7 +333,8 @@
               onclick: function () {
                 /* A shared run is fixed by its seed and length - skip straight in. */
                 clearStore(STORE_SESSION);
-                startSession(urlSeed, true, urlGroups(), urlLength());
+                if (queryParam('quiz') === 'internet') startInternetSession(urlSeed);
+                else startSession(urlSeed, true, urlGroups(), urlLength());
                 screenQuiz();
               }
             }, ['Start the shared run'])]
@@ -333,8 +365,27 @@
       ])
     ]);
 
+    var internetCard = el('section', { class: 'intro__section' }, [
+      sectionHead('Another quiz', data.internet.title),
+      el('div', { class: 'intro__card' }, [
+        el('p', { text: 'Old Web, Frutiger Aero, Dreamcore, Vaporwave and ' +
+          (scoringDataFor({ quiz: 'internet' }).aesthetics.length - 4) + ' more. ' +
+          data.internet.questions.length + ' statements about screens, feeds and online moods, ' +
+          'and one internet aesthetic as your answer.' }),
+        el('button', {
+          class: 'btn btn--primary', type: 'button',
+          onclick: function () {
+            clearStore(STORE_SESSION);
+            startInternetSession();
+            screenQuiz();
+          }
+        }, ['Start · ' + data.internet.questions.length])
+      ])
+    ]);
+
     var view = el('section', { class: 'screen screen--intro' }, [
       hero,
+      internetCard,
       el('section', { class: 'intro__section' }, [
         sectionHead('How it works', 'Three steps'),
         el('ol', { class: 'intro__steps' }, [
@@ -494,6 +545,7 @@
     });
     var groupLabels = {};
     data.config.groups.forEach(function (g) { groupLabels[g.key] = g.label; });
+    if (data.internet) groupLabels.internet = data.internet.groupLabel;
 
     var counter = el('p', { class: 'quiz__counter' });
     var themeTag = el('p', { class: 'quiz__theme' });
@@ -1013,17 +1065,19 @@
   function screenResult(preview) {
     pushStep({ screen: 'result' });
 
-    var result = preview || AQ.score(sessionQuestions(), session.answers, data);
+    var result = preview || AQ.score(sessionQuestions(), session.answers, scoringDataFor(session));
     var seed = preview ? 'preview' : session.seed;
     var rng = AQ.rng.rngFromSeed(seed, 'narrative');
 
     var primary = data.aestheticsByKey[result.primary.key];
     var runLength = preview ? data.config.questionsPerQuiz : session.questionIds.length;
+    var internetRun = !preview && session.quiz === 'internet';
     var why = AQ.narrative.buildWhy(result, data, rng);
     var world = AQ.narrative.buildWorld(primary, result.profile, data, rng);
 
     var welcome = el('div', { class: 'result__welcome' }, [
-      el('p', { class: 'eyebrow', text: preview ? 'Preview - debug only' : 'Your result' }),
+      el('p', { class: 'eyebrow', text: preview ? 'Preview - debug only'
+        : session.quiz === 'internet' ? 'Your internet aesthetic' : 'Your result' }),
       el('p', { class: 'result__greeting', text: runLength + ' statements later, here is the world ' +
         'your answers keep pointing towards.' })
     ]);
@@ -1069,7 +1123,8 @@
     ]);
 
     var seedLink = global.location.origin + global.location.pathname + '?seed=' + seed +
-      (runLength !== data.config.questionsPerQuiz ? '&n=' + runLength : '') +
+      (!preview && session.quiz === 'internet' ? '&quiz=internet'
+        : runLength !== data.config.questionsPerQuiz ? '&n=' + runLength : '') +
       (!preview && session.groups && session.groups.length ? '&groups=' + session.groups.join(',') : '');
     var copyBtn = el('button', {
       class: 'btn btn--ghost', type: 'button',
@@ -1101,9 +1156,10 @@
           class: 'btn btn--primary', type: 'button',
           onclick: function () {
             clearStore(STORE_SESSION);
-            screenPreferences();
+            if (internetRun) { startInternetSession(); screenQuiz(); }
+            else screenPreferences();
           }
-        }, ['Take it again with new questions']),
+        }, [internetRun ? 'Take it again' : 'Take it again with new questions']),
         copyBtn
       ]),
       genderedNamesToggle(function () { screenResult(preview); }),
