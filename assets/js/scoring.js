@@ -198,8 +198,15 @@
         boldly drawn member (Cybergoth) is not out-voted by a quietly drawn
         one (plain Goth) - the direction of a profile decides, not its volume.
      Display data (aestheticsByKey) is left untouched. */
-  AQ.familyData = function (data, family) {
-    var members = data.aesthetics.filter(function (a) { return a.family === family; });
+  /* A quiz's possible answers: its "members" keys if it lists them, otherwise its whole family. */
+  AQ.quizMembers = function (data, qz) {
+    return data.aesthetics.filter(function (a) {
+      return qz.members ? qz.members.indexOf(a.key) !== -1 : a.family === qz.family;
+    });
+  };
+
+  AQ.familyData = function (data, qz) {
+    var members = AQ.quizMembers(data, qz);
     var keys = {};
     members.forEach(function (a) { Object.keys(a.dimensions).forEach(function (k) { keys[k] = true; }); });
     keys = Object.keys(keys);

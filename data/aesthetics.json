@@ -11960,5 +11960,927 @@
       "colours": "rust, pumpkin orange, mustard, deep brown",
       "everyday": "apple picking, long walks, soup on the stove, early dark and no complaints"
     }
+  },
+  {
+    "key": "90s-cool",
+    "name": "90s Cool",
+    "family": "Internet and Liminal",
+    "tagline": "Black leather, bullet time and green code raining down",
+    "description": "The action-film look of 1997-2004 after The Matrix: slow-motion fight scenes wrapped in CGI, long black coats, wraparound sunglasses and a screen-green tint over everything. Cool, armoured and convinced the world is a simulation.",
+    "keywords": [
+      "bullet time",
+      "trench coat",
+      "wraparound sunglasses",
+      "green code",
+      "slow motion"
+    ],
+    "palette": [
+      "#050805",
+      "#1b2b1c",
+      "#3fa34d",
+      "#c9f5c1"
+    ],
+    "dimensions": {
+      "digital": 0.8,
+      "technology": 0.8,
+      "futurism": 0.75,
+      "darkness": 0.75,
+      "mystery": 0.7,
+      "adventure": 0.85,
+      "urban": 0.8,
+      "individualism": 0.8,
+      "order": 0.55,
+      "refinement": 0.55,
+      "minimalism": 0.55,
+      "optimism": 0.3,
+      "whimsy": 0.1,
+      "melancholy": 0.35,
+      "nature": 0.05,
+      "social": 0.35,
+      "retro": 0.6,
+      "nostalgia": 0.55,
+      "industrial": 0.6,
+      "realism": 0.3
+    },
+    "related": [
+      "cyberpunk",
+      "y2k-futurism",
+      "techwear",
+      "abstract-tech"
+    ],
+    "world": {
+      "setting": "a rooftop in the rain, a hallway lined with pillars that are about to be shot to pieces",
+      "architecture": "concrete, tinted glass, an empty subway station at night",
+      "interior": "a bare room with a single chair and a CRT showing static",
+      "technology": "a ringing landline, a slider phone, green text scrolling past",
+      "clothes": "a floor-length black coat, combat boots, tiny dark sunglasses",
+      "music": "big beat, industrial rock, a drum-and-bass trailer cut",
+      "colours": "black, gunmetal, terminal green",
+      "everyday": "walking like the camera is always on you"
+    }
+  },
+  {
+    "key": "bubblegum",
+    "name": "Bubblegum",
+    "family": "Internet and Liminal",
+    "tagline": "Pink plastic, glitter and a pop song that knows exactly what it is doing",
+    "description": "The candy-coloured end of the millennium and its revivals: Aqua and Eurodance, glitter-gel pens, rhinestone slogans, hyperpop and a sticker of a cartoon cat saying something rude. Deliberately artificial, deliberately loud, and smarter than it pretends to be.",
+    "keywords": [
+      "bubblegum pink",
+      "glitter",
+      "rhinestones",
+      "plastic",
+      "eurodance",
+      "hyperpop"
+    ],
+    "palette": [
+      "#3a0d2e",
+      "#ff4fa3",
+      "#ffb3de",
+      "#fff0fa"
+    ],
+    "dimensions": {
+      "whimsy": 0.95,
+      "maximalism": 0.9,
+      "ornament": 0.85,
+      "optimism": 0.85,
+      "social": 0.85,
+      "individualism": 0.75,
+      "chaos": 0.65,
+      "digital": 0.65,
+      "modernity": 0.6,
+      "retro": 0.6,
+      "nostalgia": 0.65,
+      "comfort": 0.55,
+      "refinement": 0.2,
+      "minimalism": 0.05,
+      "darkness": 0.15,
+      "melancholy": 0.15,
+      "nature": 0.1,
+      "intellect": 0.2,
+      "order": 0.3,
+      "technology": 0.5
+    },
+    "related": [
+      "y2k",
+      "kidcore",
+      "neo-y2k",
+      "kawaii"
+    ],
+    "world": {
+      "setting": "a bedroom covered in stickers, a club with a foam machine",
+      "architecture": "a pastel shopping arcade, a stage built out of inflatables",
+      "interior": "a fluffy pink rug, a lava lamp, a vanity covered in glitter",
+      "technology": "a bedazzled flip phone, a pink MP3 player, a webcam with a heart filter",
+      "clothes": "baby-pink everything, faux fur, a slogan top with rhinestones, platform shoes",
+      "music": "Aqua, bubblegum dance, hyperpop with the pitch turned up",
+      "colours": "hot pink, candy pink, lilac, glitter white",
+      "everyday": "chewing gum, taking selfies, taking nothing too seriously on purpose"
+    }
+  },
+  {
+    "key": "chromecore",
+    "name": "Chromecore",
+    "family": "Internet and Liminal",
+    "tagline": "Everything silver, everything shining, everything a gadget",
+    "description": "The silver-plastic product design of 1999-2006: chrome-look cameras, CD players, consoles and phones, glossy metallic logos and adverts lit like a spaceship. Technology as a shiny object you wanted to hold.",
+    "keywords": [
+      "chrome",
+      "silver plastic",
+      "metallic",
+      "digital camera",
+      "CD player"
+    ],
+    "palette": [
+      "#1d2126",
+      "#6c7680",
+      "#c3cbd3",
+      "#f4f7fa"
+    ],
+    "dimensions": {
+      "technology": 0.95,
+      "digital": 0.8,
+      "futurism": 0.85,
+      "modernity": 0.85,
+      "industrial": 0.6,
+      "order": 0.65,
+      "refinement": 0.6,
+      "optimism": 0.7,
+      "minimalism": 0.55,
+      "ornament": 0.45,
+      "nostalgia": 0.6,
+      "retro": 0.6,
+      "nature": 0.05,
+      "organic": 0.1,
+      "whimsy": 0.4,
+      "darkness": 0.25,
+      "craft": 0.15,
+      "comfort": 0.35,
+      "urban": 0.65
+    },
+    "related": [
+      "y2k-futurism",
+      "clear-tech",
+      "y2k",
+      "technozen"
+    ],
+    "world": {
+      "setting": "an electronics shop with every gadget on a mirrored shelf",
+      "architecture": "brushed steel, curved glass, a showroom under hard white light",
+      "interior": "a silver hi-fi tower, a chrome desk lamp, a chair that looks like a capsule",
+      "technology": "a silver digital camera, a CD walkman, a console with a metallic shell",
+      "clothes": "metallic jackets, silver trainers, a chrome watch",
+      "music": "big-room trance, glossy electronic pop, a startup jingle",
+      "colours": "chrome, gunmetal, ice grey, white highlight",
+      "everyday": "polishing a gadget on your sleeve so it shines"
+    }
+  },
+  {
+    "key": "clear-tech",
+    "name": "Clear Tech",
+    "family": "Internet and Liminal",
+    "tagline": "Show me the circuits",
+    "description": "Transparent and translucent electronics from the late 1980s to the early 2000s: see-through phones, handheld consoles, pagers and the candy-coloured iMac G3. Machines that let you look inside instead of hiding behind beige.",
+    "keywords": [
+      "transparent plastic",
+      "translucent",
+      "iMac G3",
+      "see-through phone",
+      "circuit board"
+    ],
+    "palette": [
+      "#13303a",
+      "#2fb7c9",
+      "#a8ecf2",
+      "#f2fdff"
+    ],
+    "dimensions": {
+      "technology": 0.95,
+      "digital": 0.75,
+      "futurism": 0.7,
+      "whimsy": 0.6,
+      "optimism": 0.75,
+      "nostalgia": 0.75,
+      "retro": 0.75,
+      "intellect": 0.55,
+      "order": 0.55,
+      "craft": 0.45,
+      "modernity": 0.65,
+      "minimalism": 0.45,
+      "ornament": 0.35,
+      "darkness": 0.1,
+      "melancholy": 0.2,
+      "nature": 0.1,
+      "comfort": 0.5,
+      "individualism": 0.55,
+      "maximalism": 0.4
+    },
+    "related": [
+      "chromecore",
+      "y2k-futurism",
+      "y2k",
+      "arcadecore"
+    ],
+    "world": {
+      "setting": "a 1999 bedroom with a see-through phone that lights up when it rings",
+      "architecture": "a computer lab full of bondi-blue monitors",
+      "interior": "translucent desk organisers, an inflatable chair, a clear clock showing its gears",
+      "technology": "an iMac G3, a clear handheld console, a transparent pager",
+      "clothes": "a clear backpack, a jelly watch, see-through sandals",
+      "music": "electronic pop played from a translucent boombox",
+      "colours": "bondi blue, tangerine, lime, smoke grey plastic",
+      "everyday": "watching the inside of a machine work"
+    }
+  },
+  {
+    "key": "gen-x-soft-club",
+    "name": "Gen X Soft Club",
+    "family": "Internet and Liminal",
+    "tagline": "A quiet train station, a cool blue sky and a Chemical Brothers cover",
+    "description": "The calmer, more grown-up side of millennium futurism, strongest in the UK around 1998-2004: city skylines, airports, underground metros, plants, clean sans-serif type and cool blues. Optimistic, but with a hangover.",
+    "keywords": [
+      "city skyline",
+      "airport",
+      "metro station",
+      "cool blue",
+      "electronica"
+    ],
+    "palette": [
+      "#14243a",
+      "#3e6e97",
+      "#9cc3dd",
+      "#eef5f8"
+    ],
+    "dimensions": {
+      "urban": 0.85,
+      "modernity": 0.8,
+      "minimalism": 0.8,
+      "order": 0.7,
+      "refinement": 0.7,
+      "melancholy": 0.55,
+      "solitude": 0.6,
+      "futurism": 0.6,
+      "digital": 0.6,
+      "technology": 0.6,
+      "optimism": 0.5,
+      "nostalgia": 0.65,
+      "retro": 0.55,
+      "architecture": 0.75,
+      "nature": 0.4,
+      "intellect": 0.6,
+      "whimsy": 0.2,
+      "maximalism": 0.15,
+      "social": 0.4,
+      "darkness": 0.3
+    },
+    "related": [
+      "y2k-futurism",
+      "frutiger-aero",
+      "after-hours",
+      "liminal-space"
+    ],
+    "world": {
+      "setting": "an airport at dawn, a metro platform with a big blue poster",
+      "architecture": "glass terminals, concrete underpasses, a skyline seen from a train",
+      "interior": "a minimal flat with one large plant and a stack of CDs",
+      "technology": "a minidisc player, a slim Nokia, a laptop with a blurred city wallpaper",
+      "clothes": "a technical jacket, straight jeans, muted trainers",
+      "music": "electronica, trip-hop, post-Britpop",
+      "colours": "cool blue, slate, white, a hint of moss green",
+      "everyday": "headphones on, staring out of the train window"
+    }
+  },
+  {
+    "key": "low-poly",
+    "name": "Low Poly",
+    "family": "Internet and Liminal",
+    "tagline": "A world made of a few hundred triangles",
+    "description": "The blocky 3D of PlayStation, Nintendo 64 and DS games, and the modern art style that keeps it on purpose: flat-shaded triangles, simple colours and worlds that do not pretend to be real.",
+    "keywords": [
+      "polygons",
+      "flat shading",
+      "PS1 graphics",
+      "triangles",
+      "video game"
+    ],
+    "palette": [
+      "#1d2b4a",
+      "#3f8f6b",
+      "#f2b84b",
+      "#f6efe1"
+    ],
+    "dimensions": {
+      "digital": 0.95,
+      "technology": 0.7,
+      "nostalgia": 0.8,
+      "retro": 0.8,
+      "whimsy": 0.6,
+      "fantasy": 0.6,
+      "adventure": 0.6,
+      "minimalism": 0.7,
+      "realism": 0.05,
+      "order": 0.6,
+      "craft": 0.55,
+      "solitude": 0.6,
+      "melancholy": 0.4,
+      "mystery": 0.45,
+      "optimism": 0.55,
+      "maximalism": 0.15,
+      "ornament": 0.15,
+      "social": 0.3,
+      "nature": 0.35,
+      "darkness": 0.3
+    },
+    "related": [
+      "arcadecore",
+      "vectordelia",
+      "dreamcore",
+      "clear-tech"
+    ],
+    "world": {
+      "setting": "a game world where the trees are cones and the fog hides the edge of the map",
+      "architecture": "cubes with a brick texture stretched over them",
+      "interior": "a bedroom with a CRT, a memory card and a controller with a cord",
+      "technology": "a PlayStation, a Nintendo 64, a Nintendo DS",
+      "clothes": "whatever your character is wearing in six polygons",
+      "music": "a game soundtrack on a loop, MIDI strings, menu music",
+      "colours": "flat green, flat sky blue, mustard, fog grey",
+      "everyday": "exploring somewhere with nothing in it but atmosphere"
+    }
+  },
+  {
+    "key": "neo-y2k",
+    "name": "Neo-Y2K",
+    "family": "Internet and Liminal",
+    "tagline": "The millennium again, this time on TikTok",
+    "description": "The 2016-2020s revival of Y2K: liquid chrome and metalheart shapes, saturated Japanese-influenced graphics, butterfly clips, low-rise jeans and the whole era filtered through Gen Z nostalgia for something they barely remember.",
+    "keywords": [
+      "liquid chrome",
+      "butterfly clips",
+      "low-rise jeans",
+      "tiktok",
+      "metallic"
+    ],
+    "palette": [
+      "#1b1036",
+      "#7b5cff",
+      "#c6b8ff",
+      "#f4f1ff"
+    ],
+    "dimensions": {
+      "digital": 0.9,
+      "social": 0.85,
+      "individualism": 0.8,
+      "nostalgia": 0.85,
+      "retro": 0.85,
+      "modernity": 0.8,
+      "futurism": 0.65,
+      "maximalism": 0.75,
+      "ornament": 0.7,
+      "whimsy": 0.7,
+      "optimism": 0.7,
+      "technology": 0.7,
+      "chaos": 0.5,
+      "refinement": 0.4,
+      "minimalism": 0.2,
+      "nature": 0.05,
+      "craft": 0.25,
+      "melancholy": 0.25,
+      "darkness": 0.25
+    },
+    "related": [
+      "y2k",
+      "bubblegum",
+      "chromecore",
+      "glitchcore"
+    ],
+    "world": {
+      "setting": "a vintage shop that sells old phones next to new sunglasses",
+      "architecture": "a pop-up store with a chrome logo and a mirror wall",
+      "interior": "a ring light, posters with liquid-chrome lettering, a disco ball",
+      "technology": "a smartphone in a fluffy case, a digicam bought second-hand",
+      "clothes": "low-rise jeans, a baby tee, tiny shoulder bag, butterfly clips",
+      "music": "hyperpop, 2000s samples, a sped-up chorus",
+      "colours": "chrome, lilac, electric blue, hot pink",
+      "everyday": "filming an outfit check for the internet"
+    }
+  },
+  {
+    "key": "nightcore",
+    "name": "Nightcore",
+    "family": "Internet and Liminal",
+    "tagline": "A sped-up trance remix under a giant blue moon",
+    "description": "The YouTube thumbnail look of nightcore from the mid-2000s to the early 2010s: an anime character in front of an enormous moon, deep navy and electric blue, falling stars and a melancholy that runs at 1.3x speed.",
+    "keywords": [
+      "anime art",
+      "full moon",
+      "electric blue",
+      "stars",
+      "youtube thumbnail"
+    ],
+    "palette": [
+      "#070b2e",
+      "#1f3fb3",
+      "#8fb2ff",
+      "#f1f4ff"
+    ],
+    "dimensions": {
+      "digital": 0.95,
+      "fantasy": 0.85,
+      "melancholy": 0.7,
+      "solitude": 0.7,
+      "mystery": 0.6,
+      "darkness": 0.55,
+      "whimsy": 0.5,
+      "nostalgia": 0.7,
+      "retro": 0.5,
+      "individualism": 0.65,
+      "optimism": 0.45,
+      "ornament": 0.6,
+      "maximalism": 0.6,
+      "nature": 0.3,
+      "realism": 0.05,
+      "order": 0.3,
+      "chaos": 0.45,
+      "technology": 0.6,
+      "social": 0.35
+    },
+    "related": [
+      "dreamcore",
+      "glitchcore",
+      "kawaii",
+      "after-hours"
+    ],
+    "world": {
+      "setting": "a rooftop under a moon three times too big",
+      "architecture": "a city skyline lit blue, far below",
+      "interior": "a dark room lit only by a monitor and fairy lights",
+      "technology": "a laptop with YouTube open, earbuds in, playlist on repeat",
+      "clothes": "a hoodie, cat-ear headphones, something with stars on it",
+      "music": "sped-up trance and eurodance, pitched-up vocals",
+      "colours": "navy, electric blue, white, pale pink",
+      "everyday": "staying up too late with the same song on loop"
+    }
+  },
+  {
+    "key": "y2k-futurism",
+    "name": "Y2K Futurism",
+    "family": "Internet and Liminal",
+    "tagline": "Liquid metal, blobs and an icy blue tomorrow",
+    "description": "The design language of 1997-2004: abstract 3D renders, liquid chrome, blobby shapes, translucent hardware and cool blues and silvers. The dot-com boom picturing a future that was sleek, clean and computer-generated.",
+    "keywords": [
+      "liquid chrome",
+      "blobs",
+      "3D render",
+      "icy blue",
+      "translucent"
+    ],
+    "palette": [
+      "#0a1a33",
+      "#2f6fd6",
+      "#a6d2ff",
+      "#f0f8ff"
+    ],
+    "dimensions": {
+      "futurism": 0.95,
+      "technology": 0.9,
+      "digital": 0.9,
+      "modernity": 0.9,
+      "optimism": 0.8,
+      "order": 0.6,
+      "refinement": 0.6,
+      "minimalism": 0.5,
+      "maximalism": 0.5,
+      "nostalgia": 0.6,
+      "retro": 0.6,
+      "whimsy": 0.5,
+      "darkness": 0.2,
+      "melancholy": 0.15,
+      "nature": 0.1,
+      "organic": 0.45,
+      "social": 0.5,
+      "craft": 0.1,
+      "intellect": 0.55
+    },
+    "related": [
+      "y2k",
+      "chromecore",
+      "clear-tech",
+      "gen-x-soft-club"
+    ],
+    "world": {
+      "setting": "a CGI void with a floating chrome logo spinning slowly",
+      "architecture": "blobby glass buildings, curved white corridors",
+      "interior": "an egg chair, a translucent iMac, cool blue light",
+      "technology": "a translucent console, a silver PDA, a CD-ROM that installs the future",
+      "clothes": "silver puffer jackets, wraparound shades, technical fabrics",
+      "music": "trance, big beat, a music video full of 3D renders",
+      "colours": "ice blue, silver, glossy white, a flash of lime",
+      "everyday": "believing the next update will change everything"
+    }
+  },
+  {
+    "key": "abstract-tech",
+    "name": "Abstract Tech",
+    "family": "Internet and Liminal",
+    "tagline": "Glowing circles that mean technology",
+    "description": "The stock-image idea of the digital: concentric arcs, hexagons, circuit lines, holographic HUDs and blue light on black. Minority Report interfaces, TRON grids and every wallpaper ever saved under the word \"cyber\".",
+    "keywords": [
+      "circuit pattern",
+      "hexagons",
+      "HUD",
+      "hologram",
+      "blue glow"
+    ],
+    "palette": [
+      "#040b1a",
+      "#0b3d7a",
+      "#29a8ff",
+      "#d6f1ff"
+    ],
+    "dimensions": {
+      "technology": 0.95,
+      "digital": 0.95,
+      "futurism": 0.9,
+      "order": 0.8,
+      "intellect": 0.7,
+      "minimalism": 0.65,
+      "mystery": 0.55,
+      "darkness": 0.6,
+      "modernity": 0.85,
+      "refinement": 0.6,
+      "optimism": 0.5,
+      "whimsy": 0.1,
+      "nature": 0,
+      "organic": 0.05,
+      "craft": 0.05,
+      "comfort": 0.15,
+      "social": 0.25,
+      "solitude": 0.6,
+      "nostalgia": 0.35,
+      "retro": 0.3
+    },
+    "related": [
+      "90s-cool",
+      "cyberpunk",
+      "dorfic",
+      "synthwave"
+    ],
+    "world": {
+      "setting": "a dark room full of floating holographic screens",
+      "architecture": "a server hall lit in blue, glass walls with data on them",
+      "interior": "a desk with three monitors and a wallpaper of glowing circuits",
+      "technology": "touchscreens in mid-air, a HUD, rings of light that load forever",
+      "clothes": "black technical layers with a thin line of light",
+      "music": "ambient electronic, a sci-fi trailer pulse",
+      "colours": "black, deep blue, cyan glow",
+      "everyday": "swiping through information you cannot actually touch"
+    }
+  },
+  {
+    "key": "bright-tertiaries",
+    "name": "Bright Tertiaries",
+    "family": "Internet and Liminal",
+    "tagline": "Lime, purple, orange and teal on every corporate wall",
+    "description": "The mid-2000s to mid-2010s style of blocky, upbeat colour: lime green, purple, orange and teal on logos, office interiors, gadgets and leaflets. Friendly, corporate and impossible to miss.",
+    "keywords": [
+      "lime green",
+      "purple",
+      "orange",
+      "teal",
+      "colour blocks"
+    ],
+    "palette": [
+      "#5b2a86",
+      "#1aa39a",
+      "#8cc63f",
+      "#f7941d"
+    ],
+    "dimensions": {
+      "optimism": 0.9,
+      "modernity": 0.8,
+      "order": 0.75,
+      "social": 0.7,
+      "community": 0.6,
+      "whimsy": 0.6,
+      "minimalism": 0.5,
+      "maximalism": 0.5,
+      "ornament": 0.4,
+      "digital": 0.6,
+      "technology": 0.6,
+      "urban": 0.65,
+      "architecture": 0.55,
+      "refinement": 0.45,
+      "darkness": 0.05,
+      "melancholy": 0.1,
+      "nostalgia": 0.6,
+      "retro": 0.5,
+      "nature": 0.2,
+      "mystery": 0.05
+    },
+    "related": [
+      "four-colors",
+      "frutiger-aero",
+      "vectordelia",
+      "pop-art"
+    ],
+    "world": {
+      "setting": "an office reception with a lime-green feature wall",
+      "architecture": "a school or library refurbished in 2008 with colour-blocked panels",
+      "interior": "a purple sofa, an orange pouffe, teal carpet tiles",
+      "technology": "a lime-green phone, a teal laptop sleeve, a purple MP3 player",
+      "clothes": "a bright hoodie in a colour you would only find in a brochure",
+      "music": "cheerful indie-pop from an advert",
+      "colours": "lime, purple, orange, teal",
+      "everyday": "reading a leaflet that promises the future is fun"
+    }
+  },
+  {
+    "key": "dorfic",
+    "name": "DORFic",
+    "family": "Internet and Liminal",
+    "tagline": "Daylight, orange, red, futurism, graphic",
+    "description": "The industrial, minimalist corner of the Frutiger era, roughly 2006-2016: stark white cityscapes, bright orange and grey, sterile lab gear and clean sans-serif type, with a darker black-backed variant that leans towards cyberpunk.",
+    "keywords": [
+      "white cityscape",
+      "orange accent",
+      "industrial",
+      "minimalist",
+      "lab"
+    ],
+    "palette": [
+      "#1e1e1e",
+      "#7a7a7a",
+      "#ff6a13",
+      "#f5f5f5"
+    ],
+    "dimensions": {
+      "minimalism": 0.85,
+      "order": 0.85,
+      "industrial": 0.8,
+      "technology": 0.85,
+      "futurism": 0.8,
+      "modernity": 0.85,
+      "urban": 0.75,
+      "refinement": 0.7,
+      "intellect": 0.6,
+      "digital": 0.7,
+      "architecture": 0.7,
+      "optimism": 0.5,
+      "whimsy": 0.15,
+      "maximalism": 0.1,
+      "ornament": 0.1,
+      "nature": 0.05,
+      "organic": 0.1,
+      "comfort": 0.2,
+      "darkness": 0.4,
+      "solitude": 0.55
+    },
+    "related": [
+      "abstract-tech",
+      "techwear",
+      "frutiger-aero",
+      "cyberpunk"
+    ],
+    "world": {
+      "setting": "a white city of clean towers under a pale daylight sky",
+      "architecture": "white concrete, orange signage, glass walkways",
+      "interior": "a sterile lab with an orange stripe on the wall",
+      "technology": "a white device with an orange power light, a game menu in grey",
+      "clothes": "grey techwear, a white shell jacket, an orange detail",
+      "music": "precise electronic, a game soundtrack that sounds like a factory",
+      "colours": "white, grey, bright orange, a little red",
+      "everyday": "everything labelled, everything clean, everything running on time"
+    }
+  },
+  {
+    "key": "four-colors",
+    "name": "Four Colors",
+    "family": "Internet and Liminal",
+    "tagline": "Lime, sky blue, hot pink and orange, like an iPod advert",
+    "description": "The mid-2000s to mid-2010s colour scheme of consumer tech, kicked off by the iPod silhouette ads: electric lime, sky blue, hot pink and neon orange on gadgets, packaging and Japanese shop signs.",
+    "keywords": [
+      "iPod silhouette",
+      "electric lime",
+      "hot pink",
+      "sky blue",
+      "neon orange"
+    ],
+    "palette": [
+      "#b6e01e",
+      "#2fb4ff",
+      "#ff3fa4",
+      "#ff8a1e"
+    ],
+    "dimensions": {
+      "optimism": 0.95,
+      "whimsy": 0.75,
+      "social": 0.8,
+      "individualism": 0.6,
+      "modernity": 0.8,
+      "technology": 0.75,
+      "digital": 0.7,
+      "minimalism": 0.6,
+      "order": 0.55,
+      "maximalism": 0.45,
+      "ornament": 0.3,
+      "refinement": 0.45,
+      "darkness": 0,
+      "melancholy": 0.05,
+      "nostalgia": 0.6,
+      "retro": 0.5,
+      "nature": 0.1,
+      "urban": 0.65,
+      "comfort": 0.45,
+      "adventure": 0.5
+    },
+    "related": [
+      "bright-tertiaries",
+      "frutiger-aero",
+      "pop-art",
+      "kawaii"
+    ],
+    "world": {
+      "setting": "a dancing silhouette against a flat lime background",
+      "architecture": "a Japanese shopping street with bright flat signs",
+      "interior": "a desk with gadgets lined up in four colours",
+      "technology": "an iPod nano in every colour, a digicam in hot pink",
+      "clothes": "a plain dark outfit and very white earbuds",
+      "music": "the song from the advert, indie-pop with handclaps",
+      "colours": "electric lime, sky blue, hot pink, neon orange",
+      "everyday": "picking the colour of your gadget like it says who you are"
+    }
+  },
+  {
+    "key": "frutevil-aero",
+    "name": "Frutevil Aero",
+    "family": "Internet and Liminal",
+    "tagline": "Frutiger Aero, but the meadow is on fire",
+    "description": "A meme born on r/FrutigerAero in 2024: the same glossy bubbles, glass and blue skies, but full of smog, oil spills, broken screens and chaos. A dark joke about what the friendly future actually turned into.",
+    "keywords": [
+      "polluted",
+      "glossy",
+      "smog",
+      "meme",
+      "broken glass"
+    ],
+    "palette": [
+      "#1a1010",
+      "#6b3a1e",
+      "#3fa36b",
+      "#c9e6e0"
+    ],
+    "dimensions": {
+      "darkness": 0.8,
+      "chaos": 0.85,
+      "melancholy": 0.55,
+      "digital": 0.85,
+      "technology": 0.75,
+      "futurism": 0.6,
+      "nature": 0.55,
+      "organic": 0.5,
+      "whimsy": 0.6,
+      "optimism": 0.15,
+      "order": 0.15,
+      "nostalgia": 0.6,
+      "retro": 0.55,
+      "individualism": 0.6,
+      "mystery": 0.45,
+      "industrial": 0.65,
+      "refinement": 0.25,
+      "social": 0.55,
+      "realism": 0.4
+    },
+    "related": [
+      "frutiger-aero",
+      "frutiger-eco",
+      "doomer",
+      "glitchcore"
+    ],
+    "world": {
+      "setting": "a green meadow under a smoggy sky, with a cracked glass icon floating overhead",
+      "architecture": "a gleaming eco-tower with smoke pouring out of the roof",
+      "interior": "an aquarium with an oil slick, a white desk covered in warning pop-ups",
+      "technology": "a glossy phone with a shattered screen, a progress bar stuck at 99%",
+      "clothes": "turquoise sportswear, stained",
+      "music": "a cheerful startup sound, slightly corrupted",
+      "colours": "aqua, grass green, smog brown, warning red",
+      "everyday": "laughing at the brochure future while it burns"
+    }
+  },
+  {
+    "key": "skeuomorphism",
+    "name": "Skeuomorphism",
+    "family": "Internet and Liminal",
+    "tagline": "Stitched leather, wooden shelves and a notes app on yellow paper",
+    "description": "Interfaces that imitate the real thing: leather-bound calendars, wooden bookshelves, glossy glass buttons, brushed-metal dials and paper with a torn edge. The look of iOS before iOS 7 and Windows Aero glass.",
+    "keywords": [
+      "leather texture",
+      "glossy icon",
+      "brushed metal",
+      "realistic UI",
+      "iOS 6"
+    ],
+    "palette": [
+      "#3a2a1e",
+      "#8a6a46",
+      "#d7c49a",
+      "#f6f1e3"
+    ],
+    "dimensions": {
+      "craft": 0.75,
+      "realism": 0.8,
+      "ornament": 0.75,
+      "comfort": 0.7,
+      "digital": 0.85,
+      "technology": 0.8,
+      "refinement": 0.65,
+      "order": 0.65,
+      "nostalgia": 0.75,
+      "retro": 0.65,
+      "tradition": 0.5,
+      "modernity": 0.55,
+      "minimalism": 0.15,
+      "maximalism": 0.6,
+      "optimism": 0.6,
+      "whimsy": 0.35,
+      "darkness": 0.15,
+      "futurism": 0.35,
+      "intellect": 0.5
+    },
+    "related": [
+      "frutiger-aero",
+      "old-web",
+      "technozen",
+      "clear-tech"
+    ],
+    "world": {
+      "setting": "a phone home screen where every app looks like an object",
+      "architecture": "a bookshelf made of pixels with a wood grain you could almost touch",
+      "interior": "a desk with a leather notebook, a real calculator and a glass paperweight",
+      "technology": "an iPhone 4, a calendar app with stitched leather, a glossy glass dock",
+      "clothes": "a leather watch strap, canvas, a texture you notice",
+      "music": "a podcast app with a reel-to-reel animation",
+      "colours": "tan leather, walnut, cream paper, glossy blue",
+      "everyday": "turning a virtual page with a satisfying curl"
+    }
+  },
+  {
+    "key": "technozen",
+    "name": "Technozen",
+    "family": "Internet and Liminal",
+    "tagline": "A Wii menu, a quiet train and a cute robot",
+    "description": "The calm, clean side of mid-to-late 2000s Japanese technology: the Wii and DS, Aibo and Asimo, brain-training games, flip phones and electronic dictionaries. Cool, sterile and professional, and at the same time soft, friendly and cute.",
+    "keywords": [
+      "Nintendo Wii",
+      "Nintendo DS",
+      "white plastic",
+      "Japanese tech",
+      "calm"
+    ],
+    "palette": [
+      "#2a3a44",
+      "#8fc6dc",
+      "#dfeef4",
+      "#ffffff"
+    ],
+    "dimensions": {
+      "technology": 0.9,
+      "digital": 0.8,
+      "comfort": 0.8,
+      "order": 0.8,
+      "minimalism": 0.8,
+      "optimism": 0.8,
+      "whimsy": 0.6,
+      "refinement": 0.7,
+      "modernity": 0.8,
+      "futurism": 0.6,
+      "solitude": 0.55,
+      "intellect": 0.6,
+      "nostalgia": 0.7,
+      "retro": 0.55,
+      "darkness": 0.05,
+      "melancholy": 0.2,
+      "maximalism": 0.1,
+      "chaos": 0.05,
+      "social": 0.45,
+      "urban": 0.6
+    },
+    "related": [
+      "frutiger-aero",
+      "chromecore",
+      "kawaii",
+      "skeuomorphism"
+    ],
+    "world": {
+      "setting": "a quiet commuter train in Tokyo, a living room with the Wii menu on",
+      "architecture": "a clean white station, a convenience store at night",
+      "interior": "white furniture, soft light, a small robot dog asleep in the corner",
+      "technology": "a Wii, a DS with a stylus, a flip phone, an electronic dictionary",
+      "clothes": "neat, soft layers in white and light grey",
+      "music": "the Wii menu, the Mii channel, a gentle piano loop",
+      "colours": "white, pale sky blue, light grey",
+      "everyday": "a brain-training session on the train home"
+    }
   }
 ]

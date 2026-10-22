@@ -294,7 +294,10 @@ config.dimensions.forEach((d) => (data.dimensionMeta[d.key] = d));
 const familyQuizzes = read('data/quizzes.json').quizzes;
 const usedIds = new Set(questions.map((q) => q.id));
 familyQuizzes.forEach((qz) => {
-  if (!aesthetics.some((a) => a.family === qz.family)) errors.push(`Quiz ${qz.key}: no aesthetics in family "${qz.family}".`);
+  (qz.members || []).forEach((k) => {
+    if (!aesthetics.some((a) => a.key === k)) errors.push(`Quiz ${qz.key}: unknown member "${k}".`);
+  });
+  if (!AQ.quizMembers(data, qz).length) errors.push(`Quiz ${qz.key}: no aesthetics to score against.`);
   qz.questions.forEach((q) => {
     if (usedIds.has(q.id)) errors.push(`Quiz ${qz.key}, statement ${q.id}: id already used.`);
     usedIds.add(q.id);
@@ -309,7 +312,7 @@ familyQuizzes.forEach((qz) => {
    member's profile reads gets that member for most members, and with random
    answers no member wins far more (or less) than its fair share. */
 familyQuizzes.forEach((qz) => {
-  const fd = AQ.familyData(data, qz.family);
+  const fd = AQ.familyData(data, qz);
   let self = 0;
   fd.aesthetics.forEach((a) => {
     const ans = {};
