@@ -1,452 +1,109 @@
 # What Aesthetic Are You?
 
 A personality test that finds which **aesthetic world** you belong to — not which
-pictures you like. 360 statements in the bank, 50 per run, 35 hidden dimensions and
-171 aesthetics across 18 families, using Aesthetics Wiki as a reference.
+pictures you like. 360 statements, 50 per run, 35 hidden dimensions and 211 aesthetics
+across 18 families, using Aesthetics Wiki as a reference.
 
-No framework, no build step, no dependencies. Open `index.html`.
-OR use the website at [estetikk.netlify.app](https://estetikk.netlify.app).
-
----
-
-## Contents
-
-* [Running it locally](#running-it-locally)
-* [Deploying to Netlify](#deploying-to-netlify)
-* [Built for the phone first](#built-for-the-phone-first)
-* [How the test works](#how-the-test-works)
-* [Family quizzes](#family-quizzes)
-* [The 18 families](#the-18-families)
-* [The back button](#the-back-button)
-* [Gender-neutral by default](#gender-neutral-by-default)
-* [Question selection](#question-selection)
-* [Files](#files)
-* [Validation](#validation)
-* [Images](#images)
-* [Music](#music)
-* [Privacy](#privacy)
-* [License](#license)
-
----
+No framework, no build step, no dependencies. Live at
+[estetikk.netlify.app](https://estetikk.netlify.app).
 
 ## Running it locally
 
 ```bash
-node tools/serve.js
+node tools/serve.js        # http://localhost:8123
 ```
 
-Opens at `http://localhost:8123`.
+`?preview=<aesthetic-key>` (e.g. `?preview=after-hours`) jumps straight to a result
+screen. It only works on `localhost` and `file://`.
 
-**Preview any result without taking the quiz:** `?preview=<aesthetic-key>` (e.g.
-`?preview=after-hours`) jumps straight to that aesthetic's result screen — useful for
-checking the photos/music/layout across aesthetics. Gated to `localhost` and `file://`
-in `app.js`'s `isLocalDev()`, so it does nothing on the deployed site. An unknown key
-logs the full list of valid ones to the console.
+To open `index.html` straight from disk, run `node tools/build-bundle.js` first (and
+after every change under `/data`). Browsers block `fetch` on local files, so the app
+falls back to the generated, git-ignored `data/bundle.js`.
 
-The page also works opened straight from disk. The browser blocks `fetch` against
-local files there, so the app falls back to `data/bundle.js` — a generated copy of
-the JSON:
+## Deploying
 
-```bash
-node tools/build-bundle.js
-```
+Netlify serves the repository root as-is (`netlify.toml`). If you add a strict
+`Content-Security-Policy`, allow `connect-src https://commons.wikimedia.org` and
+`img-src https://upload.wikimedia.org https://i.ytimg.com`, or photos and track
+thumbnails quietly stop appearing.
 
-Run that after every change under `/data`.
+`og:image`, `og:url` and the canonical link in `index.html` point at
+`https://estetikk.netlify.app`; change them if you deploy elsewhere. `assets/og.png` is
+a 1200x630 screenshot of `tools/og-image.html`.
 
-## Deploying to Netlify
-
-It is a static site, so there is nothing to build. `netlify.toml` sets
-`publish = "."` with an empty build command; point Netlify at the repository and it
-serves the root as-is.
-
-`data/bundle.js` is git-ignored: the deployed site fetches the JSON directly and never
-loads it.
-
-If you add a strict `Content-Security-Policy`:
-
-- **The photo strip calls Wikimedia Commons from the visitor's browser.** It is
-  optional — if you add a strict `Content-Security-Policy`, allow
-  `connect-src https://commons.wikimedia.org` and
-  `img-src https://upload.wikimedia.org`, or the strip just quietly stops appearing.
-- **Track thumbnails load from `https://i.ytimg.com`.** Allow it under `img-src` too, or
-  the thumbnail images silently fail and cards fall back to a plain colour tile.
-- **The link-preview card is an absolute URL.** `og:image`, `og:url` and the canonical
-  link in `index.html` all point at `https://estetikk.netlify.app` — scrapers do not
-  resolve relative paths. Deploying somewhere else means editing those three.
-  `assets/og.png` itself is a 1200x630 screenshot of `tools/og-image.html`, which is
-  that card at full size in the site's own fonts and colours; re-shoot it if the
-  numbers on it go stale.
-
----
-
-## Built for the phone first
-
-The stylesheet is mobile first: the base rules are the phone layout and the wider
-breakpoints add to it. Concretely, on a phone:
-
-* **The whole quiz is pinned to one viewport.** On a 360x640 handset the buttons used
-  to sit 216px below the fold, so every one of 50 questions needed a scroll before it
-  could be answered. Now the screen is locked to `100dvh`, the option list flexes to
-  fill whatever height is left, and the Back / Next bar rides along the bottom with a
-  blurred backdrop — Next is the wider of the two because it is pressed 50 times.
-* **Answering a statement advances on its own.** There is no switch for it; the counter
-  and the current theme share one line under the progress bar, and the theme name
-  truncates rather than pushing the counter off a narrow screen.
-* **Every tap target is at least 44px**, and taps get no 300ms delay and no grey flash.
-* **Hover styling is gated behind `(hover: hover) and (pointer: fine)`**, so tapping an
-  option on a touch screen never leaves a stuck hover state behind.
-* **The photo strip scrolls sideways with snap points** instead of stacking tall
-  images that would push the rest of the result off the screen.
-* **The profile rows restack** — label and value on one line, meter under it — instead
-  of squeezing four columns into 360px.
-* Safe-area insets are respected, so nothing hides under a notch or a home indicator,
-  and `100dvh` is used so the mobile browser chrome doesn't crop the layout.
-
-Nothing about the desktop layout changed: past 40rem the bar goes static, the photos
-return to a three-column grid, and the hero foot goes back to two columns.
-
-## How the test works
-
-The point is that no statement belongs to any one aesthetic. The chain is:
+## How it works
 
 ```
-answers  →  35 dimensions  →  match against 171 aesthetic profiles
+answers  →  35 dimensions  →  match against 211 aesthetic profiles
 ```
 
-A question about old buildings never scores points for "Dark Academia". It moves
-`history`, `nostalgia`, `architecture` and `modernity`, and the aesthetics fall out
-of the whole. That is why you cannot guess what a question measures, and why you
-cannot play the test.
+No statement belongs to any one aesthetic. A question about old buildings moves
+`history`, `nostalgia` and `architecture`, and the aesthetics fall out of the whole
+profile, so you can't guess what a question measures.
 
-### The profile
+- **Answers** are on a −3 to +3 scale. Part of each person's average answer is
+  subtracted first, so someone who agrees with everything isn't scored differently
+  from someone with the same taste who doesn't.
+- **The profile** is stretched onto the catalogue's scale, so the result depends on the
+  shape of your taste, not on how strongly you pressed the buttons.
+- **The match** weights each dimension by how defining it is for the aesthetic and how
+  well it was measured. Only the top match is shown.
+- **Selection:** the statements sit in 20 themed groups. A run draws from every group and
+  asks one theme at a time. The preferences screen can weight up to five topics. Runs
+  come in 30, 50 or 100 statements.
+- **Everything is seeded.** `?seed=ABC12XYZ` recreates a run exactly, and browser Back
+  steps through the quiz one statement at a time.
 
-Every answer sits on a 7-point scale from +3 (Strongly agree) to −3 (Strongly
-disagree). Before anything is scored, 0.6 of each person's *own average response*
-is subtracted from every answer — an acquiescence guard, so someone who leans
-"agree" (or "disagree") on almost everything lands in the same place as someone
-with the same taste who doesn't. Then, for each dimension, `answer × weight` is
-summed and normalised against the sum of absolute weights, giving a value between
-0 and 1 — plus a *confidence* saying how much evidence that dimension got.
+### Family quizzes
 
-The profile is then **stretched onto the catalogue's own scale**. The two sides of
-the match are not naturally comparable: an aesthetic says `nature: 0.95`, but fifty
-statements pulling on 35 dimensions never produce a 0.95 — real profiles pile up
-near the middle, about 1.85× closer to neutral than the aesthetics they are measured
-against. Compared directly, a vaguely drawn aesthetic agrees with everyone and a
-sharply drawn one loses even to the person who unmistakably *is* it. So each
-person's own spread is measured (confidence-weighted, so a thinly covered dimension
-does not set the scale) and the whole profile is scaled by one factor to match. That
-keeps the shape — which dimensions sit high relative to which — and changes only the
-range it is expressed in. It cuts both ways: a cautious answerer is opened out, and
-someone more extreme than the catalogue is pulled in, so the ranking turns on the
-shape of a taste rather than on how hard the buttons were pressed. Bounded by
-`stretchMin` / `stretchMax` in `scoring.json`.
+`data/quizzes.json` holds the short quizzes (internet, nature, witchy, goth). Each has
+its own statements (ids from 9001) and returns an aesthetic from its `family`, or only
+from its `members` list if it has one. The internet quiz uses `members` to keep just
+the Frutiger and Y2K aesthetics. Members are centred on their group's average before
+scoring, so the most neutral one doesn't win by default.
 
-The statement bank is written with both directions in mind: **every** dimension
-has statements where "agree" pushes the value up *and* statements where "agree"
-pushes it down, so no single response habit steers the result. The weaker
-direction is never less than a quarter of a dimension's statements — without
-that floor, a dimension measured only one way turns into a test of how agreeable
-somebody is feeling. `validate.js` warns when a dimension drifts one-sided.
+### Gender-neutral by default
 
-Every dimension is also carried by at least 18 statements, so none of them comes
-down to a single lucky draw: the thinnest dimension now gets **2.6 statements per
-run**, where the thinnest used to get 1.4.
-
-### The match
-
-Each aesthetic is compared dimension by dimension. Every dimension is weighted by
-
-* **salience** — how defining it is for that aesthetic (0.5 is indifferent, 0 and 1 are strong)
-* **confidence** — how well the dimension was measured
-
-The top match gets an absolute percentage. The rest are placed by how far they fall
-below the top, measured against your own spread — without that, every aesthetic
-would land within ten points of the next and the ranking would say nothing.
-
-The result page shows **only the top match**: its mood plate and photos, the match
-percentage, music, why it fits, and how it would look built around your own profile.
-Runners-up are deliberately not shown.
-
----
-
-## Family quizzes
-
-`data/quizzes.json` holds the smaller quizzes. Each one has its own statements and
-names the `family` its answer comes from:
-
-```json
-{
-  "key": "goth",
-  "title": "Which goth aesthetic are you?",
-  "family": "Goth",
-  "groupLabel": "Goth",
-  "resultLabel": "Your goth aesthetic",
-  "blurb": "Trad Goth, Romantic Goth, Nu-Goth, Cybergoth and more. ...",
-  "questions": [
-    { "id": 9301, "group": "goth", "cluster": "goth-1", "text": "...", "dimensions": { "industrial": 2 } }
-  ]
-}
-```
-
-Every statement in the quiz is asked, in an order drawn from the seed. The statement
-ids start at 9001 so they never collide with the main bank, and they are kept out of
-`data.questions`, so the full test never draws them. The landing page gets a card per
-quiz, and the result page, retake and shared links (`?seed=…&quiz=goth`) work the same
-way as for the full test. A new family quiz is one more entry in the file plus
-`node tools/build-bundle.js`. No JavaScript changes.
-
-### Keeping it fair
-
-Every member of a family shares the family's base traits: all internet aesthetics are
-digital, all goth ones are dark. Matched against the raw profiles, the member that sits
-nearest neutral wins for most people whatever they answer. `AQ.familyData()` in
-`scoring.js` fixes that before scoring, in two steps:
-
-1. every dimension is **centred on the family's own average**, so only what sets a
-   member apart from its siblings counts;
-2. every member's differences are **scaled to the same overall size**, so a boldly
-   drawn member (Cybergoth) is not out-voted by a quietly drawn one (plain Goth).
-
-The statements are written to match. Each one asks about one thing, either answer is
-fine to give, and many are reverse-keyed (agreeing pushes a dimension down).
-`validate.js` fails if a quiz drifts lopsided: fewer than 80% of its members reachable
-by someone answering exactly like them, or one member winning more than four times its
-fair share of random runs. Current numbers:
-
-| Quiz | Reachable | Most common result vs fair share |
-|---|---|---|
-| Internet | 23 / 24 | 2.9× |
-| Nature | 10 / 10 | 2.3× |
-| Witchy and folk | 17 / 17 | 2.2× |
-| Goth | 11 / 11 | 1.6× |
-
-The one internet miss is Webcore, whose profile is nearly identical to Old Web's.
-Sharpening the two profiles in `data/aesthetics.json` is the fix, not more statements.
-
----
-
-## The 18 families
-
-`family` on every aesthetic groups the catalogue. The full test never reads it, so
-moving an aesthetic between families cannot change a full-test result. The family
-quizzes do use it: it decides which aesthetics a family quiz can return.
-
-| Family | n | Examples |
-|---|---|---|
-| Internet and Liminal | 21 | After Hours, Analog Horror, Doomer, Draincore, … |
-| Subculture | 17 | Beatnik, Emo, Greaser, Grunge, … |
-| Art and Period | 16 | Art Deco, Art Nouveau, Arts and Crafts, Baroque, … |
-| Soft and Romantic | 14 | Angelcore, Balletcore, Barbiecore, Clean Minimal, … |
-| Punk and Futurism | 12 | Atompunk, Cassette Futurism, Cyberpunk, Decopunk, … |
-| Design and Everyday | 11 | Brutalism, Eclectic Vintage, Kitsch, Maximalism, … |
-| Goth | 11 | Cybergoth, Dark Romanticism, Goth, Industrial Gothic, … |
-| Japanese Street and Kawaii | 11 | City Pop, Decora, Fairy Kei, Gyaru, … |
-| Global and Regional | 10 | Afrofuturism, Afropunk, Brazilcore, Gulf Futurism, … |
-| Nature and Pastoral | 10 | Autumn, Cabincore, Cottagecore, Forestpunk, … |
-| Americana and Screen | 8 | 50s Suburbia, Americana, Diner, Film Noir, … |
-| Sport and Utility | 8 | Equestrian, Gorpcore, Jock, Racing, … |
-| Americana and Screen | 6 | 50s Suburbia, Americana, Diner, Film Noir, … |
-| Nature and Pastoral | 7 | Cabincore, Cottagecore, Forestpunk, Granola, … |
-| Status and Money | 7 | Corpcore, Dandy, Hypebeast, Mob Glamour, … |
-| Cosy and Home | 4 | Cluttercore, Coastal Linen, Grandmillennial, Hygge |
-| Academia | 3 | Dark Academia, Light Academia, Romantic Academia |
-| Adventure and Frontier | 2 | Adventurecore, Western |
-| Sea and Coast | 2 | Nautical, Oceanpunk |
-
----
-
-## The back button
-
-Browser **Back** — the toolbar button, `Alt`+`←`, and the back gesture on a phone —
-steps back through the test instead of leaving it. Every screen gets a history
-entry, and so does every statement, so Back and Forward move through a run exactly
-the way the on-screen buttons do:
-
-```
-intro → preferences → statement 1 → statement 2 → … → last statement → result
-```
-
-The URL never changes. Entries are told apart by their `history.state` object
-rather than their address, so a shared `?seed=` link is still intact after fifty
-steps back.
-
-Two details worth keeping if this code is touched:
-
-* **The on-screen Back calls `history.back()`** rather than moving the index
-  itself. If it stepped back directly it would leave a forward entry stranded and
-  the two Backs would drift apart after a few presses.
-* **`quizJumpTo` moves the existing quiz screen** instead of rebuilding it, so
-  stepping between statements does not re-run selection. It is set while the quiz
-  is on screen and cleared on teardown; with no quiz on screen the router falls
-  back to rendering one.
-
-Where the run is gone — a reload after finishing, since the result clears the saved
-session — Back lands on the intro rather than a broken screen.
-
----
-
-## Gender-neutral by default
-
-The test never asks your gender, nothing in the scoring knows about it, and no
-aesthetic belongs to one — so what you see is gender-neutral throughout. The
-statement bank and all the result text are written that way, and `validate.js`
-fails the build if a gendered word appears in a statement or in an aesthetic's
-default name, tagline, description, keywords or world.
-
-Nine aesthetics are known on the Aesthetics Wiki by wording that assumes a
-gender. The neutral form is what the data carries; the canonical wording sits in
-a `gendered` block beside it:
-
-| Neutral (default) | Gender-specific |
-|---|---|
-| Soft Pastel | Soft Girl |
-| Older Siblingcore | Olderbrothercore |
-| Clean Minimal | Clean Girl |
-| Coastal Linen | Coastal Grandmother |
-| Eclectic Vintage | Eclectic Grandpa |
-| Mob Glamour | Mob Wife |
-| Terracecore | Blokecore |
-| Coquette | *(description only)* |
-| Princesscore | *(description only)* |
-
-A switch at the foot of the intro screen and of the result page turns the
-gender-specific version on. It is remembered in `aq.genderedNames.v1` and applied
-in `data.js` when the data loads, so the rest of the app reads `a.name` and
-`a.description` without knowing the feature exists. **Nothing about the ranking
-changes** — only the words. The same run produces the same result either way.
-
-```json
-{
-  "key": "soft-girl",
-  "name": "Soft Pastel",
-  "gendered": { "name": "Soft Girl" }
-}
-```
-
-`gendered` may override `name`, `tagline` and `description`, and nothing else.
-
----
-
-## Question selection
-
-The 360 statements sit in **20 themed groups of eighteen**. A standard run of 50 draws
-**2–3 from every group**, which is what makes two runs feel genuinely different while
-still covering every theme, and each group is then asked as one block (see below).
-
-**Run lengths.** The landing page offers short (30), standard (50) and long (100).
-The group min/max in `scoring.json` are sized for 50; for the other lengths
-`selection.js` scales them by the same factor, so a short run asks 1–2 per theme, a
-long one 4–6, and all 20 themes are still asked. A shared link carries the length as
-`&n=30` or `&n=100`, and "Take it again" keeps the length you picked.
-
-| Group | Group |
-|---|---|
-| Sound and silence | Making and mending |
-| Music and taste | Money and possessions |
-| Nature and wilderness | People and solitude |
-| Weather, light and seasons | The unexplained |
-| Home and buildings | Imagination and play |
-| Food and the table | Order and mess |
-| The past | Clothes and style |
-| Tradition and belonging | Travel and adventure |
-| Screens and the net | Temperament |
-| The future | Values and self-image |
-
-On top of that:
-
-* two statements with the same `cluster` (near-identical wording) never appear together
-* dimensions with no coverage are repaired by swapping a statement in
-* statements from recent runs are set aside while fresh ones remain — stored locally
-  in `aq.previousQuestionIds.v3`
-* everything is seeded. `?seed=ABC12XYZ` recreates a run exactly, and deliberately
-  skips the history filter when it does
-
-### Themed blocks
-
-The run is **asked one theme at a time**. All the statements drawn from a theme are
-asked together as a block, one statement per screen as usual, with the theme and your
-place in it shown beside the running count:
-
-```
-  Question 8 of 50        Music and taste · 2 of 3
-```
-
-So a run is always 20 blocks — 2–3 each by default, or 4–6 for the themes picked on
-the preferences screen and as few as 1 for the rest.
-
-The block order and the order within each block are both drawn off the seed, so no
-two runs open on the same theme but a shared `?seed=` link still reproduces
-everything exactly. Set by `selection.order` in `scoring.json`:
-
-| `order` | Behaviour |
-|---|---|
-| `"blocks"` | **default** — one theme at a time |
-| `"spread"` | the old behaviour: consecutive statements pushed into different themes |
-| `"shuffle"` | no ordering at all |
-
-The blocks are read back off the statement order rather than stored in the session,
-so a resumed run rebuilds them from the saved statement ids alone.
-
-### Preferences
-
-Before a fresh run (a shared `?seed=` link skips it and uses the sharer's topics,
-carried in the link as `&groups=`, so it still reproduces exactly), a
-short screen asks what matters to you — living space, sound and music, food, human
-connection, technology, nature, history, style, mystery, craft and order, travel —
-grouped in `data/scoring.json` under `preferenceCategories`, each mapped to one or
-more of the 20 statement groups above.
-
-Picking up to five reshapes the quotas (`reshapeGroups()` in
-`assets/js/selection.js`): groups behind a chosen category get `preferredMin`–
-`preferredMax` statements (4–6), every other group drops to `otherMin` (1) and only
-gets more if the chosen ones run out of room. The leftover slots are handed out one
-at a time by a weighted, seeded draw (`AQ.rng.weightedShuffle`, `preferenceWeight`).
-Every group is still asked at least once and zero-coverage dimensions are still
-repaired, so the "no statement belongs to any one aesthetic" scoring is unaffected.
-Picking a lot of categories lowers the chosen groups' minimum until the run fits.
-Skipping the screen (or picking nothing) reproduces the old, unweighted draw exactly. The choice is
-remembered locally in `aq.preferences.v1` and offered again on every retake.
-
----
+The test never asks your gender. Aesthetics with gendered wiki names (Soft Girl, Mob
+Wife…) show a neutral name by default; the original wording lives in a `gendered` block
+and a switch on the page turns it on. Scoring is identical either way. `validate.js`
+rejects gendered words anywhere else.
 
 ## Files
 
 ```
-index.html
-netlify.toml
-assets/og.png       link-preview card (1200x630), built from tools/og-image.html
+index.html, 404.html, netlify.toml
 assets/css/styles.css
 assets/js/
-  prng.js         seeded randomness (mulberry32)
-  data.js         loads the JSON, falls back to the bundle, applies the name version
-  selection.js    picks the statements for a run (30, 50 or 100)
-  scoring.js      profile + matching (no text), family balancing for family quizzes
-  narrative.js    result text (no numbers)
-  visuals.js      generated mood plates
-  images.js       optional Wikimedia Commons photos
-  app.js          screens and flow
+  prng.js        seeded randomness
+  data.js        loads the JSON (bundle fallback), applies name version
+  selection.js   picks the statements for a run
+  scoring.js     profile + matching, family-quiz balancing
+  narrative.js   result text
+  visuals.js     generated mood plates (SVG)
+  images.js      optional Wikimedia Commons photos
+  app.js         screens and flow
 data/
-  questions.json  360 statements with dimension weights
-  aesthetics.json 171 aesthetics: profile, palette, "world"
-  scoring.json    scale, groups, dimensions, preference categories, matching parameters
-  narrative.json  phrase banks
-  playlists.json  hand-picked YouTube videos per aesthetic, plus the search fallback
-  images.json     curated Wikimedia Commons photos; search wording overrides (both start empty)
-  bundle.js       GENERATED, git-ignored — fallback for file://
+  questions.json   main statement bank
+  quizzes.json     family quizzes and their statements
+  aesthetics.json  aesthetics: profile, palette, keywords, "world"
+  scoring.json     dimensions, groups, preferences, matching settings
+  narrative.json   phrase banks for the result text
+  playlists.json   hand-picked YouTube videos
+  images.json      hand-picked Commons photos, search overrides
 tools/
-  build-bundle.js
-  validate.js
-  serve.js
-  image-picker.html  dev tool for curating data/images.json
+  serve.js, build-bundle.js, validate.js
+  image-picker.html  pick photos for images.json
   og-image.html      source for assets/og.png
-  playlist.txt       working notes: one playlist link per aesthetic
+  playlist.txt       working notes: one video link per aesthetic
 ```
 
-The UI code knows nothing about which aesthetics exist. New statements and aesthetics
-go into `/data` without touching any JavaScript.
+All content lives in `/data`. Adding aesthetics, statements, videos or photos needs no
+JavaScript changes.
 
-### Adding an aesthetic
+## Adding content
+
+**An aesthetic:** add an entry to `data/aesthetics.json`:
 
 ```json
 {
@@ -455,7 +112,7 @@ go into `/data` without touching any JavaScript.
   "family": "Nature and Pastoral",
   "tagline": "One line that catches the mood",
   "description": "Two sentences on what this is.",
-  "keywords": ["...", "..."],
+  "keywords": ["garden", "linen"],
   "palette": ["#0d1610", "#22392a", "#6d8459", "#cfc3a3"],
   "dimensions": { "nature": 0.95, "solitude": 0.9, "urban": 0.08 },
   "related": ["forestpunk"],
@@ -466,206 +123,52 @@ go into `/data` without touching any JavaScript.
 }
 ```
 
-Also add a `"my-aesthetic": ["english search term", "second search term"]` entry under `search`
-in `data/images.json` (see [Images](#images)), or it will never show a photo.
+Leave out dimensions that don't matter. Keep values between 0.05 and 0.95. Use one of
+the existing 18 families. `keywords` double as photo search terms, so make them
+concrete nouns.
 
-Omitted dimensions are treated as irrelevant, not as neutral — they do not drag the
-score down.
-
-`family` groups the catalogue for browsing; it takes no part in scoring. Use one of
-the existing 18 rather than inventing a new one unless the aesthetic genuinely sits
-outside all of them.
-
-Write the profile at roughly the sharpness of the rest of the catalogue. Values
-below 0.05 or above 0.95 sit beyond what any profile reaches even after stretching,
-so they cost accuracy without buying identity.
-
-### Adding a statement
+**A statement:** add it to `data/questions.json` (or a quiz in `data/quizzes.json`).
+Weights run −3 to 3. Write both "agree pushes up" and "agree pushes down" statements for
+each dimension.
 
 ```json
-{
-  "id": 181,
-  "group": "sound",
-  "cluster": "unique-cluster",
+{ "id": 181, "group": "sound", "cluster": "unique-cluster",
   "text": "A statement that doesn't give away what it measures.",
-  "dimensions": { "history": 2, "nostalgia": 2, "modernity": -1 }
-}
+  "dimensions": { "history": 2, "nostalgia": 2, "modernity": -1 } }
 ```
 
-Weights run from −3 to 3. Write both positive and negative wordings per dimension, or
-someone can answer the same thing to everything and still get a strong reading. Adding
-statements to a group is free; adding a **new** group means updating `groups` in
-`scoring.json` so the min/max range still brackets 50 (the other lengths are scaled
-from it). Statements for a family quiz go in `data/quizzes.json` instead.
+**A video:** append to `curated` in `data/playlists.json`. `id` is the 11 characters
+after `v=`; add `"list": "PL…"` to open a whole playlist. Aesthetics without their own
+video borrow from related ones (settings under `borrow`), and every result also gets a
+YouTube search button.
 
----
+```json
+{ "id": "qhH4D251i4Q", "title": "pacific northwest playlist", "author": "Leaner",
+  "mood": "One line on the feeling of it.", "aesthetics": ["forestpunk", "cabincore"] }
+```
 
-## Validation
+**A photo:** results search Wikimedia Commons with the aesthetic's `keywords`, at most
+two photos per keyword. To pick exact photos, open `tools/image-picker.html` through
+`node tools/serve.js`, pin the ones that fit, and download the new `images.json`.
+Aesthetics Wiki images are not used (not freely licensed); each result links to the
+wiki page instead.
+
+Then run:
 
 ```bash
-node tools/validate.js
+node tools/validate.js       # checks references, coverage, fairness, gendered wording
+node tools/build-bundle.js   # only needed for opening from disk
 ```
-
-It checks references, group sizes, dimension coverage and phrase banks, checks the
-family quizzes (ids, dimensions, fairness) and the 30- and 100-statement runs, then
-simulates 400 selections and 600 people to confirm the draw is balanced and the
-scoring discriminates:
-
-```
-— Selection (400 runs) —
-  statements used:            360 / 360
-  duplicate clusters:         0
-  themed blocks per quiz:     20.0
-  distinct opening themes:    20 of 20
-  distinct quota shapes:      400 of 400 runs
-  overlap after history:      0 statements
-
-— Scoring (600 simulated people) —
-  distinct winners:           129 / 200
-  average top match:          84.6%
-  range:                      69-97%
-```
-
-Two further checks are worth running by hand when the catalogue or the scoring
-changes, because they catch what the validator cannot:
-
-* **Recovery** — build a respondent whose answers follow an aesthetic's own profile
-  and confirm the test returns it. An entry that cannot win for its own ideal
-  respondent is shadowed by a neighbour and needs its distinguishing dimensions
-  sharpened. (The family quizzes run this check automatically, see above.)
-* **Winner spread** over a few thousand simulated people. The top ten should hold
-  roughly a quarter of all results; if a handful of aesthetics hold
-  most of the outcomes, something is drawn too vaguely and is absorbing its
-  neighbours.
-
----
-
-## Images
-
-Two layers, and only the first is guaranteed.
-
-**Mood plates** are generated by `visuals.js`: an SVG per aesthetic built from its own
-palette and dimensions — geometric bands for the ordered ones, organic shapes for the
-rest, with grain and vignette. The same aesthetic always produces the same plate.
-
-**Photographs** come from Wikimedia Commons, which is freely licensed and serves CORS
-headers, in `data/images.json` — laid out the same way `data/playlists.json` groups
-videos, so aesthetics and their photos live in one dedicated file, separate from the
-scoring-focused `data/aesthetics.json`:
-
-* **`curated`** — exact Commons files a person has checked, each tagged with the
-  aesthetics it fits (`{ thumb, page, title, credit, license, aesthetics: [...] }`).
-  When an aesthetic has any curated photos, those are used as-is — no live search, so
-  no chance of a keyword technically matching but showing the wrong thing (a search for
-  `"Xbox 360"` surfacing six product photos of the controller, say, instead of anything
-  resembling a bedroom).
-* **`search`** — an override of the search wording for a single aesthetic, for when its
-  own keywords turn out to search badly. It starts empty, because an aesthetic with no
-  curated photo already falls back to its **`keywords`** in `data/aesthetics.json` —
-  the same two or three concrete, photographable nouns (`garden`, `baking`, `linen`)
-  that Commons search wants. Results are filtered against maps, scanned book plates and
-  the like, and every photo is shown with its creator and licence.
-
-So a new aesthetic shows photographs the moment its `keywords` are written, with nothing
-else to fill in. Curating is how you make them *good*, not how you make them appear.
-
-**No single keyword takes more than two of the six slots.** Filling the strip from the
-first word that returns anything lets an ambiguous one own the whole result — `chrome`
-for Y2K comes back as six screenshots of the browser, `atom` for Atompunk as the text
-editor. Capping each word at two spreads the strip across three or more of the
-aesthetic's words, so a bad word costs two photos rather than all six, and the strip
-stops showing six near-identical shots of the same reading room.
-
-Aesthetics Wiki images are not shown anywhere — they are not freely licensed. Instead
-every result links to the aesthetic's wiki page ("See … pictures on Aesthetics Wiki"),
-built from its canonical name; an optional `wiki` field in `data/aesthetics.json`
-overrides the page title where it differs (`brazilcore`, `coffee-house`).
-
-Commons' search is closer to an AND of every word than a fuzzy match, so a long,
-descriptive search phrase (`"2000s bedroom crt television games"`) routinely returns
-nothing, while two or three concrete, photographable nouns (`"CRT television"`) do well
-— though "well" can still mean technically-on-topic but tonally wrong, which is what
-curating is for. **`tools/image-picker.html`** (open it through `node tools/serve.js`,
-not straight from disk) lets you pick an aesthetic, try out search phrases, and see the
-exact Commons results and filtering the real result page would use — same
-`AQ.images.searchTerm()`. Click **Pin this photo** on any result that actually fits to
-add it to `curated`, then **Download images.json** to save the whole file over
-`data/images.json`.
-
-The photo strip is progressive enhancement. If the request is slow, blocked or empty,
-the section is simply never inserted. It is labelled honestly on the page: keyword
-matches approximating the atmosphere, not official images of the aesthetic.
-
-## Music
-
-The result page ends its main section with **Something to listen to**, for the top
-aesthetic. It has three parts:
-
-* the aesthetic's own `world.music` line, so the sound matches the rest of the result;
-* any hand-picked videos from `data/playlists.json` that are attached to it;
-* a button that searches YouTube for `"<name> aesthetic playlist"`, so every one of the
-  171 aesthetics has somewhere to go even without a curated pick. It searches on the
-  wiki's own name (`gendered.name` when there is one), because "Soft Girl" finds
-  playlists and the neutral "Soft Pastel" does not.
-
-Every link opens YouTube in a new tab; nothing is embedded. Each track card shows a
-thumbnail loaded from YouTube's own image CDN (`i.ytimg.com`) — the only request this
-page makes to a YouTube-owned host, and it is a static image, not a player.
-
-**Similar aesthetics share videos.** A video's `aesthetics` list is where it belongs
-directly, and one video can serve as many as you like. On top of its own video(s), every
-aesthetic also gets up to `borrow.max` bonus picks from its closest neighbours, so a
-result never rides on just one or two tracks; those cards say "Borrowed from …".
-Closeness is the aesthetic's hand-written `related` list first, then the same family,
-then how alike the two dimension profiles are. Anything past `borrow.cutoff` is left out,
-on the view that no video is better than a wrong one. The four numbers live under
-`borrow` in `data/playlists.json`:
-
-| Field | Meaning |
-|---|---|
-| `max` | most bonus videos borrowed from neighbours |
-| `cutoff` | how far apart two profiles may be and still share (lower = stricter) |
-| `relatedBonus` | how much being in each other's `related` list counts for |
-| `familyBonus` | how much sharing a family counts for |
-
-Every one of the 171 aesthetics already has at least one video of its own in
-`curated`.
-
-To add a video, append to `curated` in `data/playlists.json` and run
-`node tools/build-bundle.js`:
-
-```json
-{
-  "id": "qhH4D251i4Q",
-  "title": "pacific northwest playlist",
-  "author": "Leaner",
-  "mood": "One line on the feeling of it.",
-  "aesthetics": ["forestpunk", "cabincore"]
-}
-```
-
-`id` is the 11 characters after `v=` in the URL (drop any `&t=` timestamp). If the link
-is part of a YouTube playlist (`&list=PL…`), add it as `"list": "PL…"` and the card
-opens the whole playlist instead of one video.
-`node tools/validate.js` checks the id format and that every aesthetic key exists. One
-video can serve many aesthetics; an aesthetic can have several videos.
-
-`tools/playlist.txt` is the working list behind that file — one `Name = url` line per
-aesthetic, grouped by family — kept for hunting down which aesthetics still want a
-better video. Nothing reads it at runtime; `data/playlists.json` is the real source.
 
 ## Privacy
 
-Everything is computed in the browser. No tracking, and the only outbound request is
-the optional image search — the music links only go to YouTube if you click them.
-`localStorage` holds the run in progress, the question
-history, the topic preferences and the gender-neutral / gender-specific choice.
-
----
+Everything runs in the browser, with no tracking. The only outside requests are the
+Commons photo search and YouTube thumbnails; music links open YouTube only when
+clicked. `localStorage` keeps the run in progress, question history, topic preferences
+and the name setting.
 
 ## License
 
-MIT — see [LICENSE](LICENSE). The photographs in the results come from Wikimedia
-Commons under their own licences, shown with each image's creator and licence as
-described under [Images](#images); the aesthetic profiles are original, written
-using Aesthetics Wiki only as a reference for names and general character.
+MIT, see [LICENSE](LICENSE). Photos come from Wikimedia Commons under their own
+licences, credited on each image. The aesthetic profiles are original, using Aesthetics
+Wiki only as a reference for names and general character.
