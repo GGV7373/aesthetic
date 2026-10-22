@@ -59,11 +59,11 @@ It is a static site, so there is nothing to build. `netlify.toml` sets
 `publish = "."` with an empty build command; point Netlify at the repository and it
 serves the root as-is.
 
-Two things to keep in mind:
+`data/bundle.js` is git-ignored: the deployed site fetches the JSON directly and never
+loads it.
 
-- **Commit `data/bundle.js`.** It is generated, but there is no build step on Netlify
-  to regenerate it. Run `node tools/build-bundle.js` before pushing whenever `/data`
-  changes.
+If you add a strict `Content-Security-Policy`:
+
 - **The photo strip calls Wikimedia Commons from the visitor's browser.** It is
   optional — if you add a strict `Content-Security-Policy`, allow
   `connect-src https://commons.wikimedia.org` and
@@ -433,7 +433,7 @@ data/
   narrative.json  phrase banks
   playlists.json  hand-picked YouTube videos per aesthetic, plus the search fallback
   images.json     curated Wikimedia Commons photos; search wording overrides (both start empty)
-  bundle.js       GENERATED — fallback for file://
+  bundle.js       GENERATED, git-ignored — fallback for file://
 tools/
   build-bundle.js
   validate.js
