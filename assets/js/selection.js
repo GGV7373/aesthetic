@@ -329,8 +329,4 @@
       coverage: coverageOf(ordered2, data.dimensionKeys)
     };
   };
-
-  AQ.selectionInternals = {
-    coverageOf: coverageOf, spread: spread, blocks: blocks, drawQuotas: drawQuotas, reshapeGroups: reshapeGroups
-  };
 })(typeof window !== 'undefined' ? window : globalThis);
