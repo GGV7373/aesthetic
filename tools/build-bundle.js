@@ -24,6 +24,9 @@ const payload = {};
 for (const [key, file] of Object.entries(SOURCES)) {
   payload[key] = JSON.parse(fs.readFileSync(path.join(ROOT, file), 'utf8'));
 }
+/* quizzes.json lists the keys; each quiz lives in data/quizzes/<key>.json. */
+payload.quizzes.quizzes = payload.quizzes.quizzes.map((k) =>
+  JSON.parse(fs.readFileSync(path.join(ROOT, 'data/quizzes', k + '.json'), 'utf8')));
 
 const out =
   '/* GENERATED FILE - do not edit.\n' +

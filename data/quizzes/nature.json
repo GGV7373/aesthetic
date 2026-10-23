@@ -1,0 +1,234 @@
+{
+  "key": "nature",
+  "title": "Which nature aesthetic are you?",
+  "family": "Nature and Pastoral",
+  "groupLabel": "Nature",
+  "resultLabel": "Your nature aesthetic",
+  "blurb": "Cottagecore, Cabincore, Forestpunk, Gardencore and more. Statements about land, weather and the work of your hands.",
+  "questions": [
+    {
+      "id": 9101,
+      "group": "nature",
+      "cluster": "nature-1",
+      "text": "I'd happily live somewhere with no neighbours for miles.",
+      "dimensions": {
+        "solitude": 2,
+        "rural": 1,
+        "community": -1,
+        "social": -1
+      }
+    },
+    {
+      "id": 9102,
+      "group": "nature",
+      "cluster": "nature-2",
+      "text": "Baking bread from scratch sounds like a perfect afternoon.",
+      "dimensions": {
+        "comfort": 2,
+        "craft": 2,
+        "tradition": 1
+      }
+    },
+    {
+      "id": 9103,
+      "group": "nature",
+      "cluster": "nature-3",
+      "text": "I'd rather mend an old fence or garden tool than buy a new one.",
+      "dimensions": {
+        "craft": 2,
+        "individualism": 1,
+        "tradition": 1
+      }
+    },
+    {
+      "id": 9104,
+      "group": "nature",
+      "cluster": "nature-4",
+      "text": "A garden full of vegetables and flowers would make me happy.",
+      "dimensions": {
+        "nature": 2,
+        "organic": 2,
+        "optimism": 1
+      }
+    },
+    {
+      "id": 9105,
+      "group": "nature",
+      "cluster": "nature-5",
+      "text": "Hard physical work outdoors feels good to me.",
+      "dimensions": {
+        "realism": 2,
+        "adventure": 1,
+        "craft": 1,
+        "comfort": -1
+      }
+    },
+    {
+      "id": 9106,
+      "group": "nature",
+      "cluster": "nature-6",
+      "text": "Frosty mornings and snow on the trees are my favourite part of the year.",
+      "dimensions": {
+        "comfort": 2,
+        "nostalgia": 2
+      }
+    },
+    {
+      "id": 9107,
+      "group": "nature",
+      "cluster": "nature-7",
+      "text": "I like nature wild and messy, not trimmed and tidy.",
+      "dimensions": {
+        "nature": 2,
+        "chaos": 1,
+        "order": -2
+      }
+    },
+    {
+      "id": 9108,
+      "group": "nature",
+      "cluster": "nature-8",
+      "text": "I'd like to swap seeds, vegetables and firewood with my neighbours.",
+      "dimensions": {
+        "community": 2,
+        "social": 1
+      }
+    },
+    {
+      "id": 9109,
+      "group": "nature",
+      "cluster": "nature-9",
+      "text": "Old ways of farming and foraging, passed down through families, matter to me.",
+      "dimensions": {
+        "tradition": 2,
+        "history": 1,
+        "nostalgia": 1
+      }
+    },
+    {
+      "id": 9110,
+      "group": "nature",
+      "cluster": "nature-10",
+      "text": "I'd happily swap screen time for more time outdoors.",
+      "dimensions": {
+        "technology": -2,
+        "digital": -2,
+        "nature": 1
+      }
+    },
+    {
+      "id": 9111,
+      "group": "nature",
+      "cluster": "nature-11",
+      "text": "A long hike in the mountains beats a day on the sofa.",
+      "dimensions": {
+        "adventure": 2,
+        "nature": 1,
+        "comfort": -2
+      }
+    },
+    {
+      "id": 9112,
+      "group": "nature",
+      "cluster": "nature-12",
+      "text": "Wide open fields and a big sky make me feel free.",
+      "dimensions": {
+        "rural": 2,
+        "nature": 1,
+        "solitude": 1,
+        "nostalgia": 1
+      }
+    },
+    {
+      "id": 9113,
+      "group": "nature",
+      "cluster": "nature-13",
+      "text": "There is something dark and wild about the forest that I like.",
+      "dimensions": {
+        "darkness": 2,
+        "mystery": 1,
+        "nature": 1
+      }
+    },
+    {
+      "id": 9114,
+      "group": "nature",
+      "cluster": "nature-14",
+      "text": "I want to see nature as it really is, without any filter.",
+      "dimensions": {
+        "realism": 2,
+        "nature": 2,
+        "fantasy": -1
+      }
+    },
+    {
+      "id": 9115,
+      "group": "nature",
+      "cluster": "nature-15",
+      "text": "A crackling fire in a small cabin is my idea of happiness.",
+      "dimensions": {
+        "comfort": 2,
+        "solitude": 2,
+        "rural": 1
+      }
+    },
+    {
+      "id": 9116,
+      "group": "nature",
+      "cluster": "nature-16",
+      "text": "I try to live simply and waste as little as I can.",
+      "dimensions": {
+        "organic": 2,
+        "craft": 1,
+        "community": 1,
+        "adventure": 1,
+        "modernity": -1
+      }
+    },
+    {
+      "id": 9117,
+      "group": "nature",
+      "cluster": "nature-17",
+      "text": "Falling leaves make me feel nostalgic.",
+      "dimensions": {
+        "nostalgia": 2,
+        "melancholy": 1,
+        "darkness": 1,
+        "nature": 1
+      }
+    },
+    {
+      "id": 9118,
+      "group": "nature",
+      "cluster": "nature-18",
+      "text": "I'd rather build a bench from wood I cut myself than buy one.",
+      "dimensions": {
+        "craft": 3,
+        "rural": 1
+      }
+    },
+    {
+      "id": 9119,
+      "group": "nature",
+      "cluster": "nature-19",
+      "text": "Watching things grow makes me hopeful.",
+      "dimensions": {
+        "optimism": 2,
+        "organic": 1,
+        "nature": 1
+      }
+    },
+    {
+      "id": 9120,
+      "group": "nature",
+      "cluster": "nature-20",
+      "text": "Chopping wood on a cold morning sounds like a good start to the day.",
+      "dimensions": {
+        "rural": 2,
+        "realism": 1,
+        "tradition": 1,
+        "refinement": -2
+      }
+    }
+  ]
+}

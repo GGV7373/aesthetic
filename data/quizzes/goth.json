@@ -1,0 +1,271 @@
+{
+  "key": "goth",
+  "title": "Which goth aesthetic are you?",
+  "family": "Goth",
+  "groupLabel": "Goth",
+  "resultLabel": "Your goth aesthetic",
+  "blurb": "Trad Goth, Romantic Goth, Nu-Goth, Cybergoth and more. Statements about darkness, style and where you belong.",
+  "questions": [
+    {
+      "id": 9301,
+      "group": "goth",
+      "cluster": "goth-1",
+      "text": "Old factories and concrete have a grim kind of beauty.",
+      "dimensions": {
+        "industrial": 2,
+        "architecture": 1
+      }
+    },
+    {
+      "id": 9302,
+      "group": "goth",
+      "cluster": "goth-2",
+      "text": "Lace, velvet and heavy fabrics are what I'd love to wear.",
+      "dimensions": {
+        "ornament": 2,
+        "refinement": 1,
+        "minimalism": -1
+      }
+    },
+    {
+      "id": 9303,
+      "group": "goth",
+      "cluster": "goth-3",
+      "text": "Clean, simple and sharp looks better to me than decorated.",
+      "dimensions": {
+        "minimalism": 2,
+        "ornament": -2
+      }
+    },
+    {
+      "id": 9304,
+      "group": "goth",
+      "cluster": "goth-4",
+      "text": "A futuristic, high-tech style is more me than anything old-fashioned.",
+      "dimensions": {
+        "futurism": 2,
+        "digital": 1,
+        "history": -2
+      }
+    },
+    {
+      "id": 9305,
+      "group": "goth",
+      "cluster": "goth-5",
+      "text": "Cute things with a creepy twist are my favourite.",
+      "dimensions": {
+        "whimsy": 2,
+        "optimism": 1
+      }
+    },
+    {
+      "id": 9306,
+      "group": "goth",
+      "cluster": "goth-6",
+      "text": "Memories of hanging out at the mall in band shirts make me smile.",
+      "dimensions": {
+        "nostalgia": 2,
+        "retro": 1,
+        "refinement": -1
+      }
+    },
+    {
+      "id": 9307,
+      "group": "goth",
+      "cluster": "goth-7",
+      "text": "Going out with my scene matters a lot to me.",
+      "dimensions": {
+        "community": 2,
+        "social": 2
+      }
+    },
+    {
+      "id": 9308,
+      "group": "goth",
+      "cluster": "goth-8",
+      "text": "Old small towns far from the city feel haunted in a way I like.",
+      "dimensions": {
+        "nature": 1,
+        "urban": -2,
+        "tradition": 1
+      }
+    },
+    {
+      "id": 9309,
+      "group": "goth",
+      "cluster": "goth-9",
+      "text": "Sad poems move me more than happy songs.",
+      "dimensions": {
+        "melancholy": 2,
+        "optimism": -1
+      }
+    },
+    {
+      "id": 9310,
+      "group": "goth",
+      "cluster": "goth-10",
+      "text": "A cosy, cluttered room with candles and crystals sounds perfect.",
+      "dimensions": {
+        "comfort": 2,
+        "mystery": 1,
+        "minimalism": -1
+      }
+    },
+    {
+      "id": 9311,
+      "group": "goth",
+      "cluster": "goth-11",
+      "text": "I'm drawn to the past more than to the future.",
+      "dimensions": {
+        "history": 2,
+        "futurism": -1
+      }
+    },
+    {
+      "id": 9312,
+      "group": "goth",
+      "cluster": "goth-12",
+      "text": "Gardens, forests and graveyards feel calmer to me than cities.",
+      "dimensions": {
+        "nature": 2,
+        "solitude": 1,
+        "urban": -1
+      }
+    },
+    {
+      "id": 9313,
+      "group": "goth",
+      "cluster": "goth-13",
+      "text": "Elegant and refined matters more to me than tough and rough.",
+      "dimensions": {
+        "refinement": 2,
+        "realism": -1
+      }
+    },
+    {
+      "id": 9314,
+      "group": "goth",
+      "cluster": "goth-14",
+      "text": "Rough and raw looks better to me than pretty and polished.",
+      "dimensions": {
+        "realism": 2,
+        "refinement": -1
+      }
+    },
+    {
+      "id": 9315,
+      "group": "goth",
+      "cluster": "goth-15",
+      "text": "I like things neat, tidy and under control.",
+      "dimensions": {
+        "order": 2,
+        "chaos": -1
+      }
+    },
+    {
+      "id": 9316,
+      "group": "goth",
+      "cluster": "goth-16",
+      "text": "Old records and the original eighties scene are my thing.",
+      "dimensions": {
+        "retro": 2
+      }
+    },
+    {
+      "id": 9317,
+      "group": "goth",
+      "cluster": "goth-17",
+      "text": "I'd rather keep to myself than be part of a scene.",
+      "dimensions": {
+        "solitude": 2,
+        "community": -1,
+        "social": -1
+      }
+    },
+    {
+      "id": 9318,
+      "group": "goth",
+      "cluster": "goth-18",
+      "text": "Traditions that have lasted a long time matter to me.",
+      "dimensions": {
+        "tradition": 2,
+        "modernity": -1
+      }
+    },
+    {
+      "id": 9319,
+      "group": "goth",
+      "cluster": "goth-19",
+      "text": "Being different from everyone around me is important to me.",
+      "dimensions": {
+        "individualism": 2
+      }
+    },
+    {
+      "id": 9320,
+      "group": "goth",
+      "cluster": "goth-20",
+      "text": "The unknown and the unexplained are a big part of what I love.",
+      "dimensions": {
+        "mystery": 2
+      }
+    },
+    {
+      "id": 9321,
+      "group": "goth",
+      "cluster": "goth-21",
+      "text": "Bright colours have a place in a dark wardrobe.",
+      "dimensions": {
+        "whimsy": 1,
+        "maximalism": 1,
+        "optimism": 1,
+        "darkness": -1
+      }
+    },
+    {
+      "id": 9322,
+      "group": "goth",
+      "cluster": "goth-22",
+      "text": "I'm more excited about what comes next than nostalgic about what came before.",
+      "dimensions": {
+        "modernity": 2,
+        "futurism": 1,
+        "nostalgia": -2
+      }
+    },
+    {
+      "id": 9323,
+      "group": "goth",
+      "cluster": "goth-23",
+      "text": "I'd rather be alone in nature than out at a club.",
+      "dimensions": {
+        "nature": 1,
+        "solitude": 2,
+        "community": -1,
+        "urban": -1
+      }
+    },
+    {
+      "id": 9324,
+      "group": "goth",
+      "cluster": "goth-24",
+      "text": "New trends and pop culture are a big part of my style.",
+      "dimensions": {
+        "modernity": 2,
+        "history": -1
+      }
+    },
+    {
+      "id": 9325,
+      "group": "goth",
+      "cluster": "goth-25",
+      "text": "Ruins overgrown with ivy are more beautiful to me than any new building.",
+      "dimensions": {
+        "nature": 1,
+        "history": 1,
+        "melancholy": 1,
+        "modernity": -1
+      }
+    }
+  ]
+}

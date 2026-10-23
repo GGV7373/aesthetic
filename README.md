@@ -59,7 +59,9 @@ profile, so you can't guess what a question measures.
 Each short quiz has its own page (`internet.html`, `nature.html`, `goth.html`): a copy of `index.html` with `data-quiz="<key>"` on `<main>`, so keep
 their `<head>` in step with it. The full test stays on `index.html`.
 
-`data/quizzes.json` holds the short quizzes (internet, nature, goth). Each has
+Each quiz is its own file in `data/quizzes/` (`internet.json`, `nature.json`,
+`goth.json`); `data/quizzes.json` only lists their keys, in the order the home page
+shows them. A new quiz needs a file there, its key in that list, and its own page. Each has
 its own statements (ids from 9001) and returns an aesthetic from its `family`, or only
 from its `members` list if it has one. The internet quiz uses `members` to keep just
 the Frutiger and Y2K aesthetics. Members are centred on their group's average before
@@ -88,7 +90,8 @@ assets/js/
   app.js         screens and flow
 data/
   questions.json   main statement bank
-  quizzes.json     family quizzes and their statements
+  quizzes.json     which family quizzes exist (keys, in order)
+  quizzes/         one file per family quiz and its statements
   aesthetics.json  aesthetics: profile, palette, keywords, "world"
   scoring.json     dimensions, groups, preferences, matching settings
   narrative.json   phrase banks for the result text
@@ -130,7 +133,7 @@ Leave out dimensions that don't matter. Keep values between 0.05 and 0.95. Use o
 the existing 18 families. `keywords` double as photo search terms, so make them
 concrete nouns.
 
-**A statement:** add it to `data/questions.json` (or a quiz in `data/quizzes.json`).
+**A statement:** add it to `data/questions.json` (or a quiz in `data/quizzes/`).
 Weights run −3 to 3. Write both "agree pushes up" and "agree pushes down" statements for
 each dimension.
 

@@ -1,0 +1,347 @@
+{
+  "key": "internet",
+  "title": "Which internet aesthetic are you?",
+  "family": "Internet and Liminal",
+  "members": [
+    "frutiger-aero", "frutiger-eco", "vectordelia", "abstract-tech", "bright-tertiaries",
+    "dorfic", "four-colors", "frutevil-aero", "technozen", "y2k",
+    "y2k-futurism", "neo-y2k", "90s-cool", "bubblegum", "chromecore",
+    "clear-tech", "gen-x-soft-club", "low-poly", "nightcore"
+  ],
+  "groupLabel": "The internet",
+  "resultLabel": "Your internet aesthetic",
+  "blurb": "Frutiger Aero, Y2K, Chromecore, Nightcore and more. Statements about screens, feeds and online moods.",
+  "questions": [
+    {
+      "id": 9001,
+      "group": "internet",
+      "cluster": "internet-1",
+      "text": "The internet of the future, as I picture it, looks bright and friendly.",
+      "dimensions": {
+        "optimism": 2,
+        "futurism": 1,
+        "darkness": -1
+      }
+    },
+    {
+      "id": 9002,
+      "group": "internet",
+      "cluster": "internet-2",
+      "text": "I'd rather browse a quiet, empty corner of the web than a busy feed.",
+      "dimensions": {
+        "solitude": 2,
+        "social": -2,
+        "community": -1
+      }
+    },
+    {
+      "id": 9003,
+      "group": "internet",
+      "cluster": "internet-3",
+      "text": "Online, I mostly hang out with one close group of friends.",
+      "dimensions": {
+        "community": 2,
+        "social": 1,
+        "solitude": -1
+      }
+    },
+    {
+      "id": 9004,
+      "group": "internet",
+      "cluster": "internet-4",
+      "text": "Bare, simple screens look better to me than busy ones.",
+      "dimensions": {
+        "minimalism": 2,
+        "maximalism": -2,
+        "ornament": -1
+      }
+    },
+    {
+      "id": 9005,
+      "group": "internet",
+      "cluster": "internet-5",
+      "text": "A slightly unsettling image in my feed interests me more than a pretty one.",
+      "dimensions": {
+        "mystery": 2,
+        "darkness": 1,
+        "optimism": -1,
+        "comfort": -1
+      }
+    },
+    {
+      "id": 9006,
+      "group": "internet",
+      "cluster": "internet-6",
+      "text": "Wallpapers of glossy plants, clear water and sunlit glass make me feel good.",
+      "dimensions": {
+        "nature": 2,
+        "organic": 1,
+        "optimism": 1
+      }
+    },
+    {
+      "id": 9007,
+      "group": "internet",
+      "cluster": "internet-7",
+      "text": "I prefer websites that look old and pixelated to ones that look sleek and new.",
+      "dimensions": {
+        "retro": 1,
+        "nostalgia": 1,
+        "history": 1,
+        "futurism": -2,
+        "modernity": -1
+      }
+    },
+    {
+      "id": 9008,
+      "group": "internet",
+      "cluster": "internet-8",
+      "text": "Random, messy web pages appeal to me more than tidy ones.",
+      "dimensions": {
+        "chaos": 2,
+        "order": -2
+      }
+    },
+    {
+      "id": 9009,
+      "group": "internet",
+      "cluster": "internet-9",
+      "text": "I'm drawn to sad playlists and grey, moody edits online.",
+      "dimensions": {
+        "melancholy": 2,
+        "optimism": -1
+      }
+    },
+    {
+      "id": 9010,
+      "group": "internet",
+      "cluster": "internet-10",
+      "text": "My ideal phone theme is cute, sweet and pink.",
+      "dimensions": {
+        "whimsy": 2,
+        "ornament": 1,
+        "comfort": 1,
+        "darkness": -1
+      }
+    },
+    {
+      "id": 9011,
+      "group": "internet",
+      "cluster": "internet-11",
+      "text": "Online worlds and games often feel more real to me than daily life.",
+      "dimensions": {
+        "fantasy": 2,
+        "realism": -2
+      }
+    },
+    {
+      "id": 9012,
+      "group": "internet",
+      "cluster": "internet-12",
+      "text": "The photos I save online are quiet, slightly bleak shots of real life at night.",
+      "dimensions": {
+        "realism": 2,
+        "darkness": 1,
+        "whimsy": -1,
+        "fantasy": -1
+      }
+    },
+    {
+      "id": 9013,
+      "group": "internet",
+      "cluster": "internet-13",
+      "text": "Scrolling late at night with the city lights outside feels like my natural time.",
+      "dimensions": {
+        "urban": 2,
+        "darkness": 1,
+        "solitude": 1
+      }
+    },
+    {
+      "id": 9014,
+      "group": "internet",
+      "cluster": "internet-14",
+      "text": "I'd rather follow accounts about the countryside than about big cities.",
+      "dimensions": {
+        "rural": 2,
+        "nature": 1,
+        "urban": -2
+      }
+    },
+    {
+      "id": 9015,
+      "group": "internet",
+      "cluster": "internet-15",
+      "text": "Loud, flashy games and the newest gadgets make me happy.",
+      "dimensions": {
+        "technology": 2,
+        "maximalism": 1,
+        "social": 1
+      }
+    },
+    {
+      "id": 9016,
+      "group": "internet",
+      "cluster": "internet-16",
+      "text": "The same few cosy sites every day suit me better than exploring new corners of the web.",
+      "dimensions": {
+        "comfort": 2,
+        "adventure": -2,
+        "chaos": -1
+      }
+    },
+    {
+      "id": 9017,
+      "group": "internet",
+      "cluster": "internet-17",
+      "text": "I'd rather build my own page from scratch than use a ready-made design.",
+      "dimensions": {
+        "individualism": 2,
+        "craft": 1
+      }
+    },
+    {
+      "id": 9018,
+      "group": "internet",
+      "cluster": "internet-18",
+      "text": "I spend a lot of time looking at old screenshots and websites from the past.",
+      "dimensions": {
+        "nostalgia": 2,
+        "history": 1,
+        "futurism": -1
+      }
+    },
+    {
+      "id": 9019,
+      "group": "internet",
+      "cluster": "internet-19",
+      "text": "Neon-lit futures from old films and games are my favourite look.",
+      "dimensions": {
+        "retro": 1,
+        "futurism": 2,
+        "adventure": 1
+      }
+    },
+    {
+      "id": 9020,
+      "group": "internet",
+      "cluster": "internet-20",
+      "text": "Scrolling often leaves me feeling flat and grey.",
+      "dimensions": {
+        "melancholy": 2,
+        "optimism": -2,
+        "whimsy": -1
+      }
+    },
+    {
+      "id": 9021,
+      "group": "internet",
+      "cluster": "internet-21",
+      "text": "I'm hopeful about what the internet can do for people.",
+      "dimensions": {
+        "optimism": 2,
+        "digital": 1,
+        "community": 1
+      }
+    },
+    {
+      "id": 9022,
+      "group": "internet",
+      "cluster": "internet-22",
+      "text": "Photos of empty, symmetrical rooms and hallways have a calm beauty to me.",
+      "dimensions": {
+        "architecture": 2,
+        "order": 1,
+        "minimalism": 1,
+        "social": -1
+      }
+    },
+    {
+      "id": 9023,
+      "group": "internet",
+      "cluster": "internet-23",
+      "text": "Creepypastas and creepy videos make a fun night for me.",
+      "dimensions": {
+        "darkness": 2,
+        "mystery": 1,
+        "comfort": -1
+      }
+    },
+    {
+      "id": 9024,
+      "group": "internet",
+      "cluster": "internet-24",
+      "text": "Busy group chats and live streams full of people give me energy.",
+      "dimensions": {
+        "social": 2,
+        "solitude": -2
+      }
+    },
+    {
+      "id": 9025,
+      "group": "internet",
+      "cluster": "internet-25",
+      "text": "Renders of concrete, machines and factories have their own beauty.",
+      "dimensions": {
+        "industrial": 2,
+        "urban": 1
+      }
+    },
+    {
+      "id": 9026,
+      "group": "internet",
+      "cluster": "internet-26",
+      "text": "I'd still rather send a handwritten letter than a text message.",
+      "dimensions": {
+        "tradition": 2,
+        "modernity": -1,
+        "digital": -1
+      }
+    },
+    {
+      "id": 9027,
+      "group": "internet",
+      "cluster": "internet-27",
+      "text": "A hand-drawn doodle feels more special to me than a slick computer graphic.",
+      "dimensions": {
+        "craft": 2,
+        "digital": -1
+      }
+    },
+    {
+      "id": 9028,
+      "group": "internet",
+      "cluster": "internet-28",
+      "text": "Glitter text, loud band pages and a crowded friends list sound like the best internet.",
+      "dimensions": {
+        "maximalism": 2,
+        "social": 1,
+        "community": 1,
+        "futurism": -1,
+        "ornament": 1
+      }
+    },
+    {
+      "id": 9029,
+      "group": "internet",
+      "cluster": "internet-29",
+      "text": "I like to keep my posts light and playful.",
+      "dimensions": {
+        "whimsy": 2,
+        "optimism": 1,
+        "melancholy": -1
+      }
+    },
+    {
+      "id": 9030,
+      "group": "internet",
+      "cluster": "internet-30",
+      "text": "Shiny, glossy and colourful graphics feel like home.",
+      "dimensions": {
+        "ornament": 2,
+        "maximalism": 1,
+        "digital": 1
+      }
+    }
+  ]
+}

@@ -13,8 +13,18 @@
     narrative: 'data/narrative.json',
     playlists: 'data/playlists.json',
     images: 'data/images.json',
-    quizzes: 'data/quizzes.json'
+    quizzes: 'data/quizzes.json' /* just the keys; each quiz is data/quizzes/<key>.json */
   };
+
+  function getJSON(url) {
+    /* No cache option here: it would make the browser skip the preloaded
+       copy from index.html. Freshness comes from the server's
+       Cache-Control header instead (see netlify.toml). */
+    return fetch(url).then(function (res) {
+      if (!res.ok) throw new Error(url + ' returned ' + res.status);
+      return res.json();
+    });
+  }
 
   function loadScript(src) {
     return new Promise(function (resolve, reject) {
@@ -29,19 +39,16 @@
   function fetchAll() {
     var keys = Object.keys(FILES);
     return Promise.all(
-      keys.map(function (key) {
-        /* No cache option here: it would make the browser skip the preloaded
-           copy from index.html. Freshness comes from the server's
-           Cache-Control header instead (see netlify.toml). */
-        return fetch(FILES[key]).then(function (res) {
-          if (!res.ok) throw new Error(FILES[key] + ' returned ' + res.status);
-          return res.json();
-        });
-      })
+      keys.map(function (key) { return getJSON(FILES[key]); })
     ).then(function (values) {
       var out = {};
       keys.forEach(function (key, i) { out[key] = values[i]; });
-      return out;
+      return Promise.all(out.quizzes.quizzes.map(function (k) {
+        return getJSON('data/quizzes/' + k + '.json');
+      })).then(function (list) {
+        out.quizzes = { quizzes: list };
+        return out;
+      });
     });
   }
 

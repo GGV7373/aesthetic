@@ -291,7 +291,7 @@ data.dimensionMeta = {};
 config.dimensions.forEach((d) => (data.dimensionMeta[d.key] = d));
 
 /* 0a. The family quizzes: their own statements, scored only against their family. */
-const familyQuizzes = read('data/quizzes.json').quizzes;
+const familyQuizzes = read('data/quizzes.json').quizzes.map((k) => read('data/quizzes/' + k + '.json'));
 const usedIds = new Set(questions.map((q) => q.id));
 familyQuizzes.forEach((qz) => {
   (qz.members || []).forEach((k) => {
