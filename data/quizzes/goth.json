@@ -31,7 +31,7 @@
       "id": 9303,
       "group": "goth",
       "cluster": "goth-3",
-      "text": "Clean, simple and sharp looks better to me than decorated.",
+      "text": "A sharp, all-black outfit with one silver detail beats lace and frills.",
       "dimensions": {
         "minimalism": 2,
         "ornament": -2
@@ -41,7 +41,7 @@
       "id": 9304,
       "group": "goth",
       "cluster": "goth-4",
-      "text": "A futuristic, high-tech style is more me than anything old-fashioned.",
+      "text": "Neon, black PVC and a high-tech look are more me than anything old-fashioned.",
       "dimensions": {
         "futurism": 2,
         "digital": 1,
@@ -73,7 +73,7 @@
       "id": 9307,
       "group": "goth",
       "cluster": "goth-7",
-      "text": "Going out with my scene matters a lot to me.",
+      "text": "Going out to goth nights with my scene matters a lot to me.",
       "dimensions": {
         "community": 2,
         "social": 2
@@ -94,7 +94,7 @@
       "id": 9309,
       "group": "goth",
       "cluster": "goth-9",
-      "text": "Sad poems move me more than happy songs.",
+      "text": "Gothic poems about death and lost love move me more than happy songs.",
       "dimensions": {
         "melancholy": 2,
         "optimism": -1
@@ -115,7 +115,7 @@
       "id": 9311,
       "group": "goth",
       "cluster": "goth-11",
-      "text": "I'm drawn to the past more than to the future.",
+      "text": "Victorian mourning dress and old cathedrals pull me in more than anything modern.",
       "dimensions": {
         "history": 2,
         "futurism": -1
@@ -136,7 +136,7 @@
       "id": 9313,
       "group": "goth",
       "cluster": "goth-13",
-      "text": "Elegant and refined matters more to me than tough and rough.",
+      "text": "An elegant, Victorian-style dark look matters more to me than a tough, ripped one.",
       "dimensions": {
         "refinement": 2,
         "realism": -1
@@ -146,7 +146,7 @@
       "id": 9314,
       "group": "goth",
       "cluster": "goth-14",
-      "text": "Rough and raw looks better to me than pretty and polished.",
+      "text": "Ripped fishnets and scuffed boots look better to me than a polished outfit.",
       "dimensions": {
         "realism": 2,
         "refinement": -1
@@ -156,7 +156,7 @@
       "id": 9315,
       "group": "goth",
       "cluster": "goth-15",
-      "text": "I like things neat, tidy and under control.",
+      "text": "My dark look is always neat, sharp and carefully put together.",
       "dimensions": {
         "order": 2,
         "chaos": -1
@@ -186,7 +186,7 @@
       "id": 9318,
       "group": "goth",
       "cluster": "goth-18",
-      "text": "Traditions that have lasted a long time matter to me.",
+      "text": "Old church rituals and family traditions, even the strange ones, matter to me.",
       "dimensions": {
         "tradition": 2,
         "modernity": -1
@@ -196,7 +196,7 @@
       "id": 9319,
       "group": "goth",
       "cluster": "goth-19",
-      "text": "Being different from everyone around me is important to me.",
+      "text": "Looking different from everyone around me is a big part of being goth for me.",
       "dimensions": {
         "individualism": 2
       }
@@ -205,7 +205,7 @@
       "id": 9320,
       "group": "goth",
       "cluster": "goth-20",
-      "text": "The unknown and the unexplained are a big part of what I love.",
+      "text": "Ghost stories, the occult and the unexplained are a big part of what I love.",
       "dimensions": {
         "mystery": 2
       }
@@ -226,7 +226,7 @@
       "id": 9322,
       "group": "goth",
       "cluster": "goth-22",
-      "text": "I'm more excited about what comes next than nostalgic about what came before.",
+      "text": "I'm more into where goth is going next than into how it used to be.",
       "dimensions": {
         "modernity": 2,
         "futurism": 1,
@@ -249,7 +249,7 @@
       "id": 9324,
       "group": "goth",
       "cluster": "goth-24",
-      "text": "New trends and pop culture are a big part of my style.",
+      "text": "New trends and the latest goth looks online are a big part of my style.",
       "dimensions": {
         "modernity": 2,
         "history": -1
@@ -265,6 +265,16 @@
         "history": 1,
         "melancholy": 1,
         "modernity": -1
+      }
+    },
+    {
+      "id": 9326,
+      "group": "goth",
+      "cluster": "goth-26",
+      "text": "Vampires, ghosts and dark fairy tales feel more real to me than everyday life.",
+      "dimensions": {
+        "fantasy": 2,
+        "realism": -1
       }
     }
   ]
