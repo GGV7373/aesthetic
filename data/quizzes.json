@@ -382,7 +382,7 @@
           "id": 9103,
           "group": "nature",
           "cluster": "nature-3",
-          "text": "I'd rather fix something old than buy something new.",
+          "text": "I'd rather mend an old fence or garden tool than buy a new one.",
           "dimensions": {
             "craft": 2,
             "individualism": 1,
@@ -416,7 +416,7 @@
           "id": 9106,
           "group": "nature",
           "cluster": "nature-6",
-          "text": "Cold, wintry days are my favourite part of the year.",
+          "text": "Frosty mornings and snow on the trees are my favourite part of the year.",
           "dimensions": {
             "comfort": 2,
             "nostalgia": 2
@@ -437,7 +437,7 @@
           "id": 9108,
           "group": "nature",
           "cluster": "nature-8",
-          "text": "I would like to share food and tools with my neighbours.",
+          "text": "I'd like to swap seeds, vegetables and firewood with my neighbours.",
           "dimensions": {
             "community": 2,
             "social": 1
@@ -447,7 +447,7 @@
           "id": 9109,
           "group": "nature",
           "cluster": "nature-9",
-          "text": "Old family recipes and traditions matter to me.",
+          "text": "Old ways of farming and foraging, passed down through families, matter to me.",
           "dimensions": {
             "tradition": 2,
             "history": 1,
@@ -458,7 +458,7 @@
           "id": 9110,
           "group": "nature",
           "cluster": "nature-10",
-          "text": "I would be happy with a lot less technology in my life.",
+          "text": "I'd happily swap screen time for more time outdoors.",
           "dimensions": {
             "technology": -2,
             "digital": -2,
@@ -550,7 +550,7 @@
           "id": 9118,
           "group": "nature",
           "cluster": "nature-18",
-          "text": "I care more about what I can make with my hands than what I can buy.",
+          "text": "I'd rather build a bench from wood I cut myself than buy one.",
           "dimensions": {
             "craft": 3,
             "rural": 1
