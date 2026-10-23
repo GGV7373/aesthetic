@@ -56,7 +56,10 @@ profile, so you can't guess what a question measures.
 
 ### Family quizzes
 
-`data/quizzes.json` holds the short quizzes (internet, nature, witchy, goth). Each has
+Each short quiz has its own page (`internet.html`, `nature.html`, `goth.html`): a copy of `index.html` with `data-quiz="<key>"` on `<main>`, so keep
+their `<head>` in step with it. The full test stays on `index.html`.
+
+`data/quizzes.json` holds the short quizzes (internet, nature, goth). Each has
 its own statements (ids from 9001) and returns an aesthetic from its `family`, or only
 from its `members` list if it has one. The internet quiz uses `members` to keep just
 the Frutiger and Y2K aesthetics. Members are centred on their group's average before

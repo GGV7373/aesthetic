@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Which goth aesthetic are you? · What Aesthetic Are You?</title>
+<meta name="description" content="Trad Goth, Romantic Goth, Nu-Goth, Cybergoth and more. Statements about darkness, style and where you belong.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#fbf0ea">
+
+<link rel="canonical" href="https://estetikk.netlify.app/goth.html">
+
+<meta property="og:title" content="Which goth aesthetic are you?">
+<meta property="og:description" content="Trad Goth, Romantic Goth, Nu-Goth, Cybergoth and more. Statements about darkness, style and where you belong.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://estetikk.netlify.app/goth.html">
+<!-- Scrapers do not resolve relative paths and will not take an SVG, so the
+     card is an absolute URL to a flat PNG. Built from tools/og-image.html. -->
+<meta property="og:image" content="https://estetikk.netlify.app/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="What aesthetic are you? Personality quizzes across 200 aesthetics.">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..500&family=Inter:wght@350;400;450;500;600&display=swap">
+<link rel="stylesheet" href="assets/css/styles.css">
+
+<!-- Start the quiz data downloading straight away, alongside the scripts,
+     instead of after they have run. data.js fetches these same URLs. -->
+<link rel="preload" href="data/aesthetics.json" as="fetch" crossorigin>
+<link rel="preload" href="data/questions.json" as="fetch" crossorigin>
+<link rel="preload" href="data/scoring.json" as="fetch" crossorigin>
+<link rel="preload" href="data/narrative.json" as="fetch" crossorigin>
+<link rel="preload" href="data/playlists.json" as="fetch" crossorigin>
+<link rel="preload" href="data/images.json" as="fetch" crossorigin>
+<link rel="preload" href="data/quizzes.json" as="fetch" crossorigin>
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23e9edf3'/%3E%3Ccircle cx='16' cy='16' r='7.5' fill='none' stroke='%23a34f2a' stroke-width='1.4'/%3E%3Ccircle cx='16' cy='16' r='2.2' fill='%23a34f2a'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<nav class="topbar"><a class="btn btn--ghost btn--small" href="index.html">← Home</a></nav>
+
+<main id="app" data-quiz="goth">
+  <p class="loading">Loading …</p>
+</main>
+
+<noscript>
+  <div style="max-width:40rem;margin:4rem auto;padding:0 1.5rem;color:#575147">
+    <h1 style="font-family:Georgia,serif;font-weight:400">What Aesthetic Are You?</h1>
+    <p>The test works out your result inside your own browser.</p>
+  </div>
+</noscript>
+
+<script src="assets/js/prng.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/selection.js"></script>
+<script src="assets/js/scoring.js"></script>
+<script src="assets/js/narrative.js"></script>
+<script src="assets/js/visuals.js"></script>
+<script src="assets/js/images.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

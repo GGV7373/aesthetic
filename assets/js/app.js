@@ -4,6 +4,8 @@
   'use strict';
   var AQ = (global.AQ = global.AQ || {});
 
+  /* Each page keeps its own unfinished run: index.html the full test,
+     internet.html etc. their family quiz (set from <main data-quiz> in boot). */
   var STORE_SESSION = 'aq.session.v3';
   var STORE_HISTORY = 'aq.previousQuestionIds.v3';
   var STORE_PREFS = 'aq.preferences.v1';
@@ -23,6 +25,7 @@
   var data = null;
   var session = null;
   var root;
+  var pageQuiz = null; /* the family quiz this page is for, or null on index.html */
 
   /* ---------- helpers ---------- */
 
@@ -185,6 +188,7 @@
   function restoreSession() {
     var saved = readStore(STORE_SESSION, null);
     if (!saved || !saved.questionIds || !saved.questionIds.length) return null;
+    if ((saved.quiz || '') !== (pageQuiz ? pageQuiz.key : '')) return null; /* another page's run */
     var ok = saved.questionIds.every(function (id) { return !!data.questionsById[id]; });
     return ok ? saved : null;
   }
@@ -307,7 +311,7 @@
     var answered = saved ? Object.keys(saved.answers || {}).length : 0;
     var resumable = saved && answered > 0 && answered < saved.questionIds.length;
     var urlSeed = queryParam('seed');
-    var urlQuiz = data.quizByKey[queryParam('quiz')];
+    var urlQuiz = pageQuiz;
 
     function sectionHead(kicker, title) {
       return el('div', { class: 'intro__head' }, [
@@ -317,15 +321,29 @@
     }
 
     var hero = el('div', { class: 'intro__hero' }, [
-      el('p', { class: 'eyebrow', text: 'Aesthetic quizzes' }),
-      el('h1', { class: 'display', html: 'Find the <em>world</em><br>you <em>belong</em> in.' }),
+      el('p', { class: 'eyebrow', text: pageQuiz
+        ? AQ.quizMembers(data, pageQuiz).length + ' aesthetics' : 'Aesthetic quizzes' }),
+      pageQuiz
+        ? el('h1', { class: 'display', text: pageQuiz.title })
+        : el('h1', { class: 'display', html: 'Find the <em>world</em><br>you <em>belong</em> in.' }),
       el('p', { class: 'lede' }, [
+        pageQuiz ? pageQuiz.blurb :
         'Short personality quizzes that match your temperament, meaning your relationship ' +
         'to nature, technology, history, order, solitude, darkness and beauty, to one ' +
         'aesthetic. Not what you like the look of, but how you are.'
       ]),
-      urlSeed || resumable
+      urlSeed || resumable || pageQuiz
         ? el('div', { class: 'intro__actions' }, [
+            pageQuiz && !urlSeed
+              ? el('button', {
+                  class: 'btn btn--primary', type: 'button',
+                  onclick: function () {
+                    clearStore(STORE_SESSION);
+                    startFamilySession(pageQuiz.key);
+                    screenQuiz();
+                  }
+                }, ['Start · ' + pageQuiz.questions.length + ' statements'])
+              : null,
             urlSeed
               ? el('button', {
                   class: 'btn btn--primary', type: 'button',
@@ -356,6 +374,19 @@
         : null
     ]);
 
+    /* A family quiz page is just its own quiz. */
+    if (pageQuiz) {
+      render(el('section', { class: 'screen screen--intro' }, [
+        hero,
+        el('p', { class: 'fineprint' }, [
+          'Rate each statement from strongly disagree to strongly agree. Everything is ' +
+          'worked out in your own browser and nothing is sent anywhere.'
+        ]),
+        genderedNamesToggle(screenIntro)
+      ]));
+      return;
+    }
+
     /* The full test: every aesthetic, three lengths. */
     var mainCard = el('article', { class: 'intro__card intro__card--main' }, [
       el('p', { class: 'eyebrow', text: 'The full test' }),
@@ -379,20 +410,14 @@
       ])
     ]);
 
-    /* One card per family quiz. */
+    /* One card per family quiz, each linking to its own page (internet.html, ...). */
     var familyCards = data.familyQuizzes.map(function (qz) {
       return el('article', { class: 'intro__card' }, [
         el('p', { class: 'eyebrow', text: AQ.quizMembers(data, qz).length + ' aesthetics' }),
         el('h3', { class: 'intro__cardtitle', text: qz.title }),
         el('p', { text: qz.blurb }),
-        el('button', {
-          class: 'btn btn--primary', type: 'button',
-          onclick: function () {
-            clearStore(STORE_SESSION);
-            startFamilySession(qz.key);
-            screenQuiz();
-          }
-        }, ['Start · ' + qz.questions.length])
+        el('a', { class: 'btn btn--primary', href: qz.key + '.html' },
+          ['Open · ' + qz.questions.length])
       ]);
     });
 
@@ -1126,8 +1151,7 @@
     ]);
 
     var seedLink = global.location.origin + global.location.pathname + '?seed=' + seed +
-      (familyQuiz ? '&quiz=' + familyQuiz.key
-        : runLength !== data.config.questionsPerQuiz ? '&n=' + runLength : '') +
+      (!familyQuiz && runLength !== data.config.questionsPerQuiz ? '&n=' + runLength : '') +
       (!preview && session.groups && session.groups.length ? '&groups=' + session.groups.join(',') : '');
     var copyBtn = el('button', {
       class: 'btn btn--ghost', type: 'button',
@@ -1205,6 +1229,16 @@
 
     AQ.loadData().then(function (loaded) {
       data = loaded;
+
+      /* Old shared links were index.html?quiz=internet&seed=...; send them to the quiz's page. */
+      var legacyQuiz = data.quizByKey[queryParam('quiz')];
+      if (!root.dataset.quiz && legacyQuiz) {
+        global.location.replace(legacyQuiz.key + '.html' +
+          global.location.search.replace(/[?&]quiz=[^&#]*/, '').replace(/^&/, '?'));
+        return;
+      }
+      pageQuiz = data.quizByKey[root.dataset.quiz] || null;
+      if (pageQuiz) STORE_SESSION += '.' + pageQuiz.key;
 
       if (isLocalDev()) {
         var previewKey = queryParam('preview');

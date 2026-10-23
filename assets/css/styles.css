@@ -145,6 +145,23 @@ body::after {
   #app { padding-top: clamp(2.5rem, 8vh, 5.5rem); padding-bottom: clamp(4rem, 12vh, 8rem); }
 }
 
+/* The Home button above every page. Fixed height so the one-screen phone quiz
+   layout below can subtract it. */
+.topbar {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-end;
+  height: calc(var(--topbar-h) + env(safe-area-inset-top));
+  max-width: var(--shell);
+  margin: 0 auto;
+  padding: env(safe-area-inset-top) var(--gutter) 0;
+}
+:root { --topbar-h: calc(var(--tap) + 0.75rem); }
+
+a.btn { text-decoration: none; }
+
 /* Touch behaviour: no 300ms delay, no grey flash on tap. */
 button, a, label, input { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
 
@@ -739,13 +756,13 @@ button, a, label, input { -webkit-tap-highlight-color: transparent; touch-action
    to be answered. The page frame is trimmed right down to buy that room. */
 @media (max-width: 39.99rem) {
   #app:has(.screen--quiz) {
-    padding-top: max(0.85rem, env(safe-area-inset-top));
+    padding-top: 0.85rem;
     padding-bottom: 0;
   }
 
   .screen--quiz {
     min-height: 0;
-    height: calc(100dvh - max(0.85rem, env(safe-area-inset-top)));
+    height: calc(100dvh - 0.85rem - var(--topbar-h) - env(safe-area-inset-top));
   }
 
   .quiz__head { margin-bottom: 0.8rem; }
