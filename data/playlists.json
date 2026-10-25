@@ -17,7 +17,6 @@
       "mood": "Soft, slightly unreal songs, like a melody heard through a wall.",
       "aesthetics": [
         "dreamcore",
-        "psychedelia",
         "surrealism",
         "weirdcore"
       ]
@@ -32,8 +31,7 @@
         "medieval",
         "arts-and-crafts",
         "princesscore",
-        "royalcore",
-        "lolita"
+        "royalcore"
       ]
     },
     {
@@ -45,8 +43,6 @@
         "dark-fantasy",
         "witchcore",
         "strega",
-        "vulture-culture",
-        "wuxia",
         "folk-horror",
         "dark-romanticism"
       ]
@@ -74,12 +70,7 @@
         "impressionism",
         "neoclassicism",
         "regency",
-        "scandinavian-design",
-        "tenniscore",
-        "balletcore",
-        "clean-girl",
-        "twee",
-        "preppy"
+        "balletcore"
       ]
     },
     {
@@ -104,10 +95,7 @@
       "mood": "Late-night saxophone in a smoky, rain-slicked city.",
       "aesthetics": [
         "film-noir",
-        "beatnik",
-        "trad-goth",
-        "analog-horror",
-        "industrial-gothic"
+        "beatnik"
       ]
     },
     {
@@ -117,14 +105,10 @@
       "mood": "A vintage summer, open roads and a radio on the porch.",
       "aesthetics": [
         "americana",
-        "eclectic-grandpa",
-        "blokecore",
         "grandmillennial",
         "diner",
         "greaser",
-        "rockabilly",
-        "rustic",
-        "nautical"
+        "rockabilly"
       ]
     },
     {
@@ -134,10 +118,7 @@
       "mood": "Oldies playing in another room while the crickets keep time.",
       "aesthetics": [
         "fifties-suburbia",
-        "mid-century-modern",
-        "normcore",
-        "jock",
-        "high-school-dream"
+        "mid-century-modern"
       ]
     },
     {
@@ -147,11 +128,8 @@
       "mood": "Crooners and big-band glamour from the golden age of film.",
       "aesthetics": [
         "old-hollywood",
-        "mod",
         "mob-wife",
         "art-deco",
-        "rococo",
-        "guochao",
         "decopunk"
       ]
     },
@@ -161,8 +139,7 @@
       "author": "ackerlady",
       "mood": "Yearning jazz under neon and rain.",
       "aesthetics": [
-        "jirai-kei",
-        "cyberpunk"
+        "film-noir"
       ]
     },
     {
@@ -175,9 +152,7 @@
         "greaser",
         "rockabilly",
         "beatnik",
-        "mod",
         "mob-wife",
-        "ostalgie",
         "americana"
       ]
     },
@@ -199,8 +174,7 @@
       "mood": "Dreamlike and slightly wrong, a place you almost remember.",
       "aesthetics": [
         "weirdcore",
-        "surrealism",
-        "cryptidcore"
+        "surrealism"
       ]
     },
     {
@@ -219,9 +193,7 @@
       "mood": "Empty corridors, humming lights, nobody else here.",
       "aesthetics": [
         "liminal-space",
-        "corpcore",
-        "de-stijl",
-        "minimalism"
+        "corpcore"
       ]
     },
     {
@@ -244,7 +216,6 @@
       "mood": "Hyperpop and glitch dissolving into a sad, looping blur.",
       "aesthetics": [
         "draincore",
-        "nu-goth",
         "traumacore"
       ]
     },
@@ -255,9 +226,7 @@
       "mood": "Fast, fractured pop, chopped up and put back wrong.",
       "aesthetics": [
         "glitchcore",
-        "rave",
-        "cybergoth",
-        "afropunk"
+        "rave"
       ]
     },
     {
@@ -267,13 +236,6 @@
       "mood": "A glassy, watery ambience for an imagined coast.",
       "aesthetics": [
         "seapunk",
-        "rave",
-        "memphis-design",
-        "pastel-goth",
-        "decora",
-        "fairy-kei",
-        "yami-kawaii",
-        "tropicalia",
         "old-web"
       ]
     },
@@ -284,9 +246,7 @@
       "mood": "Neon eighties highways, arpeggios and a solo at the four-minute mark.",
       "aesthetics": [
         "synthwave",
-        "hypebeast",
         "city-pop",
-        "visual-kei",
         "vaporwave"
       ]
     },
@@ -310,10 +270,7 @@
       "mood": "Start-up chimes and bright, glossy interface-era sound.",
       "aesthetics": [
         "vectordelia",
-        "psychedelia",
-        "danish-pastel",
-        "kawaii",
-        "seapunk"
+        "danish-pastel"
       ]
     },
     {
@@ -323,8 +280,6 @@
       "mood": "Vintage oldies drifting in from another dimension, by the ocean.",
       "aesthetics": [
         "retrofuturism",
-        "city-pop",
-        "afrofuturism",
         "atompunk"
       ]
     },
@@ -335,13 +290,8 @@
       "mood": "Atomic-age radio: crooners, swing and the crackle of a wasteland station.",
       "aesthetics": [
         "atompunk",
-        "yuppie",
         "mid-century-modern",
-        "normcore",
-        "racing",
-        "sovietwave",
-        "retrofuturism",
-        "spacecore"
+        "retrofuturism"
       ]
     },
     {
@@ -354,8 +304,7 @@
         "decopunk",
         "art-deco",
         "streamline-moderne",
-        "old-hollywood",
-        "atompunk"
+        "old-hollywood"
       ]
     },
     {
@@ -366,10 +315,7 @@
       "mood": "Wartime crooners and crackling records. Opens a playlist.",
       "aesthetics": [
         "dieselpunk",
-        "streamline-moderne",
-        "racing",
-        "cassette-futurism",
-        "industrial"
+        "streamline-moderne"
       ]
     },
     {
@@ -380,9 +326,7 @@
       "aesthetics": [
         "steampunk",
         "dandy",
-        "art-nouveau",
-        "victorian",
-        "maximalism"
+        "victorian"
       ]
     },
     {
@@ -392,10 +336,8 @@
       "mood": "Rain-slick synthwave for a city that never turns its lights off.",
       "aesthetics": [
         "cyberpunk",
-        "brutalism",
         "techwear",
         "cybergoth",
-        "gulf-futurism",
         "sinofuturism"
       ]
     },
@@ -406,11 +348,7 @@
       "mood": "Sunlit daydreams, greenery and a hopeful future.",
       "aesthetics": [
         "solarpunk",
-        "hippie",
-        "danish-pastel",
-        "afrofuturism",
-        "brazilcore",
-        "tropicalia"
+        "hippie"
       ]
     },
     {
@@ -421,8 +359,7 @@
       "aesthetics": [
         "cassette-futurism",
         "ostalgie",
-        "sovietwave",
-        "dieselpunk"
+        "sovietwave"
       ]
     },
     {
@@ -432,9 +369,6 @@
       "mood": "Drifting between the stars.",
       "aesthetics": [
         "spacecore",
-        "bauhaus",
-        "de-stijl",
-        "sinofuturism",
         "retrofuturism"
       ]
     },
@@ -447,13 +381,7 @@
         "industrial-decay",
         "industrial",
         "industrial-gothic",
-        "bauhaus",
-        "brutalism",
-        "tacticool",
-        "techwear",
-        "goth",
-        "film-noir",
-        "doomer"
+        "brutalism"
       ]
     },
     {
@@ -473,11 +401,6 @@
       "mood": "Three hours of fantasy music for setting off with a map.",
       "aesthetics": [
         "adventurecore",
-        "gorpcore",
-        "tacticool",
-        "wuxia",
-        "steampunk",
-        "naturecore",
         "oceanpunk"
       ]
     },
@@ -500,20 +423,11 @@
       "mood": "Nu-metal and pop-punk from the unlabelled disc your older sibling left in the car.",
       "aesthetics": [
         "olderbrothercore",
-        "tweencore",
         "nostalgiacore",
-        "frutiger-aero",
-        "frutiger-eco",
         "y2k",
         "metalhead",
         "punk",
-        "pop-art",
-        "blokecore",
-        "soft-girl",
-        "gyaru",
-        "kidcore",
         "scene",
-        "webcore",
         "mallgoth"
       ]
     },
@@ -531,36 +445,18 @@
         "grunge",
         "lumberjack",
         "cryptidcore",
-        "folk-horror",
-        "appalachian-gothic",
         "granola",
         "cottagecore",
         "hygge",
         "rustic",
         "goblincore",
         "mori-kei",
-        "strega",
-        "vulture-culture",
         "hippie",
         "hipster",
-        "metalhead",
         "arts-and-crafts",
-        "eclectic-grandpa",
-        "equestrian",
         "gorpcore",
-        "southern-gothic",
-        "twee",
-        "grandmillennial",
         "soft-apocalypse",
-        "adventurecore",
-        "western",
-        "fairycore",
-        "wabi-sabi",
-        "japandi",
-        "coastal-grandmother",
-        "emo",
-        "indie-sleaze",
-        "skater"
+        "adventurecore"
       ]
     },
     {
@@ -573,49 +469,15 @@
         "whimsigothic",
         "angelcore",
         "ghostcore",
-        "nautical",
-        "oceanpunk",
         "dark-romanticism",
         "romantic-goth",
         "fairycore",
         "dreamcore",
-        "wabi-sabi",
-        "japandi",
-        "romanticism",
-        "coastal-grandmother",
         "doomer",
-        "after-hours",
         "witchcore",
-        "old-money",
-        "art-nouveau",
-        "baroque",
-        "impressionism",
-        "victorian",
-        "maximalism",
-        "minimalism",
-        "scandinavian-design",
         "goth",
         "trad-goth",
-        "balletcore",
-        "clean-girl",
-        "coquette",
-        "dollette",
-        "princesscore",
-        "cluttercore",
-        "lolita",
-        "visual-kei",
-        "guochao",
-        "medievalcore",
-        "dark-fantasy",
-        "romantic-academia",
-        "mallsoft",
-        "industrial-decay",
-        "dark-naturalism",
-        "cottagecore",
-        "hygge",
-        "goblincore",
-        "mori-kei",
-        "midwest-emo"
+        "dark-naturalism"
       ]
     },
     {
@@ -638,33 +500,9 @@
         "indie-sleaze",
         "olderbrothercore",
         "mallgoth",
-        "kidcore",
         "midwest-emo",
         "preppy",
-        "skater",
-        "hipster",
-        "punk",
-        "hypebeast",
-        "memphis-design",
-        "pop-art",
-        "jock",
-        "tenniscore",
-        "nu-goth",
-        "pastel-goth",
-        "soft-girl",
-        "cluttercore",
-        "decora",
-        "fairy-kei",
-        "gyaru",
-        "kawaii",
-        "afropunk",
-        "brazilcore",
-        "light-academia",
-        "fifties-suburbia",
-        "vectordelia",
-        "solarpunk",
-        "grunge",
-        "ghostcore"
+        "skater"
       ]
     }
   ]
