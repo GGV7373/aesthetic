@@ -1049,7 +1049,7 @@
     },
     "related": [
       "atompunk",
-      "decopunk",
+      "art-deco",
       "dieselpunk",
       "vaporwave"
     ],
@@ -1108,7 +1108,7 @@
     "related": [
       "retrofuturism",
       "fifties-suburbia",
-      "decopunk",
+      "art-deco",
       "americana"
     ],
     "world": {
@@ -1120,65 +1120,6 @@
       "music": "exotica, space-age pop, vibraphone",
       "colours": "turquoise, coral, chrome, cream yellow",
       "everyday": "trusting engineers, planning a future with the numbers in order"
-    }
-  },
-  {
-    "key": "decopunk",
-    "name": "Decopunk",
-    "family": "Punk and Futurism",
-    "tagline": "The machine age with a gilt edge",
-    "description": "Art Deco stretched into the speculative: streamlined metal, skyscrapers and elegant machinery. Optimistic, urban and a little vain.",
-    "keywords": [
-      "streamline",
-      "brass",
-      "skyscraper",
-      "airship",
-      "geometry"
-    ],
-    "palette": [
-      "#0f1218",
-      "#1e3a4c",
-      "#c9a227",
-      "#f0e9d8"
-    ],
-    "dimensions": {
-      "futurism": 0.72,
-      "retro": 0.88,
-      "refinement": 0.9,
-      "ornament": 0.9,
-      "order": 0.85,
-      "architecture": 0.92,
-      "technology": 0.7,
-      "urban": 0.82,
-      "industrial": 0.58,
-      "optimism": 0.75,
-      "maximalism": 0.7,
-      "history": 0.7,
-      "modernity": 0.55,
-      "craft": 0.7,
-      "tradition": 0.5,
-      "intellect": 0.6,
-      "darkness": 0.35,
-      "nature": 0.15,
-      "minimalism": 0.2,
-      "social": 0.6,
-      "adventure": 0.55
-    },
-    "related": [
-      "art-deco",
-      "dieselpunk",
-      "retrofuturism",
-      "old-hollywood"
-    ],
-    "world": {
-      "setting": "a skyline in golden evening light, an airship over a harbour",
-      "architecture": "stepped facades, gilded portals, lifts with brass gates",
-      "interior": "rosewood and chrome, a mirrored wall, a drinks cabinet that counts as furniture",
-      "technology": "elegant machines, everything with a housing and a logo",
-      "clothes": "tailoring, silk, a hat that means something",
-      "music": "big band, clarinet, an orchestra in a ballroom",
-      "colours": "gold, jade green, deep navy, ivory",
-      "everyday": "evenings that start late, believing progress should also look good"
     }
   },
   {
@@ -1224,7 +1165,7 @@
       "futurism": 0.5
     },
     "related": [
-      "decopunk",
+      "art-deco",
       "steampunk",
       "film-noir",
       "industrial"
@@ -1285,7 +1226,7 @@
     },
     "related": [
       "dieselpunk",
-      "decopunk",
+      "art-deco",
       "dandy"
     ],
     "world": {
@@ -2105,7 +2046,6 @@
     "related": [
       "film-noir",
       "art-deco",
-      "decopunk",
       "dandy"
     ],
     "world": {
@@ -2280,10 +2220,11 @@
       "futurism": 0.5
     },
     "related": [
-      "decopunk",
       "art-nouveau",
       "old-hollywood",
-      "dandy"
+      "dandy",
+      "dieselpunk",
+      "retrofuturism"
     ],
     "world": {
       "setting": "a city street where every facade means to impress",
@@ -8510,7 +8451,6 @@
     },
     "related": [
       "art-deco",
-      "decopunk",
       "dieselpunk",
       "mid-century-modern",
       "retrofuturism"

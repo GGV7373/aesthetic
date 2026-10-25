@@ -1,7 +1,7 @@
 # What Aesthetic Are You?
 
 A personality test that finds which **aesthetic world** you belong to — not which
-pictures you like. 360 statements, 50 per run, 35 hidden dimensions and 204 aesthetics
+pictures you like. 360 statements, 50 per run, 35 hidden dimensions and 203 aesthetics
 across 18 families, using Aesthetics Wiki as a reference.
 
 No framework, no build step, no dependencies. Live at
@@ -34,7 +34,7 @@ a 1200x630 screenshot of `tools/og-image.html`.
 ## How it works
 
 ```
-answers  →  35 dimensions  →  match against 204 aesthetic profiles
+answers  →  35 dimensions  →  match against 203 aesthetic profiles
 ```
 
 No statement belongs to any one aesthetic. A question about old buildings moves
