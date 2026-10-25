@@ -262,8 +262,6 @@
     });
   }
 
-  /* ---------- intro ---------- */
-
   /* ---------- gendered names ---------- */
 
   /* A few aesthetics are known by a name that assumes a gender. The test itself
@@ -303,6 +301,8 @@
       button
     ]);
   }
+
+  /* ---------- intro ---------- */
 
   function screenIntro() {
     replaceStep({ screen: 'intro' });
@@ -444,7 +444,7 @@
         el('li', {}, [el('strong', { text: String(data.aesthetics.length) }), 'aesthetics']),
         el('li', {}, [el('strong', { text: String(1 + data.familyQuizzes.length) }), 'quizzes']),
         el('li', {}, [el('strong', { text: String(data.config.dimensions.length) }), 'hidden dimensions']),
-        el('li', {}, [el('strong', { text: '7' }), 'answer levels per statement'])
+        el('li', {}, [el('strong', { text: String(data.config.scale.length) }), 'answer levels per statement'])
       ]),
       el('p', { class: 'fineprint' }, [
         'Everything is worked out in your own browser. Nothing is sent anywhere, and your ' +
@@ -1028,7 +1028,6 @@
   }
 
   /* A link to an aesthetic's Aesthetics Wiki page, opened in a new tab. */
-
   function wikiSection(aesthetic) {
     return el('section', { class: 'block' }, [
       el('a', {

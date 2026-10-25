@@ -22,7 +22,8 @@ falls back to the generated, git-ignored `data/bundle.js`.
 
 ## Deploying
 
-Netlify serves the repository root as-is (`netlify.toml`). If you add a strict
+Netlify serves the repository root as-is (`netlify.toml`), after running
+`tools/validate.js`: a data error stops the deploy. If you add a strict
 `Content-Security-Policy`, allow `connect-src https://commons.wikimedia.org` and
 `img-src https://upload.wikimedia.org https://i.ytimg.com`, or photos and track
 thumbnails quietly stop appearing.
@@ -101,7 +102,6 @@ tools/
   serve.js, build-bundle.js, validate.js
   image-picker.html  pick photos for images.json
   og-image.html      source for assets/og.png
-  playlist.txt       working notes: one video link per aesthetic
 ```
 
 All content lives in `/data`. Adding aesthetics, statements, videos or photos needs no
