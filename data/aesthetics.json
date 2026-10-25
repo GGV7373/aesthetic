@@ -581,7 +581,7 @@
       "dark-academia",
       "light-academia",
       "romanticism",
-      "dark-romanticism"
+      "romantic-goth"
     ],
     "world": {
       "setting": "an overgrown garden by a library, a bench under a tree you keep returning to",
@@ -756,7 +756,6 @@
       "nature": 0.15
     },
     "related": [
-      "webcore",
       "vaporwave",
       "y2k",
       "frutiger-aero"
@@ -770,64 +769,6 @@
       "music": "MIDI versions of songs, tracks downloaded from someone you never met",
       "colours": "royal blue, cyan, a starfield background, white Times New Roman",
       "everyday": "building something nobody asked for, signing guestbooks, enjoying the mess"
-    }
-  },
-  {
-    "key": "webcore",
-    "name": "Webcore",
-    "family": "Internet and Liminal",
-    "tagline": "The interface as a mood",
-    "description": "Nostalgia for early digital culture as a visual language: windows, icons, pixels and cursors. More visual play than actual technology.",
-    "keywords": [
-      "pixels",
-      "windows",
-      "icons",
-      "cursor",
-      "browser"
-    ],
-    "palette": [
-      "#0b0d1c",
-      "#20255c",
-      "#6d7ef2",
-      "#f0f2ff"
-    ],
-    "dimensions": {
-      "digital": 0.95,
-      "retro": 0.85,
-      "nostalgia": 0.85,
-      "whimsy": 0.78,
-      "technology": 0.7,
-      "maximalism": 0.65,
-      "chaos": 0.6,
-      "community": 0.6,
-      "fantasy": 0.55,
-      "ornament": 0.6,
-      "individualism": 0.7,
-      "order": 0.35,
-      "solitude": 0.6,
-      "optimism": 0.6,
-      "futurism": 0.5,
-      "minimalism": 0.25,
-      "urban": 0.4,
-      "refinement": 0.3,
-      "nature": 0.12,
-      "melancholy": 0.5
-    },
-    "related": [
-      "old-web",
-      "y2k",
-      "vaporwave",
-      "dreamcore"
-    ],
-    "world": {
-      "setting": "a desk that is half physical and half screenshot",
-      "architecture": "windows with title bars, folders inside folders",
-      "interior": "a mousepad, speakers with fabric fronts, stickers on everything",
-      "technology": "a CRT monitor, floppy disks kept as decoration, a program you open for no reason",
-      "clothes": "a hoodie, socks that don't match",
-      "music": "chiptune, system sounds, songs at 128 kbps",
-      "colours": "screen blue, pixel purple, grey-beige plastic",
-      "everyday": "making folders for feelings, collecting images, building a page nobody finds"
     }
   },
   {
@@ -877,7 +818,7 @@
       "frutiger-eco",
       "y2k",
       "solarpunk",
-      "webcore"
+      "old-web"
     ],
     "world": {
       "setting": "a meadow under an impossibly blue sky, an aquarium in a reception",
@@ -1051,9 +992,8 @@
     },
     "related": [
       "frutiger-aero",
-      "webcore",
-      "vaporwave",
-      "old-web"
+      "old-web",
+      "vaporwave"
     ],
     "world": {
       "setting": "a mall in full swing, a bus stop with an advert that glitters",
@@ -1702,7 +1642,7 @@
       "appalachian-gothic",
       "goblincore",
       "cryptidcore",
-      "medieval"
+      "medievalcore"
     ],
     "world": {
       "setting": "a field with something standing in the middle, a path through the corn, a sunset that lasts too long",
@@ -2696,7 +2636,7 @@
     "related": [
       "weirdcore",
       "vaporwave",
-      "webcore",
+      "old-web",
       "ghostcore"
     ],
     "world": {
@@ -2871,7 +2811,7 @@
       "whimsy": 0.35
     },
     "related": [
-      "dark-romanticism",
+      "romantic-goth",
       "dreamcore",
       "gloomcore",
       "folk-horror"
@@ -3066,65 +3006,6 @@
     }
   },
   {
-    "key": "medieval",
-    "name": "Medieval",
-    "family": "Witchy and Folk",
-    "tagline": "Stone, craft and hierarchy",
-    "description": "The actual medieval world: monasteries, guild work, limewashed churches and a life organised by seasons and faith.",
-    "keywords": [
-      "monastery",
-      "stone hall",
-      "guild",
-      "manuscript",
-      "wall painting"
-    ],
-    "palette": [
-      "#141010",
-      "#3a2b22",
-      "#8a6a3a",
-      "#ddd0b0"
-    ],
-    "dimensions": {
-      "history": 0.95,
-      "tradition": 0.9,
-      "craft": 0.88,
-      "community": 0.75,
-      "architecture": 0.85,
-      "ornament": 0.8,
-      "darkness": 0.6,
-      "order": 0.7,
-      "realism": 0.6,
-      "rural": 0.7,
-      "mystery": 0.6,
-      "refinement": 0.6,
-      "modernity": 0.03,
-      "nature": 0.55,
-      "intellect": 0.65,
-      "comfort": 0.35,
-      "individualism": 0.25,
-      "technology": 0.25,
-      "fantasy": 0.45,
-      "maximalism": 0.6,
-      "melancholy": 0.5
-    },
-    "related": [
-      "medievalcore",
-      "folk-horror",
-      "romanticism",
-      "dark-academia"
-    ],
-    "world": {
-      "setting": "a monastery precinct, a market square, strip fields",
-      "architecture": "thick walls, round arches, roofs carried on visible timber",
-      "interior": "a long table, hangings on the wall against the cold, candles in iron holders",
-      "technology": "a watermill, a forge, tools made by whoever uses them",
-      "clothes": "wool in natural colours, a belt with a knife, headwear that shows your role",
-      "music": "plainchant, lute, bagpipes at the market",
-      "colours": "ochre, burnt sienna, lime, indigo",
-      "everyday": "work, meals, prayer, and the order of the seasons"
-    }
-  },
-  {
     "key": "medievalcore",
     "name": "Medievalcore",
     "family": "Witchy and Folk",
@@ -3167,10 +3048,9 @@
       "individualism": 0.5
     },
     "related": [
-      "medieval",
       "fairycore",
       "romanticism",
-      "dark-romanticism"
+      "romantic-goth"
     ],
     "world": {
       "setting": "a castle tower over a forest, a tournament on a plain, torches at dusk",
@@ -3226,7 +3106,7 @@
       "rural": 0.65
     },
     "related": [
-      "dark-romanticism",
+      "romantic-goth",
       "romantic-academia",
       "art-nouveau",
       "medievalcore"
@@ -3240,65 +3120,6 @@
       "music": "piano concertos, lieder, an orchestra building",
       "colours": "storm blue, copper brown, golden haze, chalk",
       "everyday": "going out in bad weather on purpose, writing down what you felt"
-    }
-  },
-  {
-    "key": "dark-romanticism",
-    "name": "Dark Romanticism",
-    "family": "Goth",
-    "tagline": "Beauty with death in it",
-    "description": "Romanticism's shadow side: transience, sin, ghosts and a fascination with what you shouldn't look at. Tender and macabre at once.",
-    "keywords": [
-      "transience",
-      "ghosts",
-      "cemetery",
-      "black velvet",
-      "verse"
-    ],
-    "palette": [
-      "#0c0a0e",
-      "#241a2b",
-      "#5f4356",
-      "#ded2cd"
-    ],
-    "dimensions": {
-      "melancholy": 0.95,
-      "darkness": 0.92,
-      "mystery": 0.9,
-      "fantasy": 0.8,
-      "history": 0.8,
-      "ornament": 0.8,
-      "refinement": 0.8,
-      "solitude": 0.82,
-      "nature": 0.72,
-      "intellect": 0.7,
-      "optimism": 0.05,
-      "maximalism": 0.65,
-      "tradition": 0.6,
-      "architecture": 0.7,
-      "nostalgia": 0.7,
-      "realism": 0.25,
-      "order": 0.4,
-      "individualism": 0.75,
-      "comfort": 0.3,
-      "craft": 0.5,
-      "community": 0.25
-    },
-    "related": [
-      "romanticism",
-      "ghostcore",
-      "dark-academia",
-      "folk-horror"
-    ],
-    "world": {
-      "setting": "a cemetery gone to parkland, a garden left to itself",
-      "architecture": "a mortuary chapel, a manor with closed wings, gothic windows",
-      "interior": "portraits that follow you, dried roses, heavy curtains",
-      "technology": "none - preferably not even electric light",
-      "clothes": "black velvet, high collars, jewellery with hair or onyx in it",
-      "music": "a requiem, a cello alone, singing in a minor key",
-      "colours": "ink black, blood red, corpse pale, oxidised silver",
-      "everyday": "reading at night, thinking about death without being afraid"
     }
   },
   {
@@ -3584,9 +3405,8 @@
     },
     "related": [
       "y2k",
-      "webcore",
-      "maximalism",
-      "old-web"
+      "old-web",
+      "maximalism"
     ],
     "world": {
       "setting": "a playground in bright plastic, a room with far too many posters",
@@ -4122,7 +3942,7 @@
     "related": [
       "grunge",
       "industrial",
-      "dark-romanticism",
+      "romantic-goth",
       "folk-horror"
     ],
     "world": {
@@ -4174,7 +3994,7 @@
     },
     "related": [
       "grunge",
-      "webcore",
+      "old-web",
       "brutalism",
       "blokecore"
     ],
@@ -4399,7 +4219,6 @@
     "related": [
       "trad-goth",
       "romantic-goth",
-      "dark-romanticism",
       "punk",
       "nu-goth"
     ],
@@ -4521,7 +4340,6 @@
     },
     "related": [
       "goth",
-      "dark-romanticism",
       "romanticism",
       "victorian",
       "gloomcore"
@@ -8003,8 +7821,7 @@
       "frutiger-aero",
       "old-web",
       "y2k",
-      "seapunk",
-      "webcore"
+      "seapunk"
     ],
     "world": {
       "setting": "the box art of a program you installed once and never opened",
@@ -8129,8 +7946,7 @@
       "romantic-goth",
       "steampunk",
       "baroque",
-      "royalcore",
-      "dark-romanticism"
+      "royalcore"
     ],
     "world": {
       "setting": "a parlour with the curtains half closed and a clock that is never wound down",
@@ -8947,9 +8763,8 @@
     "related": [
       "medievalcore",
       "folk-horror",
-      "dark-romanticism",
-      "gloomcore",
-      "medieval"
+      "romantic-goth",
+      "gloomcore"
     ],
     "world": {
       "setting": "a forest road at dusk where the trees have been listening for a while",
@@ -9323,7 +9138,7 @@
       "craft": 0.7
     },
     "related": [
-      "medieval",
+      "medievalcore",
       "dark-fantasy",
       "japandi",
       "guochao",
@@ -12064,7 +11879,6 @@
     "related": [
       "y2k",
       "kidcore",
-      "neo-y2k",
       "kawaii"
     ],
     "world": {
@@ -12076,120 +11890,6 @@
       "music": "Aqua, bubblegum dance, hyperpop with the pitch turned up",
       "colours": "hot pink, candy pink, lilac, glitter white",
       "everyday": "chewing gum, taking selfies, taking nothing too seriously on purpose"
-    }
-  },
-  {
-    "key": "chromecore",
-    "name": "Chromecore",
-    "family": "Internet and Liminal",
-    "tagline": "Everything silver, everything shining, everything a gadget",
-    "description": "The silver-plastic product design of 1999-2006: chrome-look cameras, CD players, consoles and phones, glossy metallic logos and adverts lit like a spaceship. Technology as a shiny object you wanted to hold.",
-    "keywords": [
-      "chrome",
-      "silver plastic",
-      "metallic",
-      "digital camera",
-      "CD player"
-    ],
-    "palette": [
-      "#1d2126",
-      "#6c7680",
-      "#c3cbd3",
-      "#f4f7fa"
-    ],
-    "dimensions": {
-      "technology": 0.95,
-      "digital": 0.8,
-      "futurism": 0.85,
-      "modernity": 0.85,
-      "industrial": 0.6,
-      "order": 0.65,
-      "refinement": 0.6,
-      "optimism": 0.7,
-      "minimalism": 0.55,
-      "ornament": 0.45,
-      "nostalgia": 0.6,
-      "retro": 0.6,
-      "nature": 0.05,
-      "organic": 0.1,
-      "whimsy": 0.4,
-      "darkness": 0.25,
-      "craft": 0.15,
-      "comfort": 0.35,
-      "urban": 0.65
-    },
-    "related": [
-      "y2k-futurism",
-      "clear-tech",
-      "y2k",
-      "technozen"
-    ],
-    "world": {
-      "setting": "an electronics shop with every gadget on a mirrored shelf",
-      "architecture": "brushed steel, curved glass, a showroom under hard white light",
-      "interior": "a silver hi-fi tower, a chrome desk lamp, a chair that looks like a capsule",
-      "technology": "a silver digital camera, a CD walkman, a console with a metallic shell",
-      "clothes": "metallic jackets, silver trainers, a chrome watch",
-      "music": "big-room trance, glossy electronic pop, a startup jingle",
-      "colours": "chrome, gunmetal, ice grey, white highlight",
-      "everyday": "polishing a gadget on your sleeve so it shines"
-    }
-  },
-  {
-    "key": "clear-tech",
-    "name": "Clear Tech",
-    "family": "Internet and Liminal",
-    "tagline": "Show me the circuits",
-    "description": "Transparent and translucent electronics from the late 1980s to the early 2000s: see-through phones, handheld consoles, pagers and the candy-coloured iMac G3. Machines that let you look inside instead of hiding behind beige.",
-    "keywords": [
-      "transparent plastic",
-      "translucent",
-      "iMac G3",
-      "see-through phone",
-      "circuit board"
-    ],
-    "palette": [
-      "#13303a",
-      "#2fb7c9",
-      "#a8ecf2",
-      "#f2fdff"
-    ],
-    "dimensions": {
-      "technology": 0.95,
-      "digital": 0.75,
-      "futurism": 0.7,
-      "whimsy": 0.6,
-      "optimism": 0.75,
-      "nostalgia": 0.75,
-      "retro": 0.75,
-      "intellect": 0.55,
-      "order": 0.55,
-      "craft": 0.45,
-      "modernity": 0.65,
-      "minimalism": 0.45,
-      "ornament": 0.35,
-      "darkness": 0.1,
-      "melancholy": 0.2,
-      "nature": 0.1,
-      "comfort": 0.5,
-      "individualism": 0.55,
-      "maximalism": 0.4
-    },
-    "related": [
-      "chromecore",
-      "y2k-futurism",
-      "y2k",
-      "arcadecore"
-    ],
-    "world": {
-      "setting": "a 1999 bedroom with a see-through phone that lights up when it rings",
-      "architecture": "a computer lab full of bondi-blue monitors",
-      "interior": "translucent desk organisers, an inflatable chair, a clear clock showing its gears",
-      "technology": "an iMac G3, a clear handheld console, a transparent pager",
-      "clothes": "a clear backpack, a jelly watch, see-through sandals",
-      "music": "electronic pop played from a translucent boombox",
-      "colours": "bondi blue, tangerine, lime, smoke grey plastic",
-      "everyday": "watching the inside of a machine work"
     }
   },
   {
@@ -12295,7 +11995,7 @@
       "arcadecore",
       "vectordelia",
       "dreamcore",
-      "clear-tech"
+      "y2k-futurism"
     ],
     "world": {
       "setting": "a game world where the trees are cones and the fog hides the edge of the map",
@@ -12306,63 +12006,6 @@
       "music": "a game soundtrack on a loop, MIDI strings, menu music",
       "colours": "flat green, flat sky blue, mustard, fog grey",
       "everyday": "exploring somewhere with nothing in it but atmosphere"
-    }
-  },
-  {
-    "key": "neo-y2k",
-    "name": "Neo-Y2K",
-    "family": "Internet and Liminal",
-    "tagline": "The millennium again, this time on TikTok",
-    "description": "The 2016-2020s revival of Y2K: liquid chrome and metalheart shapes, saturated Japanese-influenced graphics, butterfly clips, low-rise jeans and the whole era filtered through Gen Z nostalgia for something they barely remember.",
-    "keywords": [
-      "liquid chrome",
-      "butterfly clips",
-      "low-rise jeans",
-      "tiktok",
-      "metallic"
-    ],
-    "palette": [
-      "#1b1036",
-      "#7b5cff",
-      "#c6b8ff",
-      "#f4f1ff"
-    ],
-    "dimensions": {
-      "digital": 0.9,
-      "social": 0.85,
-      "individualism": 0.8,
-      "nostalgia": 0.85,
-      "retro": 0.85,
-      "modernity": 0.8,
-      "futurism": 0.65,
-      "maximalism": 0.75,
-      "ornament": 0.7,
-      "whimsy": 0.7,
-      "optimism": 0.7,
-      "technology": 0.7,
-      "chaos": 0.5,
-      "refinement": 0.4,
-      "minimalism": 0.2,
-      "nature": 0.05,
-      "craft": 0.25,
-      "melancholy": 0.25,
-      "darkness": 0.25
-    },
-    "related": [
-      "y2k",
-      "bubblegum",
-      "chromecore",
-      "glitchcore"
-    ],
-    "world": {
-      "setting": "a vintage shop that sells old phones next to new sunglasses",
-      "architecture": "a pop-up store with a chrome logo and a mirror wall",
-      "interior": "a ring light, posters with liquid-chrome lettering, a disco ball",
-      "technology": "a smartphone in a fluffy case, a digicam bought second-hand",
-      "clothes": "low-rise jeans, a baby tee, tiny shoulder bag, butterfly clips",
-      "music": "hyperpop, 2000s samples, a sped-up chorus",
-      "colours": "chrome, lilac, electric blue, hot pink",
-      "everyday": "filming an outfit check for the internet"
     }
   },
   {
@@ -12464,8 +12107,6 @@
     },
     "related": [
       "y2k",
-      "chromecore",
-      "clear-tech",
       "gen-x-soft-club"
     ],
     "world": {
@@ -12579,7 +12220,6 @@
       "mystery": 0.05
     },
     "related": [
-      "four-colors",
       "frutiger-aero",
       "vectordelia",
       "pop-art"
@@ -12651,64 +12291,6 @@
       "music": "precise electronic, a game soundtrack that sounds like a factory",
       "colours": "white, grey, bright orange, a little red",
       "everyday": "everything labelled, everything clean, everything running on time"
-    }
-  },
-  {
-    "key": "four-colors",
-    "name": "Four Colors",
-    "family": "Internet and Liminal",
-    "tagline": "Lime, sky blue, hot pink and orange, like an iPod advert",
-    "description": "The mid-2000s to mid-2010s colour scheme of consumer tech, kicked off by the iPod silhouette ads: electric lime, sky blue, hot pink and neon orange on gadgets, packaging and Japanese shop signs.",
-    "keywords": [
-      "iPod silhouette",
-      "electric lime",
-      "hot pink",
-      "sky blue",
-      "neon orange"
-    ],
-    "palette": [
-      "#b6e01e",
-      "#2fb4ff",
-      "#ff3fa4",
-      "#ff8a1e"
-    ],
-    "dimensions": {
-      "optimism": 0.95,
-      "whimsy": 0.75,
-      "social": 0.8,
-      "individualism": 0.6,
-      "modernity": 0.8,
-      "technology": 0.75,
-      "digital": 0.7,
-      "minimalism": 0.6,
-      "order": 0.55,
-      "maximalism": 0.45,
-      "ornament": 0.3,
-      "refinement": 0.45,
-      "darkness": 0,
-      "melancholy": 0.05,
-      "nostalgia": 0.6,
-      "retro": 0.5,
-      "nature": 0.1,
-      "urban": 0.65,
-      "comfort": 0.45,
-      "adventure": 0.5
-    },
-    "related": [
-      "bright-tertiaries",
-      "frutiger-aero",
-      "pop-art",
-      "kawaii"
-    ],
-    "world": {
-      "setting": "a dancing silhouette against a flat lime background",
-      "architecture": "a Japanese shopping street with bright flat signs",
-      "interior": "a desk with gadgets lined up in four colours",
-      "technology": "an iPod nano in every colour, a digicam in hot pink",
-      "clothes": "a plain dark outfit and very white earbuds",
-      "music": "the song from the advert, indie-pop with handclaps",
-      "colours": "electric lime, sky blue, hot pink, neon orange",
-      "everyday": "picking the colour of your gadget like it says who you are"
     }
   },
   {
@@ -12812,7 +12394,7 @@
       "frutiger-aero",
       "old-web",
       "technozen",
-      "clear-tech"
+      "y2k-futurism"
     ],
     "world": {
       "setting": "a phone home screen where every app looks like an object",
@@ -12868,7 +12450,7 @@
     },
     "related": [
       "frutiger-aero",
-      "chromecore",
+      "y2k-futurism",
       "kawaii",
       "skeuomorphism"
     ],

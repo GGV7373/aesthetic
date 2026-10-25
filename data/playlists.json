@@ -28,7 +28,6 @@
       "mood": "Lutes, harps and a great hall: a princess-and-knight romance.",
       "aesthetics": [
         "medievalcore",
-        "medieval",
         "arts-and-crafts",
         "princesscore",
         "royalcore"
@@ -44,7 +43,7 @@
         "witchcore",
         "strega",
         "folk-horror",
-        "dark-romanticism"
+        "romantic-goth"
       ]
     },
     {
@@ -469,7 +468,6 @@
         "whimsigothic",
         "angelcore",
         "ghostcore",
-        "dark-romanticism",
         "romantic-goth",
         "fairycore",
         "dreamcore",
@@ -496,7 +494,6 @@
         "frutiger-aero",
         "frutiger-eco",
         "old-web",
-        "webcore",
         "indie-sleaze",
         "olderbrothercore",
         "mallgoth",

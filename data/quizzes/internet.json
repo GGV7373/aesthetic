@@ -4,13 +4,12 @@
   "family": "Internet and Liminal",
   "members": [
     "frutiger-aero", "frutiger-eco", "vectordelia", "abstract-tech", "bright-tertiaries",
-    "dorfic", "four-colors", "frutevil-aero", "technozen", "y2k",
-    "y2k-futurism", "neo-y2k", "90s-cool", "bubblegum", "chromecore",
-    "clear-tech", "gen-x-soft-club", "low-poly", "nightcore"
+    "dorfic", "frutevil-aero", "technozen", "y2k", "y2k-futurism",
+    "90s-cool", "bubblegum", "gen-x-soft-club", "low-poly", "nightcore"
   ],
   "groupLabel": "The internet",
   "resultLabel": "Your internet aesthetic",
-  "blurb": "Frutiger Aero, Y2K, Chromecore, Nightcore and more. Statements about screens, feeds and online moods.",
+  "blurb": "Frutiger Aero, Y2K, Y2K Futurism, Nightcore and more. Statements about screens, feeds and online moods.",
   "questions": [
     {
       "id": 9001,
