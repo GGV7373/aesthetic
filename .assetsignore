@@ -1,0 +1,7 @@
+.git
+.claude
+.assetsignore
+wrangler.jsonc
+netlify.toml
+.wrangler
+node_modules

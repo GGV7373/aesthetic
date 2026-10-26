@@ -1,0 +1,10 @@
+// Cloudflare Worker that only serves the static files in this repo; there is
+// no Worker script. _headers and 404.html are picked up as they are.
+{
+  "name": "estetikk",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": ".",
+    "not_found_handling": "404-page"
+  }
+}
