@@ -7613,7 +7613,7 @@
       "community": 0.5,
       "tradition": 0.15
     },
-    "related": ["psychedelia", "dark-cabaret", "rockabilly"],
+    "related": ["psychedelia", "rockabilly"],
     "wiki": "Glam Rock",
     "world": {
       "setting": "a sweaty club in 1973, the queue down the block in the rain",
@@ -8134,7 +8134,7 @@
       "optimism": 0.55,
       "melancholy": 0.4
     },
-    "related": ["corpcore", "neon-noir", "brutalism", "hypebeast"],
+    "related": ["corpcore", "brutalism", "hypebeast"],
     "wiki": "Urbancore",
     "world": {
       "setting": "a city that never fully goes dark, trains rumbling under the street",
@@ -8182,7 +8182,7 @@
       "whimsy": 0.45,
       "fantasy": 0.4
     },
-    "related": ["hygge", "cluttercore", "coffee-house", "cottagecore"],
+    "related": ["hygge", "cluttercore", "cottagecore"],
     "wiki": "Cozycore",
     "world": {
       "setting": "a small town in late autumn, rain on the window by four o'clock",
@@ -8466,7 +8466,7 @@
       "refinement": 0.4,
       "adventure": 0.15
     },
-    "related": ["city-pop", "cozycore", "old-web", "coffee-house"],
+    "related": ["city-pop", "cozycore", "old-web"],
     "wiki": "Lo-fi Art",
     "world": {
       "setting": "a city at night seen from a high window, rain on the glass",
@@ -8561,7 +8561,7 @@
       "comfort": 0.35,
       "architecture": 0.7
     },
-    "related": ["dark-fantasy", "neon-noir", "witchcore", "cyberpunk"],
+    "related": ["dark-fantasy", "witchcore", "cyberpunk"],
     "wiki": "Urban Fantasy",
     "world": {
       "setting": "a rainy city where the streetlights hum in a language",
