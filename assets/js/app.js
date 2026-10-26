@@ -246,20 +246,9 @@
     var current = root.firstChild;
     if (current && current.dispatchEvent) current.dispatchEvent(new Event('aq:teardown'));
     root.innerHTML = '';
-    setMood(null);
     root.appendChild(node);
     node.classList.add('fade-in');
     global.scrollTo({ top: 0, behavior: 'auto' });
-  }
-
-  /* Tints the background clouds with three colours; null puts the default
-     colours back. */
-  function setMood(colours) {
-    var style = document.documentElement.style;
-    ['--mood1', '--mood2', '--mood3'].forEach(function (v, i) {
-      if (colours) style.setProperty(v, colours[i]);
-      else style.removeProperty(v);
-    });
   }
 
   /* ---------- gendered names ---------- */
@@ -469,7 +458,6 @@
     var selected = {};
     readStore(STORE_PREFS, []).forEach(function (k) { selected[k] = true; });
 
-    var chipButtons = {};
     var continueBtn, note;
 
     function pickedCount() {
@@ -501,7 +489,6 @@
           el('span', { class: 'chip__label', text: cat.label }),
           el('span', { class: 'chip__hint', text: cat.hint })
         ]);
-        chipButtons[cat.key] = btn;
         return btn;
       })
     );
@@ -850,108 +837,8 @@
     });
   }
 
-  /* Music for the result. Hand-picked videos (data/playlists.json) are shown
-     where one fits the aesthetic; every aesthetic also gets a YouTube search
-     for its own name, so there is always somewhere to go. Both are plain links
-     that open in a new tab - nothing is embedded, so the result page makes no
-     request to YouTube and the privacy note stays true.
-
-     An aesthetic with no video of its own borrows from its closest neighbours,
-     and says so on the card. "Closest" is the hand-written `related` lists
-     first, then the same family, then how alike the two profiles are; anything
-     beyond the cutoff is left with the search button rather than a poor fit. */
-  var playlistIndex = null;
-  var relatedIndex = null;
-
-  function playlistsByAesthetic() {
-    if (playlistIndex) return playlistIndex;
-    playlistIndex = {};
-    ((data.playlists && data.playlists.curated) || []).forEach(function (p) {
-      p.aesthetics.forEach(function (k) {
-        (playlistIndex[k] = playlistIndex[k] || []).push(p);
-      });
-    });
-    return playlistIndex;
-  }
-
-  /* `related` is written one way round in the data; treat it as mutual. */
-  function relatedTo(key) {
-    if (!relatedIndex) {
-      relatedIndex = {};
-      data.aesthetics.forEach(function (a) {
-        (a.related || []).forEach(function (r) {
-          (relatedIndex[a.key] = relatedIndex[a.key] || {})[r] = true;
-          (relatedIndex[r] = relatedIndex[r] || {})[a.key] = true;
-        });
-      });
-    }
-    return relatedIndex[key] || {};
-  }
-
-  /* Mean gap between two profiles over the dimensions both define; null when
-     they share none. */
-  function profileGap(a, b) {
-    var sum = 0, n = 0;
-    Object.keys(a.dimensions || {}).forEach(function (k) {
-      if (b.dimensions && b.dimensions[k] !== undefined) {
-        sum += Math.abs(a.dimensions[k] - b.dimensions[k]);
-        n++;
-      }
-    });
-    return n ? sum / n : null;
-  }
-
-  /* -> { own: [playlist], borrowed: [{ playlist, from: aesthetic }] }
-     Every aesthetic already has at least one playlist of its own, but a
-     result with just one or two tracks feels thin - so bonus picks from the
-     closest neighbours are always added on top, not only when an aesthetic
-     has none of its own. */
-  function playlistsFor(aesthetic) {
-    var index = playlistsByAesthetic();
-    var own = index[aesthetic.key] || [];
-
-    var cfg = (data.playlists && data.playlists.borrow) || null;
-    if (!cfg) return { own: own, borrowed: [] };
-
-    var seen = {};
-    own.forEach(function (p) { seen[p.id] = true; });
-
-    var related = relatedTo(aesthetic.key);
-    var near = [];
-    Object.keys(index).forEach(function (key) {
-      var other = data.aestheticsByKey[key];
-      if (!other || key === aesthetic.key) return;
-      var gap = profileGap(aesthetic, other);
-      if (gap === null) return;
-      if (related[key]) gap -= cfg.relatedBonus;
-      if (other.family === aesthetic.family) gap -= cfg.familyBonus;
-      if (gap <= cfg.cutoff) near.push({ gap: gap, from: other });
-    });
-    near.sort(function (x, y) { return x.gap - y.gap; });
-
-    /* One video per neighbour, and never one already shown. */
-    var borrowed = [];
-    near.forEach(function (n) {
-      if (borrowed.length >= cfg.max) return;
-      var pick = index[n.from.key].filter(function (p) { return !seen[p.id]; })[0];
-      if (!pick) return;
-      seen[pick.id] = true;
-      borrowed.push({ playlist: pick, from: n.from });
-    });
-    return { own: own, borrowed: borrowed };
-  }
-
-  /* Search on the name the aesthetic is known by - the gender-neutral wording is
-     what is shown, but "Soft Girl" finds playlists and "Soft Pastel" does not. */
-  function playlistSearchUrl(aesthetic) {
-    var cfg = (data.playlists && data.playlists.search) || {};
-    var name = aesthetic.gendered && aesthetic.gendered.name
-      ? aesthetic.gendered.name
-      : (aesthetic.neutral ? aesthetic.neutral.name : aesthetic.name);
-    return (cfg.base || 'https://www.youtube.com/results?search_query=') +
-      encodeURIComponent(name + ' ' + (cfg.suffix || 'aesthetic playlist'));
-  }
-
+  /* Plain links that open in a new tab - nothing is embedded, so the result
+     page makes no request to YouTube and the privacy note stays true. */
   function trackCard(p, from) {
     return el('a', {
       class: 'track' + (from ? ' track--borrowed' : ''),
@@ -976,7 +863,7 @@
   }
 
   function musicSection(aesthetic) {
-    var found = playlistsFor(aesthetic);
+    var found = AQ.music.playlistsFor(aesthetic, data);
     var sound = aesthetic.world && aesthetic.world.music;
 
     var cards = found.own.map(function (p) { return trackCard(p, null); })
@@ -997,7 +884,7 @@
       el('p', { class: 'block__lede', text: lede }),
       cards.length ? el('div', { class: 'tracks' }, cards) : null,
       el('a', {
-        class: 'btn btn--ghost music__search', href: playlistSearchUrl(aesthetic),
+        class: 'btn btn--ghost music__search', href: AQ.music.searchUrl(aesthetic, data),
         target: '_blank', rel: 'noopener noreferrer'
       }, [cards.length ? 'Find more ' + aesthetic.name + ' playlists' : 'Find ' + aesthetic.name + ' playlists on YouTube']),
       el('p', { class: 'fineprint', text: 'Links open YouTube in a new tab. The thumbnails ' +

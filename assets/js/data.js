@@ -93,9 +93,6 @@
   }
 
   AQ.names = {
-    /* Is the gender-specific version switched on? */
-    gendered: function () { return readFlag(); },
-
     /* Which aesthetics actually differ between the two versions. */
     affected: function (data) {
       return data.aesthetics.filter(function (a) { return a.gendered; });

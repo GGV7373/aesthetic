@@ -88,6 +88,7 @@ assets/js/
   narrative.js   result text
   visuals.js     generated mood plates (SVG)
   images.js      optional Wikimedia Commons photos
+  music.js       playlist matching for the result
   app.js         screens and flow
 data/
   questions.json   main statement bank
