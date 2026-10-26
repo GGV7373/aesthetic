@@ -655,6 +655,9 @@
           session.index = targetIndex;
           persistSession();
           paintQuestion();
+          /* On a short phone the page may be scrolled down to the last
+             answers; bring the next statement back into view. */
+          if (global.scrollY) global.scrollTo({ top: 0, behavior: 'auto' });
         }
         body.classList.remove('is-out', 'is-out-back');
         busy = false;
