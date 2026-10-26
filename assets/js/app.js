@@ -4,6 +4,18 @@
   'use strict';
   var AQ = (global.AQ = global.AQ || {});
 
+  /* Marks the beta deploy (beta branch) so it is never mistaken for the live
+     site. Goes by hostname, so the same code ships to main untouched. */
+  if (global.location.hostname.indexOf('beta.') === 0) {
+    document.title = '[BETA] ' + document.title;
+    document.addEventListener('DOMContentLoaded', function () {
+      var badge = document.createElement('div');
+      badge.className = 'env-badge';
+      badge.textContent = 'BETA';
+      document.body.appendChild(badge);
+    });
+  }
+
   /* Each page keeps its own unfinished run: index.html the full test,
      internet.html etc. their family quiz (set from <main data-quiz> in boot). */
   var STORE_SESSION = 'aq.session.v3';

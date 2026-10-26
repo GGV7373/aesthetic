@@ -161,6 +161,21 @@ body:not(:has(.topbar)) { --topbar-h: 0px; } /* index.html has no Home button */
 
 a.btn { text-decoration: none; }
 
+/* Only on beta.estetikk.com, added by app.js. Doesn't block taps. */
+.env-badge {
+  position: fixed;
+  z-index: 100;
+  top: calc(0.5rem + env(safe-area-inset-top));
+  right: calc(0.5rem + env(safe-area-inset-right));
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-pill);
+  background: #d62828;
+  color: #fff;
+  font: 700 0.7rem/1.4 var(--sans);
+  letter-spacing: 0.08em;
+  pointer-events: none;
+}
+
 /* Touch behaviour: no 300ms delay, no grey flash on tap. */
 button, a, label, input { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
 
