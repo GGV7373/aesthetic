@@ -1,18 +1,6 @@
 # Static site: nothing to build, publish the repository root as-is. The
 # command only checks the data, so a broken file fails the deploy instead of
-# reaching the live site.
+# reaching the live site. Headers live in _headers (shared with Cloudflare).
 [build]
   publish = "."
   command = "node tools/validate.js"
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-
-# Question and aesthetic data changes with the deploy, so it must not be cached hard.
-[[headers]]
-  for = "/data/*"
-  [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"

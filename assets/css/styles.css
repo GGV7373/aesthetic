@@ -161,6 +161,21 @@ body:not(:has(.topbar)) { --topbar-h: 0px; } /* index.html has no Home button */
 
 a.btn { text-decoration: none; }
 
+/* Only on beta.estetikk.com, added by app.js. Doesn't block taps. */
+.env-badge {
+  position: fixed;
+  z-index: 100;
+  top: calc(0.5rem + env(safe-area-inset-top));
+  right: calc(0.5rem + env(safe-area-inset-right));
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-pill);
+  background: #d62828;
+  color: #fff;
+  font: 700 0.7rem/1.4 var(--sans);
+  letter-spacing: 0.08em;
+  pointer-events: none;
+}
+
 /* Touch behaviour: no 300ms delay, no grey flash on tap. */
 button, a, label, input { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
 
@@ -746,9 +761,10 @@ button, a, label, input { -webkit-tap-highlight-color: transparent; touch-action
 }
 
 /* ---------- quiz: one-screen phone layout ---------- */
-/* Below 40rem the quiz is pinned to a single viewport height and the option
-   list flexes to fill whatever is left, so no statement ever needs a scroll
-   to be answered. The page frame is trimmed right down to buy that room. */
+/* Below 40rem the quiz fills at least one viewport height so the card can sit
+   centred, but it is never capped at it: on a short phone the page itself
+   scrolls, rather than squeezing the options into a little scroll box of their
+   own where the bottom answers hide. The page frame is trimmed to buy room. */
 @media (max-width: 39.99rem) {
   #app:has(.screen--quiz) {
     padding-top: 0.85rem;
@@ -756,12 +772,11 @@ button, a, label, input { -webkit-tap-highlight-color: transparent; touch-action
   }
 
   .screen--quiz {
-    min-height: 0;
-    height: calc(100dvh - 0.85rem - var(--topbar-h) - env(safe-area-inset-top));
+    min-height: calc(100dvh - 0.85rem - var(--topbar-h) - env(safe-area-inset-top));
   }
 
   .quiz__head { margin-bottom: 0.8rem; }
-  .quiz__head .eyebrow { margin-bottom: 0.55rem; }
+  .quiz__head .eyebrow { display: none; } /* the page title says it already */
   .quiz__meta { margin-top: 0.5rem; }
 
   /* The card hugs its question and answers and sits centred in the space
@@ -774,20 +789,10 @@ button, a, label, input { -webkit-tap-highlight-color: transparent; touch-action
     line-height: 1.2;
   }
 
-  /* Options share the leftover height evenly; they only scroll as a last
-     resort on unusually short screens. */
-  .options {
-    flex: 0 1 auto;
-    min-height: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    overflow-y: auto;
-  }
+  .options { gap: 5px; }
 
   .option {
-    flex: 0 0 auto;
-    min-height: 48px;
+    min-height: 44px;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     font-size: 0.95rem;

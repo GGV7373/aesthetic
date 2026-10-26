@@ -19,7 +19,7 @@
   function getJSON(url) {
     /* No cache option here: it would make the browser skip the preloaded
        copy from index.html. Freshness comes from the server's
-       Cache-Control header instead (see netlify.toml). */
+       Cache-Control header instead (see _headers). */
     return fetch(url).then(function (res) {
       if (!res.ok) throw new Error(url + ' returned ' + res.status);
       return res.json();
