@@ -1,7 +1,3 @@
 {
-  "quizzes": [
-    "internet",
-    "nature",
-    "goth"
-  ]
+  "quizzes": ["internet", "nature", "goth"]
 }

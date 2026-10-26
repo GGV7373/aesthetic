@@ -11,271 +11,182 @@
       "group": "goth",
       "cluster": "goth-1",
       "text": "Old factories and concrete have a grim kind of beauty.",
-      "dimensions": {
-        "industrial": 2,
-        "architecture": 1
-      }
+      "dimensions": { "industrial": 2, "architecture": 1 }
     },
     {
       "id": 9302,
       "group": "goth",
       "cluster": "goth-2",
       "text": "Lace, velvet and heavy fabrics are what I'd love to wear.",
-      "dimensions": {
-        "ornament": 2,
-        "refinement": 1,
-        "minimalism": -1
-      }
+      "dimensions": { "ornament": 2, "refinement": 1, "minimalism": -1 }
     },
     {
       "id": 9303,
       "group": "goth",
       "cluster": "goth-3",
       "text": "A sharp, all-black outfit with one silver detail beats lace and frills.",
-      "dimensions": {
-        "minimalism": 2,
-        "ornament": -2
-      }
+      "dimensions": { "minimalism": 2, "ornament": -2 }
     },
     {
       "id": 9304,
       "group": "goth",
       "cluster": "goth-4",
       "text": "Neon, black PVC and a high-tech look are more me than anything old-fashioned.",
-      "dimensions": {
-        "futurism": 2,
-        "digital": 1,
-        "history": -2
-      }
+      "dimensions": { "futurism": 2, "digital": 1, "history": -2 }
     },
     {
       "id": 9305,
       "group": "goth",
       "cluster": "goth-5",
       "text": "Cute things with a creepy twist are my favourite.",
-      "dimensions": {
-        "whimsy": 2,
-        "optimism": 1
-      }
+      "dimensions": { "whimsy": 2, "optimism": 1 }
     },
     {
       "id": 9306,
       "group": "goth",
       "cluster": "goth-6",
       "text": "Memories of hanging out at the mall in band shirts make me smile.",
-      "dimensions": {
-        "nostalgia": 2,
-        "retro": 1,
-        "refinement": -1
-      }
+      "dimensions": { "nostalgia": 2, "retro": 1, "refinement": -1 }
     },
     {
       "id": 9307,
       "group": "goth",
       "cluster": "goth-7",
       "text": "Going out to goth nights with my scene matters a lot to me.",
-      "dimensions": {
-        "community": 2,
-        "social": 2
-      }
+      "dimensions": { "community": 2, "social": 2 }
     },
     {
       "id": 9308,
       "group": "goth",
       "cluster": "goth-8",
       "text": "Old small towns far from the city feel haunted in a way I like.",
-      "dimensions": {
-        "nature": 1,
-        "urban": -2,
-        "tradition": 1
-      }
+      "dimensions": { "nature": 1, "urban": -2, "tradition": 1 }
     },
     {
       "id": 9309,
       "group": "goth",
       "cluster": "goth-9",
       "text": "Gothic poems about death and lost love move me more than happy songs.",
-      "dimensions": {
-        "melancholy": 2,
-        "optimism": -1
-      }
+      "dimensions": { "melancholy": 2, "optimism": -1 }
     },
     {
       "id": 9310,
       "group": "goth",
       "cluster": "goth-10",
       "text": "A cosy, cluttered room with candles and crystals sounds perfect.",
-      "dimensions": {
-        "comfort": 2,
-        "mystery": 1,
-        "minimalism": -1
-      }
+      "dimensions": { "comfort": 2, "mystery": 1, "minimalism": -1 }
     },
     {
       "id": 9311,
       "group": "goth",
       "cluster": "goth-11",
       "text": "Victorian mourning dress and old cathedrals pull me in more than anything modern.",
-      "dimensions": {
-        "history": 2,
-        "futurism": -1
-      }
+      "dimensions": { "history": 2, "futurism": -1 }
     },
     {
       "id": 9312,
       "group": "goth",
       "cluster": "goth-12",
       "text": "Gardens, forests and graveyards feel calmer to me than cities.",
-      "dimensions": {
-        "nature": 2,
-        "solitude": 1,
-        "urban": -1
-      }
+      "dimensions": { "nature": 2, "solitude": 1, "urban": -1 }
     },
     {
       "id": 9313,
       "group": "goth",
       "cluster": "goth-13",
       "text": "An elegant, Victorian-style dark look matters more to me than a tough, ripped one.",
-      "dimensions": {
-        "refinement": 2,
-        "realism": -1
-      }
+      "dimensions": { "refinement": 2, "realism": -1 }
     },
     {
       "id": 9314,
       "group": "goth",
       "cluster": "goth-14",
       "text": "Ripped fishnets and scuffed boots look better to me than a polished outfit.",
-      "dimensions": {
-        "realism": 2,
-        "refinement": -1
-      }
+      "dimensions": { "realism": 2, "refinement": -1 }
     },
     {
       "id": 9315,
       "group": "goth",
       "cluster": "goth-15",
       "text": "My dark look is always neat, sharp and carefully put together.",
-      "dimensions": {
-        "order": 2,
-        "chaos": -1
-      }
+      "dimensions": { "order": 2, "chaos": -1 }
     },
     {
       "id": 9316,
       "group": "goth",
       "cluster": "goth-16",
       "text": "Old records and the original eighties scene are my thing.",
-      "dimensions": {
-        "retro": 2
-      }
+      "dimensions": { "retro": 2 }
     },
     {
       "id": 9317,
       "group": "goth",
       "cluster": "goth-17",
       "text": "I'd rather keep to myself than be part of a scene.",
-      "dimensions": {
-        "solitude": 2,
-        "community": -1,
-        "social": -1
-      }
+      "dimensions": { "solitude": 2, "community": -1, "social": -1 }
     },
     {
       "id": 9318,
       "group": "goth",
       "cluster": "goth-18",
       "text": "Old church rituals and family traditions, even the strange ones, matter to me.",
-      "dimensions": {
-        "tradition": 2,
-        "modernity": -1
-      }
+      "dimensions": { "tradition": 2, "modernity": -1 }
     },
     {
       "id": 9319,
       "group": "goth",
       "cluster": "goth-19",
       "text": "Looking different from everyone around me is a big part of being goth for me.",
-      "dimensions": {
-        "individualism": 2
-      }
+      "dimensions": { "individualism": 2 }
     },
     {
       "id": 9320,
       "group": "goth",
       "cluster": "goth-20",
       "text": "Ghost stories, the occult and the unexplained are a big part of what I love.",
-      "dimensions": {
-        "mystery": 2
-      }
+      "dimensions": { "mystery": 2 }
     },
     {
       "id": 9321,
       "group": "goth",
       "cluster": "goth-21",
       "text": "Bright colours have a place in a dark wardrobe.",
-      "dimensions": {
-        "whimsy": 1,
-        "maximalism": 1,
-        "optimism": 1,
-        "darkness": -1
-      }
+      "dimensions": { "whimsy": 1, "maximalism": 1, "optimism": 1, "darkness": -1 }
     },
     {
       "id": 9322,
       "group": "goth",
       "cluster": "goth-22",
       "text": "I'm more into where goth is going next than into how it used to be.",
-      "dimensions": {
-        "modernity": 2,
-        "futurism": 1,
-        "nostalgia": -2
-      }
+      "dimensions": { "modernity": 2, "futurism": 1, "nostalgia": -2 }
     },
     {
       "id": 9323,
       "group": "goth",
       "cluster": "goth-23",
       "text": "I'd rather be alone in nature than out at a club.",
-      "dimensions": {
-        "nature": 1,
-        "solitude": 2,
-        "community": -1,
-        "urban": -1
-      }
+      "dimensions": { "nature": 1, "solitude": 2, "community": -1, "urban": -1 }
     },
     {
       "id": 9324,
       "group": "goth",
       "cluster": "goth-24",
       "text": "New trends and the latest goth looks online are a big part of my style.",
-      "dimensions": {
-        "modernity": 2,
-        "history": -1
-      }
+      "dimensions": { "modernity": 2, "history": -1 }
     },
     {
       "id": 9325,
       "group": "goth",
       "cluster": "goth-25",
       "text": "Ruins overgrown with ivy are more beautiful to me than any new building.",
-      "dimensions": {
-        "nature": 1,
-        "history": 1,
-        "melancholy": 1,
-        "modernity": -1
-      }
+      "dimensions": { "nature": 1, "history": 1, "melancholy": 1, "modernity": -1 }
     },
     {
       "id": 9326,
       "group": "goth",
       "cluster": "goth-26",
       "text": "Vampires, ghosts and dark fairy tales feel more real to me than everyday life.",
-      "dimensions": {
-        "fantasy": 2,
-        "realism": -1
-      }
+      "dimensions": { "fantasy": 2, "realism": -1 }
     }
   ]
 }

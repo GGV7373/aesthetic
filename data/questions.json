@@ -4,85 +4,49 @@
     "group": "sound",
     "cluster": "snd-never-quiet",
     "text": "Living somewhere that's never quiet would wear me down.",
-    "dimensions": {
-      "solitude": 2,
-      "comfort": 1,
-      "order": 1,
-      "social": -1
-    }
+    "dimensions": { "solitude": 2, "comfort": 1, "order": 1, "social": -1 }
   },
   {
     "id": 19,
     "group": "sound",
     "cluster": "chosen-silence",
     "text": "I'd rather have silence than music I didn't pick.",
-    "dimensions": {
-      "solitude": 2,
-      "order": 1,
-      "individualism": 1,
-      "social": -1
-    }
+    "dimensions": { "solitude": 2, "order": 1, "individualism": 1, "social": -1 }
   },
   {
     "id": 20,
     "group": "sound",
     "cluster": "sound-recording-at-home",
     "text": "I'd rather listen to a recording at home than see a band live in a crowd.",
-    "dimensions": {
-      "social": -2,
-      "community": -1,
-      "solitude": 2,
-      "comfort": 1
-    }
+    "dimensions": { "social": -2, "community": -1, "solitude": 2, "comfort": 1 }
   },
   {
     "id": 21,
     "group": "sound",
     "cluster": "listen-alone-loud",
     "text": "My favourite way to listen to music is alone, with the volume up.",
-    "dimensions": {
-      "solitude": 3,
-      "comfort": 1,
-      "individualism": 1,
-      "social": -1
-    }
+    "dimensions": { "solitude": 3, "comfort": 1, "individualism": 1, "social": -1 }
   },
   {
     "id": 72,
     "group": "sound",
     "cluster": "snd-natural-sound",
     "text": "Birdsong, wind and running water calm me down.",
-    "dimensions": {
-      "nature": 2,
-      "comfort": 1,
-      "solitude": 1,
-      "organic": 1
-    }
+    "dimensions": { "nature": 2, "comfort": 1, "solitude": 1, "organic": 1 }
   },
   {
     "id": 74,
     "group": "sound",
     "cluster": "snd-noise-sensitive",
     "text": "Noise bothers me quickly, even noise other people barely notice.",
-    "dimensions": {
-      "solitude": 2,
-      "order": 1,
-      "refinement": 1,
-      "social": -1
-    }
+    "dimensions": { "solitude": 2, "order": 1, "refinement": 1, "social": -1 }
   },
   {
     "id": 79,
     "group": "sound",
     "cluster": "snd-background-ok",
     "text": "A bit of background noise - a cafe, a fan, a radio - helps me concentrate.",
-    "dimensions": {
-      "chaos": 1,
-      "comfort": 1,
-      "social": 1,
-      "order": -1,
-      "solitude": -1
-    }
+    "dimensions": { "chaos": 1, "comfort": 1, "social": 1, "order": -1, "solitude": -1 }
   },
   {
     "id": 82,
@@ -102,107 +66,63 @@
     "group": "sound",
     "cluster": "make-music",
     "text": "Making music myself matters more to me than being good at it.",
-    "dimensions": {
-      "craft": 3,
-      "individualism": 1,
-      "whimsy": 1,
-      "community": 1
-    }
+    "dimensions": { "craft": 3, "individualism": 1, "whimsy": 1, "community": 1 }
   },
   {
     "id": 87,
     "group": "sound",
     "cluster": "sound-not-concert-hall",
     "text": "A formal concert hall is about the last place I'd choose to hear music.",
-    "dimensions": {
-      "refinement": -2,
-      "order": -1,
-      "tradition": -1,
-      "chaos": 1
-    }
+    "dimensions": { "refinement": -2, "order": -1, "tradition": -1, "chaos": 1 }
   },
   {
     "id": 215,
     "group": "sound",
     "cluster": "snd-vinyl-crackle",
     "text": "The hiss and crackle of an old record adds something a clean digital copy doesn't have.",
-    "dimensions": {
-      "nostalgia": 2,
-      "retro": 2,
-      "digital": -2,
-      "craft": 1
-    }
+    "dimensions": { "nostalgia": 2, "retro": 2, "digital": -2, "craft": 1 }
   },
   {
     "id": 216,
     "group": "sound",
     "cluster": "snd-city-hum",
     "text": "The constant hum of a city - traffic, voices, machines - feels alive to me, not annoying.",
-    "dimensions": {
-      "urban": 2,
-      "social": 1,
-      "solitude": -1,
-      "comfort": -1
-    }
+    "dimensions": { "urban": 2, "social": 1, "solitude": -1, "comfort": -1 }
   },
   {
     "id": 253,
     "group": "sound",
     "cluster": "snd-instrument-play",
     "text": "I'd rather make music badly myself than only ever listen to other people's.",
-    "dimensions": {
-      "craft": 2,
-      "individualism": 1,
-      "refinement": -1
-    }
+    "dimensions": { "craft": 2, "individualism": 1, "refinement": -1 }
   },
   {
     "id": 181,
     "group": "music",
     "cluster": "mus-genre-loyalty",
     "text": "The music scene I'm into says a lot about who I am.",
-    "dimensions": {
-      "individualism": 3,
-      "community": 2,
-      "tradition": 1,
-      "social": 1
-    }
+    "dimensions": { "individualism": 3, "community": 2, "tradition": 1, "social": 1 }
   },
   {
     "id": 182,
     "group": "music",
     "cluster": "mus-deep-one-genre",
     "text": "I'd rather go deep into one kind of music than listen a little to everything.",
-    "dimensions": {
-      "intellect": 2,
-      "individualism": 2,
-      "order": 1,
-      "adventure": -1
-    }
+    "dimensions": { "intellect": 2, "individualism": 2, "order": 1, "adventure": -1 }
   },
   {
     "id": 183,
     "group": "music",
     "cluster": "mus-for-dancing",
     "text": "Music is for dancing to, not only for sitting and listening.",
-    "dimensions": {
-      "social": 3,
-      "community": 2,
-      "whimsy": 1,
-      "solitude": -2
-    }
+    "dimensions": { "social": 3, "community": 2, "whimsy": 1, "solitude": -2 }
   },
   {
     "id": 184,
     "group": "music",
     "cluster": "mus-lyrics-first",
     "text": "The words of a song matter to me more than the sound of it.",
-    "dimensions": {
-      "intellect": 2,
-      "realism": 1,
-      "melancholy": 1,
-      "refinement": 1
-    }
+    "dimensions": { "intellect": 2, "realism": 1, "melancholy": 1, "refinement": 1 }
   },
   {
     "id": 185,
@@ -222,132 +142,77 @@
     "group": "music",
     "cluster": "mus-discover-first",
     "text": "Finding music that nobody around me has heard yet is a small thrill.",
-    "dimensions": {
-      "individualism": 2,
-      "adventure": 1,
-      "chaos": 1,
-      "community": -1
-    }
+    "dimensions": { "individualism": 2, "adventure": 1, "chaos": 1, "community": -1 }
   },
   {
     "id": 187,
     "group": "music",
     "cluster": "mus-old-era",
     "text": "There's one era of music I keep going back to, and it isn't today's.",
-    "dimensions": {
-      "nostalgia": 3,
-      "retro": 3,
-      "history": 1,
-      "modernity": -1
-    }
+    "dimensions": { "nostalgia": 3, "retro": 3, "history": 1, "modernity": -1 }
   },
   {
     "id": 188,
     "group": "music",
     "cluster": "mus-machines",
     "text": "Electronic music moves me just as much as music played on guitars, pianos or drums.",
-    "dimensions": {
-      "digital": 2,
-      "futurism": 2,
-      "technology": 1,
-      "craft": -1,
-      "organic": -1
-    }
+    "dimensions": { "digital": 2, "futurism": 2, "technology": 1, "craft": -1, "organic": -1 }
   },
   {
     "id": 189,
     "group": "music",
     "cluster": "mus-in-the-crowd",
     "text": "Being in a crowd at a concert, all moving together, is one of the best feelings there is.",
-    "dimensions": {
-      "social": 3,
-      "community": 3,
-      "chaos": 1,
-      "solitude": -2
-    }
+    "dimensions": { "social": 3, "community": 3, "chaos": 1, "solitude": -2 }
   },
   {
     "id": 190,
     "group": "music",
     "cluster": "mus-just-background",
     "text": "Music is mostly background for me - I rarely just sit and listen to it.",
-    "dimensions": {
-      "comfort": 1,
-      "refinement": -1,
-      "intellect": -1,
-      "craft": -1
-    }
+    "dimensions": { "comfort": 1, "refinement": -1, "intellect": -1, "craft": -1 }
   },
   {
     "id": 249,
     "group": "music",
     "cluster": "mus-live-imperfection",
     "text": "A live show with a few mistakes means more to me than a perfect studio recording.",
-    "dimensions": {
-      "chaos": 1,
-      "adventure": 1,
-      "refinement": -2,
-      "realism": 1
-    }
+    "dimensions": { "chaos": 1, "adventure": 1, "refinement": -2, "realism": 1 }
   },
   {
     "id": 250,
     "group": "music",
     "cluster": "mus-instrumental-no-words",
     "text": "Music without lyrics holds my attention just as well as music with them.",
-    "dimensions": {
-      "intellect": 1,
-      "mystery": 1,
-      "realism": -1
-    }
+    "dimensions": { "intellect": 1, "mystery": 1, "realism": -1 }
   },
   {
     "id": 270,
     "group": "music",
     "cluster": "mus-play-in-public",
     "text": "Singing or playing where strangers can hear me feels natural, not embarrassing.",
-    "dimensions": {
-      "social": 2,
-      "individualism": 1,
-      "refinement": -1
-    }
+    "dimensions": { "social": 2, "individualism": 1, "refinement": -1 }
   },
   {
     "id": 1,
     "group": "nature",
     "cluster": "wilderness",
     "text": "I feel most at ease in places where I can't hear traffic.",
-    "dimensions": {
-      "nature": 2,
-      "solitude": 2,
-      "rural": 1,
-      "urban": -2
-    }
+    "dimensions": { "nature": 2, "solitude": 2, "rural": 1, "urban": -2 }
   },
   {
     "id": 4,
     "group": "nature",
     "cluster": "water",
     "text": "I'm more drawn to coasts, rivers and lakes than to wide open plains.",
-    "dimensions": {
-      "nature": 2,
-      "adventure": 1,
-      "mystery": 1,
-      "melancholy": 1
-    }
+    "dimensions": { "nature": 2, "adventure": 1, "mystery": 1, "melancholy": 1 }
   },
   {
     "id": 5,
     "group": "nature",
     "cluster": "nat-cleanly-built",
     "text": "I like places that are neatly built, with no nature creeping back in.",
-    "dimensions": {
-      "nature": -2,
-      "organic": -2,
-      "order": 2,
-      "modernity": 1,
-      "chaos": -1
-    }
+    "dimensions": { "nature": -2, "organic": -2, "order": 2, "modernity": 1, "chaos": -1 }
   },
   {
     "id": 6,
@@ -368,303 +233,175 @@
     "group": "nature",
     "cluster": "animals",
     "text": "Knowing there are wild animals nearby that I can't see makes a place more exciting.",
-    "dimensions": {
-      "nature": 2,
-      "mystery": 2,
-      "fantasy": 1,
-      "organic": 1
-    }
+    "dimensions": { "nature": 2, "mystery": 2, "fantasy": 1, "organic": 1 }
   },
   {
     "id": 9,
     "group": "nature",
     "cluster": "outdoor-comfort",
     "text": "I'd rather enjoy nature from a window, with the heating on.",
-    "dimensions": {
-      "comfort": 2,
-      "nature": 1,
-      "solitude": 1,
-      "adventure": -2
-    }
+    "dimensions": { "comfort": 2, "nature": 1, "solitude": 1, "adventure": -2 }
   },
   {
     "id": 10,
     "group": "nature",
     "cluster": "nat-vastness",
     "text": "Feeling tiny next to something huge - a mountain, a cliff, the open sea - is something I go looking for.",
-    "dimensions": {
-      "nature": 2,
-      "adventure": 2,
-      "mystery": 1,
-      "melancholy": 1
-    }
+    "dimensions": { "nature": 2, "adventure": 2, "mystery": 1, "melancholy": 1 }
   },
   {
     "id": 11,
     "group": "nature",
     "cluster": "nat-no-growing",
     "text": "I'd rather buy my food and plants than grow them myself.",
-    "dimensions": {
-      "craft": -2,
-      "nature": -2,
-      "tradition": -1,
-      "organic": -1
-    }
+    "dimensions": { "craft": -2, "nature": -2, "tradition": -1, "organic": -1 }
   },
   {
     "id": 18,
     "group": "nature",
     "cluster": "sea-fear",
     "text": "The sea scares me more than it draws me in.",
-    "dimensions": {
-      "adventure": -2,
-      "mystery": -1,
-      "comfort": 1,
-      "nature": -1
-    }
+    "dimensions": { "adventure": -2, "mystery": -1, "comfort": 1, "nature": -1 }
   },
   {
     "id": 26,
     "group": "nature",
     "cluster": "food-origin",
     "text": "Food tastes better when I know where it came from.",
-    "dimensions": {
-      "tradition": 1,
-      "craft": 2,
-      "nature": 1,
-      "community": 1,
-      "rural": 1
-    }
+    "dimensions": { "tradition": 1, "craft": 2, "nature": 1, "community": 1, "rural": 1 }
   },
   {
     "id": 211,
     "group": "nature",
     "cluster": "nat-foraging",
     "text": "I'd rather pick berries or mushrooms myself than buy them in a shop.",
-    "dimensions": {
-      "craft": 1,
-      "nature": 2,
-      "rural": 1,
-      "tradition": 1
-    }
+    "dimensions": { "craft": 1, "nature": 2, "rural": 1, "tradition": 1 }
   },
   {
     "id": 212,
     "group": "nature",
     "cluster": "nat-reclaimed",
     "text": "A building with plants growing through the cracks looks more beautiful to me than one kept spotless.",
-    "dimensions": {
-      "nature": 2,
-      "organic": 2,
-      "order": -2,
-      "modernity": -1,
-      "mystery": 1
-    }
+    "dimensions": { "nature": 2, "organic": 2, "order": -2, "modernity": -1, "mystery": 1 }
   },
   {
     "id": 251,
     "group": "nature",
     "cluster": "nat-night-sky",
     "text": "A clear night sky full of stars is one of my favourite things.",
-    "dimensions": {
-      "nature": 2,
-      "mystery": 1,
-      "adventure": 1,
-      "optimism": 1
-    }
+    "dimensions": { "nature": 2, "mystery": 1, "adventure": 1, "optimism": 1 }
   },
   {
     "id": 2,
     "group": "weather",
     "cluster": "weather",
     "text": "Rain and a low grey sky make a day better, not worse.",
-    "dimensions": {
-      "nature": 1,
-      "melancholy": 2,
-      "mystery": 1,
-      "optimism": -1,
-      "darkness": 1
-    }
+    "dimensions": { "nature": 1, "melancholy": 2, "mystery": 1, "optimism": -1, "darkness": 1 }
   },
   {
     "id": 7,
     "group": "weather",
     "cluster": "weather-spring",
     "text": "Spring and early summer are by far my favourite time of year.",
-    "dimensions": {
-      "optimism": 2,
-      "darkness": -2,
-      "melancholy": -1,
-      "social": 1
-    }
+    "dimensions": { "optimism": 2, "darkness": -2, "melancholy": -1, "social": 1 }
   },
   {
     "id": 14,
     "group": "weather",
     "cluster": "weather-storm",
     "text": "A dramatic sky - stormy light, huge clouds - makes me stop and stare.",
-    "dimensions": {
-      "nature": 2,
-      "mystery": 1,
-      "adventure": 1,
-      "melancholy": 1
-    }
+    "dimensions": { "nature": 2, "mystery": 1, "adventure": 1, "melancholy": 1 }
   },
   {
     "id": 25,
     "group": "weather",
     "cluster": "weather-coldwarm",
     "text": "I'd take a cold, crisp climate over a hot one any day.",
-    "dimensions": {
-      "nature": 1,
-      "melancholy": 1,
-      "comfort": -1,
-      "optimism": -1
-    }
+    "dimensions": { "nature": 1, "melancholy": 1, "comfort": -1, "optimism": -1 }
   },
   {
     "id": 115,
     "group": "weather",
     "cluster": "weather-even-light",
     "text": "I like bright, even light better than shadows and dim corners.",
-    "dimensions": {
-      "darkness": -2,
-      "mystery": -2,
-      "melancholy": -1,
-      "optimism": 1
-    }
+    "dimensions": { "darkness": -2, "mystery": -2, "melancholy": -1, "optimism": 1 }
   },
   {
     "id": 134,
     "group": "weather",
     "cluster": "weather-snow",
     "text": "Snow makes a familiar place feel like somewhere completely different.",
-    "dimensions": {
-      "mystery": 2,
-      "whimsy": 1,
-      "nostalgia": 1,
-      "nature": 1
-    }
+    "dimensions": { "mystery": 2, "whimsy": 1, "nostalgia": 1, "nature": 1 }
   },
   {
     "id": 137,
     "group": "weather",
     "cluster": "weather-wind",
     "text": "I like falling asleep to the sound of wind in the trees and against the windows.",
-    "dimensions": {
-      "nature": 2,
-      "comfort": 1,
-      "solitude": 1,
-      "melancholy": 1
-    }
+    "dimensions": { "nature": 2, "comfort": 1, "solitude": 1, "melancholy": 1 }
   },
   {
     "id": 141,
     "group": "weather",
     "cluster": "home-light",
     "text": "I notice the light in a room before I notice the furniture.",
-    "dimensions": {
-      "architecture": 2,
-      "refinement": 2,
-      "mystery": 1,
-      "melancholy": 1
-    }
+    "dimensions": { "architecture": 2, "refinement": 2, "mystery": 1, "melancholy": 1 }
   },
   {
     "id": 157,
     "group": "weather",
     "cluster": "fog-vs-clear",
     "text": "A foggy landscape looks better to me than one on a clear day.",
-    "dimensions": {
-      "mystery": 2,
-      "melancholy": 2,
-      "nature": 1,
-      "darkness": 1,
-      "optimism": -1
-    }
+    "dimensions": { "mystery": 2, "melancholy": 2, "nature": 1, "darkness": 1, "optimism": -1 }
   },
   {
     "id": 158,
     "group": "weather",
     "cluster": "sunshine-mood",
     "text": "My mood clearly lifts when the sun is out.",
-    "dimensions": {
-      "optimism": 3,
-      "social": 1,
-      "darkness": -2,
-      "melancholy": -2
-    }
+    "dimensions": { "optimism": 3, "social": 1, "darkness": -2, "melancholy": -2 }
   },
   {
     "id": 213,
     "group": "weather",
     "cluster": "weather-fog-walk",
     "text": "Walking out into thick fog feels magical, not unpleasant.",
-    "dimensions": {
-      "mystery": 2,
-      "adventure": 1,
-      "comfort": -1,
-      "melancholy": 1
-    }
+    "dimensions": { "mystery": 2, "adventure": 1, "comfort": -1, "melancholy": 1 }
   },
   {
     "id": 214,
     "group": "weather",
     "cluster": "weather-heatwave",
     "text": "A heatwave makes me restless rather than relaxed.",
-    "dimensions": {
-      "comfort": -2,
-      "optimism": -1,
-      "chaos": 1
-    }
+    "dimensions": { "comfort": -2, "optimism": -1, "chaos": 1 }
   },
   {
     "id": 252,
     "group": "weather",
     "cluster": "weather-thunder-excite",
     "text": "Distant thunder excites me rather than making me nervous.",
-    "dimensions": {
-      "adventure": 1,
-      "mystery": 1,
-      "optimism": 1,
-      "comfort": -1
-    }
+    "dimensions": { "adventure": 1, "mystery": 1, "optimism": 1, "comfort": -1 }
   },
   {
     "id": 12,
     "group": "home",
     "cluster": "home-plants",
     "text": "A room needs something growing in it - a plant, herbs, cut flowers - to feel alive.",
-    "dimensions": {
-      "nature": 2,
-      "organic": 2,
-      "comfort": 1,
-      "minimalism": -1
-    }
+    "dimensions": { "nature": 2, "organic": 2, "comfort": 1, "minimalism": -1 }
   },
   {
     "id": 23,
     "group": "home",
     "cluster": "home-light",
     "text": "How a room is lit matters more to me than what furniture is in it.",
-    "dimensions": {
-      "architecture": 2,
-      "refinement": 2,
-      "comfort": 1,
-      "mystery": 1
-    }
+    "dimensions": { "architecture": 2, "refinement": 2, "comfort": 1, "mystery": 1 }
   },
   {
     "id": 24,
     "group": "home",
     "cluster": "home-bare",
     "text": "I feel calmer in a room that holds only a few things.",
-    "dimensions": {
-      "minimalism": 3,
-      "order": 2,
-      "comfort": 1,
-      "maximalism": -3
-    }
+    "dimensions": { "minimalism": 3, "order": 2, "comfort": 1, "maximalism": -3 }
   },
   {
     "id": 36,
@@ -726,388 +463,224 @@
     "group": "home",
     "cluster": "home-den",
     "text": "I want at least one dark, cosy, closed-in corner to hide away in.",
-    "dimensions": {
-      "comfort": 3,
-      "solitude": 2,
-      "darkness": 2,
-      "minimalism": -1
-    }
+    "dimensions": { "comfort": 3, "solitude": 2, "darkness": 2, "minimalism": -1 }
   },
   {
     "id": 160,
     "group": "home",
     "cluster": "home-taste",
     "text": "I want my home to show my taste at a glance, not look neutral and plain.",
-    "dimensions": {
-      "individualism": 3,
-      "maximalism": 2,
-      "ornament": 1,
-      "minimalism": -2
-    }
+    "dimensions": { "individualism": 3, "maximalism": 2, "ornament": 1, "minimalism": -2 }
   },
   {
     "id": 161,
     "group": "home",
     "cluster": "home-sinkinto",
     "text": "A home should be somewhere to relax into, not a design piece to show off.",
-    "dimensions": {
-      "comfort": 3,
-      "solitude": 1,
-      "refinement": -1,
-      "architecture": -1
-    }
+    "dimensions": { "comfort": 3, "solitude": 1, "refinement": -1, "architecture": -1 }
   },
   {
     "id": 217,
     "group": "home",
     "cluster": "home-many-rooms",
     "text": "A house with odd little rooms and hidden corners appeals to me more than one big open space.",
-    "dimensions": {
-      "architecture": 2,
-      "mystery": 1,
-      "order": -1,
-      "modernity": -1
-    }
+    "dimensions": { "architecture": 2, "mystery": 1, "order": -1, "modernity": -1 }
   },
   {
     "id": 218,
     "group": "home",
     "cluster": "home-shared-vs-own",
     "text": "I'd rather have a home all to myself than share a beautiful one with others.",
-    "dimensions": {
-      "solitude": 2,
-      "individualism": 2,
-      "community": -2,
-      "social": -1
-    }
+    "dimensions": { "solitude": 2, "individualism": 2, "community": -2, "social": -1 }
   },
   {
     "id": 254,
     "group": "home",
     "cluster": "home-guests-often",
     "text": "My home is set up more for having people over than for being alone.",
-    "dimensions": {
-      "social": 2,
-      "community": 1,
-      "solitude": -2
-    }
+    "dimensions": { "social": 2, "community": 1, "solitude": -2 }
   },
   {
     "id": 191,
     "group": "food",
     "cluster": "food-origin",
     "text": "Where my food comes from matters to me - I'd rather know the farm than the brand.",
-    "dimensions": {
-      "tradition": 2,
-      "craft": 1,
-      "nature": 1,
-      "community": 1,
-      "rural": 1
-    }
+    "dimensions": { "tradition": 2, "craft": 1, "nature": 1, "community": 1, "rural": 1 }
   },
   {
     "id": 192,
     "group": "food",
     "cluster": "food-grow-own",
     "text": "I'd like to grow at least some of the food I eat.",
-    "dimensions": {
-      "craft": 2,
-      "nature": 2,
-      "rural": 2,
-      "organic": 1,
-      "tradition": 1
-    }
+    "dimensions": { "craft": 2, "nature": 2, "rural": 2, "organic": 1, "tradition": 1 }
   },
   {
     "id": 193,
     "group": "food",
     "cluster": "food-cook-by-choice",
     "text": "Cooking from scratch is something I enjoy, not a chore.",
-    "dimensions": {
-      "craft": 2,
-      "comfort": 1,
-      "tradition": 1,
-      "individualism": 1
-    }
+    "dimensions": { "craft": 2, "comfort": 1, "tradition": 1, "individualism": 1 }
   },
   {
     "id": 194,
     "group": "food",
     "cluster": "food-long-meal",
     "text": "A long meal with other people is one of my favourite ways to spend an evening.",
-    "dimensions": {
-      "community": 3,
-      "social": 2,
-      "comfort": 1,
-      "solitude": -1
-    }
+    "dimensions": { "community": 3, "social": 2, "comfort": 1, "solitude": -1 }
   },
   {
     "id": 195,
     "group": "food",
     "cluster": "food-plain-quick",
     "text": "I'd rather eat something simple and quick than make a fuss over a meal.",
-    "dimensions": {
-      "realism": 2,
-      "minimalism": 1,
-      "comfort": 1,
-      "refinement": -2,
-      "craft": -1
-    }
+    "dimensions": { "realism": 2, "minimalism": 1, "comfort": 1, "refinement": -2, "craft": -1 }
   },
   {
     "id": 196,
     "group": "food",
     "cluster": "food-market",
     "text": "A good local market means more to me than a big, cheap supermarket.",
-    "dimensions": {
-      "tradition": 2,
-      "rural": 2,
-      "community": 1,
-      "craft": 1,
-      "modernity": -1
-    }
+    "dimensions": { "tradition": 2, "rural": 2, "community": 1, "craft": 1, "modernity": -1 }
   },
   {
     "id": 197,
     "group": "food",
     "cluster": "food-try-unknown",
     "text": "I like trying food I've never heard of, even if it might be bad.",
-    "dimensions": {
-      "adventure": 2,
-      "individualism": 1,
-      "chaos": 1,
-      "comfort": -1
-    }
+    "dimensions": { "adventure": 2, "individualism": 1, "chaos": 1, "comfort": -1 }
   },
   {
     "id": 198,
     "group": "food",
     "cluster": "food-same-things",
     "text": "I'm happy eating the same familiar things most days.",
-    "dimensions": {
-      "order": 2,
-      "comfort": 2,
-      "tradition": 1,
-      "adventure": -2
-    }
+    "dimensions": { "order": 2, "comfort": 2, "tradition": 1, "adventure": -2 }
   },
   {
     "id": 199,
     "group": "food",
     "cluster": "food-table-set",
     "text": "How the table is set and how the food looks are part of the fun for me.",
-    "dimensions": {
-      "refinement": 2,
-      "ornament": 2,
-      "order": 1,
-      "tradition": 1
-    }
+    "dimensions": { "refinement": 2, "ornament": 2, "order": 1, "tradition": 1 }
   },
   {
     "id": 200,
     "group": "food",
     "cluster": "food-feeding-people",
     "text": "Cooking for people is one of the main ways I show I care.",
-    "dimensions": {
-      "community": 3,
-      "tradition": 2,
-      "craft": 1,
-      "social": 1
-    }
+    "dimensions": { "community": 3, "tradition": 2, "craft": 1, "social": 1 }
   },
   {
     "id": 219,
     "group": "food",
     "cluster": "food-mess-of-making",
     "text": "Making a mess of the kitchen while cooking is part of the fun.",
-    "dimensions": {
-      "chaos": 1,
-      "craft": 1,
-      "comfort": 1,
-      "order": -1
-    }
+    "dimensions": { "chaos": 1, "craft": 1, "comfort": 1, "order": -1 }
   },
   {
     "id": 220,
     "group": "food",
     "cluster": "food-eat-fast",
     "text": "Food is mostly fuel to me - I don't take my time over meals.",
-    "dimensions": {
-      "community": -2,
-      "refinement": -2,
-      "realism": 1,
-      "comfort": -1
-    }
+    "dimensions": { "community": -2, "refinement": -2, "realism": 1, "comfort": -1 }
   },
   {
     "id": 255,
     "group": "food",
     "cluster": "food-ferment-preserve",
     "text": "Pickling, fermenting or preserving food myself appeals to me more than buying it ready-made.",
-    "dimensions": {
-      "craft": 2,
-      "tradition": 1,
-      "rural": 1,
-      "modernity": -1
-    }
+    "dimensions": { "craft": 2, "tradition": 1, "rural": 1, "modernity": -1 }
   },
   {
     "id": 28,
     "group": "past",
     "cluster": "old-places",
     "text": "I'm more drawn to places that show their past than to places that are new and perfect.",
-    "dimensions": {
-      "history": 3,
-      "nostalgia": 2,
-      "modernity": -2,
-      "architecture": 1
-    }
+    "dimensions": { "history": 3, "nostalgia": 2, "modernity": -2, "architecture": 1 }
   },
   {
     "id": 29,
     "group": "past",
     "cluster": "secondhand",
     "text": "Second-hand shops and flea markets are more exciting to me than new shops.",
-    "dimensions": {
-      "nostalgia": 2,
-      "history": 2,
-      "craft": 1,
-      "maximalism": 1,
-      "modernity": -2
-    }
+    "dimensions": { "nostalgia": 2, "history": 2, "craft": 1, "maximalism": 1, "modernity": -2 }
   },
   {
     "id": 31,
     "group": "past",
     "cluster": "no-nostalgia",
     "text": "I rarely miss the way things used to be.",
-    "dimensions": {
-      "nostalgia": -3,
-      "modernity": 2,
-      "futurism": 1,
-      "tradition": -1
-    }
+    "dimensions": { "nostalgia": -3, "modernity": 2, "futurism": 1, "tradition": -1 }
   },
   {
     "id": 32,
     "group": "past",
     "cluster": "old-photos",
     "text": "Old photos of people I never knew can move me.",
-    "dimensions": {
-      "nostalgia": 3,
-      "melancholy": 2,
-      "history": 2,
-      "mystery": 1
-    }
+    "dimensions": { "nostalgia": 3, "melancholy": 2, "history": 2, "mystery": 1 }
   },
   {
     "id": 34,
     "group": "past",
     "cluster": "old-media",
     "text": "The films and music I like best were made before I was born.",
-    "dimensions": {
-      "retro": 3,
-      "nostalgia": 2,
-      "history": 1,
-      "modernity": -1
-    }
+    "dimensions": { "retro": 3, "nostalgia": 2, "history": 1, "modernity": -1 }
   },
   {
     "id": 40,
     "group": "past",
     "cluster": "past-museums-tire",
     "text": "Museums tire me out before I've seen half of them.",
-    "dimensions": {
-      "history": -2,
-      "intellect": -2,
-      "order": -1,
-      "comfort": 1
-    }
+    "dimensions": { "history": -2, "intellect": -2, "order": -1, "comfort": 1 }
   },
   {
     "id": 42,
     "group": "past",
     "cluster": "past-archives-dull",
     "text": "Old maps, letters and diaries bore me.",
-    "dimensions": {
-      "history": -2,
-      "mystery": -2,
-      "intellect": -1,
-      "nostalgia": -1
-    }
+    "dimensions": { "history": -2, "mystery": -2, "intellect": -1, "nostalgia": -1 }
   },
   {
     "id": 46,
     "group": "past",
     "cluster": "past-own-past",
     "text": "I often go back over my own past, in old photos or just in my head.",
-    "dimensions": {
-      "nostalgia": 3,
-      "melancholy": 2,
-      "solitude": 1,
-      "history": 1
-    }
+    "dimensions": { "nostalgia": 3, "melancholy": 2, "solitude": 1, "history": 1 }
   },
   {
     "id": 47,
     "group": "past",
     "cluster": "not-keeping",
     "text": "I find it easy to throw out old things, even ones with a history.",
-    "dimensions": {
-      "history": -2,
-      "nostalgia": -2,
-      "modernity": 2,
-      "minimalism": 2
-    }
+    "dimensions": { "history": -2, "nostalgia": -2, "modernity": 2, "minimalism": 2 }
   },
   {
     "id": 148,
     "group": "past",
     "cluster": "past-not-sentimental",
     "text": "Things that other people find sentimental usually leave me cold.",
-    "dimensions": {
-      "nostalgia": -2,
-      "melancholy": -1,
-      "comfort": -1,
-      "optimism": 1
-    }
+    "dimensions": { "nostalgia": -2, "melancholy": -1, "comfort": -1, "optimism": 1 }
   },
   {
     "id": 221,
     "group": "past",
     "cluster": "past-family-stories",
     "text": "Hearing how my family used to live interests me more than most of the news.",
-    "dimensions": {
-      "history": 2,
-      "tradition": 1,
-      "community": 1,
-      "futurism": -1
-    }
+    "dimensions": { "history": 2, "tradition": 1, "community": 1, "futurism": -1 }
   },
   {
     "id": 222,
     "group": "past",
     "cluster": "past-ruins-visit",
     "text": "Ruins and abandoned buildings are more interesting to visit than restored, polished ones.",
-    "dimensions": {
-      "history": 2,
-      "mystery": 2,
-      "melancholy": 1,
-      "modernity": -2
-    }
+    "dimensions": { "history": 2, "mystery": 2, "melancholy": 1, "modernity": -2 }
   },
   {
     "id": 256,
     "group": "past",
     "cluster": "past-handwriting",
     "text": "A handwritten letter means more to me than the same words sent instantly.",
-    "dimensions": {
-      "nostalgia": 2,
-      "craft": 1,
-      "digital": -2,
-      "tradition": 1
-    }
+    "dimensions": { "nostalgia": 2, "craft": 1, "digital": -2, "tradition": 1 }
   },
   {
     "id": 30,
@@ -1127,155 +700,91 @@
     "group": "tradition",
     "cluster": "rituals-tradition",
     "text": "Traditions are worth keeping alive, even when nobody remembers how they started.",
-    "dimensions": {
-      "tradition": 3,
-      "history": 1,
-      "community": 1,
-      "mystery": 1,
-      "modernity": -1
-    }
+    "dimensions": { "tradition": 3, "history": 1, "community": 1, "mystery": 1, "modernity": -1 }
   },
   {
     "id": 38,
     "group": "tradition",
     "cluster": "trad-learn-old-craft",
     "text": "I'd like to learn a craft the slow, old-fashioned way.",
-    "dimensions": {
-      "tradition": 2,
-      "craft": 2,
-      "history": 1,
-      "community": 1
-    }
+    "dimensions": { "tradition": 2, "craft": 2, "history": 1, "community": 1 }
   },
   {
     "id": 48,
     "group": "tradition",
     "cluster": "trad-ancestry-flat",
     "text": "Stories about my ancestors feel distant to me.",
-    "dimensions": {
-      "history": -1,
-      "community": -2,
-      "tradition": -2,
-      "nostalgia": -1
-    }
+    "dimensions": { "history": -1, "community": -2, "tradition": -2, "nostalgia": -1 }
   },
   {
     "id": 91,
     "group": "tradition",
     "cluster": "trad-no-group-need",
     "text": "I'm happy without belonging to any group or club.",
-    "dimensions": {
-      "community": -3,
-      "social": -1,
-      "tradition": -1,
-      "solitude": 1
-    }
+    "dimensions": { "community": -3, "social": -1, "tradition": -1, "solitude": 1 }
   },
   {
     "id": 95,
     "group": "tradition",
     "cluster": "neighbourhood",
     "text": "Getting to know my neighbours is worth the effort to me.",
-    "dimensions": {
-      "community": 3,
-      "tradition": 2,
-      "rural": 1,
-      "individualism": -1
-    }
+    "dimensions": { "community": 3, "tradition": 2, "rural": 1, "individualism": -1 }
   },
   {
     "id": 99,
     "group": "tradition",
     "cluster": "trad-feasts-chore",
     "text": "Big yearly gatherings feel more like a duty than a pleasure.",
-    "dimensions": {
-      "community": -2,
-      "tradition": -2,
-      "social": -1,
-      "order": 1
-    }
+    "dimensions": { "community": -2, "tradition": -2, "social": -1, "order": 1 }
   },
   {
     "id": 101,
     "group": "tradition",
     "cluster": "being-cared-for",
     "text": "I quite like being taken care of by other people.",
-    "dimensions": {
-      "community": 2,
-      "comfort": 2,
-      "social": 1,
-      "individualism": -2
-    }
+    "dimensions": { "community": 2, "comfort": 2, "social": 1, "individualism": -2 }
   },
   {
     "id": 104,
     "group": "tradition",
     "cluster": "trad-superstition-silly",
     "text": "Superstitions and old customs seem a bit silly to me.",
-    "dimensions": {
-      "mystery": -2,
-      "tradition": -2,
-      "fantasy": -1,
-      "whimsy": -1
-    }
+    "dimensions": { "mystery": -2, "tradition": -2, "fantasy": -1, "whimsy": -1 }
   },
   {
     "id": 113,
     "group": "tradition",
     "cluster": "ritual-calm",
     "text": "Symbols and rituals put me at ease.",
-    "dimensions": {
-      "tradition": 2,
-      "mystery": 2,
-      "order": 2,
-      "refinement": 1
-    }
+    "dimensions": { "tradition": 2, "mystery": 2, "order": 2, "refinement": 1 }
   },
   {
     "id": 223,
     "group": "tradition",
     "cluster": "trad-mark-occasions",
     "text": "Celebrating a day the same way every year - a meal, a ritual, a visit - means more to me than doing something new.",
-    "dimensions": {
-      "tradition": 3,
-      "community": 1,
-      "order": 1,
-      "adventure": -1
-    }
+    "dimensions": { "tradition": 3, "community": 1, "order": 1, "adventure": -1 }
   },
   {
     "id": 224,
     "group": "tradition",
     "cluster": "trad-outsider-fine",
     "text": "Not joining in with a group's customs has never bothered me.",
-    "dimensions": {
-      "individualism": 2,
-      "tradition": -2,
-      "community": -1
-    }
+    "dimensions": { "individualism": 2, "tradition": -2, "community": -1 }
   },
   {
     "id": 257,
     "group": "tradition",
     "cluster": "trad-teach-younger",
     "text": "I go out of my way to pass skills or stories on to younger people.",
-    "dimensions": {
-      "tradition": 2,
-      "community": 2,
-      "history": 1
-    }
+    "dimensions": { "tradition": 2, "community": 2, "history": 1 }
   },
   {
     "id": 39,
     "group": "screens",
     "cluster": "net-no-tech-nostalgia",
     "text": "With technology, newer is just better - I don't miss the old stuff.",
-    "dimensions": {
-      "nostalgia": -2,
-      "retro": -2,
-      "digital": -1,
-      "modernity": 1
-    }
+    "dimensions": { "nostalgia": -2, "retro": -2, "digital": -1, "modernity": 1 }
   },
   {
     "id": 50,
@@ -1296,182 +805,105 @@
     "group": "screens",
     "cluster": "net-online-friends",
     "text": "Friendships that mostly happen online are just as real to me as any others.",
-    "dimensions": {
-      "digital": 2,
-      "community": 2,
-      "social": 1,
-      "solitude": -1
-    }
+    "dimensions": { "digital": 2, "community": 2, "social": 1, "solitude": -1 }
   },
   {
     "id": 55,
     "group": "screens",
     "cluster": "net-screens-restless",
     "text": "Screens glowing at night make a place feel restless, not cosy.",
-    "dimensions": {
-      "digital": -2,
-      "comfort": -1,
-      "darkness": -1,
-      "order": 1
-    }
+    "dimensions": { "digital": -2, "comfort": -1, "darkness": -1, "order": 1 }
   },
   {
     "id": 58,
     "group": "screens",
     "cluster": "net-screen-less-real",
     "text": "Something made only on a screen feels less real to me than something made by hand.",
-    "dimensions": {
-      "digital": -2,
-      "technology": -1,
-      "modernity": -1
-    }
+    "dimensions": { "digital": -2, "technology": -1, "modernity": -1 }
   },
   {
     "id": 62,
     "group": "screens",
     "cluster": "unavailable",
     "text": "I miss the days when you didn't have to be reachable all the time.",
-    "dimensions": {
-      "nostalgia": 2,
-      "solitude": 2,
-      "digital": -2,
-      "social": -1,
-      "tradition": 1
-    }
+    "dimensions": { "nostalgia": 2, "solitude": 2, "digital": -2, "social": -1, "tradition": 1 }
   },
   {
     "id": 68,
     "group": "screens",
     "cluster": "digital-space",
     "text": "A digital space can feel as real as a physical place.",
-    "dimensions": {
-      "digital": 3,
-      "fantasy": 2,
-      "technology": 2,
-      "realism": -1
-    }
+    "dimensions": { "digital": 3, "fantasy": 2, "technology": 2, "realism": -1 }
   },
   {
     "id": 69,
     "group": "screens",
     "cluster": "update-fatigue",
     "text": "Keeping up with new apps and updates wears me out.",
-    "dimensions": {
-      "digital": -2,
-      "modernity": -2,
-      "tradition": 2,
-      "comfort": 1,
-      "futurism": -1
-    }
+    "dimensions": { "digital": -2, "modernity": -2, "tradition": 2, "comfort": 1, "futurism": -1 }
   },
   {
     "id": 154,
     "group": "screens",
     "cluster": "net-phone-first",
     "text": "My phone is the first and last thing I look at every day, and I'm fine with that.",
-    "dimensions": {
-      "digital": 3,
-      "modernity": 1,
-      "comfort": 1,
-      "solitude": 1
-    }
+    "dimensions": { "digital": 3, "modernity": 1, "comfort": 1, "solitude": 1 }
   },
   {
     "id": 162,
     "group": "screens",
     "cluster": "net-at-home-in-game",
     "text": "I've felt truly at home inside a video game or virtual world.",
-    "dimensions": {
-      "digital": 3,
-      "fantasy": 2,
-      "comfort": 1,
-      "community": 1
-    }
+    "dimensions": { "digital": 3, "fantasy": 2, "comfort": 1, "community": 1 }
   },
   {
     "id": 225,
     "group": "screens",
     "cluster": "net-curated-feed",
     "text": "I put real effort into controlling what shows up in my feeds.",
-    "dimensions": {
-      "order": 1,
-      "individualism": 1,
-      "digital": 2,
-      "intellect": 1
-    }
+    "dimensions": { "order": 1, "individualism": 1, "digital": 2, "intellect": 1 }
   },
   {
     "id": 226,
     "group": "screens",
     "cluster": "net-offline-week",
     "text": "A week with no internet at all sounds more like a relief than a loss.",
-    "dimensions": {
-      "digital": -2,
-      "solitude": 1,
-      "comfort": 1,
-      "nature": 1
-    }
+    "dimensions": { "digital": -2, "solitude": 1, "comfort": 1, "nature": 1 }
   },
   {
     "id": 258,
     "group": "screens",
     "cluster": "net-anonymous-persona",
     "text": "I've had an online identity that has nothing to do with my real name.",
-    "dimensions": {
-      "individualism": 2,
-      "digital": 2,
-      "fantasy": 1,
-      "social": -1
-    }
+    "dimensions": { "individualism": 2, "digital": 2, "fantasy": 1, "social": -1 }
   },
   {
     "id": 35,
     "group": "future",
     "cluster": "new-looks-new",
     "text": "New technology should look new, not copy something old.",
-    "dimensions": {
-      "modernity": 2,
-      "futurism": 2,
-      "retro": -2,
-      "nostalgia": -1,
-      "minimalism": 1
-    }
+    "dimensions": { "modernity": 2, "futurism": 2, "retro": -2, "nostalgia": -1, "minimalism": 1 }
   },
   {
     "id": 37,
     "group": "future",
     "cluster": "future-different",
     "text": "I like the idea that the future will be nothing like today.",
-    "dimensions": {
-      "futurism": 3,
-      "optimism": 1,
-      "modernity": 2,
-      "tradition": -2
-    }
+    "dimensions": { "futurism": 3, "optimism": 1, "modernity": 2, "tradition": -2 }
   },
   {
     "id": 49,
     "group": "future",
     "cluster": "fut-tech-unimpressed",
     "text": "New technology rarely impresses me as much as people expect it to.",
-    "dimensions": {
-      "technology": -2,
-      "futurism": -2,
-      "optimism": -1,
-      "modernity": -1
-    }
+    "dimensions": { "technology": -2, "futurism": -2, "optimism": -1, "modernity": -1 }
   },
   {
     "id": 53,
     "group": "future",
     "cluster": "future-fear",
     "text": "The future feels more scary than exciting.",
-    "dimensions": {
-      "futurism": -2,
-      "melancholy": 2,
-      "darkness": 2,
-      "optimism": -3
-    }
+    "dimensions": { "futurism": -2, "melancholy": 2, "darkness": 2, "optimism": -3 }
   },
   {
     "id": 54,
@@ -1491,268 +923,154 @@
     "group": "future",
     "cluster": "fut-reorganise",
     "text": "I enjoy imagining how society could work in a completely different way.",
-    "dimensions": {
-      "futurism": 2,
-      "intellect": 2,
-      "optimism": 1,
-      "individualism": 1
-    }
+    "dimensions": { "futurism": 2, "intellect": 2, "optimism": 1, "individualism": 1 }
   },
   {
     "id": 61,
     "group": "future",
     "cluster": "fut-thinking-machines",
     "text": "The idea of machines that can think excites me more than it worries me.",
-    "dimensions": {
-      "futurism": 2,
-      "technology": 2,
-      "optimism": 2,
-      "darkness": -1
-    }
+    "dimensions": { "futurism": 2, "technology": 2, "optimism": 2, "darkness": -1 }
   },
   {
     "id": 163,
     "group": "future",
     "cluster": "fut-space-later",
     "text": "Money spent on space travel would be better spent on problems here on Earth.",
-    "dimensions": {
-      "futurism": -2,
-      "technology": -1,
-      "optimism": -1,
-      "modernity": 1
-    }
+    "dimensions": { "futurism": -2, "technology": -1, "optimism": -1, "modernity": 1 }
   },
   {
     "id": 164,
     "group": "future",
     "cluster": "more-of-same",
     "text": "I think the next few decades will be more like the last ones than people expect.",
-    "dimensions": {
-      "futurism": -2,
-      "tradition": 2,
-      "realism": 2,
-      "modernity": -1
-    }
+    "dimensions": { "futurism": -2, "tradition": 2, "realism": 2, "modernity": -1 }
   },
   {
     "id": 165,
     "group": "future",
     "cluster": "new-materials",
     "text": "New materials and new ways of making things excite me more than old ones.",
-    "dimensions": {
-      "futurism": 2,
-      "modernity": 3,
-      "technology": 2,
-      "tradition": -2,
-      "craft": -1
-    }
+    "dimensions": { "futurism": 2, "modernity": 3, "technology": 2, "tradition": -2, "craft": -1 }
   },
   {
     "id": 227,
     "group": "future",
     "cluster": "fut-fix-not-replace",
     "text": "I'd rather fix and adapt what already exists than replace it with something new.",
-    "dimensions": {
-      "craft": 2,
-      "futurism": -2,
-      "tradition": 1,
-      "industrial": -1
-    }
+    "dimensions": { "craft": 2, "futurism": -2, "tradition": 1, "industrial": -1 }
   },
   {
     "id": 228,
     "group": "future",
     "cluster": "fut-green-city",
     "text": "Cities covered in plants and solar panels excite me more than shiny glass towers.",
-    "dimensions": {
-      "nature": 2,
-      "futurism": 1,
-      "optimism": 1,
-      "industrial": -1
-    }
+    "dimensions": { "nature": 2, "futurism": 1, "optimism": 1, "industrial": -1 }
   },
   {
     "id": 259,
     "group": "future",
     "cluster": "fut-body-tech",
     "text": "Technology built into the body - implants, upgrades - interests me more than it worries me.",
-    "dimensions": {
-      "futurism": 2,
-      "technology": 2,
-      "darkness": -1,
-      "optimism": 1
-    }
+    "dimensions": { "futurism": 2, "technology": 2, "darkness": -1, "optimism": 1 }
   },
   {
     "id": 45,
     "group": "craft-tools",
     "cluster": "paper",
     "text": "Handwriting, letters and real books have a value screens can't replace.",
-    "dimensions": {
-      "craft": 2,
-      "tradition": 2,
-      "nostalgia": 2,
-      "digital": -2,
-      "intellect": 1
-    }
+    "dimensions": { "craft": 2, "tradition": 2, "nostalgia": 2, "digital": -2, "intellect": 1 }
   },
   {
     "id": 52,
     "group": "craft-tools",
     "cluster": "craft-mechanism-dull",
     "text": "I'm happy using a machine without knowing how it works inside.",
-    "dimensions": {
-      "craft": -2,
-      "industrial": -1,
-      "technology": -1,
-      "intellect": -1
-    }
+    "dimensions": { "craft": -2, "industrial": -1, "technology": -1, "intellect": -1 }
   },
   {
     "id": 56,
     "group": "craft-tools",
     "cluster": "hand-tools",
     "text": "I prefer tools made of metal and wood to tools that need an app.",
-    "dimensions": {
-      "craft": 3,
-      "tradition": 2,
-      "digital": -2,
-      "technology": -1,
-      "realism": 1
-    }
+    "dimensions": { "craft": 3, "tradition": 2, "digital": -2, "technology": -1, "realism": 1 }
   },
   {
     "id": 57,
     "group": "craft-tools",
     "cluster": "machines-beauty",
     "text": "Big machines, cranes and factories have their own kind of beauty.",
-    "dimensions": {
-      "industrial": 3,
-      "urban": 1,
-      "realism": 1,
-      "adventure": 1,
-      "architecture": 1
-    }
+    "dimensions": { "industrial": 3, "urban": 1, "realism": 1, "adventure": 1, "architecture": 1 }
   },
   {
     "id": 64,
     "group": "craft-tools",
     "cluster": "craft-not-how",
     "text": "I only care whether something works, not how it's made.",
-    "dimensions": {
-      "intellect": -2,
-      "technology": -1,
-      "craft": -1,
-      "modernity": 1
-    }
+    "dimensions": { "intellect": -2, "technology": -1, "craft": -1, "modernity": 1 }
   },
   {
     "id": 65,
     "group": "craft-tools",
     "cluster": "craft-gear-research",
     "text": "I research tools and gear far more than I really need to before buying.",
-    "dimensions": {
-      "intellect": 2,
-      "craft": 2,
-      "realism": 1,
-      "order": 1
-    }
+    "dimensions": { "intellect": 2, "craft": 2, "realism": 1, "order": 1 }
   },
   {
     "id": 66,
     "group": "craft-tools",
     "cluster": "craft-buy-not-build",
     "text": "I'd rather buy something that works than build one myself.",
-    "dimensions": {
-      "craft": -3,
-      "individualism": -1,
-      "industrial": -1,
-      "comfort": 1
-    }
+    "dimensions": { "craft": -3, "individualism": -1, "industrial": -1, "comfort": 1 }
   },
   {
     "id": 67,
     "group": "craft-tools",
     "cluster": "craft-take-apart",
     "text": "I take things apart to see how they work, even if I might not get them back together.",
-    "dimensions": {
-      "craft": 2,
-      "intellect": 2,
-      "individualism": 1,
-      "chaos": 1
-    }
+    "dimensions": { "craft": 2, "intellect": 2, "individualism": 1, "chaos": 1 }
   },
   {
     "id": 126,
     "group": "craft-tools",
     "cluster": "perfect-craft",
     "text": "Perfect craftsmanship impresses me more than bold ideas.",
-    "dimensions": {
-      "craft": 2,
-      "refinement": 3,
-      "order": 2,
-      "chaos": -2
-    }
+    "dimensions": { "craft": 2, "refinement": 3, "order": 2, "chaos": -2 }
   },
   {
     "id": 153,
     "group": "craft-tools",
     "cluster": "craft-hands-no-rest",
     "text": "Working with my hands is about the last way I'd choose to relax.",
-    "dimensions": {
-      "craft": -3,
-      "organic": -1,
-      "comfort": -1,
-      "digital": 1
-    }
+    "dimensions": { "craft": -3, "organic": -1, "comfort": -1, "digital": 1 }
   },
   {
     "id": 229,
     "group": "craft-tools",
     "cluster": "craft-repair-visible",
     "text": "A visible repair - a sewn-on patch, a glued crack - is more honest than hiding the damage.",
-    "dimensions": {
-      "craft": 2,
-      "realism": 1,
-      "refinement": -1,
-      "ornament": -1
-    }
+    "dimensions": { "craft": 2, "realism": 1, "refinement": -1, "ornament": -1 }
   },
   {
     "id": 230,
     "group": "craft-tools",
     "cluster": "craft-instructions",
     "text": "I'd rather follow exact instructions than figure something out by feel.",
-    "dimensions": {
-      "order": 2,
-      "intellect": 1,
-      "chaos": -2,
-      "craft": -1
-    }
+    "dimensions": { "order": 2, "intellect": 1, "chaos": -2, "craft": -1 }
   },
   {
     "id": 260,
     "group": "craft-tools",
     "cluster": "craft-learn-from-scratch",
     "text": "I'd rather learn a brand-new skill from scratch than get better at one I already have.",
-    "dimensions": {
-      "adventure": 1,
-      "craft": 1,
-      "chaos": 1,
-      "order": -1
-    }
+    "dimensions": { "adventure": 1, "craft": 1, "chaos": 1, "order": -1 }
   },
   {
     "id": 201,
     "group": "money",
     "cluster": "money-own-less",
     "text": "Owning less is a relief to me, not a sacrifice.",
-    "dimensions": {
-      "minimalism": 3,
-      "order": 2,
-      "comfort": -1,
-      "maximalism": -2
-    }
+    "dimensions": { "minimalism": 3, "order": 2, "comfort": -1, "maximalism": -2 }
   },
   {
     "id": 202,
@@ -1772,62 +1090,35 @@
     "group": "money",
     "cluster": "money-track-spending",
     "text": "I keep close track of where my money goes.",
-    "dimensions": {
-      "order": 3,
-      "realism": 2,
-      "intellect": 1,
-      "chaos": -2
-    }
+    "dimensions": { "order": 3, "realism": 2, "intellect": 1, "chaos": -2 }
   },
   {
     "id": 204,
     "group": "money",
     "cluster": "money-cheap-version",
     "text": "I buy the cheap version of most things and don't feel like I'm missing out.",
-    "dimensions": {
-      "realism": 2,
-      "minimalism": 1,
-      "refinement": -2,
-      "ornament": -1
-    }
+    "dimensions": { "realism": 2, "minimalism": 1, "refinement": -2, "ornament": -1 }
   },
   {
     "id": 205,
     "group": "money",
     "cluster": "money-experience-over-object",
     "text": "Spending money on an experience feels better to me than spending it on a thing.",
-    "dimensions": {
-      "adventure": 2,
-      "minimalism": 1,
-      "community": 1,
-      "maximalism": -1
-    }
+    "dimensions": { "adventure": 2, "minimalism": 1, "community": 1, "maximalism": -1 }
   },
   {
     "id": 206,
     "group": "money",
     "cluster": "money-pay-local",
     "text": "I'll pay quite a bit more for something made locally or by a small business.",
-    "dimensions": {
-      "craft": 2,
-      "tradition": 1,
-      "community": 1,
-      "individualism": 1,
-      "realism": -1
-    }
+    "dimensions": { "craft": 2, "tradition": 1, "community": 1, "individualism": 1, "realism": -1 }
   },
   {
     "id": 207,
     "group": "money",
     "cluster": "money-things-lift-mood",
     "text": "Having nice things around me lifts my mood more than money in the bank.",
-    "dimensions": {
-      "comfort": 2,
-      "maximalism": 2,
-      "ornament": 1,
-      "minimalism": -2,
-      "realism": -1
-    }
+    "dimensions": { "comfort": 2, "maximalism": 2, "ornament": 1, "minimalism": -2, "realism": -1 }
   },
   {
     "id": 208,
@@ -1847,235 +1138,140 @@
     "group": "money",
     "cluster": "money-keep-things-long",
     "text": "I keep things much longer than most people - clothes, phones, cars.",
-    "dimensions": {
-      "tradition": 2,
-      "craft": 1,
-      "nostalgia": 1,
-      "modernity": -2,
-      "comfort": 1
-    }
+    "dimensions": { "tradition": 2, "craft": 1, "nostalgia": 1, "modernity": -2, "comfort": 1 }
   },
   {
     "id": 210,
     "group": "money",
     "cluster": "money-smaller-life",
     "text": "I'd take a smaller, simpler life if it meant more free time.",
-    "dimensions": {
-      "minimalism": 2,
-      "comfort": 1,
-      "adventure": 1,
-      "order": -1,
-      "community": 1
-    }
+    "dimensions": { "minimalism": 2, "comfort": 1, "adventure": 1, "order": -1, "community": 1 }
   },
   {
     "id": 231,
     "group": "money",
     "cluster": "money-save-for-later",
     "text": "I'd rather save up carefully for something than spend money as it comes in.",
-    "dimensions": {
-      "order": 2,
-      "realism": 1,
-      "adventure": -1,
-      "chaos": -1
-    }
+    "dimensions": { "order": 2, "realism": 1, "adventure": -1, "chaos": -1 }
   },
   {
     "id": 232,
     "group": "money",
     "cluster": "money-gift-giving",
     "text": "Finding the right gift for someone matters more to me than spending the money on myself.",
-    "dimensions": {
-      "community": 2,
-      "craft": 1,
-      "individualism": -1,
-      "refinement": 1
-    }
+    "dimensions": { "community": 2, "craft": 1, "individualism": -1, "refinement": 1 }
   },
   {
     "id": 261,
     "group": "money",
     "cluster": "money-lend-borrow",
     "text": "I'd rather share and borrow things with people around me than everyone owning their own.",
-    "dimensions": {
-      "community": 2,
-      "minimalism": 1,
-      "individualism": -1
-    }
+    "dimensions": { "community": 2, "minimalism": 1, "individualism": -1 }
   },
   {
     "id": 27,
     "group": "people",
     "cluster": "ppl-recharge-with-people",
     "text": "I don't need much time alone - being around people recharges me.",
-    "dimensions": {
-      "solitude": -2,
-      "social": 2,
-      "community": 1
-    }
+    "dimensions": { "solitude": -2, "social": 2, "community": 1 }
   },
   {
     "id": 88,
     "group": "people",
     "cluster": "crowd-energy",
     "text": "Being around lots of people gives me energy.",
-    "dimensions": {
-      "social": 3,
-      "urban": 2,
-      "community": 1,
-      "solitude": -3
-    }
+    "dimensions": { "social": 3, "urban": 2, "community": 1, "solitude": -3 }
   },
   {
     "id": 89,
     "group": "people",
     "cluster": "small-evenings",
     "text": "My best evenings are small ones, with a few people and long conversations.",
-    "dimensions": {
-      "community": 2,
-      "intellect": 2,
-      "comfort": 2,
-      "social": -1,
-      "refinement": 1
-    }
+    "dimensions": { "community": 2, "intellect": 2, "comfort": 2, "social": -1, "refinement": 1 }
   },
   {
     "id": 90,
     "group": "people",
     "cluster": "alone-activities",
     "text": "I'm happy doing things alone that most people would rather do with others.",
-    "dimensions": {
-      "solitude": 3,
-      "individualism": 3,
-      "social": -2
-    }
+    "dimensions": { "solitude": 3, "individualism": 3, "social": -2 }
   },
   {
     "id": 96,
     "group": "people",
     "cluster": "leave-parties",
     "text": "I get tired of parties quickly and want to go home.",
-    "dimensions": {
-      "solitude": 3,
-      "social": -3,
-      "comfort": 1
-    }
+    "dimensions": { "solitude": 3, "social": -3, "comfort": 1 }
   },
   {
     "id": 97,
     "group": "people",
     "cluster": "ppl-strangers",
     "text": "I find it easy to start talking to a stranger - on a train or in a queue.",
-    "dimensions": {
-      "social": 3,
-      "community": 1,
-      "urban": 1,
-      "solitude": -2
-    }
+    "dimensions": { "social": 3, "community": 1, "urban": 1, "solitude": -2 }
   },
   {
     "id": 98,
     "group": "people",
     "cluster": "few-confidants",
     "text": "I'd rather share my interests with a few people than with everyone.",
-    "dimensions": {
-      "solitude": 2,
-      "individualism": 2,
-      "intellect": 1,
-      "social": -1
-    }
+    "dimensions": { "solitude": 2, "individualism": 2, "intellect": 1, "social": -1 }
   },
   {
     "id": 100,
     "group": "people",
     "cluster": "ppl-ask-help",
     "text": "I ask for help easily when I need it.",
-    "dimensions": {
-      "community": 2,
-      "social": 1,
-      "individualism": -2,
-      "comfort": 1
-    }
+    "dimensions": { "community": 2, "social": 1, "individualism": -2, "comfort": 1 }
   },
   {
     "id": 102,
     "group": "people",
     "cluster": "ppl-host",
     "text": "I like having people over as often as I can.",
-    "dimensions": {
-      "social": 3,
-      "community": 2,
-      "comfort": 1,
-      "solitude": -2
-    }
+    "dimensions": { "social": 3, "community": 2, "comfort": 1, "solitude": -2 }
   },
   {
     "id": 166,
     "group": "people",
     "cluster": "ppl-family",
     "text": "I stay in close, regular contact with my family, or the people who feel like family.",
-    "dimensions": {
-      "community": 3,
-      "tradition": 2,
-      "social": 1
-    }
+    "dimensions": { "community": 3, "tradition": 2, "social": 1 }
   },
   {
     "id": 233,
     "group": "people",
     "cluster": "ppl-deep-vs-wide",
     "text": "A handful of deep friendships matter more to me than a wide circle of acquaintances.",
-    "dimensions": {
-      "solitude": 1,
-      "individualism": 1,
-      "community": 1,
-      "social": -1
-    }
+    "dimensions": { "solitude": 1, "individualism": 1, "community": 1, "social": -1 }
   },
   {
     "id": 234,
     "group": "people",
     "cluster": "ppl-read-room",
     "text": "When I walk into a room, I notice the mood before anything else.",
-    "dimensions": {
-      "social": 2,
-      "intellect": 1,
-      "solitude": -1
-    }
+    "dimensions": { "social": 2, "intellect": 1, "solitude": -1 }
   },
   {
     "id": 262,
     "group": "people",
     "cluster": "ppl-comfortable-silence",
     "text": "Sitting in silence with someone feels comfortable to me, not awkward.",
-    "dimensions": {
-      "solitude": 1,
-      "comfort": 1,
-      "social": 1
-    }
+    "dimensions": { "solitude": 1, "comfort": 1, "social": 1 }
   },
   {
     "id": 15,
     "group": "unexplained",
     "cluster": "unex-show-everything",
     "text": "I like a view where I can see everything clearly, with nothing hidden.",
-    "dimensions": {
-      "mystery": -2,
-      "realism": 1,
-      "optimism": 1
-    }
+    "dimensions": { "mystery": -2, "realism": 1, "optimism": 1 }
   },
   {
     "id": 41,
     "group": "unexplained",
     "cluster": "true-story",
     "text": "I'd rather hear a story that's true than one that's beautiful.",
-    "dimensions": {
-      "realism": 3,
-      "intellect": 1,
-      "fantasy": -2,
-      "ornament": -1
-    }
+    "dimensions": { "realism": 3, "intellect": 1, "fantasy": -2, "ornament": -1 }
   },
   {
     "id": 80,
@@ -2095,436 +1291,259 @@
     "group": "unexplained",
     "cluster": "unex-unsolved",
     "text": "I enjoy reading about unsolved cases and disappearances.",
-    "dimensions": {
-      "mystery": 3,
-      "darkness": 2,
-      "intellect": 1,
-      "realism": -1
-    }
+    "dimensions": { "mystery": 3, "darkness": 2, "intellect": 1, "realism": -1 }
   },
   {
     "id": 106,
     "group": "unexplained",
     "cluster": "explanations",
     "text": "I want to know how things actually work, not what they might mean.",
-    "dimensions": {
-      "realism": 3,
-      "intellect": 2,
-      "fantasy": -2,
-      "mystery": -2
-    }
+    "dimensions": { "realism": 3, "intellect": 2, "fantasy": -2, "mystery": -2 }
   },
   {
     "id": 107,
     "group": "unexplained",
     "cluster": "scary-comfort",
     "text": "Scary stories feel cosy to me, not upsetting.",
-    "dimensions": {
-      "darkness": 3,
-      "mystery": 2,
-      "comfort": 1,
-      "optimism": -1
-    }
+    "dimensions": { "darkness": 3, "mystery": 2, "comfort": 1, "optimism": -1 }
   },
   {
     "id": 108,
     "group": "unexplained",
     "cluster": "unex-plain-explanation",
     "text": "I believe everything has a normal explanation, even things we can't explain yet.",
-    "dimensions": {
-      "mystery": -2,
-      "fantasy": -1,
-      "realism": 1,
-      "intellect": 1
-    }
+    "dimensions": { "mystery": -2, "fantasy": -1, "realism": 1, "intellect": 1 }
   },
   {
     "id": 111,
     "group": "unexplained",
     "cluster": "unex-signs",
     "text": "Coincidences sometimes feel like they're trying to tell me something.",
-    "dimensions": {
-      "mystery": 3,
-      "fantasy": 2,
-      "realism": -2,
-      "whimsy": 1
-    }
+    "dimensions": { "mystery": 3, "fantasy": 2, "realism": -2, "whimsy": 1 }
   },
   {
     "id": 114,
     "group": "unexplained",
     "cluster": "nonfiction",
     "text": "I'd rather read a book of facts than a novel.",
-    "dimensions": {
-      "intellect": 2,
-      "realism": 3,
-      "fantasy": -2
-    }
+    "dimensions": { "intellect": 2, "realism": 3, "fantasy": -2 }
   },
   {
     "id": 167,
     "group": "unexplained",
     "cluster": "sacred-places",
     "text": "Some places - an old church, a graveyard, a deep forest - deserve quiet respect, even when nobody is watching.",
-    "dimensions": {
-      "mystery": 2,
-      "tradition": 2,
-      "darkness": 1,
-      "realism": -1
-    }
+    "dimensions": { "mystery": 2, "tradition": 2, "darkness": 1, "realism": -1 }
   },
   {
     "id": 235,
     "group": "unexplained",
     "cluster": "unex-dreams-meaning",
     "text": "I take my dreams seriously, as if they mean something.",
-    "dimensions": {
-      "mystery": 2,
-      "fantasy": 2,
-      "intellect": -1,
-      "realism": -2
-    }
+    "dimensions": { "mystery": 2, "fantasy": 2, "intellect": -1, "realism": -2 }
   },
   {
     "id": 236,
     "group": "unexplained",
     "cluster": "unex-old-maps",
     "text": "A map with blank, unexplored areas is more interesting to me than one that shows everything.",
-    "dimensions": {
-      "mystery": 2,
-      "adventure": 1,
-      "order": -1,
-      "realism": -1
-    }
+    "dimensions": { "mystery": 2, "adventure": 1, "order": -1, "realism": -1 }
   },
   {
     "id": 263,
     "group": "unexplained",
     "cluster": "unex-old-superstitions",
     "text": "I have a few small superstitions, even though I don't really believe them.",
-    "dimensions": {
-      "mystery": 1,
-      "tradition": 1,
-      "realism": -1
-    }
+    "dimensions": { "mystery": 1, "tradition": 1, "realism": -1 }
   },
   {
     "id": 105,
     "group": "imagination",
     "cluster": "imag-no-other-worlds",
     "text": "Imagining worlds that don't exist feels like a waste of time to me.",
-    "dimensions": {
-      "fantasy": -3,
-      "mystery": -1,
-      "realism": 1
-    }
+    "dimensions": { "fantasy": -3, "mystery": -1, "realism": 1 }
   },
   {
     "id": 109,
     "group": "imagination",
     "cluster": "imag-worldbuilding",
     "text": "I make up imaginary places or stories in my head just for fun.",
-    "dimensions": {
-      "fantasy": 3,
-      "whimsy": 1,
-      "intellect": 1,
-      "solitude": 1
-    }
+    "dimensions": { "fantasy": 3, "whimsy": 1, "intellect": 1, "solitude": 1 }
   },
   {
     "id": 110,
     "group": "imagination",
     "cluster": "odd-humour",
     "text": "I like weird, unpredictable humour.",
-    "dimensions": {
-      "whimsy": 3,
-      "chaos": 2,
-      "individualism": 1,
-      "refinement": -1
-    }
+    "dimensions": { "whimsy": 3, "chaos": 2, "individualism": 1, "refinement": -1 }
   },
   {
     "id": 112,
     "group": "imagination",
     "cluster": "collecting",
     "text": "I collect little things other people would throw away.",
-    "dimensions": {
-      "whimsy": 2,
-      "maximalism": 2,
-      "nostalgia": 2,
-      "craft": 1,
-      "minimalism": -2
-    }
+    "dimensions": { "whimsy": 2, "maximalism": 2, "nostalgia": 2, "craft": 1, "minimalism": -2 }
   },
   {
     "id": 116,
     "group": "imagination",
     "cluster": "imag-no-childishness",
     "text": "I have little patience for adults acting childish on purpose.",
-    "dimensions": {
-      "whimsy": -3,
-      "chaos": -1
-    }
+    "dimensions": { "whimsy": -3, "chaos": -1 }
   },
   {
     "id": 168,
     "group": "imagination",
     "cluster": "imag-pretend",
     "text": "I enjoy pretending to be someone else - in games, costumes or acting.",
-    "dimensions": {
-      "fantasy": 2,
-      "whimsy": 2,
-      "social": 1,
-      "individualism": 1
-    }
+    "dimensions": { "fantasy": 2, "whimsy": 2, "social": 1, "individualism": 1 }
   },
   {
     "id": 169,
     "group": "imagination",
     "cluster": "imag-no-childhood-things",
     "text": "I've kept almost nothing from my childhood, and I don't miss any of it.",
-    "dimensions": {
-      "nostalgia": -3,
-      "whimsy": -1,
-      "minimalism": 1,
-      "maximalism": -1
-    }
+    "dimensions": { "nostalgia": -3, "whimsy": -1, "minimalism": 1, "maximalism": -1 }
   },
   {
     "id": 170,
     "group": "imagination",
     "cluster": "invented-art",
     "text": "I prefer art that's clearly made-up to art that shows real life.",
-    "dimensions": {
-      "fantasy": 3,
-      "ornament": 1,
-      "realism": -3
-    }
+    "dimensions": { "fantasy": 3, "ornament": 1, "realism": -3 }
   },
   {
     "id": 171,
     "group": "imagination",
     "cluster": "fun-is-enough",
     "text": "Having fun is reason enough to do something.",
-    "dimensions": {
-      "whimsy": 3,
-      "optimism": 2,
-      "refinement": -2,
-      "intellect": -1
-    }
+    "dimensions": { "whimsy": 3, "optimism": 2, "refinement": -2, "intellect": -1 }
   },
   {
     "id": 172,
     "group": "imagination",
     "cluster": "impatient-with-fantasy",
     "text": "I quickly lose patience with things that are pure fantasy.",
-    "dimensions": {
-      "fantasy": -3,
-      "realism": 3,
-      "whimsy": -2
-    }
+    "dimensions": { "fantasy": -3, "realism": 3, "whimsy": -2 }
   },
   {
     "id": 237,
     "group": "imagination",
     "cluster": "imag-daydream-often",
     "text": "I often lose track of time daydreaming without meaning to.",
-    "dimensions": {
-      "fantasy": 2,
-      "whimsy": 1,
-      "intellect": -1,
-      "order": -1
-    }
+    "dimensions": { "fantasy": 2, "whimsy": 1, "intellect": -1, "order": -1 }
   },
   {
     "id": 238,
     "group": "imagination",
     "cluster": "imag-rules-of-world",
     "text": "Made-up worlds only interest me if they follow their own rules.",
-    "dimensions": {
-      "fantasy": 1,
-      "intellect": 2,
-      "order": 1,
-      "whimsy": -1
-    }
+    "dimensions": { "fantasy": 1, "intellect": 2, "order": 1, "whimsy": -1 }
   },
   {
     "id": 264,
     "group": "imagination",
     "cluster": "imag-alter-ego",
     "text": "I've imagined a whole other version of me living a different life.",
-    "dimensions": {
-      "fantasy": 2,
-      "whimsy": 1,
-      "realism": -1
-    }
+    "dimensions": { "fantasy": 2, "whimsy": 1, "realism": -1 }
   },
   {
     "id": 77,
     "group": "order",
     "cluster": "symmetry",
     "text": "Symmetrical things make me feel calm.",
-    "dimensions": {
-      "order": 3,
-      "refinement": 2,
-      "minimalism": 1,
-      "chaos": -2
-    }
+    "dimensions": { "order": 3, "refinement": 2, "minimalism": 1, "chaos": -2 }
   },
   {
     "id": 118,
     "group": "order",
     "cluster": "planning",
     "text": "I enjoy planning trips down to the last detail.",
-    "dimensions": {
-      "order": 3,
-      "comfort": 1,
-      "chaos": -2,
-      "adventure": -1
-    }
+    "dimensions": { "order": 3, "comfort": 1, "chaos": -2, "adventure": -1 }
   },
   {
     "id": 119,
     "group": "order",
     "cluster": "unplanned-best",
     "text": "The best things in my life happened without any planning.",
-    "dimensions": {
-      "chaos": 3,
-      "adventure": 2,
-      "optimism": 1,
-      "order": -2
-    }
+    "dimensions": { "chaos": 3, "adventure": 2, "optimism": 1, "order": -2 }
   },
   {
     "id": 120,
     "group": "order",
     "cluster": "mess-unease",
     "text": "Mess around me makes me uneasy.",
-    "dimensions": {
-      "order": 3,
-      "minimalism": 2,
-      "chaos": -3,
-      "maximalism": -1
-    }
+    "dimensions": { "order": 3, "minimalism": 2, "chaos": -3, "maximalism": -1 }
   },
   {
     "id": 121,
     "group": "order",
     "cluster": "creative-mess",
     "text": "I work best with a bit of mess around me.",
-    "dimensions": {
-      "chaos": 3,
-      "individualism": 1,
-      "craft": 1,
-      "order": -2,
-      "maximalism": 1
-    }
+    "dimensions": { "chaos": 3, "individualism": 1, "craft": 1, "order": -2, "maximalism": 1 }
   },
   {
     "id": 122,
     "group": "order",
     "cluster": "rules",
     "text": "Rules are there to be followed, not bent.",
-    "dimensions": {
-      "order": 3,
-      "tradition": 2,
-      "individualism": -2,
-      "chaos": -2
-    }
+    "dimensions": { "order": 3, "tradition": 2, "individualism": -2, "chaos": -2 }
   },
   {
     "id": 123,
     "group": "order",
     "cluster": "unfinished",
     "text": "I like things that are a little unfinished.",
-    "dimensions": {
-      "chaos": 2,
-      "craft": 2,
-      "organic": 2,
-      "realism": 1,
-      "refinement": -2
-    }
+    "dimensions": { "chaos": 2, "craft": 2, "organic": 2, "realism": 1, "refinement": -2 }
   },
   {
     "id": 124,
     "group": "order",
     "cluster": "order-plan-change",
     "text": "A sudden change of plans can throw me off for the rest of the day.",
-    "dimensions": {
-      "order": 3,
-      "comfort": 1,
-      "chaos": -2,
-      "adventure": -1
-    }
+    "dimensions": { "order": 3, "comfort": 1, "chaos": -2, "adventure": -1 }
   },
   {
     "id": 127,
     "group": "order",
     "cluster": "order-messy-cope",
     "text": "My files, photos and notes are a mess, and I'm mostly fine with that.",
-    "dimensions": {
-      "order": -3,
-      "chaos": 1,
-      "minimalism": -1
-    }
+    "dimensions": { "order": -3, "chaos": 1, "minimalism": -1 }
   },
   {
     "id": 129,
     "group": "order",
     "cluster": "order-many-projects",
     "text": "I like having lots of unrelated projects going at once.",
-    "dimensions": {
-      "chaos": 3,
-      "individualism": 1,
-      "maximalism": 1,
-      "order": -2
-    }
+    "dimensions": { "chaos": 3, "individualism": 1, "maximalism": 1, "order": -2 }
   },
   {
     "id": 239,
     "group": "order",
     "cluster": "order-junk-drawer",
     "text": "There's a drawer or corner in my home that I let stay messy on purpose.",
-    "dimensions": {
-      "chaos": 1,
-      "order": -1,
-      "comfort": 1
-    }
+    "dimensions": { "chaos": 1, "order": -1, "comfort": 1 }
   },
   {
     "id": 240,
     "group": "order",
     "cluster": "order-labelled",
     "text": "Things work better for me when they're labelled and have a fixed place.",
-    "dimensions": {
-      "order": 3,
-      "chaos": -2,
-      "minimalism": 1
-    }
+    "dimensions": { "order": 3, "chaos": -2, "minimalism": 1 }
   },
   {
     "id": 265,
     "group": "order",
     "cluster": "order-colour-coded",
     "text": "I find things easier to handle when they're sorted or colour-coded.",
-    "dimensions": {
-      "order": 2,
-      "minimalism": 1,
-      "chaos": -1
-    }
+    "dimensions": { "order": 2, "minimalism": 1, "chaos": -1 }
   },
   {
     "id": 13,
     "group": "style",
     "cluster": "materials-patina",
     "text": "Materials that age well - wood, leather, stone - are nicer than ones that stay perfect.",
-    "dimensions": {
-      "craft": 2,
-      "organic": 2,
-      "history": 1,
-      "nostalgia": 1,
-      "modernity": -2
-    }
+    "dimensions": { "craft": 2, "organic": 2, "history": 1, "nostalgia": 1, "modernity": -2 }
   },
   {
     "id": 84,
@@ -2558,12 +1577,7 @@
     "group": "style",
     "cluster": "style-clothes-just-clothes",
     "text": "My clothes are just clothes - they don't need to say anything about me.",
-    "dimensions": {
-      "individualism": -3,
-      "refinement": -1,
-      "minimalism": 1,
-      "comfort": 1
-    }
+    "dimensions": { "individualism": -3, "refinement": -1, "minimalism": 1, "comfort": 1 }
   },
   {
     "id": 132,
@@ -2583,294 +1597,168 @@
     "group": "style",
     "cluster": "style-touch",
     "text": "I pick things by how they feel in my hands as much as by how they look.",
-    "dimensions": {
-      "organic": 2,
-      "craft": 2,
-      "comfort": 1,
-      "refinement": 1
-    }
+    "dimensions": { "organic": 2, "craft": 2, "comfort": 1, "refinement": 1 }
   },
   {
     "id": 135,
     "group": "style",
     "cluster": "chrome-gloss",
     "text": "Shiny, glossy, chrome and mirror surfaces appeal to me.",
-    "dimensions": {
-      "futurism": 2,
-      "refinement": 2,
-      "digital": 2,
-      "modernity": 2,
-      "organic": -2
-    }
+    "dimensions": { "futurism": 2, "refinement": 2, "digital": 2, "modernity": 2, "organic": -2 }
   },
   {
     "id": 136,
     "group": "style",
     "cluster": "pattern-layers",
     "text": "I like patterns, fabrics and lots of layers.",
-    "dimensions": {
-      "maximalism": 3,
-      "ornament": 3,
-      "comfort": 2,
-      "craft": 1,
-      "minimalism": -3
-    }
+    "dimensions": { "maximalism": 3, "ornament": 3, "comfort": 2, "craft": 1, "minimalism": -3 }
   },
   {
     "id": 139,
     "group": "style",
     "cluster": "hardwearing-clothes",
     "text": "Clothes should look like they can handle rough wear.",
-    "dimensions": {
-      "craft": 2,
-      "adventure": 2,
-      "realism": 2,
-      "industrial": 1,
-      "refinement": -2
-    }
+    "dimensions": { "craft": 2, "adventure": 2, "realism": 2, "industrial": 1, "refinement": -2 }
   },
   {
     "id": 140,
     "group": "style",
     "cluster": "artificial-shine",
     "text": "Glittery, shiny, slightly fake-looking colours are fun.",
-    "dimensions": {
-      "whimsy": 3,
-      "digital": 2,
-      "maximalism": 2,
-      "futurism": 1,
-      "organic": -2
-    }
+    "dimensions": { "whimsy": 3, "digital": 2, "maximalism": 2, "futurism": 1, "organic": -2 }
   },
   {
     "id": 241,
     "group": "style",
     "cluster": "style-uniform",
     "text": "Wearing almost the same outfit every day would suit me fine.",
-    "dimensions": {
-      "minimalism": 2,
-      "individualism": -1,
-      "order": 1,
-      "whimsy": -1
-    }
+    "dimensions": { "minimalism": 2, "individualism": -1, "order": 1, "whimsy": -1 }
   },
   {
     "id": 242,
     "group": "style",
     "cluster": "style-costume-play",
     "text": "Dressing up dramatically - even for something ordinary - appeals to me.",
-    "dimensions": {
-      "whimsy": 2,
-      "ornament": 2,
-      "individualism": 1,
-      "refinement": -1
-    }
+    "dimensions": { "whimsy": 2, "ornament": 2, "individualism": 1, "refinement": -1 }
   },
   {
     "id": 266,
     "group": "style",
     "cluster": "style-inherited-clothes",
     "text": "Wearing something second-hand feels better to me than wearing something brand new.",
-    "dimensions": {
-      "nostalgia": 2,
-      "tradition": 1,
-      "craft": 1,
-      "modernity": -1
-    }
+    "dimensions": { "nostalgia": 2, "tradition": 1, "craft": 1, "modernity": -1 }
   },
   {
     "id": 16,
     "group": "travel",
     "cluster": "long-walk",
     "text": "I'd rather walk a long way alone than a short way with a crowd.",
-    "dimensions": {
-      "solitude": 3,
-      "adventure": 2,
-      "social": -2,
-      "individualism": 1
-    }
+    "dimensions": { "solitude": 3, "adventure": 2, "social": -2, "individualism": 1 }
   },
   {
     "id": 22,
     "group": "travel",
     "cluster": "uncomfortable-places",
     "text": "Places that are a bit uncomfortable can still be worth going to.",
-    "dimensions": {
-      "adventure": 2,
-      "darkness": 1,
-      "mystery": 1,
-      "comfort": -2,
-      "realism": 1
-    }
+    "dimensions": { "adventure": 2, "darkness": 1, "mystery": 1, "comfort": -2, "realism": 1 }
   },
   {
     "id": 125,
     "group": "travel",
     "cluster": "light-packing",
     "text": "I pack light and can leave at short notice.",
-    "dimensions": {
-      "adventure": 3,
-      "chaos": 2,
-      "minimalism": 2,
-      "comfort": -1,
-      "order": -1
-    }
+    "dimensions": { "adventure": 3, "chaos": 2, "minimalism": 2, "comfort": -1, "order": -1 }
   },
   {
     "id": 128,
     "group": "travel",
     "cluster": "trav-city-wander",
     "text": "Wandering around a city with nowhere in particular to go is my favourite kind of day.",
-    "dimensions": {
-      "urban": 3,
-      "adventure": 1,
-      "solitude": 1,
-      "rural": -1
-    }
+    "dimensions": { "urban": 3, "adventure": 1, "solitude": 1, "rural": -1 }
   },
   {
     "id": 146,
     "group": "travel",
     "cluster": "trav-exciting-over-comfort",
     "text": "I'd take an exciting life over a comfortable one.",
-    "dimensions": {
-      "comfort": -3,
-      "adventure": 2,
-      "chaos": 1,
-      "order": -1
-    }
+    "dimensions": { "comfort": -3, "adventure": 2, "chaos": 1, "order": -1 }
   },
   {
     "id": 149,
     "group": "travel",
     "cluster": "trav-hard-trip",
     "text": "A challenging trip appeals to me more than a relaxing holiday.",
-    "dimensions": {
-      "adventure": 3,
-      "comfort": -2,
-      "realism": 1,
-      "order": 1
-    }
+    "dimensions": { "adventure": 3, "comfort": -2, "realism": 1, "order": 1 }
   },
   {
     "id": 173,
     "group": "travel",
     "cluster": "one-place-deep",
     "text": "I'd rather really get to know one place than see five places quickly.",
-    "dimensions": {
-      "intellect": 2,
-      "order": 1,
-      "refinement": 1,
-      "comfort": 1,
-      "adventure": -1
-    }
+    "dimensions": { "intellect": 2, "order": 1, "refinement": 1, "comfort": 1, "adventure": -1 }
   },
   {
     "id": 174,
     "group": "travel",
     "cluster": "getting-lost",
     "text": "Getting lost is part of the fun.",
-    "dimensions": {
-      "adventure": 3,
-      "chaos": 2,
-      "mystery": 1,
-      "order": -2
-    }
+    "dimensions": { "adventure": 3, "chaos": 2, "mystery": 1, "order": -2 }
   },
   {
     "id": 175,
     "group": "travel",
     "cluster": "bad-at-it",
     "text": "I like trying things I know I'm bad at.",
-    "dimensions": {
-      "adventure": 2,
-      "individualism": 2,
-      "whimsy": 1,
-      "comfort": -2
-    }
+    "dimensions": { "adventure": 2, "individualism": 2, "whimsy": 1, "comfort": -2 }
   },
   {
     "id": 176,
     "group": "travel",
     "cluster": "same-places",
     "text": "I prefer travelling to places I've been before.",
-    "dimensions": {
-      "comfort": 2,
-      "tradition": 2,
-      "order": 2,
-      "adventure": -3
-    }
+    "dimensions": { "comfort": 2, "tradition": 2, "order": 2, "adventure": -3 }
   },
   {
     "id": 243,
     "group": "travel",
     "cluster": "trav-same-destination",
     "text": "Going back to a place I already love beats discovering somewhere new.",
-    "dimensions": {
-      "tradition": 1,
-      "comfort": 1,
-      "adventure": -2,
-      "order": 1
-    }
+    "dimensions": { "tradition": 1, "comfort": 1, "adventure": -2, "order": 1 }
   },
   {
     "id": 244,
     "group": "travel",
     "cluster": "trav-language-barrier",
     "text": "Not speaking the language somewhere makes a trip more interesting, not more stressful.",
-    "dimensions": {
-      "adventure": 2,
-      "mystery": 1,
-      "comfort": -1,
-      "chaos": 1
-    }
+    "dimensions": { "adventure": 2, "mystery": 1, "comfort": -1, "chaos": 1 }
   },
   {
     "id": 267,
     "group": "travel",
     "cluster": "trav-map-before-app",
     "text": "I'd rather find my way with a paper map than a phone, even if it's slower.",
-    "dimensions": {
-      "digital": -2,
-      "craft": 1,
-      "adventure": 1,
-      "order": -1
-    }
+    "dimensions": { "digital": -2, "craft": 1, "adventure": 1, "order": -1 }
   },
   {
     "id": 44,
     "group": "temperament",
     "cluster": "temp-nostalgic-unknown",
     "text": "I feel nostalgic for places and times I never actually lived through.",
-    "dimensions": {
-      "nostalgia": 3,
-      "melancholy": 2,
-      "fantasy": 1,
-      "history": 1
-    }
+    "dimensions": { "nostalgia": 3, "melancholy": 2, "fantasy": 1, "history": 1 }
   },
   {
     "id": 93,
     "group": "temperament",
     "cluster": "temp-calm",
     "text": "I'd describe myself as more calm than restless.",
-    "dimensions": {
-      "order": 2,
-      "comfort": 2,
-      "chaos": -2,
-      "adventure": -1
-    }
+    "dimensions": { "order": 2, "comfort": 2, "chaos": -2, "adventure": -1 }
   },
   {
     "id": 117,
     "group": "temperament",
     "cluster": "temp-expect-worst",
     "text": "I tend to expect things to go wrong.",
-    "dimensions": {
-      "optimism": -3,
-      "melancholy": 2,
-      "darkness": 1
-    }
+    "dimensions": { "optimism": -3, "melancholy": 2, "darkness": 1 }
   },
   {
     "id": 138,
@@ -2890,189 +1778,112 @@
     "group": "temperament",
     "cluster": "temp-not-transient",
     "text": "I rarely think about things ending or passing away.",
-    "dimensions": {
-      "melancholy": -2,
-      "darkness": -1,
-      "history": -1,
-      "optimism": 1
-    }
+    "dimensions": { "melancholy": -2, "darkness": -1, "history": -1, "optimism": 1 }
   },
   {
     "id": 143,
     "group": "temperament",
     "cluster": "enthusiasm",
     "text": "I get excited about things easily.",
-    "dimensions": {
-      "optimism": 3,
-      "whimsy": 2,
-      "social": 1,
-      "melancholy": -2
-    }
+    "dimensions": { "optimism": 3, "whimsy": 2, "social": 1, "melancholy": -2 }
   },
   {
     "id": 145,
     "group": "temperament",
     "cluster": "seriousness",
     "text": "I take myself fairly seriously.",
-    "dimensions": {
-      "refinement": 2,
-      "intellect": 2,
-      "order": 1,
-      "whimsy": -3
-    }
+    "dimensions": { "refinement": 2, "intellect": 2, "order": 1, "whimsy": -3 }
   },
   {
     "id": 150,
     "group": "temperament",
     "cluster": "world-friendly",
     "text": "Deep down, the world is a friendly place.",
-    "dimensions": {
-      "optimism": 3,
-      "community": 2,
-      "darkness": -2,
-      "melancholy": -2
-    }
+    "dimensions": { "optimism": 3, "community": 2, "darkness": -2, "melancholy": -2 }
   },
   {
     "id": 152,
     "group": "temperament",
     "cluster": "temp-want-lift",
     "text": "Art that's only sad doesn't do much for me - I want some hope in it.",
-    "dimensions": {
-      "melancholy": -2,
-      "darkness": -1,
-      "refinement": -1,
-      "optimism": 1
-    }
+    "dimensions": { "melancholy": -2, "darkness": -1, "refinement": -1, "optimism": 1 }
   },
   {
     "id": 177,
     "group": "temperament",
     "cluster": "temp-easily-moved",
     "text": "Films, music and books make me cry more easily than I'd admit.",
-    "dimensions": {
-      "melancholy": 2,
-      "whimsy": 1,
-      "refinement": 1,
-      "realism": -1
-    }
+    "dimensions": { "melancholy": 2, "whimsy": 1, "refinement": 1, "realism": -1 }
   },
   {
     "id": 245,
     "group": "temperament",
     "cluster": "temp-decide-fast",
     "text": "I'd rather decide fast and live with it than think about it for ages.",
-    "dimensions": {
-      "chaos": 1,
-      "order": -1,
-      "adventure": 1,
-      "intellect": -1
-    }
+    "dimensions": { "chaos": 1, "order": -1, "adventure": 1, "intellect": -1 }
   },
   {
     "id": 246,
     "group": "temperament",
     "cluster": "temp-need-quiet-reset",
     "text": "After a busy few days, I need proper time alone to feel like myself again.",
-    "dimensions": {
-      "solitude": 2,
-      "social": -1,
-      "comfort": 1
-    }
+    "dimensions": { "solitude": 2, "social": -1, "comfort": 1 }
   },
   {
     "id": 268,
     "group": "temperament",
     "cluster": "temp-routine-comfort",
     "text": "A predictable daily routine makes me feel steady, not bored.",
-    "dimensions": {
-      "order": 2,
-      "comfort": 1,
-      "adventure": -2
-    }
+    "dimensions": { "order": 2, "comfort": 1, "adventure": -2 }
   },
   {
     "id": 59,
     "group": "values",
     "cluster": "val-few-good-things",
     "text": "I'd rather own a few expensive things that last than lots of cheap ones.",
-    "dimensions": {
-      "minimalism": 2,
-      "refinement": 2,
-      "realism": 1,
-      "maximalism": -2
-    }
+    "dimensions": { "minimalism": 2, "refinement": 2, "realism": 1, "maximalism": -2 }
   },
   {
     "id": 85,
     "group": "values",
     "cluster": "function-first",
     "text": "How well something works matters more to me than how it looks.",
-    "dimensions": {
-      "realism": 3,
-      "ornament": -2,
-      "refinement": -2,
-      "order": 1
-    }
+    "dimensions": { "realism": 3, "ornament": -2, "refinement": -2, "order": 1 }
   },
   {
     "id": 92,
     "group": "values",
     "cluster": "val-fit-in",
     "text": "I'd rather fit in than stand out.",
-    "dimensions": {
-      "individualism": -3,
-      "tradition": 1,
-      "community": 1,
-      "order": 1
-    }
+    "dimensions": { "individualism": -3, "tradition": 1, "community": 1, "order": 1 }
   },
   {
     "id": 144,
     "group": "values",
     "cluster": "val-learn-enough",
     "text": "I learn what I need to and no more - studying for its own sake isn't fun for me.",
-    "dimensions": {
-      "intellect": -3,
-      "comfort": 1,
-      "chaos": 1
-    }
+    "dimensions": { "intellect": -3, "comfort": 1, "chaos": 1 }
   },
   {
     "id": 147,
     "group": "values",
     "cluster": "authenticity",
     "text": "I'd rather come across as honest and a bit rough than smooth and polished.",
-    "dimensions": {
-      "realism": 3,
-      "individualism": 2,
-      "refinement": -2,
-      "ornament": -2
-    }
+    "dimensions": { "realism": 3, "individualism": 2, "refinement": -2, "ornament": -2 }
   },
   {
     "id": 151,
     "group": "values",
     "cluster": "val-blunt",
     "text": "I prefer people who are blunt and direct to people who are formal and polite.",
-    "dimensions": {
-      "refinement": -2,
-      "tradition": -1,
-      "realism": 1,
-      "chaos": 1
-    }
+    "dimensions": { "refinement": -2, "tradition": -1, "realism": 1, "chaos": 1 }
   },
   {
     "id": 155,
     "group": "values",
     "cluster": "gut-feeling",
     "text": "I trust my gut more than careful research.",
-    "dimensions": {
-      "intellect": -3,
-      "whimsy": 1,
-      "fantasy": 1,
-      "chaos": 1
-    }
+    "dimensions": { "intellect": -3, "whimsy": 1, "fantasy": 1, "chaos": 1 }
   },
   {
     "id": 178,
@@ -3092,1256 +1903,734 @@
     "group": "values",
     "cluster": "own-taste",
     "text": "What other people think of my taste barely matters to me.",
-    "dimensions": {
-      "individualism": 3,
-      "chaos": 1,
-      "refinement": -1,
-      "community": -2
-    }
+    "dimensions": { "individualism": 3, "chaos": 1, "refinement": -1, "community": -2 }
   },
   {
     "id": 180,
     "group": "values",
     "cluster": "val-recognition",
     "text": "Getting credit for my work matters to me more than I let on.",
-    "dimensions": {
-      "individualism": 2,
-      "social": 1,
-      "realism": -1,
-      "community": -1
-    }
+    "dimensions": { "individualism": 2, "social": 1, "realism": -1, "community": -1 }
   },
   {
     "id": 247,
     "group": "values",
     "cluster": "val-tradition-over-trend",
     "text": "I'd rather do things the way they've always been done than follow the latest trend.",
-    "dimensions": {
-      "tradition": 2,
-      "modernity": -2,
-      "individualism": -1
-    }
+    "dimensions": { "tradition": 2, "modernity": -2, "individualism": -1 }
   },
   {
     "id": 248,
     "group": "values",
     "cluster": "val-privacy",
     "text": "I keep most of my life private, even from people who are close to me.",
-    "dimensions": {
-      "solitude": 2,
-      "individualism": 1,
-      "social": -1
-    }
+    "dimensions": { "solitude": 2, "individualism": 1, "social": -1 }
   },
   {
     "id": 269,
     "group": "values",
     "cluster": "val-question-authority",
     "text": "I question rules more than most people around me do.",
-    "dimensions": {
-      "individualism": 2,
-      "tradition": -1,
-      "chaos": 1
-    }
+    "dimensions": { "individualism": 2, "tradition": -1, "chaos": 1 }
   },
   {
     "id": 301,
     "group": "sound",
     "cluster": "n-traffic-comfort",
     "text": "Traffic outside the window is comforting rather than annoying.",
-    "dimensions": {
-      "urban": 2,
-      "comfort": 1,
-      "solitude": -2,
-      "nature": -1
-    }
+    "dimensions": { "urban": 2, "comfort": 1, "solitude": -2, "nature": -1 }
   },
   {
     "id": 302,
     "group": "sound",
     "cluster": "n-village-too-quiet",
     "text": "A village at night is too quiet for me to relax.",
-    "dimensions": {
-      "urban": 2,
-      "rural": -2,
-      "comfort": -1,
-      "solitude": -1
-    }
+    "dimensions": { "urban": 2, "rural": -2, "comfort": -1, "solitude": -1 }
   },
   {
     "id": 303,
     "group": "sound",
     "cluster": "n-talk-over-birdsong",
     "text": "I'd rather hear a room full of chatter than a hillside full of birdsong.",
-    "dimensions": {
-      "social": 2,
-      "urban": 2,
-      "nature": -2,
-      "community": 1
-    }
+    "dimensions": { "social": 2, "urban": 2, "nature": -2, "community": 1 }
   },
   {
     "id": 304,
     "group": "sound",
     "cluster": "n-machinery-sound",
     "text": "The sound of machines at work is satisfying to listen to.",
-    "dimensions": {
-      "industrial": 2,
-      "craft": 1,
-      "technology": 1,
-      "nature": -1
-    }
+    "dimensions": { "industrial": 2, "craft": 1, "technology": 1, "nature": -1 }
   },
   {
     "id": 305,
     "group": "sound",
     "cluster": "n-silence-wanted",
     "text": "Quiet is what I want most from the place I live.",
-    "dimensions": {
-      "solitude": 3,
-      "urban": -3,
-      "rural": 2,
-      "social": -2
-    }
+    "dimensions": { "solitude": 3, "urban": -3, "rural": 2, "social": -2 }
   },
   {
     "id": 306,
     "group": "music",
     "cluster": "old-media",
     "text": "Music made before I was born interests me more than anything new.",
-    "dimensions": {
-      "retro": 3,
-      "nostalgia": 2,
-      "history": 2,
-      "modernity": -2
-    }
+    "dimensions": { "retro": 3, "nostalgia": 2, "history": 2, "modernity": -2 }
   },
   {
     "id": 307,
     "group": "music",
     "cluster": "n-newest-music",
     "text": "I'd rather listen to what came out this month than anything older.",
-    "dimensions": {
-      "retro": -3,
-      "modernity": 2,
-      "futurism": 1,
-      "nostalgia": -2
-    }
+    "dimensions": { "retro": -3, "modernity": 2, "futurism": 1, "nostalgia": -2 }
   },
   {
     "id": 308,
     "group": "music",
     "cluster": "n-electronic-off",
     "text": "Music that sounds obviously electronic puts me off.",
-    "dimensions": {
-      "digital": -2,
-      "technology": -2,
-      "organic": 2,
-      "retro": 2
-    }
+    "dimensions": { "digital": -2, "technology": -2, "organic": 2, "retro": 2 }
   },
   {
     "id": 309,
     "group": "music",
     "cluster": "n-room-recording",
     "text": "I like a recording to sound like the room it was made in.",
-    "dimensions": {
-      "realism": 2,
-      "craft": 2,
-      "organic": 1,
-      "digital": -2
-    }
+    "dimensions": { "realism": 2, "craft": 2, "organic": 1, "digital": -2 }
   },
   {
     "id": 310,
     "group": "music",
     "cluster": "n-loud-mechanical",
     "text": "Loud, mechanical-sounding music suits me better than soft music.",
-    "dimensions": {
-      "industrial": 2,
-      "chaos": 2,
-      "darkness": 1,
-      "comfort": -2
-    }
+    "dimensions": { "industrial": 2, "chaos": 2, "darkness": 1, "comfort": -2 }
   },
   {
     "id": 311,
     "group": "nature",
     "cluster": "n-wild-restless",
     "text": "A long walk in the wild leaves me restless instead of refreshed.",
-    "dimensions": {
-      "nature": -3,
-      "rural": -2,
-      "urban": 2,
-      "adventure": -1
-    }
+    "dimensions": { "nature": -3, "rural": -2, "urban": 2, "adventure": -1 }
   },
   {
     "id": 312,
     "group": "nature",
     "cluster": "n-city-break",
     "text": "I'd pick a city break over a week in the countryside.",
-    "dimensions": {
-      "urban": 3,
-      "rural": -3,
-      "nature": -2,
-      "social": 1
-    }
+    "dimensions": { "urban": 3, "rural": -3, "nature": -2, "social": 1 }
   },
   {
     "id": 313,
     "group": "nature",
     "cluster": "n-move-remote",
     "text": "I'd move somewhere remote tomorrow if I could.",
-    "dimensions": {
-      "urban": -3,
-      "rural": 3,
-      "solitude": 2,
-      "nature": 2
-    }
+    "dimensions": { "urban": -3, "rural": 3, "solitude": 2, "nature": 2 }
   },
   {
     "id": 314,
     "group": "nature",
     "cluster": "n-weeds-pavement",
     "text": "I notice weeds pushing through the pavement more than neat flowerbeds.",
-    "dimensions": {
-      "organic": 2,
-      "chaos": 2,
-      "order": -2,
-      "nature": 1
-    }
+    "dimensions": { "organic": 2, "chaos": 2, "order": -2, "nature": 1 }
   },
   {
     "id": 315,
     "group": "nature",
     "cluster": "n-wild-photographs",
     "text": "Wild places look better in photos than in real life.",
-    "dimensions": {
-      "nature": -2,
-      "adventure": -2,
-      "rural": -2,
-      "realism": -1
-    }
+    "dimensions": { "nature": -2, "adventure": -2, "rural": -2, "realism": -1 }
   },
   {
     "id": 316,
     "group": "weather",
     "cluster": "n-low-cloud",
     "text": "Grey, cloudy skies suit me better than clear blue ones.",
-    "dimensions": {
-      "melancholy": 2,
-      "darkness": 2,
-      "optimism": -2,
-      "comfort": 1
-    }
+    "dimensions": { "melancholy": 2, "darkness": 2, "optimism": -2, "comfort": 1 }
   },
   {
     "id": 317,
     "group": "weather",
     "cluster": "n-indoors-turns",
     "text": "I want to go inside as soon as the weather gets bad.",
-    "dimensions": {
-      "nature": -2,
-      "comfort": 2,
-      "adventure": -2,
-      "rural": -1
-    }
+    "dimensions": { "nature": -2, "comfort": 2, "adventure": -2, "rural": -1 }
   },
   {
     "id": 318,
     "group": "weather",
     "cluster": "n-winter-dark",
     "text": "I look forward to the long, dark winter months.",
-    "dimensions": {
-      "darkness": 3,
-      "solitude": 2,
-      "melancholy": 1,
-      "optimism": -1
-    }
+    "dimensions": { "darkness": 3, "solitude": 2, "melancholy": 1, "optimism": -1 }
   },
   {
     "id": 319,
     "group": "weather",
     "cluster": "n-weather-checked",
     "text": "Weather is something I check, not something I feel.",
-    "dimensions": {
-      "nature": -2,
-      "realism": 2,
-      "modernity": 1,
-      "mystery": -1
-    }
+    "dimensions": { "nature": -2, "realism": 2, "modernity": 1, "mystery": -1 }
   },
   {
     "id": 320,
     "group": "weather",
     "cluster": "n-storms-exciting",
     "text": "Storms are exciting rather than unpleasant.",
-    "dimensions": {
-      "adventure": 2,
-      "chaos": 2,
-      "nature": 1,
-      "darkness": 1
-    }
+    "dimensions": { "adventure": 2, "chaos": 2, "nature": 1, "darkness": 1 }
   },
   {
     "id": 321,
     "group": "home",
     "cluster": "n-no-style-known",
     "text": "I couldn't tell you what style my building is, and it's never mattered to me.",
-    "dimensions": {
-      "architecture": -3,
-      "refinement": -2,
-      "intellect": -1,
-      "realism": 1
-    }
+    "dimensions": { "architecture": -3, "refinement": -2, "intellect": -1, "realism": 1 }
   },
   {
     "id": 322,
     "group": "home",
     "cluster": "n-building-works",
     "text": "A building just has to work - how it looks is someone else's problem.",
-    "dimensions": {
-      "architecture": -3,
-      "ornament": -2,
-      "refinement": -2,
-      "realism": 2
-    }
+    "dimensions": { "architecture": -3, "ornament": -2, "refinement": -2, "realism": 2 }
   },
   {
     "id": 323,
     "group": "home",
     "cluster": "n-above-busy-street",
     "text": "I'd rather live above a busy street than down a quiet lane.",
-    "dimensions": {
-      "urban": 3,
-      "rural": -3,
-      "solitude": -2,
-      "social": 1
-    }
+    "dimensions": { "urban": 3, "rural": -3, "solitude": -2, "social": 1 }
   },
   {
     "id": 324,
     "group": "home",
     "cluster": "concrete",
     "text": "Concrete and steel can be just as beautiful as stone and wood.",
-    "dimensions": {
-      "industrial": 2,
-      "architecture": 2,
-      "modernity": 2,
-      "organic": -2
-    }
+    "dimensions": { "industrial": 2, "architecture": 2, "modernity": 2, "organic": -2 }
   },
   {
     "id": 325,
     "group": "home",
     "cluster": "n-room-shape",
     "text": "The shape of a room changes how I feel in it.",
-    "dimensions": {
-      "architecture": 3,
-      "refinement": 1,
-      "comfort": 1,
-      "intellect": 1
-    }
+    "dimensions": { "architecture": 3, "refinement": 1, "comfort": 1, "intellect": 1 }
   },
   {
     "id": 326,
     "group": "food",
     "cluster": "n-order-in",
     "text": "Most nights I'd rather order food than cook.",
-    "dimensions": {
-      "craft": -3,
-      "comfort": 1,
-      "modernity": 1,
-      "tradition": -2
-    }
+    "dimensions": { "craft": -3, "comfort": 1, "modernity": 1, "tradition": -2 }
   },
   {
     "id": 327,
     "group": "food",
     "cluster": "n-ready-made",
     "text": "Ready-made food is a smart use of time, not a compromise.",
-    "dimensions": {
-      "craft": -3,
-      "modernity": 2,
-      "realism": 2,
-      "tradition": -2
-    }
+    "dimensions": { "craft": -3, "modernity": 2, "realism": 2, "tradition": -2 }
   },
   {
     "id": 328,
     "group": "food",
     "cluster": "n-old-recipe",
     "text": "A meal tastes better when the recipe is older than I am.",
-    "dimensions": {
-      "tradition": 3,
-      "history": 2,
-      "nostalgia": 2,
-      "craft": 1
-    }
+    "dimensions": { "tradition": 3, "history": 2, "nostalgia": 2, "craft": 1 }
   },
   {
     "id": 329,
     "group": "food",
     "cluster": "n-grown-nearby",
     "text": "Food grown nearby matters more to me than fancy cooking.",
-    "dimensions": {
-      "organic": 2,
-      "rural": 2,
-      "nature": 2,
-      "refinement": -2
-    }
+    "dimensions": { "organic": 2, "rural": 2, "nature": 2, "refinement": -2 }
   },
   {
     "id": 330,
     "group": "food",
     "cluster": "n-invented-recent",
     "text": "I'd rather try a newly invented dish than a traditional one.",
-    "dimensions": {
-      "tradition": -2,
-      "modernity": 2,
-      "futurism": 1,
-      "retro": -2
-    }
+    "dimensions": { "tradition": -2, "modernity": 2, "futurism": 1, "retro": -2 }
   },
   {
     "id": 331,
     "group": "past",
     "cluster": "n-old-worn-out",
     "text": "Old things mostly just look worn out to me.",
-    "dimensions": {
-      "nostalgia": -3,
-      "history": -2,
-      "retro": -2,
-      "craft": -1
-    }
+    "dimensions": { "nostalgia": -3, "history": -2, "retro": -2, "craft": -1 }
   },
   {
     "id": 332,
     "group": "past",
     "cluster": "n-new-version",
     "text": "I would rather have the new version than the one with a history.",
-    "dimensions": {
-      "retro": -3,
-      "nostalgia": -2,
-      "modernity": 3,
-      "tradition": -2
-    }
+    "dimensions": { "retro": -3, "nostalgia": -2, "modernity": 3, "tradition": -2 }
   },
   {
     "id": 333,
     "group": "past",
     "cluster": "n-eighties-look",
     "text": "The way things looked in the eighties appeals to me more than how they look now.",
-    "dimensions": {
-      "retro": 3,
-      "nostalgia": 2,
-      "modernity": -2,
-      "history": 1
-    }
+    "dimensions": { "retro": 3, "nostalgia": 2, "modernity": -2, "history": 1 }
   },
   {
     "id": 334,
     "group": "past",
     "cluster": "old-photos",
     "text": "Old photos of places I've never been can still move me.",
-    "dimensions": {
-      "nostalgia": 3,
-      "history": 2,
-      "melancholy": 2,
-      "mystery": 1
-    }
+    "dimensions": { "nostalgia": 3, "history": 2, "melancholy": 2, "mystery": 1 }
   },
   {
     "id": 335,
     "group": "past",
     "cluster": "n-before-my-time",
     "text": "History from before I was born feels far away from my own life.",
-    "dimensions": {
-      "history": -3,
-      "tradition": -2,
-      "nostalgia": -2,
-      "modernity": 1
-    }
+    "dimensions": { "history": -3, "tradition": -2, "nostalgia": -2, "modernity": 1 }
   },
   {
     "id": 336,
     "group": "tradition",
     "cluster": "n-group-belonging",
     "text": "Being left alone matters more to me than belonging to a group.",
-    "dimensions": {
-      "community": -3,
-      "solitude": 3,
-      "individualism": 2,
-      "social": -2
-    }
+    "dimensions": { "community": -3, "solitude": 3, "individualism": 2, "social": -2 }
   },
   {
     "id": 337,
     "group": "tradition",
     "cluster": "n-shared-identity",
     "text": "I keep away from fandoms, scenes and clubs that people build their whole identity around.",
-    "dimensions": {
-      "community": -3,
-      "individualism": 3,
-      "tradition": -2,
-      "social": -1
-    }
+    "dimensions": { "community": -3, "individualism": 3, "tradition": -2, "social": -1 }
   },
   {
     "id": 338,
     "group": "tradition",
     "cluster": "n-same-faces",
     "text": "I like seeing the same faces in the same places year after year.",
-    "dimensions": {
-      "community": 3,
-      "tradition": 2,
-      "nostalgia": 2,
-      "solitude": -1
-    }
+    "dimensions": { "community": 3, "tradition": 2, "nostalgia": 2, "solitude": -1 }
   },
   {
     "id": 339,
     "group": "tradition",
     "cluster": "n-family-customs",
     "text": "Family traditions feel more like duties than pleasures.",
-    "dimensions": {
-      "tradition": -3,
-      "community": -2,
-      "individualism": 2,
-      "nostalgia": -1
-    }
+    "dimensions": { "tradition": -3, "community": -2, "individualism": 2, "nostalgia": -1 }
   },
   {
     "id": 340,
     "group": "tradition",
     "cluster": "n-good-neighbour",
     "text": "I care more about my own street or village than about my country or the world.",
-    "dimensions": {
-      "community": 2,
-      "rural": 1,
-      "tradition": 1,
-      "urban": -1
-    }
+    "dimensions": { "community": 2, "rural": 1, "tradition": 1, "urban": -1 }
   },
   {
     "id": 341,
     "group": "screens",
     "cluster": "n-give-up-internet",
     "text": "I could give up the internet more easily than most people I know.",
-    "dimensions": {
-      "digital": -3,
-      "technology": -2,
-      "solitude": 2,
-      "modernity": -1
-    }
+    "dimensions": { "digital": -3, "technology": -2, "solitude": 2, "modernity": -1 }
   },
   {
     "id": 342,
     "group": "screens",
     "cluster": "n-new-devices",
     "text": "New gadgets interest me even before they're actually useful.",
-    "dimensions": {
-      "technology": 3,
-      "futurism": 2,
-      "modernity": 2,
-      "craft": -1
-    }
+    "dimensions": { "technology": 3, "futurism": 2, "modernity": 2, "craft": -1 }
   },
   {
     "id": 343,
     "group": "screens",
     "cluster": "n-buttons-not-screen",
     "text": "I prefer a machine with buttons to one with a touchscreen.",
-    "dimensions": {
-      "technology": -2,
-      "digital": -3,
-      "retro": 2,
-      "craft": 1
-    }
+    "dimensions": { "technology": -2, "digital": -3, "retro": 2, "craft": 1 }
   },
   {
     "id": 344,
     "group": "screens",
     "cluster": "n-always-reachable",
     "text": "I'm fine with being reachable at any hour.",
-    "dimensions": {
-      "digital": 2,
-      "social": 2,
-      "solitude": -2,
-      "retro": -1
-    }
+    "dimensions": { "digital": 2, "social": 2, "solitude": -2, "retro": -1 }
   },
   {
     "id": 345,
     "group": "screens",
     "cluster": "n-internet-a-place",
     "text": "The internet feels like a place to me, not just a tool.",
-    "dimensions": {
-      "digital": 3,
-      "fantasy": 2,
-      "mystery": 1,
-      "realism": -2
-    }
+    "dimensions": { "digital": 3, "fantasy": 2, "mystery": 1, "realism": -2 }
   },
   {
     "id": 346,
     "group": "future",
     "cluster": "n-infrastructure",
     "text": "Factories, bridges and power plants are the most impressive things people build.",
-    "dimensions": {
-      "industrial": 3,
-      "architecture": 2,
-      "technology": 2,
-      "nature": -2
-    }
+    "dimensions": { "industrial": 3, "architecture": 2, "technology": 2, "nature": -2 }
   },
   {
     "id": 347,
     "group": "future",
     "cluster": "n-stay-as-is",
     "text": "I'd rather things stayed pretty much as they are.",
-    "dimensions": {
-      "futurism": -3,
-      "modernity": -2,
-      "tradition": 2,
-      "adventure": -2
-    }
+    "dimensions": { "futurism": -3, "modernity": -2, "tradition": 2, "adventure": -2 }
   },
   {
     "id": 348,
     "group": "future",
     "cluster": "n-tech-solves",
     "text": "Technology will solve more problems than it causes.",
-    "dimensions": {
-      "technology": 3,
-      "futurism": 3,
-      "optimism": 2,
-      "realism": -1
-    }
+    "dimensions": { "technology": 3, "futurism": 3, "optimism": 2, "realism": -1 }
   },
   {
     "id": 349,
     "group": "future",
     "cluster": "n-machines-loss",
     "text": "Machines doing our work is a loss, not a gain.",
-    "dimensions": {
-      "technology": -3,
-      "industrial": -2,
-      "craft": 3,
-      "futurism": -2
-    }
+    "dimensions": { "technology": -3, "industrial": -2, "craft": 3, "futurism": -2 }
   },
   {
     "id": 350,
     "group": "future",
     "cluster": "n-new-district",
     "text": "I'd rather live in a brand-new neighbourhood than an old one.",
-    "dimensions": {
-      "modernity": 3,
-      "history": -2,
-      "urban": 2,
-      "order": 1
-    }
+    "dimensions": { "modernity": 3, "history": -2, "urban": 2, "order": 1 }
   },
   {
     "id": 351,
     "group": "craft-tools",
     "cluster": "n-making-not-worth",
     "text": "Making something myself is rarely worth the time.",
-    "dimensions": {
-      "craft": -3,
-      "modernity": 2,
-      "realism": 2,
-      "comfort": 1
-    }
+    "dimensions": { "craft": -3, "modernity": 2, "realism": 2, "comfort": 1 }
   },
   {
     "id": 352,
     "group": "craft-tools",
     "cluster": "n-how-put-together",
     "text": "How things are put together bores me.",
-    "dimensions": {
-      "craft": -3,
-      "intellect": -2,
-      "architecture": -2,
-      "industrial": -1
-    }
+    "dimensions": { "craft": -3, "intellect": -2, "architecture": -2, "industrial": -1 }
   },
   {
     "id": 353,
     "group": "craft-tools",
     "cluster": "n-workshop-room",
     "text": "A workshop full of tools is my idea of a great room.",
-    "dimensions": {
-      "craft": 3,
-      "industrial": 2,
-      "technology": 1,
-      "retro": 1
-    }
+    "dimensions": { "craft": 3, "industrial": 2, "technology": 1, "retro": 1 }
   },
   {
     "id": 354,
     "group": "craft-tools",
     "cluster": "n-repair-badly",
     "text": "I'd rather fix something badly than replace it with something new.",
-    "dimensions": {
-      "craft": 3,
-      "tradition": 1,
-      "order": -2,
-      "modernity": -2
-    }
+    "dimensions": { "craft": 3, "tradition": 1, "order": -2, "modernity": -2 }
   },
   {
     "id": 355,
     "group": "craft-tools",
     "cluster": "n-mass-produced-fine",
     "text": "Mass-produced things are fine - I don't need the handmade version.",
-    "dimensions": {
-      "craft": -3,
-      "industrial": 2,
-      "modernity": 2,
-      "refinement": -1
-    }
+    "dimensions": { "craft": -3, "industrial": 2, "modernity": 2, "refinement": -1 }
   },
   {
     "id": 356,
     "group": "money",
     "cluster": "val-few-good-things",
     "text": "I'd rather spend more on one thing that lasts than on several that don't.",
-    "dimensions": {
-      "refinement": 2,
-      "craft": 2,
-      "tradition": 1,
-      "modernity": -1
-    }
+    "dimensions": { "refinement": 2, "craft": 2, "tradition": 1, "modernity": -1 }
   },
   {
     "id": 357,
     "group": "money",
     "cluster": "money-own-less",
     "text": "Having few things feels freeing, not like giving something up.",
-    "dimensions": {
-      "minimalism": 3,
-      "maximalism": -3,
-      "order": 2,
-      "comfort": -1
-    }
+    "dimensions": { "minimalism": 3, "maximalism": -3, "order": 2, "comfort": -1 }
   },
   {
     "id": 358,
     "group": "money",
     "cluster": "n-many-things",
     "text": "I like having lots of things around me.",
-    "dimensions": {
-      "maximalism": 3,
-      "minimalism": -3,
-      "comfort": 2,
-      "order": -2
-    }
+    "dimensions": { "maximalism": 3, "minimalism": -3, "comfort": 2, "order": -2 }
   },
   {
     "id": 359,
     "group": "money",
     "cluster": "n-look-successful",
     "text": "I would rather look successful than feel comfortable.",
-    "dimensions": {
-      "refinement": 2,
-      "social": 2,
-      "comfort": -3,
-      "individualism": 1
-    }
+    "dimensions": { "refinement": 2, "social": 2, "comfort": -3, "individualism": 1 }
   },
   {
     "id": 360,
     "group": "money",
     "cluster": "n-where-it-came-from",
     "text": "Where a thing came from matters more to me than what it cost.",
-    "dimensions": {
-      "craft": 2,
-      "tradition": 1,
-      "realism": -1,
-      "refinement": 1
-    }
+    "dimensions": { "craft": 2, "tradition": 1, "realism": -1, "refinement": 1 }
   },
   {
     "id": 361,
     "group": "people",
     "cluster": "n-think-alone",
     "text": "I think best when nobody else is in the room.",
-    "dimensions": {
-      "solitude": 3,
-      "social": -2,
-      "intellect": 2,
-      "community": -2
-    }
+    "dimensions": { "solitude": 3, "social": -2, "intellect": 2, "community": -2 }
   },
   {
     "id": 362,
     "group": "people",
     "cluster": "n-better-as-group",
     "text": "Most things are better done together than alone.",
-    "dimensions": {
-      "community": 3,
-      "social": 2,
-      "solitude": -3,
-      "individualism": -1
-    }
+    "dimensions": { "community": 3, "social": 2, "solitude": -3, "individualism": -1 }
   },
   {
     "id": 363,
     "group": "people",
     "cluster": "mus-in-the-crowd",
     "text": "Being in a crowd at an event is one of life's best feelings.",
-    "dimensions": {
-      "social": 3,
-      "community": 3,
-      "solitude": -3,
-      "chaos": 1
-    }
+    "dimensions": { "social": 3, "community": 3, "solitude": -3, "chaos": 1 }
   },
   {
     "id": 364,
     "group": "people",
     "cluster": "n-shared-enthusiasm",
     "text": "I find it a bit embarrassing when people get excited together about something.",
-    "dimensions": {
-      "community": -3,
-      "social": -2,
-      "individualism": 2,
-      "optimism": -1
-    }
+    "dimensions": { "community": -3, "social": -2, "individualism": 2, "optimism": -1 }
   },
   {
     "id": 365,
     "group": "people",
     "cluster": "ppl-deep-vs-wide",
     "text": "I'd rather have three close friends than lots of casual ones.",
-    "dimensions": {
-      "social": -1,
-      "community": -1,
-      "solitude": 1,
-      "individualism": 2
-    }
+    "dimensions": { "social": -1, "community": -1, "solitude": 1, "individualism": 2 }
   },
   {
     "id": 366,
     "group": "unexplained",
     "cluster": "n-dull-explanation",
     "text": "Everything strange has a boring explanation behind it.",
-    "dimensions": {
-      "mystery": -3,
-      "realism": 3,
-      "fantasy": -2,
-      "intellect": 1
-    }
+    "dimensions": { "mystery": -3, "realism": 3, "fantasy": -2, "intellect": 1 }
   },
   {
     "id": 367,
     "group": "unexplained",
     "cluster": "explanations",
     "text": "I'd rather know how something works than keep the mystery.",
-    "dimensions": {
-      "mystery": -3,
-      "intellect": 2,
-      "realism": 2,
-      "fantasy": -1
-    }
+    "dimensions": { "mystery": -3, "intellect": 2, "realism": 2, "fantasy": -1 }
   },
   {
     "id": 368,
     "group": "unexplained",
     "cluster": "n-ghost-entertainment",
     "text": "Ghost stories are just entertainment, nothing more.",
-    "dimensions": {
-      "mystery": -2,
-      "fantasy": -1,
-      "realism": 2,
-      "darkness": -1
-    }
+    "dimensions": { "mystery": -2, "fantasy": -1, "realism": 2, "darkness": -1 }
   },
   {
     "id": 369,
     "group": "unexplained",
     "cluster": "n-left-unexplained",
     "text": "Some things are better left unexplained.",
-    "dimensions": {
-      "mystery": 3,
-      "fantasy": 2,
-      "realism": -2,
-      "intellect": -1
-    }
+    "dimensions": { "mystery": 3, "fantasy": 2, "realism": -2, "intellect": -1 }
   },
   {
     "id": 370,
     "group": "unexplained",
     "cluster": "n-felt-something",
     "text": "I've felt something in a place that I couldn't explain.",
-    "dimensions": {
-      "mystery": 3,
-      "fantasy": 2,
-      "darkness": 1,
-      "realism": -2
-    }
+    "dimensions": { "mystery": 3, "fantasy": 2, "darkness": 1, "realism": -2 }
   },
   {
     "id": 371,
     "group": "imagination",
     "cluster": "n-daydream-less",
     "text": "I daydream much less than most people seem to.",
-    "dimensions": {
-      "fantasy": -3,
-      "realism": 3,
-      "whimsy": -2,
-      "intellect": 1
-    }
+    "dimensions": { "fantasy": -3, "realism": 3, "whimsy": -2, "intellect": 1 }
   },
   {
     "id": 372,
     "group": "imagination",
     "cluster": "n-invented-worlds",
     "text": "Made-up worlds hold my attention better than the real one.",
-    "dimensions": {
-      "fantasy": 3,
-      "realism": -3,
-      "whimsy": 2,
-      "mystery": 1
-    }
+    "dimensions": { "fantasy": 3, "realism": -3, "whimsy": 2, "mystery": 1 }
   },
   {
     "id": 373,
     "group": "imagination",
     "cluster": "n-bit-silly",
     "text": "I like things that are a bit silly.",
-    "dimensions": {
-      "whimsy": 3,
-      "refinement": -2,
-      "optimism": 2,
-      "realism": -1
-    }
+    "dimensions": { "whimsy": 3, "refinement": -2, "optimism": 2, "realism": -1 }
   },
   {
     "id": 374,
     "group": "imagination",
     "cluster": "n-playfulness-thin",
     "text": "Grown-ups being playful gets old fast for me.",
-    "dimensions": {
-      "whimsy": -3,
-      "refinement": 2,
-      "realism": 2,
-      "optimism": -1
-    }
+    "dimensions": { "whimsy": -3, "refinement": 2, "realism": 2, "optimism": -1 }
   },
   {
     "id": 375,
     "group": "imagination",
     "cluster": "nonfiction",
     "text": "I'd rather read a history book than a novel.",
-    "dimensions": {
-      "realism": 2,
-      "history": 2,
-      "intellect": 2,
-      "fantasy": -2
-    }
+    "dimensions": { "realism": 2, "history": 2, "intellect": 2, "fantasy": -2 }
   },
   {
     "id": 376,
     "group": "order",
     "cluster": "n-untidy-fine",
     "text": "I can relax just fine in a messy room.",
-    "dimensions": {
-      "order": -3,
-      "chaos": 3,
-      "comfort": 1,
-      "minimalism": -1
-    }
+    "dimensions": { "order": -3, "chaos": 3, "comfort": 1, "minimalism": -1 }
   },
   {
     "id": 377,
     "group": "order",
     "cluster": "n-bed-first",
     "text": "I make the bed before I do anything else.",
-    "dimensions": {
-      "order": 3,
-      "tradition": 1,
-      "chaos": -2,
-      "minimalism": 1
-    }
+    "dimensions": { "order": 3, "tradition": 1, "chaos": -2, "minimalism": 1 }
   },
   {
     "id": 378,
     "group": "order",
     "cluster": "n-bare-unfinished",
     "text": "Empty surfaces look unfinished to me, not calm.",
-    "dimensions": {
-      "minimalism": -3,
-      "maximalism": 3,
-      "ornament": 2,
-      "comfort": 1
-    }
+    "dimensions": { "minimalism": -3, "maximalism": 3, "ornament": 2, "comfort": 1 }
   },
   {
     "id": 379,
     "group": "order",
     "cluster": "n-plan-slightly-wrong",
     "text": "I'd rather have a plan that goes a bit wrong than no plan at all.",
-    "dimensions": {
-      "order": 2,
-      "chaos": -2,
-      "adventure": -1,
-      "realism": 1
-    }
+    "dimensions": { "order": 2, "chaos": -2, "adventure": -1, "realism": 1 }
   },
   {
     "id": 380,
     "group": "order",
     "cluster": "n-nobody-arranged",
     "text": "The best evenings are the ones nobody planned.",
-    "dimensions": {
-      "chaos": 3,
-      "order": -2,
-      "adventure": 2,
-      "social": 1
-    }
+    "dimensions": { "chaos": 3, "order": -2, "adventure": 2, "social": 1 }
   },
   {
     "id": 381,
     "group": "style",
     "cluster": "n-dress-disappear",
     "text": "I dress to blend in, not to be noticed.",
-    "dimensions": {
-      "individualism": -2,
-      "ornament": -2,
-      "minimalism": 2,
-      "refinement": -1
-    }
+    "dimensions": { "individualism": -2, "ornament": -2, "minimalism": 2, "refinement": -1 }
   },
   {
     "id": 382,
     "group": "style",
     "cluster": "n-decades-ago-clothes",
     "text": "Clothes from decades ago look better than anything made today.",
-    "dimensions": {
-      "retro": 3,
-      "nostalgia": 2,
-      "modernity": -2,
-      "ornament": 1
-    }
+    "dimensions": { "retro": 3, "nostalgia": 2, "modernity": -2, "ornament": 1 }
   },
   {
     "id": 383,
     "group": "style",
     "cluster": "n-clothes-new",
     "text": "I want my clothes to look new, not old.",
-    "dimensions": {
-      "retro": -3,
-      "modernity": 3,
-      "nostalgia": -2,
-      "tradition": -1
-    }
+    "dimensions": { "retro": -3, "modernity": 3, "nostalgia": -2, "tradition": -1 }
   },
   {
     "id": 384,
     "group": "style",
     "cluster": "n-workwear-boots",
     "text": "Workwear and heavy boots appeal to me more than smart clothes.",
-    "dimensions": {
-      "industrial": 2,
-      "craft": 2,
-      "refinement": -2,
-      "realism": 2
-    }
+    "dimensions": { "industrial": 2, "craft": 2, "refinement": -2, "realism": 2 }
   },
   {
     "id": 385,
     "group": "style",
     "cluster": "n-plain-good-cloth",
     "text": "A plain piece of clothing in good fabric beats a fancy one.",
-    "dimensions": {
-      "ornament": -3,
-      "refinement": 2,
-      "minimalism": 2,
-      "craft": 1
-    }
+    "dimensions": { "ornament": -3, "refinement": 2, "minimalism": 2, "craft": 1 }
   },
   {
     "id": 386,
     "group": "travel",
     "cluster": "one-place-deep",
     "text": "I'd rather know one place well than see twenty.",
-    "dimensions": {
-      "adventure": -2,
-      "tradition": 2,
-      "community": 2,
-      "solitude": -1
-    }
+    "dimensions": { "adventure": -2, "tradition": 2, "community": 2, "solitude": -1 }
   },
   {
     "id": 387,
     "group": "travel",
     "cluster": "n-remote-uneasy",
     "text": "Remote places make me uneasy rather than free.",
-    "dimensions": {
-      "rural": -3,
-      "nature": -2,
-      "adventure": -2,
-      "urban": 2
-    }
+    "dimensions": { "rural": -3, "nature": -2, "adventure": -2, "urban": 2 }
   },
   {
     "id": 388,
     "group": "travel",
     "cluster": "getting-lost",
     "text": "Getting lost somewhere unfamiliar is part of the point.",
-    "dimensions": {
-      "adventure": 3,
-      "chaos": 2,
-      "order": -2,
-      "mystery": 1
-    }
+    "dimensions": { "adventure": 3, "chaos": 2, "order": -2, "mystery": 1 }
   },
   {
     "id": 389,
     "group": "travel",
     "cluster": "n-airports-stations",
     "text": "I like airports and train stations for their own sake.",
-    "dimensions": {
-      "urban": 2,
-      "modernity": 1,
-      "industrial": 1,
-      "retro": -1
-    }
+    "dimensions": { "urban": 2, "modernity": 1, "industrial": 1, "retro": -1 }
   },
   {
     "id": 390,
     "group": "travel",
     "cluster": "n-cities-wear-out",
     "text": "Cities wear me out after a few days.",
-    "dimensions": {
-      "urban": -3,
-      "rural": 2,
-      "solitude": 2,
-      "social": -1
-    }
+    "dimensions": { "urban": -3, "rural": 2, "solitude": 2, "social": -1 }
   },
   {
     "id": 391,
     "group": "temperament",
     "cluster": "n-work-out",
     "text": "I usually expect things to work out.",
-    "dimensions": {
-      "optimism": 3,
-      "melancholy": -2,
-      "darkness": -2,
-      "realism": -1
-    }
+    "dimensions": { "optimism": 3, "melancholy": -2, "darkness": -2, "realism": -1 }
   },
   {
     "id": 392,
     "group": "temperament",
     "cluster": "n-sad-music",
     "text": "I'm drawn more to sad music than to happy music.",
-    "dimensions": {
-      "melancholy": 3,
-      "darkness": 2,
-      "optimism": -2,
-      "comfort": -1
-    }
+    "dimensions": { "melancholy": 3, "darkness": 2, "optimism": -2, "comfort": -1 }
   },
   {
     "id": 393,
     "group": "temperament",
     "cluster": "n-intensity-tires",
     "text": "Very intense people tire me out.",
-    "dimensions": {
-      "chaos": -2,
-      "social": -1,
-      "comfort": 2,
-      "urban": -1
-    }
+    "dimensions": { "chaos": -2, "social": -1, "comfort": 2, "urban": -1 }
   },
   {
     "id": 394,
     "group": "temperament",
     "cluster": "n-easily-delighted",
     "text": "I would describe myself as easily delighted.",
-    "dimensions": {
-      "optimism": 3,
-      "whimsy": 3,
-      "melancholy": -2,
-      "refinement": -1
-    }
+    "dimensions": { "optimism": 3, "whimsy": 3, "melancholy": -2, "refinement": -1 }
   },
   {
     "id": 395,
     "group": "temperament",
     "cluster": "n-feelings-kept-in",
     "text": "I keep my feelings to myself more than is probably good for me.",
-    "dimensions": {
-      "solitude": 2,
-      "social": -2,
-      "community": -2,
-      "melancholy": 1
-    }
+    "dimensions": { "solitude": 2, "social": -2, "community": -2, "melancholy": 1 }
   },
   {
     "id": 396,
     "group": "values",
     "cluster": "n-looks-matter",
     "text": "How something looks matters just as much as what it does.",
-    "dimensions": {
-      "ornament": 2,
-      "refinement": 2,
-      "architecture": 2,
-      "realism": -2
-    }
+    "dimensions": { "ornament": 2, "refinement": 2, "architecture": 2, "realism": -2 }
   },
   {
     "id": 397,
     "group": "values",
     "cluster": "n-works-not-means",
     "text": "I judge things by whether they work, not by what they mean.",
-    "dimensions": {
-      "realism": 3,
-      "mystery": -2,
-      "fantasy": -2,
-      "architecture": -1
-    }
+    "dimensions": { "realism": 3, "mystery": -2, "fantasy": -2, "architecture": -1 }
   },
   {
     "id": 398,
     "group": "values",
     "cluster": "n-respected-by-few",
     "text": "I'd rather be respected by a few people than liked by many.",
-    "dimensions": {
-      "individualism": 2,
-      "community": -2,
-      "social": -2,
-      "refinement": 1
-    }
+    "dimensions": { "individualism": 2, "community": -2, "social": -2, "refinement": 1 }
   },
   {
     "id": 399,
     "group": "values",
     "cluster": "val-tradition-over-trend",
     "text": "Doing things the way they've always been done is usually wise.",
-    "dimensions": {
-      "tradition": 3,
-      "history": 2,
-      "modernity": -2,
-      "individualism": -2
-    }
+    "dimensions": { "tradition": 3, "history": 2, "modernity": -2, "individualism": -2 }
   },
   {
     "id": 400,
     "group": "values",
     "cluster": "n-self-sufficient",
     "text": "Being self-sufficient - able to fix, make and manage things myself - matters more to me than relying on others.",
-    "dimensions": {
-      "individualism": 3,
-      "community": -3,
-      "solitude": 2,
-      "craft": 2
-    }
+    "dimensions": { "individualism": 3, "community": -3, "solitude": 2, "craft": 2 }
   }
 ]

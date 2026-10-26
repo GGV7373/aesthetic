@@ -2,163 +2,35 @@
   "version": 1,
   "questionsPerQuiz": 50,
   "scale": [
-    {
-      "value": 3,
-      "label": "Strongly agree",
-      "short": "Strongly agree"
-    },
-    {
-      "value": 2,
-      "label": "Agree",
-      "short": "Agree"
-    },
-    {
-      "value": 1,
-      "label": "Slightly agree",
-      "short": "Slightly agree"
-    },
-    {
-      "value": 0,
-      "label": "Neutral",
-      "short": "Neutral"
-    },
-    {
-      "value": -1,
-      "label": "Slightly disagree",
-      "short": "Slightly disagree"
-    },
-    {
-      "value": -2,
-      "label": "Disagree",
-      "short": "Disagree"
-    },
-    {
-      "value": -3,
-      "label": "Strongly disagree",
-      "short": "Strongly disagree"
-    }
+    { "value": 3, "label": "Strongly agree", "short": "Strongly agree" },
+    { "value": 2, "label": "Agree", "short": "Agree" },
+    { "value": 1, "label": "Slightly agree", "short": "Slightly agree" },
+    { "value": 0, "label": "Neutral", "short": "Neutral" },
+    { "value": -1, "label": "Slightly disagree", "short": "Slightly disagree" },
+    { "value": -2, "label": "Disagree", "short": "Disagree" },
+    { "value": -3, "label": "Strongly disagree", "short": "Strongly disagree" }
   ],
   "groups": [
-    {
-      "key": "sound",
-      "label": "Sound and silence",
-      "min": 2,
-      "max": 3
-    },
-    {
-      "key": "music",
-      "label": "Music and taste",
-      "min": 2,
-      "max": 3
-    },
-    {
-      "key": "nature",
-      "label": "Nature and wilderness",
-      "min": 2,
-      "max": 3
-    },
-    {
-      "key": "weather",
-      "label": "Weather, light and seasons",
-      "min": 2,
-      "max": 3
-    },
-    {
-      "key": "home",
-      "label": "Home and buildings",
-      "min": 2,
-      "max": 3
-    },
-    {
-      "key": "food",
-      "label": "Food and the table",
-      "min": 2,
-      "max": 3
-    },
-    {
-      "key": "past",
-      "label": "The past",
-      "min": 2,
-      "max": 3
-    },
-    {
-      "key": "tradition",
-      "label": "Tradition and belonging",
-      "min": 2,
-      "max": 3
-    },
-    {
-      "key": "screens",
-      "label": "Screens and the net",
-      "min": 2,
-      "max": 3
-    },
-    {
-      "key": "future",
-      "label": "The future",
-      "min": 2,
-      "max": 3
-    },
-    {
-      "key": "craft-tools",
-      "label": "Making and mending",
-      "min": 2,
-      "max": 3
-    },
-    {
-      "key": "money",
-      "label": "Money and possessions",
-      "min": 2,
-      "max": 3
-    },
-    {
-      "key": "people",
-      "label": "People and solitude",
-      "min": 2,
-      "max": 3
-    },
-    {
-      "key": "unexplained",
-      "label": "The unexplained",
-      "min": 2,
-      "max": 3
-    },
-    {
-      "key": "imagination",
-      "label": "Imagination and play",
-      "min": 2,
-      "max": 3
-    },
-    {
-      "key": "order",
-      "label": "Order and mess",
-      "min": 2,
-      "max": 3
-    },
-    {
-      "key": "style",
-      "label": "Clothes and style",
-      "min": 2,
-      "max": 3
-    },
-    {
-      "key": "travel",
-      "label": "Travel and adventure",
-      "min": 2,
-      "max": 3
-    },
-    {
-      "key": "temperament",
-      "label": "Temperament",
-      "min": 2,
-      "max": 3
-    },
-    {
-      "key": "values",
-      "label": "Values and self-image",
-      "min": 2,
-      "max": 3
-    }
+    { "key": "sound", "label": "Sound and silence", "min": 2, "max": 3 },
+    { "key": "music", "label": "Music and taste", "min": 2, "max": 3 },
+    { "key": "nature", "label": "Nature and wilderness", "min": 2, "max": 3 },
+    { "key": "weather", "label": "Weather, light and seasons", "min": 2, "max": 3 },
+    { "key": "home", "label": "Home and buildings", "min": 2, "max": 3 },
+    { "key": "food", "label": "Food and the table", "min": 2, "max": 3 },
+    { "key": "past", "label": "The past", "min": 2, "max": 3 },
+    { "key": "tradition", "label": "Tradition and belonging", "min": 2, "max": 3 },
+    { "key": "screens", "label": "Screens and the net", "min": 2, "max": 3 },
+    { "key": "future", "label": "The future", "min": 2, "max": 3 },
+    { "key": "craft-tools", "label": "Making and mending", "min": 2, "max": 3 },
+    { "key": "money", "label": "Money and possessions", "min": 2, "max": 3 },
+    { "key": "people", "label": "People and solitude", "min": 2, "max": 3 },
+    { "key": "unexplained", "label": "The unexplained", "min": 2, "max": 3 },
+    { "key": "imagination", "label": "Imagination and play", "min": 2, "max": 3 },
+    { "key": "order", "label": "Order and mess", "min": 2, "max": 3 },
+    { "key": "style", "label": "Clothes and style", "min": 2, "max": 3 },
+    { "key": "travel", "label": "Travel and adventure", "min": 2, "max": 3 },
+    { "key": "temperament", "label": "Temperament", "min": 2, "max": 3 },
+    { "key": "values", "label": "Values and self-image", "min": 2, "max": 3 }
   ],
   "preferenceCategories": [
     {
@@ -229,34 +101,10 @@
     }
   ],
   "dimensions": [
-    {
-      "key": "nature",
-      "label": "Nature",
-      "low": "Built",
-      "high": "Wild",
-      "core": true
-    },
-    {
-      "key": "organic",
-      "label": "Organic",
-      "low": "Synthetic",
-      "high": "Living",
-      "core": false
-    },
-    {
-      "key": "rural",
-      "label": "Rural",
-      "low": "Town",
-      "high": "Countryside",
-      "core": true
-    },
-    {
-      "key": "urban",
-      "label": "Urban",
-      "low": "Remote",
-      "high": "Urban",
-      "core": true
-    },
+    { "key": "nature", "label": "Nature", "low": "Built", "high": "Wild", "core": true },
+    { "key": "organic", "label": "Organic", "low": "Synthetic", "high": "Living", "core": false },
+    { "key": "rural", "label": "Rural", "low": "Town", "high": "Countryside", "core": true },
+    { "key": "urban", "label": "Urban", "low": "Remote", "high": "Urban", "core": true },
     {
       "key": "technology",
       "label": "Technology",
@@ -264,20 +112,8 @@
       "high": "Technological",
       "core": true
     },
-    {
-      "key": "digital",
-      "label": "Digital",
-      "low": "Physical",
-      "high": "Digital",
-      "core": false
-    },
-    {
-      "key": "futurism",
-      "label": "Future",
-      "low": "Present",
-      "high": "Future",
-      "core": true
-    },
+    { "key": "digital", "label": "Digital", "low": "Physical", "high": "Digital", "core": false },
+    { "key": "futurism", "label": "Future", "low": "Present", "high": "Future", "core": true },
     {
       "key": "industrial",
       "label": "Industry",
@@ -299,13 +135,7 @@
       "high": "Nostalgic",
       "core": true
     },
-    {
-      "key": "retro",
-      "label": "Retro",
-      "low": "New forms",
-      "high": "Retro forms",
-      "core": false
-    },
+    { "key": "retro", "label": "Retro", "low": "New forms", "high": "Retro forms", "core": false },
     {
       "key": "tradition",
       "label": "Tradition",
@@ -327,13 +157,7 @@
       "high": "Unexplained",
       "core": true
     },
-    {
-      "key": "fantasy",
-      "label": "Fantasy",
-      "low": "Concrete",
-      "high": "Imagined",
-      "core": true
-    },
+    { "key": "fantasy", "label": "Fantasy", "low": "Concrete", "high": "Imagined", "core": true },
     {
       "key": "realism",
       "label": "Realism",
@@ -348,34 +172,10 @@
       "high": "Melancholic",
       "core": true
     },
-    {
-      "key": "optimism",
-      "label": "Optimism",
-      "low": "Heavy",
-      "high": "Bright",
-      "core": true
-    },
-    {
-      "key": "darkness",
-      "label": "Darkness",
-      "low": "Light",
-      "high": "Dark",
-      "core": true
-    },
-    {
-      "key": "whimsy",
-      "label": "Playfulness",
-      "low": "Serious",
-      "high": "Playful",
-      "core": false
-    },
-    {
-      "key": "social",
-      "label": "Social",
-      "low": "Withdrawn",
-      "high": "Outgoing",
-      "core": true
-    },
+    { "key": "optimism", "label": "Optimism", "low": "Heavy", "high": "Bright", "core": true },
+    { "key": "darkness", "label": "Darkness", "low": "Light", "high": "Dark", "core": true },
+    { "key": "whimsy", "label": "Playfulness", "low": "Serious", "high": "Playful", "core": false },
+    { "key": "social", "label": "Social", "low": "Withdrawn", "high": "Outgoing", "core": true },
     {
       "key": "community",
       "label": "Community",
@@ -397,20 +197,8 @@
       "high": "Stand out",
       "core": false
     },
-    {
-      "key": "order",
-      "label": "Order",
-      "low": "Loose",
-      "high": "Ordered",
-      "core": true
-    },
-    {
-      "key": "chaos",
-      "label": "Chaos",
-      "low": "Controlled",
-      "high": "Chaotic",
-      "core": false
-    },
+    { "key": "order", "label": "Order", "low": "Loose", "high": "Ordered", "core": true },
+    { "key": "chaos", "label": "Chaos", "low": "Controlled", "high": "Chaotic", "core": false },
     {
       "key": "minimalism",
       "label": "Minimalism",
@@ -432,20 +220,8 @@
       "high": "Made by hand",
       "core": true
     },
-    {
-      "key": "ornament",
-      "label": "Ornament",
-      "low": "Bare",
-      "high": "Ornamented",
-      "core": false
-    },
-    {
-      "key": "comfort",
-      "label": "Comfort",
-      "low": "Spartan",
-      "high": "Snug",
-      "core": true
-    },
+    { "key": "ornament", "label": "Ornament", "low": "Bare", "high": "Ornamented", "core": false },
+    { "key": "comfort", "label": "Comfort", "low": "Spartan", "high": "Snug", "core": true },
     {
       "key": "adventure",
       "label": "Adventure",
