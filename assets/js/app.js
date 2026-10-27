@@ -372,6 +372,10 @@
             (urlQuiz ? urlQuiz.questions.length : urlLength()) +
             ' statements, in the same order, as the person who shared the link.'
           ])
+        : null,
+      !pageQuiz && AQ.compare.decode(queryParam('compare'), data)
+        ? el('p', { class: 'fineprint', text: 'A friend sent you their result. Take the full test and ' +
+            'your result will show how alike you are.' })
         : null
     ]);
 
@@ -986,6 +990,56 @@
     ]);
   }
 
+  /* A ghost button that copies `link` and says so for a moment. */
+  function copyButton(label, link) {
+    return el('button', {
+      class: 'btn btn--ghost', type: 'button',
+      onclick: function (e) {
+        var btn = e.currentTarget;
+        var done = function () {
+          btn.textContent = 'Link copied';
+          global.setTimeout(function () { btn.textContent = label; }, 2200);
+        };
+        if (global.navigator.clipboard && global.navigator.clipboard.writeText) {
+          global.navigator.clipboard.writeText(link).then(done, function () {
+            global.prompt('Copy the link:', link);
+          });
+        } else {
+          global.prompt('Copy the link:', link);
+        }
+      }
+    }, [label]);
+  }
+
+  /* "You and a friend": shown under the hero when the page was opened from a
+     ?compare= link and the friend's profile can be read. */
+  function compareSection(mine) {
+    var theirs = AQ.compare.decode(queryParam('compare'), data);
+    var diff = theirs && AQ.compare.compare(mine, theirs, data);
+    if (!diff) return null;
+
+    var friendTop = data.aestheticsByKey[AQ.rankProfile(theirs, data).primary.key];
+    function rows(list) {
+      return el('div', { class: 'profile__grid' }, list.map(function (r) {
+        return el('div', { class: 'profile__row' }, [
+          el('span', { class: 'profile__label', text: r.meta.label }),
+          meter(Math.round(r.mine * 100), { subtle: true, delay: 40 }),
+          el('span', { class: 'profile__value', text: String(Math.round(r.mine * 100)) }),
+          el('span', { class: 'profile__poles', text: 'friend: ' + Math.round(r.theirs * 100) })
+        ]);
+      }));
+    }
+    return el('section', { class: 'block' }, [
+      el('h2', { class: 'block__title', text: 'You and a friend' }),
+      el('p', { class: 'block__lede', text: diff.percent + '% alike. Your friend got ' +
+        friendTop.name + '.' }),
+      el('h3', { class: 'block__title', text: 'Most alike' }),
+      rows(diff.rows.slice(0, 3)),
+      el('h3', { class: 'block__title', text: 'Furthest apart' }),
+      rows(diff.rows.slice(-3).reverse())
+    ]);
+  }
+
   /* ---------- result ---------- */
 
   /* `preview`, when passed, is an already-scored result (see boot()'s local-only
@@ -1054,24 +1108,18 @@
     var seedLink = global.location.origin + global.location.pathname + '?seed=' + seed +
       (!familyQuiz && runLength !== data.config.questionsPerQuiz ? '&n=' + runLength : '') +
       (!preview && session.groups && session.groups.length ? '&groups=' + session.groups.join(',') : '');
-    var copyBtn = el('button', {
+    var copyBtn = copyButton('Copy a link to this exact run', seedLink);
+
+    var friendCode = !familyQuiz ? AQ.compare.encode(result.profile, data) : null;
+    var friendLink = friendCode && global.location.origin + global.location.pathname + '?compare=' + friendCode;
+    var cardBtn = el('button', {
       class: 'btn btn--ghost', type: 'button',
-      onclick: function (e) {
-        var btn = e.currentTarget;
-        var label = 'Copy a link to this exact run';
-        var done = function () {
-          btn.textContent = 'Link copied';
-          global.setTimeout(function () { btn.textContent = label; }, 2200);
-        };
-        if (global.navigator.clipboard && global.navigator.clipboard.writeText) {
-          global.navigator.clipboard.writeText(seedLink).then(done, function () {
-            global.prompt('Copy the link:', seedLink);
-          });
-        } else {
-          global.prompt('Copy the link:', seedLink);
-        }
+      onclick: function () {
+        var a = el('a', { download: primary.key + '.png',
+          href: AQ.card.draw(primary, result.primary.percent).toDataURL('image/png') });
+        a.click();
       }
-    }, ['Copy a link to this exact run']);
+    }, ['Save result as image']);
 
     var footer = el('footer', { class: 'result__footer' }, [
       el('p', { class: 'fineprint' }, [
@@ -1088,7 +1136,9 @@
             else { chosenLength = runLength; screenPreferences(); }
           }
         }, [familyQuiz ? 'Take it again' : 'Take it again with new questions']),
-        copyBtn
+        copyBtn,
+        friendLink ? copyButton('Copy a link to compare with a friend', friendLink) : null,
+        cardBtn
       ]),
       genderedNamesToggle(function () { screenResult(preview); }),
       el('p', { class: 'fineprint' }, [
@@ -1101,7 +1151,7 @@
     var wikiBlock = wikiSection(primary);
 
     var view = el('section', { class: 'screen screen--result' }, [
-      welcome, hero, musicSection(primary), wikiBlock, whyBlock,
+      welcome, hero, !familyQuiz ? compareSection(result.profile) : null, musicSection(primary), wikiBlock, whyBlock,
       worldBlock, profileSection(result.profile), footer
     ]);
 

@@ -243,6 +243,8 @@
     return { profile: profile, ranked: ranked, primary: ranked[0] };
   }
 
+  AQ.rankProfile = rank;
+
   AQ.score = function (questions, answers, data) {
     return rank(buildProfile(questions, answers, data), data);
   };
