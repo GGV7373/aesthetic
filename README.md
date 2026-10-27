@@ -19,37 +19,24 @@ To open `index.html` straight from disk, run `node tools/build-bundle.js` first 
 after every change under `/data`). Browsers block `fetch` on local files, so the app
 falls back to the generated, git-ignored `data/bundle.js`.
 
-## Deploying
-
-Netlify serves the repository root as-is (`netlify.toml`), after running
-`tools/validate.js`: a data error stops the deploy. If you add a strict
-`Content-Security-Policy`, allow `connect-src https://commons.wikimedia.org` and
-`img-src https://upload.wikimedia.org https://i.ytimg.com`, or photos and track
-thumbnails quietly stop appearing.
-
-`og:image`, `og:url` and the canonical link in `index.html` point at
-`https://estetikk.netlify.app`; change them if you deploy elsewhere. `assets/og.png` is
-a 1200x630 screenshot of `tools/og-image.html`.
-
 ## How it works
 
 ```
 answers  →  35 dimensions  →  match against 203 aesthetic profiles
 ```
 
-No statement belongs to any one aesthetic. A question about old buildings moves
-`history`, `nostalgia` and `architecture`, and the aesthetics fall out of the whole
+No statement belongs to any one aesthetic. A question about old buildings can affect
+`history`, `nostalgia` and `architecture`; aesthetic matches are based on the full
 profile, so you can't guess what a question measures.
 
-- **Answers** are on a −3 to +3 scale. Part of each person's average answer is
-  subtracted first, so someone who agrees with everything isn't scored differently
-  from someone with the same taste who doesn't.
-- **The profile** is stretched onto the catalogue's scale, so the result depends on the
-  shape of your taste, not on how strongly you pressed the buttons.
+- **Answers** are on a −3 to +3 scale. Scoring adjusts for each person's overall
+  tendency to agree or disagree, so response style has less influence on the result.
+- **The profile** is rescaled to the catalogue's range, so the result depends on the
+  shape of your taste, not on how strongly you used the scale.
 - **The match** weights each dimension by how defining it is for the aesthetic and how
   well it was measured. Only the top match is shown.
 - **Selection:** the statements sit in 20 themed groups. A run draws from every group and
-  asks one theme at a time. The preferences screen can weight up to five topics. Runs
+  presents one theme at a time. The preferences screen can weight up to five topics. Runs
   come in 30, 50 or 100 statements.
 - **Everything is seeded.** `?seed=ABC12XYZ` recreates a run exactly, and browser Back
   steps through the quiz one statement at a time.
