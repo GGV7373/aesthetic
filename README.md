@@ -81,6 +81,7 @@ rejects gendered words anywhere else.
 index.html, 404.html, netlify.toml
 assets/css/styles.css
 assets/js/
+  main.js        the only script the pages include; loads the rest in order
   prng.js        seeded randomness
   data.js        loads the JSON (bundle fallback), applies name version
   selection.js   picks the statements for a run
@@ -89,6 +90,8 @@ assets/js/
   visuals.js     generated mood plates (SVG)
   images.js      optional Wikimedia Commons photos
   music.js       playlist matching for the result
+  compare.js     friend comparison links (?compare=)
+  card.js        "save result as image" PNG
   app.js         screens and flow
 data/
   questions.json   main statement bank

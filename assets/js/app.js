@@ -8,12 +8,11 @@
      site. Goes by hostname, so the same code ships to main untouched. */
   if (global.location.hostname.indexOf('beta.') === 0) {
     document.title = '[BETA] ' + document.title;
-    document.addEventListener('DOMContentLoaded', function () {
-      var badge = document.createElement('div');
-      badge.className = 'env-badge';
-      badge.textContent = 'BETA';
-      document.body.appendChild(badge);
-    });
+    /* main.js loads this file after the page is parsed, so <body> is already there. */
+    var badge = document.createElement('div');
+    badge.className = 'env-badge';
+    badge.textContent = 'BETA';
+    document.body.appendChild(badge);
   }
 
   /* Each page keeps its own unfinished run: index.html the full test,
