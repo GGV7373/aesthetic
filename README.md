@@ -4,7 +4,7 @@ A personality test that finds which **aesthetic world** you belong to — not wh
 pictures you like. 360 statements, 50 per run, 35 hidden dimensions and 203 aesthetics
 across 18 families, using Aesthetics Wiki as a reference.
 
-[estetikk.com](https://estetikk.com)[]
+[estetikk.com](https://estetikk.com)
 (Estetikk is Norwegian for "aesthetics".)
 ## Running it locally
 
