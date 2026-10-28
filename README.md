@@ -24,9 +24,8 @@ falls back to the generated, git-ignored `data/bundle.js`.
 
 Netlify serves the repository root as-is (`netlify.toml`), after running
 `tools/validate.js`: a data error stops the deploy. If you add a strict
-`Content-Security-Policy`, allow `connect-src https://commons.wikimedia.org` and
-`img-src https://upload.wikimedia.org https://i.ytimg.com`, or photos and track
-thumbnails quietly stop appearing.
+`Content-Security-Policy`, allow `img-src https://i.ytimg.com`, or track thumbnails
+quietly stop appearing.
 
 `og:image`, `og:url` and the canonical link in `index.html` point at
 `https://estetikk.netlify.app`; change them if you deploy elsewhere. `assets/og.png` is
@@ -88,7 +87,6 @@ assets/js/
   scoring.js     profile + matching, family-quiz balancing
   narrative.js   result text
   visuals.js     generated mood plates (SVG)
-  images.js      optional Wikimedia Commons photos
   music.js       playlist matching for the result
   compare.js     friend comparison links (?compare=)
   card.js        "save result as image" PNG
@@ -101,14 +99,12 @@ data/
   scoring.json     dimensions, groups, preferences, matching settings
   narrative.json   phrase banks for the result text
   playlists.json   hand-picked YouTube videos
-  images.json      hand-picked Commons photos, search overrides
 tools/
   serve.js, build-bundle.js, validate.js
-  image-picker.html  pick photos for images.json
   og-image.html      source for assets/og.png
 ```
 
-All content lives in `/data`. Adding aesthetics, statements, videos or photos needs no
+All content lives in `/data`. Adding aesthetics, statements or videos needs no
 JavaScript changes.
 
 ## Adding content
@@ -134,8 +130,7 @@ JavaScript changes.
 ```
 
 Leave out dimensions that don't matter. Keep values between 0.05 and 0.95. Use one of
-the existing 18 families. `keywords` double as photo search terms, so make them
-concrete nouns.
+the existing 18 families.
 
 **A statement:** add it to `data/questions.json` (or a quiz in `data/quizzes/`).
 Weights run −3 to 3. Write both "agree pushes up" and "agree pushes down" statements for
@@ -157,11 +152,8 @@ YouTube search button.
   "mood": "One line on the feeling of it.", "aesthetics": ["forestpunk", "cabincore"] }
 ```
 
-**A photo:** results search Wikimedia Commons with the aesthetic's `keywords`, at most
-two photos per keyword. To pick exact photos, open `tools/image-picker.html` through
-`node tools/serve.js`, pin the ones that fit, and download the new `images.json`.
-Aesthetics Wiki images are not used (not freely licensed); each result links to the
-wiki page instead.
+There are no photos: Aesthetics Wiki and Pinterest images are not freely licensed, so
+each result shows a generated mood plate and links to the wiki page instead.
 
 Then run:
 
@@ -172,13 +164,12 @@ node tools/build-bundle.js   # only needed for opening from disk
 
 ## Privacy
 
-Everything runs in the browser, with no tracking. The only outside requests are the
-Commons photo search and YouTube thumbnails; music links open YouTube only when
+Everything runs in the browser, with no tracking. The only outside requests are
+YouTube thumbnails; music links open YouTube only when
 clicked. `localStorage` keeps the run in progress, question history, topic preferences
 and the name setting.
 
 ## License
 
-MIT, see [LICENSE](LICENSE). Photos come from Wikimedia Commons under their own
-licences, credited on each image. The aesthetic profiles are original, using Aesthetics
+MIT, see [LICENSE](LICENSE). The aesthetic profiles are original, using Aesthetics
 Wiki only as a reference for names and general character.

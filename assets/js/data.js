@@ -12,7 +12,6 @@
     config: 'data/scoring.json',
     narrative: 'data/narrative.json',
     playlists: 'data/playlists.json',
-    images: 'data/images.json',
     quizzes: 'data/quizzes.json' /* just the keys; each quiz is data/quizzes/<key>.json */
   };
 

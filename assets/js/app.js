@@ -803,58 +803,6 @@
     return wrap;
   }
 
-  /* Photographs are a bonus layer, fetched once and split two ways: the first
-     (usually the strongest match) becomes the hero's background photo, layered
-     over the generated mood plate once it loads; the rest fill the strip
-     further down. Nothing here blocks anything else - a blocked or slow
-     network just leaves the generated plate and skips the strip. */
-  function photoStrip(aesthetic, heroBanner, mountBefore, skipCache) {
-    if (!AQ.images) return;
-    AQ.images.forAesthetic(aesthetic, data, { skipCache: skipCache }).then(function (photos) {
-      if (!photos.length) return;
-
-      if (heroBanner.isConnected) {
-        var cover = photos[0];
-        var photoImg = el('img', {
-          class: 'hero__photo', src: cover.thumb, alt: '', decoding: 'async',
-          onload: function (e) { e.target.classList.add('is-loaded'); },
-          onerror: function (e) { e.target.remove(); }
-        });
-        heroBanner.insertBefore(photoImg, heroBanner.firstChild);
-        heroBanner.appendChild(el('a', {
-          class: 'hero__credit', href: cover.page, target: '_blank', rel: 'noopener noreferrer'
-        }, [cover.credit + ' · ' + cover.license]));
-      }
-
-      var rest = photos.slice(1);
-      if (!rest.length || !mountBefore.parentNode) return;
-
-      var grid = el('div', { class: 'photos__grid' }, rest.map(function (p) {
-        var img = el('img', {
-          src: p.thumb, alt: p.title, loading: 'lazy', decoding: 'async',
-          onload: function (e) { e.target.classList.add('is-loaded'); },
-          onerror: function (e) { e.target.closest('.photo').remove(); }
-        });
-        return el('a', {
-          class: 'photo', href: p.page, target: '_blank', rel: 'noopener noreferrer'
-        }, [
-          img,
-          el('span', { class: 'photo__credit', text: p.credit + ' · ' + p.license })
-        ]);
-      }));
-
-      var block = el('section', { class: 'photos' }, [
-        el('h2', { class: 'block__title', text: 'The mood, roughly' }),
-        el('p', { class: 'block__lede', text: 'Freely licensed photographs from Wikimedia ' +
-          'Commons, found by keyword. They are a rough approximation of the atmosphere, ' +
-          'not official images of the aesthetic.' }),
-        grid
-      ]);
-
-      mountBefore.parentNode.insertBefore(block, mountBefore);
-    });
-  }
-
   /* Plain links that open in a new tab - nothing is embedded, so the result
      page makes no request to YouTube and the privacy note stays true. */
   function trackCard(p, from) {
@@ -1156,7 +1104,6 @@
 
     if (!preview) clearStore(STORE_SESSION);
     render(view);
-    photoStrip(primary, heroBanner, wikiBlock, !!preview);
   }
 
   /* ---------- boot ---------- */

@@ -2,8 +2,7 @@
 
    Aesthetics Wiki images are not freely licensed, so each plate is generated
    here instead: an SVG built from the aesthetic's own palette and dimensions,
-   seeded so the same aesthetic always looks the same. Photographs, when they
-   load, are layered on separately by images.js.                             */
+   seeded so the same aesthetic always looks the same.                       */
 (function (global) {
   'use strict';
   var AQ = (global.AQ = global.AQ || {});

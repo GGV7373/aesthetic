@@ -3,7 +3,7 @@
    A new file only needs its name added here. */
 (function () {
   var base = document.currentScript.src.replace(/main\.js.*$/, '');
-  ['prng', 'data', 'selection', 'scoring', 'narrative', 'visuals', 'images',
+  ['prng', 'data', 'selection', 'scoring', 'narrative', 'visuals',
     'music', 'compare', 'card', 'app'].forEach(function (name) {
     var s = document.createElement('script');
     s.src = base + name + '.js';
