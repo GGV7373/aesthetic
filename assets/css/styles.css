@@ -32,6 +32,9 @@
   --pad: 1.1rem;
   --gutter-l: max(var(--pad), env(safe-area-inset-left));
   --gutter-r: max(var(--pad), env(safe-area-inset-right));
+  /* Edge of the centred shell, resolved where used (100% = that box's width). */
+  --edge-l: max(var(--gutter-l), (100% - var(--shell)) / 2 + var(--pad));
+  --edge-r: max(var(--gutter-r), (100% - var(--shell)) / 2 + var(--pad));
   --radius: 12px;
   --radius-lg: 18px;
   --radius-pill: 999px;
@@ -65,7 +68,6 @@ html {
 
 body {
   margin: 0;
-  min-height: 100vh;
   min-height: 100dvh;
   background: var(--bg);
   color: var(--ink);
@@ -138,8 +140,11 @@ body::after {
   display: flex;
   align-items: center;
   height: var(--top);
-  padding: env(safe-area-inset-top) max(var(--gutter-r), (100% - var(--shell)) / 2 + var(--pad)) 0
-           max(var(--gutter-l), (100% - var(--shell)) / 2 + var(--pad));
+  padding: env(safe-area-inset-top) var(--edge-r) 0 var(--edge-l);
+}
+
+.topbar,
+body:not(:has(.topbar)) .quiz__head {
   background: color-mix(in srgb, var(--bg) 70%, transparent);
   -webkit-backdrop-filter: blur(16px) saturate(1.4);
   backdrop-filter: blur(16px) saturate(1.4);
@@ -440,7 +445,6 @@ a.btn { text-decoration: none; }
 .chip {
   appearance: none;
   display: block;
-  width: 100%;
   min-height: var(--tap);
   padding: 0.8rem 1rem;
   border: 1px solid var(--line);
@@ -517,15 +521,14 @@ body:not(:has(.topbar)) #app:has(.screen--quiz) { padding-top: var(--top); }
   position: fixed;
   z-index: 11;
   top: env(safe-area-inset-top);
-  left: calc(max(var(--gutter-l), (100% - var(--shell)) / 2 + var(--pad)) + 5.5rem);
-  right: max(var(--gutter-r), (100% - var(--shell)) / 2 + var(--pad));
+  left: calc(var(--edge-l) + 5.5rem);
+  right: var(--edge-r);
   height: var(--bar-h);
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 0.35rem;
 }
-.quiz__head .eyebrow { display: none; }
 /* The quiz never scrolls under the bar, so the bar can drop its own layer and
    the head (inside #app) paints over it, even mid fade-in. */
 body:has(.screen--quiz) .topbar { z-index: auto; }
@@ -535,12 +538,7 @@ body:not(:has(.topbar)) .quiz__head {
   left: 0;
   right: 0;
   height: var(--top);
-  padding: env(safe-area-inset-top) max(var(--gutter-r), (100% - var(--shell)) / 2 + var(--pad)) 0
-           max(var(--gutter-l), (100% - var(--shell)) / 2 + var(--pad));
-  background: color-mix(in srgb, var(--bg) 70%, transparent);
-  -webkit-backdrop-filter: blur(16px) saturate(1.4);
-  backdrop-filter: blur(16px) saturate(1.4);
-  border-bottom: 1px solid var(--line);
+  padding: env(safe-area-inset-top) var(--edge-r) 0 var(--edge-l);
 }
 
 .progress {
@@ -566,7 +564,6 @@ body:not(:has(.topbar)) .quiz__head {
   display: flex;
   align-items: baseline;
   gap: 0.6rem;
-  min-width: 0;
   line-height: 1.2;
 }
 
@@ -591,8 +588,6 @@ body:not(:has(.topbar)) .quiz__head {
 .quiz__theme:empty { display: none; }
 
 .quiz__body {
-  display: flex;
-  flex-direction: column;
   transition: opacity var(--fast) var(--ease), transform var(--fast) var(--ease);
 }
 .quiz__body.is-out { opacity: 0; transform: translateY(-8px); }
@@ -602,22 +597,16 @@ body:not(:has(.topbar)) .quiz__head {
   margin: 0 0 clamp(0.85rem, 2.4dvh, 1.75rem);
   font-family: var(--serif);
   font-weight: 500;
-  font-size: clamp(1.3rem, min(5.6vw, 3.4dvh) + 0.3rem, 2.2rem);
+  font-size: clamp(1.2rem, min(5.2vw, 3.2dvh) + 0.25rem, 2rem);
   line-height: 1.22;
   letter-spacing: -0.008em;
   text-wrap: balance;
   overflow-wrap: anywhere;
 }
 
-/* The seven answers form one grouped list, like a settings screen: a single
-   surface with hairlines, not seven boxes inside a box. */
 .options {
   display: grid;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  background: var(--surface);
-  box-shadow: var(--shadow-md);
-  overflow: hidden;
+  gap: clamp(5px, 0.9dvh, 9px);
 }
 
 .option {
@@ -627,22 +616,21 @@ body:not(:has(.topbar)) .quiz__head {
   grid-template-columns: 22px minmax(0, 1fr) auto;
   align-items: center;
   gap: 0.9rem;
-  width: 100%;
-  min-height: clamp(42px, 6.6dvh, 56px);
+  min-height: clamp(40px, 6dvh, 52px);
   margin: 0;
-  padding: 0.35rem 1rem;
-  border: 0;
-  border-top: 1px solid var(--line);
-  border-radius: 0;
-  background: transparent;
+  padding: 0.3rem 0.95rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
   color: var(--ink-soft);
-  font: 400 0.98rem/1.25 var(--sans);
+  font: 400 0.92rem/1.25 var(--sans);
   text-align: left;
   appearance: none;
   cursor: pointer;
-  transition: background var(--fast) var(--ease), color var(--fast) var(--ease);
+  overflow: hidden;
+  transition: background var(--fast) var(--ease), color var(--fast) var(--ease), border-color var(--fast) var(--ease);
 }
-.option:first-child { border-top: 0; }
 
 .option::before {
   content: "";
@@ -688,6 +676,7 @@ body:not(:has(.topbar)) .quiz__head {
 }
 
 .option--selected {
+  border-color: color-mix(in srgb, var(--opt) 45%, transparent);
   background: color-mix(in srgb, var(--opt) 13%, var(--surface));
   color: var(--ink);
   font-weight: 600;
@@ -733,7 +722,7 @@ body:not(:has(.topbar)) .quiz__head {
     line-height: 1.2;
   }
 
-  .options { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+  .options { grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; }
 
   .option {
     grid-template-columns: 1fr;
@@ -743,13 +732,10 @@ body:not(:has(.topbar)) .quiz__head {
     gap: 0.3rem;
     min-height: 0;
     padding: 0.6rem 0.25rem;
-    border-top: 0;
-    border-left: 1px solid var(--line);
-    font-size: 0.74rem;
+    font-size: 0.72rem;
     line-height: 1.2;
     text-align: center;
   }
-  .option:first-child { border-left: 0; }
   .option::before { top: auto; left: 0; right: 0; width: auto; height: 3px; transform: scaleX(0); }
   .option--selected::before { transform: scaleX(1); }
   .option__dot { align-self: center; }
@@ -1089,8 +1075,6 @@ body:not(:has(.topbar)) .quiz__head {
 
 /* ---------- motion ---------- */
 
-/* backwards, not both: a finished animation that still holds its end value keeps
-   a stacking context, which would bury the quiz head under the app bar. */
 .fade-in { animation: fade var(--slow) var(--ease) backwards; }
 
 @keyframes fade { from { opacity: 0; } to { opacity: 1; } }

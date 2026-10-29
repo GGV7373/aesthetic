@@ -604,7 +604,6 @@
 
     var view = el('section', { class: 'screen screen--quiz' }, [
       el('header', { class: 'quiz__head' }, [
-        el('p', { class: 'eyebrow', text: 'What aesthetic are you?' }),
         progressBar,
         el('div', { class: 'quiz__meta' }, [counter, themeTag])
       ]),
