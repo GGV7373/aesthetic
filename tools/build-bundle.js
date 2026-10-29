@@ -16,7 +16,6 @@ const SOURCES = {
   config: 'data/scoring.json',
   narrative: 'data/narrative.json',
   playlists: 'data/playlists.json',
-  images: 'data/images.json',
   quizzes: 'data/quizzes.json'
 };
 

@@ -16,7 +16,6 @@ const aesthetics = read('data/aesthetics.json');
 const config = read('data/scoring.json');
 const narrative = read('data/narrative.json');
 const playlists = read('data/playlists.json');
-const images = read('data/images.json');
 
 const errors = [];
 const warnings = [];
@@ -174,36 +173,6 @@ if (!playlists.search || !playlists.search.base || !playlists.search.suffix) {
   if (!playlists.borrow || typeof playlists.borrow[f] !== 'number' || playlists.borrow[f] < 0) {
     errors.push(`playlists: borrow.${f} must be a number, 0 or more.`);
   }
-});
-
-/* ---------- images ---------- */
-
-const seenPhotos = new Set();
-(images.curated || []).forEach((p) => {
-  const label = p.page || p.title || '?';
-  if (!p.thumb || !p.page) errors.push(`images: a curated entry (${label}) needs thumb and page urls.`);
-  if (seenPhotos.has(p.page)) errors.push(`images: "${label}" is listed more than once.`);
-  seenPhotos.add(p.page);
-  if (!p.credit || !p.license) errors.push(`images: ${label} needs a credit and a license.`);
-  if (!Array.isArray(p.aesthetics) || !p.aesthetics.length) errors.push(`images: ${label} is attached to no aesthetic.`);
-  (p.aesthetics || []).forEach((k) => {
-    if (!keys.has(k)) errors.push(`images: ${label} points at unknown aesthetic "${k}".`);
-  });
-});
-
-const curatedKeys = new Set();
-(images.curated || []).forEach((p) => (p.aesthetics || []).forEach((k) => curatedKeys.add(k)));
-
-/* An aesthetic with no curated photo searches Commons for its own `keywords`.
-   `search` only has to carry the ones where that wording searches badly. */
-Object.keys(images.search || {}).forEach((k) => {
-  if (!keys.has(k)) errors.push(`images: search override for unknown aesthetic "${k}".`);
-});
-
-aesthetics.forEach((a) => {
-  if (curatedKeys.has(a.key)) return;
-  const terms = (images.search || {})[a.key] || a.keywords;
-  if (!Array.isArray(terms) || !terms.length) warnings.push(`images: "${a.key}" has no curated photo, no search override and no keywords - it will never show one.`);
 });
 
 /* ---------- gender-neutral by default ---------- */
