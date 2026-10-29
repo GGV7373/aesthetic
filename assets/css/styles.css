@@ -138,6 +138,7 @@ body::after {
   margin: 0 auto;
   padding: 1.75rem var(--gutter) 3rem;
   padding-right: max(var(--pad), env(safe-area-inset-right));
+  overflow-x: clip; /* clip, not hidden: hidden would break the sticky quiz nav */
 }
 
 @media (min-width: 40rem) {
@@ -629,6 +630,7 @@ button, a, label, input { -webkit-tap-highlight-color: transparent; touch-action
   letter-spacing: -0.005em;
   max-width: 26ch;
   text-wrap: balance;
+  overflow-wrap: anywhere;
 }
 
 @media (min-width: 40rem) {
@@ -641,7 +643,7 @@ button, a, label, input { -webkit-tap-highlight-color: transparent; touch-action
   --opt: var(--accent);
   position: relative;
   display: grid;
-  grid-template-columns: 22px 1fr auto;
+  grid-template-columns: 22px minmax(0, 1fr) auto;
   align-items: center;
   gap: 0.85rem;
   width: 100%;
@@ -781,20 +783,21 @@ button, a, label, input { -webkit-tap-highlight-color: transparent; touch-action
 
   /* The card hugs its question and answers and sits centred in the space
      left over, rather than stretching and leaving a hole in the middle. */
-  .quiz__card { padding: 0.95rem 0.85rem; flex: 0 1 auto; margin: auto 0; }
+  .quiz__card { padding: clamp(0.75rem, 2dvh, 1.25rem) 0.85rem; flex: 0 1 auto; margin: auto 0; }
 
+  /* Sizes follow the screen height: compact on an iPhone SE, roomier on a tall Android. */
   .quiz__statement {
-    margin-bottom: 0.9rem;
-    font-size: clamp(1.25rem, 1rem + 1.8vw, 1.65rem);
+    margin-bottom: clamp(0.6rem, 1.6dvh, 1.1rem);
+    font-size: clamp(1.15rem, 0.6rem + 2.6dvh, 1.65rem);
     line-height: 1.2;
   }
 
-  .options { gap: 5px; }
+  .options { gap: clamp(4px, 0.7dvh, 8px); }
 
   .option {
-    min-height: 44px;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    min-height: clamp(40px, 6dvh, 52px);
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
     font-size: 0.95rem;
   }
 
@@ -809,6 +812,72 @@ button, a, label, input { -webkit-tap-highlight-color: transparent; touch-action
     padding-top: 0.6rem;
     padding-bottom: 0.6rem;
   }
+
+  body:has(.screen--quiz) { --topbar-h: calc(44px + 0.35rem); }
+  body:has(.screen--quiz) .topbar .btn { min-height: 44px; }
+}
+
+/* Short phones (iPhone SE, small Androids): drop the theme tag to buy a row. */
+@media (max-width: 39.99rem) and (max-height: 700px) {
+  .quiz__head { margin-bottom: 0.5rem; }
+  .quiz__theme { display: none; }
+}
+
+/* ---------- quiz: landscape phone layout ---------- */
+/* A sideways phone is wide enough for the desktop rules but far too short for
+   them, so the answers become one row, like a scale, under the statement. */
+@media (max-height: 30rem) and (orientation: landscape) and (pointer: coarse) {
+  body:has(.screen--quiz) { --topbar-h: calc(44px + 0.2rem); }
+  body:has(.screen--quiz) .topbar .btn { min-height: 44px; }
+
+  #app:has(.screen--quiz) { padding-top: 0.5rem; padding-bottom: 0; }
+
+  .screen--quiz {
+    min-height: calc(100dvh - 0.5rem - var(--topbar-h) - env(safe-area-inset-top));
+  }
+
+  .quiz__head { margin-bottom: 0.5rem; }
+  .quiz__head .eyebrow { display: none; }
+  .quiz__meta { margin-top: 0.4rem; }
+
+  .quiz__card { padding: 0.75rem 1rem; flex: 0 1 auto; margin: auto 0; }
+
+  .quiz__statement {
+    max-width: none;
+    margin-bottom: 0.7rem;
+    font-size: clamp(1.05rem, 0.5rem + 3.2dvh, 1.3rem);
+    line-height: 1.2;
+  }
+
+  .options { grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; }
+
+  .option {
+    grid-template-columns: 1fr;
+    grid-template-rows: 22px auto;
+    justify-items: center;
+    gap: 0.3rem;
+    min-height: 0;
+    padding: 0.55rem 0.25rem;
+    text-align: center;
+    font-size: 0.75rem;
+    line-height: 1.2;
+  }
+  .option::before { display: none; }
+  .option__key { display: none; }
+  .option__dot { align-self: center; }
+  .option--selected .option__label { transform: none; }
+
+  .quiz__nav {
+    position: sticky;
+    display: grid;
+    margin: 0.6rem calc(var(--gutter) * -1) 0;
+    padding: 0.5rem var(--gutter) calc(0.5rem + env(safe-area-inset-bottom));
+    background: color-mix(in srgb, var(--bg) 72%, transparent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid var(--line);
+  }
+  .quiz__nav .btn { width: 100%; min-height: 44px; padding-top: 0.5rem; padding-bottom: 0.5rem; }
 }
 
 /* ---------- result: welcome + hero ---------- */
