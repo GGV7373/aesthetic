@@ -590,7 +590,11 @@
       class: 'options', role: 'radiogroup', 'aria-label': 'How much do you agree?'
     });
 
-    var body = el('div', { class: 'quiz__body' }, [statement, optionsWrap]);
+    /* Shown when "See result" finds statements still unanswered and jumps back
+       to the first of them; cleared by the next answer or move. */
+    var notice = el('p', { class: 'quiz__notice', role: 'status' });
+
+    var body = el('div', { class: 'quiz__body' }, [notice, statement, optionsWrap]);
 
     var prevBtn = el('button', {
       class: 'btn btn--ghost', type: 'button', onclick: function () { go(-1); }
@@ -612,6 +616,17 @@
       live
     ]);
 
+    /* A word of encouragement at the half-way mark and near the end, so a long
+       run does not feel endless. Short runs don't need it. */
+    function milestone(index) {
+      if (total < 20) return '';
+      var left = total - index;
+      if (left === 1) return ' · last one';
+      if (left <= 3) return ' · nearly done';
+      if (index === Math.floor(total / 2)) return ' · halfway';
+      return '';
+    }
+
     /* Only the selected state changes here — no rebuilding, so nothing flickers. */
     function markSelection(value) {
       optionButtons.forEach(function (btn) {
@@ -626,7 +641,7 @@
       var q = questions[session.index];
       var block = blockAt[session.index];
 
-      counter.textContent = 'Question ' + (session.index + 1) + ' of ' + total;
+      counter.textContent = 'Question ' + (session.index + 1) + ' of ' + total + milestone(session.index);
       themeTag.textContent = block
         ? groupLabels[block.group] + ' · ' +
           (session.index - block.start + 1) + ' of ' + block.count
@@ -635,6 +650,7 @@
       progressBar.setAttribute('aria-valuenow', String(session.index));
 
       statement.textContent = q.text;
+      notice.textContent = '';
 
       optionsWrap.innerHTML = '';
       optionButtons = data.config.scale.map(function (step, i) {
@@ -686,6 +702,7 @@
       session.answers[q.id] = value;
       persistSession();
       markSelection(value);
+      notice.textContent = '';
 
       /* Answering a fresh statement always carries you to the next one. */
       if (isNew) {
@@ -721,7 +738,9 @@
       if (unanswered.length) {
         var jumpTo = questions.indexOf(unanswered[0]);
         transition(jumpTo, jumpTo < session.index ? -1 : 1, function () {
-          live.textContent = unanswered.length + ' statements still unanswered.';
+          notice.textContent = unanswered.length === 1
+            ? 'One statement is still unanswered. Here it is.'
+            : unanswered.length + ' statements are still unanswered. Here is the first.';
         });
         pushStep({ screen: 'quiz', index: jumpTo });
         return;
@@ -986,6 +1005,97 @@
     ]);
   }
 
+  /* The next few matches under the top one. Names come from aestheticsByKey so
+     they follow the gendered-names switch; a family quiz ranks only its own. */
+  function runnersUpSection(result) {
+    var next = result.ranked.slice(1, 4);
+    if (!next.length) return null;
+    return el('section', { class: 'block runners' }, [
+      el('h2', { class: 'block__title', text: 'Also close' }),
+      el('ol', { class: 'runners__list' }, next.map(function (r) {
+        var a = data.aestheticsByKey[r.key];
+        return el('li', { class: 'runners__item' }, [
+          el('a', {
+            class: 'runners__name', href: wikiUrl(a), target: '_blank', rel: 'noopener noreferrer',
+            text: a.name
+          }),
+          el('span', { class: 'runners__percent', text: r.percent + '%' })
+        ]);
+      }))
+    ]);
+  }
+
+  /* Where to go after a result: the quizzes this one isn't. */
+  function otherQuizzesSection(currentQuiz) {
+    var cards = [];
+    if (currentQuiz) {
+      cards.push(el('article', { class: 'intro__card' }, [
+        el('p', { class: 'eyebrow', text: data.aesthetics.length + ' aesthetics' }),
+        el('h3', { class: 'intro__cardtitle', text: 'The full test' }),
+        el('p', { text: 'Every aesthetic at once, not just one family.' }),
+        el('a', { class: 'btn btn--primary', href: 'index.html' }, ['Open'])
+      ]));
+    }
+    data.familyQuizzes.forEach(function (qz) {
+      if (currentQuiz && qz.key === currentQuiz.key) return;
+      cards.push(el('article', { class: 'intro__card' }, [
+        el('p', { class: 'eyebrow', text: AQ.quizMembers(data, qz).length + ' aesthetics' }),
+        el('h3', { class: 'intro__cardtitle', text: qz.title }),
+        el('p', { text: qz.blurb }),
+        el('a', { class: 'btn btn--primary', href: qz.key + '.html' },
+          ['Open · ' + qz.questions.length])
+      ]));
+    });
+    if (!cards.length) return null;
+    return el('section', { class: 'block' }, [
+      el('h2', { class: 'block__title', text: 'Try another quiz' }),
+      el('div', { class: 'intro__grid' }, cards)
+    ]);
+  }
+
+  /* Can this browser hand a PNG to the system share sheet (phones, mostly)? */
+  function canShareFiles() {
+    try {
+      return !!(global.navigator.share && global.navigator.canShare &&
+        global.navigator.canShare({ files: [new File([''], 'x.png', { type: 'image/png' })] }));
+    } catch (e) { return false; }
+  }
+
+  /* "Share result" where the share sheet takes images, otherwise "Save result
+     as image". The PNG is drawn up front: Safari only allows share() straight
+     from the tap, with no waiting on toBlob in between. */
+  function shareButton(primary, percent, link) {
+    var canvas = null;
+    var name = primary.key + '.png';
+    var file = null;
+    var sharing = canShareFiles();
+
+    function card() { return canvas || (canvas = AQ.card.draw(primary, percent)); }
+
+    if (sharing) {
+      card().toBlob(function (blob) {
+        if (blob) file = new File([blob], name, { type: 'image/png' });
+      }, 'image/png');
+    }
+
+    function download() {
+      el('a', { download: name, href: card().toDataURL('image/png') }).click();
+    }
+
+    return el('button', {
+      class: 'btn btn--ghost', type: 'button',
+      onclick: function () {
+        if (!sharing || !file) { download(); return; }
+        global.navigator.share({
+          files: [file],
+          text: 'I got ' + primary.name + ' (' + percent + '% match). What aesthetic are you? ' + link
+        }).catch(function (err) {
+          if (!err || err.name !== 'AbortError') download();
+        });
+      }
+    }, [sharing ? 'Share result' : 'Save result as image']);
+  }
+
   /* ---------- result ---------- */
 
   /* `preview`, when passed, is an already-scored result (see boot()'s local-only
@@ -1058,14 +1168,8 @@
 
     var friendCode = !familyQuiz ? AQ.compare.encode(result.profile, data) : null;
     var friendLink = friendCode && global.location.origin + global.location.pathname + '?compare=' + friendCode;
-    var cardBtn = el('button', {
-      class: 'btn btn--ghost', type: 'button',
-      onclick: function () {
-        var a = el('a', { download: primary.key + '.png',
-          href: AQ.card.draw(primary, result.primary.percent).toDataURL('image/png') });
-        a.click();
-      }
-    }, ['Save result as image']);
+    var siteLink = global.location.origin + global.location.pathname;
+    var cardBtn = shareButton(primary, result.primary.percent, friendLink || siteLink);
 
     var footer = el('footer', { class: 'result__footer' }, [
       el('p', { class: 'fineprint' }, [
@@ -1082,9 +1186,11 @@
             else { chosenLength = runLength; screenPreferences(); }
           }
         }, [familyQuiz ? 'Take it again' : 'Take it again with new questions']),
-        copyBtn,
-        friendLink ? copyButton('Copy a link to compare with a friend', friendLink) : null,
         cardBtn
+      ]),
+      el('div', { class: 'result__actions result__actions--links' }, [
+        friendLink ? copyButton('Copy a link to compare with a friend', friendLink) : null,
+        copyBtn
       ]),
       genderedNamesToggle(function () { screenResult(preview); }),
       el('p', { class: 'fineprint' }, [
@@ -1097,8 +1203,9 @@
     var wikiBlock = wikiSection(primary);
 
     var view = el('section', { class: 'screen screen--result' }, [
-      welcome, hero, !familyQuiz ? compareSection(result.profile) : null, musicSection(primary), wikiBlock, whyBlock,
-      worldBlock, profileSection(result.profile), footer
+      welcome, hero, runnersUpSection(result), !familyQuiz ? compareSection(result.profile) : null,
+      whyBlock, worldBlock, musicSection(primary), wikiBlock, profileSection(result.profile),
+      otherQuizzesSection(familyQuiz || pageQuiz), footer
     ]);
 
     if (!preview) clearStore(STORE_SESSION);

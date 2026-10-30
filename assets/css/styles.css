@@ -162,6 +162,9 @@ body:not(:has(.topbar)) .quiz__head {
   font-size: 0.92rem;
 }
 
+/* index.html's intro is Home itself, so its bar would only link to itself. */
+body:has(#app:not([data-quiz]) > :is(.screen--intro, .loading)) .topbar { display: none; }
+
 a.btn { text-decoration: none; }
 
 /* Only on the beta deploy, added by app.js. */
@@ -533,7 +536,7 @@ body:not(:has(.topbar)) #app:has(.screen--quiz) { padding-top: var(--top); }
    the head (inside #app) paints over it, even mid fade-in. */
 body:has(.screen--quiz) .topbar { z-index: auto; }
 
-/* Without a Home link (the full test on index.html) the head is the whole bar. */
+/* Without a Home link the head is the whole bar. */
 body:not(:has(.topbar)) .quiz__head {
   left: 0;
   right: 0;
@@ -592,6 +595,13 @@ body:not(:has(.topbar)) .quiz__head {
 }
 .quiz__body.is-out { opacity: 0; transform: translateY(-8px); }
 .quiz__body.is-out-back { opacity: 0; transform: translateY(8px); }
+
+.quiz__notice {
+  margin: 0 0 0.8rem;
+  font-size: 0.85rem;
+  color: var(--accent);
+}
+.quiz__notice:empty { display: none; }
 
 .quiz__statement {
   margin: 0 0 clamp(0.85rem, 2.4dvh, 1.75rem);
@@ -1043,10 +1053,48 @@ body:not(:has(.topbar)) .quiz__head {
 .result__footer { padding-top: 1.6rem; border-top: 1px solid var(--line); }
 
 .result__actions { display: grid; gap: 0.6rem; margin: 1.2rem 0 0.4rem; }
+.result__actions--links { margin-top: 0.6rem; }
+.result__actions--links .btn { border-color: transparent; background: none; }
 
 @media (min-width: 40rem) {
   .result__footer { padding-top: 2rem; }
   .result__actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.4rem; }
+  .result__actions--links { margin-top: 0.4rem; }
+}
+
+/* ---------- runners-up ---------- */
+
+.runners__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.runners__item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.55rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--surface) 70%, transparent);
+}
+
+.runners__name {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+.runners__name:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.runners__percent {
+  font-size: 0.8rem;
+  color: var(--ink-faint);
+  font-variant-numeric: tabular-nums;
 }
 
 /* ---------- hover: mouse and trackpad only ---------- */
@@ -1070,6 +1118,7 @@ body:not(:has(.topbar)) .quiz__head {
 
   .track:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
   .chip:hover { border-color: var(--ink-faint); }
+  .runners__name:hover { color: var(--accent); }
   .chip--selected:hover { border-color: var(--accent); }
 }
 
