@@ -1191,7 +1191,8 @@
     var seedLink = global.location.origin + global.location.pathname + '?seed=' + seed +
       (!familyQuiz && runLength !== data.config.questionsPerQuiz ? '&n=' + runLength : '') +
       (!preview && session.groups && session.groups.length ? '&groups=' + session.groups.join(',') : '');
-    var copyBtn = copyButton('Copy a link to this exact run', seedLink);
+    var copyBtn = copyButton('Copy run link', seedLink);
+    var pickedTopics = !preview && session.groups && session.groups.length;
 
     var friendCode = !familyQuiz ? AQ.compare.encode(result.profile, data) : null;
     var friendLink = friendCode && global.location.origin + global.location.pathname + '?compare=' + friendCode;
@@ -1207,12 +1208,37 @@
         runners.slice(0, 2).map(function (r) { return r.name; }), data) })
     ]) : null;
 
+    /* The two links do quite different things, so each says what the person
+       opening it will get, and what is (not) inside it, before it is copied. */
+    function linkOption(title, lines, button) {
+      return el('div', { class: 'linkopt' }, [
+        el('h3', { class: 'linkopt__title' }, title),
+        el('ul', { class: 'linkopt__list' }, lines.map(function (t) { return el('li', { text: t }); })),
+        button
+      ]);
+    }
+
+    var runOption = linkOption(['Link to this exact run ', el('code', { text: seed })], [
+      'Whoever opens it gets the same ' + runLength + ' statements, in the same order' +
+        (familyQuiz ? ', from the ' + familyQuiz.key + ' quiz.'
+          : pickedTopics ? ', weighted towards the same topics you picked.' : '.'),
+      'Your answers are not in the link. They answer for themselves, so they can land on a ' +
+        'different aesthetic than you did.',
+      'Good for comparing how you each answered the same questions, or for retaking exactly ' +
+        'this run later to see if your answers have changed.'
+    ], copyBtn);
+
+    var friendOption = friendLink ? linkOption(['Link to compare with a friend'], [
+      'Your friend takes the full test with their own questions.',
+      'At the end they see how alike your two profiles are, where you agree and differ most, ' +
+        'and which aesthetic you got.',
+      'The link holds only your profile as a short code, not your answers.'
+    ], copyButton('Copy compare link', friendLink)) : null;
+
     var footer = el('footer', { class: 'result__footer' }, [
-      el('p', { class: 'fineprint' }, [
-        preview ? 'Preview of ' : 'Run ', el('code', { text: seed }),
-        preview ? '. Not a real result - nothing was answered.'
-          : '. The same code gives the same ' + runLength + ' statements in the same order.'
-      ]),
+      preview ? el('p', { class: 'fineprint' }, [
+        'Preview of ', el('code', { text: seed }), '. Not a real result - nothing was answered.'
+      ]) : null,
       el('div', { class: 'result__actions' }, [
         el('button', {
           class: 'btn btn--primary', type: 'button',
@@ -1224,10 +1250,8 @@
         }, [familyQuiz ? 'Take it again' : 'Take it again with new questions']),
         cardBtn
       ]),
-      el('div', { class: 'result__actions result__actions--links' }, [
-        friendLink ? copyButton('Copy a link to compare with a friend', friendLink) : null,
-        copyBtn
-      ]),
+      el('h2', { class: 'block__title result__linkstitle', text: 'Share a link' }),
+      el('div', { class: 'linkopts' }, [friendOption, runOption]),
       genderedNamesToggle(function () { screenResult(preview); }),
       el('p', { class: 'fineprint' }, [
         'The aesthetics use Aesthetics Wiki as a reference. Descriptions, dimensions and ' +

@@ -224,7 +224,8 @@ a.btn { text-decoration: none; }
   color: var(--ink-faint);
 }
 
-.fineprint code {
+.fineprint code,
+.linkopt__title code {
   padding: 0.1em 0.45em;
   border-radius: 4px;
   background: var(--accent-soft);
@@ -1053,13 +1054,33 @@ body:not(:has(.topbar)) .quiz__head {
 .result__footer { padding-top: 1.6rem; border-top: 1px solid var(--line); }
 
 .result__actions { display: grid; gap: 0.6rem; margin: 1.2rem 0 0.4rem; }
-.result__actions--links { margin-top: 0.6rem; }
-.result__actions--links .btn { border-color: transparent; background: none; }
+
+/* "Share a link": each link explained before it can be copied. */
+.result__linkstitle { margin-top: 2rem; }
+
+.linkopts { display: grid; gap: 0.75rem; margin: 0 0 1.2rem; }
+
+.linkopt {
+  display: grid;
+  gap: 0.6rem;
+  justify-items: start;
+  padding: 1.1rem 1.15rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--surface) 70%, transparent);
+}
+
+.linkopt__title { margin: 0; font-family: var(--serif); font-size: 1.1rem; font-weight: 500; }
+.linkopt__title code { font-size: 0.72em; vertical-align: 0.1em; }
+
+.linkopt__list { display: grid; gap: 0.3rem; margin: 0; padding-left: 1.1rem; }
+.linkopt__list li { font-size: 0.88rem; line-height: 1.5; color: var(--ink-soft); }
 
 @media (min-width: 40rem) {
   .result__footer { padding-top: 2rem; }
   .result__actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.4rem; }
-  .result__actions--links { margin-top: 0.4rem; }
+  .linkopts { grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 1rem; }
+  .linkopt { padding: 1.3rem 1.4rem; }
 }
 
 /* ---------- runners-up ---------- */
