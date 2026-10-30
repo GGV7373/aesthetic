@@ -162,6 +162,9 @@ body:not(:has(.topbar)) .quiz__head {
   font-size: 0.92rem;
 }
 
+/* index.html's intro is Home itself, so its bar would only link to itself. */
+body:has(#app:not([data-quiz]) > :is(.screen--intro, .loading)) .topbar { display: none; }
+
 a.btn { text-decoration: none; }
 
 /* Only on the beta deploy, added by app.js. */
@@ -221,7 +224,8 @@ a.btn { text-decoration: none; }
   color: var(--ink-faint);
 }
 
-.fineprint code {
+.fineprint code,
+.linkopt__title code {
   padding: 0.1em 0.45em;
   border-radius: 4px;
   background: var(--accent-soft);
@@ -533,7 +537,7 @@ body:not(:has(.topbar)) #app:has(.screen--quiz) { padding-top: var(--top); }
    the head (inside #app) paints over it, even mid fade-in. */
 body:has(.screen--quiz) .topbar { z-index: auto; }
 
-/* Without a Home link (the full test on index.html) the head is the whole bar. */
+/* Without a Home link the head is the whole bar. */
 body:not(:has(.topbar)) .quiz__head {
   left: 0;
   right: 0;
@@ -592,6 +596,13 @@ body:not(:has(.topbar)) .quiz__head {
 }
 .quiz__body.is-out { opacity: 0; transform: translateY(-8px); }
 .quiz__body.is-out-back { opacity: 0; transform: translateY(8px); }
+
+.quiz__notice {
+  margin: 0 0 0.8rem;
+  font-size: 0.85rem;
+  color: var(--accent);
+}
+.quiz__notice:empty { display: none; }
 
 .quiz__statement {
   margin: 0 0 clamp(0.85rem, 2.4dvh, 1.75rem);
@@ -1044,10 +1055,108 @@ body:not(:has(.topbar)) .quiz__head {
 
 .result__actions { display: grid; gap: 0.6rem; margin: 1.2rem 0 0.4rem; }
 
+/* "Share a link": each link explained before it can be copied. */
+.result__linkstitle { margin-top: 2rem; }
+
+.linkopts { display: grid; gap: 0.75rem; margin: 0 0 1.2rem; }
+
+.linkopt {
+  display: grid;
+  gap: 0.6rem;
+  justify-items: start;
+  padding: 1.1rem 1.15rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--surface) 70%, transparent);
+}
+
+.linkopt__title { margin: 0; font-family: var(--serif); font-size: 1.1rem; font-weight: 500; }
+.linkopt__title code { font-size: 0.72em; vertical-align: 0.1em; }
+
+.linkopt__list { display: grid; gap: 0.3rem; margin: 0; padding-left: 1.1rem; }
+.linkopt__list li { font-size: 0.88rem; line-height: 1.5; color: var(--ink-soft); }
+
 @media (min-width: 40rem) {
   .result__footer { padding-top: 2rem; }
   .result__actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.4rem; }
+  .linkopts { grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 1rem; }
+  .linkopt { padding: 1.3rem 1.4rem; }
 }
+
+/* ---------- runners-up ---------- */
+
+.runners { display: grid; gap: 0.75rem; margin: 0; padding: 0; list-style: none; }
+
+.runner {
+  display: grid;
+  grid-template-columns: 1fr;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  animation: rise var(--slow) var(--ease) backwards;
+}
+
+.runner__plate { position: relative; height: 5.5rem; }
+.runner__plate img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+.runner__body { display: grid; gap: 0.45rem; padding: 1rem 1.15rem 1.15rem; min-width: 0; }
+
+.runner__head { display: flex; align-items: baseline; justify-content: space-between; gap: 0.75rem; }
+
+.runner__name {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.runner__percent {
+  flex: none;
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.runner__tagline { margin: 0; font-family: var(--serif); font-style: italic; font-size: 0.95rem; color: var(--ink-soft); }
+
+.runner__bar { margin: 0.2rem 0 0.3rem; }
+
+.runner__compare p { margin: 0 0 0.45rem; font-size: 0.92rem; line-height: 1.55; }
+.runner__compare p:last-child { margin-bottom: 0; }
+
+.runner__link {
+  justify-self: start;
+  margin-top: 0.2rem;
+  font-size: 0.82rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+.runner__link:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+@media (min-width: 40rem) {
+  .runner { grid-template-columns: 9rem 1fr; }
+  .runner__plate { height: auto; min-height: 100%; }
+  .runner__body { padding: 1.2rem 1.4rem 1.3rem; }
+}
+
+/* ---------- closing line ---------- */
+
+.result__closing { margin: 0 0 2.4rem; text-align: center; }
+.result__closing .eyebrow { margin-bottom: 0.5rem; }
+
+.result__closingline {
+  max-width: 30ch;
+  margin: 0 auto;
+  font-family: var(--serif);
+  font-size: clamp(1.45rem, 1.1rem + 1.6vw, 2.1rem);
+  line-height: 1.25;
+}
+
+@media (min-width: 40rem) { .result__closing { margin-bottom: clamp(2.8rem, 7vh, 4.2rem); } }
 
 /* ---------- hover: mouse and trackpad only ---------- */
 
@@ -1070,6 +1179,7 @@ body:not(:has(.topbar)) .quiz__head {
 
   .track:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
   .chip:hover { border-color: var(--ink-faint); }
+  .runner__link:hover { text-decoration: underline; }
   .chip--selected:hover { border-color: var(--accent); }
 }
 

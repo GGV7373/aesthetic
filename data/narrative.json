@@ -12,6 +12,14 @@
     "The reason {name} comes first is that you",
     "{name} is where you end up because you"
   ],
+  "compare": {
+    "better": "Where it fits you better than {primary}: you",
+    "shared": "What it shares with you: you",
+    "apart": "The widest gap: it leans \"{it}\", you lean \"{you}\".",
+    "further": "The widest gap: it goes further towards \"{it}\" than you do.",
+    "beyond": "The widest gap: you are more \"{it}\" than it is.",
+    "closing": "{primary}, with a pull towards {others}."
+  },
   "tension": "You are also more \"{side}\" than the purest version of {name} tends to be, and that is what makes your variant your own.",
   "phraseGroups": [
     ["nature", "organic", "rural", "urban"],
