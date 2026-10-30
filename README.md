@@ -45,7 +45,7 @@ profile, so you can't guess what a question measures.
 - **The profile** is rescaled to the catalogue's range, so the result depends on the
   shape of your taste, not on how strongly you used the scale.
 - **The match** weights each dimension by how defining it is for the aesthetic and how
-  well it was measured. The top match is the result; the next three are listed under it.
+  well it was measured. The top match is the result; the next three are compared with it underneath, and are on the saved image too.
 - **Selection:** the statements sit in 20 themed groups. A run draws from every group and
   presents one theme at a time. The preferences screen can weight up to five topics. Runs
   come in 30, 50 or 100 statements.

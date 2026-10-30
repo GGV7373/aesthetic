@@ -1005,21 +1005,46 @@
     ]);
   }
 
-  /* The next few matches under the top one. Names come from aestheticsByKey so
-     they follow the gendered-names switch; a family quiz ranks only its own. */
-  function runnersUpSection(result) {
-    var next = result.ranked.slice(1, 4);
+  /* The matches under the top one (a family quiz ranks only its own members).
+     Display details come from aestheticsByKey so names follow the
+     gendered-names switch. */
+  function runnersUp(result) {
+    return result.ranked.slice(1, 4).map(function (r) {
+      return { entry: r, aesthetic: data.aestheticsByKey[r.key] };
+    });
+  }
+
+  /* One card per runner-up: its mood plate, how close it came, and in two
+     sentences where it beats the winner for you and where it parts ways. */
+  function runnersUpSection(result, primary, rng) {
+    var next = runnersUp(result);
     if (!next.length) return null;
-    return el('section', { class: 'block runners' }, [
+    return el('section', { class: 'block' }, [
       el('h2', { class: 'block__title', text: 'Also close' }),
-      el('ol', { class: 'runners__list' }, next.map(function (r) {
-        var a = data.aestheticsByKey[r.key];
-        return el('li', { class: 'runners__item' }, [
-          el('a', {
-            class: 'runners__name', href: wikiUrl(a), target: '_blank', rel: 'noopener noreferrer',
-            text: a.name
-          }),
-          el('span', { class: 'runners__percent', text: r.percent + '%' })
+      el('p', { class: 'block__lede', text: primary.name + ' came out on top, but nobody ' +
+        'fits a single aesthetic perfectly. These came closest, and here is how each one ' +
+        'compares.' }),
+      el('ol', { class: 'runners' }, next.map(function (r, i) {
+        var a = r.aesthetic;
+        return el('li', { class: 'runner', style: 'animation-delay:' + (i * 70) + 'ms' }, [
+          plate(a, 'runner__plate'),
+          el('div', { class: 'runner__body' }, [
+            el('div', { class: 'runner__head' }, [
+              el('h3', { class: 'runner__name', text: a.name }),
+              el('span', { class: 'runner__percent', text: r.entry.percent + '%' })
+            ]),
+            el('p', { class: 'runner__tagline', text: a.tagline }),
+            el('div', { class: 'runner__bar' }, [
+              meter(r.entry.percent, { background: AQ.visuals.meterFill(a), delay: 260 + i * 80 })
+            ]),
+            el('div', { class: 'runner__compare' },
+              AQ.narrative.buildCompare(result.primary, r.entry, data, rng).map(function (s) {
+                return el('p', { text: s });
+              })),
+            el('a', {
+              class: 'runner__link', href: wikiUrl(a), target: '_blank', rel: 'noopener noreferrer'
+            }, ['See ' + a.name + ' on Aesthetics Wiki ↗'])
+          ])
         ]);
       }))
     ]);
@@ -1064,13 +1089,13 @@
   /* "Share result" where the share sheet takes images, otherwise "Save result
      as image". The PNG is drawn up front: Safari only allows share() straight
      from the tap, with no waiting on toBlob in between. */
-  function shareButton(primary, percent, link) {
+  function shareButton(primary, percent, runners, link) {
     var canvas = null;
     var name = primary.key + '.png';
     var file = null;
     var sharing = canShareFiles();
 
-    function card() { return canvas || (canvas = AQ.card.draw(primary, percent)); }
+    function card() { return canvas || (canvas = AQ.card.draw(primary, percent, runners)); }
 
     if (sharing) {
       card().toBlob(function (blob) {
@@ -1088,7 +1113,9 @@
         if (!sharing || !file) { download(); return; }
         global.navigator.share({
           files: [file],
-          text: 'I got ' + primary.name + ' (' + percent + '% match). What aesthetic are you? ' + link
+          text: 'I got ' + primary.name + ' (' + percent + '% match)' +
+            (runners.length ? ', close to ' + runners.map(function (r) { return r.name; }).join(', ') : '') +
+            '. What aesthetic are you? ' + link
         }).catch(function (err) {
           if (!err || err.name !== 'AbortError') download();
         });
@@ -1169,7 +1196,16 @@
     var friendCode = !familyQuiz ? AQ.compare.encode(result.profile, data) : null;
     var friendLink = friendCode && global.location.origin + global.location.pathname + '?compare=' + friendCode;
     var siteLink = global.location.origin + global.location.pathname;
-    var cardBtn = shareButton(primary, result.primary.percent, friendLink || siteLink);
+    var runners = runnersUp(result).map(function (r) {
+      return { name: r.aesthetic.name, percent: r.entry.percent };
+    });
+    var cardBtn = shareButton(primary, result.primary.percent, runners, friendLink || siteLink);
+
+    var closing = runners.length ? el('section', { class: 'result__closing' }, [
+      el('p', { class: 'eyebrow', text: 'Your result in one line' }),
+      el('p', { class: 'result__closingline', text: AQ.narrative.buildClosing(primary.name,
+        runners.slice(0, 2).map(function (r) { return r.name; }), data) })
+    ]) : null;
 
     var footer = el('footer', { class: 'result__footer' }, [
       el('p', { class: 'fineprint' }, [
@@ -1203,9 +1239,10 @@
     var wikiBlock = wikiSection(primary);
 
     var view = el('section', { class: 'screen screen--result' }, [
-      welcome, hero, runnersUpSection(result), !familyQuiz ? compareSection(result.profile) : null,
-      whyBlock, worldBlock, musicSection(primary), wikiBlock, profileSection(result.profile),
-      otherQuizzesSection(familyQuiz || pageQuiz), footer
+      welcome, hero, !familyQuiz ? compareSection(result.profile) : null,
+      whyBlock, worldBlock, runnersUpSection(result, primary, AQ.rng.rngFromSeed(seed, 'compare')),
+      musicSection(primary), wikiBlock, profileSection(result.profile),
+      closing, otherQuizzesSection(familyQuiz || pageQuiz), footer
     ]);
 
     if (!preview) clearStore(STORE_SESSION);

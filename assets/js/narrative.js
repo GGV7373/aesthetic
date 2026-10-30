@@ -137,6 +137,62 @@
     return sentences;
   }
 
+  /* A runner-up set against the top result: one way it fits you better than the
+     winner (or, failing that, what it shares with you), and the widest gap
+     between it and you. Both come from the scoring parts, so they explain the
+     ranking rather than restate the aesthetic's description. */
+  function buildCompare(primary, other, data, rng) {
+    var narrative = data.narrative;
+    var strings = narrative.compare;
+    var primaryAgreement = {};
+    (primary.parts || []).forEach(function (part) { primaryAgreement[part.key] = part.agreement; });
+
+    var solid = (other.parts || []).filter(function (part) {
+      return part.weight > 0.2 && part.agreement > 0.7;
+    });
+    var better = solid
+      .map(function (part) {
+        var theirs = primaryAgreement[part.key] === undefined ? 0.5 : primaryAgreement[part.key];
+        return { part: part, gain: (part.agreement - theirs) * part.weight };
+      })
+      .filter(function (b) { return b.gain > 0.03; })
+      .sort(function (a, b) { return b.gain - a.gain; });
+
+    var sentences = [];
+    var pull = better.length ? better[0].part : solid[0];
+    var pullPhrase = pull && phraseFor(narrative, pull.key, pull.user, rng);
+    if (pullPhrase) {
+      sentences.push((better.length ? strings.better : strings.shared)
+        .replace('{primary}', primary.name) + ' ' + pullPhrase + '.');
+    }
+
+    var gap = (other.parts || [])
+      .filter(function (part) { return part.weight > 0.2 && part.agreement < 0.6; })
+      .sort(function (a, b) {
+        return (1 - a.agreement) * a.weight > (1 - b.agreement) * b.weight ? -1 : 1;
+      })[0];
+    if (gap) {
+      var meta = data.dimensionMeta[gap.key];
+      var its = gap.target >= 0.5 ? meta.high : meta.low;
+      var yours = gap.user >= 0.5 ? meta.high : meta.low;
+      /* Same side but different degree: say which of you goes further. */
+      var template = its !== yours ? strings.apart
+        : Math.abs(gap.target - 0.5) > Math.abs(gap.user - 0.5) ? strings.further : strings.beyond;
+      sentences.push(template
+        .replace('{it}', its.toLowerCase())
+        .replace('{you}', yours.toLowerCase()));
+    }
+
+    return sentences;
+  }
+
+  /* The result in one line, for the end of the page. */
+  function buildClosing(primaryName, otherNames, data) {
+    return data.narrative.compare.closing
+      .replace('{primary}', primaryName)
+      .replace('{others}', joinList(otherNames));
+  }
+
   function buildWorld(aesthetic, profile, data, rng) {
     var mods = data.narrative.facetModifiers;
     return FACETS.map(function (facet) {
@@ -175,6 +231,8 @@
     facets: FACETS,
     buildWhy: buildWhy,
     buildWorld: buildWorld,
+    buildCompare: buildCompare,
+    buildClosing: buildClosing,
     strengthLabel: strengthLabel,
     distinctive: distinctive
   };

@@ -229,6 +229,11 @@ dimKeys.forEach((k) => {
 FACETS.forEach((f) => {
   if (!narrative.facetModifiers[f]) errors.push(`narrative: no facetModifiers for "${f}".`);
 });
+['better', 'shared', 'apart', 'further', 'beyond', 'closing'].forEach((k) => {
+  if (!narrative.compare || typeof narrative.compare[k] !== 'string') {
+    errors.push(`narrative: no compare.${k} string.`);
+  }
+});
 Object.keys(narrative.facetModifiers).forEach((f) => {
   if (!FACETS.includes(f)) errors.push(`narrative: unknown facet "${f}".`);
   narrative.facetModifiers[f].forEach((m) => {
