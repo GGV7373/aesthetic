@@ -140,8 +140,11 @@
   /* A runner-up set against the top result: one way it fits you better than the
      winner (or, failing that, what it shares with you), and the widest gap
      between it and you. Both come from the scoring parts, so they explain the
-     ranking rather than restate the aesthetic's description. */
-  function buildCompare(primary, other, data, rng) {
+     ranking rather than restate the aesthetic's description.
+     `skipGap` drops the second sentence: in a family quiz the targets are
+     centred on the family (see AQ.familyData), so "it leans bright" would only
+     mean brighter than its siblings. */
+  function buildCompare(primary, other, data, rng, skipGap) {
     var narrative = data.narrative;
     var strings = narrative.compare;
     var primaryAgreement = {};
@@ -171,7 +174,7 @@
       .sort(function (a, b) {
         return (1 - a.agreement) * a.weight > (1 - b.agreement) * b.weight ? -1 : 1;
       })[0];
-    if (gap) {
+    if (gap && !skipGap) {
       var meta = data.dimensionMeta[gap.key];
       var its = gap.target >= 0.5 ? meta.high : meta.low;
       var yours = gap.user >= 0.5 ? meta.high : meta.low;

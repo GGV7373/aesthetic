@@ -106,5 +106,17 @@
     return c;
   }
 
-  AQ.card = { draw: draw };
+  /* Resolves once every face the card uses is loaded (or failed), so a card drawn
+     early doesn't fall back to Georgia/Arial. The italic tagline face may not be
+     on the page yet, so asking for it by name is what triggers its download. */
+  function ready() {
+    var fonts = global.document && global.document.fonts;
+    if (!fonts || !fonts.load) return Promise.resolve();
+    return Promise.all([
+      '500 150px "Fraunces"', 'italic 400 44px "Fraunces"',
+      '500 36px "Inter"', '600 30px "Inter"'
+    ].map(function (f) { return fonts.load(f).catch(function () {}); }));
+  }
+
+  AQ.card = { draw: draw, ready: ready };
 })(typeof window !== 'undefined' ? window : globalThis);

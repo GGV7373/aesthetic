@@ -1016,7 +1016,7 @@
 
   /* One card per runner-up: its mood plate, how close it came, and in two
      sentences where it beats the winner for you and where it parts ways. */
-  function runnersUpSection(result, primary, rng) {
+  function runnersUpSection(result, primary, rng, familyQuiz) {
     var next = runnersUp(result);
     if (!next.length) return null;
     return el('section', { class: 'block' }, [
@@ -1038,7 +1038,7 @@
               meter(r.entry.percent, { background: AQ.visuals.meterFill(a), delay: 260 + i * 80 })
             ]),
             el('div', { class: 'runner__compare' },
-              AQ.narrative.buildCompare(result.primary, r.entry, data, rng).map(function (s) {
+              AQ.narrative.buildCompare(result.primary, r.entry, data, rng, !!familyQuiz).map(function (s) {
                 return el('p', { text: s });
               })),
             el('a', {
@@ -1097,14 +1097,20 @@
 
     function card() { return canvas || (canvas = AQ.card.draw(primary, percent, runners)); }
 
+    var fontsReady = AQ.card.ready();
     if (sharing) {
-      card().toBlob(function (blob) {
-        if (blob) file = new File([blob], name, { type: 'image/png' });
-      }, 'image/png');
+      fontsReady.then(function () {
+        card().toBlob(function (blob) {
+          if (blob) file = new File([blob], name, { type: 'image/png' });
+        }, 'image/png');
+      });
     }
 
+    /* A download needs no user gesture, so it can wait for the fonts too. */
     function download() {
-      el('a', { download: name, href: card().toDataURL('image/png') }).click();
+      fontsReady.then(function () {
+        el('a', { download: name, href: card().toDataURL('image/png') }).click();
+      });
     }
 
     return el('button', {
@@ -1264,7 +1270,7 @@
 
     var view = el('section', { class: 'screen screen--result' }, [
       welcome, hero, !familyQuiz ? compareSection(result.profile) : null,
-      whyBlock, worldBlock, runnersUpSection(result, primary, AQ.rng.rngFromSeed(seed, 'compare')),
+      whyBlock, worldBlock, runnersUpSection(result, primary, AQ.rng.rngFromSeed(seed, 'compare'), familyQuiz),
       musicSection(primary), wikiBlock, profileSection(result.profile),
       closing, otherQuizzesSection(familyQuiz || pageQuiz), footer
     ]);
