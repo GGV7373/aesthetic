@@ -2004,6 +2004,13 @@
     "dimensions": { "industrial": 2, "chaos": 2, "darkness": 1, "comfort": -2 }
   },
   {
+    "id": 283,
+    "group": "music",
+    "cluster": "max-wall-of-sound",
+    "text": "A song built from layer on layer of sound beats one voice and a guitar.",
+    "dimensions": { "maximalism": 2, "chaos": 1, "minimalism": -2, "organic": -1 }
+  },
+  {
     "id": 311,
     "group": "nature",
     "cluster": "n-wild-restless",
@@ -2037,6 +2044,13 @@
     "cluster": "n-wild-photographs",
     "text": "Wild places look better in photos than in real life.",
     "dimensions": { "nature": -2, "adventure": -2, "rural": -2, "realism": -1 }
+  },
+  {
+    "id": 274,
+    "group": "nature",
+    "cluster": "ind-chimneys-spoil",
+    "text": "Factory chimneys and power lines spoil a landscape for me, however far off they are.",
+    "dimensions": { "industrial": -3, "nature": 2, "organic": 1 }
   },
   {
     "id": 316,
@@ -2074,6 +2088,13 @@
     "dimensions": { "adventure": 2, "chaos": 2, "nature": 1, "darkness": 1 }
   },
   {
+    "id": 286,
+    "group": "weather",
+    "cluster": "urb-rain-streets",
+    "text": "Rain on city streets at night, with lights reflected in the puddles, is one of my favourite sights.",
+    "dimensions": { "urban": 2, "melancholy": 1, "mystery": 1, "nature": -1 }
+  },
+  {
     "id": 321,
     "group": "home",
     "cluster": "n-no-style-known",
@@ -2109,6 +2130,41 @@
     "dimensions": { "architecture": 3, "refinement": 1, "comfort": 1, "intellect": 1 }
   },
   {
+    "id": 272,
+    "group": "home",
+    "cluster": "ind-exposed-pipes",
+    "text": "Exposed pipes, bare brick and steel beams make a room more interesting, not unfinished.",
+    "dimensions": { "industrial": 3, "architecture": 1, "urban": 1, "ornament": -1 }
+  },
+  {
+    "id": 276,
+    "group": "home",
+    "cluster": "orn-mouldings",
+    "text": "Carved ceilings and an elaborate light fitting are worth more to me than a bigger, plainer room.",
+    "dimensions": { "ornament": 3, "history": 1, "refinement": 1, "minimalism": -2 }
+  },
+  {
+    "id": 280,
+    "group": "home",
+    "cluster": "max-full-walls",
+    "text": "Walls covered edge to edge with pictures, posters and shelves feel like home to me.",
+    "dimensions": { "maximalism": 3, "individualism": 1, "minimalism": -2, "order": -1 }
+  },
+  {
+    "id": 285,
+    "group": "home",
+    "cluster": "urb-flat-in-centre",
+    "text": "A small flat right in the middle of a city beats a big house far out.",
+    "dimensions": { "urban": 3, "social": 1, "rural": -2, "nature": -1 }
+  },
+  {
+    "id": 289,
+    "group": "home",
+    "cluster": "org-natural-materials",
+    "text": "Wood, wool, linen and clay make a room feel right; plastic and chrome never quite do.",
+    "dimensions": { "organic": 3, "craft": 1, "industrial": -1, "technology": -1 }
+  },
+  {
     "id": 326,
     "group": "food",
     "cluster": "n-order-in",
@@ -2142,6 +2198,27 @@
     "cluster": "n-invented-recent",
     "text": "I'd rather try a newly invented dish than a traditional one.",
     "dimensions": { "tradition": -2, "modernity": 2, "futurism": 1, "retro": -2 }
+  },
+  {
+    "id": 278,
+    "group": "food",
+    "cluster": "orn-piped-cake",
+    "text": "A cake covered in piped flowers and gold leaf tempts me more than a simple one.",
+    "dimensions": { "ornament": 2, "maximalism": 2, "whimsy": 1, "realism": -1 }
+  },
+  {
+    "id": 288,
+    "group": "food",
+    "cluster": "urb-street-food",
+    "text": "Street food from a busy market stall beats a quiet meal at home.",
+    "dimensions": { "urban": 2, "social": 1, "adventure": 1, "comfort": -1 }
+  },
+  {
+    "id": 291,
+    "group": "food",
+    "cluster": "org-processed-fine",
+    "text": "I don't much care whether food is natural, as long as it tastes good.",
+    "dimensions": { "organic": -2, "realism": 1, "tradition": -1 }
   },
   {
     "id": 331,
@@ -2249,6 +2326,13 @@
     "dimensions": { "digital": 3, "fantasy": 2, "mystery": 1, "realism": -2 }
   },
   {
+    "id": 292,
+    "group": "screens",
+    "cluster": "ret-old-games",
+    "text": "Old video games with blocky graphics have a charm new ones can't match.",
+    "dimensions": { "retro": 3, "nostalgia": 2, "digital": 1, "modernity": -1 }
+  },
+  {
     "id": 346,
     "group": "future",
     "cluster": "n-infrastructure",
@@ -2284,6 +2368,13 @@
     "dimensions": { "modernity": 3, "history": -2, "urban": 2, "order": 1 }
   },
   {
+    "id": 294,
+    "group": "future",
+    "cluster": "ret-old-futures",
+    "text": "Old ideas of the future, with chrome rockets and robot butlers, appeal to me more than today's.",
+    "dimensions": { "retro": 2, "futurism": 1, "optimism": 1, "realism": -1 }
+  },
+  {
     "id": 351,
     "group": "craft-tools",
     "cluster": "n-making-not-worth",
@@ -2317,6 +2408,20 @@
     "cluster": "n-mass-produced-fine",
     "text": "Mass-produced things are fine - I don't need the handmade version.",
     "dimensions": { "craft": -3, "industrial": 2, "modernity": 2, "refinement": -1 }
+  },
+  {
+    "id": 271,
+    "group": "craft-tools",
+    "cluster": "ind-workshop-grit",
+    "text": "A workshop full of oil, metal shavings and worn tools is a place I'd happily spend a whole day.",
+    "dimensions": { "industrial": 2, "craft": 2, "realism": 1, "refinement": -1 }
+  },
+  {
+    "id": 279,
+    "group": "craft-tools",
+    "cluster": "orn-nothing-extra",
+    "text": "The best-made objects have nothing on them that isn't needed.",
+    "dimensions": { "ornament": -3, "minimalism": 2, "order": 1, "realism": 1 }
   },
   {
     "id": 356,
@@ -2387,6 +2492,13 @@
     "cluster": "ppl-deep-vs-wide",
     "text": "I'd rather have three close friends than lots of casual ones.",
     "dimensions": { "social": -1, "community": -1, "solitude": 1, "individualism": 2 }
+  },
+  {
+    "id": 284,
+    "group": "people",
+    "cluster": "urb-small-town",
+    "text": "I'd rather live in a small place where people know me than in a big city.",
+    "dimensions": { "urban": -2, "community": 2, "rural": 1, "individualism": -1 }
   },
   {
     "id": 366,
@@ -2529,6 +2641,41 @@
     "dimensions": { "ornament": -3, "refinement": 2, "minimalism": 2, "craft": 1 }
   },
   {
+    "id": 275,
+    "group": "style",
+    "cluster": "ind-workwear",
+    "text": "Heavy boots, workwear and tough fabrics suit me better than anything delicate.",
+    "dimensions": { "industrial": 2, "realism": 1, "refinement": -2, "whimsy": -1 }
+  },
+  {
+    "id": 277,
+    "group": "style",
+    "cluster": "orn-plain-clothes",
+    "text": "I reach for plain clothes with no prints, frills or logos.",
+    "dimensions": { "ornament": -2, "minimalism": 2, "maximalism": -1, "order": 1 }
+  },
+  {
+    "id": 282,
+    "group": "style",
+    "cluster": "max-clashing",
+    "text": "Clashing colours and patterns worn together look fun to me, not like a mistake.",
+    "dimensions": { "maximalism": 3, "chaos": 1, "whimsy": 1, "order": -2 }
+  },
+  {
+    "id": 290,
+    "group": "style",
+    "cluster": "org-synthetic",
+    "text": "Shiny synthetic fabrics and plastic accessories look good to me.",
+    "dimensions": { "organic": -2, "digital": 1, "futurism": 1, "modernity": 1 }
+  },
+  {
+    "id": 293,
+    "group": "style",
+    "cluster": "ret-period-dress",
+    "text": "I'd happily dress like someone from an earlier decade every day.",
+    "dimensions": { "retro": 3, "nostalgia": 1, "individualism": 1, "modernity": -1 }
+  },
+  {
     "id": 386,
     "group": "travel",
     "cluster": "one-place-deep",
@@ -2562,6 +2709,34 @@
     "cluster": "n-cities-wear-out",
     "text": "Cities wear me out after a few days.",
     "dimensions": { "urban": -3, "rural": 2, "solitude": 2, "social": -1 }
+  },
+  {
+    "id": 273,
+    "group": "travel",
+    "cluster": "ind-old-docks",
+    "text": "Old docks, rail yards and empty factories are more worth exploring than a pretty old town.",
+    "dimensions": { "industrial": 2, "urban": 1, "adventure": 1, "refinement": -1 }
+  },
+  {
+    "id": 281,
+    "group": "travel",
+    "cluster": "max-light-packing",
+    "text": "When I travel, I pack as little as I possibly can.",
+    "dimensions": { "maximalism": -2, "minimalism": 2, "adventure": 1, "comfort": -1 }
+  },
+  {
+    "id": 287,
+    "group": "travel",
+    "cluster": "urb-skip-cities",
+    "text": "On holiday I skip the cities and head for the countryside.",
+    "dimensions": { "urban": -3, "nature": 2, "rural": 1 }
+  },
+  {
+    "id": 295,
+    "group": "travel",
+    "cluster": "arch-buildings-last",
+    "text": "When I visit a place, the buildings are the last thing I notice.",
+    "dimensions": { "architecture": -3, "nature": 1, "social": 1 }
   },
   {
     "id": 391,

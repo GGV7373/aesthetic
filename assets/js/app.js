@@ -90,8 +90,34 @@
 
   /* The run length a shared link was made with (`&n=`), or the standard one. */
   function urlLength() {
+    var ids = urlRun();
+    if (ids) return ids.length;
     var n = Number(queryParam('n'));
     return LENGTHS.some(function (l) { return l.n === n; }) ? n : data.config.questionsPerQuiz;
+  }
+
+  /* A run link carries the statements themselves (`&run=`, two base-36
+     characters per id), not just the seed: the seed alone can't recreate a run
+     that skipped what this browser had seen before, nor the statements adaptive
+     picking chose along the way. */
+  function encodeRun(ids) {
+    return ids.map(function (id) { return ('0' + id.toString(36)).slice(-2); }).join('');
+  }
+
+  /* The statement ids in a `&run=` link, or null if it isn't a valid main-test run. */
+  function urlRun() {
+    var code = queryParam('run');
+    if (!code || code.length % 2 || /[^0-9a-z]/.test(code)) return null;
+    var main = {};
+    data.questions.forEach(function (q) { main[q.id] = true; });
+    var ids = [], seen = {};
+    for (var i = 0; i < code.length; i += 2) {
+      var id = parseInt(code.slice(i, i + 2), 36);
+      if (!main[id] || seen[id]) return null;
+      seen[id] = true;
+      ids.push(id);
+    }
+    return LENGTHS.some(function (l) { return l.n === ids.length; }) ? ids : null;
   }
 
   /* Picked on the intro, used when the preferences screen starts the run. */
@@ -118,6 +144,27 @@
     var hist = readStore(STORE_HISTORY, []);
     hist.push(questions.map(function (q) { return q.id; }));
     writeStore(STORE_HISTORY, hist.slice(-12));
+  }
+
+  /* Adaptive picking swapped a statement in the current run (the newest entry). */
+  function noteSwap(oldId, newId) {
+    var hist = readStore(STORE_HISTORY, []);
+    var last = hist[hist.length - 1];
+    var at = last ? last.indexOf(oldId) : -1;
+    if (at < 0) return;
+    last[at] = newId;
+    writeStore(STORE_HISTORY, hist);
+  }
+
+  /* Statements from earlier runs, not counting the current one. */
+  function recentIds() {
+    var hist = readStore(STORE_HISTORY, []);
+    var max = (data.config.selection && data.config.selection.maxHistorySessions) || 4;
+    var seen = {};
+    hist.slice(-max - 1, -1).forEach(function (run) {
+      (run || []).forEach(function (id) { seen[id] = true; });
+    });
+    return seen;
   }
 
   /* Turns the categories someone picked on the preferences screen ("Food & the
@@ -153,9 +200,29 @@
       questionIds: selection.questions.map(function (q) { return q.id; }),
       answers: {},
       index: 0,
+      seen: 0,
+      /* A replayed seed is what someone was sent: keep it as drawn. */
+      fixed: !!replay,
       startedAt: Date.now()
     };
     rememberRun(selection.questions);
+    persistSession();
+    return session;
+  }
+
+  /* A shared `&run=` link: exactly those statements, in that order, never swapped. */
+  function startFixedSession(seed, ids, preferredGroups) {
+    session = {
+      seed: AQ.rng.normaliseSeed(seed) || AQ.rng.newSeedString(),
+      groups: preferredGroups || [],
+      questionIds: ids,
+      answers: {},
+      index: 0,
+      seen: 0,
+      fixed: true,
+      startedAt: Date.now()
+    };
+    rememberRun(sessionQuestions());
     persistSession();
     return session;
   }
@@ -351,6 +418,7 @@
                     /* A shared run is fixed by its seed and length - skip straight in. */
                     clearStore(STORE_SESSION);
                     if (urlQuiz) startFamilySession(urlQuiz.key, urlSeed);
+                    else if (urlRun()) startFixedSession(urlSeed, urlRun(), urlGroups());
                     else startSession(urlSeed, true, urlGroups(), urlLength());
                     screenQuiz();
                   }
@@ -637,7 +705,30 @@
       nextBtn.disabled = value === undefined;
     }
 
+    /* The first time a slot is reached, its statement may be swapped for one
+       from the same theme that tells the leading aesthetics apart better (see
+       AQ.adaptQuestion). Slots already shown, answered, or in a shared or
+       family run stay as they are. */
+    var recent = null;
+    function adaptSlot(index) {
+      if (session.seen === undefined) session.seen = index; /* a run saved before this existed */
+      if (index <= session.seen) return;
+      session.seen = index;
+      var q = questions[index];
+      if (!session.fixed && !session.quiz && session.answers[q.id] === undefined) {
+        if (!recent) recent = recentIds();
+        var next = AQ.adaptQuestion(data, questions, index, session.answers, session.seed, recent);
+        if (next !== q) {
+          questions[index] = next;
+          session.questionIds[index] = next.id;
+          noteSwap(q.id, next.id);
+        }
+      }
+      persistSession();
+    }
+
     function paintQuestion() {
+      adaptSlot(session.index);
       var q = questions[session.index];
       var block = blockAt[session.index];
 
@@ -1050,6 +1141,22 @@
     ]);
   }
 
+  /* When the runner-up is within a few points, the result says so instead of
+     pretending to a certainty it doesn't have. A short main-test run can do
+     better, so it says that too. */
+  function nearTie(result, runLength, familyQuiz) {
+    var second = result.ranked[1];
+    if (!second || result.primary.percent - second.percent > 3) return null;
+    var name = data.aestheticsByKey[second.key].name;
+    var longer = !familyQuiz && runLength < LENGTHS[LENGTHS.length - 1].n;
+    return el('p', { class: 'hero__tie' }, [
+      result.primary.percent === second.percent
+        ? 'A dead heat with ' + name + ' (' + second.percent + '%).'
+        : 'A near tie with ' + name + ' (' + second.percent + '%).',
+      longer ? ' A longer run would settle it.' : ''
+    ]);
+  }
+
   /* Where to go after a result: the quizzes this one isn't. */
   function otherQuizzesSection(currentQuiz) {
     var cards = [];
@@ -1171,7 +1278,8 @@
           el('div', { class: 'hero__meter' }, [
             meter(result.primary.percent, { background: AQ.visuals.meterFill(primary), delay: 200 })
           ]),
-          el('p', { class: 'fineprint', text: AQ.narrative.strengthLabel(result.primary.percent, data) })
+          el('p', { class: 'fineprint', text: AQ.narrative.strengthLabel(result.primary.percent, data) }),
+          nearTie(result, runLength, familyQuiz)
         ])
       ])
     ]);
@@ -1195,7 +1303,8 @@
     ]);
 
     var seedLink = global.location.origin + global.location.pathname + '?seed=' + seed +
-      (!familyQuiz && runLength !== data.config.questionsPerQuiz ? '&n=' + runLength : '') +
+      (preview || familyQuiz ? ''
+        : '&run=' + encodeRun(session.questionIds)) +
       (!preview && session.groups && session.groups.length ? '&groups=' + session.groups.join(',') : '');
     var copyBtn = copyButton('Copy run link', seedLink);
     var pickedTopics = !preview && session.groups && session.groups.length;
@@ -1225,7 +1334,7 @@
     }
 
     var runOption = linkOption(['Link to this exact run ', el('code', { text: seed })], [
-      'Whoever opens it gets the same ' + runLength + ' statements, in the same order' +
+      'Whoever opens it gets the same ' + runLength + ' statements you got, in the same order' +
         (familyQuiz ? ', from the ' + familyQuiz.key + ' quiz.'
           : pickedTopics ? ', weighted towards the same topics you picked.' : '.'),
       'Your answers are not in the link. They answer for themselves, so they can land on a ' +
