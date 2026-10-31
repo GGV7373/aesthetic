@@ -271,6 +271,13 @@
     "preferenceWeight": 3,
     "preferredMin": 4,
     "preferredMax": 6,
-    "otherMin": 1
+    "otherMin": 1,
+    "adaptive": {
+      "enabled": true,
+      "warmupShare": 0.25,
+      "warmupMin": 6,
+      "leaders": 8,
+      "temperature": 0.015
+    }
   }
 }

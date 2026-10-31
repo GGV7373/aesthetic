@@ -852,6 +852,13 @@ body:not(:has(.topbar)) .quiz__head {
 
 .hero__meter { max-width: 26rem; }
 .hero__foot .fineprint { margin-top: 0.6rem; }
+.hero__tie {
+  max-width: 56ch;
+  margin: 0.5rem 0 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
 
 @media (min-width: 44rem) {
   .result__welcome { margin-bottom: 2rem; }

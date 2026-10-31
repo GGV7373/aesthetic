@@ -1,7 +1,7 @@
 # What Aesthetic Are You?
 
 A personality test that finds which **aesthetic world** you belong to — not which
-pictures you like. 360 statements, 50 per run, 35 hidden dimensions and 203 aesthetics
+pictures you like. 385 statements, 50 per run, 35 hidden dimensions and 203 aesthetics
 across 18 families, using Aesthetics Wiki as a reference.
 
 [estetikk.com](https://estetikk.com)
@@ -45,12 +45,19 @@ profile, so you can't guess what a question measures.
 - **The profile** is rescaled to the catalogue's range, so the result depends on the
   shape of your taste, not on how strongly you used the scale.
 - **The match** weights each dimension by how defining it is for the aesthetic and how
-  well it was measured. The top match is the result; the next three are compared with it underneath, and are on the saved image too.
+  well it was measured. The top match is the result; the next three are compared with it
+  underneath, and are on the saved image too. A runner-up within three points is called a
+  near tie.
 - **Selection:** the statements sit in 20 themed groups. A run draws from every group and
   presents one theme at a time. The preferences screen can weight up to five topics. Runs
   come in 30, 50 or 100 statements.
-- **Everything is seeded.** `?seed=ABC12XYZ` recreates a run exactly, and browser Back
-  steps through the quiz one statement at a time.
+- **Adaptive:** after the first quarter, each statement not yet shown is swapped, just
+  before it appears, for the one from the same theme that best tells the current leaders
+  apart (`selection.adaptive` in `scoring.json`). Themes, their order and their sizes stay
+  as drawn.
+- **Run links** (`?seed=…&run=…`) carry the statements themselves, so whoever opens one
+  gets exactly that run, never adapted. A bare `?seed=` still works, without adapting.
+  Browser Back steps through the quiz one statement at a time.
 
 ### Family quizzes
 

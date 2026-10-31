@@ -246,6 +246,77 @@
     return out;
   }
 
+  /* How a statement would be answered by someone who is exactly this aesthetic:
+     -0.5 (disagree) .. 0.5 (agree). Only the dimensions the aesthetic has count. */
+  function leaning(q, aesthetic) {
+    var sum = 0, size = 0;
+    Object.keys(q.dimensions).forEach(function (k) {
+      var w = q.dimensions[k];
+      size += Math.abs(w);
+      var t = aesthetic.dimensions[k];
+      if (t !== undefined) sum += w * (t - 0.5);
+    });
+    return size ? sum / size : 0;
+  }
+
+  /* Adaptive picking. The run is drawn up front as above, but once a quarter
+     of it is answered, each statement not yet shown is swapped, just before it
+     is shown, for the one from the same theme that best separates the
+     aesthetics currently in the lead: the statement they would answer most
+     differently, weighted towards the very top. The themes, their order and
+     their sizes stay exactly as drawn, so the blocks and the preferences hold.
+
+     run: the run's statements (the slot's current one is the fallback);
+     answers: { id: -3..3 } so far; recent: { id: true } seen in earlier runs,
+     which only lose out when nothing fresh is nearly as useful. Returns the
+     statement for slot `index`. Seeded tie-breaks, so the same answers to the
+     same run always lead to the same statements. */
+  AQ.adaptQuestion = function (data, run, index, answers, seed, recent) {
+    var current = run[index];
+    var cfg = (data.config.selection && data.config.selection.adaptive) || {};
+    if (cfg.enabled === false) return current;
+    var warmup = Math.max(cfg.warmupMin || 6, Math.floor((cfg.warmupShare || 0.25) * run.length));
+    if (index < warmup) return current;
+
+    var answered = run.slice(0, index).filter(function (q) { return answers[q.id] !== undefined; });
+    if (answered.length < warmup) return current;
+    var ranked = AQ.score(answered, answers, data).ranked.slice(0, cfg.leaders || 8);
+    var tau = cfg.temperature || 0.015;
+    var top = ranked[0].similarity;
+    var weights = ranked.map(function (r) { return Math.exp((r.similarity - top) / tau); });
+    var wsum = weights.reduce(function (s, w) { return s + w; }, 0);
+    var leaders = ranked.map(function (r, i) {
+      return { aesthetic: data.aestheticsByKey[r.key], p: weights[i] / wsum };
+    });
+
+    var taken = {}, clusters = {};
+    run.forEach(function (q, i) {
+      if (i === index) return;
+      taken[q.id] = true;
+      clusters[q.cluster] = true;
+    });
+
+    /* Spread of the leaders' expected answers, weighted by how far up they are. */
+    function usefulness(q) {
+      var lean = leaders.map(function (l) { return leaning(q, l.aesthetic); });
+      var mean = 0;
+      leaders.forEach(function (l, i) { mean += l.p * lean[i]; });
+      var v = 0;
+      leaders.forEach(function (l, i) { v += l.p * (lean[i] - mean) * (lean[i] - mean); });
+      return recent && recent[q.id] ? v * 0.7 : v;
+    }
+
+    var rng = AQ.rng.rngFromSeed(seed, 'adapt-' + index);
+    var best = current, bestScore = usefulness(current);
+    AQ.rng.shuffle(data.questions.filter(function (q) {
+      return q.group === current.group && !taken[q.id] && !clusters[q.cluster];
+    }), rng).forEach(function (q) {
+      var s = usefulness(q);
+      if (s > bestScore) { best = q; bestScore = s; }
+    });
+    return best;
+  };
+
   /* options: { seed, excludeIds: [], total, preferredGroups: [] } */
   AQ.selectQuestions = function (data, options) {
     options = options || {};
