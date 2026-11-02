@@ -305,7 +305,7 @@
   {
     "key": "dark-academia",
     "name": "Dark Academia",
-    "family": "Academia",
+    "family": "Academia and Period",
     "tagline": "Knowledge as obsession",
     "description": "Old libraries, dead languages and ambitions that grow slightly too large. Beauty, discipline and a suspicion that learning costs something.",
     "keywords": ["library", "latin", "tweed", "candelabra", "essays"],
@@ -352,7 +352,7 @@
   {
     "key": "light-academia",
     "name": "Light Academia",
-    "family": "Academia",
+    "family": "Academia and Period",
     "tagline": "Learning because the world is worth understanding",
     "description": "The same love of books and buildings as Dark Academia, without the shadow. Bright reading rooms, friendship, summer and a belief that knowledge does good.",
     "keywords": ["reading room", "letters", "poetry", "morning sun", "friendship"],
@@ -395,7 +395,7 @@
   {
     "key": "romantic-academia",
     "name": "Romantic Academia",
-    "family": "Academia",
+    "family": "Academia and Period",
     "tagline": "Study as a love affair",
     "description": "The literature, the longing and the passion rather than the exam. Knowledge is something you feel as much as understand.",
     "keywords": ["poetry", "letters", "roses", "diaries", "longing"],
@@ -1172,7 +1172,7 @@
   {
     "key": "adventurecore",
     "name": "Adventurecore",
-    "family": "Adventure and Frontier",
+    "family": "Adventure and Sea",
     "tagline": "Out, onward, further",
     "description": "Maps, tents, altitude and an urge to see what lies over the next ridge. Optimistic, practical and slightly impatient.",
     "keywords": ["maps", "tent", "compass", "pack", "summit"],
@@ -1256,7 +1256,7 @@
   {
     "key": "nautical",
     "name": "Nautical",
-    "family": "Sea and Coast",
+    "family": "Adventure and Sea",
     "tagline": "Everything stowed before you sail",
     "description": "The order and romance of seafaring: knots, brass, charts and discipline. The adventure is large, but the ship has to be tidy.",
     "keywords": ["knots", "charts", "brass", "lighthouse", "sails"],
@@ -1299,7 +1299,7 @@
   {
     "key": "oceanpunk",
     "name": "Oceanpunk",
-    "family": "Sea and Coast",
+    "family": "Adventure and Sea",
     "tagline": "A world of water and sail",
     "description": "Civilisations built on sea and islands: floating cities, diving bells and trade between places no chart quite covers.",
     "keywords": ["floating city", "diving bell", "archipelago", "sailing ship", "deep water"],
@@ -1470,7 +1470,7 @@
   {
     "key": "art-deco",
     "name": "Art Deco",
-    "family": "Art and Period",
+    "family": "Americana and Screen",
     "tagline": "Geometry, luxury and faith in the future",
     "description": "The modern luxury of the interwar years: symmetry, expensive materials and a belief that the new should also be beautiful.",
     "keywords": ["geometry", "gold", "symmetry", "sunburst", "marble"],
@@ -1513,7 +1513,7 @@
   {
     "key": "scandinavian-design",
     "name": "Scandinavian Design",
-    "family": "Design and Everyday",
+    "family": "Home and Design",
     "tagline": "Simplicity with warmth",
     "description": "Pale wood, function and democratic beauty. The austerity is softened by materials you want to touch, and by light that is precious.",
     "keywords": ["pale wood", "function", "wool", "daylight", "simplicity"],
@@ -1556,7 +1556,7 @@
   {
     "key": "maximalism",
     "name": "Maximalism",
-    "family": "Design and Everyday",
+    "family": "Home and Design",
     "tagline": "More, and with meaning",
     "description": "Rooms full of colour, pattern and collections where everything has a story. Abundance as personality, not as mess.",
     "keywords": ["pattern", "collections", "colour", "gallery wall", "layers"],
@@ -1599,7 +1599,7 @@
   {
     "key": "minimalism",
     "name": "Minimalism",
-    "family": "Design and Everyday",
+    "family": "Home and Design",
     "tagline": "Everything that needn't be there is gone",
     "description": "Fewer things, better things, and room to think. Calm through absence, and a beauty that lives in proportion rather than decoration.",
     "keywords": ["empty space", "proportion", "white", "order", "few things"],
@@ -1943,7 +1943,7 @@
   {
     "key": "romanticism",
     "name": "Romanticism",
-    "family": "Art and Period",
+    "family": "Academia and Period",
     "tagline": "The feeling larger than the landscape",
     "description": "The nineteenth-century cult of nature's grandeur, the inner life and the sublime. Mountains, ruins and an urge to be overwhelmed.",
     "keywords": ["the sublime", "ruins", "mountains", "storms", "the individual"],
@@ -1986,7 +1986,7 @@
   {
     "key": "eclectic-grandpa",
     "name": "Eclectic Vintage",
-    "family": "Design and Everyday",
+    "family": "Home and Design",
     "tagline": "Nobody trying, everything working",
     "description": "Worn cardigans, inherited furniture, collections and a total lack of interest in what's current. Cosy, personal and slightly comic.",
     "gendered": { "name": "Eclectic Grandpa" },
@@ -2030,7 +2030,7 @@
   {
     "key": "normcore",
     "name": "Normcore",
-    "family": "Design and Everyday",
+    "family": "Style and Status",
     "tagline": "Nothing to prove",
     "description": "Deliberate ordinariness: practical clothes, familiar brands and an absence of signals. Freedom in not having to express yourself through objects.",
     "keywords": ["ordinary", "practical", "unsignalled", "everyday", "functional"],
@@ -2073,7 +2073,7 @@
   {
     "key": "wabi-sabi",
     "name": "Wabi-Sabi",
-    "family": "Design and Everyday",
+    "family": "Home and Design",
     "tagline": "The imperfect, the impermanent",
     "description": "A Japanese aesthetic in which cracks, wear and asymmetry are the value. Quiet, few things, and an acceptance that everything is temporary.",
     "keywords": ["cracks", "asymmetry", "patina", "stillness", "clay"],
@@ -2159,7 +2159,7 @@
   {
     "key": "jock",
     "name": "Jock",
-    "family": "Sport and Utility",
+    "family": "Style and Status",
     "tagline": "Peaked in the gym and proud of it",
     "description": "American school and college sports culture: letterman jackets, varsity numbers, locker rooms and the social gravity of the team. Wholesome, competitive and worn on the sleeve.",
     "keywords": ["letterman", "varsity", "locker room", "bleachers", "team"],
@@ -2195,7 +2195,7 @@
   {
     "key": "racing",
     "name": "Racing",
-    "family": "Sport and Utility",
+    "family": "Style and Status",
     "tagline": "Won on the straight, lost in the pit",
     "description": "Motorsport as an aesthetic: sponsor liveries, pit boards, chequered flags and fireproof suits. Precision engineering pushed to failure, measured in tenths of a second.",
     "keywords": ["livery", "pit lane", "chequered flag", "apex", "telemetry"],
@@ -2232,7 +2232,7 @@
   {
     "key": "tacticool",
     "name": "Tacticool",
-    "family": "Sport and Utility",
+    "family": "Style and Status",
     "tagline": "Kitted out for a callout that never comes",
     "description": "Civilian gear built on a military template: plate-carrier vests, molle webbing, camo patterns and a torch on everything. Preparedness worn as style, whether or not it is ever needed.",
     "keywords": ["plate carrier", "molle", "multicam", "everyday carry", "red dot"],
@@ -2269,7 +2269,7 @@
   {
     "key": "western",
     "name": "Western",
-    "family": "Adventure and Frontier",
+    "family": "Adventure and Sea",
     "tagline": "Big country and a long ride",
     "description": "The visual world of the American frontier: denim and leather, worn hats, wide horizons and cattle towns. Rugged, self-reliant and heavy with myth.",
     "keywords": ["denim", "leather", "cattle town", "prairie", "worn hat"],
@@ -3795,7 +3795,7 @@
   {
     "key": "cluttercore",
     "name": "Cluttercore",
-    "family": "Cosy and Home",
+    "family": "Home and Design",
     "tagline": "Every surface earns its keep",
     "description": "Shelves stacked three deep, walls covered corner to corner, and comfort found in abundance rather than order. The direct answer to minimalism.",
     "keywords": ["shelves", "collections", "gallery wall", "knick-knacks", "layered rugs"],
@@ -4209,7 +4209,7 @@
   {
     "key": "japandi",
     "name": "Japandi",
-    "family": "Japanese Street and Kawaii",
+    "family": "Home and Design",
     "tagline": "Two kinds of restraint agreeing with each other",
     "description": "Japanese joinery and Scandinavian warmth in one room - low furniture, pale wood, hand-thrown ceramics and a great deal of empty space left alone.",
     "keywords": ["pale wood", "low furniture", "ceramics", "paper screens", "negative space"],
@@ -4255,7 +4255,7 @@
   {
     "key": "old-money",
     "name": "Old Money",
-    "family": "Status and Money",
+    "family": "Style and Status",
     "tagline": "Nothing new, nothing logoed, nothing explained",
     "description": "Inherited tailoring, a sailing club and shoes resoled rather than replaced. Wealth expressed by how little it announces itself.",
     "keywords": [
@@ -4307,7 +4307,7 @@
   {
     "key": "hypebeast",
     "name": "Hypebeast",
-    "family": "Status and Money",
+    "family": "Style and Status",
     "tagline": "Queued for, resold, and worn once",
     "description": "Limited drops, loud logos and a shoe collection kept in the boxes. Status measured in scarcity rather than price.",
     "keywords": ["sneakers", "limited drops", "logos", "streetwear", "resale"],
@@ -4353,7 +4353,7 @@
   {
     "key": "mob-wife",
     "name": "Mob Glamour",
-    "family": "Status and Money",
+    "family": "Style and Status",
     "tagline": "Fur coat, gold hoops, no apologies",
     "description": "Big fur, leopard print, heavy gold and a cigarette held like a statement. Glamour that is loud, adult and entirely uninterested in being tasteful.",
     "gendered": { "name": "Mob Wife" },
@@ -4823,7 +4823,7 @@
   {
     "key": "regency",
     "name": "Regency",
-    "family": "Art and Period",
+    "family": "Academia and Period",
     "tagline": "Empire waist, wit, and a long walk to the folly",
     "description": "Muslin gowns, assembly rooms and pale neoclassical rooms. Restraint on the surface, with an entire social economy running underneath it.",
     "keywords": ["empire waist", "assembly rooms", "muslin", "neoclassical", "letters"],
@@ -4961,7 +4961,7 @@
   {
     "key": "afrofuturism",
     "name": "Afrofuturism",
-    "family": "Global and Regional",
+    "family": "Punk and Futurism",
     "tagline": "A future built on an older map",
     "description": "Space travel, ancestral pattern and technology imagined outside the usual lineage. A speculative tradition that treats the future as something to be claimed rather than inherited.",
     "keywords": ["space travel", "ancestral pattern", "speculative", "cosmic", "brass and gold"],
@@ -5007,7 +5007,7 @@
   {
     "key": "afropunk",
     "name": "Afropunk",
-    "family": "Global and Regional",
+    "family": "Subculture",
     "tagline": "Black, loud, and refusing the given categories",
     "description": "Sculptural hair, clashing print and punk's refusal reclaimed. A festival, a scene and an insistence on being exactly as much as you are.",
     "keywords": ["sculptural hair", "clashing print", "festival", "punk", "self-definition"],
@@ -5053,7 +5053,7 @@
   {
     "key": "sinofuturism",
     "name": "Sinofuturism",
-    "family": "Global and Regional",
+    "family": "Punk and Futurism",
     "tagline": "Megacity at scale, lit in neon and jade",
     "description": "Vertical cities, LED calligraphy and manufacturing at a scale that stops being comprehensible. The future arriving faster than anyone planned for.",
     "keywords": ["megacity", "LED signage", "calligraphy", "manufacture", "vertical density"],
@@ -5099,7 +5099,7 @@
   {
     "key": "wuxia",
     "name": "Wuxia",
-    "family": "Global and Regional",
+    "family": "Witchy and Folk",
     "tagline": "Swordsmen, misted peaks and a code worth dying for",
     "description": "Flowing robes, bamboo forests and martial artists who move like weather. Chinese heroic fiction where honour is the real plot.",
     "keywords": ["swordplay", "bamboo forest", "misted peaks", "robes", "martial code"],
@@ -5145,7 +5145,7 @@
   {
     "key": "sovietwave",
     "name": "Sovietwave",
-    "family": "Global and Regional",
+    "family": "Punk and Futurism",
     "tagline": "A future that was promised and quietly cancelled",
     "description": "Panel blocks, cosmonauts and synthesiser melodies drenched in longing. Nostalgia for an optimism that belonged to a country that no longer exists.",
     "keywords": ["panel blocks", "cosmonauts", "synth melody", "space programme", "longing"],
@@ -5191,7 +5191,7 @@
   {
     "key": "coastal-grandmother",
     "name": "Coastal Linen",
-    "family": "Cosy and Home",
+    "family": "Home and Design",
     "tagline": "Linen, a good kitchen and no one to impress",
     "description": "White linen, a garden by the sea and an enormous kitchen used properly. Unhurried comfort with taste and money quietly behind it.",
     "gendered": { "name": "Coastal Grandmother" },
@@ -6024,7 +6024,7 @@
   {
     "key": "shabby-chic",
     "name": "Shabby Chic",
-    "family": "Cosy and Home",
+    "family": "Home and Design",
     "tagline": "Chipped paint, roses and linen on the line",
     "description": "A home that looks loved rather than new: painted furniture with the wood showing through, faded florals, white linen and flea-market finds. Soft, pretty and comfortably worn.",
     "keywords": ["distressed furniture", "faded florals", "white linen", "flea market", "roses"],
@@ -6072,7 +6072,7 @@
   {
     "key": "kitsch",
     "name": "Kitsch",
-    "family": "Design and Everyday",
+    "family": "Home and Design",
     "tagline": "Too much, on purpose, and loving it",
     "description": "Lava lamps, flamingos, souvenir plates and leopard print in the same room. A home that collects the tacky and the sentimental and wears it with total sincerity and a grin.",
     "keywords": ["lava lamp", "flamingo", "souvenirs", "leopard print", "novelty"],
@@ -6119,7 +6119,7 @@
   {
     "key": "tiki",
     "name": "Tiki",
-    "family": "Sea and Coast",
+    "family": "Adventure and Sea",
     "tagline": "Bamboo bars and a permanent holiday",
     "description": "A mid-century dream of the tropics, built in the suburbs: carved masks, rattan, bamboo, glowing pufferfish lamps and drinks with umbrellas in. Escapism as interior design.",
     "keywords": ["bamboo", "rattan", "carved masks", "exotica", "tropical bar"],
@@ -6262,7 +6262,7 @@
   {
     "key": "urbancore",
     "name": "Urbancore",
-    "family": "Design and Everyday",
+    "family": "Home and Design",
     "tagline": "The city as your living room",
     "description": "Concrete, crosswalks, rooftop views and a flat close enough to hear the trains. Living in the middle of it all, where the street is the garden and everyone is a neighbour for a moment.",
     "keywords": ["city skyline", "subway", "rooftop", "concrete", "streetlights"],
@@ -6310,7 +6310,7 @@
   {
     "key": "cozycore",
     "name": "Cozycore",
-    "family": "Cosy and Home",
+    "family": "Home and Design",
     "tagline": "Blankets, warm light and nowhere to be",
     "description": "A home built entirely around comfort: thick socks, soft lamps, a mug that stays warm and a pile of things to read. The rain is welcome because it means staying in.",
     "keywords": ["blankets", "warm lamps", "mugs", "fuzzy socks", "rainy day"],
@@ -6358,7 +6358,7 @@
   {
     "key": "space-age",
     "name": "Space Age",
-    "family": "Design and Everyday",
+    "family": "Home and Design",
     "tagline": "White plastic, round windows and the moon in reach",
     "description": "Sixties design that believed the future had arrived: egg chairs, moulded plastic, sunken lounges and silver everything. A home built like a capsule, ready for launch.",
     "keywords": ["egg chair", "moulded plastic", "sunken lounge", "silver", "round windows"],
