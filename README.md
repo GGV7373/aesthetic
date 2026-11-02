@@ -171,8 +171,8 @@ node tools/build-bundle.js   # only needed for opening from disk
 ## Privacy
 
 Everything runs in the browser, with no tracking. The only outside requests are
-YouTube thumbnails; music links open YouTube only when
-clicked. `localStorage` keeps the run in progress, question history, topic preferences
+Google Fonts and YouTube thumbnails; music links open YouTube only when
+clicked. `privacy.html` says the same to visitors, so keep the two in step. `localStorage` keeps the run in progress, question history, topic preferences
 and the name setting.
 
 ## License

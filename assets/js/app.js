@@ -380,27 +380,14 @@
     var urlSeed = queryParam('seed');
     var urlQuiz = pageQuiz;
 
-    function sectionHead(kicker, title) {
-      return el('div', { class: 'intro__head' }, [
-        el('p', { class: 'eyebrow', text: kicker }),
-        el('h2', { class: 'intro__h2', text: title })
-      ]);
-    }
-
     var hero = el('div', { class: 'intro__hero' }, [
-      el('p', { class: 'eyebrow', text: pageQuiz
-        ? AQ.quizMembers(data, pageQuiz).length + ' aesthetics' : 'Aesthetic quizzes' }),
-      pageQuiz
-        ? el('h1', { class: 'display', text: pageQuiz.title })
-        : el('h1', { class: 'display', html: 'Find the <em>world</em><br>you <em>belong</em> in.' }),
+      pageQuiz ? el('p', { class: 'eyebrow', text: AQ.quizMembers(data, pageQuiz).length + ' aesthetics' }) : null,
+      pageQuiz ? el('h1', { class: 'display', text: pageQuiz.title }) : null,
       el('p', { class: 'lede' }, [
         pageQuiz ? pageQuiz.blurb :
         'Short personality quizzes that match your temperament, meaning your relationship ' +
         'to nature, technology, history, order, solitude, darkness and beauty, to one ' +
         'aesthetic. Not what you like the look of, but how you are.'
-      ]),
-      pageQuiz ? null : el('a', { class: 'intro__news', href: 'updates.html' }, [
-        el('span', { class: 'intro__newstag', text: 'New' }), 'See what\'s changed →'
       ]),
       urlSeed || resumable || pageQuiz
         ? el('div', { class: 'intro__actions' }, [
@@ -455,7 +442,7 @@
         hero,
         el('p', { class: 'fineprint' }, [
           'Rate each statement from strongly disagree to strongly agree. Everything is ' +
-          'worked out in your own browser and nothing is sent anywhere.'
+          'worked out in your own browser and your answers are not sent anywhere.'
         ]),
         genderedNamesToggle(screenIntro)
       ]));
@@ -464,11 +451,8 @@
 
     /* The full test: every aesthetic, three lengths. */
     var mainCard = el('article', { class: 'intro__card intro__card--main' }, [
-      el('p', { class: 'eyebrow', text: 'The full test' }),
-      el('h3', { class: 'intro__cardtitle', text: 'Which aesthetic are you?' }),
-      el('p', { text: 'All ' + data.aesthetics.length + ' aesthetics, from Cottagecore to ' +
-        'Cybergoth. Pick a few topics you care about, then answer. Longer runs give a more ' +
-        'precise result.' }),
+      el('h2', { class: 'intro__cardtitle', text: 'The aesthetic quiz' }),
+      el('p', { text: 'Find your aesthetic.' }),
       el('div', { class: 'intro__lengths' }, LENGTHS.map(function (l) {
         return el('button', {
           class: 'btn ' + (l.n === data.config.questionsPerQuiz ? 'btn--primary' : 'btn--ghost'),
@@ -487,32 +471,27 @@
 
     /* One card per family quiz, each linking to its own page (internet.html, ...). */
     var familyCards = data.familyQuizzes.map(function (qz) {
-      return el('article', { class: 'intro__card' }, [
-        el('p', { class: 'eyebrow', text: AQ.quizMembers(data, qz).length + ' aesthetics' }),
-        el('h3', { class: 'intro__cardtitle', text: qz.title }),
+      return el('article', { class: 'intro__card intro__card--quiz' }, [
+        el('h3', { class: 'intro__cardtitle', text: qz.key.charAt(0).toUpperCase() + qz.key.slice(1) + ' aesthetics' }),
         el('p', { text: qz.blurb }),
-        el('a', { class: 'btn btn--primary', href: qz.key + '.html' },
-          ['Open · ' + qz.questions.length])
+        el('a', { class: 'btn btn--primary', href: qz.key + '.html' }, ['Take the quiz'])
       ]);
     });
 
     var view = el('section', { class: 'screen screen--intro' }, [
+      el('header', { class: 'intro__top' }, [
+        el('h1', { class: 'display', text: 'Estetikk' }),
+        el('a', { class: 'btn btn--primary btn--small', href: 'updates.html' }, ['See what\'s changed'])
+      ]),
       hero,
       el('section', { class: 'intro__section' }, [
-        sectionHead('Start here', 'Pick a quiz'),
-        el('div', { class: 'intro__grid' }, [mainCard].concat(familyCards))
+        el('div', { class: 'intro__grid intro__grid--home' }, [mainCard].concat(familyCards))
       ]),
-      el('ul', { class: 'intro__facts' }, [
-        el('li', {}, [el('strong', { text: String(data.aesthetics.length) }), 'aesthetics']),
-        el('li', {}, [el('strong', { text: String(1 + data.familyQuizzes.length) }), 'quizzes']),
-        el('li', {}, [el('strong', { text: String(data.config.dimensions.length) }), 'hidden dimensions']),
-        el('li', {}, [el('strong', { text: String(data.config.scale.length) }), 'answer levels per statement'])
-      ]),
-      el('p', { class: 'fineprint' }, [
-        'Everything is worked out in your own browser. Nothing is sent anywhere, and your ' +
-        'answers are stored locally only so you can pick up where you left off.'
-      ]),
-      genderedNamesToggle(screenIntro)
+      genderedNamesToggle(screenIntro),
+      el('footer', { class: 'intro__foot' }, [
+        el('a', { href: 'privacy.html', text: 'Privacy' }),
+        el('a', { href: 'updates.html', text: 'News' })
+      ])
     ]);
 
     render(view);
@@ -902,8 +881,8 @@
     return wrap;
   }
 
-  /* Plain links that open in a new tab - nothing is embedded, so the result
-     page makes no request to YouTube and the privacy note stays true. */
+  /* Plain links that open in a new tab - nothing is embedded, so the only request
+     to YouTube is the thumbnail. privacy.html says so; keep the two in step. */
   function trackCard(p, from) {
     return el('a', {
       class: 'track' + (from ? ' track--borrowed' : ''),

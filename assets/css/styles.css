@@ -345,16 +345,13 @@ a.btn { text-decoration: none; }
 
 .intro__section { margin-top: 2.6rem; }
 
-.intro__head { margin-bottom: 1rem; }
-.intro__head .eyebrow { margin-bottom: 0.3rem; }
-
-.intro__h2 {
-  margin: 0;
-  font-family: var(--serif);
-  font-weight: 600;
-  font-size: clamp(1.6rem, 5vw, 2.3rem);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+/* The wordmark, with the updates link in the far corner. */
+.intro__top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
 }
 
 .intro__grid { display: grid; gap: 0.75rem; }
@@ -375,6 +372,10 @@ a.btn { text-decoration: none; }
 .intro__card .fineprint { margin: 0; font-size: 0.78rem; }
 .intro__card .btn { margin-top: auto; }
 
+/* Title and description on top, a full-width button pinned to the bottom. */
+.intro__card--quiz { grid-template-rows: auto 1fr auto; align-content: stretch; }
+.intro__card--quiz .btn { justify-self: stretch; }
+
 .intro__cardtitle {
   margin: 0;
   font-family: var(--serif);
@@ -386,31 +387,20 @@ a.btn { text-decoration: none; }
 .intro__lengths { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; width: 100%; }
 .intro__lengths .btn { padding-inline: 0.25rem; font-size: 0.84rem; white-space: nowrap; }
 
-/* A quiet pill under the lede that links to updates.html. */
-.intro__news {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  min-height: 44px;
-  padding: 0.3rem 0.95rem 0.3rem 0.35rem;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: var(--glass);
-  color: var(--ink-soft);
-  font-size: 0.86rem;
-  text-decoration: none;
+.intro__foot {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 2rem;
+  margin-top: 2.6rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.9rem;
 }
-.intro__news:hover { border-color: var(--line-strong); color: var(--ink); }
-
-.intro__newstag {
-  padding: 0.25rem 0.6rem;
-  border-radius: 999px;
-  background: var(--accent-soft);
-  color: var(--accent);
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+.intro__foot a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--ink-soft);
 }
 
 .intro__facts {
@@ -440,6 +430,8 @@ a.btn { text-decoration: none; }
   .intro__section { margin-top: 3.6rem; }
   .intro__grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
   .intro__card { padding: 1.5rem 1.6rem; }
+  .intro__grid--home { grid-template-columns: repeat(3, 1fr); }
+  .intro__card--quiz { min-height: 13rem; }
   .intro__card--main { grid-column: 1 / -1; }
   .intro__card--main .intro__cardtitle { font-size: 1.7rem; }
   .intro__lengths { display: flex; flex-wrap: wrap; width: auto; }
