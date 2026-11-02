@@ -399,6 +399,9 @@
         'to nature, technology, history, order, solitude, darkness and beauty, to one ' +
         'aesthetic. Not what you like the look of, but how you are.'
       ]),
+      pageQuiz ? null : el('a', { class: 'intro__news', href: 'updates.html' }, [
+        el('span', { class: 'intro__newstag', text: 'New' }), 'See what\'s changed →'
+      ]),
       urlSeed || resumable || pageQuiz
         ? el('div', { class: 'intro__actions' }, [
             pageQuiz && !urlSeed
@@ -498,19 +501,6 @@
       el('section', { class: 'intro__section' }, [
         sectionHead('Start here', 'Pick a quiz'),
         el('div', { class: 'intro__grid' }, [mainCard].concat(familyCards))
-      ]),
-      el('section', { class: 'intro__section' }, [
-        sectionHead('How it works', 'Three steps'),
-        el('ol', { class: 'intro__steps' }, [
-          el('li', {}, [el('h3', { text: 'Pick a quiz' }),
-            el('p', { text: 'The full test covers every aesthetic. The smaller quizzes stay ' +
-              'inside one family, like internet or goth.' })]),
-          el('li', {}, [el('h3', { text: 'Answer honestly' }),
-            el('p', { text: 'Rate each statement from strongly disagree to strongly agree. ' +
-              'Go with your first instinct rather than the interesting answer.' })]),
-          el('li', {}, [el('h3', { text: 'Meet your aesthetic' }),
-            el('p', { text: 'You are never told what a statement measures until the result.' })])
-        ])
       ]),
       el('ul', { class: 'intro__facts' }, [
         el('li', {}, [el('strong', { text: String(data.aesthetics.length) }), 'aesthetics']),
