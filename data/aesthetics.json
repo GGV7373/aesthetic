@@ -165,7 +165,7 @@
       "realism": 0.45,
       "adventure": 0.3
     },
-    "related": ["cabincore", "fairycore", "naturecore", "mori-kei"],
+    "related": ["cabincore", "fairycore", "naturecore"],
     "world": {
       "setting": "a kitchen garden slightly too full, a fence with a rose bush over it",
       "architecture": "a small whitewashed house, a low door, windows with glazing bars",
@@ -207,7 +207,7 @@
       "mystery": 0.5,
       "individualism": 0.6
     },
-    "related": ["cottagecore", "lumberjack", "rustic", "forestpunk"],
+    "related": ["cottagecore", "lumberjack", "forestpunk"],
     "world": {
       "setting": "water lying flat in the morning, forest on every side",
       "architecture": "notched timber, one main room, a porch with space for two chairs and only one person",
@@ -249,7 +249,7 @@
       "whimsy": 0.5,
       "darkness": 0.3
     },
-    "related": ["cottagecore", "forestpunk", "fairycore", "mori-kei"],
+    "related": ["cottagecore", "forestpunk", "fairycore"],
     "world": {
       "setting": "a slope of lichen and heather, a shoreline of weed and shells",
       "architecture": "a field station, a greenhouse, something built to observe from",
@@ -337,7 +337,7 @@
       "individualism": 0.6,
       "modernity": 0.15
     },
-    "related": ["light-academia", "romantic-academia", "film-noir", "dandy"],
+    "related": ["light-academia", "romantic-academia", "film-noir"],
     "world": {
       "setting": "a university quad in the rain, stairs worn down in the middle",
       "architecture": "neo-gothic, tall windows, corridors that carry an echo",
@@ -510,7 +510,7 @@
       "adventure": 0.5,
       "modernity": 0.35
     },
-    "related": ["industrial", "old-web", "beatnik"],
+    "related": ["industrial", "old-web"],
     "world": {
       "setting": "a rain-soaked suburb, a rehearsal room in a basement, a car park outside a shop",
       "architecture": "a brick building with graffiti, a warehouse turned into something else",
@@ -897,7 +897,7 @@
       "optimism": 0.6,
       "community": 0.45
     },
-    "related": ["dieselpunk", "art-deco", "dandy"],
+    "related": ["dieselpunk", "art-deco"],
     "world": {
       "setting": "a city of bridges and pipework, steam rising from gratings",
       "architecture": "iron and glass, a greenhouse on the roof, a clock tower with visible mechanism",
@@ -985,7 +985,7 @@
       "maximalism": 0.5,
       "refinement": 0.6
     },
-    "related": ["frutiger-eco", "frutiger-aero", "naturecore", "art-nouveau"],
+    "related": ["frutiger-eco", "frutiger-aero", "naturecore"],
     "world": {
       "setting": "a city of canals and fruit trees, wind turbines on the horizon",
       "architecture": "curved timber roofs, solar panels that look like art, a shared room at the centre",
@@ -1028,7 +1028,7 @@
       "adventure": 0.45,
       "comfort": 0.3
     },
-    "related": ["brutalism", "dieselpunk", "cyberpunk", "industrial-gothic"],
+    "related": ["dieselpunk", "cyberpunk", "industrial-gothic"],
     "world": {
       "setting": "an industrial estate by the river, cranes against an evening sky",
       "architecture": "warehouse halls, steel beams left visible, tall windows in a grid",
@@ -1071,7 +1071,7 @@
       "comfort": 0.2,
       "maximalism": 0.5
     },
-    "related": ["industrial", "brutalism", "film-noir", "dark-academia"],
+    "related": ["industrial", "film-noir", "dark-academia"],
     "world": {
       "setting": "a plant that hasn't run in twenty years, birch growing inside a hall",
       "architecture": "arched brick windows, chimneys, stairs without railings",
@@ -1212,48 +1212,6 @@
     }
   },
   {
-    "key": "rustic",
-    "name": "Rustic",
-    "family": "Nature and Pastoral",
-    "tagline": "Made by hand and made to last",
-    "description": "Rural craft tradition: solid timber, iron, ceramics and furniture made by someone who knew the trade. No irony, just solidity.",
-    "keywords": ["solid timber", "ceramics", "wrought iron", "barn", "long table"],
-    "palette": ["#1a130d", "#4a341f", "#98764a", "#e5d7ba"],
-    "dimensions": {
-      "craft": 0.92,
-      "tradition": 0.85,
-      "rural": 0.9,
-      "comfort": 0.85,
-      "organic": 0.85,
-      "nature": 0.8,
-      "history": 0.7,
-      "order": 0.5,
-      "community": 0.65,
-      "ornament": 0.45,
-      "minimalism": 0.35,
-      "modernity": 0.12,
-      "refinement": 0.45,
-      "realism": 0.65,
-      "solitude": 0.5,
-      "darkness": 0.35,
-      "maximalism": 0.5,
-      "digital": 0.08,
-      "adventure": 0.4,
-      "intellect": 0.4
-    },
-    "related": ["cabincore", "cottagecore", "lumberjack", "wabi-sabi"],
-    "world": {
-      "setting": "a farmyard, a stone wall, apple trees older than the house",
-      "architecture": "log or timber-frame, thick walls, a door you have to push",
-      "interior": "a long table, ceramics in use, shelves somebody built",
-      "technology": "a wood stove, hand tools, something electric from 1985 that still runs",
-      "clothes": "wool, linen, leather, garments improved by wear",
-      "music": "accordion, fiddle, singing in the kitchen",
-      "colours": "oak, iron, clay, unbleached linen",
-      "everyday": "mending rather than buying, sitting a long time at the table"
-    }
-  },
-  {
     "key": "lumberjack",
     "name": "Lumberjack",
     "family": "Nature and Pastoral",
@@ -1283,7 +1241,7 @@
       "social": 0.45,
       "modernity": 0.25
     },
-    "related": ["cabincore", "rustic", "americana", "adventurecore"],
+    "related": ["cabincore", "americana", "adventurecore"],
     "world": {
       "setting": "a forest road at first light, a timber stack, a river carrying logs",
       "architecture": "a forestry hut, a barn, a house built from whatever was nearest",
@@ -1411,7 +1369,7 @@
       "industrial": 0.45,
       "darkness": 0.3
     },
-    "related": ["fifties-suburbia", "lumberjack", "rustic", "atompunk"],
+    "related": ["fifties-suburbia", "lumberjack", "atompunk"],
     "world": {
       "setting": "a straight road through flat country, a filling station with one light on",
       "architecture": "a chrome diner, a barn with an advert painted on it, a single-storey motel",
@@ -1497,7 +1455,7 @@
       "realism": 0.25,
       "comfort": 0.5
     },
-    "related": ["film-noir", "art-deco", "dandy"],
+    "related": ["film-noir", "art-deco"],
     "world": {
       "setting": "a premiere under spotlights, a marble hotel lobby, a poolside at night",
       "architecture": "an art deco theatre, a Spanish-style villa, staircases made for descending",
@@ -1507,92 +1465,6 @@
       "music": "big band, a crooner, an orchestra in a film scene",
       "colours": "silver, champagne, deep burgundy, black and white",
       "everyday": "being on, always, and doing it with style"
-    }
-  },
-  {
-    "key": "beatnik",
-    "name": "Beatnik",
-    "family": "Subculture",
-    "tagline": "Coffee, poetry and opposition",
-    "description": "The counterculture of the fifties: jazz clubs, readings, a sparse flat and a refusal of what the suburb expects.",
-    "keywords": ["jazz club", "readings", "espresso", "black roll-neck", "notebook"],
-    "palette": ["#101010", "#2b2b2e", "#6a6055", "#ddd6c8"],
-    "dimensions": {
-      "intellect": 0.85,
-      "individualism": 0.9,
-      "urban": 0.8,
-      "chaos": 0.6,
-      "melancholy": 0.65,
-      "minimalism": 0.6,
-      "refinement": 0.45,
-      "community": 0.6,
-      "social": 0.6,
-      "tradition": 0.18,
-      "retro": 0.8,
-      "nostalgia": 0.55,
-      "order": 0.3,
-      "darkness": 0.55,
-      "craft": 0.45,
-      "comfort": 0.35,
-      "ornament": 0.2,
-      "nature": 0.25,
-      "realism": 0.6,
-      "mystery": 0.5,
-      "adventure": 0.55
-    },
-    "related": ["dark-academia", "grunge", "film-noir", "normcore"],
-    "world": {
-      "setting": "a basement club, a pavement cafe in the rain, a flat with little in it",
-      "architecture": "an old tenement, stairs that smell of dust and coffee",
-      "interior": "a mattress, a desk, far too many books and one chair",
-      "technology": "a typewriter, a record player, nothing more",
-      "clothes": "a black roll-neck, narrow trousers, everything worn on purpose",
-      "music": "bebop, double bass, poems read over drums",
-      "colours": "ink black, cigarette grey, espresso, paper white",
-      "everyday": "writing at night, arguing too long, owning little"
-    }
-  },
-  {
-    "key": "dandy",
-    "name": "Dandy",
-    "family": "Status and Money",
-    "tagline": "The self as an artwork",
-    "description": "Perfected personal style as a way of living: cut, detail and a cultivation of elegance that is almost a principle.",
-    "keywords": ["tailoring", "pocket watch", "cane", "manners", "detail"],
-    "palette": ["#131018", "#31283c", "#7c6a4a", "#efe6d6"],
-    "dimensions": {
-      "refinement": 0.95,
-      "ornament": 0.9,
-      "individualism": 0.88,
-      "tradition": 0.7,
-      "history": 0.75,
-      "urban": 0.8,
-      "order": 0.8,
-      "intellect": 0.72,
-      "social": 0.7,
-      "maximalism": 0.7,
-      "retro": 0.8,
-      "craft": 0.72,
-      "nostalgia": 0.6,
-      "darkness": 0.4,
-      "minimalism": 0.2,
-      "realism": 0.3,
-      "nature": 0.15,
-      "comfort": 0.35,
-      "whimsy": 0.5,
-      "community": 0.35,
-      "architecture": 0.6
-    },
-    "related": ["old-hollywood", "dark-academia", "art-deco", "eclectic-grandpa"],
-    "world": {
-      "setting": "the best street in the city, a club with heavy doors, a theatre foyer",
-      "architecture": "a classical facade, high ceilings, a staircase with a brass rail",
-      "interior": "a leather armchair, books chosen for looks and content, a decanter",
-      "technology": "a pocket watch, perhaps a fountain pen, no more",
-      "clothes": "everything tailored, a tie that means something, shoes that get polished",
-      "music": "chamber music, early jazz, a voice in a salon",
-      "colours": "midnight blue, tobacco, old gold, chalk white",
-      "everyday": "taking your time, saying it precisely, never looking like you tried"
     }
   },
   {
@@ -1626,7 +1498,7 @@
       "darkness": 0.35,
       "futurism": 0.5
     },
-    "related": ["art-nouveau", "old-hollywood", "dandy", "dieselpunk", "retrofuturism"],
+    "related": ["old-hollywood", "dieselpunk", "retrofuturism"],
     "world": {
       "setting": "a city street where every facade means to impress",
       "architecture": "stepped towers, a sunburst over the entrance, a marble lobby",
@@ -1636,92 +1508,6 @@
       "music": "big band, a piano in a foyer",
       "colours": "black and gold, jade, onyx, ivory",
       "everyday": "surrounding yourself with things made to last and to be seen"
-    }
-  },
-  {
-    "key": "art-nouveau",
-    "name": "Art Nouveau",
-    "family": "Art and Period",
-    "tagline": "Nature as ornament",
-    "description": "Sweeping lines, floral motifs and craft in which nothing is straight if it could be alive. Art and useful objects as the same thing.",
-    "keywords": ["curved line", "floral motif", "stained glass", "wrought iron", "vine"],
-    "palette": ["#101a12", "#2b4a3a", "#a58a3e", "#f0e6cd"],
-    "dimensions": {
-      "ornament": 0.95,
-      "organic": 0.92,
-      "craft": 0.92,
-      "architecture": 0.9,
-      "refinement": 0.85,
-      "nature": 0.8,
-      "history": 0.8,
-      "fantasy": 0.65,
-      "maximalism": 0.8,
-      "whimsy": 0.6,
-      "chaos": 0.45,
-      "order": 0.5,
-      "tradition": 0.6,
-      "intellect": 0.6,
-      "melancholy": 0.5,
-      "urban": 0.6,
-      "minimalism": 0.08,
-      "modernity": 0.4,
-      "mystery": 0.6,
-      "optimism": 0.6,
-      "individualism": 0.7
-    },
-    "related": ["art-deco", "romanticism", "fairycore", "steampunk"],
-    "world": {
-      "setting": "a boulevard where the metro entrance looks like a plant",
-      "architecture": "arched windows, wrought iron that grows, facades with no right angles",
-      "interior": "stained glass, bentwood furniture, wallpaper full of vines",
-      "technology": "lamps that are sculptures, everything functional hidden inside something lovely",
-      "clothes": "flowing fabric, brooches shaped like insects, hair as part of the line",
-      "music": "impressionist piano, harp, French song",
-      "colours": "sea green, yellowed gold, lilac, dark wood",
-      "everyday": "insisting that everything you use can also be beautiful"
-    }
-  },
-  {
-    "key": "brutalism",
-    "name": "Brutalism",
-    "family": "Design and Everyday",
-    "tagline": "Honest mass",
-    "description": "Concrete that shows how it was cast, buildings that don't flatter, and a belief that architecture can be a public project.",
-    "keywords": ["concrete", "mass", "grid", "monumental", "form follows structure"],
-    "palette": ["#0f1011", "#26282a", "#5a5c5e", "#adaba6"],
-    "dimensions": {
-      "architecture": 0.95,
-      "industrial": 0.85,
-      "minimalism": 0.7,
-      "order": 0.8,
-      "realism": 0.85,
-      "modernity": 0.75,
-      "darkness": 0.6,
-      "urban": 0.85,
-      "ornament": 0.05,
-      "refinement": 0.35,
-      "community": 0.5,
-      "melancholy": 0.6,
-      "intellect": 0.7,
-      "history": 0.45,
-      "tradition": 0.2,
-      "nature": 0.15,
-      "maximalism": 0.3,
-      "solitude": 0.6,
-      "chaos": 0.25,
-      "craft": 0.45,
-      "optimism": 0.35
-    },
-    "related": ["industrial", "industrial-gothic", "minimalism", "cyberpunk"],
-    "world": {
-      "setting": "an arts centre under an overcast sky, the square in front, nobody looking up",
-      "architecture": "cantilevers, board-marked concrete, stairs that are an event",
-      "interior": "grey planes, one strong timber element, light from a slot in the ceiling",
-      "technology": "built in, unobtrusive, made for decades",
-      "clothes": "simple cuts, heavy fabrics, one colour",
-      "music": "minimalism, organ, electronics without melody",
-      "colours": "concrete, charcoal, matt black, daylight",
-      "everyday": "appreciating what other people find ugly"
     }
   },
   {
@@ -1798,7 +1584,7 @@
       "architecture": 0.6,
       "mystery": 0.5
     },
-    "related": ["eclectic-grandpa", "art-nouveau", "dandy", "rococo"],
+    "related": ["eclectic-grandpa"],
     "world": {
       "setting": "a flat that is unmistakably somebody's, in a city with many layers",
       "architecture": "old rooms with high ceilings, ideally cornicing to hang things from",
@@ -1841,7 +1627,7 @@
       "individualism": 0.45,
       "history": 0.3
     },
-    "related": ["scandinavian-design", "brutalism", "normcore", "wabi-sabi"],
+    "related": ["scandinavian-design", "normcore", "wabi-sabi"],
     "world": {
       "setting": "a place where little happens, and plenty of room between the things that do",
       "architecture": "clean planes, one good window, nothing raising its voice",
@@ -2056,7 +1842,7 @@
       "refinement": 0.55,
       "individualism": 0.6
     },
-    "related": ["cottagecore", "naturecore", "goblincore", "mori-kei"],
+    "related": ["cottagecore", "naturecore", "goblincore"],
     "world": {
       "setting": "a clearing with dew on it, a stream with stones that look placed",
       "architecture": "a house half inside a bank, a door beneath a tree",
@@ -2099,7 +1885,7 @@
       "realism": 0.45,
       "ornament": 0.6
     },
-    "related": ["fairycore", "forestpunk", "cottagecore", "mori-kei"],
+    "related": ["fairycore", "forestpunk", "cottagecore"],
     "world": {
       "setting": "under a rotting log, a stream with shale in it, rain",
       "architecture": "something low, dark and snug, ideally underneath something else",
@@ -2109,50 +1895,6 @@
       "music": "fiddle, uneven rhythm, singing with only half the words",
       "colours": "bog green, clay yellow, slate blue, brass shine",
       "everyday": "picking things up, turning stones over, caring little how it looks"
-    }
-  },
-  {
-    "key": "mori-kei",
-    "name": "Mori Kei",
-    "family": "Japanese Street and Kawaii",
-    "tagline": "A life lived among the trees",
-    "description": "A Japanese style built around layers of natural fabric, muted colours and a calm, slightly withdrawn way of living.",
-    "keywords": ["layers", "natural fibre", "muted", "forest", "vintage"],
-    "palette": ["#1a1712", "#3f3a2e", "#8f8367", "#efe8d8"],
-    "dimensions": {
-      "nature": 0.85,
-      "organic": 0.85,
-      "comfort": 0.85,
-      "craft": 0.88,
-      "solitude": 0.72,
-      "tradition": 0.6,
-      "minimalism": 0.5,
-      "refinement": 0.82,
-      "melancholy": 0.5,
-      "ornament": 0.68,
-      "rural": 0.55,
-      "maximalism": 0.45,
-      "whimsy": 0.72,
-      "order": 0.5,
-      "individualism": 0.6,
-      "nostalgia": 0.6,
-      "history": 0.5,
-      "darkness": 0.25,
-      "optimism": 0.5,
-      "mystery": 0.5,
-      "modernity": 0.3,
-      "adventure": 0.22
-    },
-    "related": ["cottagecore", "fairycore", "naturecore", "wabi-sabi"],
-    "world": {
-      "setting": "a path between trees, a small house on the edge of a village",
-      "architecture": "wood and paper, small rooms, windows at floor height",
-      "interior": "baskets, ceramics, dried flowers, everything in natural tones",
-      "technology": "a radio, a kettle, no screens in view",
-      "clothes": "several loose layers, knitwear over a tunic over a shirt",
-      "music": "acoustic, soft, almost whispered",
-      "colours": "cream white, moss green, fog grey, dried brown",
-      "everyday": "tea, letters, remaking something old, going out early"
     }
   },
   {
@@ -2229,7 +1971,7 @@
       "community": 0.4,
       "rural": 0.65
     },
-    "related": ["romantic-goth", "romantic-academia", "art-nouveau", "medievalcore"],
+    "related": ["romantic-goth", "romantic-academia", "medievalcore"],
     "world": {
       "setting": "a mountain in a storm, a ruin in evening light, a sea that is too large",
       "architecture": "fallen abbeys, a tower on a cliff, a house with a view you can lose yourself in",
@@ -2273,7 +2015,7 @@
       "nature": 0.45,
       "realism": 0.6
     },
-    "related": ["maximalism", "americana", "dandy", "normcore"],
+    "related": ["maximalism", "americana", "normcore"],
     "world": {
       "setting": "a house that hasn't been redone since something good happened in it",
       "architecture": "a terraced house, a workshop in the cellar, a porch with too many plants",
@@ -2359,7 +2101,7 @@
       "optimism": 0.4,
       "architecture": 0.7
     },
-    "related": ["scandinavian-design", "minimalism", "mori-kei", "rustic"],
+    "related": ["scandinavian-design", "minimalism"],
     "world": {
       "setting": "a small garden of gravel and moss, rain on a tiled roof",
       "architecture": "timber left to go grey, paper walls, one view at a time",
@@ -2369,49 +2111,6 @@
       "music": "few notes, long reverberation, silence as part of the piece",
       "colours": "clay, ash, unfinished wood, moss",
       "everyday": "making tea properly, letting things age, rarely throwing anything out"
-    }
-  },
-  {
-    "key": "arts-and-crafts",
-    "name": "Arts and Crafts",
-    "family": "Art and Period",
-    "tagline": "Honest work, beautifully done",
-    "description": "The movement against industrial mass production: handmade furniture, patterns drawn from nature and a conviction that things should be made well by people who are treated well.",
-    "keywords": ["handmade", "pattern", "oak", "workshop", "solid furniture"],
-    "palette": ["#161310", "#3d3a24", "#8a6a3c", "#e6dcc0"],
-    "dimensions": {
-      "craft": 0.95,
-      "ornament": 0.8,
-      "tradition": 0.8,
-      "organic": 0.8,
-      "history": 0.75,
-      "community": 0.7,
-      "order": 0.65,
-      "architecture": 0.8,
-      "nature": 0.7,
-      "refinement": 0.7,
-      "comfort": 0.7,
-      "modernity": 0.25,
-      "maximalism": 0.6,
-      "intellect": 0.6,
-      "rural": 0.55,
-      "industrial": 0.3,
-      "individualism": 0.55,
-      "minimalism": 0.3,
-      "melancholy": 0.4,
-      "optimism": 0.6,
-      "realism": 0.6
-    },
-    "related": ["rustic", "art-nouveau", "scandinavian-design", "cottagecore"],
-    "world": {
-      "setting": "a village of workshops, a garden designed by whoever lives there",
-      "architecture": "low roofs, exposed beams, brick and oak",
-      "interior": "built-in benches, patterned tiles, furniture with visible joinery",
-      "technology": "hand tools, one good machine, nothing more",
-      "clothes": "solid fabrics, embroidered detail, practical cuts",
-      "music": "folk music arranged carefully, singing in parts",
-      "colours": "sage green, ochre, red-brown oak, lime",
-      "everyday": "making something good, slowly, and using it every day"
     }
   },
   {
@@ -2455,159 +2154,6 @@
       "music": "pop songs, cartoon themes, anything with a chorus",
       "colours": "primary red, yellow, cyan, grass green",
       "everyday": "doing things because they're fun, with no further justification"
-    }
-  },
-  {
-    "key": "rococo",
-    "name": "Rococo",
-    "family": "Art and Period",
-    "tagline": "Excess as play",
-    "description": "The light, asymmetric abundance of the eighteenth century: pastel, gilding, shell forms and a culture that cultivated pleasure over gravity.",
-    "keywords": ["gilding", "pastel", "asymmetry", "salon", "curls"],
-    "palette": ["#1b1420", "#4d3358", "#c9a0b4", "#f6ecd8"],
-    "dimensions": {
-      "ornament": 0.98,
-      "refinement": 0.9,
-      "maximalism": 0.92,
-      "whimsy": 0.78,
-      "history": 0.85,
-      "tradition": 0.7,
-      "architecture": 0.85,
-      "craft": 0.85,
-      "social": 0.75,
-      "optimism": 0.65,
-      "order": 0.45,
-      "chaos": 0.45,
-      "minimalism": 0.02,
-      "realism": 0.15,
-      "fantasy": 0.65,
-      "nature": 0.5,
-      "organic": 0.65,
-      "intellect": 0.55,
-      "melancholy": 0.4,
-      "modernity": 0.08,
-      "individualism": 0.55
-    },
-    "related": ["art-nouveau", "maximalism", "old-hollywood", "romantic-academia"],
-    "world": {
-      "setting": "a garden with hedges and a pavilion nobody needs",
-      "architecture": "pale facades, arched windows, ceilings painted as sky",
-      "interior": "gilded mouldings, mirrors everywhere, furniture with legs too short",
-      "technology": "a clock that is mostly for show",
-      "clothes": "pastel silk, fine embroidery, everything that moves when you do",
-      "music": "harpsichord, chamber music, something to dance to",
-      "colours": "powder pink, mint green, gold, ivory",
-      "everyday": "company, conversation, and no regret at having a nice time"
-    }
-  },
-  {
-    "key": "techwear",
-    "name": "Techwear",
-    "family": "Sport and Utility",
-    "tagline": "Dressed for a city that might rain acid",
-    "description": "Black technical clothing built from the same fabrics as mountain gear: taped seams, waterproof shells, straps and hidden pockets. Function and silhouette treated as one problem, usually solved in monochrome.",
-    "keywords": ["taped seams", "shell", "straps", "matte black", "modular"],
-    "palette": ["#0f1113", "#1f2933", "#4a5560", "#9aa3ab"],
-    "dimensions": {
-      "urban": 0.92,
-      "darkness": 0.85,
-      "minimalism": 0.82,
-      "modernity": 0.8,
-      "futurism": 0.78,
-      "technology": 0.72,
-      "industrial": 0.68,
-      "order": 0.72,
-      "refinement": 0.62,
-      "individualism": 0.65,
-      "nature": 0.1,
-      "organic": 0.08,
-      "ornament": 0.08,
-      "optimism": 0.22,
-      "comfort": 0.28,
-      "whimsy": 0.1
-    },
-    "related": ["cyberpunk", "brutalism", "industrial", "minimalism"],
-    "world": {
-      "setting": "a rain-slick city at night, an underpass where the light is all artificial",
-      "architecture": "concrete and glass, service corridors, a flat with almost nothing on the walls",
-      "interior": "a rack of black garments sorted by weight, gear laid out on a grid, one good chair",
-      "technology": "everything current, everything charged, cables managed and out of sight",
-      "clothes": "a hard shell over a mid-layer, cargo trousers with the straps tucked, low black shoes",
-      "music": "dark electronic, ambient with a pulse under it, heard on the move",
-      "colours": "black, gunmetal, slate, one cold grey",
-      "everyday": "checking the forecast, loading pockets in the same order, walking the city for hours"
-    }
-  },
-  {
-    "key": "gorpcore",
-    "name": "Gorpcore",
-    "family": "Sport and Utility",
-    "tagline": "Dressed for a mountain you might not climb",
-    "description": "Technical outdoor gear worn anywhere: fleece, waterproof shells, trail shoes and webbing, with the brand tags left showing. Function treated as the whole of style.",
-    "keywords": ["fleece", "shell jacket", "trail shoes", "webbing", "carabiner"],
-    "palette": ["#1b2b2f", "#3a5a40", "#d98e04", "#e7e3d8"],
-    "dimensions": {
-      "adventure": 0.9,
-      "nature": 0.72,
-      "realism": 0.82,
-      "modernity": 0.72,
-      "refinement": 0.15,
-      "ornament": 0.1,
-      "minimalism": 0.62,
-      "technology": 0.62,
-      "optimism": 0.62,
-      "order": 0.58,
-      "fantasy": 0.12,
-      "whimsy": 0.18,
-      "tradition": 0.25,
-      "mystery": 0.2
-    },
-    "related": ["adventurecore", "normcore", "scandinavian-design", "techwear"],
-    "world": {
-      "setting": "a city pavement on a wet Tuesday, a bus to a trailhead at the weekend",
-      "architecture": "a flat with gear drying on the radiators and a rack of packs by the door",
-      "interior": "dry bags, a foam mat rolled in the corner, maps folded to the panel you need",
-      "technology": "a head-torch, a GPS watch, a phone in a waterproof case",
-      "clothes": "a fleece under a shell, trail shoes on pavement, a small pack worn everywhere",
-      "music": "a podcast on the walk in, something with a beat for the last climb",
-      "colours": "moss green, storm grey, safety orange, faded sand",
-      "everyday": "reading the forecast first thing, packing the night before, walking further than the day needs"
-    }
-  },
-  {
-    "key": "blokecore",
-    "name": "Terracecore",
-    "family": "Sport and Utility",
-    "tagline": "A retro football shirt and a pint",
-    "description": "Terrace culture as style: vintage football shirts, tracksuit tops, straight jeans and old trainers. Casual, unpretentious and tied to a club and a Saturday.",
-    "gendered": { "name": "Blokecore" },
-    "keywords": ["football shirt", "trainers", "terrace", "tracksuit top", "pub"],
-    "palette": ["#0b3d2e", "#c8102e", "#f4f4f4", "#1c2b45"],
-    "dimensions": {
-      "community": 0.85,
-      "social": 0.78,
-      "tradition": 0.75,
-      "nostalgia": 0.75,
-      "retro": 0.68,
-      "realism": 0.72,
-      "refinement": 0.12,
-      "comfort": 0.62,
-      "urban": 0.62,
-      "individualism": 0.22,
-      "ornament": 0.2,
-      "intellect": 0.22,
-      "minimalism": 0.45
-    },
-    "related": ["normcore", "americana", "grunge", "y2k"],
-    "world": {
-      "setting": "a terrace at three on a Saturday, a pub before and after",
-      "architecture": "a lower-league ground, a corner pub with the match on",
-      "interior": "framed shirts on the wall, a scarf collection, a shelf of old programmes",
-      "technology": "the radio for the scores, a group chat that only wakes up on matchday",
-      "clothes": "a retro shirt, a harrington or a trackie top, straight jeans, old trainers",
-      "music": "terrace chants, indie and britpop, whatever was in the charts that season",
-      "colours": "club green, club red, kit white, denim blue",
-      "everyday": "checking the fixtures, the same seat every home game, arguing about the away kit"
     }
   },
   {
@@ -2708,7 +2254,7 @@
       "optimism": 0.28,
       "chaos": 0.15
     },
-    "related": ["industrial", "cyberpunk", "adventurecore", "brutalism"],
+    "related": ["industrial", "cyberpunk", "adventurecore"],
     "world": {
       "setting": "a range on a grey morning, a car boot organised like a kit list",
       "architecture": "a garage of shelving and labelled bins, a workbench under bright light",
@@ -2746,7 +2292,7 @@
       "ornament": 0.22,
       "comfort": 0.3
     },
-    "related": ["americana", "rustic", "lumberjack"],
+    "related": ["americana", "lumberjack"],
     "world": {
       "setting": "a wide plain under a huge sky, a one-street town with a rail out front",
       "architecture": "clapboard fronts, a porch the length of the building, a barn bigger than the house",
@@ -2783,7 +2329,7 @@
       "ornament": 0.32,
       "whimsy": 0.3
     },
-    "related": ["dandy", "beatnik", "old-hollywood", "scandinavian-design"],
+    "related": ["old-hollywood", "scandinavian-design"],
     "world": {
       "setting": "a city centre on a Saturday, a club night that runs till morning",
       "architecture": "a coffee bar with chrome fittings, a tailor upstairs, a dance hall",
@@ -2858,7 +2404,7 @@
       "ornament": 0.18,
       "intellect": 0.28
     },
-    "related": ["grunge", "old-web", "brutalism", "blokecore"],
+    "related": ["grunge", "old-web"],
     "world": {
       "setting": "a marble plaza that empties after six, a flat car park with good ledges",
       "architecture": "civic concrete read for its edges: banks, blocks, handrails, gaps",
@@ -2943,44 +2489,6 @@
       "music": "ambient and choral, a countdown, radio static from very far away",
       "colours": "deep-space black, nebula blue, star white, booster orange",
       "everyday": "checking what passes overhead tonight, following every launch, learning the sky by name"
-    }
-  },
-  {
-    "key": "mid-century-modern",
-    "name": "Mid-Century Modern",
-    "family": "Design and Everyday",
-    "tagline": "Good design, built to stay good",
-    "description": "Postwar design at its most confident: clean lines, warm timber, tapered legs, big windows and honest materials. Optimistic, functional and still in production.",
-    "keywords": ["teak", "tapered legs", "open plan", "moulded chair", "picture window"],
-    "palette": ["#2c2417", "#a8632b", "#5c7a5c", "#e8e1d0"],
-    "dimensions": {
-      "refinement": 0.75,
-      "order": 0.75,
-      "minimalism": 0.55,
-      "modernity": 0.68,
-      "optimism": 0.78,
-      "architecture": 0.8,
-      "craft": 0.65,
-      "comfort": 0.55,
-      "organic": 0.7,
-      "ornament": 0.22,
-      "maximalism": 0.15,
-      "chaos": 0.15,
-      "retro": 0.82,
-      "intellect": 0.55,
-      "nostalgia": 0.75,
-      "history": 0.6
-    },
-    "related": ["scandinavian-design", "minimalism", "atompunk", "arts-and-crafts"],
-    "world": {
-      "setting": "a low house on a hillside, glass on the garden side, afternoon light across the floor",
-      "architecture": "a flat roof, post-and-beam framing, walls of window and a core of brick",
-      "interior": "a teak sideboard, a leather-and-plywood chair, a rug with a bold quiet pattern",
-      "technology": "a good record player in a wooden case, a rotary phone kept because it works",
-      "clothes": "well-cut and unfussy, natural fibres, nothing that shouts",
-      "music": "cool jazz, bossa nova, something warm on vinyl in the evening",
-      "colours": "walnut brown, burnt orange, olive, bone white",
-      "everyday": "keeping surfaces clear, buying few things and good ones, letting the light do the decorating"
     }
   },
   {
@@ -3107,7 +2615,7 @@
       "urban": 0.45,
       "community": 0.35
     },
-    "related": ["goth", "romanticism", "victorian", "gloomcore"],
+    "related": ["goth", "romanticism", "gloomcore"],
     "world": {
       "setting": "a ruined abbey at dusk with ivy taking the last of the walls",
       "architecture": "pointed arches, broken tracery, a chapel with no roof left",
@@ -3199,7 +2707,7 @@
       "whimsy": 0.2,
       "architecture": 0.6
     },
-    "related": ["goth", "minimalism", "techwear", "corpcore", "mallgoth"],
+    "related": ["goth", "minimalism", "mallgoth"],
     "world": {
       "setting": "a concrete gallery space with one very expensive black coat in it",
       "architecture": "clean lines, poured concrete, a staircase with nothing to hold",
@@ -3245,7 +2753,7 @@
       "mystery": 0.55,
       "minimalism": 0.15
     },
-    "related": ["cyberpunk", "industrial", "goth", "rave", "techwear"],
+    "related": ["cyberpunk", "industrial", "goth", "rave"],
     "world": {
       "setting": "a warehouse floor under strobes with the bass felt in the sternum",
       "architecture": "steel gantries, cable runs, a fire exit lit green",
@@ -3337,7 +2845,7 @@
       "history": 0.45,
       "social": 0.45
     },
-    "related": ["witchcore", "fairycore", "strega", "ghostcore"],
+    "related": ["witchcore", "fairycore", "ghostcore"],
     "world": {
       "setting": "a house on a hill with too many wind chimes and a garden gone its own way",
       "architecture": "turrets, a porch with iron scrollwork, windows with coloured glass",
@@ -3568,7 +3076,7 @@
       "adventure": 0.7,
       "melancholy": 0.3
     },
-    "related": ["solarpunk", "cottagecore", "psychedelia", "rave", "granola"],
+    "related": ["solarpunk", "cottagecore", "psychedelia", "rave"],
     "world": {
       "setting": "a field in summer with tents, a fire, and somebody tuning up",
       "architecture": "geodesic domes, a converted bus, a barn doing four jobs at once",
@@ -3614,7 +3122,7 @@
       "chaos": 0.35,
       "architecture": 0.6
     },
-    "related": ["beatnik", "normcore", "arts-and-crafts", "scandinavian-design", "indie-sleaze"],
+    "related": ["normcore", "scandinavian-design", "indie-sleaze"],
     "world": {
       "setting": "a converted warehouse on a side street with a queue outside by nine",
       "architecture": "exposed brick, steel windows, a mezzanine nobody needed",
@@ -3798,7 +3306,7 @@
       "craft": 0.68,
       "adventure": 0.72
     },
-    "related": ["hippie", "dreamcore", "vectordelia", "maximalism", "rave"],
+    "related": ["hippie", "dreamcore", "maximalism", "rave"],
     "world": {
       "setting": "a room with a projector throwing oil and water onto every wall",
       "architecture": "a hall painted floor to ceiling by whoever had the brushes",
@@ -3945,7 +3453,7 @@
       "optimism": 0.55,
       "social": 0.5
     },
-    "related": ["coquette", "light-academia", "minimalism", "dollette", "tenniscore"],
+    "related": ["coquette", "light-academia", "minimalism", "dollette"],
     "world": {
       "setting": "a studio in the early morning with low sun across a sprung floor",
       "architecture": "tall windows, a mirrored wall, a barre worn smooth in the usual places",
@@ -3992,7 +3500,7 @@
       "individualism": 0.6,
       "mystery": 0.3
     },
-    "related": ["coquette", "kawaii", "danish-pastel", "dollette", "pastel-goth"],
+    "related": ["coquette", "kawaii", "dollette", "pastel-goth"],
     "world": {
       "setting": "a bedroom done entirely in pink with fairy lights left on all day",
       "architecture": "a room in a flat, transformed by everything stuck to its walls",
@@ -4087,7 +3595,7 @@
       "intellect": 0.45,
       "architecture": 0.72
     },
-    "related": ["royalcore", "rococo", "fairycore", "coquette", "medievalcore"],
+    "related": ["royalcore", "fairycore", "coquette", "medievalcore"],
     "world": {
       "setting": "a ballroom lit by chandeliers with a staircase made for descending",
       "architecture": "turrets, arched windows, a palace built to be looked at",
@@ -4133,7 +3641,7 @@
       "optimism": 0.45,
       "nostalgia": 0.7
     },
-    "related": ["princesscore", "regency", "victorian", "dark-academia", "old-money"],
+    "related": ["princesscore", "regency", "dark-academia", "old-money"],
     "world": {
       "setting": "a long gallery hung with ancestors, cold even in June",
       "architecture": "a stone house with a deer park and a wing nobody uses",
@@ -4179,7 +3687,7 @@
       "architecture": 0.75,
       "nostalgia": 0.6
     },
-    "related": ["princesscore", "ghostcore", "baroque", "light-academia", "dollette"],
+    "related": ["princesscore", "ghostcore", "light-academia", "dollette"],
     "world": {
       "setting": "a marble chapel with light coming down through high clear windows",
       "architecture": "vaulted ceilings, carved stone, a dome painted with clouds",
@@ -4235,52 +3743,6 @@
       "music": "jangly indie pop, ukulele, harmonies sung slightly flat",
       "colours": "mustard, sage, cream, faded red",
       "everyday": "baking for other people, writing notes, taking pleasure in small things"
-    }
-  },
-  {
-    "key": "danish-pastel",
-    "name": "Danish Pastel",
-    "family": "Soft and Romantic",
-    "tagline": "Wobbly shapes in sherbet colours",
-    "description": "Squiggle mirrors, checkerboard rugs and pastel everything arranged with Scandinavian restraint. Cheerful, contemporary and very photographable.",
-    "keywords": ["squiggle mirror", "checkerboard", "pastel", "wavy shapes", "tufted rug"],
-    "palette": ["#4d4038", "#9ec4b8", "#f2c6a0", "#faf3e6"],
-    "dimensions": {
-      "optimism": 0.85,
-      "whimsy": 0.82,
-      "comfort": 0.8,
-      "craft": 0.72,
-      "modernity": 0.78,
-      "organic": 0.68,
-      "order": 0.62,
-      "minimalism": 0.55,
-      "darkness": 0.08,
-      "industrial": 0.1,
-      "melancholy": 0.15,
-      "history": 0.2,
-      "tradition": 0.25,
-      "nature": 0.5,
-      "urban": 0.6,
-      "refinement": 0.62,
-      "ornament": 0.6,
-      "maximalism": 0.5,
-      "digital": 0.6,
-      "social": 0.6,
-      "realism": 0.4,
-      "fantasy": 0.5,
-      "mystery": 0.2,
-      "architecture": 0.6
-    },
-    "related": ["scandinavian-design", "soft-girl", "memphis-design", "mid-century-modern"],
-    "world": {
-      "setting": "a bright flat in spring with the window open and nothing out of place",
-      "architecture": "clean modern rooms, pale floors, one arched doorway",
-      "interior": "a wavy mirror, a checkerboard rug, ceramics in soft colours",
-      "technology": "a small speaker and an espresso machine, both chosen for shape",
-      "clothes": "knitted vests, wide trousers, colours that match the room",
-      "music": "soft electronica, bossa nova, something with a shaker in it",
-      "colours": "sherbet orange, sage, butter yellow, chalk white",
-      "everyday": "arranging, rearranging, coffee at the window, plants that survive"
     }
   },
   {
@@ -4515,52 +3977,6 @@
     }
   },
   {
-    "key": "lolita",
-    "name": "Lolita",
-    "family": "Japanese Street and Kawaii",
-    "tagline": "Victorian silhouette, rebuilt by rulebook",
-    "description": "Bell-shaped skirts, petticoats and blouses buttoned to the chin - a Japanese street fashion with strict internal rules and a deep culture of handmaking.",
-    "keywords": ["petticoat", "bell skirt", "blouse", "headdress", "coordination"],
-    "palette": ["#20202e", "#4a3b58", "#a3899f", "#efe7e2"],
-    "dimensions": {
-      "ornament": 0.95,
-      "refinement": 0.85,
-      "order": 0.85,
-      "craft": 0.85,
-      "tradition": 0.72,
-      "history": 0.75,
-      "maximalism": 0.82,
-      "fantasy": 0.75,
-      "minimalism": 0.03,
-      "chaos": 0.12,
-      "industrial": 0.05,
-      "realism": 0.2,
-      "modernity": 0.35,
-      "nature": 0.35,
-      "urban": 0.65,
-      "comfort": 0.4,
-      "community": 0.72,
-      "social": 0.65,
-      "individualism": 0.72,
-      "whimsy": 0.7,
-      "darkness": 0.4,
-      "intellect": 0.6,
-      "nostalgia": 0.68,
-      "optimism": 0.55
-    },
-    "related": ["princesscore", "coquette", "rococo", "victorian", "kawaii"],
-    "world": {
-      "setting": "a tea room booked for the afternoon with six people in full coordination",
-      "architecture": "a cafe dressed up in Europe as imagined from somewhere else",
-      "interior": "lace, tiered cake stands, a mirror to check the silhouette",
-      "technology": "a sewing machine that matters more than any screen",
-      "clothes": "a bell skirt over petticoats, a blouse, a headdress, everything matched",
-      "music": "baroque strings, music-box arrangements, chamber pop",
-      "colours": "black and white, dusty rose, navy, wine",
-      "everyday": "sewing, planning a coordinate for weeks, meeting for tea in full dress"
-    }
-  },
-  {
     "key": "gyaru",
     "name": "Gyaru",
     "family": "Japanese Street and Kawaii",
@@ -4778,7 +4194,7 @@
       "realism": 0.5,
       "individualism": 0.6
     },
-    "related": ["vaporwave", "mid-century-modern", "retrofuturism", "synthwave", "old-hollywood"],
+    "related": ["vaporwave", "retrofuturism", "synthwave", "old-hollywood"],
     "world": {
       "setting": "an elevated expressway at 2am with the city sliding past in reflections",
       "architecture": "glass towers, a hotel bar on the top floor, neon down every side street",
@@ -4824,7 +4240,7 @@
       "darkness": 0.35,
       "optimism": 0.5
     },
-    "related": ["wabi-sabi", "scandinavian-design", "minimalism", "mori-kei", "mid-century-modern"],
+    "related": ["wabi-sabi", "scandinavian-design", "minimalism"],
     "world": {
       "setting": "a room with one low table, a paper screen, and light moving across the floor",
       "architecture": "timber framing, sliding screens, a garden treated as part of the room",
@@ -4876,7 +4292,7 @@
       "optimism": 0.55,
       "adventure": 0.5
     },
-    "related": ["preppy", "royalcore", "light-academia", "nautical", "clean-girl"],
+    "related": ["royalcore", "light-academia", "nautical", "clean-girl"],
     "world": {
       "setting": "a house by the water that has been in the family long enough to sag",
       "architecture": "a shingled house with a porch, a boathouse, nothing renovated recently",
@@ -4886,144 +4302,6 @@
       "music": "a piano in the next room, jazz standards, nothing current",
       "colours": "navy, racing green, camel, cream",
       "everyday": "the same club, the same holiday, spending nothing visible"
-    }
-  },
-  {
-    "key": "preppy",
-    "name": "Preppy",
-    "family": "Status and Money",
-    "tagline": "Crested blazer, pastel polo, permanent summer",
-    "description": "Boat shoes, madras checks and an East Coast campus in early autumn. Bright, conformist and confident, with sport somewhere in every outfit.",
-    "keywords": ["boat shoes", "madras check", "crest", "polo shirt", "campus"],
-    "palette": ["#1c3a5e", "#2f7d54", "#e0b23f", "#f5f0e3"],
-    "dimensions": {
-      "tradition": 0.88,
-      "order": 0.85,
-      "community": 0.82,
-      "social": 0.82,
-      "optimism": 0.8,
-      "refinement": 0.78,
-      "comfort": 0.65,
-      "chaos": 0.1,
-      "darkness": 0.1,
-      "industrial": 0.08,
-      "melancholy": 0.15,
-      "individualism": 0.25,
-      "maximalism": 0.5,
-      "minimalism": 0.45,
-      "ornament": 0.55,
-      "nature": 0.6,
-      "rural": 0.5,
-      "urban": 0.55,
-      "history": 0.68,
-      "nostalgia": 0.62,
-      "modernity": 0.4,
-      "intellect": 0.65,
-      "craft": 0.55,
-      "adventure": 0.6
-    },
-    "related": ["old-money", "tenniscore", "light-academia", "nautical", "fifties-suburbia"],
-    "world": {
-      "setting": "a campus quad in September with games starting on every lawn",
-      "architecture": "red brick halls, white columns, ivy that is genuinely encouraged",
-      "interior": "a dorm room with pennants, a blazer on the door, a crew photo",
-      "technology": "a laptop and nothing else worth mentioning",
-      "clothes": "pastel polos, madras shorts, boat shoes with no socks, a crested blazer",
-      "music": "a cappella groups, classic rock, something upbeat on the lawn",
-      "colours": "navy, kelly green, pink, white",
-      "everyday": "sport in the afternoon, the same friends since fourteen, being cheerful"
-    }
-  },
-  {
-    "key": "yuppie",
-    "name": "Yuppie",
-    "family": "Status and Money",
-    "tagline": "Braces, a brick phone and an eighties bull market",
-    "description": "Power suits, a corner office and a restaurant where the phone is answered by name. Ambition worn as a full outfit, with no interest in hiding it.",
-    "keywords": ["power suit", "corner office", "brick phone", "expense account", "1980s"],
-    "palette": ["#171a22", "#33405c", "#8f6a3a", "#e6e2d8"],
-    "dimensions": {
-      "refinement": 0.85,
-      "order": 0.85,
-      "urban": 0.92,
-      "modernity": 0.72,
-      "retro": 0.78,
-      "individualism": 0.85,
-      "realism": 0.72,
-      "technology": 0.6,
-      "nature": 0.05,
-      "rural": 0.03,
-      "organic": 0.08,
-      "nostalgia": 0.62,
-      "tradition": 0.55,
-      "community": 0.3,
-      "comfort": 0.4,
-      "maximalism": 0.6,
-      "ornament": 0.55,
-      "minimalism": 0.4,
-      "optimism": 0.7,
-      "darkness": 0.4,
-      "intellect": 0.62,
-      "history": 0.4,
-      "craft": 0.45,
-      "architecture": 0.68
-    },
-    "related": ["corpcore", "old-money", "mid-century-modern", "city-pop", "hypebeast"],
-    "world": {
-      "setting": "a trading floor at seven in the morning with every line already lit",
-      "architecture": "a glass tower with a marble lobby and a lift that takes an age",
-      "interior": "lacquer, chrome, a drinks cabinet, a view worth the rent",
-      "technology": "a brick phone, a fax, a terminal glowing green",
-      "clothes": "pinstripe, braces, shoulder pads, a watch chosen to be noticed",
-      "music": "synth-heavy pop, saxophone solos, something playing in the wine bar",
-      "colours": "charcoal, oxblood, brass, city grey",
-      "everyday": "early starts, long lunches that count as work, wanting more"
-    }
-  },
-  {
-    "key": "corpcore",
-    "name": "Corpcore",
-    "family": "Status and Money",
-    "tagline": "The office uniform, taken seriously as style",
-    "description": "Lanyards, grey carpet tiles, a pencil skirt and fluorescent light - corporate dress reclaimed as an aesthetic, somewhere between sincere and satirical.",
-    "keywords": ["lanyard", "pencil skirt", "carpet tiles", "fluorescent light", "laminate"],
-    "palette": ["#20232a", "#4d5766", "#96a0ad", "#e7e9ec"],
-    "dimensions": {
-      "order": 0.92,
-      "minimalism": 0.75,
-      "urban": 0.85,
-      "modernity": 0.78,
-      "realism": 0.8,
-      "refinement": 0.65,
-      "industrial": 0.62,
-      "digital": 0.68,
-      "chaos": 0.08,
-      "nature": 0.05,
-      "rural": 0.05,
-      "organic": 0.1,
-      "whimsy": 0.15,
-      "fantasy": 0.1,
-      "ornament": 0.2,
-      "maximalism": 0.15,
-      "comfort": 0.3,
-      "melancholy": 0.62,
-      "tradition": 0.5,
-      "history": 0.3,
-      "community": 0.45,
-      "social": 0.5,
-      "intellect": 0.55,
-      "architecture": 0.65
-    },
-    "related": ["nu-goth", "normcore", "minimalism", "yuppie", "liminal-space"],
-    "world": {
-      "setting": "an open-plan floor at 6pm with three people left and the lights still full",
-      "architecture": "a glass block with a revolving door and a sign nobody reads",
-      "interior": "grey carpet tiles, a monitor arm, a plant maintained under contract",
-      "technology": "a laptop, a lanyard with a card that opens most of the doors",
-      "clothes": "a pencil skirt or flat-front trousers, a plain shirt, sensible shoes",
-      "music": "whatever is in the lobby, ambient and licensed",
-      "colours": "grey, navy, laminate beige, safety green",
-      "everyday": "the same commute, the same desk, a strange fondness for all of it"
     }
   },
   {
@@ -5060,7 +4338,7 @@
       "darkness": 0.4,
       "futurism": 0.6
     },
-    "related": ["gorpcore", "techwear", "skater", "gyaru", "yuppie"],
+    "related": ["skater", "gyaru"],
     "world": {
       "setting": "a queue outside a shop at six in the morning for something releasing at ten",
       "architecture": "a concrete-floored store with one rail and very good lighting",
@@ -5120,98 +4398,6 @@
     }
   },
   {
-    "key": "tenniscore",
-    "name": "Tenniscore",
-    "family": "Sport and Utility",
-    "tagline": "Pleated whites and a very good backhand",
-    "description": "Club whites, pleated skirts and the green of a well-kept court. Sporting elegance from an era when the game had a dress code.",
-    "keywords": ["tennis whites", "pleated skirt", "club court", "cable knit", "racquet"],
-    "palette": ["#1f3a2b", "#4f7a54", "#c9c07f", "#f7f5ee"],
-    "dimensions": {
-      "order": 0.9,
-      "refinement": 0.85,
-      "tradition": 0.82,
-      "minimalism": 0.72,
-      "community": 0.68,
-      "optimism": 0.72,
-      "comfort": 0.6,
-      "nature": 0.62,
-      "chaos": 0.08,
-      "darkness": 0.08,
-      "industrial": 0.05,
-      "melancholy": 0.15,
-      "maximalism": 0.15,
-      "ornament": 0.3,
-      "history": 0.65,
-      "nostalgia": 0.68,
-      "retro": 0.6,
-      "modernity": 0.45,
-      "urban": 0.45,
-      "rural": 0.55,
-      "social": 0.7,
-      "craft": 0.6,
-      "adventure": 0.55,
-      "realism": 0.58
-    },
-    "related": ["preppy", "old-money", "balletcore", "equestrian", "light-academia"],
-    "world": {
-      "setting": "a grass court in June with the lines newly marked and the net just checked",
-      "architecture": "a clubhouse in white weatherboard with a veranda and a scoreboard",
-      "interior": "honours boards, wicker chairs, a bar that serves one kind of drink",
-      "technology": "a press for the racquet and a machine that fires balls",
-      "clothes": "pleated whites, a cable-knit over the shoulders, clean plimsolls",
-      "music": "nothing during play, a radio in the clubhouse afterwards",
-      "colours": "court green, chalk white, cream, a stripe of navy",
-      "everyday": "practice, the club ladder, strawberries treated as a fixture"
-    }
-  },
-  {
-    "key": "equestrian",
-    "name": "Equestrian",
-    "family": "Sport and Utility",
-    "tagline": "Leather, tack room, and up before the light",
-    "description": "Riding boots, a well-oiled saddle and a yard that needs doing whatever the weather. Country elegance underpinned by early mornings and real work.",
-    "keywords": ["riding boots", "tack room", "tweed", "stable yard", "leather"],
-    "palette": ["#241b14", "#4f3a26", "#8f7343", "#ddd2bc"],
-    "dimensions": {
-      "tradition": 0.9,
-      "order": 0.85,
-      "craft": 0.8,
-      "rural": 0.9,
-      "nature": 0.78,
-      "refinement": 0.78,
-      "history": 0.75,
-      "organic": 0.7,
-      "digital": 0.05,
-      "futurism": 0.05,
-      "industrial": 0.1,
-      "urban": 0.1,
-      "modernity": 0.15,
-      "technology": 0.2,
-      "comfort": 0.5,
-      "community": 0.65,
-      "solitude": 0.6,
-      "realism": 0.75,
-      "adventure": 0.68,
-      "minimalism": 0.5,
-      "ornament": 0.4,
-      "intellect": 0.5,
-      "optimism": 0.55,
-      "darkness": 0.35
-    },
-    "related": ["old-money", "preppy", "rustic", "western", "tenniscore"],
-    "world": {
-      "setting": "a stable yard at six in the morning with breath showing and nobody talking",
-      "architecture": "brick stables round a yard, a hay barn, a house behind the trees",
-      "interior": "a tack room smelling of leather and saddle soap, rosettes on the wall",
-      "technology": "a quad bike, a hose, a radio in the feed room",
-      "clothes": "tweed, jodhpurs, long boots, a coat that has seen a decade of rain",
-      "music": "almost none - hooves on concrete and the radio in the background",
-      "colours": "saddle tan, tweed brown, hunter green, straw",
-      "everyday": "mucking out before work, riding in all weather, animals before people"
-    }
-  },
-  {
     "key": "liminal-space",
     "name": "Liminal Space",
     "family": "Internet and Liminal",
@@ -5251,7 +4437,7 @@
       "tradition": 0.15,
       "fantasy": 0.75
     },
-    "related": ["dreamcore", "weirdcore", "mallsoft", "corpcore", "ghostcore"],
+    "related": ["dreamcore", "weirdcore", "mallsoft", "ghostcore"],
     "world": {
       "setting": "a shopping centre after closing with the lights still on and nobody left",
       "architecture": "linoleum, suspended ceilings, corridors that turn one more time",
@@ -5635,144 +4821,6 @@
     }
   },
   {
-    "key": "vectordelia",
-    "name": "Vectordelia",
-    "family": "Internet and Liminal",
-    "tagline": "Swooshes, lens flare and the 1999 CD-ROM",
-    "description": "Vector swirls, gradient meshes and a lens flare on everything - the graphic design language of turn-of-the-millennium software packaging.",
-    "keywords": ["vector swirls", "gradient mesh", "lens flare", "CD-ROM", "bubble render"],
-    "palette": ["#0a1730", "#1467c4", "#38d6f0", "#f2f7fb"],
-    "dimensions": {
-      "digital": 0.95,
-      "technology": 0.85,
-      "futurism": 0.82,
-      "optimism": 0.85,
-      "nostalgia": 0.82,
-      "retro": 0.8,
-      "maximalism": 0.78,
-      "ornament": 0.8,
-      "nature": 0.25,
-      "rural": 0.05,
-      "tradition": 0.05,
-      "history": 0.15,
-      "darkness": 0.15,
-      "melancholy": 0.25,
-      "realism": 0.2,
-      "order": 0.55,
-      "chaos": 0.5,
-      "minimalism": 0.2,
-      "refinement": 0.45,
-      "modernity": 0.6,
-      "urban": 0.55,
-      "whimsy": 0.75,
-      "craft": 0.55,
-      "comfort": 0.55
-    },
-    "related": ["frutiger-aero", "old-web", "y2k", "seapunk"],
-    "world": {
-      "setting": "the box art of a program you installed once and never opened",
-      "architecture": "an office rendered in 3D with impossibly clean glass",
-      "interior": "a desk with a translucent computer and a mousemat with a swirl on it",
-      "technology": "the aesthetic is entirely about it - beige towers and shiny software",
-      "clothes": "nobody is wearing anything; this aesthetic is pure graphic design",
-      "music": "a start-up chime, corporate ambient, a demo track in MIDI",
-      "colours": "sky blue, cyan, lens-flare white, chrome",
-      "everyday": "installing things, exploring the interface, believing the future is soon"
-    }
-  },
-  {
-    "key": "baroque",
-    "name": "Baroque",
-    "family": "Art and Period",
-    "tagline": "Overwhelm as a deliberate strategy",
-    "description": "Gilded altarpieces, ceilings that open onto painted sky and light used like a weapon. Drama and devotion at a scale meant to leave you speechless.",
-    "keywords": ["gilding", "chiaroscuro", "ceiling fresco", "marble", "drama"],
-    "palette": ["#17120c", "#54301b", "#b08532", "#efe3cb"],
-    "dimensions": {
-      "ornament": 0.98,
-      "maximalism": 0.98,
-      "refinement": 0.85,
-      "history": 0.92,
-      "tradition": 0.85,
-      "architecture": 0.9,
-      "darkness": 0.65,
-      "craft": 0.85,
-      "minimalism": 0.02,
-      "modernity": 0.05,
-      "futurism": 0.03,
-      "digital": 0.03,
-      "industrial": 0.08,
-      "nature": 0.35,
-      "rural": 0.2,
-      "urban": 0.6,
-      "order": 0.6,
-      "chaos": 0.55,
-      "fantasy": 0.72,
-      "intellect": 0.7,
-      "melancholy": 0.6,
-      "mystery": 0.72,
-      "comfort": 0.4,
-      "optimism": 0.5
-    },
-    "related": ["rococo", "angelcore", "royalcore", "romanticism", "victorian"],
-    "world": {
-      "setting": "a church at midday with one shaft of light falling exactly where it should",
-      "architecture": "twisted columns, broken pediments, a dome painted to look infinite",
-      "interior": "gilt everywhere, marble in four colours, a ceiling that refuses to stop",
-      "technology": "none - the engineering is the building itself",
-      "clothes": "heavy silk, deep folds, lace at the cuff, everything catching light",
-      "music": "a pipe organ at full stop, strings, a choir in a very live room",
-      "colours": "gold leaf, deep crimson, marble white, shadow black",
-      "everyday": "spectacle treated as a moral good, nothing done by half"
-    }
-  },
-  {
-    "key": "victorian",
-    "name": "Victorian",
-    "family": "Art and Period",
-    "tagline": "Every surface covered, every feeling contained",
-    "description": "Horsehair furniture, patterned wallpaper, mourning jewellery and a parlour arranged by rules nobody wrote down. Industry, propriety and clutter in equal measure.",
-    "keywords": ["wallpaper", "parlour", "mourning jewellery", "horsehair", "taxidermy"],
-    "palette": ["#1a1410", "#452b23", "#7d5a3a", "#d6c6a8"],
-    "dimensions": {
-      "ornament": 0.95,
-      "maximalism": 0.9,
-      "history": 0.95,
-      "tradition": 0.92,
-      "order": 0.82,
-      "architecture": 0.8,
-      "craft": 0.8,
-      "refinement": 0.78,
-      "modernity": 0.05,
-      "futurism": 0.05,
-      "digital": 0.03,
-      "minimalism": 0.03,
-      "industrial": 0.65,
-      "urban": 0.65,
-      "rural": 0.4,
-      "nature": 0.45,
-      "darkness": 0.6,
-      "melancholy": 0.7,
-      "mystery": 0.68,
-      "intellect": 0.7,
-      "comfort": 0.55,
-      "nostalgia": 0.75,
-      "optimism": 0.4,
-      "fantasy": 0.5
-    },
-    "related": ["romantic-goth", "steampunk", "baroque", "royalcore"],
-    "world": {
-      "setting": "a parlour with the curtains half closed and a clock that is never wound down",
-      "architecture": "brick terraces, bay windows, chimneys in rows down the street",
-      "interior": "patterned wallpaper, heavy furniture, a stuffed bird under a glass dome",
-      "technology": "gas lamps, a mantel clock, a machine that does one thing beautifully",
-      "clothes": "buttoned to the throat, jet beads, a watch chain, gloves indoors",
-      "music": "a parlour piano, hymns, a music box in the hall",
-      "colours": "bottle green, oxblood, mahogany, tarnished brass",
-      "everyday": "calling cards, letters answered the same day, propriety above comfort"
-    }
-  },
-  {
     "key": "regency",
     "name": "Regency",
     "family": "Art and Period",
@@ -5806,7 +4854,7 @@
       "craft": 0.65,
       "nostalgia": 0.7
     },
-    "related": ["royalcore", "light-academia", "romanticism", "old-money", "victorian"],
+    "related": ["royalcore", "light-academia", "romanticism", "old-money"],
     "world": {
       "setting": "a country house in spring with a walk laid out to a folly on the hill",
       "architecture": "pale stone, symmetrical windows, a portico and a sweeping drive",
@@ -5816,374 +4864,6 @@
       "music": "a pianoforte in the evening, country dances in the assembly rooms",
       "colours": "duck-egg, pale stone, straw, soft rose",
       "everyday": "correspondence, calls paid, long walks, everything said indirectly"
-    }
-  },
-  {
-    "key": "neoclassicism",
-    "name": "Neoclassicism",
-    "family": "Art and Period",
-    "tagline": "Reason, rendered in white marble",
-    "description": "Columns, porticos and plaster casts of Greek originals. The Enlightenment insisting that clarity and proportion are moral qualities as much as visual ones.",
-    "keywords": ["columns", "plaster casts", "proportion", "porticos", "antiquity"],
-    "palette": ["#252822", "#5d6154", "#b0ad9a", "#f3f0e6"],
-    "dimensions": {
-      "order": 0.95,
-      "refinement": 0.92,
-      "architecture": 0.92,
-      "intellect": 0.88,
-      "history": 0.88,
-      "tradition": 0.8,
-      "minimalism": 0.62,
-      "realism": 0.7,
-      "chaos": 0.03,
-      "whimsy": 0.08,
-      "maximalism": 0.3,
-      "ornament": 0.5,
-      "modernity": 0.15,
-      "futurism": 0.08,
-      "digital": 0.05,
-      "industrial": 0.2,
-      "nature": 0.45,
-      "urban": 0.6,
-      "rural": 0.4,
-      "comfort": 0.4,
-      "melancholy": 0.5,
-      "solitude": 0.6,
-      "optimism": 0.5,
-      "craft": 0.75
-    },
-    "related": ["regency", "brutalism", "light-academia", "royalcore", "minimalism"],
-    "world": {
-      "setting": "a museum gallery of white casts with light from clerestory windows",
-      "architecture": "porticos, pediments, columns spaced by a rule you can feel",
-      "interior": "pale walls, a marble floor, statues on plinths at measured intervals",
-      "technology": "none on show - the geometry does the work",
-      "clothes": "simple draped forms, clean lines, nothing that distracts",
-      "music": "a string quartet, formal, structured, resolving where it should",
-      "colours": "marble white, stone grey, pale ochre, olive",
-      "everyday": "study, measurement, the belief that beauty follows from proportion"
-    }
-  },
-  {
-    "key": "bauhaus",
-    "name": "Bauhaus",
-    "family": "Art and Period",
-    "tagline": "Form follows function, and looks good doing it",
-    "description": "Primary colours, tubular steel and type set without decoration. A school that tried to rebuild everyday objects from first principles, and largely succeeded.",
-    "keywords": ["primary colours", "tubular steel", "geometry", "sans-serif", "workshop"],
-    "palette": ["#16171b", "#1d4ea8", "#d92b1f", "#f0d43f"],
-    "dimensions": {
-      "order": 0.95,
-      "minimalism": 0.88,
-      "modernity": 0.9,
-      "architecture": 0.88,
-      "craft": 0.85,
-      "intellect": 0.82,
-      "industrial": 0.75,
-      "realism": 0.72,
-      "ornament": 0.03,
-      "maximalism": 0.05,
-      "tradition": 0.1,
-      "history": 0.4,
-      "nostalgia": 0.3,
-      "nature": 0.2,
-      "rural": 0.1,
-      "urban": 0.78,
-      "futurism": 0.68,
-      "technology": 0.7,
-      "comfort": 0.45,
-      "community": 0.65,
-      "darkness": 0.3,
-      "optimism": 0.68,
-      "whimsy": 0.35,
-      "refinement": 0.7
-    },
-    "related": ["mid-century-modern", "minimalism", "brutalism", "scandinavian-design", "de-stijl"],
-    "world": {
-      "setting": "a workshop with north light, a bench, and a prototype that nearly works",
-      "architecture": "white render, ribbon windows, a glass stairwell you can see through",
-      "interior": "tubular steel chairs, a plain table, a grid on everything",
-      "technology": "machine tools used honestly, nothing disguised as something else",
-      "clothes": "a boiler suit, round glasses, clothes designed like everything else",
-      "music": "a piano played percussively, early electronic experiments",
-      "colours": "red, blue, yellow, with black and white holding them apart",
-      "everyday": "making the thing, testing it, removing whatever was not needed"
-    }
-  },
-  {
-    "key": "de-stijl",
-    "name": "De Stijl",
-    "family": "Art and Period",
-    "tagline": "The world reduced to lines and three colours",
-    "description": "Black grids, white fields and rectangles of primary colour. An art movement convinced that stripping everything back far enough reveals a universal harmony.",
-    "keywords": ["grid", "primary colours", "rectangles", "asymmetry", "abstraction"],
-    "palette": ["#141414", "#0d47a1", "#d32f2f", "#fafafa"],
-    "dimensions": {
-      "minimalism": 0.95,
-      "order": 0.95,
-      "architecture": 0.85,
-      "intellect": 0.85,
-      "modernity": 0.88,
-      "realism": 0.05,
-      "ornament": 0.02,
-      "maximalism": 0.03,
-      "nature": 0.05,
-      "organic": 0.03,
-      "rural": 0.05,
-      "tradition": 0.08,
-      "history": 0.35,
-      "craft": 0.65,
-      "industrial": 0.6,
-      "urban": 0.75,
-      "futurism": 0.68,
-      "comfort": 0.3,
-      "melancholy": 0.35,
-      "optimism": 0.6,
-      "whimsy": 0.3,
-      "refinement": 0.75,
-      "technology": 0.6,
-      "solitude": 0.6
-    },
-    "related": ["bauhaus", "minimalism", "mid-century-modern", "neoclassicism", "memphis-design"],
-    "world": {
-      "setting": "a room where the walls, floor and furniture are all part of one composition",
-      "architecture": "planes that slide past each other, primary colour on a structural edge",
-      "interior": "a chair that is clearly a diagram, a grid of light through a window",
-      "technology": "nothing visible - the idea is the machine",
-      "clothes": "plain blocks of colour, sharp edges, no pattern anywhere",
-      "music": "boogie-woogie piano, rhythmic and gridded",
-      "colours": "red, yellow, blue, black, white, and nothing else",
-      "everyday": "arranging until it balances, removing whatever breaks the rule"
-    }
-  },
-  {
-    "key": "impressionism",
-    "name": "Impressionism",
-    "family": "Art and Period",
-    "tagline": "Light caught before it moves on",
-    "description": "Broken brushwork, gardens at midday and a river with the sun on it. An aesthetic of fleeting perception, painted quickly because the light will not wait.",
-    "keywords": ["broken brushwork", "gardens", "river light", "plein air", "dappled shade"],
-    "palette": ["#31402f", "#6d8f8c", "#d6b45f", "#f6efe0"],
-    "dimensions": {
-      "organic": 0.9,
-      "nature": 0.88,
-      "optimism": 0.82,
-      "whimsy": 0.7,
-      "craft": 0.78,
-      "refinement": 0.72,
-      "history": 0.75,
-      "chaos": 0.6,
-      "industrial": 0.08,
-      "digital": 0.03,
-      "futurism": 0.05,
-      "minimalism": 0.2,
-      "order": 0.35,
-      "realism": 0.45,
-      "rural": 0.68,
-      "urban": 0.45,
-      "tradition": 0.55,
-      "comfort": 0.72,
-      "ornament": 0.6,
-      "maximalism": 0.6,
-      "melancholy": 0.4,
-      "solitude": 0.6,
-      "intellect": 0.6,
-      "modernity": 0.35
-    },
-    "related": ["romanticism", "cottagecore", "light-academia", "naturecore", "art-nouveau"],
-    "world": {
-      "setting": "a garden at eleven in the morning with the light coming through leaves",
-      "architecture": "a house half hidden by planting, a bridge over a lily pond",
-      "interior": "tall windows, pale rooms, a canvas propped where the light is best",
-      "technology": "paint in tubes, which is the whole reason this could happen outdoors",
-      "clothes": "loose summer cotton, a straw hat, a coat left on the grass",
-      "music": "solo piano, unresolved chords, something by Debussy",
-      "colours": "green on green, lilac shadow, sunlit yellow, water blue",
-      "everyday": "working outdoors, chasing the light, finishing before it changes"
-    }
-  },
-  {
-    "key": "surrealism",
-    "name": "Surrealism",
-    "family": "Art and Period",
-    "tagline": "Dream logic, painted with a steady hand",
-    "description": "Impossible objects rendered precisely, deserts with furniture in them and images that feel meaningful without explaining why. The unconscious treated as a place you can visit.",
-    "keywords": ["dream logic", "impossible objects", "desert", "automatism", "juxtaposition"],
-    "palette": ["#1c2436", "#3f5a7a", "#c4854a", "#ecdfc8"],
-    "dimensions": {
-      "fantasy": 0.98,
-      "mystery": 0.92,
-      "chaos": 0.78,
-      "intellect": 0.8,
-      "realism": 0.25,
-      "whimsy": 0.75,
-      "darkness": 0.62,
-      "history": 0.62,
-      "tradition": 0.1,
-      "industrial": 0.15,
-      "digital": 0.1,
-      "nature": 0.45,
-      "rural": 0.4,
-      "urban": 0.45,
-      "order": 0.4,
-      "minimalism": 0.4,
-      "maximalism": 0.6,
-      "ornament": 0.5,
-      "craft": 0.75,
-      "solitude": 0.75,
-      "melancholy": 0.65,
-      "comfort": 0.25,
-      "modernity": 0.55,
-      "optimism": 0.4
-    },
-    "related": ["dreamcore", "weirdcore", "psychedelia", "analog-horror", "liminal-space"],
-    "world": {
-      "setting": "a plain that goes on too far, with one piece of furniture in the middle",
-      "architecture": "a doorway standing on its own, a building with the inside on the outside",
-      "interior": "a room where the scale is wrong and nobody mentions it",
-      "technology": "objects that look like machines but do nothing explicable",
-      "clothes": "a bowler hat, a formal coat, something obscuring the face",
-      "music": "a waltz heard through a wall, a voice reciting a list",
-      "colours": "sky blue, desert ochre, deep shadow, bone",
-      "everyday": "writing down the dream at once, trusting the image over the explanation"
-    }
-  },
-  {
-    "key": "pop-art",
-    "name": "Pop Art",
-    "family": "Art and Period",
-    "tagline": "The supermarket shelf, framed and hung",
-    "description": "Ben-Day dots, screenprinted repetition and advertising imagery taken seriously. High art shrugging and pointing at a soup tin.",
-    "keywords": ["Ben-Day dots", "screenprint", "advertising", "repetition", "comic panels"],
-    "palette": ["#141414", "#e02b2b", "#f2c50f", "#2f7fd6"],
-    "dimensions": {
-      "modernity": 0.85,
-      "urban": 0.85,
-      "maximalism": 0.85,
-      "optimism": 0.75,
-      "realism": 0.6,
-      "digital": 0.55,
-      "ornament": 0.7,
-      "intellect": 0.72,
-      "nature": 0.03,
-      "rural": 0.03,
-      "organic": 0.08,
-      "tradition": 0.1,
-      "history": 0.45,
-      "nostalgia": 0.65,
-      "retro": 0.75,
-      "industrial": 0.68,
-      "order": 0.6,
-      "minimalism": 0.3,
-      "chaos": 0.5,
-      "craft": 0.6,
-      "refinement": 0.45,
-      "whimsy": 0.72,
-      "social": 0.7,
-      "comfort": 0.45
-    },
-    "related": ["kidcore", "memphis-design", "maximalism", "mid-century-modern", "psychedelia"],
-    "world": {
-      "setting": "a studio that runs like a small factory, with prints drying in rows",
-      "architecture": "a loft with big windows and a freight lift",
-      "interior": "screens, squeegees, stacked canvases of the same image in four colours",
-      "technology": "a screenprinting bed, a camera, a photocopier used hard",
-      "clothes": "a striped top, sunglasses indoors, white jeans with ink on them",
-      "music": "1960s pop groups, the radio, something with a hook and no depth",
-      "colours": "primary red, yellow, cyan, newsprint black",
-      "everyday": "repeating the image, making more of them, refusing to explain"
-    }
-  },
-  {
-    "key": "memphis-design",
-    "name": "Memphis Design",
-    "family": "Art and Period",
-    "tagline": "Squiggles, terrazzo and rules broken on purpose",
-    "description": "Clashing colour, geometric confetti and furniture that argues with itself. A deliberate revolt against good taste, and enormous fun about it.",
-    "keywords": ["squiggles", "terrazzo", "clashing colour", "geometric", "1980s design"],
-    "palette": ["#17161c", "#e8408a", "#2bb5c9", "#f5d33a"],
-    "dimensions": {
-      "maximalism": 0.95,
-      "chaos": 0.82,
-      "whimsy": 0.92,
-      "ornament": 0.88,
-      "modernity": 0.78,
-      "optimism": 0.85,
-      "retro": 0.78,
-      "craft": 0.65,
-      "minimalism": 0.03,
-      "tradition": 0.05,
-      "nature": 0.05,
-      "organic": 0.2,
-      "rural": 0.05,
-      "history": 0.35,
-      "order": 0.3,
-      "realism": 0.25,
-      "industrial": 0.4,
-      "urban": 0.7,
-      "refinement": 0.35,
-      "comfort": 0.45,
-      "digital": 0.5,
-      "intellect": 0.6,
-      "darkness": 0.15,
-      "nostalgia": 0.65
-    },
-    "related": ["pop-art", "danish-pastel", "kidcore", "maximalism", "de-stijl"],
-    "world": {
-      "setting": "a showroom where nothing matches and everything is placed exactly",
-      "architecture": "a white box with coloured columns that hold nothing up",
-      "interior": "laminate in three patterns, a bookcase shaped like a face",
-      "technology": "a radio shaped like a toy, a telephone in bright plastic",
-      "clothes": "blocks of clashing colour, asymmetric cuts, big earrings",
-      "music": "synth-pop with a marimba in it, bright and slightly silly",
-      "colours": "hot pink, cyan, acid yellow, terrazzo speckle",
-      "everyday": "choosing the louder option, laughing at good taste, meaning it anyway"
-    }
-  },
-  {
-    "key": "streamline-moderne",
-    "name": "Streamline Moderne",
-    "family": "Art and Period",
-    "tagline": "Everything shaped as though it were moving",
-    "description": "Rounded corners, horizontal speed lines and chrome on a building that will never travel anywhere. The 1930s applying aerodynamics to toasters and cinemas alike.",
-    "keywords": ["rounded corners", "speed lines", "chrome", "ocean liner", "1930s"],
-    "palette": ["#1b2128", "#43606e", "#9aa8ae", "#ecdfc6"],
-    "dimensions": {
-      "order": 0.88,
-      "refinement": 0.85,
-      "architecture": 0.88,
-      "modernity": 0.72,
-      "retro": 0.88,
-      "futurism": 0.72,
-      "technology": 0.7,
-      "industrial": 0.68,
-      "minimalism": 0.62,
-      "nature": 0.08,
-      "rural": 0.05,
-      "organic": 0.3,
-      "chaos": 0.08,
-      "ornament": 0.45,
-      "maximalism": 0.35,
-      "tradition": 0.35,
-      "history": 0.7,
-      "nostalgia": 0.78,
-      "urban": 0.75,
-      "comfort": 0.55,
-      "optimism": 0.75,
-      "adventure": 0.65,
-      "craft": 0.7,
-      "intellect": 0.6
-    },
-    "related": ["art-deco", "dieselpunk", "mid-century-modern", "retrofuturism"],
-    "world": {
-      "setting": "a station concourse with curved walls and a clock built into the plan",
-      "architecture": "white render, rounded corners, horizontal banding, glass block",
-      "interior": "chrome handrails, curved banquettes, indirect light in a cove",
-      "technology": "a radio in bakelite, a train shaped like a bullet, a chrome toaster",
-      "clothes": "tailoring with a long line, a belted coat, everything smooth",
-      "music": "big band, a dance orchestra, something recorded in a ballroom",
-      "colours": "cream, marine blue, chrome, soft grey",
-      "everyday": "travelling well, admiring the machine, believing in the near future"
     }
   },
   {
@@ -6220,7 +4900,7 @@
       "community": 0.45,
       "optimism": 0.45
     },
-    "related": ["whimsigothic", "goblincore", "cottagecore", "strega", "fairycore"],
+    "related": ["whimsigothic", "goblincore", "cottagecore", "fairycore"],
     "world": {
       "setting": "a kitchen at dusk with bunches of herbs drying above the range",
       "architecture": "a low cottage with thick walls and a chimney that draws badly",
@@ -6230,98 +4910,6 @@
       "music": "a kettle, rain, folk songs sung while doing something else",
       "colours": "moss, bark brown, beeswax, dried lavender",
       "everyday": "gathering, drying, brewing, keeping the year by what is in season"
-    }
-  },
-  {
-    "key": "strega",
-    "name": "Strega",
-    "family": "Witchy and Folk",
-    "tagline": "Draped black, Italian folk magic, sharp edges",
-    "description": "Layered black linen, silver amulets and the severe end of witchcraft - closer to a mountain village than a cottage garden. Elegant, austere and a little forbidding.",
-    "keywords": ["layered black", "amulets", "folk magic", "draping", "severe"],
-    "palette": ["#131215", "#2e2a2e", "#5f5354", "#c3b6a8"],
-    "dimensions": {
-      "darkness": 0.88,
-      "mystery": 0.92,
-      "refinement": 0.72,
-      "solitude": 0.85,
-      "tradition": 0.75,
-      "history": 0.72,
-      "craft": 0.72,
-      "melancholy": 0.75,
-      "optimism": 0.12,
-      "industrial": 0.05,
-      "digital": 0.05,
-      "futurism": 0.03,
-      "modernity": 0.15,
-      "urban": 0.3,
-      "rural": 0.65,
-      "nature": 0.68,
-      "organic": 0.65,
-      "order": 0.5,
-      "minimalism": 0.55,
-      "maximalism": 0.4,
-      "ornament": 0.55,
-      "comfort": 0.35,
-      "fantasy": 0.7,
-      "intellect": 0.7
-    },
-    "related": ["witchcore", "nu-goth", "romantic-goth", "mori-kei", "dark-naturalism"],
-    "world": {
-      "setting": "a stone village on a hillside where the mist comes down by four",
-      "architecture": "stone houses stacked up a slope, narrow steps, shuttered windows",
-      "interior": "bare walls, a single table, herbs and iron hanging by the door",
-      "technology": "none, and it is not an absence anyone notices",
-      "clothes": "layers of black linen, a shawl, silver worn against the skin",
-      "music": "a single voice, unaccompanied, in a language half forgotten",
-      "colours": "black, slate, bone, oxidised silver",
-      "everyday": "walking alone, knowing the plants, being consulted and slightly feared"
-    }
-  },
-  {
-    "key": "vulture-culture",
-    "name": "Vulture Culture",
-    "family": "Witchy and Folk",
-    "tagline": "Bones cleaned, catalogued and kept with care",
-    "description": "Skulls, pinned insects and articulated skeletons - a naturalist's fascination with death that is meticulous rather than morbid. Respect expressed through study.",
-    "keywords": ["bone collecting", "taxidermy", "entomology", "skulls", "specimen cases"],
-    "palette": ["#191712", "#3d382b", "#8a7d63", "#e3dccb"],
-    "dimensions": {
-      "realism": 0.85,
-      "intellect": 0.85,
-      "craft": 0.85,
-      "darkness": 0.72,
-      "nature": 0.8,
-      "organic": 0.85,
-      "order": 0.78,
-      "mystery": 0.68,
-      "optimism": 0.2,
-      "digital": 0.08,
-      "futurism": 0.05,
-      "industrial": 0.15,
-      "modernity": 0.3,
-      "urban": 0.35,
-      "rural": 0.62,
-      "solitude": 0.8,
-      "tradition": 0.55,
-      "history": 0.7,
-      "minimalism": 0.4,
-      "maximalism": 0.62,
-      "ornament": 0.5,
-      "comfort": 0.35,
-      "melancholy": 0.6,
-      "fantasy": 0.3
-    },
-    "related": ["dark-naturalism", "cryptidcore", "victorian", "witchcore", "goblincore"],
-    "world": {
-      "setting": "a workroom with specimen drawers and a skull mid-way through cleaning",
-      "architecture": "an outbuilding with good ventilation and a very large sink",
-      "interior": "glass cases, labels in careful handwriting, bones sorted by species",
-      "technology": "dermestid beetles, callipers, a macro lens, peroxide",
-      "clothes": "an apron, gloves, practical clothes you do not mind ruining",
-      "music": "a podcast or the radio, because the work takes hours",
-      "colours": "bone white, tannin brown, specimen-label cream, deep shadow",
-      "everyday": "finding, cleaning, labelling, knowing exactly what each one is"
     }
   },
   {
@@ -6368,52 +4956,6 @@
       "music": "low drums, a bowed string, a horn from further off than expected",
       "colours": "pitch, moss, rust, tarnished steel",
       "everyday": "travelling armed, trusting nobody quickly, paying for every victory"
-    }
-  },
-  {
-    "key": "granola",
-    "name": "Granola",
-    "family": "Nature and Pastoral",
-    "tagline": "Sourdough, hiking boots and a compost heap that works",
-    "description": "Wholefoods, hand-knitted layers and a life arranged around walking, growing and making. Practical environmentalism worn every day.",
-    "keywords": ["sourdough", "hiking", "wholefoods", "hand-knitted", "compost"],
-    "palette": ["#2b3323", "#5f7248", "#ab9459", "#e9e0c8"],
-    "dimensions": {
-      "nature": 0.92,
-      "organic": 0.92,
-      "craft": 0.85,
-      "community": 0.75,
-      "rural": 0.72,
-      "comfort": 0.75,
-      "tradition": 0.62,
-      "adventure": 0.72,
-      "industrial": 0.05,
-      "digital": 0.15,
-      "futurism": 0.2,
-      "urban": 0.2,
-      "modernity": 0.3,
-      "refinement": 0.35,
-      "ornament": 0.25,
-      "maximalism": 0.3,
-      "minimalism": 0.6,
-      "order": 0.6,
-      "optimism": 0.72,
-      "realism": 0.7,
-      "intellect": 0.65,
-      "social": 0.6,
-      "darkness": 0.2,
-      "solitude": 0.6
-    },
-    "related": ["cottagecore", "solarpunk", "gorpcore", "hippie", "naturecore"],
-    "world": {
-      "setting": "a kitchen on a Saturday with dough proving and boots by the door",
-      "architecture": "a small house with a big garden and a shed doing several jobs",
-      "interior": "open shelves of jars, a wood burner, plants on every sill",
-      "technology": "a bread oven, a bicycle, solar panels that paid for themselves",
-      "clothes": "hand-knitted wool, walking trousers, boots resoled twice",
-      "music": "folk, acoustic, the radio while cooking",
-      "colours": "oat, forest green, clay, linen",
-      "everyday": "walking rather than driving, growing some of it, fixing before replacing"
     }
   },
   {
@@ -6542,7 +5084,7 @@
       "optimism": 0.55,
       "intellect": 0.75
     },
-    "related": ["cyberpunk", "gulf-futurism", "afrofuturism", "techwear", "guochao"],
+    "related": ["cyberpunk", "afrofuturism"],
     "world": {
       "setting": "a street at night under forty floors of signage, all of it moving",
       "architecture": "towers repeated to the horizon, walkways stacked four deep",
@@ -6552,58 +5094,6 @@
       "music": "hard electronic, a pop song leaking from a shop, engines below",
       "colours": "jade green, neon red, concrete grey, LED white",
       "everyday": "speed, density, everything ordered to the door within the hour"
-    }
-  },
-  {
-    "key": "guochao",
-    "name": "Guochao",
-    "family": "Global and Regional",
-    "tagline": "Chinese heritage, redrawn for right now",
-    "description": "Classical motifs on streetwear, calligraphy on a sneaker and dynasty colour palettes used confidently in modern design. Tradition treated as contemporary material.",
-    "keywords": [
-      "classical motifs",
-      "streetwear",
-      "calligraphy",
-      "dynasty palette",
-      "national trend"
-    ],
-    "palette": ["#1a1116", "#8c1f2a", "#1f6b5c", "#d9b45a"],
-    "dimensions": {
-      "tradition": 0.85,
-      "history": 0.85,
-      "ornament": 0.85,
-      "modernity": 0.78,
-      "craft": 0.8,
-      "refinement": 0.75,
-      "urban": 0.75,
-      "community": 0.72,
-      "industrial": 0.3,
-      "digital": 0.6,
-      "futurism": 0.55,
-      "nature": 0.45,
-      "rural": 0.25,
-      "order": 0.68,
-      "chaos": 0.35,
-      "minimalism": 0.3,
-      "maximalism": 0.72,
-      "comfort": 0.5,
-      "optimism": 0.72,
-      "darkness": 0.35,
-      "intellect": 0.7,
-      "social": 0.68,
-      "individualism": 0.6,
-      "nostalgia": 0.68
-    },
-    "related": ["sinofuturism", "wuxia", "japandi", "art-deco", "hypebeast"],
-    "world": {
-      "setting": "a design district where a tea house and a sneaker shop share a courtyard",
-      "architecture": "a restored courtyard house with glass inserted very carefully",
-      "interior": "lacquer red, a screen, a modern lamp beside an antique table",
-      "technology": "contemporary and everywhere, styled to sit with the old things",
-      "clothes": "streetwear cut with classical collars, embroidery on technical fabric",
-      "music": "guzheng samples over trap drums, pop with traditional instruments",
-      "colours": "cinnabar red, jade, ink black, imperial gold",
-      "everyday": "pride without apology, the old motifs used like any other design tool"
     }
   },
   {
@@ -6640,7 +5130,7 @@
       "intellect": 0.72,
       "craft": 0.7
     },
-    "related": ["medievalcore", "dark-fantasy", "japandi", "guochao", "adventurecore"],
+    "related": ["medievalcore", "dark-fantasy", "japandi", "adventurecore"],
     "world": {
       "setting": "a mountain path above the cloud line with an inn somewhere below",
       "architecture": "a temple on a ridge, timber halls, a courtyard swept every morning",
@@ -6650,58 +5140,6 @@
       "music": "guqin, a bamboo flute, long silences between phrases",
       "colours": "ink black, jade, bamboo green, unbleached silk",
       "everyday": "training before dawn, travelling light, keeping your word absolutely"
-    }
-  },
-  {
-    "key": "gulf-futurism",
-    "name": "Gulf Futurism",
-    "family": "Global and Regional",
-    "tagline": "A skyline built overnight on top of the desert",
-    "description": "Air-conditioned malls, glass towers and highways across sand. Extreme modernity arriving at once, with everything older still visible at the edges.",
-    "keywords": [
-      "glass towers",
-      "malls",
-      "desert highway",
-      "air conditioning",
-      "rapid construction"
-    ],
-    "palette": ["#101722", "#2e4a6b", "#c2a26b", "#ecebe4"],
-    "dimensions": {
-      "futurism": 0.9,
-      "modernity": 0.92,
-      "urban": 0.9,
-      "technology": 0.8,
-      "architecture": 0.85,
-      "industrial": 0.6,
-      "order": 0.72,
-      "refinement": 0.7,
-      "nature": 0.12,
-      "rural": 0.08,
-      "organic": 0.1,
-      "melancholy": 0.65,
-      "solitude": 0.68,
-      "tradition": 0.5,
-      "history": 0.45,
-      "digital": 0.72,
-      "comfort": 0.55,
-      "maximalism": 0.7,
-      "minimalism": 0.4,
-      "ornament": 0.6,
-      "optimism": 0.5,
-      "darkness": 0.45,
-      "mystery": 0.6,
-      "realism": 0.55
-    },
-    "related": ["sinofuturism", "liminal-space", "brutalism", "cyberpunk", "mallsoft"],
-    "world": {
-      "setting": "a six-lane road at noon with a tower going up on either side",
-      "architecture": "glass towers with no shade, a mall the size of a district",
-      "interior": "marble, cold air, a fountain indoors and daylight kept out",
-      "technology": "the newest of everything, installed before it was needed",
-      "clothes": "immaculate white or black, sunglasses, nothing wrinkled",
-      "music": "lobby ambient, khaleeji pop from a passing car",
-      "colours": "sand, mirrored glass, white marble, sky blue",
-      "everyday": "moving between cooled spaces, the desert visible and never entered"
     }
   },
   {
@@ -6738,7 +5176,7 @@
       "darkness": 0.6,
       "realism": 0.68
     },
-    "related": ["cassette-futurism", "atompunk", "brutalism", "doomer", "gloomcore"],
+    "related": ["cassette-futurism", "atompunk", "doomer", "gloomcore"],
     "world": {
       "setting": "a courtyard between panel blocks in February, snow going grey",
       "architecture": "identical concrete blocks, a playground of painted steel",
@@ -6748,191 +5186,6 @@
       "music": "warm analogue synths, a melody that sounds like remembering",
       "colours": "concrete grey, snow white, faded red, brown linoleum",
       "everyday": "tea in the kitchen, the same neighbours for thirty years, a future postponed"
-    }
-  },
-  {
-    "key": "ostalgie",
-    "name": "Ostalgie",
-    "family": "Global and Regional",
-    "tagline": "Fondness for a country that was abolished",
-    "description": "East German brand packaging, a Trabant and patterned wallpaper from a state factory. Affection for the ordinary textures of a vanished everyday life.",
-    "keywords": ["Trabant", "state packaging", "patterned wallpaper", "GDR design", "kiosk"],
-    "palette": ["#26221a", "#5c5136", "#a8793a", "#ded3b8"],
-    "dimensions": {
-      "nostalgia": 0.95,
-      "retro": 0.9,
-      "history": 0.8,
-      "melancholy": 0.78,
-      "tradition": 0.62,
-      "community": 0.72,
-      "industrial": 0.68,
-      "comfort": 0.6,
-      "futurism": 0.15,
-      "digital": 0.1,
-      "modernity": 0.15,
-      "urban": 0.65,
-      "rural": 0.35,
-      "nature": 0.3,
-      "order": 0.65,
-      "chaos": 0.3,
-      "minimalism": 0.4,
-      "maximalism": 0.5,
-      "ornament": 0.55,
-      "refinement": 0.35,
-      "optimism": 0.45,
-      "darkness": 0.4,
-      "realism": 0.72,
-      "craft": 0.6
-    },
-    "related": ["sovietwave", "eclectic-grandpa", "cassette-futurism", "normcore", "mallsoft"],
-    "world": {
-      "setting": "a kiosk on a corner selling the same six things it always has",
-      "architecture": "prefabricated blocks, a cultural centre with a mosaic on the side",
-      "interior": "patterned wallpaper, a wall unit, a television with a doily on top",
-      "technology": "a car you maintain yourself, a radio, a camera with a plastic lens",
-      "clothes": "nylon jackets, practical shoes, a tracksuit worn as normal clothing",
-      "music": "schlager, state radio pop, a synthesiser on a budget",
-      "colours": "mustard, brown, orange, off-white",
-      "everyday": "queueing without complaint, fixing things, knowing everyone on the stair"
-    }
-  },
-  {
-    "key": "tropicalia",
-    "name": "Tropicália",
-    "family": "Global and Regional",
-    "tagline": "Brazil with everything turned up and mixed together",
-    "description": "Clashing print, sunlight, samba filtered through psychedelic rock, and a cheerful refusal to separate high culture from low. Joy used as a political act.",
-    "keywords": ["clashing print", "samba", "psychedelic", "sunlight", "collage"],
-    "palette": ["#17301f", "#0f8f6c", "#e8a01f", "#e0453f"],
-    "dimensions": {
-      "maximalism": 0.92,
-      "chaos": 0.82,
-      "optimism": 0.85,
-      "organic": 0.8,
-      "nature": 0.75,
-      "social": 0.82,
-      "community": 0.8,
-      "ornament": 0.8,
-      "minimalism": 0.05,
-      "order": 0.15,
-      "industrial": 0.2,
-      "digital": 0.1,
-      "futurism": 0.35,
-      "tradition": 0.55,
-      "history": 0.55,
-      "nostalgia": 0.65,
-      "retro": 0.7,
-      "urban": 0.65,
-      "rural": 0.45,
-      "refinement": 0.4,
-      "intellect": 0.7,
-      "craft": 0.68,
-      "comfort": 0.6,
-      "whimsy": 0.8
-    },
-    "related": ["psychedelia", "hippie", "pop-art", "maximalism", "brazilcore"],
-    "world": {
-      "setting": "a city street in summer where music is coming from three directions",
-      "architecture": "modernist concrete gone green at the edges, tiled façades, shutters",
-      "interior": "bright walls, plants indoors, a record player and not much furniture",
-      "technology": "an electric guitar plugged into whatever is available",
-      "clothes": "tropical print, bright colour, sandals, nothing formal",
-      "music": "samba with fuzz guitar, orchestras colliding with street percussion",
-      "colours": "palm green, mango, cobalt, hot orange",
-      "everyday": "music everywhere, eating outside, treating cheerfulness seriously"
-    }
-  },
-  {
-    "key": "brazilcore",
-    "name": "Brazilcore",
-    "family": "Global and Regional",
-    "tagline": "Football shirts, beach heat and green-and-yellow everything",
-    "description": "Jersey as daywear, açaí, flip-flops and the specific energy of a country where the beach is public life. Casual, communal and loud.",
-    "keywords": ["football shirt", "beach", "flip-flops", "açaí", "street party"],
-    "palette": ["#12321f", "#0f7a4a", "#f2c230", "#2f6fd0"],
-    "dimensions": {
-      "social": 0.9,
-      "community": 0.88,
-      "optimism": 0.88,
-      "comfort": 0.78,
-      "nature": 0.62,
-      "organic": 0.6,
-      "urban": 0.7,
-      "maximalism": 0.72,
-      "melancholy": 0.1,
-      "darkness": 0.08,
-      "industrial": 0.15,
-      "solitude": 0.1,
-      "tradition": 0.55,
-      "history": 0.35,
-      "nostalgia": 0.5,
-      "modernity": 0.62,
-      "digital": 0.55,
-      "order": 0.3,
-      "chaos": 0.65,
-      "refinement": 0.3,
-      "ornament": 0.6,
-      "craft": 0.5,
-      "adventure": 0.68,
-      "realism": 0.6
-    },
-    "related": ["tropicalia", "blokecore", "nautical", "hippie"],
-    "world": {
-      "setting": "a beach on a Sunday with a match happening on the sand and music nearby",
-      "architecture": "apartment blocks facing the water, a kiosk on the promenade",
-      "interior": "a flat with the windows open, a hammock, a fan doing its best",
-      "technology": "a phone, a speaker, a fridge full of something cold",
-      "clothes": "a football shirt, shorts, flip-flops, sunglasses",
-      "music": "funk carioca, samba, pagode from a passing car",
-      "colours": "green, yellow, sea blue, sand",
-      "everyday": "the beach as a living room, food shared, nobody eating alone"
-    },
-    "wiki": "Brazilcore (fashion trend)"
-  },
-  {
-    "key": "hygge",
-    "name": "Hygge",
-    "family": "Cosy and Home",
-    "tagline": "Candles lit at four because it is already dark",
-    "description": "Wool blankets, candlelight and the Danish practice of making winter bearable by being deliberately comfortable in company. Cosiness treated as a discipline.",
-    "keywords": ["candlelight", "wool blankets", "winter", "coffee", "togetherness"],
-    "palette": ["#241f1b", "#5c4f41", "#a8916f", "#f0e8da"],
-    "dimensions": {
-      "comfort": 0.98,
-      "community": 0.82,
-      "order": 0.7,
-      "craft": 0.72,
-      "minimalism": 0.68,
-      "tradition": 0.68,
-      "organic": 0.7,
-      "solitude": 0.55,
-      "chaos": 0.1,
-      "industrial": 0.08,
-      "digital": 0.15,
-      "futurism": 0.08,
-      "maximalism": 0.2,
-      "ornament": 0.35,
-      "modernity": 0.45,
-      "urban": 0.45,
-      "rural": 0.5,
-      "nature": 0.6,
-      "melancholy": 0.5,
-      "optimism": 0.62,
-      "darkness": 0.35,
-      "refinement": 0.6,
-      "social": 0.65,
-      "history": 0.45
-    },
-    "related": ["scandinavian-design", "cabincore", "wabi-sabi", "japandi", "cottagecore"],
-    "world": {
-      "setting": "a living room in November with the lamps low and rain on the window",
-      "architecture": "a plain apartment with good windows and thick walls",
-      "interior": "wool throws, candles on every surface, pale wood, one good chair",
-      "technology": "kept out of sight, apart from a speaker playing something quiet",
-      "clothes": "thick socks, a knitted jumper, nothing you could not fall asleep in",
-      "music": "soft folk, piano, a record chosen for warmth rather than interest",
-      "colours": "cream, oatmeal, warm grey, candle amber",
-      "everyday": "coffee with friends indoors, early darkness accepted rather than fought"
     }
   },
   {
@@ -6970,7 +5223,7 @@
       "community": 0.6,
       "darkness": 0.2
     },
-    "related": ["old-money", "nautical", "hygge", "cottagecore", "clean-girl"],
+    "related": ["old-money", "nautical", "cottagecore", "clean-girl"],
     "world": {
       "setting": "a kitchen with the doors open to a garden that runs down toward the water",
       "architecture": "a shingled house with a porch, weathered grey by the salt air",
@@ -6980,52 +5233,6 @@
       "music": "jazz standards while cooking, the radio, mostly the sea",
       "colours": "chalk white, sea grey, sand, faded blue",
       "everyday": "cooking for whoever turns up, gardening, long unhurried afternoons"
-    }
-  },
-  {
-    "key": "grandmillennial",
-    "name": "Grandmillennial",
-    "family": "Cosy and Home",
-    "tagline": "Chintz, scallops and needlepoint, on purpose",
-    "description": "Floral wallpaper, skirted tables and porcelain, adopted by people forty years too young for it. Traditional decoration reclaimed with full knowledge of how it reads.",
-    "keywords": ["chintz", "scalloped edges", "needlepoint", "porcelain", "toile"],
-    "palette": ["#2a2422", "#6d4a52", "#a8894a", "#f2e6d8"],
-    "dimensions": {
-      "ornament": 0.92,
-      "maximalism": 0.88,
-      "tradition": 0.85,
-      "comfort": 0.82,
-      "craft": 0.78,
-      "history": 0.75,
-      "nostalgia": 0.85,
-      "refinement": 0.7,
-      "minimalism": 0.03,
-      "chaos": 0.25,
-      "industrial": 0.05,
-      "futurism": 0.05,
-      "digital": 0.4,
-      "modernity": 0.35,
-      "nature": 0.5,
-      "rural": 0.5,
-      "urban": 0.5,
-      "order": 0.65,
-      "optimism": 0.68,
-      "whimsy": 0.7,
-      "darkness": 0.2,
-      "melancholy": 0.35,
-      "social": 0.6,
-      "community": 0.62
-    },
-    "related": ["cluttercore", "victorian", "cottagecore", "twee", "eclectic-grandpa"],
-    "world": {
-      "setting": "a sitting room with a skirted table, a lamp on it, and needlepoint cushions",
-      "architecture": "an older flat or house with mouldings that were never stripped out",
-      "interior": "chintz, blue-and-white china on a shelf, a scalloped lampshade",
-      "technology": "hidden inside something wooden wherever possible",
-      "clothes": "printed dresses, cardigans, a brooch worn without irony",
-      "music": "something on the radio, a piano, nothing challenging",
-      "colours": "rose, cornflower, cream, soft green",
-      "everyday": "hosting properly, using the good china, making things by hand"
     }
   },
   {
@@ -7162,7 +5369,7 @@
       "intellect": 0.6,
       "fantasy": 0.4
     },
-    "related": ["industrial", "brutalism", "liminal-space", "soft-apocalypse", "doomer"],
+    "related": ["industrial", "liminal-space", "soft-apocalypse", "doomer"],
     "world": {
       "setting": "a mill floor with the roof half gone and birch trees coming up through it",
       "architecture": "brick and steel built to last a century, abandoned after forty years",
@@ -7378,7 +5585,7 @@
       "history": 0.4,
       "architecture": 0.55
     },
-    "related": ["americana", "fifties-suburbia", "preppy", "y2k", "mallgoth"],
+    "related": ["americana", "fifties-suburbia", "y2k", "mallgoth"],
     "world": {
       "setting": "a corridor between bells, everybody shouting, banners taped along the wall",
       "architecture": "a low brick school with a gym that doubles as everything else",
@@ -7483,53 +5690,6 @@
       "music": "the jukebox playing to three people, doo-wop, a radio in the kitchen",
       "colours": "cherry red, chrome, cream formica, neon pink",
       "everyday": "coffee refilled without asking, conversations that go on too long, no rush"
-    }
-  },
-  {
-    "key": "bohemian",
-    "name": "Bohemian",
-    "family": "Subculture",
-    "tagline": "Layers, fringe and a life that keeps moving",
-    "description": "Loose, layered and well travelled: flowing fabrics, mixed prints, silver jewellery and the sense that everything was found somewhere along the way. Free-spirited without trying to look it.",
-    "keywords": ["fringe", "paisley", "layered jewellery", "flowing fabric", "festival"],
-    "palette": ["#2b1d16", "#8a4b2a", "#c98f4e", "#efdcc0"],
-    "dimensions": {
-      "organic": 0.75,
-      "nature": 0.6,
-      "craft": 0.75,
-      "individualism": 0.8,
-      "adventure": 0.8,
-      "order": 0.2,
-      "chaos": 0.6,
-      "maximalism": 0.75,
-      "minimalism": 0.15,
-      "ornament": 0.75,
-      "comfort": 0.7,
-      "tradition": 0.4,
-      "nostalgia": 0.6,
-      "retro": 0.65,
-      "refinement": 0.35,
-      "whimsy": 0.6,
-      "optimism": 0.7,
-      "social": 0.65,
-      "community": 0.6,
-      "technology": 0.2,
-      "digital": 0.15,
-      "urban": 0.35,
-      "rural": 0.55,
-      "fantasy": 0.55
-    },
-    "related": ["hippie", "tropicalia", "cottagecore", "eclectic-grandpa"],
-    "wiki": "Bohemian",
-    "world": {
-      "setting": "a sunlit road between festivals, a market that sells everything",
-      "architecture": "a rented room above a café, walls painted a colour the landlord did not approve",
-      "interior": "rugs on rugs, cushions on the floor, plants trailing off every shelf",
-      "technology": "a camera with film in it and a phone that is mostly for maps",
-      "clothes": "maxi skirts and wide trousers, crochet, fringed suede, rings on every finger",
-      "music": "folk rock, psych, something with a sitar drifting out of a van",
-      "colours": "terracotta, saffron, faded indigo, sun-bleached cream",
-      "everyday": "late breakfasts, long walks to nowhere in particular, new friends by evening"
     }
   },
   {
@@ -7896,7 +6056,7 @@
       "community": 0.55,
       "social": 0.5
     },
-    "related": ["cottagecore", "grandmillennial", "coastal-grandmother", "danish-pastel"],
+    "related": ["cottagecore", "coastal-grandmother"],
     "wiki": "Shabby Chic",
     "world": {
       "setting": "a farmhouse at the edge of a village, roses climbing the gate",
@@ -7943,7 +6103,7 @@
       "urban": 0.6,
       "architecture": 0.6
     },
-    "related": ["maximalism", "memphis-design", "cluttercore", "pop-art"],
+    "related": ["maximalism", "cluttercore"],
     "wiki": "Kitsch",
     "world": {
       "setting": "a motor-court town off the highway, a giant fibreglass donut on the roof",
@@ -7990,7 +6150,7 @@
       "technology": 0.2,
       "architecture": 0.7
     },
-    "related": ["tropicalia", "mid-century-modern", "kitsch", "nautical"],
+    "related": ["kitsch", "nautical"],
     "wiki": "Tiki",
     "world": {
       "setting": "a backyard pretending to be a South Sea island, string lights across the patio",
@@ -8038,7 +6198,7 @@
       "refinement": 0.3,
       "adventure": 0.5
     },
-    "related": ["cottagecore", "western", "americana", "arts-and-crafts"],
+    "related": ["cottagecore", "western", "americana"],
     "wiki": "Prairiecore",
     "world": {
       "setting": "grassland to every horizon, one cottonwood by the creek",
@@ -8086,7 +6246,7 @@
       "refinement": 0.35,
       "whimsy": 0.45
     },
-    "related": ["cottagecore", "naturecore", "granola", "hygge"],
+    "related": ["cottagecore", "naturecore"],
     "wiki": "Gardencore",
     "world": {
       "setting": "an allotment behind the houses, a robin following the spade",
@@ -8134,7 +6294,7 @@
       "optimism": 0.55,
       "melancholy": 0.4
     },
-    "related": ["corpcore", "brutalism", "hypebeast"],
+    "related": ["hypebeast"],
     "wiki": "Urbancore",
     "world": {
       "setting": "a city that never fully goes dark, trains rumbling under the street",
@@ -8182,7 +6342,7 @@
       "whimsy": 0.45,
       "fantasy": 0.4
     },
-    "related": ["hygge", "cluttercore", "cottagecore"],
+    "related": ["cluttercore", "cottagecore"],
     "wiki": "Cozycore",
     "world": {
       "setting": "a small town in late autumn, rain on the window by four o'clock",
@@ -8230,7 +6390,7 @@
       "melancholy": 0.15,
       "craft": 0.3
     },
-    "related": ["atompunk", "mid-century-modern", "retrofuturism", "spacecore"],
+    "related": ["atompunk", "retrofuturism", "spacecore"],
     "wiki": "Space Age",
     "world": {
       "setting": "a hillside house above a city of the future, 1968",
@@ -8609,7 +6769,7 @@
       "intellect": 0.5,
       "adventure": 0.45
     },
-    "related": ["cottagecore", "dark-academia", "hygge", "cabincore"],
+    "related": ["cottagecore", "dark-academia", "cabincore"],
     "wiki": "Autumn Aesthetic",
     "world": {
       "setting": "a small town in October, leaves banked up along the kerb",
@@ -8658,7 +6818,7 @@
       "industrial": 0.6,
       "realism": 0.3
     },
-    "related": ["cyberpunk", "y2k-futurism", "techwear", "abstract-tech"],
+    "related": ["cyberpunk", "y2k-futurism"],
     "world": {
       "setting": "a rooftop in the rain, a hallway lined with pillars that are about to be shot to pieces",
       "architecture": "concrete, tinted glass, an empty subway station at night",
@@ -8755,48 +6915,6 @@
     }
   },
   {
-    "key": "low-poly",
-    "name": "Low Poly",
-    "family": "Internet and Liminal",
-    "tagline": "A world made of a few hundred triangles",
-    "description": "The blocky 3D of PlayStation, Nintendo 64 and DS games, and the modern art style that keeps it on purpose: flat-shaded triangles, simple colours and worlds that do not pretend to be real.",
-    "keywords": ["polygons", "flat shading", "PS1 graphics", "triangles", "video game"],
-    "palette": ["#1d2b4a", "#3f8f6b", "#f2b84b", "#f6efe1"],
-    "dimensions": {
-      "digital": 0.95,
-      "technology": 0.7,
-      "nostalgia": 0.8,
-      "retro": 0.8,
-      "whimsy": 0.6,
-      "fantasy": 0.6,
-      "adventure": 0.6,
-      "minimalism": 0.7,
-      "realism": 0.05,
-      "order": 0.6,
-      "craft": 0.55,
-      "solitude": 0.6,
-      "melancholy": 0.4,
-      "mystery": 0.45,
-      "optimism": 0.55,
-      "maximalism": 0.15,
-      "ornament": 0.15,
-      "social": 0.3,
-      "nature": 0.35,
-      "darkness": 0.3
-    },
-    "related": ["arcadecore", "vectordelia", "dreamcore", "y2k-futurism"],
-    "world": {
-      "setting": "a game world where the trees are cones and the fog hides the edge of the map",
-      "architecture": "cubes with a brick texture stretched over them",
-      "interior": "a bedroom with a CRT, a memory card and a controller with a cord",
-      "technology": "a PlayStation, a Nintendo 64, a Nintendo DS",
-      "clothes": "whatever your character is wearing in six polygons",
-      "music": "a game soundtrack on a loop, MIDI strings, menu music",
-      "colours": "flat green, flat sky blue, mustard, fog grey",
-      "everyday": "exploring somewhere with nothing in it but atmosphere"
-    }
-  },
-  {
     "key": "nightcore",
     "name": "Nightcore",
     "family": "Internet and Liminal",
@@ -8879,48 +6997,6 @@
     }
   },
   {
-    "key": "abstract-tech",
-    "name": "Abstract Tech",
-    "family": "Internet and Liminal",
-    "tagline": "Glowing circles that mean technology",
-    "description": "The stock-image idea of the digital: concentric arcs, hexagons, circuit lines, holographic HUDs and blue light on black. Minority Report interfaces, TRON grids and every wallpaper ever saved under the word \"cyber\".",
-    "keywords": ["circuit pattern", "hexagons", "HUD", "hologram", "blue glow"],
-    "palette": ["#040b1a", "#0b3d7a", "#29a8ff", "#d6f1ff"],
-    "dimensions": {
-      "technology": 0.95,
-      "digital": 0.95,
-      "futurism": 0.9,
-      "order": 0.8,
-      "intellect": 0.7,
-      "minimalism": 0.65,
-      "mystery": 0.55,
-      "darkness": 0.6,
-      "modernity": 0.85,
-      "refinement": 0.6,
-      "optimism": 0.5,
-      "whimsy": 0.1,
-      "nature": 0,
-      "organic": 0.05,
-      "craft": 0.05,
-      "comfort": 0.15,
-      "social": 0.25,
-      "solitude": 0.6,
-      "nostalgia": 0.35,
-      "retro": 0.3
-    },
-    "related": ["90s-cool", "cyberpunk", "dorfic", "synthwave"],
-    "world": {
-      "setting": "a dark room full of floating holographic screens",
-      "architecture": "a server hall lit in blue, glass walls with data on them",
-      "interior": "a desk with three monitors and a wallpaper of glowing circuits",
-      "technology": "touchscreens in mid-air, a HUD, rings of light that load forever",
-      "clothes": "black technical layers with a thin line of light",
-      "music": "ambient electronic, a sci-fi trailer pulse",
-      "colours": "black, deep blue, cyan glow",
-      "everyday": "swiping through information you cannot actually touch"
-    }
-  },
-  {
     "key": "bright-tertiaries",
     "name": "Bright Tertiaries",
     "family": "Internet and Liminal",
@@ -8950,7 +7026,7 @@
       "nature": 0.2,
       "mystery": 0.05
     },
-    "related": ["frutiger-aero", "vectordelia", "pop-art"],
+    "related": ["frutiger-aero"],
     "world": {
       "setting": "an office reception with a lime-green feature wall",
       "architecture": "a school or library refurbished in 2008 with colour-blocked panels",
@@ -8960,48 +7036,6 @@
       "music": "cheerful indie-pop from an advert",
       "colours": "lime, purple, orange, teal",
       "everyday": "reading a leaflet that promises the future is fun"
-    }
-  },
-  {
-    "key": "dorfic",
-    "name": "DORFic",
-    "family": "Internet and Liminal",
-    "tagline": "Daylight, orange, red, futurism, graphic",
-    "description": "The industrial, minimalist corner of the Frutiger era, roughly 2006-2016: stark white cityscapes, bright orange and grey, sterile lab gear and clean sans-serif type, with a darker black-backed variant that leans towards cyberpunk.",
-    "keywords": ["white cityscape", "orange accent", "industrial", "minimalist", "lab"],
-    "palette": ["#1e1e1e", "#7a7a7a", "#ff6a13", "#f5f5f5"],
-    "dimensions": {
-      "minimalism": 0.85,
-      "order": 0.85,
-      "industrial": 0.8,
-      "technology": 0.85,
-      "futurism": 0.8,
-      "modernity": 0.85,
-      "urban": 0.75,
-      "refinement": 0.7,
-      "intellect": 0.6,
-      "digital": 0.7,
-      "architecture": 0.7,
-      "optimism": 0.5,
-      "whimsy": 0.15,
-      "maximalism": 0.1,
-      "ornament": 0.1,
-      "nature": 0.05,
-      "organic": 0.1,
-      "comfort": 0.2,
-      "darkness": 0.4,
-      "solitude": 0.55
-    },
-    "related": ["abstract-tech", "techwear", "frutiger-aero", "cyberpunk"],
-    "world": {
-      "setting": "a white city of clean towers under a pale daylight sky",
-      "architecture": "white concrete, orange signage, glass walkways",
-      "interior": "a sterile lab with an orange stripe on the wall",
-      "technology": "a white device with an orange power light, a game menu in grey",
-      "clothes": "grey techwear, a white shell jacket, an orange detail",
-      "music": "precise electronic, a game soundtrack that sounds like a factory",
-      "colours": "white, grey, bright orange, a little red",
-      "everyday": "everything labelled, everything clean, everything running on time"
     }
   },
   {
@@ -9046,47 +7080,6 @@
     }
   },
   {
-    "key": "skeuomorphism",
-    "name": "Skeuomorphism",
-    "family": "Internet and Liminal",
-    "tagline": "Stitched leather, wooden shelves and a notes app on yellow paper",
-    "description": "Interfaces that imitate the real thing: leather-bound calendars, wooden bookshelves, glossy glass buttons, brushed-metal dials and paper with a torn edge. The look of iOS before iOS 7 and Windows Aero glass.",
-    "keywords": ["leather texture", "glossy icon", "brushed metal", "realistic UI", "iOS 6"],
-    "palette": ["#3a2a1e", "#8a6a46", "#d7c49a", "#f6f1e3"],
-    "dimensions": {
-      "craft": 0.75,
-      "realism": 0.8,
-      "ornament": 0.75,
-      "comfort": 0.7,
-      "digital": 0.85,
-      "technology": 0.8,
-      "refinement": 0.65,
-      "order": 0.65,
-      "nostalgia": 0.75,
-      "retro": 0.65,
-      "tradition": 0.5,
-      "modernity": 0.55,
-      "minimalism": 0.15,
-      "maximalism": 0.6,
-      "optimism": 0.6,
-      "whimsy": 0.35,
-      "darkness": 0.15,
-      "futurism": 0.35,
-      "intellect": 0.5
-    },
-    "related": ["frutiger-aero", "old-web", "technozen", "y2k-futurism"],
-    "world": {
-      "setting": "a phone home screen where every app looks like an object",
-      "architecture": "a bookshelf made of pixels with a wood grain you could almost touch",
-      "interior": "a desk with a leather notebook, a real calculator and a glass paperweight",
-      "technology": "an iPhone 4, a calendar app with stitched leather, a glossy glass dock",
-      "clothes": "a leather watch strap, canvas, a texture you notice",
-      "music": "a podcast app with a reel-to-reel animation",
-      "colours": "tan leather, walnut, cream paper, glossy blue",
-      "everyday": "turning a virtual page with a satisfying curl"
-    }
-  },
-  {
     "key": "technozen",
     "name": "Technozen",
     "family": "Internet and Liminal",
@@ -9116,7 +7109,7 @@
       "social": 0.45,
       "urban": 0.6
     },
-    "related": ["frutiger-aero", "y2k-futurism", "kawaii", "skeuomorphism"],
+    "related": ["frutiger-aero", "y2k-futurism", "kawaii"],
     "world": {
       "setting": "a quiet commuter train in Tokyo, a living room with the Wii menu on",
       "architecture": "a clean white station, a convenience store at night",

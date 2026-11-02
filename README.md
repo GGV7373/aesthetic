@@ -1,7 +1,7 @@
 # What Aesthetic Are You?
 
 A personality test that finds which **aesthetic world** you belong to — not which
-pictures you like. 385 statements, 50 per run, 35 hidden dimensions and 203 aesthetics
+pictures you like. 385 statements, 50 per run, 35 hidden dimensions and 158 aesthetics
 across 18 families, using Aesthetics Wiki as a reference.
 
 [estetikk.com](https://estetikk.com)
@@ -33,7 +33,7 @@ a 1200x630 screenshot of `tools/og-image.html`.
 ## How it works
 
 ```
-answers  →  35 dimensions  →  match against 203 aesthetic profiles
+answers  →  35 dimensions  →  match against 158 aesthetic profiles
 ```
 
 No statement belongs to any one aesthetic. A question about old buildings can affect
@@ -149,7 +149,8 @@ each dimension.
 
 **A video:** append to `curated` in `data/playlists.json`. `id` is the 11 characters
 after `v=`; add `"list": "PL…"` to open a whole playlist. Aesthetics without their own
-video borrow from related ones (settings under `borrow`), and every result also gets a
+video borrow from similar ones in the same family (settings under `borrow`; aesthetics
+in `borrow.skip` are a look, not a sound, and never borrow), and every result also gets a
 YouTube search button.
 
 ```json
