@@ -2193,43 +2193,6 @@
     }
   },
   {
-    "key": "racing",
-    "name": "Racing",
-    "family": "Style and Status",
-    "tagline": "Won on the straight, lost in the pit",
-    "description": "Motorsport as an aesthetic: sponsor liveries, pit boards, chequered flags and fireproof suits. Precision engineering pushed to failure, measured in tenths of a second.",
-    "keywords": ["livery", "pit lane", "chequered flag", "apex", "telemetry"],
-    "palette": ["#101010", "#e10600", "#f5f5f5", "#f2c200"],
-    "dimensions": {
-      "technology": 0.9,
-      "industrial": 0.82,
-      "realism": 0.82,
-      "order": 0.78,
-      "adventure": 0.72,
-      "modernity": 0.68,
-      "craft": 0.65,
-      "intellect": 0.62,
-      "futurism": 0.55,
-      "nature": 0.08,
-      "organic": 0.08,
-      "comfort": 0.15,
-      "mystery": 0.15,
-      "fantasy": 0.08,
-      "refinement": 0.45
-    },
-    "related": ["dieselpunk", "industrial", "atompunk", "americana"],
-    "world": {
-      "setting": "a pit lane in the hour before a race, a grandstand over the first corner",
-      "architecture": "a pit garage, a paddock of trucks and awnings, a control tower",
-      "interior": "a wall of tyres sorted by compound, headsets on hooks, a data screen frozen on the last lap",
-      "technology": "telemetry live off the car, a torque gun, a laptop plugged into the loom",
-      "clothes": "a team shirt, a fireproof suit half unzipped, ear defenders round the neck",
-      "music": "engines through the wall, the pit-radio crackle, an anthem on the grid",
-      "colours": "livery red, sponsor white, carbon black, warning yellow",
-      "everyday": "walking the track on foot, setup changes between sessions, the same corner watched a hundred times"
-    }
-  },
-  {
     "key": "tacticool",
     "name": "Tacticool",
     "family": "Style and Status",
@@ -3214,7 +3177,7 @@
       "technology": 0.5,
       "ornament": 0.5
     },
-    "related": ["rockabilly", "americana", "fifties-suburbia", "racing", "punk"],
+    "related": ["rockabilly", "americana", "fifties-suburbia", "punk"],
     "world": {
       "setting": "a garage with the door up on a warm night and an engine in pieces",
       "architecture": "a cinder-block workshop, a diner with a neon sign that buzzes",

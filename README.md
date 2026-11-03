@@ -1,11 +1,21 @@
 # What Aesthetic Are You?
 
 A personality test that finds which **aesthetic world** you belong to — not which
-pictures you like. 385 statements, 50 per run, 35 hidden dimensions and 158 aesthetics
+pictures you like. 385 statements, 50 per run, 35 hidden dimensions and 157 aesthetics
 across 18 families, using Aesthetics Wiki as a reference.
 
 [estetikk.com](https://estetikk.com)
 (Estetikk is Norwegian for "aesthetics".)
+
+## Where the aesthetics come from
+
+All of the aesthetics come from [Aesthetics Wiki](https://aesthetics.fandom.com/), so the
+names and the general character of each one stay consistent with the wiki. The
+profiles themselves are written for this test, not copied.
+
+If an aesthetic you know is missing here, it is probably not on Aesthetics Wiki, or
+the people who made it did not want it listed there.
+
 ## Running it locally
 
 ```bash
@@ -33,7 +43,7 @@ a 1200x630 screenshot of `tools/og-image.html`.
 ## How it works
 
 ```
-answers  →  35 dimensions  →  match against 158 aesthetic profiles
+answers  →  35 dimensions  →  match against 157 aesthetic profiles
 ```
 
 No statement belongs to any one aesthetic. A question about old buildings can affect
