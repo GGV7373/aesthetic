@@ -1,16 +1,99 @@
-https://unsplash.com/@firli - Frutiger Aero
-https://unsplash.com/@sylvaingllm - Naturecore
-https://unsplash.com/@blairgray_94 - 
-https://unsplash.com/@house_42 - prairiecore
-https://unsplash.com/@arjwen - romantic-academia
-https://unsplash.com/@nypl - film-noir
-https://unsplash.com/@swiggis - high-school-dream
-https://unsplash.com/@warrenumoh - adventurecore
-https://unsplash.com/@metropolitanmuseum - oceanpunk
-https://unsplash.com/@karsten_wuerth - dark-naturalism
-https://unsplash.com/@jccards - cryptidcore
-https://unsplash.com/@_karsten - gloomcore
-https://unsplash.com/@row4n - appalachian-gothic
-https://unsplash.com/@lancereis - folk-horror
-https://unsplash.com/@jrkorpa - ghostcore
-https://unsplash.com/@filipkvasnak - dark-fantasy
+grunge -
+frutiger-eco -
+retrofuturism -
+dieselpunk -
+industrial-gothic -
+fifties-suburbia -
+old-hollywood -
+scandinavian-design -
+maximalism -
+dreamcore -
+weirdcore -
+analog-horror -
+eclectic-grandpa -
+normcore -
+kidcore -
+jock -
+tacticool -
+mod -
+metalhead -
+skater -
+trad-goth -
+romantic-goth -
+pastel-goth -
+nu-goth -
+cybergoth -
+mallgoth -
+whimsigothic -
+punk -
+emo -
+scene -
+hippie -
+hipster -
+rave -
+greaser -
+rockabilly -
+psychedelia -
+indie-sleaze -
+coquette -
+balletcore -
+soft-girl -
+dollette -
+princesscore -
+royalcore -
+angelcore -
+twee -
+clean-girl -
+cluttercore -
+kawaii -
+fairy-kei -
+decora -
+gyaru -
+visual-kei -
+jirai-kei -
+yami-kawaii -
+city-pop -
+japandi -
+old-money -
+hypebeast -
+mob-wife -
+traumacore -
+draincore -
+doomer -
+scenecore -
+glitchcore -
+seapunk -
+mallsoft -
+afrofuturism -
+afropunk -
+sinofuturism -
+sovietwave -
+coastal-grandmother -
+midwest-emo -
+after-hours -
+soft-apocalypse -
+nostalgiacore -
+olderbrothercore -
+tweencore -
+biker -
+glam-rock -
+fairy-grunge -
+soft-grunge -
+barbiecore -
+pin-up -
+rivethead -
+shabby-chic -
+kitsch -
+urbancore -
+cozycore -
+space-age -
+lovecore -
+lo-fi -
+90s-cool -
+bubblegum -
+gen-x-soft-club -
+nightcore -
+y2k-futurism -
+bright-tertiaries -
+frutevil-aero -
+technozen -
