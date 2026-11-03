@@ -12,13 +12,17 @@ They are resized copies of the originals.
 
 | Aesthetic | File | Author | Licence | Source |
 | --- | --- | --- | --- | --- |
+| 90s Cool | `assets/img/photos/90s-cool/90s-cool.jpg` | @maksimshutov | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@maksimshutov) |
 | Adventurecore | `assets/img/photos/adventurecore/adventurecore.jpg` | @warrenumoh | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@warrenumoh) |
-| Americana | `assets/img/photos/americana/americana.jpg` | Dietmar Rabich | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Source](https://commons.wikimedia.org/wiki/File:Amboy_(California,_USA),_Hist._Route_66_--_2012_--_1.jpg) |
+| After Hours | `assets/img/photos/after-hours/after-hours.jpg` | @zoltantasi | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@zoltantasi) |
+| Americana | `assets/img/photos/americana/americana.jpg` | @itsjakekling | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@itsjakekling) |
+| Analog Horror | `assets/img/photos/analog-horror/analog-horror.jpg` | @rgartprjkt | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@rgartprjkt) |
+| Angelcore | `assets/img/photos/angelcore/angelcore.jpg` | @smithsonian | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@smithsonian) |
 | Appalachian Gothic | `assets/img/photos/appalachian-gothic/appalachian-gothic.jpg` | @row4n | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@row4n) |
-| Arcadecore | `assets/img/photos/arcadecore/arcadecore.jpg` | Joost J. Bakker IJmuiden | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) | [Source](https://commons.wikimedia.org/wiki/File:The_Fast_and_the_Furious_arcade_game_machines.jpg) |
-| Art Deco | `assets/img/photos/art-deco/art-deco.jpg` | Wiki.cullin | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Source](https://commons.wikimedia.org/wiki/File:405_Lexington_Avenue_-_Chrysler_Building_Entrance.jpg) |
-| Atompunk | `assets/img/photos/atompunk/atompunk.png` | Slcoats | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0) | [Source](https://commons.wikimedia.org/wiki/File:Hope_International_University_Googie_Architecture.PNG) |
-| Autumn | `assets/img/photos/autumn/autumn.jpg` | Ragesoss | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0) | [Source](https://commons.wikimedia.org/wiki/File:Autumn_leaves,_Talcott_Mountain_State_Park.jpg) |
+| Arcadecore | `assets/img/photos/arcadecore/arcadecore.jpg` | @mitchorr | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@mitchorr) |
+| Art Deco | `assets/img/photos/art-deco/art-deco.jpg` | @astro_civil | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@astro_civil) |
+| Atompunk | `assets/img/photos/atompunk/atompunk.jpg` | @octoberroses | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@octoberroses) |
+| Autumn | `assets/img/photos/autumn/autumn.jpg` | @chadmadden | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@chadmadden) |
 | Cabincore | `assets/img/photos/cabincore/cabincore.jpg` | DrunkDriver | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0) | [Source](https://commons.wikimedia.org/wiki/File:Elwood_Cabin_Rio_Grande_Forest_Colorado_September_2013.JPG) |
 | Cassette Futurism | `assets/img/photos/cassette-futurism/cassette-futurism.jpg` | Wikisympathisant | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Source](https://commons.wikimedia.org/wiki/File:Yamaha_K-300_Cassette_Deck_1983.jpg) |
 | Cottagecore | `assets/img/photos/cottagecore/cottagecore.jpg` | Acabashi | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Source](https://commons.wikimedia.org/wiki/File:Mixed_border_in_a_cottage_garden_at_Boreham,_Essex,_England_02.jpg) |

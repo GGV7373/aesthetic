@@ -29,10 +29,10 @@
  },
  "autumn": {
   "file": "assets/img/photos/autumn/autumn.jpg",
-  "artist": "Ragesoss",
-  "licence": "CC BY-SA 3.0",
-  "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Autumn_leaves,_Talcott_Mountain_State_Park.jpg"
+  "artist": "@chadmadden",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@chadmadden"
  },
  "goblincore": {
   "file": "assets/img/photos/goblincore/goblincore.jpg",
@@ -78,10 +78,10 @@
  },
  "art-deco": {
   "file": "assets/img/photos/art-deco/art-deco.jpg",
-  "artist": "Wiki.cullin",
-  "licence": "CC BY-SA 4.0",
-  "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:405_Lexington_Avenue_-_Chrysler_Building_Entrance.jpg"
+  "artist": "@astro_civil",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@astro_civil"
  },
  "diner": {
   "file": "assets/img/photos/diner/diner.jpg",
@@ -92,10 +92,10 @@
  },
  "americana": {
   "file": "assets/img/photos/americana/americana.jpg",
-  "artist": "Dietmar Rabich",
-  "licence": "CC BY-SA 4.0",
-  "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Amboy_(California,_USA),_Hist._Route_66_--_2012_--_1.jpg"
+  "artist": "@itsjakekling",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@itsjakekling"
  },
  "midwest-gothic": {
   "file": "assets/img/photos/midwest-gothic/midwest-gothic.jpg",
@@ -134,10 +134,10 @@
  },
  "arcadecore": {
   "file": "assets/img/photos/arcadecore/arcadecore.jpg",
-  "artist": "Joost J. Bakker IJmuiden",
-  "licence": "CC BY 4.0",
-  "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:The_Fast_and_the_Furious_arcade_game_machines.jpg"
+  "artist": "@mitchorr",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@mitchorr"
  },
  "y2k": {
   "file": "assets/img/photos/y2k/y2k.jpg",
@@ -175,11 +175,11 @@
   "source": "https://commons.wikimedia.org/wiki/File:Vertical_Garden_in_Edgar_Neville_Auditorium.jpg"
  },
  "atompunk": {
-  "file": "assets/img/photos/atompunk/atompunk.png",
-  "artist": "Slcoats",
-  "licence": "CC BY 3.0",
-  "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Hope_International_University_Googie_Architecture.PNG"
+  "file": "assets/img/photos/atompunk/atompunk.jpg",
+  "artist": "@octoberroses",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@octoberroses"
  },
  "spacecore": {
   "file": "assets/img/photos/spacecore/spacecore.jpg",
@@ -362,5 +362,33 @@
   "licence": "Unsplash License",
   "licenceUrl": "https://unsplash.com/license",
   "source": "https://unsplash.com/@filipkvasnak"
+ },
+ "90s-cool": {
+  "file": "assets/img/photos/90s-cool/90s-cool.jpg",
+  "artist": "@maksimshutov",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@maksimshutov"
+ },
+ "after-hours": {
+  "file": "assets/img/photos/after-hours/after-hours.jpg",
+  "artist": "@zoltantasi",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@zoltantasi"
+ },
+ "analog-horror": {
+  "file": "assets/img/photos/analog-horror/analog-horror.jpg",
+  "artist": "@rgartprjkt",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@rgartprjkt"
+ },
+ "angelcore": {
+  "file": "assets/img/photos/angelcore/angelcore.jpg",
+  "artist": "@smithsonian",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@smithsonian"
  }
 }
