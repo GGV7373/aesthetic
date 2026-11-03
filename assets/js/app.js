@@ -1022,11 +1022,23 @@
      grain filters are heavy; as an image the browser runs them once and then
      only moves pixels, instead of re-running them on every scroll and hover. */
   function plate(a, cls) {
+    if (data.photos && data.photos[a.key]) return photo(a, cls);
     return el('div', { class: cls }, [
       el('img', {
         src: 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(AQ.visuals.moodPlate(a)),
         alt: '', decoding: 'async'
       })
+    ]);
+  }
+
+  /* "Photo by ..." for the picture shown above, or nothing when it is a generated plate. */
+  function photoCredit(a) {
+    var p = data.photos && data.photos[a.key];
+    if (!p) return null;
+    return el('p', { class: 'fineprint' }, [
+      el('a', { href: p.source, target: '_blank', rel: 'noopener noreferrer', text: 'Photo' }),
+      ' by ' + p.artist + ', ' + p.licence + ' · ',
+      el('a', { href: 'credits.html', text: 'all photo credits' })
     ]);
   }
 
@@ -1320,7 +1332,8 @@
             meter(result.primary.percent, { background: AQ.visuals.meterFill(primary), delay: 200 })
           ]),
           el('p', { class: 'fineprint', text: AQ.narrative.strengthLabel(result.primary.percent, data) }),
-          nearTie(result, runLength, familyQuiz)
+          nearTie(result, runLength, familyQuiz),
+          photoCredit(primary)
         ])
       ])
     ]);
