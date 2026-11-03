@@ -31,8 +31,8 @@ falls back to the generated, git-ignored `data/bundle.js`.
 
 ## Deploying
 
-Netlify serves the repository root as-is (`netlify.toml`), after running
-`tools/validate.js`: a data error stops the deploy. If you add a strict
+A Cloudflare Worker serves the repository root as-is (`wrangler.jsonc`). Run
+`tools/validate.js` before pushing; the repo doesn't run it on deploy. If you add a strict
 `Content-Security-Policy`, allow `img-src https://i.ytimg.com`, or track thumbnails
 quietly stop appearing.
 
@@ -92,7 +92,7 @@ rejects gendered words anywhere else.
 ## Files
 
 ```
-index.html, 404.html, netlify.toml
+index.html, 404.html, wrangler.jsonc
 assets/css/styles.css
 assets/js/
   main.js        the only script the pages include; loads the rest in order
