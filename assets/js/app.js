@@ -369,6 +369,76 @@
     ]);
   }
 
+  /* ---------- home extras ---------- */
+
+  /* A slow strip of mood plates. Decorative, so it is hidden from screen readers
+     and holds no links; surpriseCard offers the same content accessibly. The
+     items are cloned so -50% in the slide animation lands on the loop point. */
+  /* The home page only shows aesthetics that have a real photo (data/photos.json). */
+  function withPhoto() {
+    return data.aesthetics.filter(function (a) { return data.photos && data.photos[a.key]; });
+  }
+
+  function photo(a, cls) {
+    return el('div', { class: cls }, [
+      el('img', { src: data.photos[a.key].file, alt: '', loading: 'lazy', decoding: 'async' })
+    ]);
+  }
+
+  function homeGallery() {
+    var items = AQ.rng.shuffle(withPhoto(), Math.random).slice(0, 12).map(function (a) {
+      return el('div', { class: 'gallery__item' }, [
+        photo(a, 'gallery__plate'),
+        el('span', { class: 'gallery__name', text: a.name })
+      ]);
+    });
+    var track = el('div', { class: 'gallery__track' }, items);
+    items.forEach(function (item) { track.appendChild(item.cloneNode(true)); });
+    return el('div', { class: 'gallery', 'aria-hidden': 'true' }, [track]);
+  }
+
+  /* One random aesthetic, with a button to draw another. */
+  function surpriseCard() {
+    var current = null;
+    var picture = el('div', { class: 'surprise__picture' });
+    var text = el('div', { class: 'surprise__text', 'aria-live': 'polite' });
+    var wiki = el('a', {
+      class: 'btn btn--ghost', target: '_blank', rel: 'noopener noreferrer'
+    }, ['See it on Aesthetics Wiki']);
+    var credit = el('p', { class: 'fineprint' });
+
+    function paint() {
+      var others = withPhoto().filter(function (a) { return a !== current; });
+      current = others[Math.floor(Math.random() * others.length)];
+      var p = data.photos[current.key];
+
+      picture.innerHTML = '';
+      picture.appendChild(photo(current, 'surprise__plate'));
+      text.innerHTML = '';
+      text.appendChild(el('h3', { class: 'intro__cardtitle', text: current.name }));
+      text.appendChild(el('p', { text: current.tagline }));
+      wiki.setAttribute('href', wikiUrl(current));
+      credit.innerHTML = '';
+      credit.appendChild(el('a', { href: p.source, target: '_blank', rel: 'noopener noreferrer', text: 'Photo' }));
+      credit.appendChild(document.createTextNode(' by ' + p.artist + ', ' + p.licence));
+    }
+
+    paint();
+
+    return el('article', { class: 'intro__card intro__card--surprise' }, [
+      picture,
+      el('div', { class: 'surprise__body' }, [
+        el('p', { class: 'eyebrow', text: 'Surprise me' }),
+        text,
+        el('div', { class: 'surprise__actions' }, [
+          el('button', { class: 'btn btn--primary', type: 'button', onclick: paint }, ['Show me another']),
+          wiki
+        ]),
+        credit
+      ])
+    ]);
+  }
+
   /* ---------- intro ---------- */
 
   function screenIntro() {
@@ -380,19 +450,9 @@
     var urlSeed = queryParam('seed');
     var urlQuiz = pageQuiz;
 
-    function sectionHead(kicker, title) {
-      return el('div', { class: 'intro__head' }, [
-        el('p', { class: 'eyebrow', text: kicker }),
-        el('h2', { class: 'intro__h2', text: title })
-      ]);
-    }
-
     var hero = el('div', { class: 'intro__hero' }, [
-      el('p', { class: 'eyebrow', text: pageQuiz
-        ? AQ.quizMembers(data, pageQuiz).length + ' aesthetics' : 'Aesthetic quizzes' }),
-      pageQuiz
-        ? el('h1', { class: 'display', text: pageQuiz.title })
-        : el('h1', { class: 'display', html: 'Find the <em>world</em><br>you <em>belong</em> in.' }),
+      pageQuiz ? el('p', { class: 'eyebrow', text: AQ.quizMembers(data, pageQuiz).length + ' aesthetics' }) : null,
+      pageQuiz ? el('h1', { class: 'display', text: pageQuiz.title }) : null,
       el('p', { class: 'lede' }, [
         pageQuiz ? pageQuiz.blurb :
         'Short personality quizzes that match your temperament, meaning your relationship ' +
@@ -452,7 +512,7 @@
         hero,
         el('p', { class: 'fineprint' }, [
           'Rate each statement from strongly disagree to strongly agree. Everything is ' +
-          'worked out in your own browser and nothing is sent anywhere.'
+          'worked out in your own browser and your answers are not sent anywhere.'
         ]),
         genderedNamesToggle(screenIntro)
       ]));
@@ -461,11 +521,8 @@
 
     /* The full test: every aesthetic, three lengths. */
     var mainCard = el('article', { class: 'intro__card intro__card--main' }, [
-      el('p', { class: 'eyebrow', text: 'The full test' }),
-      el('h3', { class: 'intro__cardtitle', text: 'Which aesthetic are you?' }),
-      el('p', { text: 'All ' + data.aesthetics.length + ' aesthetics, from Cottagecore to ' +
-        'Cybergoth. Pick a few topics you care about, then answer. Longer runs give a more ' +
-        'precise result.' }),
+      el('h2', { class: 'intro__cardtitle', text: 'The aesthetic quiz' }),
+      el('p', { text: 'Find your aesthetic.' }),
       el('div', { class: 'intro__lengths' }, LENGTHS.map(function (l) {
         return el('button', {
           class: 'btn ' + (l.n === data.config.questionsPerQuiz ? 'btn--primary' : 'btn--ghost'),
@@ -484,45 +541,29 @@
 
     /* One card per family quiz, each linking to its own page (internet.html, ...). */
     var familyCards = data.familyQuizzes.map(function (qz) {
-      return el('article', { class: 'intro__card' }, [
-        el('p', { class: 'eyebrow', text: AQ.quizMembers(data, qz).length + ' aesthetics' }),
-        el('h3', { class: 'intro__cardtitle', text: qz.title }),
+      return el('article', { class: 'intro__card intro__card--quiz' }, [
+        el('h3', { class: 'intro__cardtitle', text: qz.key.charAt(0).toUpperCase() + qz.key.slice(1) + ' aesthetics' }),
         el('p', { text: qz.blurb }),
-        el('a', { class: 'btn btn--primary', href: qz.key + '.html' },
-          ['Open · ' + qz.questions.length])
+        el('a', { class: 'btn btn--primary', href: qz.key + '.html' }, ['Take the quiz'])
       ]);
     });
 
     var view = el('section', { class: 'screen screen--intro' }, [
+      el('header', { class: 'intro__top' }, [
+        el('h1', { class: 'display', text: 'Estetikk' }),
+        el('a', { class: 'btn btn--primary btn--small', href: 'updates.html' }, ['See what\'s changed'])
+      ]),
       hero,
+      homeGallery(),
       el('section', { class: 'intro__section' }, [
-        sectionHead('Start here', 'Pick a quiz'),
-        el('div', { class: 'intro__grid' }, [mainCard].concat(familyCards))
+        el('div', { class: 'intro__grid intro__grid--home' }, [mainCard].concat(familyCards, surpriseCard()))
       ]),
-      el('section', { class: 'intro__section' }, [
-        sectionHead('How it works', 'Three steps'),
-        el('ol', { class: 'intro__steps' }, [
-          el('li', {}, [el('h3', { text: 'Pick a quiz' }),
-            el('p', { text: 'The full test covers every aesthetic. The smaller quizzes stay ' +
-              'inside one family, like internet or goth.' })]),
-          el('li', {}, [el('h3', { text: 'Answer honestly' }),
-            el('p', { text: 'Rate each statement from strongly disagree to strongly agree. ' +
-              'Go with your first instinct rather than the interesting answer.' })]),
-          el('li', {}, [el('h3', { text: 'Meet your aesthetic' }),
-            el('p', { text: 'You are never told what a statement measures until the result.' })])
-        ])
-      ]),
-      el('ul', { class: 'intro__facts' }, [
-        el('li', {}, [el('strong', { text: String(data.aesthetics.length) }), 'aesthetics']),
-        el('li', {}, [el('strong', { text: String(1 + data.familyQuizzes.length) }), 'quizzes']),
-        el('li', {}, [el('strong', { text: String(data.config.dimensions.length) }), 'hidden dimensions']),
-        el('li', {}, [el('strong', { text: String(data.config.scale.length) }), 'answer levels per statement'])
-      ]),
-      el('p', { class: 'fineprint' }, [
-        'Everything is worked out in your own browser. Nothing is sent anywhere, and your ' +
-        'answers are stored locally only so you can pick up where you left off.'
-      ]),
-      genderedNamesToggle(screenIntro)
+      genderedNamesToggle(screenIntro),
+      el('footer', { class: 'intro__foot' }, [
+        el('a', { href: 'privacy.html', text: 'Privacy' }),
+        el('a', { href: 'credits.html', text: 'Photo credits' }),
+        el('a', { href: 'updates.html', text: 'News' })
+      ])
     ]);
 
     render(view);
@@ -912,8 +953,8 @@
     return wrap;
   }
 
-  /* Plain links that open in a new tab - nothing is embedded, so the result
-     page makes no request to YouTube and the privacy note stays true. */
+  /* Plain links that open in a new tab - nothing is embedded, so the only request
+     to YouTube is the thumbnail. privacy.html says so; keep the two in step. */
   function trackCard(p, from) {
     return el('a', {
       class: 'track' + (from ? ' track--borrowed' : ''),

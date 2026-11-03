@@ -1,6 +1,0 @@
-# Static site: nothing to build, publish the repository root as-is. The
-# command only checks the data, so a broken file fails the deploy instead of
-# reaching the live site. Headers live in _headers (shared with Cloudflare).
-[build]
-  publish = "."
-  command = "node tools/validate.js"

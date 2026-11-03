@@ -3,9 +3,11 @@
    for its own name, so there is always somewhere to go.
 
    An aesthetic with no video of its own borrows from its closest neighbours.
-   "Closest" is the hand-written `related` lists first, then the same family,
-   then how alike the two profiles are; anything beyond the cutoff is left with
-   the search button rather than a poor fit. */
+   Only neighbours in the same family lend music: `related` is about looks, and
+   Film Noir's jazz does not suit Industrial Gothic. Within the family, "closest"
+   is the hand-written `related` lists first, then how alike the two profiles
+   are; anything beyond the cutoff is left with the search button rather than a
+   poor fit. */
 (function (global) {
   'use strict';
   var AQ = (global.AQ = global.AQ || {});
@@ -58,8 +60,10 @@
     var index = playlistsByAesthetic(data);
     var own = index[aesthetic.key] || [];
 
+    /* `skip` lists aesthetics that are a look rather than a sound (Bauhaus,
+       Normcore): they get the search button, not a neighbour's music. */
     var cfg = (data.playlists && data.playlists.borrow) || null;
-    if (!cfg) return { own: own, borrowed: [] };
+    if (!cfg || (cfg.skip || []).indexOf(aesthetic.key) !== -1) return { own: own, borrowed: [] };
 
     var seen = {};
     own.forEach(function (p) { seen[p.id] = true; });
@@ -70,9 +74,9 @@
       var other = data.aestheticsByKey[key];
       if (!other || key === aesthetic.key) return;
       var gap = profileGap(aesthetic, other);
-      if (gap === null) return;
+      if (gap === null || other.family !== aesthetic.family) return;
       if (related[key]) gap -= cfg.relatedBonus;
-      if (other.family === aesthetic.family) gap -= cfg.familyBonus;
+      gap -= cfg.familyBonus;
       if (gap <= cfg.cutoff) near.push({ gap: gap, from: other });
     });
     near.sort(function (x, y) { return x.gap - y.gap; });

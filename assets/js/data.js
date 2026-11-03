@@ -12,6 +12,7 @@
     config: 'data/scoring.json',
     narrative: 'data/narrative.json',
     playlists: 'data/playlists.json',
+    photos: 'data/photos.json', /* aesthetic key -> photo file, author and licence */
     quizzes: 'data/quizzes.json' /* just the keys; each quiz is data/quizzes/<key>.json */
   };
 
