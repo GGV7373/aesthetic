@@ -57,7 +57,6 @@
       "mood": "Low, ominous and epic, with something watching from the treeline.",
       "aesthetics": [
         "dark-fantasy",
-        "witchcore",
         "folk-horror",
         "romantic-goth"
       ]
@@ -85,8 +84,7 @@
         "romantic-academia",
         "regency",
         "coquette",
-        "dark-academia",
-        "romanticism"
+        "dark-academia"
       ]
     },
     {
@@ -352,7 +350,6 @@
         "fairycore",
         "dreamcore",
         "doomer",
-        "witchcore",
         "goth",
         "trad-goth",
         "dark-naturalism"

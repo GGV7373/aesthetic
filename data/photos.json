@@ -250,5 +250,117 @@
   "licence": "CC BY-SA 4.0",
   "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "source": "https://commons.wikimedia.org/wiki/File:Kintsugi_on_broken_Ky%C5%ABsu_lid-bottom_oblique_PNr%C2%B01260.jpg"
+ },
+ "frutiger-aero": {
+  "file": "assets/img/photos/frutiger-aero/frutiger-aero.jpg",
+  "artist": "@firli",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@firli"
+ },
+ "naturecore": {
+  "file": "assets/img/photos/naturecore/naturecore.jpg",
+  "artist": "@sylvaingllm",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@sylvaingllm"
+ },
+ "lumberjack": {
+  "file": "assets/img/photos/lumberjack/lumberjack.jpg",
+  "artist": "@blairgray_94",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@blairgray_94"
+ },
+ "prairiecore": {
+  "file": "assets/img/photos/prairiecore/prairiecore.jpg",
+  "artist": "@house_42",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@house_42"
+ },
+ "romantic-academia": {
+  "file": "assets/img/photos/romantic-academia/romantic-academia.jpg",
+  "artist": "@arjwen",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@arjwen"
+ },
+ "film-noir": {
+  "file": "assets/img/photos/film-noir/film-noir.jpg",
+  "artist": "@nypl",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@nypl"
+ },
+ "high-school-dream": {
+  "file": "assets/img/photos/high-school-dream/high-school-dream.jpg",
+  "artist": "@swiggis",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@swiggis"
+ },
+ "adventurecore": {
+  "file": "assets/img/photos/adventurecore/adventurecore.jpg",
+  "artist": "@warrenumoh",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@warrenumoh"
+ },
+ "oceanpunk": {
+  "file": "assets/img/photos/oceanpunk/oceanpunk.jpg",
+  "artist": "@metropolitanmuseum",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@metropolitanmuseum"
+ },
+ "dark-naturalism": {
+  "file": "assets/img/photos/dark-naturalism/dark-naturalism.jpg",
+  "artist": "@karsten_wuerth",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@karsten_wuerth"
+ },
+ "cryptidcore": {
+  "file": "assets/img/photos/cryptidcore/cryptidcore.jpg",
+  "artist": "@jccards",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@jccards"
+ },
+ "gloomcore": {
+  "file": "assets/img/photos/gloomcore/gloomcore.jpg",
+  "artist": "@_karsten",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@_karsten"
+ },
+ "appalachian-gothic": {
+  "file": "assets/img/photos/appalachian-gothic/appalachian-gothic.jpg",
+  "artist": "@row4n",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@row4n"
+ },
+ "folk-horror": {
+  "file": "assets/img/photos/folk-horror/folk-horror.jpg",
+  "artist": "@lancereis",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@lancereis"
+ },
+ "ghostcore": {
+  "file": "assets/img/photos/ghostcore/ghostcore.jpg",
+  "artist": "@jrkorpa",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@jrkorpa"
+ },
+ "dark-fantasy": {
+  "file": "assets/img/photos/dark-fantasy/dark-fantasy.jpg",
+  "artist": "@filipkvasnak",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@filipkvasnak"
  }
 }

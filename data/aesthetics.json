@@ -380,7 +380,7 @@
       "modernity": 0.35,
       "maximalism": 0.45
     },
-    "related": ["dark-academia", "romantic-academia", "romanticism", "scandinavian-design"],
+    "related": ["dark-academia", "romantic-academia", "scandinavian-design"],
     "world": {
       "setting": "a lawn in front of an old building, a bicycle against a wall, a summer that lasts too long",
       "architecture": "pale stone, classical columns, windows that let the morning in",
@@ -423,7 +423,7 @@
       "realism": 0.3,
       "optimism": 0.45
     },
-    "related": ["dark-academia", "light-academia", "romanticism", "romantic-goth"],
+    "related": ["dark-academia", "light-academia", "romantic-goth"],
     "world": {
       "setting": "an overgrown garden by a library, a bench under a tree you keep returning to",
       "architecture": "an old villa, a window seat big enough to sit in",
@@ -1928,7 +1928,7 @@
       "optimism": 0.5,
       "individualism": 0.5
     },
-    "related": ["fairycore", "romanticism", "romantic-goth"],
+    "related": ["fairycore", "romantic-goth"],
     "world": {
       "setting": "a castle tower over a forest, a tournament on a plain, torches at dusk",
       "architecture": "spires, a gatehouse, a hall with banners along the walls",
@@ -1938,49 +1938,6 @@
       "music": "lute and harp, fanfares, a choir in a stone hall",
       "colours": "deep red, gold, royal blue, stone grey",
       "everyday": "ceremony, craft, loyalty as an organising principle"
-    }
-  },
-  {
-    "key": "romanticism",
-    "name": "Romanticism",
-    "family": "Academia and Period",
-    "tagline": "The feeling larger than the landscape",
-    "description": "The nineteenth-century cult of nature's grandeur, the inner life and the sublime. Mountains, ruins and an urge to be overwhelmed.",
-    "keywords": ["the sublime", "ruins", "mountains", "storms", "the individual"],
-    "palette": ["#12141c", "#334055", "#9a7a55", "#ece2cf"],
-    "dimensions": {
-      "melancholy": 0.85,
-      "nature": 0.9,
-      "fantasy": 0.8,
-      "ornament": 0.8,
-      "refinement": 0.8,
-      "history": 0.8,
-      "mystery": 0.8,
-      "individualism": 0.82,
-      "adventure": 0.7,
-      "tradition": 0.6,
-      "maximalism": 0.7,
-      "intellect": 0.72,
-      "architecture": 0.7,
-      "darkness": 0.6,
-      "solitude": 0.75,
-      "optimism": 0.4,
-      "realism": 0.25,
-      "order": 0.35,
-      "craft": 0.55,
-      "community": 0.4,
-      "rural": 0.65
-    },
-    "related": ["romantic-goth", "romantic-academia", "medievalcore"],
-    "world": {
-      "setting": "a mountain in a storm, a ruin in evening light, a sea that is too large",
-      "architecture": "fallen abbeys, a tower on a cliff, a house with a view you can lose yourself in",
-      "interior": "an easel by the window, books, a cloak over a chair",
-      "technology": "none; it would spoil the mood",
-      "clothes": "a cloak, a high collar, hair at the mercy of the weather",
-      "music": "piano concertos, lieder, an orchestra building",
-      "colours": "storm blue, copper brown, golden haze, chalk",
-      "everyday": "going out in bad weather on purpose, writing down what you felt"
     }
   },
   {
@@ -2578,7 +2535,7 @@
       "urban": 0.45,
       "community": 0.35
     },
-    "related": ["goth", "romanticism", "gloomcore"],
+    "related": ["goth", "gloomcore"],
     "world": {
       "setting": "a ruined abbey at dusk with ivy taking the last of the walls",
       "architecture": "pointed arches, broken tracery, a chapel with no roof left",
@@ -2808,7 +2765,7 @@
       "history": 0.45,
       "social": 0.45
     },
-    "related": ["witchcore", "fairycore", "ghostcore"],
+    "related": ["fairycore", "ghostcore"],
     "world": {
       "setting": "a house on a hill with too many wind chimes and a garden gone its own way",
       "architecture": "turrets, a porch with iron scrollwork, windows with coloured glass",
@@ -4817,7 +4774,7 @@
       "craft": 0.65,
       "nostalgia": 0.7
     },
-    "related": ["royalcore", "light-academia", "romanticism", "old-money"],
+    "related": ["royalcore", "light-academia", "old-money"],
     "world": {
       "setting": "a country house in spring with a walk laid out to a folly on the hill",
       "architecture": "pale stone, symmetrical windows, a portico and a sweeping drive",
@@ -4827,52 +4784,6 @@
       "music": "a pianoforte in the evening, country dances in the assembly rooms",
       "colours": "duck-egg, pale stone, straw, soft rose",
       "everyday": "correspondence, calls paid, long walks, everything said indirectly"
-    }
-  },
-  {
-    "key": "witchcore",
-    "name": "Witchcore",
-    "family": "Witchy and Folk",
-    "tagline": "Herbs drying, cat asleep, something simmering",
-    "description": "Grimoires, jars of dried herbs and a cottage kitchen used for more than cooking. Domestic, practical magic with dirt under its fingernails.",
-    "keywords": ["grimoire", "dried herbs", "cauldron", "black cat", "candles"],
-    "palette": ["#1d1a14", "#3f4230", "#7d6a3e", "#d8ccae"],
-    "dimensions": {
-      "mystery": 0.92,
-      "craft": 0.85,
-      "nature": 0.82,
-      "organic": 0.85,
-      "tradition": 0.72,
-      "solitude": 0.78,
-      "rural": 0.75,
-      "history": 0.7,
-      "darkness": 0.6,
-      "industrial": 0.05,
-      "digital": 0.05,
-      "futurism": 0.03,
-      "modernity": 0.12,
-      "urban": 0.15,
-      "order": 0.4,
-      "minimalism": 0.2,
-      "maximalism": 0.68,
-      "ornament": 0.65,
-      "comfort": 0.7,
-      "melancholy": 0.55,
-      "fantasy": 0.8,
-      "intellect": 0.68,
-      "community": 0.45,
-      "optimism": 0.45
-    },
-    "related": ["whimsigothic", "goblincore", "cottagecore", "fairycore"],
-    "world": {
-      "setting": "a kitchen at dusk with bunches of herbs drying above the range",
-      "architecture": "a low cottage with thick walls and a chimney that draws badly",
-      "interior": "jars labelled by hand, a heavy book, candles burnt to different heights",
-      "technology": "a pestle and mortar, a kettle, nothing that needs a plug",
-      "clothes": "long skirts, an apron with pockets, boots caked from the garden",
-      "music": "a kettle, rain, folk songs sung while doing something else",
-      "colours": "moss, bark brown, beeswax, dried lavender",
-      "everyday": "gathering, drying, brewing, keeping the year by what is in season"
     }
   },
   {
@@ -5057,52 +4968,6 @@
       "music": "hard electronic, a pop song leaking from a shop, engines below",
       "colours": "jade green, neon red, concrete grey, LED white",
       "everyday": "speed, density, everything ordered to the door within the hour"
-    }
-  },
-  {
-    "key": "wuxia",
-    "name": "Wuxia",
-    "family": "Witchy and Folk",
-    "tagline": "Swordsmen, misted peaks and a code worth dying for",
-    "description": "Flowing robes, bamboo forests and martial artists who move like weather. Chinese heroic fiction where honour is the real plot.",
-    "keywords": ["swordplay", "bamboo forest", "misted peaks", "robes", "martial code"],
-    "palette": ["#14201d", "#2f4f45", "#7d8f6e", "#e6e0cd"],
-    "dimensions": {
-      "fantasy": 0.9,
-      "adventure": 0.9,
-      "tradition": 0.85,
-      "history": 0.85,
-      "nature": 0.82,
-      "mystery": 0.78,
-      "solitude": 0.75,
-      "refinement": 0.72,
-      "industrial": 0.03,
-      "digital": 0.03,
-      "futurism": 0.03,
-      "modernity": 0.05,
-      "urban": 0.2,
-      "rural": 0.78,
-      "organic": 0.72,
-      "order": 0.6,
-      "chaos": 0.45,
-      "minimalism": 0.5,
-      "maximalism": 0.5,
-      "ornament": 0.6,
-      "comfort": 0.35,
-      "melancholy": 0.68,
-      "intellect": 0.72,
-      "craft": 0.7
-    },
-    "related": ["medievalcore", "dark-fantasy", "japandi", "adventurecore"],
-    "world": {
-      "setting": "a mountain path above the cloud line with an inn somewhere below",
-      "architecture": "a temple on a ridge, timber halls, a courtyard swept every morning",
-      "interior": "a sparse room, a sword on a stand, a scroll and a low table",
-      "technology": "a blade, made properly, and nothing else needed",
-      "clothes": "layered robes that move, a sash, hair bound simply",
-      "music": "guqin, a bamboo flute, long silences between phrases",
-      "colours": "ink black, jade, bamboo green, unbleached silk",
-      "everyday": "training before dawn, travelling light, keeping your word absolutely"
     }
   },
   {
@@ -6367,54 +6232,6 @@
     }
   },
   {
-    "key": "ethereal",
-    "name": "Ethereal",
-    "family": "Witchy and Folk",
-    "tagline": "Light, weightless and a little bit unreal",
-    "description": "The feeling of being half in another world: soft light through gauze, pale colours, mist, flowing fabric and music that barely touches the ground. Delicate, airy and dreamlike.",
-    "keywords": ["soft light", "gauze", "mist", "pale colours", "floating"],
-    "palette": ["#4b4a5e", "#a8a6c6", "#dcd8ee", "#fbf9ff"],
-    "dimensions": {
-      "fantasy": 0.9,
-      "mystery": 0.75,
-      "realism": 0.1,
-      "whimsy": 0.5,
-      "melancholy": 0.5,
-      "optimism": 0.55,
-      "darkness": 0.15,
-      "solitude": 0.7,
-      "social": 0.3,
-      "nature": 0.6,
-      "organic": 0.6,
-      "refinement": 0.75,
-      "ornament": 0.55,
-      "minimalism": 0.5,
-      "order": 0.5,
-      "chaos": 0.25,
-      "comfort": 0.6,
-      "nostalgia": 0.55,
-      "history": 0.4,
-      "technology": 0.15,
-      "digital": 0.2,
-      "urban": 0.2,
-      "rural": 0.5,
-      "intellect": 0.5,
-      "craft": 0.45
-    },
-    "related": ["angelcore", "fairycore", "dreamcore", "romanticism"],
-    "wiki": "Ethereal",
-    "world": {
-      "setting": "a meadow in morning mist, the sun not quite through yet",
-      "architecture": "a white chapel ruin with no roof, ivy over the arches",
-      "interior": "sheer curtains moving in a breeze, pale flowers, empty space",
-      "technology": "almost none: a music box, a candle, a phone set to silent",
-      "clothes": "flowing chiffon, pale knits, pearls, bare feet",
-      "music": "dream pop, choral music, harp, a voice through reverb",
-      "colours": "pearl, lilac, mist grey, moon white",
-      "everyday": "slow mornings, long baths, daydreams that last the afternoon"
-    }
-  },
-  {
     "key": "lovecore",
     "name": "Lovecore",
     "family": "Internet and Liminal",
@@ -6506,53 +6323,6 @@
       "music": "slow country, droning guitars, a gospel station fading in and out",
       "colours": "corn yellow, sky grey, rust, porch-light amber",
       "everyday": "the same diner every morning, a long drive at dusk, not asking about the barn"
-    }
-  },
-  {
-    "key": "witch-house",
-    "name": "Witch House",
-    "family": "Witchy and Folk",
-    "tagline": "Occult symbols and slowed-down static",
-    "description": "A dark, hazy internet music scene turned into a mood: triangles and crosses, washed-out VHS images, droning synths and voices pitched into the floor. Haunted and hypnotic.",
-    "keywords": ["occult symbols", "triangles", "VHS haze", "drone", "dark synths"],
-    "palette": ["#050506", "#1d1b22", "#4d4757", "#bdb6c4"],
-    "dimensions": {
-      "darkness": 0.95,
-      "mystery": 0.9,
-      "melancholy": 0.8,
-      "optimism": 0.05,
-      "whimsy": 0.1,
-      "fantasy": 0.65,
-      "realism": 0.25,
-      "digital": 0.75,
-      "technology": 0.65,
-      "retro": 0.55,
-      "nostalgia": 0.5,
-      "solitude": 0.75,
-      "social": 0.3,
-      "individualism": 0.8,
-      "chaos": 0.55,
-      "order": 0.35,
-      "minimalism": 0.6,
-      "ornament": 0.35,
-      "urban": 0.65,
-      "nature": 0.25,
-      "organic": 0.25,
-      "futurism": 0.4,
-      "refinement": 0.4,
-      "comfort": 0.25
-    },
-    "related": ["goth", "analog-horror", "witchcore", "draincore"],
-    "wiki": "Witch House",
-    "world": {
-      "setting": "an empty city at three in the morning seen through a screen",
-      "architecture": "a basement venue with a strobe and a smoke machine and no sign outside",
-      "interior": "black walls, a crucifix upside down, a television showing static",
-      "technology": "a laptop with cracked software, a sampler, a VHS deck for the visuals",
-      "clothes": "black oversized layers, hoods, silver crosses, bleached hair",
-      "music": "slowed and pitched-down vocals over heavy synth drones and trap drums",
-      "colours": "void black, bruise purple, static grey, candle white",
-      "everyday": "nights online, days asleep, songs named only in symbols"
     }
   },
   {
@@ -6648,53 +6418,6 @@
       "music": "chiptune, synth pop, the jingle of the attract screen",
       "colours": "neon pink, electric blue, ultraviolet, black",
       "everyday": "a cup of tokens, initials on the leaderboard, pizza after"
-    }
-  },
-  {
-    "key": "urban-fantasy",
-    "name": "Urban Fantasy",
-    "family": "Witchy and Folk",
-    "tagline": "Magic hiding in the alleyways",
-    "description": "The city with a secret: spells behind shop counters, creatures on the night bus, a door in the underpass that should not be there. The ordinary and the impossible on the same street.",
-    "keywords": ["hidden magic", "night city", "alleyways", "secret doors", "creatures"],
-    "palette": ["#0c0e1a", "#2e2a5a", "#6f5fb0", "#e8c26a"],
-    "dimensions": {
-      "fantasy": 0.95,
-      "mystery": 0.9,
-      "realism": 0.35,
-      "urban": 0.9,
-      "rural": 0.1,
-      "nature": 0.3,
-      "darkness": 0.65,
-      "melancholy": 0.45,
-      "optimism": 0.45,
-      "whimsy": 0.45,
-      "adventure": 0.9,
-      "social": 0.55,
-      "solitude": 0.5,
-      "individualism": 0.75,
-      "technology": 0.5,
-      "digital": 0.4,
-      "history": 0.5,
-      "tradition": 0.4,
-      "chaos": 0.6,
-      "order": 0.35,
-      "ornament": 0.45,
-      "intellect": 0.6,
-      "comfort": 0.35,
-      "architecture": 0.7
-    },
-    "related": ["dark-fantasy", "witchcore", "cyberpunk"],
-    "wiki": "Urban Fantasy",
-    "world": {
-      "setting": "a rainy city where the streetlights hum in a language",
-      "architecture": "a bookshop that is bigger inside than outside, above a launderette",
-      "interior": "a cluttered flat with protective charms over every door",
-      "technology": "a phone that sometimes rings from nowhere, a spellbook with sticky notes",
-      "clothes": "a long coat with many pockets, boots for running, a talisman under the collar",
-      "music": "dark indie, trip-hop, a busker who knows too much",
-      "colours": "midnight blue, streetlamp gold, violet, wet asphalt",
-      "everyday": "a day job, a second job after midnight, never taking the last train"
     }
   },
   {

@@ -1,7 +1,7 @@
 # What Aesthetic Are You?
 
 A personality test that finds which **aesthetic world** you belong to — not which
-pictures you like. 385 statements, 50 per run, 35 hidden dimensions and 157 aesthetics
+pictures you like. 385 statements, 50 per run, 35 hidden dimensions and 151 aesthetics
 across 18 families, using Aesthetics Wiki as a reference.
 
 [estetikk.com](https://estetikk.com)
@@ -43,7 +43,7 @@ a 1200x630 screenshot of `tools/og-image.html`.
 ## How it works
 
 ```
-answers  →  35 dimensions  →  match against 157 aesthetic profiles
+answers  →  35 dimensions  →  match against 151 aesthetic profiles
 ```
 
 No statement belongs to any one aesthetic. A question about old buildings can affect
@@ -170,7 +170,7 @@ YouTube search button.
 
 Aesthetics Wiki and Pinterest images are not freely licensed, so results show a generated
 mood plate and link to the wiki page. The home page gallery and "surprise me" card use
-freely licensed Wikimedia Commons photos instead (`assets/img/photos/<aesthetic>/`), listed
+freely licensed Wikimedia Commons and Unsplash photos instead (`assets/img/photos/<aesthetic>/`), listed
 in `data/photos.json` and credited in `CREDIT.md` and `credits.html`.
 
 Then run:
