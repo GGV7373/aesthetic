@@ -37,7 +37,7 @@ Netlify serves the repository root as-is (`netlify.toml`), after running
 quietly stop appearing.
 
 `og:image`, `og:url` and the canonical link in `index.html` point at
-`https://estetikk.netlify.app`; change them if you deploy elsewhere. `assets/og.png` is
+`https://estetikk.com`; change them if you deploy elsewhere. `assets/og.png` is
 a 1200x630 screenshot of `tools/og-image.html`.
 
 ## How it works
