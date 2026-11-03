@@ -369,6 +369,76 @@
     ]);
   }
 
+  /* ---------- home extras ---------- */
+
+  /* A slow strip of mood plates. Decorative, so it is hidden from screen readers
+     and holds no links; surpriseCard offers the same content accessibly. The
+     items are cloned so -50% in the slide animation lands on the loop point. */
+  /* The home page only shows aesthetics that have a real photo (data/photos.json). */
+  function withPhoto() {
+    return data.aesthetics.filter(function (a) { return data.photos && data.photos[a.key]; });
+  }
+
+  function photo(a, cls) {
+    return el('div', { class: cls }, [
+      el('img', { src: data.photos[a.key].file, alt: '', loading: 'lazy', decoding: 'async' })
+    ]);
+  }
+
+  function homeGallery() {
+    var items = AQ.rng.shuffle(withPhoto(), Math.random).slice(0, 12).map(function (a) {
+      return el('div', { class: 'gallery__item' }, [
+        photo(a, 'gallery__plate'),
+        el('span', { class: 'gallery__name', text: a.name })
+      ]);
+    });
+    var track = el('div', { class: 'gallery__track' }, items);
+    items.forEach(function (item) { track.appendChild(item.cloneNode(true)); });
+    return el('div', { class: 'gallery', 'aria-hidden': 'true' }, [track]);
+  }
+
+  /* One random aesthetic, with a button to draw another. */
+  function surpriseCard() {
+    var current = null;
+    var picture = el('div', { class: 'surprise__picture' });
+    var text = el('div', { class: 'surprise__text', 'aria-live': 'polite' });
+    var wiki = el('a', {
+      class: 'btn btn--ghost', target: '_blank', rel: 'noopener noreferrer'
+    }, ['See it on Aesthetics Wiki']);
+    var credit = el('p', { class: 'fineprint' });
+
+    function paint() {
+      var others = withPhoto().filter(function (a) { return a !== current; });
+      current = others[Math.floor(Math.random() * others.length)];
+      var p = data.photos[current.key];
+
+      picture.innerHTML = '';
+      picture.appendChild(photo(current, 'surprise__plate'));
+      text.innerHTML = '';
+      text.appendChild(el('h3', { class: 'intro__cardtitle', text: current.name }));
+      text.appendChild(el('p', { text: current.tagline }));
+      wiki.setAttribute('href', wikiUrl(current));
+      credit.innerHTML = '';
+      credit.appendChild(el('a', { href: p.source, target: '_blank', rel: 'noopener noreferrer', text: 'Photo' }));
+      credit.appendChild(document.createTextNode(' by ' + p.artist + ', ' + p.licence));
+    }
+
+    paint();
+
+    return el('article', { class: 'intro__card intro__card--surprise' }, [
+      picture,
+      el('div', { class: 'surprise__body' }, [
+        el('p', { class: 'eyebrow', text: 'Surprise me' }),
+        text,
+        el('div', { class: 'surprise__actions' }, [
+          el('button', { class: 'btn btn--primary', type: 'button', onclick: paint }, ['Show me another']),
+          wiki
+        ]),
+        credit
+      ])
+    ]);
+  }
+
   /* ---------- intro ---------- */
 
   function screenIntro() {
@@ -484,12 +554,14 @@
         el('a', { class: 'btn btn--primary btn--small', href: 'updates.html' }, ['See what\'s changed'])
       ]),
       hero,
+      homeGallery(),
       el('section', { class: 'intro__section' }, [
-        el('div', { class: 'intro__grid intro__grid--home' }, [mainCard].concat(familyCards))
+        el('div', { class: 'intro__grid intro__grid--home' }, [mainCard].concat(familyCards, surpriseCard()))
       ]),
       genderedNamesToggle(screenIntro),
       el('footer', { class: 'intro__foot' }, [
         el('a', { href: 'privacy.html', text: 'Privacy' }),
+        el('a', { href: 'credits.html', text: 'Photo credits' }),
         el('a', { href: 'updates.html', text: 'News' })
       ])
     ]);

@@ -158,8 +158,10 @@ YouTube search button.
   "mood": "One line on the feeling of it.", "aesthetics": ["forestpunk", "cabincore"] }
 ```
 
-There are no photos: Aesthetics Wiki and Pinterest images are not freely licensed, so
-each result shows a generated mood plate and links to the wiki page instead.
+Aesthetics Wiki and Pinterest images are not freely licensed, so results show a generated
+mood plate and link to the wiki page. The home page gallery and "surprise me" card use
+freely licensed Wikimedia Commons photos instead (`assets/img/photos/<aesthetic>/`), listed
+in `data/photos.json` and credited in `CREDIT.md` and `credits.html`.
 
 Then run:
 
