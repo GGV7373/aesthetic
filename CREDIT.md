@@ -23,48 +23,47 @@ They are resized copies of the originals.
 | Art Deco | `assets/img/photos/art-deco/art-deco.jpg` | @astro_civil | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@astro_civil) |
 | Atompunk | `assets/img/photos/atompunk/atompunk.jpg` | @octoberroses | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@octoberroses) |
 | Autumn | `assets/img/photos/autumn/autumn.jpg` | @chadmadden | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@chadmadden) |
-| Cabincore | `assets/img/photos/cabincore/cabincore.jpg` | DrunkDriver | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0) | [Source](https://commons.wikimedia.org/wiki/File:Elwood_Cabin_Rio_Grande_Forest_Colorado_September_2013.JPG) |
-| Cassette Futurism | `assets/img/photos/cassette-futurism/cassette-futurism.jpg` | Wikisympathisant | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Source](https://commons.wikimedia.org/wiki/File:Yamaha_K-300_Cassette_Deck_1983.jpg) |
-| Cottagecore | `assets/img/photos/cottagecore/cottagecore.jpg` | Acabashi | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Source](https://commons.wikimedia.org/wiki/File:Mixed_border_in_a_cottage_garden_at_Boreham,_Essex,_England_02.jpg) |
+| Cabincore | `assets/img/photos/cabincore/cabincore.jpg` | @olivier_twwli | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@olivier_twwli) |
+| Cassette Futurism | `assets/img/photos/cassette-futurism/cassette-futurism.jpg` | @mertkahveci | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@mertkahveci) |
+| Cottagecore | `assets/img/photos/cottagecore/cottagecore.jpg` | @daisy_16 | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@daisy_16) |
 | Cryptidcore | `assets/img/photos/cryptidcore/cryptidcore.jpg` | @jccards | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@jccards) |
-| Cyberpunk | `assets/img/photos/cyberpunk/cyberpunk.jpg` | Basile Morin | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Source](https://commons.wikimedia.org/wiki/File:Colorful_illuminated_facades_of_buildings_at_night,_with_green,_blue_and_pink_lights,_Kabukicho,_Shinjuku,_Tokyo.jpg) |
-| Dark Academia | `assets/img/photos/dark-academia/dark-academia.jpg` | Diliff | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Source](https://commons.wikimedia.org/wiki/File:Long_Room_Interior,_Trinity_College_Dublin,_Ireland_-_Diliff.jpg) |
+| Cyberpunk | `assets/img/photos/cyberpunk/cyberpunk.jpg` | @nattgw | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@nattgw) |
+| Dark Academia | `assets/img/photos/dark-academia/dark-academia.jpg` | @woltss78 | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@woltss78) |
 | Dark Fantasy | `assets/img/photos/dark-fantasy/dark-fantasy.jpg` | @filipkvasnak | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@filipkvasnak) |
 | Dark Naturalism | `assets/img/photos/dark-naturalism/dark-naturalism.jpg` | @karsten_wuerth | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@karsten_wuerth) |
-| Diner | `assets/img/photos/diner/diner.jpg` | Kenneth C. Zirkel | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Source](https://commons.wikimedia.org/wiki/File:Miss_Lorraine_Diner_interior,_Pawtucket_RI.jpg) |
-| Fairycore | `assets/img/photos/fairycore/fairycore.jpg` | Colin | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Source](https://commons.wikimedia.org/wiki/File:Pryor%27s_Wood_Bluebells_2017-04-26-4.jpg) |
+| Diner | `assets/img/photos/diner/diner.jpg` | @dayanaranacion | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@dayanaranacion) |
+| Fairycore | `assets/img/photos/fairycore/fairycore.jpg` | @mamunsrizon | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@mamunsrizon) |
 | Film Noir | `assets/img/photos/film-noir/film-noir.jpg` | @nypl | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@nypl) |
 | Folk Horror | `assets/img/photos/folk-horror/folk-horror.jpg` | @lancereis | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@lancereis) |
-| Forestpunk | `assets/img/photos/forestpunk/forestpunk.jpg` | Vyacheslav Argenberg | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) | [Source](https://commons.wikimedia.org/wiki/File:Sri_Lanka_cloud_forest,_tall_trees_in_fog.jpg) |
+| Forestpunk | `assets/img/photos/forestpunk/forestpunk.jpg` | @outoforbit | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@outoforbit) |
 | Frutiger Aero | `assets/img/photos/frutiger-aero/frutiger-aero.jpg` | @firli | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@firli) |
-| Gardencore | `assets/img/photos/gardencore/gardencore.jpg` | Aciarium | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) | [Source](https://commons.wikimedia.org/wiki/File:DSC07729_Sommerblumenschau_Pavilion,_Flower_Gardens_Hirschstetten,_2025-07.jpg) |
+| Gardencore | `assets/img/photos/gardencore/gardencore.jpg` | @jean_luc | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@jean_luc) |
 | Ghostcore | `assets/img/photos/ghostcore/ghostcore.jpg` | @jrkorpa | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@jrkorpa) |
 | Gloomcore | `assets/img/photos/gloomcore/gloomcore.jpg` | @_karsten | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@_karsten) |
-| Goblincore | `assets/img/photos/goblincore/goblincore.jpg` | GlacierNPS | Public domain | [Source](https://commons.wikimedia.org/wiki/File:Little_Brown_Mushrooms_(52129861618).jpg) |
-| Goth | `assets/img/photos/goth/goth.jpg` | Marc-Julien-Photography | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [Source](https://commons.wikimedia.org/wiki/File:Albi-cathedral-gothic-interior-perspective.jpg) |
+| Goblincore | `assets/img/photos/goblincore/goblincore.jpg` | @luniavis | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@luniavis) |
+| Goth | `assets/img/photos/goth/goth.jpg` | @js5928 | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@js5928) |
 | High School Dream | `assets/img/photos/high-school-dream/high-school-dream.jpg` | @swiggis | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@swiggis) |
-| Industrial | `assets/img/photos/industrial/industrial.jpg` | rabesphoto | [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0) | [Source](https://commons.wikimedia.org/wiki/File:Cleveland_Steel_Mill.jpg) |
-| Industrial Decay | `assets/img/photos/industrial-decay/industrial-decay.jpg` | saskialisette | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Source](https://commons.wikimedia.org/wiki/File:Flooded_interior_of_abandoned_factory.jpg) |
-| Light Academia | `assets/img/photos/light-academia/light-academia.jpg` | Ciara Ní Riain | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Source](https://commons.wikimedia.org/wiki/File:Bibliotekshaven_The_Library_Garden_Aarhus_University_06.jpg) |
-| Liminal Space | `assets/img/photos/liminal-space/liminal-space.jpg` | Michael Rivera | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0) | [Source](https://commons.wikimedia.org/wiki/File:Empty_Hallway,_Tallahassee_Mall.JPG) |
+| Industrial | `assets/img/photos/industrial/industrial.jpg` | @rozetsky | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@rozetsky) |
+| Industrial Decay | `assets/img/photos/industrial-decay/industrial-decay.jpg` | @zoshuacolah | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@zoshuacolah) |
+| Light Academia | `assets/img/photos/light-academia/light-academia.jpg` | @axl61 | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@axl61) |
+| Liminal Space | `assets/img/photos/liminal-space/liminal-space.jpg` | @sgoperchuck | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@sgoperchuck) |
 | Lumberjack | `assets/img/photos/lumberjack/lumberjack.jpg` | @blairgray_94 | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@blairgray_94) |
 | Medievalcore | `assets/img/photos/medievalcore/medievalcore.jpg` | Diliff | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Source](https://commons.wikimedia.org/wiki/File:Leeds_Castle,_Kent,_England_3_-_May_09.jpg) |
-| Midwest Gothic | `assets/img/photos/midwest-gothic/midwest-gothic.jpg` | Richard Dorrell | [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0) | [Source](https://commons.wikimedia.org/wiki/File:Abandoned_barn_-_geograph.org.uk_-_4188585.jpg) |
-| Minimalism | `assets/img/photos/minimalism/minimalism.jpg` | Petar Milošević | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Source](https://commons.wikimedia.org/wiki/File:The_pier_at_Velenje_Lake_(Velenje,_Slovenia,_2026).jpg) |
+| Midwest Gothic | `assets/img/photos/midwest-gothic/midwest-gothic.jpg` | @pray4bokeh | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@pray4bokeh) |
+| Minimalism | `assets/img/photos/minimalism/minimalism.jpg` | @emileseguin | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@emileseguin) |
 | Naturecore | `assets/img/photos/naturecore/naturecore.jpg` | @sylvaingllm | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@sylvaingllm) |
-| Nautical | `assets/img/photos/nautical/nautical.jpg` | Txllxt TxllxT | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Source](https://commons.wikimedia.org/wiki/File:Den_Helder_-_Marine_Haven_-_Tall_Ships%27_Races_2008_-_Tall_Ship_Sedov,_Murmansk_02.jpg) |
+| Nautical | `assets/img/photos/nautical/nautical.jpg` | @nimbus_vulpis | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@nimbus_vulpis) |
 | Oceanpunk | `assets/img/photos/oceanpunk/oceanpunk.jpg` | @metropolitanmuseum | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@metropolitanmuseum) |
-| Old Web | `assets/img/photos/old-web/old-web.jpg` | I-help-people-learnbackup | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Source](https://commons.wikimedia.org/wiki/File:Old_computer2.jpg) |
+| Old Web | `assets/img/photos/old-web/old-web.jpg` | @dogherine | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@dogherine) |
 | Prairiecore | `assets/img/photos/prairiecore/prairiecore.jpg` | @house_42 | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@house_42) |
-| Regency | `assets/img/photos/regency/regency.jpg` | Mike Peel (www.mikepeel.net) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Source](https://commons.wikimedia.org/wiki/File:Royal_Crescent,_Bath_2014_10.jpg) |
+| Regency | `assets/img/photos/regency/regency.jpg` | @mdbeckwith | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@mdbeckwith) |
 | Romantic Academia | `assets/img/photos/romantic-academia/romantic-academia.jpg` | @arjwen | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@arjwen) |
-| Solarpunk | `assets/img/photos/solarpunk/solarpunk.jpg` | Daniel Capilla | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Source](https://commons.wikimedia.org/wiki/File:Vertical_Garden_in_Edgar_Neville_Auditorium.jpg) |
-| Southern Gothic | `assets/img/photos/southern-gothic/southern-gothic.jpg` | Suzanne Antonia | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [Source](https://commons.wikimedia.org/wiki/File:Oak_Tree_With_Spanish_Moss_(237190073).jpeg) |
-| Spacecore | `assets/img/photos/spacecore/spacecore.jpg` | NASA | Public domain | [Source](https://commons.wikimedia.org/wiki/File:A_New_View_of_the_Tarantula_Nebula.jpg) |
-| Steampunk | `assets/img/photos/steampunk/steampunk.jpg` | SomeDriftwood | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0) | [Source](https://commons.wikimedia.org/wiki/File:Clock_Cogs.jpg) |
-| Synthwave | `assets/img/photos/synthwave/synthwave.jpg` | G. Casqueiro | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0) | [Source](https://commons.wikimedia.org/wiki/File:Synthwave_cyberspace_sunset_(low_res).jpg) |
-| Tiki | `assets/img/photos/tiki/tiki.jpg` | Daderot | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [Source](https://commons.wikimedia.org/wiki/File:Wusong_Tiki_Bar_-_Cambridge,_MA.jpg) |
-| Vaporwave | `assets/img/photos/vaporwave/vaporwave.jpg` | Mike Grauer Jr | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0) | [Source](https://commons.wikimedia.org/wiki/File:Vaporwave_WP3_Print.jpg) |
-| Wabi-Sabi | `assets/img/photos/wabi-sabi/wabi-sabi.jpg` | D-Kuru | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Source](https://commons.wikimedia.org/wiki/File:Kintsugi_on_broken_Ky%C5%ABsu_lid-bottom_oblique_PNr%C2%B01260.jpg) |
-| Western | `assets/img/photos/western/western.jpg` | Moritz Zimmermann | [CC BY-SA 3.0](http://creativecommons.org/licenses/by-sa/3.0/) | [Source](https://commons.wikimedia.org/wiki/File:Monumentvalley.jpg) |
+| Solarpunk | `assets/img/photos/solarpunk/solarpunk.jpg` | @dereksutton | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@dereksutton) |
+| Southern Gothic | `assets/img/photos/southern-gothic/southern-gothic.jpg` | @ronan18 | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@ronan18) |
+| Spacecore | `assets/img/photos/spacecore/spacecore.jpg` | @nattgw | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@nattgw) |
+| Steampunk | `assets/img/photos/steampunk/steampunk.jpg` | @tama66 | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@tama66) |
+| Synthwave | `assets/img/photos/synthwave/synthwave.jpg` | @mjh_shikder | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@mjh_shikder) |
+| Tiki | `assets/img/photos/tiki/tiki.jpg` | @drag88 | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@drag88) |
+| Vaporwave | `assets/img/photos/vaporwave/vaporwave.jpg` | @nixaov | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@nixaov) |
+| Western | `assets/img/photos/western/western.jpg` | @luishinojosag | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@luishinojosag) |
 | Y2K | `assets/img/photos/y2k/y2k.jpg` | Hanul | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0) | [Source](https://commons.wikimedia.org/wiki/File:Mac_OS_9_on_iMac_G3.jpg) |

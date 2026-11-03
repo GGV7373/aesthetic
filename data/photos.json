@@ -1,31 +1,31 @@
 {
  "cottagecore": {
   "file": "assets/img/photos/cottagecore/cottagecore.jpg",
-  "artist": "Acabashi",
-  "licence": "CC BY-SA 4.0",
-  "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Mixed_border_in_a_cottage_garden_at_Boreham,_Essex,_England_02.jpg"
+  "artist": "@daisy_16",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@daisy_16"
  },
  "forestpunk": {
   "file": "assets/img/photos/forestpunk/forestpunk.jpg",
-  "artist": "Vyacheslav Argenberg",
-  "licence": "CC BY 4.0",
-  "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Sri_Lanka_cloud_forest,_tall_trees_in_fog.jpg"
+  "artist": "@outoforbit",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@outoforbit"
  },
  "cabincore": {
   "file": "assets/img/photos/cabincore/cabincore.jpg",
-  "artist": "DrunkDriver",
-  "licence": "CC BY-SA 3.0",
-  "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Elwood_Cabin_Rio_Grande_Forest_Colorado_September_2013.JPG"
+  "artist": "@olivier_twwli",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@olivier_twwli"
  },
  "gardencore": {
   "file": "assets/img/photos/gardencore/gardencore.jpg",
-  "artist": "Aciarium",
-  "licence": "CC BY 4.0",
-  "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:DSC07729_Sommerblumenschau_Pavilion,_Flower_Gardens_Hirschstetten,_2025-07.jpg"
+  "artist": "@jean_luc",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@jean_luc"
  },
  "autumn": {
   "file": "assets/img/photos/autumn/autumn.jpg",
@@ -36,38 +36,38 @@
  },
  "goblincore": {
   "file": "assets/img/photos/goblincore/goblincore.jpg",
-  "artist": "GlacierNPS",
-  "licence": "Public domain",
-  "licenceUrl": "",
-  "source": "https://commons.wikimedia.org/wiki/File:Little_Brown_Mushrooms_(52129861618).jpg"
+  "artist": "@luniavis",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@luniavis"
  },
  "fairycore": {
   "file": "assets/img/photos/fairycore/fairycore.jpg",
-  "artist": "Colin",
-  "licence": "CC BY-SA 4.0",
-  "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Pryor%27s_Wood_Bluebells_2017-04-26-4.jpg"
+  "artist": "@mamunsrizon",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@mamunsrizon"
  },
  "dark-academia": {
   "file": "assets/img/photos/dark-academia/dark-academia.jpg",
-  "artist": "Diliff",
-  "licence": "CC BY-SA 4.0",
-  "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Long_Room_Interior,_Trinity_College_Dublin,_Ireland_-_Diliff.jpg"
+  "artist": "@woltss78",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@woltss78"
  },
  "light-academia": {
   "file": "assets/img/photos/light-academia/light-academia.jpg",
-  "artist": "Ciara Ní Riain",
-  "licence": "CC BY-SA 4.0",
-  "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Bibliotekshaven_The_Library_Garden_Aarhus_University_06.jpg"
+  "artist": "@axl61",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@axl61"
  },
  "regency": {
   "file": "assets/img/photos/regency/regency.jpg",
-  "artist": "Mike Peel (www.mikepeel.net)",
-  "licence": "CC BY-SA 4.0",
-  "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Royal_Crescent,_Bath_2014_10.jpg"
+  "artist": "@mdbeckwith",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@mdbeckwith"
  },
  "medievalcore": {
   "file": "assets/img/photos/medievalcore/medievalcore.jpg",
@@ -85,10 +85,10 @@
  },
  "diner": {
   "file": "assets/img/photos/diner/diner.jpg",
-  "artist": "Kenneth C. Zirkel",
-  "licence": "CC BY-SA 4.0",
-  "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Miss_Lorraine_Diner_interior,_Pawtucket_RI.jpg"
+  "artist": "@dayanaranacion",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@dayanaranacion"
  },
  "americana": {
   "file": "assets/img/photos/americana/americana.jpg",
@@ -99,38 +99,38 @@
  },
  "midwest-gothic": {
   "file": "assets/img/photos/midwest-gothic/midwest-gothic.jpg",
-  "artist": "Richard Dorrell",
-  "licence": "CC BY-SA 2.0",
-  "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Abandoned_barn_-_geograph.org.uk_-_4188585.jpg"
+  "artist": "@pray4bokeh",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@pray4bokeh"
  },
  "cyberpunk": {
   "file": "assets/img/photos/cyberpunk/cyberpunk.jpg",
-  "artist": "Basile Morin",
-  "licence": "CC BY-SA 4.0",
-  "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Colorful_illuminated_facades_of_buildings_at_night,_with_green,_blue_and_pink_lights,_Kabukicho,_Shinjuku,_Tokyo.jpg"
+  "artist": "@nattgw",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@nattgw"
  },
  "vaporwave": {
   "file": "assets/img/photos/vaporwave/vaporwave.jpg",
-  "artist": "Mike Grauer Jr",
-  "licence": "CC BY 2.0",
-  "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Vaporwave_WP3_Print.jpg"
+  "artist": "@nixaov",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@nixaov"
  },
  "synthwave": {
   "file": "assets/img/photos/synthwave/synthwave.jpg",
-  "artist": "G. Casqueiro",
-  "licence": "CC BY-SA 3.0",
-  "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Synthwave_cyberspace_sunset_(low_res).jpg"
+  "artist": "@mjh_shikder",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@mjh_shikder"
  },
  "liminal-space": {
   "file": "assets/img/photos/liminal-space/liminal-space.jpg",
-  "artist": "Michael Rivera",
-  "licence": "CC BY-SA 3.0",
-  "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Empty_Hallway,_Tallahassee_Mall.JPG"
+  "artist": "@sgoperchuck",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@sgoperchuck"
  },
  "arcadecore": {
   "file": "assets/img/photos/arcadecore/arcadecore.jpg",
@@ -148,31 +148,31 @@
  },
  "old-web": {
   "file": "assets/img/photos/old-web/old-web.jpg",
-  "artist": "I-help-people-learnbackup",
-  "licence": "CC BY-SA 4.0",
-  "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Old_computer2.jpg"
+  "artist": "@dogherine",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@dogherine"
  },
  "cassette-futurism": {
   "file": "assets/img/photos/cassette-futurism/cassette-futurism.jpg",
-  "artist": "Wikisympathisant",
-  "licence": "CC BY-SA 4.0",
-  "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Yamaha_K-300_Cassette_Deck_1983.jpg"
+  "artist": "@mertkahveci",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@mertkahveci"
  },
  "steampunk": {
   "file": "assets/img/photos/steampunk/steampunk.jpg",
-  "artist": "SomeDriftwood",
-  "licence": "CC BY 3.0",
-  "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Clock_Cogs.jpg"
+  "artist": "@tama66",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@tama66"
  },
  "solarpunk": {
   "file": "assets/img/photos/solarpunk/solarpunk.jpg",
-  "artist": "Daniel Capilla",
-  "licence": "CC BY-SA 4.0",
-  "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Vertical_Garden_in_Edgar_Neville_Auditorium.jpg"
+  "artist": "@dereksutton",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@dereksutton"
  },
  "atompunk": {
   "file": "assets/img/photos/atompunk/atompunk.jpg",
@@ -183,73 +183,66 @@
  },
  "spacecore": {
   "file": "assets/img/photos/spacecore/spacecore.jpg",
-  "artist": "NASA",
-  "licence": "Public domain",
-  "licenceUrl": "",
-  "source": "https://commons.wikimedia.org/wiki/File:A_New_View_of_the_Tarantula_Nebula.jpg"
+  "artist": "@nattgw",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@nattgw"
  },
  "industrial": {
   "file": "assets/img/photos/industrial/industrial.jpg",
-  "artist": "rabesphoto",
-  "licence": "CC BY-SA 2.0",
-  "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Cleveland_Steel_Mill.jpg"
+  "artist": "@rozetsky",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@rozetsky"
  },
  "industrial-decay": {
   "file": "assets/img/photos/industrial-decay/industrial-decay.jpg",
-  "artist": "saskialisette",
-  "licence": "CC BY-SA 4.0",
-  "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Flooded_interior_of_abandoned_factory.jpg"
+  "artist": "@zoshuacolah",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@zoshuacolah"
  },
  "goth": {
   "file": "assets/img/photos/goth/goth.jpg",
-  "artist": "Marc-Julien-Photography",
-  "licence": "CC0",
-  "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-  "source": "https://commons.wikimedia.org/wiki/File:Albi-cathedral-gothic-interior-perspective.jpg"
+  "artist": "@js5928",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@js5928"
  },
  "southern-gothic": {
   "file": "assets/img/photos/southern-gothic/southern-gothic.jpg",
-  "artist": "Suzanne Antonia",
-  "licence": "CC0",
-  "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-  "source": "https://commons.wikimedia.org/wiki/File:Oak_Tree_With_Spanish_Moss_(237190073).jpeg"
+  "artist": "@ronan18",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@ronan18"
  },
  "nautical": {
   "file": "assets/img/photos/nautical/nautical.jpg",
-  "artist": "Txllxt TxllxT",
-  "licence": "CC BY-SA 4.0",
-  "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Den_Helder_-_Marine_Haven_-_Tall_Ships%27_Races_2008_-_Tall_Ship_Sedov,_Murmansk_02.jpg"
+  "artist": "@nimbus_vulpis",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@nimbus_vulpis"
  },
  "western": {
   "file": "assets/img/photos/western/western.jpg",
-  "artist": "Moritz Zimmermann",
-  "licence": "CC BY-SA 3.0",
-  "licenceUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
-  "source": "https://commons.wikimedia.org/wiki/File:Monumentvalley.jpg"
+  "artist": "@luishinojosag",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@luishinojosag"
  },
  "tiki": {
   "file": "assets/img/photos/tiki/tiki.jpg",
-  "artist": "Daderot",
-  "licence": "CC0",
-  "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-  "source": "https://commons.wikimedia.org/wiki/File:Wusong_Tiki_Bar_-_Cambridge,_MA.jpg"
+  "artist": "@drag88",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@drag88"
  },
  "minimalism": {
   "file": "assets/img/photos/minimalism/minimalism.jpg",
-  "artist": "Petar Milošević",
-  "licence": "CC BY-SA 4.0",
-  "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:The_pier_at_Velenje_Lake_(Velenje,_Slovenia,_2026).jpg"
- },
- "wabi-sabi": {
-  "file": "assets/img/photos/wabi-sabi/wabi-sabi.jpg",
-  "artist": "D-Kuru",
-  "licence": "CC BY-SA 4.0",
-  "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Kintsugi_on_broken_Ky%C5%ABsu_lid-bottom_oblique_PNr%C2%B01260.jpg"
+  "artist": "@emileseguin",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@emileseguin"
  },
  "frutiger-aero": {
   "file": "assets/img/photos/frutiger-aero/frutiger-aero.jpg",
