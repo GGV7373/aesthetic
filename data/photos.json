@@ -383,5 +383,110 @@
   "licence": "Unsplash License",
   "licenceUrl": "https://unsplash.com/license",
   "source": "https://unsplash.com/@smithsonian"
+ },
+ "bright-tertiaries": {
+  "file": "assets/img/photos/bright-tertiaries/bright-tertiaries.jpg",
+  "artist": "@samahosseini",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@samahosseini"
+ },
+ "city-pop": {
+  "file": "assets/img/photos/city-pop/city-pop.jpg",
+  "artist": "@josephcosta",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@josephcosta"
+ },
+ "cluttercore": {
+  "file": "assets/img/photos/cluttercore/cluttercore.jpg",
+  "artist": "@sametkurtkus",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@sametkurtkus"
+ },
+ "cozycore": {
+  "file": "assets/img/photos/cozycore/cozycore.jpg",
+  "artist": "@alisaanton",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@alisaanton"
+ },
+ "dieselpunk": {
+  "file": "assets/img/photos/dieselpunk/dieselpunk.jpg",
+  "artist": "@hdsfotografie95",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@hdsfotografie95"
+ },
+ "doomer": {
+  "file": "assets/img/photos/doomer/doomer.jpg",
+  "artist": "@litvinov",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@litvinov"
+ },
+ "dreamcore": {
+  "file": "assets/img/photos/dreamcore/dreamcore.jpg",
+  "artist": "@mehrab_sium",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@mehrab_sium"
+ },
+ "emo": {
+  "file": "assets/img/photos/emo/emo.jpg",
+  "artist": "@tonnidead",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@tonnidead"
+ },
+ "fifties-suburbia": {
+  "file": "assets/img/photos/fifties-suburbia/fifties-suburbia.jpg",
+  "artist": "@oregonstateuni",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@oregonstateuni"
+ },
+ "frutiger-eco": {
+  "file": "assets/img/photos/frutiger-eco/frutiger-eco.jpg",
+  "artist": "@firli",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@firli"
+ },
+ "gen-x-soft-club": {
+  "file": "assets/img/photos/gen-x-soft-club/gen-x-soft-club.jpg",
+  "artist": "@santesson89",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@santesson89"
+ },
+ "glam-rock": {
+  "file": "assets/img/photos/glam-rock/glam-rock.jpg",
+  "artist": "@rocinante_11",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@rocinante_11"
+ },
+ "greaser": {
+  "file": "assets/img/photos/greaser/greaser.jpg",
+  "artist": "@jakobnoahrosen",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@jakobnoahrosen"
+ },
+ "hippie": {
+  "file": "assets/img/photos/hippie/hippie.jpg",
+  "artist": "@vasiliosm",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@vasiliosm"
+ },
+ "hipster": {
+  "file": "assets/img/photos/hipster/hipster.jpg",
+  "artist": "@freshseteyes",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@freshseteyes"
  }
 }

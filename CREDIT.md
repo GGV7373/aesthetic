@@ -12,6 +12,7 @@ They are resized copies of the originals.
 
 | Aesthetic | File | Author | Licence | Source |
 | --- | --- | --- | --- | --- |
+| 50s Suburbia | `assets/img/photos/fifties-suburbia/fifties-suburbia.jpg` | @oregonstateuni | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@oregonstateuni) |
 | 90s Cool | `assets/img/photos/90s-cool/90s-cool.jpg` | @maksimshutov | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@maksimshutov) |
 | Adventurecore | `assets/img/photos/adventurecore/adventurecore.jpg` | @warrenumoh | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@warrenumoh) |
 | After Hours | `assets/img/photos/after-hours/after-hours.jpg` | @zoltantasi | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@zoltantasi) |
@@ -23,26 +24,40 @@ They are resized copies of the originals.
 | Art Deco | `assets/img/photos/art-deco/art-deco.jpg` | @astro_civil | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@astro_civil) |
 | Atompunk | `assets/img/photos/atompunk/atompunk.jpg` | @octoberroses | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@octoberroses) |
 | Autumn | `assets/img/photos/autumn/autumn.jpg` | @chadmadden | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@chadmadden) |
+| Bright Tertiaries | `assets/img/photos/bright-tertiaries/bright-tertiaries.jpg` | @samahosseini | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@samahosseini) |
 | Cabincore | `assets/img/photos/cabincore/cabincore.jpg` | @olivier_twwli | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@olivier_twwli) |
 | Cassette Futurism | `assets/img/photos/cassette-futurism/cassette-futurism.jpg` | @mertkahveci | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@mertkahveci) |
+| City Pop | `assets/img/photos/city-pop/city-pop.jpg` | @josephcosta | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@josephcosta) |
+| Cluttercore | `assets/img/photos/cluttercore/cluttercore.jpg` | @sametkurtkus | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@sametkurtkus) |
 | Cottagecore | `assets/img/photos/cottagecore/cottagecore.jpg` | @daisy_16 | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@daisy_16) |
+| Cozycore | `assets/img/photos/cozycore/cozycore.jpg` | @alisaanton | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@alisaanton) |
 | Cryptidcore | `assets/img/photos/cryptidcore/cryptidcore.jpg` | @jccards | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@jccards) |
 | Cyberpunk | `assets/img/photos/cyberpunk/cyberpunk.jpg` | @nattgw | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@nattgw) |
 | Dark Academia | `assets/img/photos/dark-academia/dark-academia.jpg` | @woltss78 | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@woltss78) |
 | Dark Fantasy | `assets/img/photos/dark-fantasy/dark-fantasy.jpg` | @filipkvasnak | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@filipkvasnak) |
 | Dark Naturalism | `assets/img/photos/dark-naturalism/dark-naturalism.jpg` | @karsten_wuerth | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@karsten_wuerth) |
+| Dieselpunk | `assets/img/photos/dieselpunk/dieselpunk.jpg` | @hdsfotografie95 | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@hdsfotografie95) |
 | Diner | `assets/img/photos/diner/diner.jpg` | @dayanaranacion | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@dayanaranacion) |
+| Doomer | `assets/img/photos/doomer/doomer.jpg` | @litvinov | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@litvinov) |
+| Dreamcore | `assets/img/photos/dreamcore/dreamcore.jpg` | @mehrab_sium | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@mehrab_sium) |
+| Emo | `assets/img/photos/emo/emo.jpg` | @tonnidead | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@tonnidead) |
 | Fairycore | `assets/img/photos/fairycore/fairycore.jpg` | @mamunsrizon | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@mamunsrizon) |
 | Film Noir | `assets/img/photos/film-noir/film-noir.jpg` | @nypl | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@nypl) |
 | Folk Horror | `assets/img/photos/folk-horror/folk-horror.jpg` | @lancereis | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@lancereis) |
 | Forestpunk | `assets/img/photos/forestpunk/forestpunk.jpg` | @outoforbit | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@outoforbit) |
 | Frutiger Aero | `assets/img/photos/frutiger-aero/frutiger-aero.jpg` | @firli | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@firli) |
+| Frutiger Eco | `assets/img/photos/frutiger-eco/frutiger-eco.jpg` | @firli | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@firli) |
 | Gardencore | `assets/img/photos/gardencore/gardencore.jpg` | @jean_luc | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@jean_luc) |
+| Gen X Soft Club | `assets/img/photos/gen-x-soft-club/gen-x-soft-club.jpg` | @santesson89 | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@santesson89) |
 | Ghostcore | `assets/img/photos/ghostcore/ghostcore.jpg` | @jrkorpa | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@jrkorpa) |
+| Glam Rock | `assets/img/photos/glam-rock/glam-rock.jpg` | @rocinante_11 | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@rocinante_11) |
 | Gloomcore | `assets/img/photos/gloomcore/gloomcore.jpg` | @_karsten | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@_karsten) |
 | Goblincore | `assets/img/photos/goblincore/goblincore.jpg` | @luniavis | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@luniavis) |
 | Goth | `assets/img/photos/goth/goth.jpg` | @js5928 | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@js5928) |
+| Greaser | `assets/img/photos/greaser/greaser.jpg` | @jakobnoahrosen | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@jakobnoahrosen) |
 | High School Dream | `assets/img/photos/high-school-dream/high-school-dream.jpg` | @swiggis | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@swiggis) |
+| Hippie | `assets/img/photos/hippie/hippie.jpg` | @vasiliosm | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@vasiliosm) |
+| Hipster | `assets/img/photos/hipster/hipster.jpg` | @freshseteyes | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@freshseteyes) |
 | Industrial | `assets/img/photos/industrial/industrial.jpg` | @rozetsky | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@rozetsky) |
 | Industrial Decay | `assets/img/photos/industrial-decay/industrial-decay.jpg` | @zoshuacolah | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@zoshuacolah) |
 | Light Academia | `assets/img/photos/light-academia/light-academia.jpg` | @axl61 | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@axl61) |
