@@ -558,5 +558,40 @@
   "licence": "Unsplash License",
   "licenceUrl": "https://unsplash.com/license",
   "source": "https://unsplash.com/@jakobethekid"
+ },
+ "normcore": {
+  "file": "assets/img/photos/normcore/normcore.jpg",
+  "artist": "@joelmott",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@joelmott"
+ },
+ "nostalgiacore": {
+  "file": "assets/img/photos/nostalgiacore/nostalgiacore.jpg",
+  "artist": "@doscocoslocos",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@doscocoslocos"
+ },
+ "nu-goth": {
+  "file": "assets/img/photos/nu-goth/nu-goth.jpg",
+  "artist": "@shokanunwe",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@shokanunwe"
+ },
+ "old-hollywood": {
+  "file": "assets/img/photos/old-hollywood/old-hollywood.jpg",
+  "artist": "@lhonkarwanhamasalih",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@lhonkarwanhamasalih"
+ },
+ "old-money": {
+  "file": "assets/img/photos/old-money/old-money.jpg",
+  "artist": "@reo",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@reo"
  }
 }

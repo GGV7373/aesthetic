@@ -78,7 +78,12 @@ They are resized copies of the originals.
 | Minimalism | `assets/img/photos/minimalism/minimalism.jpg` | @emileseguin | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@emileseguin) |
 | Naturecore | `assets/img/photos/naturecore/naturecore.jpg` | @sylvaingllm | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@sylvaingllm) |
 | Nautical | `assets/img/photos/nautical/nautical.jpg` | @nimbus_vulpis | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@nimbus_vulpis) |
+| Normcore | `assets/img/photos/normcore/normcore.jpg` | @joelmott | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@joelmott) |
+| Nostalgiacore | `assets/img/photos/nostalgiacore/nostalgiacore.jpg` | @doscocoslocos | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@doscocoslocos) |
+| Nu-Goth | `assets/img/photos/nu-goth/nu-goth.jpg` | @shokanunwe | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@shokanunwe) |
 | Oceanpunk | `assets/img/photos/oceanpunk/oceanpunk.jpg` | @metropolitanmuseum | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@metropolitanmuseum) |
+| Old Hollywood | `assets/img/photos/old-hollywood/old-hollywood.jpg` | @lhonkarwanhamasalih | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@lhonkarwanhamasalih) |
+| Old Money | `assets/img/photos/old-money/old-money.jpg` | @reo | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@reo) |
 | Old Web | `assets/img/photos/old-web/old-web.jpg` | @dogherine | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@dogherine) |
 | Prairiecore | `assets/img/photos/prairiecore/prairiecore.jpg` | @house_42 | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@house_42) |
 | Regency | `assets/img/photos/regency/regency.jpg` | @mdbeckwith | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@mdbeckwith) |
