@@ -467,7 +467,7 @@
       "individualism": 0.75,
       "comfort": 0.25
     },
-    "related": ["old-hollywood", "dark-academia", "dieselpunk", "industrial-gothic"],
+    "related": ["old-hollywood", "dark-academia", "dieselpunk"],
     "world": {
       "setting": "a street where the only light comes from a sign blinking wrong",
       "architecture": "an office block from the forties, a stairwell, a door with frosted glass",
@@ -985,7 +985,7 @@
       "adventure": 0.45,
       "comfort": 0.3
     },
-    "related": ["dieselpunk", "cyberpunk", "industrial-gothic"],
+    "related": ["dieselpunk", "cyberpunk"],
     "world": {
       "setting": "an industrial estate by the river, cranes against an evening sky",
       "architecture": "warehouse halls, steel beams left visible, tall windows in a grid",
@@ -995,49 +995,6 @@
       "music": "repetitive electronics, metallic sounds, echo in large rooms",
       "colours": "concrete grey, rust, steel blue, black",
       "everyday": "making things, putting tools away, respecting that something is heavy"
-    }
-  },
-  {
-    "key": "industrial-gothic",
-    "name": "Industrial Gothic",
-    "family": "Goth",
-    "tagline": "The factory as cathedral",
-    "description": "Abandoned industry with sacred weight: tall halls, soot, light falling through broken glass. Grandeur and decay in the same room.",
-    "keywords": ["abandoned factory", "soot", "tall halls", "rust", "broken glass"],
-    "palette": ["#0a0a0b", "#20211f", "#4a3f36", "#9d968a"],
-    "dimensions": {
-      "industrial": 0.9,
-      "darkness": 0.9,
-      "melancholy": 0.82,
-      "history": 0.72,
-      "mystery": 0.78,
-      "architecture": 0.88,
-      "urban": 0.75,
-      "solitude": 0.75,
-      "ornament": 0.5,
-      "realism": 0.6,
-      "refinement": 0.5,
-      "chaos": 0.5,
-      "nature": 0.3,
-      "modernity": 0.15,
-      "optimism": 0.1,
-      "intellect": 0.55,
-      "craft": 0.55,
-      "tradition": 0.5,
-      "adventure": 0.6,
-      "comfort": 0.2,
-      "maximalism": 0.5
-    },
-    "related": ["industrial", "film-noir", "dark-academia"],
-    "world": {
-      "setting": "a plant that hasn't run in twenty years, birch growing inside a hall",
-      "architecture": "arched brick windows, chimneys, stairs without railings",
-      "interior": "dust in the light shafts, machines left where they stood, rust as pattern",
-      "technology": "whatever stayed behind when everyone went home",
-      "clothes": "dark, heavy, hard-wearing, and formal all the same",
-      "music": "organ and machine noise, deep drones, the ring of large rooms",
-      "colours": "soot, iron red, lead grey, pale daylight",
-      "everyday": "going into places you shouldn't, photographing the light before it moves"
     }
   },
   {
@@ -2360,7 +2317,7 @@
       "minimalism": 0.25,
       "realism": 0.45
     },
-    "related": ["goth", "punk", "mallgoth", "rave", "nu-goth"],
+    "related": ["goth", "punk", "rave", "nu-goth"],
     "world": {
       "setting": "a basement club with a sticky floor and a smoke machine on its last legs",
       "architecture": "industrial rooms borrowed for the night, fire doors and painted brick",
@@ -2497,7 +2454,7 @@
       "whimsy": 0.2,
       "architecture": 0.6
     },
-    "related": ["goth", "minimalism", "mallgoth"],
+    "related": ["goth", "minimalism"],
     "world": {
       "setting": "a concrete gallery space with one very expensive black coat in it",
       "architecture": "clean lines, poured concrete, a staircase with nothing to hold",
@@ -2507,52 +2464,6 @@
       "music": "witch house, cold industrial, ambient with a pulse",
       "colours": "true black, ash, bone white, steel",
       "everyday": "coffee taken black, gallery openings, saying very little"
-    }
-  },
-  {
-    "key": "mallgoth",
-    "name": "Mallgoth",
-    "family": "Goth",
-    "tagline": "Band tees and a food court at sixteen",
-    "description": "The suburban teenage version - band merch, chains, black nail varnish and a shopping centre as the only place to go. Nostalgic now, but it was deadly serious at the time.",
-    "keywords": ["band tee", "chains", "mall", "food court", "nu-metal"],
-    "palette": ["#111014", "#2f2a35", "#7b2f3d", "#d0cdd6"],
-    "dimensions": {
-      "darkness": 0.75,
-      "nostalgia": 0.85,
-      "retro": 0.78,
-      "individualism": 0.8,
-      "chaos": 0.68,
-      "urban": 0.7,
-      "social": 0.65,
-      "community": 0.68,
-      "melancholy": 0.65,
-      "optimism": 0.3,
-      "tradition": 0.2,
-      "refinement": 0.15,
-      "nature": 0.15,
-      "order": 0.25,
-      "digital": 0.6,
-      "modernity": 0.4,
-      "realism": 0.55,
-      "comfort": 0.45,
-      "maximalism": 0.65,
-      "history": 0.2,
-      "craft": 0.4,
-      "mystery": 0.45,
-      "intellect": 0.4,
-      "whimsy": 0.45
-    },
-    "related": ["scene", "emo", "trad-goth", "y2k", "pastel-goth"],
-    "world": {
-      "setting": "a shopping centre at four on a Tuesday, fountain running, nowhere else to be",
-      "architecture": "skylights, tiled walkways, escalators and a car park that never fills",
-      "interior": "a bedroom papered in posters, a beanbag, a tower of CDs",
-      "technology": "a CD player, a flip phone, a desktop the whole family shares",
-      "clothes": "band tee, wide black jeans, a wallet chain and studded belt",
-      "music": "nu-metal, early emo, whatever the older kids taped for you",
-      "colours": "black, strip-lighting beige, crimson, silver hardware",
-      "everyday": "loitering with friends, arguing about bands, being asked to move along"
     }
   },
   {
@@ -2727,7 +2638,7 @@
       "minimalism": 0.3,
       "history": 0.2
     },
-    "related": ["mallgoth", "scene", "punk", "midwest-emo"],
+    "related": ["scene", "punk", "midwest-emo"],
     "world": {
       "setting": "a basement show where everyone knows the words and nobody is on a stage",
       "architecture": "a house with a low ceiling and a boiler in the corner",
@@ -2773,7 +2684,7 @@
       "history": 0.12,
       "intellect": 0.35
     },
-    "related": ["scenecore", "emo", "mallgoth", "kidcore", "old-web"],
+    "related": ["scenecore", "emo", "kidcore", "old-web"],
     "world": {
       "setting": "a bedroom at midnight lit by a monitor and a string of fairy lights",
       "architecture": "a suburban house that has no idea what is happening upstairs",
@@ -2866,7 +2777,7 @@
       "chaos": 0.35,
       "architecture": 0.6
     },
-    "related": ["normcore", "scandinavian-design", "indie-sleaze"],
+    "related": ["normcore", "scandinavian-design"],
     "world": {
       "setting": "a converted warehouse on a side street with a queue outside by nine",
       "architecture": "exposed brick, steel windows, a mezzanine nobody needed",
@@ -3060,58 +2971,6 @@
       "music": "sitar drones, fuzz guitar, a mix that keeps moving ear to ear",
       "colours": "magenta, marigold, electric turquoise, deep violet",
       "everyday": "long records played whole, drawing the patterns you keep seeing"
-    }
-  },
-  {
-    "key": "indie-sleaze",
-    "name": "Indie Sleaze",
-    "family": "Subculture",
-    "tagline": "Flash on, eyeliner smudged, last train missed",
-    "description": "Late-2000s party photography - blown-out flash, American Apparel, a disposable camera and a band on in the corner. Glamour that is deliberately a bit of a mess.",
-    "keywords": [
-      "flash photography",
-      "skinny jeans",
-      "house party",
-      "electroclash",
-      "disposable camera"
-    ],
-    "palette": ["#0c0c0e", "#36323d", "#9c2f5e", "#efeae2"],
-    "dimensions": {
-      "chaos": 0.85,
-      "urban": 0.85,
-      "social": 0.85,
-      "individualism": 0.78,
-      "modernity": 0.6,
-      "digital": 0.65,
-      "nostalgia": 0.7,
-      "retro": 0.62,
-      "refinement": 0.18,
-      "order": 0.12,
-      "nature": 0.08,
-      "tradition": 0.1,
-      "comfort": 0.25,
-      "realism": 0.6,
-      "darkness": 0.62,
-      "melancholy": 0.55,
-      "community": 0.68,
-      "maximalism": 0.6,
-      "craft": 0.4,
-      "optimism": 0.45,
-      "intellect": 0.5,
-      "mystery": 0.4,
-      "adventure": 0.6,
-      "history": 0.2
-    },
-    "related": ["hipster", "emo", "scene", "rave"],
-    "world": {
-      "setting": "somebody's flat at 3am with the lights on and the music too loud",
-      "architecture": "a converted terrace with too many people in the kitchen",
-      "interior": "fairy lights, an overflowing ashtray, a mattress used as seating",
-      "technology": "a disposable camera, an iPod, a laptop playing the whole night",
-      "clothes": "skinny jeans, a leather jacket, a shirt borrowed and not returned",
-      "music": "electroclash, guitar bands with drum machines, remixes of remixes",
-      "colours": "flash white, black, bruise purple, neon pink",
-      "everyday": "going out on a Tuesday, the photos appearing days later, no regrets on record"
     }
   },
   {
@@ -3474,7 +3333,7 @@
       "history": 0.3,
       "intellect": 0.55
     },
-    "related": ["goth", "metalhead", "jirai-kei", "romantic-goth"],
+    "related": ["goth", "metalhead", "romantic-goth"],
     "world": {
       "setting": "a live house with the front row pressed against the barrier",
       "architecture": "a basement venue with black walls and a very good lighting rig",
@@ -3484,52 +3343,6 @@
       "music": "hard rock with classical flourishes, ballads that go enormous",
       "colours": "black, blood red, silver, violet",
       "everyday": "hours in the mirror, rehearsal, becoming somebody else on stage"
-    }
-  },
-  {
-    "key": "jirai-kei",
-    "name": "Jirai Kei",
-    "family": "Japanese Street and Kawaii",
-    "tagline": "Pink, black, and not okay",
-    "description": "Frilled black-and-pink outfits paired with an openly fragile emotional register. A Japanese style that refuses to pretend everything is fine.",
-    "keywords": ["black and pink", "frills", "ribbons", "melancholy", "platform shoes"],
-    "palette": ["#17141b", "#3d2b38", "#c96f95", "#f2dfe6"],
-    "dimensions": {
-      "melancholy": 0.92,
-      "darkness": 0.78,
-      "ornament": 0.85,
-      "individualism": 0.82,
-      "urban": 0.75,
-      "modernity": 0.7,
-      "digital": 0.72,
-      "optimism": 0.12,
-      "realism": 0.3,
-      "industrial": 0.08,
-      "nature": 0.08,
-      "rural": 0.05,
-      "tradition": 0.12,
-      "minimalism": 0.12,
-      "maximalism": 0.72,
-      "refinement": 0.5,
-      "order": 0.35,
-      "comfort": 0.35,
-      "solitude": 0.75,
-      "social": 0.45,
-      "community": 0.5,
-      "whimsy": 0.55,
-      "fantasy": 0.6,
-      "mystery": 0.6
-    },
-    "related": ["yami-kawaii", "pastel-goth", "visual-kei", "traumacore"],
-    "world": {
-      "setting": "a cafe in Shinjuku late on a weeknight, alone by choice and not",
-      "architecture": "a narrow building with a different world on every floor",
-      "interior": "a small room, plush toys, medicine on the desk, lights kept low",
-      "technology": "a phone held constantly, a live stream nobody is watching",
-      "clothes": "black frills over pink, ribbon chokers, platform shoes, heavy lashes",
-      "music": "vocaloid ballads, bedroom pop sung very quietly",
-      "colours": "black, sugar pink, blood red, white",
-      "everyday": "nights that run long, texts left unread, dressing up to go nowhere"
     }
   },
   {
@@ -3566,7 +3379,7 @@
       "craft": 0.6,
       "mystery": 0.55
     },
-    "related": ["jirai-kei", "pastel-goth", "traumacore", "kawaii"],
+    "related": ["pastel-goth", "traumacore", "kawaii"],
     "world": {
       "setting": "a bedroom that is pink and not restful, curtains closed at midday",
       "architecture": "a small flat with one window and a lot of time in it",
@@ -4088,7 +3901,7 @@
       "modernity": 0.4,
       "fantasy": 0.55
     },
-    "related": ["vaporwave", "liminal-space", "mallgoth", "ghostcore", "city-pop"],
+    "related": ["vaporwave", "liminal-space", "ghostcore", "city-pop"],
     "world": {
       "setting": "a shopping centre on a weekday with the fountain running for nobody",
       "architecture": "a glass atrium, planters of fake ficus, escalators crossing overhead",
@@ -4318,7 +4131,7 @@
       "optimism": 0.3,
       "darkness": 0.5
     },
-    "related": ["emo", "gloomcore", "americana", "indie-sleaze", "punk"],
+    "related": ["emo", "gloomcore", "americana", "punk"],
     "world": {
       "setting": "a porch in a small town in August with nothing happening for miles",
       "architecture": "clapboard houses on a grid, a water tower, a closed main street",
@@ -4585,7 +4398,7 @@
       "nature": 0.1,
       "rural": 0.08
     },
-    "related": ["skater", "metalhead", "mallgoth", "emo"],
+    "related": ["skater", "metalhead", "emo"],
     "world": {
       "setting": "a bedroom at the end of the landing with the door shut and the bass audible",
       "architecture": "a plain suburban house that has no idea what the upstairs looks like",
@@ -4634,7 +4447,7 @@
       "history": 0.4,
       "architecture": 0.55
     },
-    "related": ["americana", "fifties-suburbia", "y2k", "mallgoth"],
+    "related": ["americana", "fifties-suburbia", "y2k"],
     "world": {
       "setting": "a corridor between bells, everybody shouting, banners taped along the wall",
       "architecture": "a low brick school with a gym that doubles as everything else",
@@ -4680,7 +4493,7 @@
       "darkness": 0.1,
       "minimalism": 0.05
     },
-    "related": ["kidcore", "scene", "y2k", "soft-girl", "mallgoth"],
+    "related": ["kidcore", "scene", "y2k", "soft-girl"],
     "world": {
       "setting": "a shopping centre on a Saturday with a group of twelve-year-olds and no adult",
       "architecture": "a mall unit lit to the ceiling, everything within reach and on sale",
@@ -4915,7 +4728,7 @@
       "adventure": 0.5,
       "digital": 0.45
     },
-    "related": ["industrial", "cyberpunk", "industrial-gothic"],
+    "related": ["industrial", "cyberpunk"],
     "wiki": "Rivethead",
     "world": {
       "setting": "a warehouse district at two in the morning, sodium light on wet concrete",
@@ -5308,53 +5121,6 @@
       "music": "space-age pop, moog records, lounge with sci-fi sound effects",
       "colours": "white plastic, tangerine, silver, midnight blue",
       "everyday": "parties in the lounge, launches on the television, dreaming of the moon"
-    }
-  },
-  {
-    "key": "lovecore",
-    "name": "Lovecore",
-    "family": "Internet and Liminal",
-    "tagline": "Hearts, love letters and a soft pink haze",
-    "description": "Everything as a love letter: hearts, ribbons, sweets, red and pink and a crush that colours the whole day. Sentimental, sweet and openly romantic.",
-    "keywords": ["hearts", "love letters", "ribbons", "pink and red", "sweets"],
-    "palette": ["#3d0a17", "#c21e3a", "#f28aa5", "#ffe3ea"],
-    "dimensions": {
-      "optimism": 0.85,
-      "whimsy": 0.8,
-      "fantasy": 0.65,
-      "realism": 0.25,
-      "social": 0.7,
-      "community": 0.65,
-      "solitude": 0.3,
-      "comfort": 0.75,
-      "ornament": 0.75,
-      "maximalism": 0.7,
-      "minimalism": 0.15,
-      "melancholy": 0.3,
-      "darkness": 0.1,
-      "nostalgia": 0.6,
-      "retro": 0.5,
-      "digital": 0.55,
-      "technology": 0.4,
-      "refinement": 0.45,
-      "craft": 0.55,
-      "individualism": 0.55,
-      "order": 0.45,
-      "chaos": 0.4,
-      "nature": 0.35,
-      "urban": 0.5
-    },
-    "related": ["kidcore", "kawaii", "soft-girl"],
-    "wiki": "Lovecore",
-    "world": {
-      "setting": "a city on Valentine's Day, every shop window full of hearts",
-      "architecture": "a little flat with heart-shaped windows on a street of bakeries",
-      "interior": "red velvet, love letters pinned to a corkboard, ribbons on everything",
-      "technology": "a digital camera, a phone full of heart emoji, a printer for photo strips",
-      "clothes": "heart prints, red knitwear, ribbons in the hair, lace socks",
-      "music": "love songs from every decade, bedroom pop, a voice note from someone",
-      "colours": "cherry red, candy pink, cream, rose gold",
-      "everyday": "mixtapes, handwritten notes, a sweet bought for a friend just because"
     }
   },
   {

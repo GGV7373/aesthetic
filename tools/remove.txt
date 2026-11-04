@@ -17,3 +17,8 @@ glitchcore
 grunge 
 gyaru
 hypebeast
+industrial-gothic
+indie-sleaze 
+jirai-kei 
+lovecore 
+mallgoth

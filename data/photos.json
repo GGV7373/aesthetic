@@ -488,5 +488,47 @@
   "licence": "Unsplash License",
   "licenceUrl": "https://unsplash.com/license",
   "source": "https://unsplash.com/@freshseteyes"
+ },
+ "japandi": {
+  "file": "assets/img/photos/japandi/japandi.jpg",
+  "artist": "@alonagrrr",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@alonagrrr"
+ },
+ "jock": {
+  "file": "assets/img/photos/jock/jock.jpg",
+  "artist": "@oferr_gr",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@oferr_gr"
+ },
+ "kawaii": {
+  "file": "assets/img/photos/kawaii/kawaii.jpg",
+  "artist": "@ninjason",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@ninjason"
+ },
+ "kidcore": {
+  "file": "assets/img/photos/kidcore/kidcore.jpg",
+  "artist": "@chonky_films",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@chonky_films"
+ },
+ "kitsch": {
+  "file": "assets/img/photos/kitsch/kitsch.jpg",
+  "artist": "@flo_raw",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@flo_raw"
+ },
+ "lo-fi": {
+  "file": "assets/img/photos/lo-fi/lo-fi.jpg",
+  "artist": "@masantocreative",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@masantocreative"
  }
 }

@@ -60,8 +60,14 @@ They are resized copies of the originals.
 | Hipster | `assets/img/photos/hipster/hipster.jpg` | @freshseteyes | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@freshseteyes) |
 | Industrial | `assets/img/photos/industrial/industrial.jpg` | @rozetsky | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@rozetsky) |
 | Industrial Decay | `assets/img/photos/industrial-decay/industrial-decay.jpg` | @zoshuacolah | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@zoshuacolah) |
+| Japandi | `assets/img/photos/japandi/japandi.jpg` | @alonagrrr | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@alonagrrr) |
+| Jock | `assets/img/photos/jock/jock.jpg` | @oferr_gr | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@oferr_gr) |
+| Kawaii | `assets/img/photos/kawaii/kawaii.jpg` | @ninjason | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@ninjason) |
+| Kidcore | `assets/img/photos/kidcore/kidcore.jpg` | @chonky_films | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@chonky_films) |
+| Kitsch | `assets/img/photos/kitsch/kitsch.jpg` | @flo_raw | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@flo_raw) |
 | Light Academia | `assets/img/photos/light-academia/light-academia.jpg` | @axl61 | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@axl61) |
 | Liminal Space | `assets/img/photos/liminal-space/liminal-space.jpg` | @sgoperchuck | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@sgoperchuck) |
+| Lo-fi | `assets/img/photos/lo-fi/lo-fi.jpg` | @masantocreative | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@masantocreative) |
 | Lumberjack | `assets/img/photos/lumberjack/lumberjack.jpg` | @blairgray_94 | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@blairgray_94) |
 | Medievalcore | `assets/img/photos/medievalcore/medievalcore.jpg` | Diliff | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Source](https://commons.wikimedia.org/wiki/File:Leeds_Castle,_Kent,_England_3_-_May_09.jpg) |
 | Midwest Gothic | `assets/img/photos/midwest-gothic/midwest-gothic.jpg` | @pray4bokeh | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@pray4bokeh) |

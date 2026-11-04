@@ -151,7 +151,7 @@
       "title": "why do I even exist? - traumacore playlist",
       "author": "aurora.heaven",
       "mood": "Distorted, half-remembered lullabies with tape hiss underneath.",
-      "aesthetics": ["traumacore", "jirai-kei", "yami-kawaii"]
+      "aesthetics": ["traumacore", "yami-kawaii"]
     },
     {
       "id": "iCZQTCPZwBQ",
@@ -265,7 +265,7 @@
       "title": "Dirty Industrial City [Dark Melancholic Steampunk] [EPIC MUSIC]",
       "author": "Lemniskata Music",
       "mood": "A dirty, melancholic industrial city in epic strings and metal.",
-      "aesthetics": ["industrial-decay", "industrial", "industrial-gothic"]
+      "aesthetics": ["industrial-decay", "industrial"]
     },
     {
       "id": "YUoHI2gDf7k",
@@ -299,8 +299,7 @@
         "y2k",
         "metalhead",
         "punk",
-        "scene",
-        "mallgoth"
+        "scene"
       ]
     },
     {
@@ -359,9 +358,7 @@
         "frutiger-aero",
         "frutiger-eco",
         "old-web",
-        "indie-sleaze",
         "olderbrothercore",
-        "mallgoth",
         "midwest-emo",
         "skater"
       ]

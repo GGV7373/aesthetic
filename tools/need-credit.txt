@@ -1,15 +1,5 @@
 
-industrial-gothic -
-indie-sleaze -
-japandi -
-jirai-kei -
-jock -
-kawaii -
-kidcore -
-kitsch -
-lo-fi -
-lovecore -
-mallgoth -
+
 mallsoft -
 maximalism -
 metalhead -
