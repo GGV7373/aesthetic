@@ -530,5 +530,33 @@
   "licence": "Unsplash License",
   "licenceUrl": "https://unsplash.com/license",
   "source": "https://unsplash.com/@masantocreative"
+ },
+ "mallsoft": {
+  "file": "assets/img/photos/mallsoft/mallsoft.jpg",
+  "artist": "@krzhck",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@krzhck"
+ },
+ "maximalism": {
+  "file": "assets/img/photos/maximalism/maximalism.jpg",
+  "artist": "@stephwilll",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@stephwilll"
+ },
+ "metalhead": {
+  "file": "assets/img/photos/metalhead/metalhead.jpg",
+  "artist": "@igrindphoto",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@igrindphoto"
+ },
+ "midwest-emo": {
+  "file": "assets/img/photos/midwest-emo/midwest-emo.jpg",
+  "artist": "@jakobethekid",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@jakobethekid"
  }
 }
