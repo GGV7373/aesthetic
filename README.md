@@ -176,8 +176,9 @@ in `data/photos.json` and credited in `CREDIT.md` and `credits.html`.
 Then run:
 
 ```bash
-node tools/validate.js       # checks references, coverage, fairness, gendered wording
-node tools/build-bundle.js   # only needed for opening from disk
+python tools/resize-photos.py  # after adding photos; needs Pillow
+node tools/validate.js         # checks references, photos, coverage, fairness, gendered wording
+node tools/build-bundle.js     # only needed for opening from disk
 ```
 
 ## Privacy
