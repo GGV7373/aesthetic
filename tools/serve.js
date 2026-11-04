@@ -23,7 +23,7 @@ http.createServer((req, res) => {
   if (!file.startsWith(ROOT)) { res.writeHead(403).end('Forbidden'); return; }
   fs.readFile(file, (err, buf) => {
     if (err) {
-      /* Same as Netlify: any missing path gets /404.html with a 404 status. */
+      /* Same as Cloudflare: any missing path gets /404.html with a 404 status. */
       fs.readFile(path.join(ROOT, '404.html'), (e, page) => {
         res.writeHead(404, { 'Content-Type': e ? 'text/plain' : TYPES['.html'] }).end(e ? '404' : page);
       });

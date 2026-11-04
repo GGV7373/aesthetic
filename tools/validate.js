@@ -152,6 +152,13 @@ aesthetics.forEach((a) => {
   });
 });
 
+/* ---------- photos ---------- */
+
+Object.entries(read('data/photos.json')).forEach(([k, p]) => {
+  if (!keys.has(k)) errors.push(`photos: unknown aesthetic "${k}".`);
+  if (!fs.existsSync(path.join(ROOT, p.file))) errors.push(`photos: ${k} is missing ${p.file}.`);
+});
+
 /* ---------- playlists ---------- */
 
 const seenVideos = new Set();

@@ -1,4 +1,4 @@
-# Read by both Cloudflare Pages and Netlify.
+# Read by Cloudflare.
 /*
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin

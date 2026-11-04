@@ -1,7 +1,7 @@
 # What Aesthetic Are You?
 
 A personality test that finds which **aesthetic world** you belong to — not which
-pictures you like. 385 statements, 50 per run, 35 hidden dimensions and 151 aesthetics
+pictures you like. 385 statements, 50 per run, 35 hidden dimensions and 124 aesthetics
 across 18 families, using Aesthetics Wiki as a reference.
 
 [estetikk.com](https://estetikk.com)
@@ -31,19 +31,19 @@ falls back to the generated, git-ignored `data/bundle.js`.
 
 ## Deploying
 
-Netlify serves the repository root as-is (`netlify.toml`), after running
-`tools/validate.js`: a data error stops the deploy. If you add a strict
+A Cloudflare Worker serves the repository root as-is (`wrangler.jsonc`). Run
+`tools/validate.js` before pushing; the repo doesn't run it on deploy. If you add a strict
 `Content-Security-Policy`, allow `img-src https://i.ytimg.com`, or track thumbnails
 quietly stop appearing.
 
 `og:image`, `og:url` and the canonical link in `index.html` point at
-`https://estetikk.netlify.app`; change them if you deploy elsewhere. `assets/og.png` is
+`https://estetikk.com`; change them if you deploy elsewhere. `assets/og.png` is
 a 1200x630 screenshot of `tools/og-image.html`.
 
 ## How it works
 
 ```
-answers  →  35 dimensions  →  match against 151 aesthetic profiles
+answers  →  35 dimensions  →  match against 124 aesthetic profiles
 ```
 
 No statement belongs to any one aesthetic. A question about old buildings can affect
@@ -92,7 +92,7 @@ rejects gendered words anywhere else.
 ## Files
 
 ```
-index.html, 404.html, netlify.toml
+index.html, 404.html, wrangler.jsonc
 assets/css/styles.css
 assets/js/
   main.js        the only script the pages include; loads the rest in order
@@ -176,8 +176,9 @@ in `data/photos.json` and credited in `CREDIT.md` and `credits.html`.
 Then run:
 
 ```bash
-node tools/validate.js       # checks references, coverage, fairness, gendered wording
-node tools/build-bundle.js   # only needed for opening from disk
+python tools/resize-photos.py  # after adding photos; needs Pillow
+node tools/validate.js         # checks references, photos, coverage, fairness, gendered wording
+node tools/build-bundle.js     # only needed for opening from disk
 ```
 
 ## Privacy
