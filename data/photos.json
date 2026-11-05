@@ -712,5 +712,19 @@
   "licence": "Unsplash License",
   "licenceUrl": "https://unsplash.com/license",
   "source": "https://unsplash.com/@behindthetmuna"
+ },
+ "lunarpunk": {
+  "file": "assets/img/photos/lunarpunk/lunarpunk.jpg",
+  "artist": "@sippakorn",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@sippakorn"
+ },
+ "biopunk": {
+  "file": "assets/img/photos/biopunk/biopunk.jpg",
+  "artist": "@nci",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@nci"
  }
 }
