@@ -71,11 +71,11 @@ profile, so you can't guess what a question measures.
 
 ### Family quizzes
 
-Each short quiz has its own page (`internet.html`, `nature.html`, `goth.html`): a copy of `index.html` with `data-quiz="<key>"` on `<main>`, so keep
+Each short quiz has its own page (`internet.html`, `nature.html`): a copy of `index.html` with `data-quiz="<key>"` on `<main>`, so keep
 their `<head>` in step with it. The full test stays on `index.html`.
 
-Each quiz is its own file in `data/quizzes/` (`internet.json`, `nature.json`,
-`goth.json`); `data/quizzes.json` only lists their keys, in the order the home page
+Each quiz is its own file in `data/quizzes/` (`internet.json`, `nature.json`);
+`data/quizzes.json` only lists their keys, in the order the home page
 shows them. A new quiz needs a file there, its key in that list, and its own page. Each has
 its own statements (ids from 9001) and returns an aesthetic from its `family`, or only
 from its `members` list if it has one. The internet quiz uses `members` to keep just
