@@ -24,6 +24,7 @@ They are resized copies of the originals.
 | Art Deco | `assets/img/photos/art-deco/art-deco.jpg` | @astro_civil | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@astro_civil) |
 | Atompunk | `assets/img/photos/atompunk/atompunk.jpg` | @octoberroses | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@octoberroses) |
 | Autumn | `assets/img/photos/autumn/autumn.jpg` | @chadmadden | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@chadmadden) |
+| Biopunk | `assets/img/photos/biopunk/biopunk.jpg` | @nci | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@nci) |
 | Bright Tertiaries | `assets/img/photos/bright-tertiaries/bright-tertiaries.jpg` | @samahosseini | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@samahosseini) |
 | Cabincore | `assets/img/photos/cabincore/cabincore.jpg` | @olivier_twwli | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@olivier_twwli) |
 | Cassette Futurism | `assets/img/photos/cassette-futurism/cassette-futurism.jpg` | @mertkahveci | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@mertkahveci) |
@@ -69,6 +70,7 @@ They are resized copies of the originals.
 | Liminal Space | `assets/img/photos/liminal-space/liminal-space.jpg` | @sgoperchuck | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@sgoperchuck) |
 | Lo-fi | `assets/img/photos/lo-fi/lo-fi.jpg` | @masantocreative | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@masantocreative) |
 | Lumberjack | `assets/img/photos/lumberjack/lumberjack.jpg` | @blairgray_94 | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@blairgray_94) |
+| Lunarpunk | `assets/img/photos/lunarpunk/lunarpunk.jpg` | @sippakorn | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@sippakorn) |
 | Mallsoft | `assets/img/photos/mallsoft/mallsoft.jpg` | @krzhck | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@krzhck) |
 | Maximalism | `assets/img/photos/maximalism/maximalism.jpg` | @stephwilll | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@stephwilll) |
 | Medievalcore | `assets/img/photos/medievalcore/medievalcore.jpg` | Diliff | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Source](https://commons.wikimedia.org/wiki/File:Leeds_Castle,_Kent,_England_3_-_May_09.jpg) |
@@ -85,15 +87,32 @@ They are resized copies of the originals.
 | Old Hollywood | `assets/img/photos/old-hollywood/old-hollywood.jpg` | @lhonkarwanhamasalih | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@lhonkarwanhamasalih) |
 | Old Money | `assets/img/photos/old-money/old-money.jpg` | @reo | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@reo) |
 | Old Web | `assets/img/photos/old-web/old-web.jpg` | @dogherine | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@dogherine) |
+| Older Siblingcore | `assets/img/photos/olderbrothercore/olderbrothercore.jpg` | @avansear | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@avansear) |
+| Pastel Goth | `assets/img/photos/pastel-goth/pastel-goth.jpg` | @kianaalirezaei | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@kianaalirezaei) |
 | Prairiecore | `assets/img/photos/prairiecore/prairiecore.jpg` | @house_42 | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@house_42) |
+| Princesscore | `assets/img/photos/princesscore/princesscore.jpg` | @samatasanty | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@samatasanty) |
+| Punk | `assets/img/photos/punk/punk.jpg` | @futurewise_lat | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@futurewise_lat) |
+| Rave | `assets/img/photos/rave/rave.jpg` | @davidschultz | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@davidschultz) |
 | Regency | `assets/img/photos/regency/regency.jpg` | @mdbeckwith | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@mdbeckwith) |
+| Retrofuturism | `assets/img/photos/retrofuturism/retrofuturism.jpg` | @fotomicha | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@fotomicha) |
 | Romantic Academia | `assets/img/photos/romantic-academia/romantic-academia.jpg` | @arjwen | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@arjwen) |
+| Royalcore | `assets/img/photos/royalcore/royalcore.jpg` | @arizonanthony | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@arizonanthony) |
+| Scandinavian Design | `assets/img/photos/scandinavian-design/scandinavian-design.jpg` | @adryan_studio | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@adryan_studio) |
+| Shabby Chic | `assets/img/photos/shabby-chic/shabby-chic.jpg` | @bettysubrizi_ | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@bettysubrizi_) |
+| Sinofuturism | `assets/img/photos/sinofuturism/sinofuturism.jpg` | @darmau | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@darmau) |
+| Skater | `assets/img/photos/skater/skater.jpg` | @zbao | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@zbao) |
+| Soft Apocalypse | `assets/img/photos/soft-apocalypse/soft-apocalypse.jpg` | @borna_hrzina | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@borna_hrzina) |
 | Solarpunk | `assets/img/photos/solarpunk/solarpunk.jpg` | @dereksutton | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@dereksutton) |
 | Southern Gothic | `assets/img/photos/southern-gothic/southern-gothic.jpg` | @ronan18 | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@ronan18) |
+| Sovietwave | `assets/img/photos/sovietwave/sovietwave.jpg` | @npi | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@npi) |
+| Space Age | `assets/img/photos/space-age/space-age.jpg` | @mitramehr | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@mitramehr) |
 | Spacecore | `assets/img/photos/spacecore/spacecore.jpg` | @nattgw | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@nattgw) |
 | Steampunk | `assets/img/photos/steampunk/steampunk.jpg` | @tama66 | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@tama66) |
 | Synthwave | `assets/img/photos/synthwave/synthwave.jpg` | @mjh_shikder | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@mjh_shikder) |
+| Technozen | `assets/img/photos/technozen/technozen.jpg` | @nublson | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@nublson) |
 | Tiki | `assets/img/photos/tiki/tiki.jpg` | @drag88 | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@drag88) |
+| Urbancore | `assets/img/photos/urbancore/urbancore.jpg` | @nicknight | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@nicknight) |
 | Vaporwave | `assets/img/photos/vaporwave/vaporwave.jpg` | @nixaov | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@nixaov) |
+| Weirdcore | `assets/img/photos/weirdcore/weirdcore.jpg` | @behindthetmuna | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@behindthetmuna) |
 | Western | `assets/img/photos/western/western.jpg` | @luishinojosag | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@luishinojosag) |
 | Y2K | `assets/img/photos/y2k/y2k.jpg` | Hanul | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0) | [Source](https://commons.wikimedia.org/wiki/File:Mac_OS_9_on_iMac_G3.jpg) |

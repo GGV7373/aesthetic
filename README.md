@@ -1,8 +1,8 @@
 # What Aesthetic Are You?
 
 A personality test that finds which **aesthetic world** you belong to — not which
-pictures you like. 385 statements, 50 per run, 35 hidden dimensions and 124 aesthetics
-across 18 families, using Aesthetics Wiki as a reference.
+pictures you like. 385 statements, 50 per run, 35 hidden dimensions and 106 aesthetics
+across 13 families, using Aesthetics Wiki as a reference.
 
 [estetikk.com](https://estetikk.com)
 (Estetikk is Norwegian for "aesthetics".)
@@ -31,7 +31,8 @@ falls back to the generated, git-ignored `data/bundle.js`.
 
 ## Deploying
 
-A Cloudflare Worker serves the repository root as-is (`wrangler.jsonc`). Run
+A Cloudflare Worker serves the repository root (`wrangler.jsonc`), except what
+`.assetsignore` leaves out, such as `tools/`. Run
 `tools/validate.js` before pushing; the repo doesn't run it on deploy. If you add a strict
 `Content-Security-Policy`, allow `img-src https://i.ytimg.com`, or track thumbnails
 quietly stop appearing.
@@ -43,7 +44,7 @@ a 1200x630 screenshot of `tools/og-image.html`.
 ## How it works
 
 ```
-answers  →  35 dimensions  →  match against 124 aesthetic profiles
+answers  →  35 dimensions  →  match against 106 aesthetic profiles
 ```
 
 No statement belongs to any one aesthetic. A question about old buildings can affect
@@ -71,28 +72,29 @@ profile, so you can't guess what a question measures.
 
 ### Family quizzes
 
-Each short quiz has its own page (`internet.html`, `nature.html`, `goth.html`): a copy of `index.html` with `data-quiz="<key>"` on `<main>`, so keep
+Each short quiz has its own page (`quizzes/internet.html`, `quizzes/future.html`, `quizzes/nature.html`): a copy of `index.html` with `<base href="../">` and `data-quiz="<key>"` on `<main>`, so keep
 their `<head>` in step with it. The full test stays on `index.html`.
 
-Each quiz is its own file in `data/quizzes/` (`internet.json`, `nature.json`,
-`goth.json`); `data/quizzes.json` only lists their keys, in the order the home page
+Each quiz is its own file in `data/quizzes/` (`internet.json`, `future.json`, `nature.json`);
+`data/quizzes.json` only lists their keys, in the order the home page
 shows them. A new quiz needs a file there, its key in that list, and its own page. Each has
 its own statements (ids from 9001) and returns an aesthetic from its `family`, or only
-from its `members` list if it has one. The internet quiz uses `members` to keep just
-the Frutiger and Y2K aesthetics. Members are centred on their group's average before
+from its `members` list if it has one. The internet and future quizzes use `members` to
+pick which aesthetics they include. Members are centred on their group's average before
 scoring, so the most neutral one doesn't win by default.
 
 ### Gender-neutral by default
 
-The test never asks your gender. Aesthetics with gendered wiki names (Soft Girl, Mob
-Wife…) show a neutral name by default; the original wording lives in a `gendered` block
+The test never asks your gender. Aesthetics with gendered wiki names (Olderbrothercore)
+show a neutral name by default; the original wording lives in a `gendered` block
 and a switch on the page turns it on. Scoring is identical either way. `validate.js`
 rejects gendered words anywhere else.
 
 ## Files
 
 ```
-index.html, 404.html, wrangler.jsonc
+index.html, 404.html, wrangler.jsonc, _headers, _redirects
+quizzes/           one page per family quiz
 assets/css/styles.css
 assets/js/
   main.js        the only script the pages include; loads the rest in order
@@ -114,8 +116,10 @@ data/
   scoring.json     dimensions, groups, preferences, matching settings
   narrative.json   phrase banks for the result text
   playlists.json   hand-picked YouTube videos
+  photos.json      photo file, author and licence per aesthetic
 tools/
   serve.js, build-bundle.js, validate.js
+  resize-photos.py   shrinks the photos in place
   og-image.html      source for assets/og.png
 ```
 
@@ -145,7 +149,7 @@ JavaScript changes.
 ```
 
 Leave out dimensions that don't matter. Keep values between 0.05 and 0.95. Use one of
-the existing 18 families.
+the existing 13 families.
 
 **A statement:** add it to `data/questions.json` (or a quiz in `data/quizzes/`).
 Weights run −3 to 3. Write both "agree pushes up" and "agree pushes down" statements for
@@ -168,10 +172,11 @@ YouTube search button.
   "mood": "One line on the feeling of it.", "aesthetics": ["forestpunk", "cabincore"] }
 ```
 
-Aesthetics Wiki and Pinterest images are not freely licensed, so results show a generated
-mood plate and link to the wiki page. The home page gallery and "surprise me" card use
-freely licensed Wikimedia Commons and Unsplash photos instead (`assets/img/photos/<aesthetic>/`), listed
-in `data/photos.json` and credited in `CREDIT.md` and `credits.html`.
+Aesthetics Wiki and Pinterest images are not freely licensed, so the site uses freely
+licensed Wikimedia Commons and Unsplash photos instead (`assets/img/photos/<aesthetic>/`), listed
+in `data/photos.json` and credited in `CREDIT.md` and `credits.html`. They appear in the home
+page gallery, the "surprise me" card and on results. A result with no photo shows a generated
+mood plate, and every result links to the wiki page.
 
 Then run:
 

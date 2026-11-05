@@ -1,0 +1,231 @@
+{
+  "key": "future",
+  "title": "Which future aesthetic are you?",
+  "family": "Punk and Futurism",
+  "members": [
+    "atompunk",
+    "decopunk",
+    "dieselpunk",
+    "steampunk",
+    "cyberpunk",
+    "solarpunk",
+    "cassette-futurism",
+    "spacecore",
+    "sovietwave"
+  ],
+  "groupLabel": "The future",
+  "resultLabel": "Your future aesthetic",
+  "blurb": "Atompunk, Decopunk, Cyberpunk, Solarpunk and more. Statements about machines, cities and the tomorrow you would pick.",
+  "questions": [
+    {
+      "id": 9301,
+      "group": "future",
+      "cluster": "future-1",
+      "text": "The future will mostly turn out better than people fear.",
+      "dimensions": { "optimism": 2, "darkness": -1, "melancholy": -1 }
+    },
+    {
+      "id": 9302,
+      "group": "future",
+      "cluster": "future-2",
+      "text": "A neon city in the rain at night feels like home to me.",
+      "dimensions": { "urban": 2, "darkness": 2, "digital": 1, "nature": -1 }
+    },
+    {
+      "id": 9303,
+      "group": "future",
+      "cluster": "future-3",
+      "text": "I'd pick a city full of gardens over one full of screens.",
+      "dimensions": { "nature": 2, "organic": 2, "digital": -2 }
+    },
+    {
+      "id": 9304,
+      "group": "future",
+      "cluster": "future-4",
+      "text": "A machine should look beautiful, even if that costs more.",
+      "dimensions": { "ornament": 2, "refinement": 2, "minimalism": -1 }
+    },
+    {
+      "id": 9305,
+      "group": "future",
+      "cluster": "future-5",
+      "text": "I like machines plain and honest. If it works, it needs no decoration.",
+      "dimensions": { "minimalism": 2, "ornament": -2, "realism": 1 }
+    },
+    {
+      "id": 9306,
+      "group": "future",
+      "cluster": "future-6",
+      "text": "I'd rather repair an old engine than buy a new one.",
+      "dimensions": { "craft": 2, "industrial": 1, "retro": 1, "modernity": -1 }
+    },
+    {
+      "id": 9307,
+      "group": "future",
+      "cluster": "future-7",
+      "text": "Chunky buttons and blinking lights beat any touchscreen.",
+      "dimensions": { "retro": 2, "nostalgia": 1, "modernity": -2 }
+    },
+    {
+      "id": 9308,
+      "group": "future",
+      "cluster": "future-8",
+      "text": "Some days I miss a future that never actually happened.",
+      "dimensions": { "nostalgia": 2, "melancholy": 2, "retro": 1 }
+    },
+    {
+      "id": 9309,
+      "group": "future",
+      "cluster": "future-9",
+      "text": "I'd board a one-way ship to another planet.",
+      "dimensions": { "adventure": 3, "futurism": 1, "comfort": -2 }
+    },
+    {
+      "id": 9310,
+      "group": "future",
+      "cluster": "future-10",
+      "text": "I'd rather stay on a green Earth than leave for the stars.",
+      "dimensions": { "nature": 2, "organic": 1, "adventure": -1, "comfort": 1 }
+    },
+    {
+      "id": 9311,
+      "group": "future",
+      "cluster": "future-11",
+      "text": "Technology is at its best when a whole neighbourhood shares it.",
+      "dimensions": { "community": 3, "individualism": -2, "optimism": 1 }
+    },
+    {
+      "id": 9312,
+      "group": "future",
+      "cluster": "future-12",
+      "text": "If everything broke down, I'd look after myself and my own crew first.",
+      "dimensions": { "individualism": 2, "community": -1, "optimism": -1, "chaos": 1 }
+    },
+    {
+      "id": 9313,
+      "group": "future",
+      "cluster": "future-13",
+      "text": "A little danger makes a city more interesting.",
+      "dimensions": { "chaos": 2, "order": -2, "darkness": 1 }
+    },
+    {
+      "id": 9314,
+      "group": "future",
+      "cluster": "future-14",
+      "text": "A city should run like clockwork, with everything in its place.",
+      "dimensions": { "order": 2, "chaos": -2, "architecture": 1 }
+    },
+    {
+      "id": 9315,
+      "group": "future",
+      "cluster": "future-15",
+      "text": "Grand towers, sweeping curves and gold trim are what tomorrow should look like.",
+      "dimensions": { "architecture": 2, "ornament": 2, "refinement": 1, "urban": 1 }
+    },
+    {
+      "id": 9316,
+      "group": "future",
+      "cluster": "future-16",
+      "text": "I'd happily dress up for a night at a glittering skyline hotel.",
+      "dimensions": { "refinement": 2, "social": 2, "ornament": 1, "comfort": 1 }
+    },
+    {
+      "id": 9317,
+      "group": "future",
+      "cluster": "future-17",
+      "text": "Brass gears and leather straps appeal to me more than chrome.",
+      "dimensions": { "history": 2, "craft": 2, "ornament": 1, "modernity": -1 }
+    },
+    {
+      "id": 9318,
+      "group": "future",
+      "cluster": "future-18",
+      "text": "Smooth shapes and bright pastel colours make me feel hopeful.",
+      "dimensions": { "optimism": 2, "retro": 1, "futurism": 1, "darkness": -1 }
+    },
+    {
+      "id": 9319,
+      "group": "future",
+      "cluster": "future-19",
+      "text": "The old dream of flying cars and robot helpers still makes me smile.",
+      "dimensions": { "retro": 2, "optimism": 2, "whimsy": 1, "technology": 1 }
+    },
+    {
+      "id": 9320,
+      "group": "future",
+      "cluster": "future-20",
+      "text": "The bigger and heavier the machine, the better.",
+      "dimensions": { "industrial": 3, "organic": -1, "maximalism": 1 }
+    },
+    {
+      "id": 9321,
+      "group": "future",
+      "cluster": "future-21",
+      "text": "I find a rusting factory or an old monument strangely beautiful.",
+      "dimensions": { "melancholy": 2, "industrial": 2, "nostalgia": 1, "optimism": -1 }
+    },
+    {
+      "id": 9322,
+      "group": "future",
+      "cluster": "future-22",
+      "text": "Empty concrete blocks at dusk make me feel peaceful.",
+      "dimensions": { "solitude": 2, "melancholy": 2, "urban": 1, "social": -1 }
+    },
+    {
+      "id": 9323,
+      "group": "future",
+      "cluster": "future-23",
+      "text": "I'd rather spend the evening alone at a terminal than at a party.",
+      "dimensions": { "solitude": 2, "social": -2, "digital": 1 }
+    },
+    {
+      "id": 9324,
+      "group": "future",
+      "cluster": "future-24",
+      "text": "Living mostly online wouldn't bother me at all.",
+      "dimensions": { "digital": 3, "modernity": 1, "nature": -1 }
+    },
+    {
+      "id": 9325,
+      "group": "future",
+      "cluster": "future-25",
+      "text": "Newest is usually best. Old technology belongs in a museum.",
+      "dimensions": { "modernity": 2, "futurism": 2, "retro": -2, "nostalgia": -1 }
+    },
+    {
+      "id": 9326,
+      "group": "future",
+      "cluster": "future-26",
+      "text": "Comfort matters less to me than seeing what's out there.",
+      "dimensions": { "adventure": 2, "comfort": -2, "intellect": 1 }
+    },
+    {
+      "id": 9327,
+      "group": "future",
+      "cluster": "future-27",
+      "text": "Working out how something works is half the fun of owning it.",
+      "dimensions": { "intellect": 2, "craft": 2, "technology": 1 }
+    },
+    {
+      "id": 9328,
+      "group": "future",
+      "cluster": "future-28",
+      "text": "Solar panels and living walls excite me more than rockets.",
+      "dimensions": { "organic": 2, "nature": 1, "optimism": 1, "adventure": -1 }
+    },
+    {
+      "id": 9329,
+      "group": "future",
+      "cluster": "future-29",
+      "text": "Rules made by big companies are there to be broken.",
+      "dimensions": { "individualism": 2, "chaos": 2, "tradition": -2, "order": -1 }
+    },
+    {
+      "id": 9330,
+      "group": "future",
+      "cluster": "future-30",
+      "text": "Old traditions deserve a place in any future worth having.",
+      "dimensions": { "tradition": 2, "history": 1, "modernity": -1 }
+    }
+  ]
+}

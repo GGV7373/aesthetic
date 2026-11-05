@@ -593,5 +593,138 @@
   "licence": "Unsplash License",
   "licenceUrl": "https://unsplash.com/license",
   "source": "https://unsplash.com/@reo"
+ },
+ "olderbrothercore": {
+  "file": "assets/img/photos/olderbrothercore/olderbrothercore.jpg",
+  "artist": "@avansear",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@avansear"
+ },
+ "pastel-goth": {
+  "file": "assets/img/photos/pastel-goth/pastel-goth.jpg",
+  "artist": "@kianaalirezaei",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@kianaalirezaei"
+ },
+ "princesscore": {
+  "file": "assets/img/photos/princesscore/princesscore.jpg",
+  "artist": "@samatasanty",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@samatasanty"
+ },
+ "punk": {
+  "file": "assets/img/photos/punk/punk.jpg",
+  "artist": "@futurewise_lat",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@futurewise_lat"
+ },
+ "rave": {
+  "file": "assets/img/photos/rave/rave.jpg",
+  "artist": "@davidschultz",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@davidschultz"
+ },
+ "retrofuturism": {
+  "file": "assets/img/photos/retrofuturism/retrofuturism.jpg",
+  "artist": "@fotomicha",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@fotomicha"
+ },
+ "royalcore": {
+  "file": "assets/img/photos/royalcore/royalcore.jpg",
+  "artist": "@arizonanthony",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@arizonanthony"
+ },
+ "scandinavian-design": {
+  "file": "assets/img/photos/scandinavian-design/scandinavian-design.jpg",
+  "artist": "@adryan_studio",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@adryan_studio"
+ },
+ "shabby-chic": {
+  "file": "assets/img/photos/shabby-chic/shabby-chic.jpg",
+  "artist": "@bettysubrizi_",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@bettysubrizi_"
+ },
+ "skater": {
+  "file": "assets/img/photos/skater/skater.jpg",
+  "artist": "@zbao",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@zbao"
+ },
+ "sinofuturism": {
+  "file": "assets/img/photos/sinofuturism/sinofuturism.jpg",
+  "artist": "@darmau",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@darmau"
+ },
+ "soft-apocalypse": {
+  "file": "assets/img/photos/soft-apocalypse/soft-apocalypse.jpg",
+  "artist": "@borna_hrzina",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@borna_hrzina"
+ },
+ "sovietwave": {
+  "file": "assets/img/photos/sovietwave/sovietwave.jpg",
+  "artist": "@npi",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@npi"
+ },
+ "space-age": {
+  "file": "assets/img/photos/space-age/space-age.jpg",
+  "artist": "@mitramehr",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@mitramehr"
+ },
+ "technozen": {
+  "file": "assets/img/photos/technozen/technozen.jpg",
+  "artist": "@nublson",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@nublson"
+ },
+ "urbancore": {
+  "file": "assets/img/photos/urbancore/urbancore.jpg",
+  "artist": "@nicknight",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@nicknight"
+ },
+ "weirdcore": {
+  "file": "assets/img/photos/weirdcore/weirdcore.jpg",
+  "artist": "@behindthetmuna",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@behindthetmuna"
+ },
+ "lunarpunk": {
+  "file": "assets/img/photos/lunarpunk/lunarpunk.jpg",
+  "artist": "@sippakorn",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@sippakorn"
+ },
+ "biopunk": {
+  "file": "assets/img/photos/biopunk/biopunk.jpg",
+  "artist": "@nci",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@nci"
  }
 }

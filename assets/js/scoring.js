@@ -186,7 +186,7 @@
     return ranked;
   }
 
-  /* The data a family quiz (internet, goth, ...) scores against.
+  /* The data a family quiz (internet, nature, ...) scores against.
 
      Every member of a family shares the family's base traits - all internet
      aesthetics are digital, all goth ones dark - so against raw profiles the

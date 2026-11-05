@@ -1302,27 +1302,21 @@ body:not(:has(.topbar)) .quiz__head {
   --mood3: #4f9a7a;
 }
 
-.theme-goth {
-  --paper: linear-gradient(160deg, #1a1a1d 0%, #222226 48%, #17171a 100%);
-  --bg:          #1b1b1e;
-  --bg-sunk:     #141416;
-  --surface:     #26262a;
-  --ink:         #e6e4e8;
-  --ink-soft:    #b4b1b8;
-  --ink-faint:   #8f8c94;
-  --line:        rgba(230, 228, 232, 0.13);
-  --line-strong: rgba(230, 228, 232, 0.26);
-  --accent:      #b9b3c3;
-  --accent-deep: #e6e4e8;
-  --accent-soft: rgba(169, 163, 179, 0.12);
-  --primary-bg:  linear-gradient(120deg, #5a5560, #3a3640 60%, #2a2530);
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 1px 2px rgba(0, 0, 0, 0.35), 0 12px 32px -18px rgba(0, 0, 0, 0.75);
-  --shadow-lg: 0 2px 4px rgba(0, 0, 0, 0.4), 0 28px 60px -30px rgba(0, 0, 0, 0.8);
-  --mood1: #3a3a42;
-  --mood2: #4b3f55;
-  --mood3: #2c2c30;
-  color-scheme: dark;
+.theme-future {
+  --paper: linear-gradient(160deg, #fdf1dc 0%, #eaf2e6 48%, #cfeae8 100%);
+  --bg:          #f6f0e1;
+  --bg-sunk:     #e8e2cf;
+  --surface:     #fffbf2;
+  --ink:         #16252b;
+  --ink-soft:    #38494f;
+  --ink-faint:   #55676d;
+  --accent:      #b4471c;
+  --accent-deep: #0d5f66;
+  --accent-soft: rgba(180, 71, 28, 0.1);
+  --primary-bg:  linear-gradient(120deg, #bf4a1a, #8f3f52 55%, #0d6f78);
+  --mood1: #ff8a3d;
+  --mood2: #2fb8b0;
+  --mood3: #f2c94c;
 }
 
 .theme-internet {
