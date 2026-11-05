@@ -492,6 +492,7 @@ a.btn { text-decoration: none; }
   .intro__section { margin-top: 3.6rem; }
   .intro__grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
   .intro__card { padding: 1.5rem 1.6rem; }
+  .intro__grid--home { grid-template-columns: repeat(3, 1fr); }
   .intro__card--quiz { min-height: 13rem; }
   .intro__card--main { grid-column: 1 / -1; }
   .intro__card--main .intro__cardtitle { font-size: 1.7rem; }
@@ -507,7 +508,7 @@ a.btn { text-decoration: none; }
 }
 
 @media (min-width: 64rem) {
-  .intro__grid:not(.intro__grid--home) { grid-template-columns: repeat(3, 1fr); }
+  .intro__grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 /* ---------- preferences ---------- */
@@ -1299,6 +1300,23 @@ body:not(:has(.topbar)) .quiz__head {
   --mood1: #7fb069;
   --mood2: #c8b560;
   --mood3: #4f9a7a;
+}
+
+.theme-future {
+  --paper: linear-gradient(160deg, #fdf1dc 0%, #eaf2e6 48%, #cfeae8 100%);
+  --bg:          #f6f0e1;
+  --bg-sunk:     #e8e2cf;
+  --surface:     #fffbf2;
+  --ink:         #16252b;
+  --ink-soft:    #38494f;
+  --ink-faint:   #55676d;
+  --accent:      #b4471c;
+  --accent-deep: #0d5f66;
+  --accent-soft: rgba(180, 71, 28, 0.1);
+  --primary-bg:  linear-gradient(120deg, #bf4a1a, #8f3f52 55%, #0d6f78);
+  --mood1: #ff8a3d;
+  --mood2: #2fb8b0;
+  --mood3: #f2c94c;
 }
 
 .theme-internet {

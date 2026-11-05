@@ -1,7 +1,7 @@
 # What Aesthetic Are You?
 
 A personality test that finds which **aesthetic world** you belong to — not which
-pictures you like. 385 statements, 50 per run, 35 hidden dimensions and 103 aesthetics
+pictures you like. 385 statements, 50 per run, 35 hidden dimensions and 104 aesthetics
 across 18 families, using Aesthetics Wiki as a reference.
 
 [estetikk.com](https://estetikk.com)
@@ -43,7 +43,7 @@ a 1200x630 screenshot of `tools/og-image.html`.
 ## How it works
 
 ```
-answers  →  35 dimensions  →  match against 103 aesthetic profiles
+answers  →  35 dimensions  →  match against 104 aesthetic profiles
 ```
 
 No statement belongs to any one aesthetic. A question about old buildings can affect
@@ -71,10 +71,10 @@ profile, so you can't guess what a question measures.
 
 ### Family quizzes
 
-Each short quiz has its own page (`quizzes/internet.html`, `quizzes/nature.html`): a copy of `index.html` with `<base href="../">` and `data-quiz="<key>"` on `<main>`, so keep
+Each short quiz has its own page (`quizzes/internet.html`, `quizzes/future.html`, `quizzes/nature.html`): a copy of `index.html` with `<base href="../">` and `data-quiz="<key>"` on `<main>`, so keep
 their `<head>` in step with it. The full test stays on `index.html`.
 
-Each quiz is its own file in `data/quizzes/` (`internet.json`, `nature.json`);
+Each quiz is its own file in `data/quizzes/` (`internet.json`, `future.json`, `nature.json`);
 `data/quizzes.json` only lists their keys, in the order the home page
 shows them. A new quiz needs a file there, its key in that list, and its own page. Each has
 its own statements (ids from 9001) and returns an aesthetic from its `family`, or only
