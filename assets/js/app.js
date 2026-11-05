@@ -16,7 +16,7 @@
   }
 
   /* Each page keeps its own unfinished run: index.html the full test,
-     internet.html etc. their family quiz (set from <main data-quiz> in boot). */
+     quizzes/internet.html etc. their family quiz (set from <main data-quiz> in boot). */
   var STORE_SESSION = 'aq.session.v3';
   var STORE_HISTORY = 'aq.previousQuestionIds.v3';
   var STORE_PREFS = 'aq.preferences.v1';
@@ -539,12 +539,12 @@
       ])
     ]);
 
-    /* One card per family quiz, each linking to its own page (internet.html, ...). */
+    /* One card per family quiz, each linking to its own page (quizzes/internet.html, ...). */
     var familyCards = data.familyQuizzes.map(function (qz) {
       return el('article', { class: 'intro__card intro__card--quiz' }, [
         el('h3', { class: 'intro__cardtitle', text: qz.key.charAt(0).toUpperCase() + qz.key.slice(1) + ' aesthetics' }),
         el('p', { text: qz.blurb }),
-        el('a', { class: 'btn btn--primary', href: qz.key + '.html' }, ['Take the quiz'])
+        el('a', { class: 'btn btn--primary', href: 'quizzes/' + qz.key + '.html' }, ['Take the quiz'])
       ]);
     });
 
@@ -1227,7 +1227,7 @@
         el('p', { class: 'eyebrow', text: AQ.quizMembers(data, qz).length + ' aesthetics' }),
         el('h3', { class: 'intro__cardtitle', text: qz.title }),
         el('p', { text: qz.blurb }),
-        el('a', { class: 'btn btn--primary', href: qz.key + '.html' },
+        el('a', { class: 'btn btn--primary', href: 'quizzes/' + qz.key + '.html' },
           ['Open · ' + qz.questions.length])
       ]));
     });
@@ -1466,7 +1466,7 @@
       /* Old shared links were index.html?quiz=internet&seed=...; send them to the quiz's page. */
       var legacyQuiz = data.quizByKey[queryParam('quiz')];
       if (!root.dataset.quiz && legacyQuiz) {
-        global.location.replace(legacyQuiz.key + '.html' +
+        global.location.replace('quizzes/' + legacyQuiz.key + '.html' +
           global.location.search.replace(/[?&]quiz=[^&#]*/, '').replace(/^&/, '?'));
         return;
       }

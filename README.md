@@ -71,7 +71,7 @@ profile, so you can't guess what a question measures.
 
 ### Family quizzes
 
-Each short quiz has its own page (`internet.html`, `nature.html`): a copy of `index.html` with `data-quiz="<key>"` on `<main>`, so keep
+Each short quiz has its own page (`quizzes/internet.html`, `quizzes/nature.html`): a copy of `index.html` with `<base href="../">` and `data-quiz="<key>"` on `<main>`, so keep
 their `<head>` in step with it. The full test stays on `index.html`.
 
 Each quiz is its own file in `data/quizzes/` (`internet.json`, `nature.json`);

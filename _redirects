@@ -1,0 +1,5 @@
+# Read by Cloudflare. Links shared before the quiz pages moved to /quizzes/.
+/internet.html /quizzes/internet.html 301
+/internet /quizzes/internet.html 301
+/nature.html /quizzes/nature.html 301
+/nature /quizzes/nature.html 301
