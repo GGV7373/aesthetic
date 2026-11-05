@@ -1,7 +1,7 @@
 # What Aesthetic Are You?
 
 A personality test that finds which **aesthetic world** you belong to — not which
-pictures you like. 385 statements, 50 per run, 35 hidden dimensions and 124 aesthetics
+pictures you like. 385 statements, 50 per run, 35 hidden dimensions and 103 aesthetics
 across 18 families, using Aesthetics Wiki as a reference.
 
 [estetikk.com](https://estetikk.com)
@@ -43,7 +43,7 @@ a 1200x630 screenshot of `tools/og-image.html`.
 ## How it works
 
 ```
-answers  →  35 dimensions  →  match against 124 aesthetic profiles
+answers  →  35 dimensions  →  match against 103 aesthetic profiles
 ```
 
 No statement belongs to any one aesthetic. A question about old buildings can affect
@@ -84,8 +84,8 @@ scoring, so the most neutral one doesn't win by default.
 
 ### Gender-neutral by default
 
-The test never asks your gender. Aesthetics with gendered wiki names (Soft Girl, Mob
-Wife…) show a neutral name by default; the original wording lives in a `gendered` block
+The test never asks your gender. Aesthetics with gendered wiki names (Olderbrothercore)
+show a neutral name by default; the original wording lives in a `gendered` block
 and a switch on the page turns it on. Scoring is identical either way. `validate.js`
 rejects gendered words anywhere else.
 

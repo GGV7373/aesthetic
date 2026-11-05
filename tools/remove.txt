@@ -26,3 +26,22 @@ mallgoth
 mob-wife
 mod 
 nightcore
+
+pin-up
+psychedelia 
+rivethead 
+rockabilly 
+romantic-goth 
+scene 
+scenecore 
+soft-girl 
+soft-grunge
+tacticool 
+trad-goth 
+traumacore 
+twee 
+tweencore
+visual-kei
+whimsigothic 
+y2k-futurism 
+yami-kawaii -
