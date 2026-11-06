@@ -1,10 +1,10 @@
 {
   "openers": [
     "Read together, your fifty answers say this: you",
-    "The pattern underneath your answers is steady — you",
+    "Your answers point clearly in one direction — you",
     "Across the fifty statements, you",
     "Your answers keep pointing the same way: you",
-    "Underneath the statements themselves, you"
+    "Taken together, your answers show that you"
   ],
   "matchLead": [
     "{name} lands on top because you",
@@ -20,7 +20,7 @@
     "beyond": "The widest gap: you are more \"{it}\" than it is.",
     "closing": "{primary}, with a pull towards {others}."
   },
-  "tension": "You are also more \"{side}\" than the purest version of {name} tends to be, and that is what makes your variant your own.",
+  "tension": "You are also more \"{side}\" than a typical fan of {name}, and that is what makes your version your own.",
   "phraseGroups": [
     ["nature", "organic", "rural", "urban"],
     ["technology", "digital", "futurism", "industrial"],
@@ -37,83 +37,83 @@
   ],
   "dimensionPhrases": {
     "nature": {
-      "high": ["seek out places where nature has the last word", "measure a place by how much life is going on around it"],
-      "low": ["are most at ease where people have finished the job", "don't need nature around you to feel well"]
+      "high": ["look for places where nature is in charge", "like a place better the more plants and animals live there"],
+      "low": ["feel best in places that are fully built and tidy", "don't need nature around you to feel well"]
     },
     "organic": {
       "high": ["prefer materials that live and change", "like surfaces that carry the marks of time"],
-      "low": ["like clean, stable surfaces that stay put", "are drawn to the synthetic and the predictable"]
+      "low": ["like clean, stable surfaces that stay put", "like things that are man-made and predictable"]
     },
     "rural": {
-      "high": ["belong somewhere within reach of a field or a wood", "count distance from the nearest neighbour as a feature"],
+      "high": ["want a field or a forest close by", "see living far from the neighbours as a good thing"],
       "low": ["need something larger than a village around you", "want things within easy reach"]
     },
     "urban": {
-      "high": ["come alive in cities and movement", "read a city the way other people read a landscape"],
-      "low": ["get little out of the pace of a city", "steer away from places where everyone is"]
+      "high": ["come alive in cities and movement", "enjoy a city the way other people enjoy a view of nature"],
+      "low": ["get little out of the pace of a city", "stay away from busy places"]
     },
     "technology": {
-      "high": ["are genuinely curious about how machines work", "count technology as part of what can be beautiful"],
-      "low": ["keep technology at arm's length", "trust what doesn't need power most"]
+      "high": ["are genuinely curious about how machines work", "think technology can be beautiful"],
+      "low": ["keep technology at a distance", "trust things that don't need electricity"]
     },
     "digital": {
-      "high": ["have a real relationship with what happens on a screen", "remember digital rooms as well as physical ones"],
-      "low": ["want things in your hands, not in an app", "feel the digital takes more than it gives"]
+      "high": ["have a real relationship with what happens on a screen", "remember places in games and online as well as real places"],
+      "low": ["want things in your hands, not in an app", "feel screens take more than they give"]
     },
     "futurism": {
       "high": ["look ahead rather than back", "like the thought that everything could be different"],
-      "low": ["have little faith that new means better", "look for answers in what already exists"]
+      "low": ["don't believe new always means better", "look for answers in what already exists"]
     },
     "industrial": {
       "high": ["find beauty in things built for work", "like steel, concrete and visible structure"],
-      "low": ["steer clear of the hard and mechanical", "want softness where others accept steel"]
+      "low": ["stay away from things that are hard and machine-like", "want soft things where others are fine with steel"]
     },
     "history": {
-      "high": ["choose places with a past over places without one", "read buildings and objects as stories"],
+      "high": ["choose places with a past over places without one", "see a story in old buildings and objects"],
       "low": ["don't feel bound by what came before", "live in the present without missing anything"]
     },
     "nostalgia": {
-      "high": ["carry a longing for something that was", "are moved by traces of earlier lives, including other people's"],
-      "low": ["see little point in missing the old", "throw things out without sentiment"]
+      "high": ["miss times that are gone", "are moved by signs of how people used to live, even strangers"],
+      "low": ["don't see the point in missing the past", "throw things out without feeling sad about it"]
     },
     "retro": {
-      "high": ["are drawn to the look of decades before your own", "like things that are plainly dated"],
-      "low": ["want things to look like their own time", "have little patience for copies of the old"]
+      "high": ["are drawn to the look of decades before your own", "like things that clearly look old-fashioned"],
+      "low": ["want things to look like their own time", "don't like new things made to look old"]
     },
     "tradition": {
-      "high": ["value custom and continuity", "like that something is done because it always has been"],
-      "low": ["are barely bound by how things are usually done", "would rather find your own way than inherit one"]
+      "high": ["value traditions and doing things the same way over time", "like that something is done because it always has been"],
+      "low": ["don't care much how things are usually done", "would rather find your own way than inherit one"]
     },
     "modernity": {
-      "high": ["like the new, the clean and the well-working", "want things that don't carry someone else's wear"],
-      "low": ["want patina rather than perfection", "avoid what is too new and too smooth"]
+      "high": ["like things that are new, clean and work well", "want things that don't carry someone else's wear"],
+      "low": ["like things that show their age more than things that look perfect", "avoid things that are too new and too smooth"]
     },
     "mystery": {
-      "high": ["like it best when something stays unexplained", "are pulled towards the half-hidden"],
-      "low": ["want answers rather than atmosphere", "are little drawn to the enigmatic"]
+      "high": ["like it best when something stays unexplained", "are drawn to things that are half hidden"],
+      "low": ["want answers rather than atmosphere", "aren't very drawn to mysteries"]
     },
     "fantasy": {
-      "high": ["keep one foot in worlds that don't exist", "think in images rather than in facts"],
+      "high": ["keep one foot in worlds that don't exist", "think in pictures more than in facts"],
       "low": ["stay with what actually is", "have little need for invented worlds"]
     },
     "realism": {
-      "high": ["want things that are real over things that are pretty", "value function and truth"],
-      "low": ["let atmosphere outweigh sobriety", "would rather have the beautiful than the correct"]
+      "high": ["want things that are real over things that are pretty", "care about what works and what is true"],
+      "low": ["care more about mood and feeling than about plain facts", "would rather have the beautiful than the correct"]
     },
     "melancholy": {
-      "high": ["find something good in the heavy-hearted", "like beauty with sorrow in it"],
-      "low": ["keep away from the heavy", "are drawn to the light and the easy"]
+      "high": ["find something good in sadness", "like beauty with sorrow in it"],
+      "low": ["keep away from sad and heavy things", "are drawn to things that are light and easy"]
     },
     "optimism": {
-      "high": ["fundamentally believe things turn out well", "have a bright baseline"],
-      "low": ["hold few illusions about where this is heading", "see the shadows before you see the light"]
+      "high": ["believe that things usually turn out well", "are mostly in a good mood"],
+      "low": ["don't expect the world to get much better", "see the shadows before you see the light"]
     },
     "darkness": {
       "high": ["are at home in low light and long shadows", "like darkness as atmosphere, not as threat"],
-      "low": ["need light around you", "avoid the gloomy"]
+      "low": ["need light around you", "avoid dark and gloomy things"]
     },
     "whimsy": {
-      "high": ["have kept a playfulness that doesn't go out of fashion", "like the strange and the unpredictable"],
+      "high": ["have kept your playful side", "like the strange and the unpredictable"],
       "low": ["take things seriously", "have little patience for the silly"]
     },
     "social": {
@@ -122,59 +122,59 @@
     },
     "community": {
       "high": ["want to belong to something larger than yourself", "value having a role among others"],
-      "low": ["manage perfectly well without a collective", "keep a little outside the group"]
+      "low": ["manage perfectly well without a group", "keep a little outside the group"]
     },
     "solitude": {
-      "high": ["need time alone to feel whole", "have learned to enjoy your own company"],
+      "high": ["need time alone to feel whole", "enjoy being by yourself"],
       "low": ["rarely seek solitude", "would rather have someone in the room"]
     },
     "individualism": {
-      "high": ["would rather stand out than fit in", "want to decide for yourself, even when it costs"],
-      "low": ["have little need to mark yourself out", "are comfortable doing as others do"]
+      "high": ["would rather stand out than fit in", "want to decide for yourself, even when it is hard"],
+      "low": ["don't need to stand out", "are comfortable doing as others do"]
     },
     "order": {
-      "high": ["find calm in systems and repetition", "want things to have their place"],
-      "low": ["live perfectly well with disorder", "are stifled by too much system"]
+      "high": ["feel calm with routines and order", "want things to have their place"],
+      "low": ["live perfectly well with disorder", "feel trapped by too many rules and systems"]
     },
     "chaos": {
       "high": ["work best when things are allowed to be a bit messy", "trust the unplanned"],
-      "low": ["want control over how things unfold", "avoid the accidental"]
+      "low": ["want control over how things unfold", "don't like things happening by accident"]
     },
     "minimalism": {
-      "high": ["want fewer but better things around you", "experience empty space as freedom"],
+      "high": ["want fewer but better things around you", "feel free in an empty room"],
       "low": ["need things around you to feel at home", "would rather fill a room than empty it"]
     },
     "maximalism": {
       "high": ["want rooms full of things that mean something", "collect rather than clear out"],
-      "low": ["keep the quantity down", "are unsettled by abundance"]
+      "low": ["keep the number of things you own low", "feel uneasy when there is too much stuff"]
     },
     "craft": {
       "high": ["value things somebody actually made", "would rather do it yourself"],
       "low": ["have little need to make things yourself", "would rather buy it finished"]
     },
     "ornament": {
-      "high": ["hold that detail and decoration make things better", "like something being decorated for no reason at all"],
-      "low": ["want it bare and undecorated", "read ornament as noise"]
+      "high": ["think detail and decoration make things better", "like something being decorated for no reason at all"],
+      "low": ["want it bare and undecorated", "see decoration as clutter"]
     },
     "comfort": {
       "high": ["put warmth and shelter first in your surroundings", "want places to sink into"],
-      "low": ["can take it spartan", "give up comfort when it gets in the way"]
+      "low": ["are fine with a simple, bare life", "give up comfort when it gets in the way of other things"]
     },
     "adventure": {
       "high": ["get restless staying in one place too long", "want to see what's around the next bend"],
       "low": ["are at your best at home", "don't need adventure to be content"]
     },
     "refinement": {
-      "high": ["have an eye for the refined and the well-executed", "notice when something has been done properly"],
-      "low": ["prefer the rough and the unpolished", "have little time for the polished"]
+      "high": ["notice things that are elegant and well made", "notice when something has been done properly"],
+      "low": ["prefer things that are rough and unpolished", "don't care for things that are too polished"]
     },
     "intellect": {
-      "high": ["want to understand things thoroughly, not just experience them", "meet the world in a studious way"],
+      "high": ["want to understand things thoroughly, not just experience them", "like to study and learn about the world"],
       "low": ["trust instinct over analysis", "have little need to study what you like"]
     },
     "architecture": {
-      "high": ["notice rooms, light and buildings before you notice people", "read architecture the way others read text"],
-      "low": ["care little how buildings look", "barely register the room you're in"]
+      "high": ["notice rooms, light and buildings before you notice people", "pay close attention to buildings"],
+      "low": ["care little how buildings look", "barely notice the room you're in"]
     }
   },
   "facetModifiers": {
@@ -182,7 +182,7 @@
       { "dim": "solitude", "dir": "high", "text": "and it sits far enough out that nobody passes by" },
       { "dim": "social", "dir": "high", "text": "and there is always somebody there — the place only works with people in it" },
       { "dim": "urban", "dir": "high", "text": "in the middle of something that still has traffic and light all night" },
-      { "dim": "melancholy", "dir": "high", "text": "preferably in grey weather, when the colours fall in on each other" },
+      { "dim": "melancholy", "dir": "high", "text": "preferably in grey weather, when all the colours look soft and faded" },
       { "dim": "adventure", "dir": "high", "text": "and you rarely stay long enough to put down roots" },
       { "dim": "comfort", "dir": "high", "text": "with something warm within reach the whole time" }
     ],
@@ -191,8 +191,8 @@
       { "dim": "chaos", "dir": "high", "text": "in your version it is extended, patched and never quite finished" },
       { "dim": "architecture", "dir": "high", "text": "and you notice every detail — how the roof meets the wall, where the light gets in" },
       { "dim": "history", "dir": "high", "text": "and the building was something else before it was yours" },
-      { "dim": "minimalism", "dir": "high", "text": "stripped back to the fewest parts that will do" },
-      { "dim": "ornament", "dir": "high", "text": "with detail nobody paid for, but that you would have wanted anyway" }
+      { "dim": "minimalism", "dir": "high", "text": "with only the parts it really needs" },
+      { "dim": "ornament", "dir": "high", "text": "with extra decoration nobody needed, but you love anyway" }
     ],
     "interior": [
       { "dim": "maximalism", "dir": "high", "text": "and every surface is covered in something you have collected" },
@@ -213,7 +213,7 @@
     "clothes": [
       { "dim": "individualism", "dir": "high", "text": "and the clothes say plainly that this is you" },
       { "dim": "individualism", "dir": "low", "text": "but with nothing that asks for attention" },
-      { "dim": "refinement", "dir": "high", "text": "always a notch more considered than the occasion asks for" },
+      { "dim": "refinement", "dir": "high", "text": "always a bit more dressed up than you need to be" },
       { "dim": "refinement", "dir": "low", "text": "and it has to take hard wear" },
       { "dim": "comfort", "dir": "high", "text": "and nothing you cannot sit in for hours" },
       { "dim": "ornament", "dir": "high", "text": "with at least one detail there purely because it is nice" }
@@ -223,7 +223,7 @@
       { "dim": "optimism", "dir": "high", "text": "and preferably something with lift in it" },
       { "dim": "solitude", "dir": "high", "text": "heard alone, on headphones, loud" },
       { "dim": "social", "dir": "high", "text": "and best of all with other people in the room" },
-      { "dim": "retro", "dir": "high", "text": "off a format older than it needs to be" },
+      { "dim": "retro", "dir": "high", "text": "played on an old format, like vinyl or cassette" },
       { "dim": "chaos", "dir": "high", "text": "and it can happily be uneven and badly recorded" }
     ],
     "colours": [
@@ -231,7 +231,7 @@
       { "dim": "darkness", "dir": "low", "text": "in a lighter version than people expect" },
       { "dim": "maximalism", "dir": "high", "text": "and all of them at once" },
       { "dim": "minimalism", "dir": "high", "text": "though only two of them — the rest stays neutral" },
-      { "dim": "organic", "dir": "high", "text": "always with earth or plant underneath" },
+      { "dim": "organic", "dir": "high", "text": "always with earthy or plant colours underneath" },
       { "dim": "whimsy", "dir": "high", "text": "with one completely unreasonable colour allowed in" }
     ],
     "everyday": [
@@ -240,11 +240,11 @@
       { "dim": "order", "dir": "high", "text": "at roughly the same time every day" },
       { "dim": "chaos", "dir": "high", "text": "with no particular plan, which is the whole point" },
       { "dim": "intellect", "dir": "high", "text": "with a book or a question left open the whole time" },
-      { "dim": "adventure", "dir": "high", "text": "interrupted by you suddenly going somewhere" }
+      { "dim": "adventure", "dir": "high", "text": "until you suddenly decide to go somewhere" }
     ]
   },
   "strengthLabels": [
-    { "min": 88, "label": "Unusually precise match" },
+    { "min": 88, "label": "Very close match" },
     { "min": 78, "label": "Strong match" },
     { "min": 68, "label": "Clear match" },
     { "min": 56, "label": "Good match" },

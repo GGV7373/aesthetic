@@ -364,7 +364,7 @@
   {
     "id": 213,
     "group": "weather",
-    "cluster": "weather-fog-walk",
+    "cluster": "fog-vs-clear",
     "text": "Walking out into thick fog feels magical, not unpleasant.",
     "dimensions": { "mystery": 2, "adventure": 1, "comfort": -1, "melancholy": 1 }
   },
@@ -496,7 +496,7 @@
   {
     "id": 254,
     "group": "home",
-    "cluster": "home-guests-often",
+    "cluster": "ppl-host",
     "text": "My home is set up more for having people over than for being alone.",
     "dimensions": { "social": 2, "community": 1, "solitude": -2 }
   },
@@ -678,7 +678,7 @@
   {
     "id": 256,
     "group": "past",
-    "cluster": "past-handwriting",
+    "cluster": "paper",
     "text": "A handwritten letter means more to me than the same words sent instantly.",
     "dimensions": { "nostalgia": 2, "craft": 1, "digital": -2, "tradition": 1 }
   },
@@ -1178,7 +1178,7 @@
   {
     "id": 88,
     "group": "people",
-    "cluster": "crowd-energy",
+    "cluster": "ppl-recharge-with-people",
     "text": "Being around lots of people gives me energy.",
     "dimensions": { "social": 3, "urban": 2, "community": 1, "solitude": -3 }
   },
@@ -1422,7 +1422,7 @@
   {
     "id": 172,
     "group": "imagination",
-    "cluster": "impatient-with-fantasy",
+    "cluster": "imag-no-other-worlds",
     "text": "I quickly lose patience with things that are pure fantasy.",
     "dimensions": { "fantasy": -3, "realism": 3, "whimsy": -2 }
   },
@@ -1534,7 +1534,7 @@
   {
     "id": 265,
     "group": "order",
-    "cluster": "order-colour-coded",
+    "cluster": "order-labelled",
     "text": "I find things easier to handle when they're sorted or colour-coded.",
     "dimensions": { "order": 2, "minimalism": 1, "chaos": -1 }
   },
@@ -2083,7 +2083,7 @@
   {
     "id": 320,
     "group": "weather",
-    "cluster": "n-storms-exciting",
+    "cluster": "weather-thunder-excite",
     "text": "Storms are exciting rather than unpleasant.",
     "dimensions": { "adventure": 2, "chaos": 2, "nature": 1, "darkness": 1 }
   },
@@ -2258,7 +2258,7 @@
   {
     "id": 336,
     "group": "tradition",
-    "cluster": "n-group-belonging",
+    "cluster": "trad-no-group-need",
     "text": "Being left alone matters more to me than belonging to a group.",
     "dimensions": { "community": -3, "solitude": 3, "individualism": 2, "social": -2 }
   },
@@ -2279,7 +2279,7 @@
   {
     "id": 339,
     "group": "tradition",
-    "cluster": "n-family-customs",
+    "cluster": "trad-feasts-chore",
     "text": "Family traditions feel more like duties than pleasures.",
     "dimensions": { "tradition": -3, "community": -2, "individualism": 2, "nostalgia": -1 }
   },
@@ -2293,7 +2293,7 @@
   {
     "id": 341,
     "group": "screens",
-    "cluster": "n-give-up-internet",
+    "cluster": "net-offline-week",
     "text": "I could give up the internet more easily than most people I know.",
     "dimensions": { "digital": -3, "technology": -2, "solitude": 2, "modernity": -1 }
   },
@@ -2321,7 +2321,7 @@
   {
     "id": 345,
     "group": "screens",
-    "cluster": "n-internet-a-place",
+    "cluster": "digital-space",
     "text": "The internet feels like a place to me, not just a tool.",
     "dimensions": { "digital": 3, "fantasy": 2, "mystery": 1, "realism": -2 }
   },
@@ -2503,7 +2503,7 @@
   {
     "id": 366,
     "group": "unexplained",
-    "cluster": "n-dull-explanation",
+    "cluster": "unex-plain-explanation",
     "text": "Everything strange has a boring explanation behind it.",
     "dimensions": { "mystery": -3, "realism": 3, "fantasy": -2, "intellect": 1 }
   },
@@ -2601,7 +2601,7 @@
   {
     "id": 380,
     "group": "order",
-    "cluster": "n-nobody-arranged",
+    "cluster": "unplanned-best",
     "text": "The best evenings are the ones nobody planned.",
     "dimensions": { "chaos": 3, "order": -2, "adventure": 2, "social": 1 }
   },
@@ -2615,7 +2615,7 @@
   {
     "id": 382,
     "group": "style",
-    "cluster": "n-decades-ago-clothes",
+    "cluster": "ret-period-dress",
     "text": "Clothes from decades ago look better than anything made today.",
     "dimensions": { "retro": 3, "nostalgia": 2, "modernity": -2, "ornament": 1 }
   },
@@ -2762,7 +2762,7 @@
   {
     "id": 394,
     "group": "temperament",
-    "cluster": "n-easily-delighted",
+    "cluster": "enthusiasm",
     "text": "I would describe myself as easily delighted.",
     "dimensions": { "optimism": 3, "whimsy": 3, "melancholy": -2, "refinement": -1 }
   },
