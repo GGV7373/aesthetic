@@ -17,7 +17,7 @@
     "id": 20,
     "group": "sound",
     "cluster": "sound-recording-at-home",
-    "text": "I'd rather listen to a recording at home than see a band live in a crowd.",
+    "text": "Listening to music at home sounds better to me than seeing a band live in a crowd.",
     "dimensions": { "social": -2, "community": -1, "solitude": 2, "comfort": 1 }
   },
   {
@@ -72,7 +72,7 @@
     "id": 87,
     "group": "sound",
     "cluster": "sound-not-concert-hall",
-    "text": "A formal concert hall is about the last place I'd choose to hear music.",
+    "text": "A formal concert hall is one of the last places I'd want to hear music.",
     "dimensions": { "refinement": -2, "order": -1, "tradition": -1, "chaos": 1 }
   },
   {
@@ -92,7 +92,7 @@
   {
     "id": 253,
     "group": "sound",
-    "cluster": "snd-instrument-play",
+    "cluster": "make-music",
     "text": "I'd rather make music badly myself than only ever listen to other people's.",
     "dimensions": { "craft": 2, "individualism": 1, "refinement": -1 }
   },
@@ -162,7 +162,7 @@
     "id": 189,
     "group": "music",
     "cluster": "mus-in-the-crowd",
-    "text": "Being in a crowd at a concert, all moving together, is one of the best feelings there is.",
+    "text": "Being in a crowd at a concert, all moving together, sounds like one of the best feelings there is.",
     "dimensions": { "social": 3, "community": 3, "chaos": 1, "solitude": -2 }
   },
   {
@@ -176,7 +176,7 @@
     "id": 249,
     "group": "music",
     "cluster": "mus-live-imperfection",
-    "text": "A live show with a few mistakes means more to me than a perfect studio recording.",
+    "text": "A live show with a few mistakes would mean more to me than a perfect studio recording.",
     "dimensions": { "chaos": 1, "adventure": 1, "refinement": -2, "realism": 1 }
   },
   {
@@ -246,7 +246,7 @@
     "id": 10,
     "group": "nature",
     "cluster": "nat-vastness",
-    "text": "Feeling tiny next to something huge - a mountain, a cliff, the open sea - is something I go looking for.",
+    "text": "Feeling tiny next to something huge - a mountain, a cliff, the open sea - is something I'd go looking for.",
     "dimensions": { "nature": 2, "adventure": 2, "mystery": 1, "melancholy": 1 }
   },
   {
@@ -260,7 +260,7 @@
     "id": 18,
     "group": "nature",
     "cluster": "sea-fear",
-    "text": "The sea scares me more than it draws me in.",
+    "text": "The open sea seems more scary than inviting to me.",
     "dimensions": { "adventure": -2, "mystery": -1, "comfort": 1, "nature": -1 }
   },
   {
@@ -330,7 +330,7 @@
     "id": 134,
     "group": "weather",
     "cluster": "weather-snow",
-    "text": "Snow makes a familiar place feel like somewhere completely different.",
+    "text": "Snow or thick fog can make a familiar street feel like a completely different place.",
     "dimensions": { "mystery": 2, "whimsy": 1, "nostalgia": 1, "nature": 1 }
   },
   {
@@ -755,7 +755,7 @@
     "id": 113,
     "group": "tradition",
     "cluster": "ritual-calm",
-    "text": "Symbols and rituals put me at ease.",
+    "text": "Rituals and symbols - lighting a candle, a lucky charm - make me feel calm.",
     "dimensions": { "tradition": 2, "mystery": 2, "order": 2, "refinement": 1 }
   },
   {
@@ -1041,7 +1041,7 @@
     "id": 153,
     "group": "craft-tools",
     "cluster": "craft-hands-no-rest",
-    "text": "Working with my hands is about the last way I'd choose to relax.",
+    "text": "Working with my hands is not how I'd choose to relax.",
     "dimensions": { "craft": -3, "organic": -1, "comfort": -1, "digital": 1 }
   },
   {
@@ -1714,7 +1714,7 @@
   {
     "id": 176,
     "group": "travel",
-    "cluster": "same-places",
+    "cluster": "trav-same-destination",
     "text": "I prefer travelling to places I've been before.",
     "dimensions": { "comfort": 2, "tradition": 2, "order": 2, "adventure": -3 }
   },
@@ -1729,7 +1729,7 @@
     "id": 244,
     "group": "travel",
     "cluster": "trav-language-barrier",
-    "text": "Not speaking the language somewhere makes a trip more interesting, not more stressful.",
+    "text": "Not speaking the language somewhere would make a trip more interesting to me, not more stressful.",
     "dimensions": { "adventure": 2, "mystery": 1, "comfort": -1, "chaos": 1 }
   },
   {
@@ -1944,7 +1944,7 @@
     "id": 302,
     "group": "sound",
     "cluster": "n-village-too-quiet",
-    "text": "A village at night is too quiet for me to relax.",
+    "text": "A village at night would be too quiet for me to relax.",
     "dimensions": { "urban": 2, "rural": -2, "comfort": -1, "solitude": -1 }
   },
   {
@@ -1964,7 +1964,7 @@
   {
     "id": 305,
     "group": "sound",
-    "cluster": "n-silence-wanted",
+    "cluster": "snd-never-quiet",
     "text": "Quiet is what I want most from the place I live.",
     "dimensions": { "solitude": 3, "urban": -3, "rural": 2, "social": -2 }
   },
@@ -1993,14 +1993,14 @@
     "id": 309,
     "group": "music",
     "cluster": "n-room-recording",
-    "text": "I like a recording to sound like the room it was made in.",
+    "text": "I like music recordings where you can hear the room they were recorded in.",
     "dimensions": { "realism": 2, "craft": 2, "organic": 1, "digital": -2 }
   },
   {
     "id": 310,
     "group": "music",
     "cluster": "n-loud-mechanical",
-    "text": "Loud, mechanical-sounding music suits me better than soft music.",
+    "text": "Loud music that sounds like machines (industrial, techno) suits me better than soft music.",
     "dimensions": { "industrial": 2, "chaos": 2, "darkness": 1, "comfort": -2 }
   },
   {
@@ -2055,7 +2055,7 @@
   {
     "id": 316,
     "group": "weather",
-    "cluster": "n-low-cloud",
+    "cluster": "weather",
     "text": "Grey, cloudy skies suit me better than clear blue ones.",
     "dimensions": { "melancholy": 2, "darkness": 2, "optimism": -2, "comfort": 1 }
   },
@@ -2070,7 +2070,7 @@
     "id": 318,
     "group": "weather",
     "cluster": "n-winter-dark",
-    "text": "I look forward to the long, dark winter months.",
+    "text": "I look forward to the time of year when the days are short and dark.",
     "dimensions": { "darkness": 3, "solitude": 2, "melancholy": 1, "optimism": -1 }
   },
   {
@@ -2098,7 +2098,7 @@
     "id": 321,
     "group": "home",
     "cluster": "n-no-style-known",
-    "text": "I couldn't tell you what style my building is, and it's never mattered to me.",
+    "text": "The style of the building I live in has never mattered to me.",
     "dimensions": { "architecture": -3, "refinement": -2, "intellect": -1, "realism": 1 }
   },
   {
@@ -2391,7 +2391,7 @@
   {
     "id": 353,
     "group": "craft-tools",
-    "cluster": "n-workshop-room",
+    "cluster": "ind-workshop-grit",
     "text": "A workshop full of tools is my idea of a great room.",
     "dimensions": { "craft": 3, "industrial": 2, "technology": 1, "retro": 1 }
   },
@@ -2476,7 +2476,7 @@
     "id": 363,
     "group": "people",
     "cluster": "mus-in-the-crowd",
-    "text": "Being in a crowd at an event is one of life's best feelings.",
+    "text": "Being part of a big crowd at an event sounds like one of life's best feelings.",
     "dimensions": { "social": 3, "community": 3, "solitude": -3, "chaos": 1 }
   },
   {
@@ -2559,7 +2559,7 @@
   {
     "id": 374,
     "group": "imagination",
-    "cluster": "n-playfulness-thin",
+    "cluster": "imag-no-childishness",
     "text": "Grown-ups being playful gets old fast for me.",
     "dimensions": { "whimsy": -3, "refinement": 2, "realism": 2, "optimism": -1 }
   },
@@ -2608,7 +2608,7 @@
   {
     "id": 381,
     "group": "style",
-    "cluster": "n-dress-disappear",
+    "cluster": "anonymous-clothes",
     "text": "I dress to blend in, not to be noticed.",
     "dimensions": { "individualism": -2, "ornament": -2, "minimalism": 2, "refinement": -1 }
   },
@@ -2629,7 +2629,7 @@
   {
     "id": 384,
     "group": "style",
-    "cluster": "n-workwear-boots",
+    "cluster": "ind-workwear",
     "text": "Workwear and heavy boots appeal to me more than smart clothes.",
     "dimensions": { "industrial": 2, "craft": 2, "refinement": -2, "realism": 2 }
   },
@@ -2700,7 +2700,7 @@
     "id": 389,
     "group": "travel",
     "cluster": "n-airports-stations",
-    "text": "I like airports and train stations for their own sake.",
+    "text": "Airports and train stations are fun places for me, not just places to pass through.",
     "dimensions": { "urban": 2, "modernity": 1, "industrial": 1, "retro": -1 }
   },
   {
@@ -2720,7 +2720,7 @@
   {
     "id": 281,
     "group": "travel",
-    "cluster": "max-light-packing",
+    "cluster": "light-packing",
     "text": "When I travel, I pack as little as I possibly can.",
     "dimensions": { "maximalism": -2, "minimalism": 2, "adventure": 1, "comfort": -1 }
   },

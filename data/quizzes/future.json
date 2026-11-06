@@ -28,7 +28,7 @@
       "id": 9302,
       "group": "future",
       "cluster": "future-2",
-      "text": "A neon city in the rain at night feels like home to me.",
+      "text": "A neon city in the rain at night would feel like home to me.",
       "dimensions": { "urban": 2, "darkness": 2, "digital": 1, "nature": -1 }
     },
     {
@@ -91,7 +91,7 @@
       "id": 9311,
       "group": "future",
       "cluster": "future-11",
-      "text": "Technology is at its best when a whole neighbourhood shares it.",
+      "text": "Technology is at its best when neighbours share it, like solar power for the whole street.",
       "dimensions": { "community": 3, "individualism": -2, "optimism": 1 }
     },
     {
@@ -175,7 +175,7 @@
       "id": 9323,
       "group": "future",
       "cluster": "future-23",
-      "text": "I'd rather spend the evening alone at a terminal than at a party.",
+      "text": "I'd rather spend the evening alone at my computer than at a party.",
       "dimensions": { "solitude": 2, "social": -2, "digital": 1 }
     },
     {

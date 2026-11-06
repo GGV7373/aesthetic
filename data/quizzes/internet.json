@@ -75,7 +75,7 @@
       "id": 9009,
       "group": "internet",
       "cluster": "internet-9",
-      "text": "I'm drawn to sad playlists and grey, moody edits online.",
+      "text": "I'm drawn to sad playlists and grey, moody pictures and videos (edits) online.",
       "dimensions": { "melancholy": 2, "optimism": -1 }
     },
     {
@@ -96,14 +96,14 @@
       "id": 9012,
       "group": "internet",
       "cluster": "internet-12",
-      "text": "The photos I save online are quiet, slightly bleak shots of real life at night.",
+      "text": "I'm drawn to quiet, slightly sad photos of ordinary places at night.",
       "dimensions": { "realism": 2, "darkness": 1, "whimsy": -1, "fantasy": -1 }
     },
     {
       "id": 9013,
       "group": "internet",
       "cluster": "internet-13",
-      "text": "Scrolling late at night with the city lights outside feels like my natural time.",
+      "text": "Being up late at night, alone with my phone or computer, feels like my natural time.",
       "dimensions": { "urban": 2, "darkness": 1, "solitude": 1 }
     },
     {
@@ -173,7 +173,7 @@
       "id": 9023,
       "group": "internet",
       "cluster": "internet-23",
-      "text": "Creepypastas and creepy videos make a fun night for me.",
+      "text": "Creepy internet stories (creepypastas) and scary videos make a fun night for me.",
       "dimensions": { "darkness": 2, "mystery": 1, "comfort": -1 }
     },
     {
@@ -187,14 +187,14 @@
       "id": 9025,
       "group": "internet",
       "cluster": "internet-25",
-      "text": "Renders of concrete, machines and factories have their own beauty.",
+      "text": "Computer images (renders) of concrete, machines and factories have their own beauty.",
       "dimensions": { "industrial": 2, "urban": 1 }
     },
     {
       "id": 9026,
       "group": "internet",
       "cluster": "internet-26",
-      "text": "I'd still rather send a handwritten letter than a text message.",
+      "text": "I'd rather send a handwritten letter than a text message.",
       "dimensions": { "tradition": 2, "modernity": -1, "digital": -1 }
     },
     {
@@ -208,7 +208,7 @@
       "id": 9028,
       "group": "internet",
       "cluster": "internet-28",
-      "text": "Glitter text, loud band pages and a crowded friends list sound like the best internet.",
+      "text": "Old-school web pages (like early MySpace) with glitter text, loud music and long friends lists sound like the best internet.",
       "dimensions": { "maximalism": 2, "social": 1, "community": 1, "futurism": -1, "ornament": 1 }
     },
     {
