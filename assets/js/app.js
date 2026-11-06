@@ -455,9 +455,9 @@
       pageQuiz ? el('h1', { class: 'display', text: pageQuiz.title }) : null,
       el('p', { class: 'lede' }, [
         pageQuiz ? pageQuiz.blurb :
-        'Short personality quizzes that match your temperament, meaning your relationship ' +
-        'to nature, technology, history, order, solitude, darkness and beauty, to one ' +
-        'aesthetic. Not what you like the look of, but how you are.'
+        'Short personality quizzes that match how you feel about nature, technology, ' +
+        'history, order, being alone, darkness and beauty to one aesthetic. Not what ' +
+        'you like the look of, but who you are.'
       ]),
       urlSeed || resumable || pageQuiz
         ? el('div', { class: 'intro__actions' }, [
