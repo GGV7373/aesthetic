@@ -2807,5 +2807,96 @@
     "cluster": "n-self-sufficient",
     "text": "Being self-sufficient - able to fix, make and manage things myself - matters more to me than relying on others.",
     "dimensions": { "individualism": 3, "community": -3, "solitude": 2, "craft": 2 }
+  },
+  {
+    "id": 401,
+    "group": "imagination",
+    "cluster": "x-dark-legends",
+    "text": "Stories with dragons, curses and lost kingdoms pull me in more than stories about real life.",
+    "dimensions": { "fantasy": 3, "adventure": 1, "darkness": 1, "realism": -2 }
+  },
+  {
+    "id": 402,
+    "group": "imagination",
+    "cluster": "x-grim-fantasy",
+    "text": "I like fantasy best when it is dark and dangerous, not cute.",
+    "dimensions": { "fantasy": 2, "darkness": 2, "whimsy": -1, "optimism": -1 }
+  },
+  {
+    "id": 403,
+    "group": "past",
+    "cluster": "x-family-secrets",
+    "text": "Quiet stories about old families and the secrets they keep interest me more than big adventures.",
+    "dimensions": { "realism": 2, "nostalgia": 1, "community": 1, "rural": 1, "adventure": -2, "fantasy": -1 }
+  },
+  {
+    "id": 404,
+    "group": "music",
+    "cluster": "x-night-drive",
+    "text": "Driving at night with loud 80s-style synth music sounds perfect to me.",
+    "dimensions": { "retro": 2, "digital": 1, "adventure": 1, "darkness": 1, "urban": 1, "futurism": 1 }
+  },
+  {
+    "id": 405,
+    "group": "imagination",
+    "cluster": "x-half-joke",
+    "text": "Art that is half a joke and half serious is my favourite kind.",
+    "dimensions": { "whimsy": 2, "intellect": 1, "chaos": 1, "realism": -1, "futurism": -1 }
+  },
+  {
+    "id": 406,
+    "group": "weather",
+    "cluster": "x-cosy-cold",
+    "text": "The time of year when it gets colder and darker feels cosy to me, not sad.",
+    "dimensions": { "comfort": 2, "melancholy": 1, "nostalgia": 1, "organic": 1, "darkness": 1 }
+  },
+  {
+    "id": 407,
+    "group": "home",
+    "cluster": "x-candles-blankets",
+    "text": "Candles, blankets and a warm drink are my idea of a perfect evening.",
+    "dimensions": { "comfort": 3, "organic": 1, "nostalgia": 1, "adventure": -1, "craft": -1 }
+  },
+  {
+    "id": 408,
+    "group": "future",
+    "cluster": "x-atomic-scifi",
+    "text": "The look of old science-fiction films, with rockets, robots and atomic power, really appeals to me.",
+    "dimensions": { "retro": 2, "futurism": 2, "technology": 1, "industrial": 1, "intellect": 1 }
+  },
+  {
+    "id": 409,
+    "group": "home",
+    "cluster": "x-tidy-suburb",
+    "text": "A neat house in a quiet street with a tidy lawn is my idea of a good life.",
+    "dimensions": { "order": 2, "comfort": 2, "tradition": 1, "community": 1, "adventure": -2, "technology": -1 }
+  },
+  {
+    "id": 410,
+    "group": "travel",
+    "cluster": "x-boat-life",
+    "text": "Life on a boat, with ropes, sails and open water all around, sounds like a dream.",
+    "dimensions": { "adventure": 2, "order": 1, "craft": 1, "tradition": 1, "rural": -1, "nostalgia": -1 }
+  },
+  {
+    "id": 411,
+    "group": "home",
+    "cluster": "x-empty-halls",
+    "text": "Empty hallways and rooms with nobody in them feel strange and fascinating to me.",
+    "dimensions": { "mystery": 2, "architecture": 2, "solitude": 1, "minimalism": 1, "fantasy": 1, "nostalgia": -1 }
+  },
+  {
+    "id": 412,
+    "group": "screens",
+    "cluster": "x-dolphin-art",
+    "text": "Early internet art with dolphins, water and bright 3D shapes looks great to me.",
+    "dimensions": { "digital": 2, "retro": 2, "whimsy": 1, "fantasy": 1, "technology": 1, "history": -1 }
+  },
+  {
+    "id": 413,
+    "group": "home",
+    "cluster": "x-tropical-bar",
+    "text": "A party with bamboo, palm leaves and tropical drinks sounds like great fun.",
+    "dimensions": { "social": 2, "nature": 1, "organic": 1, "adventure": 1, "whimsy": 1, "individualism": -1 }
   }
 ]

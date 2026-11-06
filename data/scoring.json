@@ -29,7 +29,7 @@
     { "key": "order", "label": "Order and mess", "min": 2, "max": 3 },
     { "key": "style", "label": "Clothes and style", "min": 2, "max": 3 },
     { "key": "travel", "label": "Travel and adventure", "min": 2, "max": 3 },
-    { "key": "temperament", "label": "Temperament", "min": 2, "max": 3 },
+    { "key": "temperament", "label": "Mood and personality", "min": 2, "max": 3 },
     { "key": "values", "label": "Values and self-image", "min": 2, "max": 3 }
   ],
   "preferenceCategories": [
@@ -78,7 +78,7 @@
     {
       "key": "style-self",
       "label": "Style & self-image",
-      "hint": "Clothes, temperament, how you see yourself",
+      "hint": "Clothes, mood, how you see yourself",
       "groups": ["style", "values", "temperament"]
     },
     {
@@ -108,7 +108,7 @@
     {
       "key": "technology",
       "label": "Technology",
-      "low": "Analogue",
+      "low": "Non-digital (analogue)",
       "high": "Technological",
       "core": true
     },
@@ -124,7 +124,7 @@
     {
       "key": "history",
       "label": "History",
-      "low": "Contemporary",
+      "low": "Modern",
       "high": "Historical",
       "core": true
     },
@@ -139,14 +139,14 @@
     {
       "key": "tradition",
       "label": "Tradition",
-      "low": "Break",
-      "high": "Continuity",
+      "low": "New ways",
+      "high": "Old ways",
       "core": false
     },
     {
       "key": "modernity",
       "label": "Modernity",
-      "low": "Patina",
+      "low": "Worn and old",
       "high": "New and clean",
       "core": false
     },
@@ -169,13 +169,13 @@
       "key": "melancholy",
       "label": "Melancholy",
       "low": "Light-hearted",
-      "high": "Melancholic",
+      "high": "Sad and moody",
       "core": true
     },
     { "key": "optimism", "label": "Optimism", "low": "Heavy", "high": "Bright", "core": true },
     { "key": "darkness", "label": "Darkness", "low": "Light", "high": "Dark", "core": true },
     { "key": "whimsy", "label": "Playfulness", "low": "Serious", "high": "Playful", "core": false },
-    { "key": "social", "label": "Social", "low": "Withdrawn", "high": "Outgoing", "core": true },
+    { "key": "social", "label": "Social", "low": "Quiet", "high": "Outgoing", "core": true },
     {
       "key": "community",
       "label": "Community",
@@ -210,7 +210,7 @@
       "key": "maximalism",
       "label": "Maximalism",
       "low": "Sparse",
-      "high": "Abundant",
+      "high": "Full of things",
       "core": false
     },
     {
@@ -220,8 +220,8 @@
       "high": "Made by hand",
       "core": true
     },
-    { "key": "ornament", "label": "Ornament", "low": "Bare", "high": "Ornamented", "core": false },
-    { "key": "comfort", "label": "Comfort", "low": "Spartan", "high": "Snug", "core": true },
+    { "key": "ornament", "label": "Ornament", "low": "Bare", "high": "Decorated", "core": false },
+    { "key": "comfort", "label": "Comfort", "low": "Bare and simple", "high": "Snug", "core": true },
     {
       "key": "adventure",
       "label": "Adventure",
@@ -240,7 +240,7 @@
       "key": "intellect",
       "label": "Intellect",
       "low": "Intuitive",
-      "high": "Studious",
+      "high": "Bookish",
       "core": true
     },
     {
