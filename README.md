@@ -119,7 +119,7 @@ data/
   photos.json      photo file, author and licence per aesthetic
 tools/
   serve.js, build-bundle.js, validate.js
-  resize-photos.py   shrinks the photos in place
+  resize-photos.py   shrinks the photos in place, writes gallery thumbnails
   og-image.html      source for assets/og.png
 ```
 

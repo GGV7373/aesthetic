@@ -6,3 +6,7 @@
 # Question and aesthetic data changes with the deploy, so it must not be cached hard.
 /data/*
   Cache-Control: public, max-age=0, must-revalidate
+
+# Photos rarely change; let browsers keep them a week instead of re-checking each visit.
+/assets/img/*
+  Cache-Control: public, max-age=604800

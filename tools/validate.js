@@ -157,6 +157,8 @@ aesthetics.forEach((a) => {
 Object.entries(read('data/photos.json')).forEach(([k, p]) => {
   if (!keys.has(k)) errors.push(`photos: unknown aesthetic "${k}".`);
   if (!fs.existsSync(path.join(ROOT, p.file))) errors.push(`photos: ${k} is missing ${p.file}.`);
+  const thumb = p.file.replace(/[^/]+$/, 'thumb/$&');
+  if (!fs.existsSync(path.join(ROOT, thumb))) errors.push(`photos: ${k} is missing ${thumb} (run tools/resize-photos.py).`);
 });
 
 /* ---------- playlists ---------- */

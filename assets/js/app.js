@@ -379,16 +379,21 @@
     return data.aesthetics.filter(function (a) { return data.photos && data.photos[a.key]; });
   }
 
-  function photo(a, cls) {
+  /* small: the 480px copy written by tools/resize-photos.py (validate.js checks it exists). */
+  function photo(a, cls, small) {
+    var file = data.photos[a.key].file;
     return el('div', { class: cls }, [
-      el('img', { src: data.photos[a.key].file, alt: '', loading: 'lazy', decoding: 'async' })
+      el('img', {
+        src: small ? file.replace(/[^/]+$/, 'thumb/$&') : file,
+        alt: '', loading: 'lazy', decoding: 'async'
+      })
     ]);
   }
 
   function homeGallery() {
     var items = AQ.rng.shuffle(withPhoto(), Math.random).slice(0, 12).map(function (a) {
       return el('div', { class: 'gallery__item' }, [
-        photo(a, 'gallery__plate'),
+        photo(a, 'gallery__plate', true),
         el('span', { class: 'gallery__name', text: a.name })
       ]);
     });
