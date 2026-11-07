@@ -157,6 +157,8 @@ aesthetics.forEach((a) => {
 Object.entries(read('data/photos.json')).forEach(([k, p]) => {
   if (!keys.has(k)) errors.push(`photos: unknown aesthetic "${k}".`);
   if (!fs.existsSync(path.join(ROOT, p.file))) errors.push(`photos: ${k} is missing ${p.file}.`);
+  const thumb = p.file.replace(/[^/]+$/, 'thumb/$&');
+  if (!fs.existsSync(path.join(ROOT, thumb))) errors.push(`photos: ${k} is missing ${thumb} (run tools/resize-photos.py).`);
 });
 
 /* ---------- playlists ---------- */
@@ -287,6 +289,15 @@ familyQuizzes.forEach((qz) => {
       if (!dimKeys.has(k)) errors.push(`Quiz ${qz.key}, statement ${q.id}: unknown dimension "${k}".`);
     });
   });
+});
+
+/* 0a''. Every page preloads exactly the quiz files data.js will fetch, so a
+   renamed or added quiz can't leave a dead preload or a missing one. */
+const wantPreloads = read('data/quizzes.json').quizzes.map((k) => 'data/quizzes/' + k + '.json').sort().join(', ');
+['index.html', ...familyQuizzes.map((qz) => 'quizzes/' + qz.key + '.html')].forEach((page) => {
+  const html = fs.readFileSync(path.join(ROOT, page), 'utf8');
+  const have = [...html.matchAll(/rel="preload" href="(data\/quizzes\/[^"]+)"/g)].map((m) => m[1]).sort().join(', ');
+  if (have !== wantPreloads) errors.push(`${page}: preloads [${have}], but data/quizzes.json lists [${wantPreloads}].`);
 });
 
 /* 0a'. Family quizzes stay fair: someone who answers each statement the way a

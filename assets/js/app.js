@@ -379,16 +379,25 @@
     return data.aesthetics.filter(function (a) { return data.photos && data.photos[a.key]; });
   }
 
-  function photo(a, cls) {
+  /* small: the 480px copy written by tools/resize-photos.py (validate.js checks it exists). */
+  /* eager: the picture is at the top of the screen (result hero, surprise card),
+     so lazy-loading it would only delay the largest paint. */
+  function photo(a, cls, small, eager) {
+    var file = data.photos[a.key].file;
     return el('div', { class: cls }, [
-      el('img', { src: data.photos[a.key].file, alt: '', loading: 'lazy', decoding: 'async' })
+      el('img', {
+        src: small ? file.replace(/[^/]+$/, 'thumb/$&') : file,
+        alt: '', decoding: 'async',
+        loading: eager ? 'eager' : 'lazy',
+        fetchpriority: eager ? 'high' : null
+      })
     ]);
   }
 
   function homeGallery() {
     var items = AQ.rng.shuffle(withPhoto(), Math.random).slice(0, 12).map(function (a) {
       return el('div', { class: 'gallery__item' }, [
-        photo(a, 'gallery__plate'),
+        photo(a, 'gallery__plate', true),
         el('span', { class: 'gallery__name', text: a.name })
       ]);
     });
@@ -477,8 +486,9 @@
                   onclick: function () {
                     /* A shared run is fixed by its seed and length - skip straight in. */
                     clearStore(STORE_SESSION);
+                    var runIds = !urlQuiz && urlRun();
                     if (urlQuiz) startFamilySession(urlQuiz.key, urlSeed);
-                    else if (urlRun()) startFixedSession(urlSeed, urlRun(), urlGroups());
+                    else if (runIds) startFixedSession(urlSeed, runIds, urlGroups());
                     else startSession(urlSeed, true, urlGroups(), urlLength());
                     screenQuiz();
                   }
@@ -836,9 +846,13 @@
       markSelection(value);
       notice.textContent = '';
 
-      /* Answering a fresh statement always carries you to the next one. */
+      /* Answering a fresh statement always carries you to the next one -
+         unless you have already moved (Back pressed within the pause) or
+         left the quiz screen, or this would jump from the wrong place. */
       if (isNew) {
+        var at = session.index;
         global.setTimeout(function () {
+          if (!view.isConnected || session.index !== at) return;
           if (session.index < total - 1) go(1);
           else finish();
         }, ADVANCE_MS);
@@ -888,6 +902,10 @@
         answer(data.config.scale[n - 1].value);
         return;
       }
+      /* Enter on a focused button or link is that control's own click (Back
+         must not go forward). Answer buttons are left out: one keeps focus
+         after a mouse click, and Enter there should still mean "next". */
+      if (e.key === 'Enter' && e.target.closest && e.target.closest('button:not(.option), a')) return;
       if (e.key === 'ArrowRight' || e.key === 'Enter') { e.preventDefault(); go(1); }
       if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1); }
     }
@@ -1021,8 +1039,8 @@
   /* The generated mood plate as an <img> rather than inline SVG. Its blur and
      grain filters are heavy; as an image the browser runs them once and then
      only moves pixels, instead of re-running them on every scroll and hover. */
-  function plate(a, cls) {
-    if (data.photos && data.photos[a.key]) return photo(a, cls);
+  function plate(a, cls, eager) {
+    if (data.photos && data.photos[a.key]) return photo(a, cls, false, eager);
     return el('div', { class: cls }, [
       el('img', {
         src: 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(AQ.visuals.moodPlate(a)),
@@ -1315,7 +1333,7 @@
     ]);
 
     var heroBanner = el('div', { class: 'hero__banner' }, [
-      plate(primary, 'hero__plate'),
+      plate(primary, 'hero__plate', true),
       el('h1', { class: 'hero__name', text: primary.name })
     ]);
     var hero = el('header', { class: 'hero' }, [
