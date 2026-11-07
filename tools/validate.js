@@ -291,6 +291,15 @@ familyQuizzes.forEach((qz) => {
   });
 });
 
+/* 0a''. Every page preloads exactly the quiz files data.js will fetch, so a
+   renamed or added quiz can't leave a dead preload or a missing one. */
+const wantPreloads = read('data/quizzes.json').quizzes.map((k) => 'data/quizzes/' + k + '.json').sort().join(', ');
+['index.html', ...familyQuizzes.map((qz) => 'quizzes/' + qz.key + '.html')].forEach((page) => {
+  const html = fs.readFileSync(path.join(ROOT, page), 'utf8');
+  const have = [...html.matchAll(/rel="preload" href="(data\/quizzes\/[^"]+)"/g)].map((m) => m[1]).sort().join(', ');
+  if (have !== wantPreloads) errors.push(`${page}: preloads [${have}], but data/quizzes.json lists [${wantPreloads}].`);
+});
+
 /* 0a'. Family quizzes stay fair: someone who answers each statement the way a
    member's profile reads gets that member for most members, and with random
    answers no member wins far more (or less) than its fair share. */
