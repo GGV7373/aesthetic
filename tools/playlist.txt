@@ -78,7 +78,6 @@ Mallsoft = https://www.youtube.com/watch?v=a-GhYn5iiew&t
 Nostalgiacore = https://www.youtube.com/watch?v=hOiWsGaBfJY
 Old Web = https://www.youtube.com/watch?v=hOiWsGaBfJY
 Scenecore = https://www.youtube.com/watch?v=hOiWsGaBfJY
-Seapunk = https://www.youtube.com/watch?v=4eVFS4arIx4
 Synthwave = https://www.youtube.com/watch?v=0QKQlf8r7ls
 Traumacore = https://www.youtube.com/watch?v=AXuqjQ94Rjc
 Vaporwave = https://www.youtube.com/watch?v=QRMPfEnltdM

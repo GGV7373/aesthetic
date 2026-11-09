@@ -726,5 +726,12 @@
   "licence": "Unsplash License",
   "licenceUrl": "https://unsplash.com/license",
   "source": "https://unsplash.com/@nci"
+ },
+ "decopunk": {
+  "file": "assets/img/photos/decopunk/decopunk.jpg",
+  "artist": "@kirsimakov",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@kirsimakov"
  }
 }

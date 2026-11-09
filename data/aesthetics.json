@@ -2700,7 +2700,7 @@
       "ornament": 0.55,
       "adventure": 0.7
     },
-    "related": ["industrial", "seapunk", "hippie", "y2k"],
+    "related": ["industrial", "hippie", "y2k"],
     "world": {
       "setting": "an empty warehouse off a ring road, found by following the bass",
       "architecture": "steel portal frames, roller doors, a loading bay as a chill-out room",
@@ -3231,52 +3231,6 @@
       "music": "post-punk, ambient, one album played the whole way through",
       "colours": "concrete grey, streetlight orange, fog white, coat black",
       "everyday": "walking to think, smoking in the cold, reading more than talking"
-    }
-  },
-  {
-    "key": "seapunk",
-    "name": "Seapunk",
-    "family": "Internet and Liminal",
-    "tagline": "Dolphins, chrome and a 1996 screensaver",
-    "description": "Aqua gradients, 3D dolphins and Greek busts floating in cyberspace - an early-2010s internet aesthetic built from the visual junk of the dial-up era.",
-    "keywords": ["3D dolphins", "aqua gradient", "yin yang", "chrome text", "early 3D"],
-    "palette": ["#0b1c2e", "#0f8ba8", "#3fe0c8", "#e8f6f2"],
-    "dimensions": {
-      "digital": 0.92,
-      "nostalgia": 0.85,
-      "retro": 0.85,
-      "whimsy": 0.82,
-      "chaos": 0.72,
-      "maximalism": 0.8,
-      "fantasy": 0.75,
-      "optimism": 0.68,
-      "tradition": 0.05,
-      "history": 0.15,
-      "rural": 0.05,
-      "industrial": 0.15,
-      "realism": 0.1,
-      "nature": 0.5,
-      "organic": 0.45,
-      "urban": 0.55,
-      "order": 0.25,
-      "refinement": 0.25,
-      "minimalism": 0.15,
-      "ornament": 0.75,
-      "modernity": 0.55,
-      "technology": 0.7,
-      "futurism": 0.6,
-      "comfort": 0.5
-    },
-    "related": ["vaporwave", "old-web", "frutiger-aero", "oceanpunk"],
-    "world": {
-      "setting": "a beach that only ever existed as a rendered background",
-      "architecture": "chrome columns and a temple floating over water with no horizon",
-      "interior": "a bedroom with an aquarium screensaver treated as decor",
-      "technology": "early 3D software, a CRT, a CD-ROM of clip art",
-      "clothes": "aqua tie-dye, bucket hats, prints of things that swim",
-      "music": "chopped R&B, house with a whale sample, tape-warped synths",
-      "colours": "aqua, chrome silver, sea green, hot pink",
-      "everyday": "making the graphic, posting it, enjoying how cheap it all looks"
     }
   },
   {
