@@ -1270,15 +1270,24 @@
   function shareButton(primary, percent, runners, link) {
     var canvas = null;
     var name = primary.key + '.png';
+    var photos = data.photos || {};
+    var srcs = {
+      main: photos[primary.key] && photos[primary.key].file,
+      runners: runners.map(function (r) {
+        var ph = photos[r.key];
+        return ph ? ph.file.replace(/[^/]+$/, 'thumb/$&') : null;
+      })
+    };
     var file = null;
     var sharing = canShareFiles();
 
-    function card() { return canvas || (canvas = AQ.card.draw(primary, percent, runners)); }
+    /* A promise: the photos have to load before the card can be drawn. */
+    function card() { return canvas || (canvas = AQ.card.drawAsync(primary, percent, runners, srcs)); }
 
     var fontsReady = AQ.card.ready();
     if (sharing) {
-      fontsReady.then(function () {
-        card().toBlob(function (blob) {
+      fontsReady.then(card).then(function (cv) {
+        cv.toBlob(function (blob) {
           if (blob) file = new File([blob], name, { type: 'image/png' });
         }, 'image/png');
       });
@@ -1286,8 +1295,8 @@
 
     /* A download needs no user gesture, so it can wait for the fonts too. */
     function download() {
-      fontsReady.then(function () {
-        el('a', { download: name, href: card().toDataURL('image/png') }).click();
+      fontsReady.then(card).then(function (cv) {
+        el('a', { download: name, href: cv.toDataURL('image/png') }).click();
       });
     }
 
@@ -1385,7 +1394,7 @@
     var friendLink = friendCode && global.location.origin + global.location.pathname + '?compare=' + friendCode;
     var siteLink = global.location.origin + global.location.pathname;
     var runners = runnersUp(result).map(function (r) {
-      return { name: r.aesthetic.name, percent: r.entry.percent };
+      return { key: r.aesthetic.key, name: r.aesthetic.name, percent: r.entry.percent };
     });
     var cardBtn = shareButton(primary, result.primary.percent, runners, friendLink || siteLink);
 
