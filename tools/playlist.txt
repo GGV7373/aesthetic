@@ -9,6 +9,9 @@
 
 # ======== NATURE AND PASTORAL ========
 Autumn = 
+Spring = 
+Summer = 
+Winter = 
 Cabincore = https://www.youtube.com/watch?v=qhH4D251i4Q
 Cottagecore = https://www.youtube.com/watch?v=qhH4D251i4Q
 Forestpunk = https://www.youtube.com/watch?v=qhH4D251i4Q
