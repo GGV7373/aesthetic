@@ -726,5 +726,33 @@
   "licence": "Unsplash License",
   "licenceUrl": "https://unsplash.com/license",
   "source": "https://unsplash.com/@nci"
+ },
+ "decopunk": {
+  "file": "assets/img/photos/decopunk/decopunk.jpg",
+  "artist": "@kirsimakov",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@kirsimakov"
+ },
+ "spring": {
+  "file": "assets/img/photos/spring/spring.jpg",
+  "artist": "@aniket940518",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@aniket940518"
+ },
+ "summer": {
+  "file": "assets/img/photos/summer/summer.jpg",
+  "artist": "@rpnickson",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@rpnickson"
+ },
+ "winter": {
+  "file": "assets/img/photos/winter/winter.jpg",
+  "artist": "@kristsll",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@kristsll"
  }
 }

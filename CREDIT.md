@@ -37,6 +37,7 @@ They are resized copies of the originals.
 | Dark Academia | `assets/img/photos/dark-academia/dark-academia.jpg` | @woltss78 | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@woltss78) |
 | Dark Fantasy | `assets/img/photos/dark-fantasy/dark-fantasy.jpg` | @filipkvasnak | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@filipkvasnak) |
 | Dark Naturalism | `assets/img/photos/dark-naturalism/dark-naturalism.jpg` | @karsten_wuerth | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@karsten_wuerth) |
+| Decopunk | `assets/img/photos/decopunk/decopunk.jpg` | @kirsimakov | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@kirsimakov) |
 | Dieselpunk | `assets/img/photos/dieselpunk/dieselpunk.jpg` | @hdsfotografie95 | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@hdsfotografie95) |
 | Diner | `assets/img/photos/diner/diner.jpg` | @dayanaranacion | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@dayanaranacion) |
 | Doomer | `assets/img/photos/doomer/doomer.jpg` | @litvinov | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@litvinov) |
@@ -107,7 +108,9 @@ They are resized copies of the originals.
 | Sovietwave | `assets/img/photos/sovietwave/sovietwave.jpg` | @npi | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@npi) |
 | Space Age | `assets/img/photos/space-age/space-age.jpg` | @mitramehr | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@mitramehr) |
 | Spacecore | `assets/img/photos/spacecore/spacecore.jpg` | @nattgw | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@nattgw) |
+| Spring | `assets/img/photos/spring/spring.jpg` | @aniket940518 | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@aniket940518) |
 | Steampunk | `assets/img/photos/steampunk/steampunk.jpg` | @tama66 | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@tama66) |
+| Summer | `assets/img/photos/summer/summer.jpg` | @rpnickson | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@rpnickson) |
 | Synthwave | `assets/img/photos/synthwave/synthwave.jpg` | @mjh_shikder | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@mjh_shikder) |
 | Technozen | `assets/img/photos/technozen/technozen.jpg` | @nublson | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@nublson) |
 | Tiki | `assets/img/photos/tiki/tiki.jpg` | @drag88 | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@drag88) |
@@ -115,4 +118,5 @@ They are resized copies of the originals.
 | Vaporwave | `assets/img/photos/vaporwave/vaporwave.jpg` | @nixaov | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@nixaov) |
 | Weirdcore | `assets/img/photos/weirdcore/weirdcore.jpg` | @behindthetmuna | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@behindthetmuna) |
 | Western | `assets/img/photos/western/western.jpg` | @luishinojosag | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@luishinojosag) |
+| Winter | `assets/img/photos/winter/winter.jpg` | @kristsll | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@kristsll) |
 | Y2K | `assets/img/photos/y2k/y2k.jpg` | Hanul | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0) | [Source](https://commons.wikimedia.org/wiki/File:Mac_OS_9_on_iMac_G3.jpg) |
