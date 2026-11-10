@@ -561,6 +561,12 @@
       ]);
     });
 
+    var compareCard = el('article', { class: 'intro__card intro__card--quiz intro__card--wide' }, [
+      el('h3', { class: 'intro__cardtitle', text: 'Compare two aesthetics' }),
+      el('p', { text: 'Pick any two and see what each one means, what they share and where they differ.' }),
+      el('a', { class: 'btn btn--primary', href: 'compare-aesthetics.html' }, ['Compare'])
+    ]);
+
     var view = el('section', { class: 'screen screen--intro' }, [
       el('header', { class: 'intro__top' }, [
         el('h1', { class: 'display', text: 'Estetikk' }),
@@ -569,11 +575,12 @@
       hero,
       homeGallery(),
       el('section', { class: 'intro__section' }, [
-        el('div', { class: 'intro__grid intro__grid--home' }, [mainCard].concat(familyCards, surpriseCard()))
+        el('div', { class: 'intro__grid intro__grid--home' }, [mainCard].concat(familyCards, compareCard, surpriseCard()))
       ]),
       genderedNamesToggle(screenIntro),
       el('footer', { class: 'intro__foot' }, [
         el('a', { href: 'privacy.html', text: 'Privacy' }),
+        el('a', { href: 'compare-aesthetics.html', text: 'Compare aesthetics' }),
         el('a', { href: 'credits.html', text: 'Photo credits' }),
         el('a', { href: 'updates.html', text: 'News' })
       ])
