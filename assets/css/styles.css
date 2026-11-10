@@ -1410,6 +1410,7 @@ body:not(:has(.topbar)) .quiz__head {
 .vs__room svg { display: block; width: 100%; height: auto; }
 .vs__roomtext { display: grid; gap: 0.6rem; max-width: 44rem; font-size: 0.9rem; line-height: 1.5; }
 .vs__roomtext p { margin: 0; }
+.vs__roomnote { display: block; margin-top: 0.2rem; font-style: italic; color: var(--ink-soft); }
 @media (min-width: 40rem) { .vs__roomtext { grid-template-columns: 1fr 1fr; gap: 1.2rem; } }
 .vs__bridge { display: grid; gap: 1rem; max-width: 44rem; padding: 1rem; background: var(--surface); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
 @media (min-width: 40rem) { .vs__bridge { grid-template-columns: 14rem 1fr; align-items: center; } }
