@@ -21,10 +21,10 @@ const V = AQ.versus;
 
 const aesthetics = JSON.parse(read('data/aesthetics.json'));
 const config = JSON.parse(read('data/scoring.json'));
-const data = { config, dimensionKeys: config.dimensions.map((d) => d.key) };
+const data = { config, aesthetics, dimensionKeys: config.dimensions.map((d) => d.key) };
 
 const errors = [];
-let pairs = 0, sentences = 0, emptyShare = 0, emptyApart = 0;
+let pairs = 0, sentences = 0, emptyShare = 0, emptyApart = 0, bridgeBetter = 0;
 const scores = [], verdicts = {};
 const best = {}; /* aesthetic key -> { other, percent, related } */
 
@@ -75,6 +75,14 @@ for (let i = 0; i < aesthetics.length; i++) {
       });
     });
 
+    /* The bridge: a third aesthetic, the same whichever way round, and closer to both than they are to each other. */
+    const br = V.bridge(a, b, data);
+    if (!br || br.c === a || br.c === b) errors.push(`${tag}: bridge is missing or is one of the pair`);
+    else {
+      if (V.bridge(b, a, data).c !== br.c) errors.push(`${tag}: bridge changes when swapped`);
+      if (br.low > sc.percent) bridgeBetter++;
+    }
+
     const keys = share.concat(apart).map((r) => r.meta.key);
     if (new Set(keys).size !== keys.length) errors.push(`${tag}: a dimension is both shared and apart`);
   }
@@ -93,6 +101,7 @@ console.log(`Scores run from ${Math.min(...pcts)}% to ${Math.max(...pcts)}%, med
 console.log(`Listed relatives: median ${relMedian}%. Everything else: median ${otherMedian}%.`);
 console.log(`Closest match is a listed relative for ${closestIsRelative} of ${Object.keys(best).length} aesthetics.`);
 console.log('Verdicts:', Object.entries(verdicts).sort((p, q) => q[1] - p[1]).map(([k, n]) => `${k} ${n}`).join(', '));
+console.log(`The bridge is closer to both than they are to each other in ${bridgeBetter} of ${pairs} pairs.`);
 console.log(`Pairs with nothing shared: ${emptyShare}. Pairs with nothing apart: ${emptyApart}.`);
 if (errors.length) {
   console.log(`\n${errors.length} problems:`);

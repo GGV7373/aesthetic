@@ -82,6 +82,54 @@
       : pct >= 40 ? 'Some common ground' : pct >= 25 ? 'Quite different' : 'Almost opposites';
   }
 
+  /* The bridge: the aesthetic that is closest to both at once (its weaker link
+     is as strong as possible; ties go to the better total). */
+  function bridge(a, b, data) {
+    var best = null;
+    data.aesthetics.forEach(function (c) {
+      if (c.key === a.key || c.key === b.key) return;
+      var toA = pairScore(a, c, data).percent, toB = pairScore(b, c, data).percent;
+      var low = Math.min(toA, toB), sum = toA + toB;
+      if (!best || low > best.low || (low === best.low && sum > best.sum)) best = { c: c, toA: toA, toB: toB, low: low, sum: sum };
+    });
+    return best;
+  }
+
+  /* The split room: one room, left half in the first palette, right half in the second.
+     Lightest colour is the wall, darkest the floor, so every palette reads as a room. */
+  function lightness(hex) {
+    var n = parseInt(hex.slice(1), 16);
+    return 0.299 * (n >> 16) + 0.587 * ((n >> 8) & 255) + 0.114 * (n & 255);
+  }
+  function roomShapes(palette) {
+    var c = palette.slice().sort(function (x, y) { return lightness(x) - lightness(y); });
+    var dark = c[0], mid = c[1], warm = c[2], light = c[3];
+    return '<rect width="600" height="210" fill="' + light + '"/>' +
+      '<rect y="210" width="600" height="90" fill="' + dark + '"/>' +
+      '<rect y="204" width="600" height="6" fill="' + mid + '"/>' +
+      '<rect x="50" y="40" width="130" height="110" fill="' + warm + '" stroke="' + dark + '" stroke-width="6"/>' +
+      '<path d="M115 40v110M50 95h130" stroke="' + dark + '" stroke-width="4"/>' +
+      '<rect x="420" y="55" width="90" height="70" fill="' + mid + '" stroke="' + dark + '" stroke-width="5"/>' +
+      '<ellipse cx="300" cy="262" rx="190" ry="22" fill="' + warm + '" opacity="0.8"/>' +
+      '<rect x="160" y="150" width="280" height="70" rx="14" fill="' + mid + '"/>' +
+      '<rect x="180" y="128" width="115" height="45" rx="10" fill="' + warm + '"/>' +
+      '<rect x="305" y="128" width="115" height="45" rx="10" fill="' + warm + '"/>' +
+      '<rect x="172" y="218" width="10" height="18" fill="' + dark + '"/><rect x="418" y="218" width="10" height="18" fill="' + dark + '"/>' +
+      '<path d="M540 236V110" stroke="' + dark + '" stroke-width="4"/>' +
+      '<path d="M515 110h50l-12-34h-26z" fill="' + warm + '" stroke="' + dark + '" stroke-width="3"/>' +
+      '<rect x="62" y="196" width="36" height="40" fill="' + mid + '" stroke="' + dark + '" stroke-width="3"/>' +
+      '<circle cx="80" cy="180" r="22" fill="' + warm + '"/>';
+  }
+  function splitRoom(a, b) {
+    var box = el('div', { class: 'vs__room' });
+    box.innerHTML = '<svg viewBox="0 0 600 300" role="img" aria-label="' + a.name + ' and ' + b.name +
+      ' palettes in one room, split down the middle">' +
+      '<defs><clipPath id="vs-right"><rect x="300" width="300" height="300"/></clipPath></defs>' +
+      roomShapes(a.palette) + '<g clip-path="url(#vs-right)">' + roomShapes(b.palette) + '</g>' +
+      '<path d="M300 0v300" stroke="#fff" stroke-width="2" stroke-dasharray="6 6" opacity="0.7"/></svg>';
+    return box;
+  }
+
   function dot(v, cls) {
     return el('span', { class: 'cmp__dot ' + cls, style: 'left:' + Math.round(v * 100) + '%' });
   }
@@ -150,7 +198,7 @@
 
   /* For tools/check-compare.js. */
   AQ.versus = { asProfile: asProfile, pairScore: pairScore, verdictFor: verdictFor, lean: lean, sharedRows: sharedRows, shareSentence: shareSentence,
-    apartRows: apartRows, gapSentence: gapSentence };
+    apartRows: apartRows, gapSentence: gapSentence, bridge: bridge };
 
   function card(a, data, cls) {
     var photo = data.photos && data.photos[a.key];
@@ -257,6 +305,37 @@
             ]);
           }))
         ]),
+
+        same ? null : el('section', { class: 'block' }, [
+          el('h2', { class: 'block__title', text: 'One room, two aesthetics' }),
+          el('p', { class: 'block__lede', text: 'The left half is decorated in ' + a.name + "'s colours, the right half in " + b.name + "'s." }),
+          splitRoom(a, b),
+          el('div', { class: 'vs__roomtext' }, [
+            el('p', {}, [el('strong', { text: a.name + ': ' }), (a.world && a.world.interior) || '–']),
+            el('p', {}, [el('strong', { text: b.name + ': ' }), (b.world && b.world.interior) || '–'])
+          ])
+        ]),
+
+        same ? null : (function () {
+          var br = bridge(a, b, data);
+          var photo = data.photos && data.photos[br.c.key];
+          return el('section', { class: 'block' }, [
+            el('h2', { class: 'block__title', text: 'The bridge between them' }),
+            el('p', { class: 'block__lede', text: 'The aesthetic closest to both at once.' }),
+            el('div', { class: 'vs__bridge' }, [
+              photo ? el('div', { class: 'vs__photo' }, [el('img', { src: photo.file, alt: '', decoding: 'async' })]) : null,
+              el('div', {}, [
+                el('h3', { class: 'vs__name', text: br.c.name }),
+                el('p', { class: 'vs__tagline', text: br.c.tagline }),
+                el('p', { text: br.toA + '% like ' + a.name + ' · ' + br.toB + '% like ' + b.name }),
+                el('p', { class: 'fineprint' }, [
+                  el('a', { href: '?a=' + a.key + '&b=' + br.c.key, text: 'Compare with ' + a.name }), ' · ',
+                  el('a', { href: '?a=' + br.c.key + '&b=' + b.key, text: 'Compare with ' + b.name })
+                ])
+              ])
+            ])
+          ]);
+        })(),
 
         !same && rows.length ? el('section', { class: 'block' }, [
           el('h2', { class: 'block__title', text: 'Dimension by dimension' }),

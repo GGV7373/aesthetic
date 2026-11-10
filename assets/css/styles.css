@@ -1406,6 +1406,14 @@ body:not(:has(.topbar)) .quiz__head {
 
 .vs__list { margin: 0 0 1.6rem; padding-left: 1.1rem; max-width: 56ch; font-size: 0.98rem; line-height: 1.6; }
 
+.vs__room { max-width: 44rem; margin: 0 0 0.8rem; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-md); }
+.vs__room svg { display: block; width: 100%; height: auto; }
+.vs__roomtext { display: grid; gap: 0.6rem; max-width: 44rem; font-size: 0.9rem; line-height: 1.5; }
+.vs__roomtext p { margin: 0; }
+@media (min-width: 40rem) { .vs__roomtext { grid-template-columns: 1fr 1fr; gap: 1.2rem; } }
+.vs__bridge { display: grid; gap: 1rem; max-width: 44rem; padding: 1rem; background: var(--surface); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
+@media (min-width: 40rem) { .vs__bridge { grid-template-columns: 14rem 1fr; align-items: center; } }
+.vs__bridge .vs__photo { margin: 0; }
 .vs__facets { display: grid; gap: 1px; background: var(--line); border-radius: var(--radius); overflow: hidden; }
 .vs__facet { display: grid; grid-template-columns: 1fr; gap: 0.3rem; padding: 0.8rem 1rem; background: var(--surface); }
 .vs__facetlabel { margin: 0; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
