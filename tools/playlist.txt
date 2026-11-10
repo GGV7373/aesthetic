@@ -8,14 +8,14 @@
 # Families: Nature and Pastoral, Witchy and Folk, Academia and Period, Americana and Screen, Internet and Liminal, Punk and Futurism, Adventure and Sea, Home and Design, Style and Status, Soft and Romantic, Subculture, Goth, Japanese Street and Kawaii
 
 # ======== NATURE AND PASTORAL ========
-Autumn = 
-Spring = 
-Summer = 
-Winter = 
+Autumn = https://www.youtube.com/watch?v=AcgDMX0KAkw&t
+Spring = https://www.youtube.com/watch?v=CI4f48bh-KA
+Summer = https://www.youtube.com/watch?v=VuR5rxj0spc
+Winter = https://www.youtube.com/watch?v=lrE8fWHHyW4, https://www.youtube.com/watch?v=FKhvhSjabkg
 Cabincore = https://www.youtube.com/watch?v=qhH4D251i4Q
 Cottagecore = https://www.youtube.com/watch?v=qhH4D251i4Q
 Forestpunk = https://www.youtube.com/watch?v=qhH4D251i4Q
-Gardencore = 
+Gardencore = https://www.youtube.com/watch?v=8-pSMHBJg5U
 Lumberjack = https://www.youtube.com/watch?v=qhH4D251i4Q
 Naturecore = https://www.youtube.com/watch?v=qhH4D251i4Q
 Prairiecore = 
@@ -45,41 +45,41 @@ Art Deco = https://www.youtube.com/watch?v=cAcMjHy_EXw&list=PLZH3YlV868rTY9BJl44
 Diner = https://www.youtube.com/watch?v=rEmLVVnN22Y
 Film Noir = https://www.youtube.com/watch?v=PEI2zet48Uc
 High School Dream = https://www.youtube.com/watch?v=hOiWsGaBfJY
-Midwest Gothic = 
+Midwest Gothic = https://www.youtube.com/watch?v=TyORFM2mq8s
 Old Hollywood = https://www.youtube.com/watch?v=rbl1qzsgqmg
 
 # ======== INTERNET AND LIMINAL ========
 90s Cool = 
 After Hours = https://www.youtube.com/watch?v=iEfVC2LOCv8
 Analog Horror = https://www.youtube.com/watch?v=72aPC_Y--nM
-Arcadecore = 
-Bright Tertiaries = 
+Arcadecore = https://www.youtube.com/watch?v=6Bh2pBTgDR0
+Bright Tertiaries = https://www.youtube.com/watch?v=rrBMI8eDuXQ
 Doomer = https://www.youtube.com/watch?v=iEfVC2LOCv8
 Dreamcore = https://www.youtube.com/watch?v=f1-jV9Qwwf0
 Frutiger Aero = https://www.youtube.com/watch?v=hOiWsGaBfJY
 Frutiger Eco = https://www.youtube.com/watch?v=hOiWsGaBfJY
-Gen X Soft Club = 
+Gen X Soft Club = https://www.youtube.com/watch?v=02Y9a6_tI1A
 Liminal Space = https://www.youtube.com/watch?v=DqjWFZN82_A
-Lo-fi = 
+Lo-fi = https://www.youtube.com/watch?v=lTRiuFIWV54
 Mallsoft = https://www.youtube.com/watch?v=a-GhYn5iiew
 Nostalgiacore = https://www.youtube.com/watch?v=hOiWsGaBfJY
 Old Web = https://www.youtube.com/watch?v=hOiWsGaBfJY
 Synthwave = https://www.youtube.com/watch?v=0QKQlf8r7ls
-Technozen = 
+Technozen = https://www.youtube.com/watch?v=dKZNRXMY_v0
 Vaporwave = https://www.youtube.com/watch?v=QRMPfEnltdM
 Weirdcore = https://www.youtube.com/watch?v=ABGURyOP65g
 Y2K = https://www.youtube.com/watch?v=hOiWsGaBfJY
 
 # ======== PUNK AND FUTURISM ========
 Atompunk = https://www.youtube.com/watch?v=2IJZAKjglZI
-Biopunk = 
+Biopunk = https://www.youtube.com/watch?v=iwpBReQ3BFs
 Cassette Futurism = https://www.youtube.com/watch?v=baV2DXqWad8
 Cyberpunk = https://www.youtube.com/watch?v=y2ECgOhoDGs
 Decopunk = https://www.youtube.com/watch?v=cAcMjHy_EXw&list=PLZH3YlV868rTY9BJl44rTpg_NQfdWfI0Z
 Dieselpunk = https://www.youtube.com/watch?v=bEJOSvsfYNA&list=PLGSqV9TD-Vaz6puuMVwpVRmQTgEfa3mqk
 Industrial = https://www.youtube.com/watch?v=JS54yn7ZIZc
 Industrial Decay = https://www.youtube.com/watch?v=JS54yn7ZIZc&t=876s
-Lunarpunk = 
+Lunarpunk = https://www.youtube.com/watch?v=exQIlfAkbMU&list=PL2l0EZlwbL4liUPCgktyqNgIvQF0L7xZd
 Retrofuturism = https://www.youtube.com/watch?v=YCDAp-jg7ls
 Sinofuturism = https://www.youtube.com/watch?v=y2ECgOhoDGs
 Soft Apocalypse = https://www.youtube.com/watch?v=YUoHI2gDf7k
@@ -92,20 +92,20 @@ Steampunk = https://www.youtube.com/watch?v=ioXEprtpx8Y
 Adventurecore = https://www.youtube.com/watch?v=GkSHE6wOzX0
 Nautical = https://www.youtube.com/watch?v=iEfVC2LOCv8
 Oceanpunk = https://www.youtube.com/watch?v=iEfVC2LOCv8
-Tiki = 
+Tiki = https://www.youtube.com/watch?v=gTDQGZufZHU
 Western = https://www.youtube.com/watch?v=djmuOu8kgvQ
 
 # ======== HOME AND DESIGN ========
 Cluttercore = https://www.youtube.com/watch?v=iEfVC2LOCv8
-Cozycore = 
+Cozycore = https://www.youtube.com/watch?v=FPEJZ2NN8wE
 Japandi = https://www.youtube.com/watch?v=iEfVC2LOCv8
-Kitsch = 
+Kitsch = https://www.youtube.com/watch?v=nzd9u9Syqew
 Maximalism = https://www.youtube.com/watch?v=ioXEprtpx8Y
 Minimalism = https://www.youtube.com/watch?v=iEfVC2LOCv8
 Scandinavian Design = https://www.youtube.com/watch?v=iEfVC2LOCv8
-Shabby Chic = 
-Space Age = 
-Urbancore = 
+Shabby Chic = https://www.youtube.com/watch?v=8B9HwsdKKIQ
+Space Age = https://www.youtube.com/watch?v=bmldM5GT4lU 
+Urbancore = https://www.youtube.com/watch?v=1BzXhk44Phg&list=PLoDA2CeRmcyiAtumqZTtj9hm4w2puBDJg
 
 # ======== STYLE AND STATUS ========
 Jock = https://www.youtube.com/watch?v=dmdkbhKtE6s
@@ -120,13 +120,13 @@ Royalcore = https://www.youtube.com/watch?v=Zhaz_30H_0w
 
 # ======== SUBCULTURE ========
 Emo = https://www.youtube.com/watch?v=hOiWsGaBfJY
-Glam Rock = 
+Glam Rock = https://www.youtube.com/watch?v=ODmbm8FAK0Q
 Greaser = https://www.youtube.com/watch?v=rEmLVVnN22Y
 Hippie = https://www.youtube.com/watch?v=7JhL2V70JaQ
 Hipster = https://www.youtube.com/watch?v=hOiWsGaBfJY
 Metalhead = https://www.youtube.com/watch?v=j4tncIl8PQ0
 Midwest Emo = https://www.youtube.com/watch?v=hOiWsGaBfJY
-Older Siblingcore = 
+Older Siblingcore = https://www.youtube.com/watch?v=97b7FGfB2fE&t, https://www.youtube.com/watch?v=XYM_HQ623x4
 Punk = https://www.youtube.com/watch?v=hOiWsGaBfJY
 Rave = https://www.youtube.com/watch?v=4eVFS4arIx4
 Skater = https://www.youtube.com/watch?v=hOiWsGaBfJY

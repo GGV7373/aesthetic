@@ -345,6 +345,174 @@
       "author": "HighfleetMD",
       "mood": "Strange, drifting songs that make ordinary things feel slightly wrong.",
       "aesthetics": ["weirdcore"]
+    },
+    {
+      "id": "AcgDMX0KAkw",
+      "title": "a 2000s fall playlist",
+      "author": "Locust",
+      "mood": "Nostalgic songs for leaf-crunching, warm drinks and early dark.",
+      "aesthetics": ["autumn", "nostalgiacore"]
+    },
+    {
+      "id": "CI4f48bh-KA",
+      "title": "a spring playlist to romanticize your mornings 🌿 (study / read / write)",
+      "author": "Little Thing",
+      "mood": "Gentle, bright songs for slow mornings with the window open.",
+      "aesthetics": ["spring", "gardencore"]
+    },
+    {
+      "id": "VuR5rxj0spc",
+      "title": "a playlist for dreamy summer days",
+      "author": "Ophelia Wilde",
+      "mood": "Hazy, sun-warmed songs for long afternoons and golden evenings.",
+      "aesthetics": ["summer", "nostalgiacore"]
+    },
+    {
+      "id": "lrE8fWHHyW4",
+      "title": "winter _____ . | peaceful acoustic",
+      "author": "fill in the _.",
+      "mood": "Quiet acoustic songs for frosted windows and blankets.",
+      "aesthetics": ["winter", "cozycore"]
+    },
+    {
+      "id": "8-pSMHBJg5U",
+      "title": "Springtime in the secret garden | A peaceful cottagecore / gardencore playlist + ambience",
+      "author": "LemonTea",
+      "mood": "Soft music and birdsong for a hidden garden in spring.",
+      "aesthetics": ["gardencore", "cottagecore", "spring"]
+    },
+    {
+      "id": "FKhvhSjabkg",
+      "title": "Remembering winter when you were a child | A suburban winter nostalgia playlist + ambience (no AI)",
+      "author": "LemonTea",
+      "mood": "Soft, hushed songs for snow and long evenings in.",
+      "aesthetics": ["winter", "cozycore"]
+    },
+    {
+      "id": "TyORFM2mq8s",
+      "title": "pov: that scarecrow isn't the only thing in the cornfields. | midwestern gothic inspired playlist",
+      "author": "risky",
+      "mood": "Slow, eerie songs for empty fields and dark farmhouses.",
+      "aesthetics": ["midwest-gothic", "southern-gothic", "folk-horror"]
+    },
+    {
+      "id": "6Bh2pBTgDR0",
+      "title": "meet me in the arcade ~ synthpop vaporwave playlist // nostalgiacore 80s v i b e s",
+      "author": "memory glitch",
+      "mood": "Bleepy, neon-lit music for a late night in the arcade.",
+      "aesthetics": ["arcadecore", "synthwave", "vaporwave"]
+    },
+    {
+      "id": "rrBMI8eDuXQ",
+      "title": "🎨 Bright Tertiaries Vibes  Mid 2000s Color Explosion 💥✨",
+      "author": "Melodic Aesthetics ",
+      "mood": "Bright, glossy tunes in loud, mixed-up colours.",
+      "aesthetics": ["bright-tertiaries", "frutiger-aero", "y2k"]
+    },
+    {
+      "id": "02Y9a6_tI1A",
+      "title": "gen-x soft club",
+      "author": "olivia!",
+      "mood": "Smooth, laid-back late-90s beats for a soft club.",
+      "aesthetics": ["gen-x-soft-club", "90s-cool", "lo-fi"]
+    },
+    {
+      "id": "lTRiuFIWV54",
+      "title": "1 A.M Study Session 📚 [lofi hip hop]",
+      "author": "Lofi Girl",
+      "mood": "Mellow beats for studying or doing nothing in particular.",
+      "aesthetics": ["lo-fi", "nostalgiacore"]
+    },
+    {
+      "id": "dKZNRXMY_v0",
+      "title": "technozen music mix ꩜",
+      "author": "neo",
+      "mood": "Calm, clean electronic music for a tidy, bright desk.",
+      "aesthetics": ["technozen", "frutiger-eco"]
+    },
+    {
+      "id": "iwpBReQ3BFs",
+      "title": "Superorganism | Scorn Inspired Biopunk Music",
+      "author": "Umbra Sonax",
+      "mood": "Organic, strange electronics for labs and grown machines.",
+      "aesthetics": ["biopunk", "solarpunk", "cyberpunk"]
+    },
+    {
+      "id": "exQIlfAkbMU",
+      "title": "Bassnectar - Reaching Out [OFFICIAL VIDEO]",
+      "author": "Bassnectar",
+      "mood": "Dreamy night-time music under a moon-lit sky.",
+      "aesthetics": ["lunarpunk", "solarpunk", "spacecore"]
+    },
+    {
+      "id": "gTDQGZufZHU",
+      "title": "Beach Noir Revue: Vintage Surf & Tiki Exotica",
+      "author": "Vintage Vibe-o-rama",
+      "mood": "Exotica and island lounge for a bar with paper lanterns.",
+      "aesthetics": ["tiki", "summer"]
+    },
+    {
+      "id": "FPEJZ2NN8wE",
+      "title": "softcore calming/comfort/chill playlist˚₊· ͟͟͞͞➳❥",
+      "author": "Ashlee Ann",
+      "mood": "Warm, gentle music for blankets, tea and rain on the window.",
+      "aesthetics": ["cozycore", "cottagecore"]
+    },
+    {
+      "id": "nzd9u9Syqew",
+      "title": "A June in Las Vegas | playlist ☀️🌴🎰✨️",
+      "author": "chérie ",
+      "mood": "Cheerful, over-the-top songs for a room full of knick-knacks.",
+      "aesthetics": ["kitsch", "maximalism"]
+    },
+    {
+      "id": "8B9HwsdKKIQ",
+      "title": "a very chic parisian playlist for your aspiring french lifestyle (french chic playlist)",
+      "author": "Aphrodite Venus",
+      "mood": "Soft vintage songs for faded paint and lace curtains.",
+      "aesthetics": ["shabby-chic", "cottagecore"]
+    },
+    {
+      "id": "bmldM5GT4lU",
+      "title": "60's ATOMIC SPACE AGE COCKTAIL MUSIC | ORBIT LOUNGE 2099",
+      "author": "Mid Mod Music",
+      "mood": "Bubbly 1960s space-race music with a rocket-age smile.",
+      "aesthetics": ["space-age", "atompunk", "retrofuturism"]
+    },
+    {
+      "id": "1BzXhk44Phg",
+      "title": "Creamer (Radio Is Dead)",
+      "author": "Limp Bizkit - Topic",
+      "mood": "City songs for commuting, crossings and neon at the end of the day.",
+      "aesthetics": ["urbancore", "normcore"]
+    },
+    {
+      "id": "ODmbm8FAK0Q",
+      "title": "Glam rock: A playlist (David Bowie, T Rex, Queen, etc)",
+      "author": "The Muses' Society ",
+      "mood": "Glitter, big guitars and platform boots.",
+      "aesthetics": ["glam-rock", "punk"]
+    },
+    {
+      "id": "97b7FGfB2fE",
+      "title": "2000s songs you might’ve forgotten playlist |pt2",
+      "author": "weluvlin",
+      "mood": "The songs an older brother or sister played in the next room.",
+      "aesthetics": ["nostalgiacore"]
+    },
+    {
+      "id": "XYM_HQ623x4",
+      "title": "Cool older sister from a 90s/2000s romcom",
+      "author": "Helena Sauer",
+      "mood": "More from the older sibling's playlist, half-heard through the wall.",
+      "aesthetics": ["nostalgiacore"]
+    },
+    {
+      "id": "iCZQTCPZwBQ",
+      "title": "washing out our brains // glitchcore, hyperpop, draincore playlist",
+      "author": "renga",
+      "mood": "Glitchy, hyperpop-tinged songs for a dark, online goth.",
+      "aesthetics": ["nu-goth", "pastel-goth"]
     }
   ]
 }
