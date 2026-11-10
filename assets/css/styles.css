@@ -1333,3 +1333,41 @@ body:not(:has(.topbar)) .quiz__head {
   --mood3: #b8ff4f;
 }
 .theme-internet body::after { opacity: 0.6; }
+
+/* ---------- compare with a friend ---------- */
+
+.friendcall {
+  margin: 0 0 1.4rem;
+  padding: 1.1rem 1.2rem;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-lg);
+  background: var(--accent-soft);
+}
+.friendcall .eyebrow { margin-bottom: 0.4rem; }
+.friendcall__title { margin: 0 0 0.4rem; font-family: var(--serif); font-size: 1.35rem; font-weight: 500; }
+.friendcall__text { margin: 0; max-width: 52ch; font-size: 0.95rem; color: var(--ink-soft); }
+
+.cmp__score { margin: 0; font-size: 1.1rem; color: var(--ink-soft); }
+.cmp__pct { font-family: var(--serif); font-size: clamp(3.4rem, 12vw, 5.5rem); line-height: 1; color: var(--ink); }
+.cmp__verdict { margin: 0.4rem 0 1.2rem; font-size: 1rem; }
+.cmp__people { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin: 0 0 1rem; }
+.cmp__person { margin: 0; }
+.cmp__plate { aspect-ratio: 4 / 3; overflow: hidden; border-radius: var(--radius); background: var(--bg-sunk); }
+.cmp__plate img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.cmp__who { margin: 0.5rem 0 0; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+.cmp__name { margin: 0; font-family: var(--serif); font-size: 1.25rem; }
+
+.cmp__legend { display: flex; gap: 1.2rem; margin: 0 0 1.2rem; font-size: 0.8rem; color: var(--ink-soft); }
+.cmp__key { display: inline-flex; align-items: center; gap: 0.4rem; }
+.cmp__key .cmp__dot { position: static; transform: none; }
+
+.cmp__rows { display: grid; gap: 1px; margin: 0 0 1.6rem; background: var(--line); border-radius: var(--radius); overflow: hidden; }
+.cmp__row { padding: 0.8rem 1rem; background: var(--surface); }
+.cmp__rowhead { display: flex; justify-content: space-between; gap: 1rem; font-size: 0.86rem; }
+.cmp__label { font-weight: 500; }
+.cmp__nums { color: var(--ink-faint); font-size: 0.74rem; font-variant-numeric: tabular-nums; }
+.cmp__track { position: relative; height: 6px; margin: 0.85rem 0.5rem 0.5rem; border-radius: 4px; background: var(--bg-sunk); }
+.cmp__dot { position: absolute; top: 50%; width: 14px; height: 14px; border-radius: 50%; transform: translate(-50%, -50%); border: 2px solid var(--surface); }
+.cmp__dot--you { background: var(--accent); z-index: 2; }
+.cmp__dot--friend { background: var(--ink); }
+.cmp__poles { display: flex; justify-content: space-between; font-size: 0.66rem; color: var(--ink-faint); }

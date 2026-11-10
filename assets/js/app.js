@@ -460,6 +460,13 @@
     var urlQuiz = pageQuiz;
 
     var hero = el('div', { class: 'intro__hero' }, [
+      friendProfile() ? el('div', { class: 'friendcall' }, [
+        el('p', { class: 'eyebrow', text: 'Compare with a friend' }),
+        el('h2', { class: 'friendcall__title', text: 'A friend wants to compare with you' }),
+        el('p', { class: 'friendcall__text', text: 'This link is for comparing results. Take ' +
+          (pageQuiz ? 'this quiz' : 'the test') + ' yourself, and at the end you will see how alike ' +
+          'you and your friend are, what you each got, and where you agree and differ.' })
+      ]) : null,
       pageQuiz ? el('p', { class: 'eyebrow', text: AQ.quizMembers(data, pageQuiz).length + ' aesthetics' }) : null,
       pageQuiz ? el('h1', { class: 'display', text: pageQuiz.title }) : null,
       el('p', { class: 'lede' }, [
@@ -509,10 +516,6 @@
             (urlQuiz ? urlQuiz.questions.length : urlLength()) +
             ' statements, in the same order, as the person who shared the link.'
           ])
-        : null,
-      !pageQuiz && AQ.compare.decode(queryParam('compare'), data)
-        ? el('p', { class: 'fineprint', text: 'A friend sent you their result. Take the full test and ' +
-            'your result will show how alike you are.' })
         : null
     ]);
 
@@ -1138,32 +1141,77 @@
     }, [label]);
   }
 
-  /* "You and a friend": shown under the hero when the page was opened from a
-     ?compare= link and the friend's profile can be read. */
-  function compareSection(mine) {
-    var theirs = AQ.compare.decode(queryParam('compare'), data);
-    var diff = theirs && AQ.compare.compare(mine, theirs, data);
+  /* The friend's profile, from a ?compare= link, or null. */
+  function friendProfile() { return AQ.compare.decode(queryParam('compare'), data); }
+
+  /* One dimension, both people on the same track: a dot for you, a dot for the friend. */
+  function dimRow(r) {
+    function dot(v, cls) {
+      return el('span', { class: 'cmp__dot ' + cls, style: 'left:' + Math.round(v * 100) + '%' });
+    }
+    return el('div', { class: 'cmp__row' }, [
+      el('div', { class: 'cmp__rowhead' }, [
+        el('span', { class: 'cmp__label', text: r.meta.label }),
+        el('span', { class: 'cmp__nums', text: 'You ' + Math.round(r.mine * 100) +
+          ' · Friend ' + Math.round(r.theirs * 100) })
+      ]),
+      el('div', { class: 'cmp__track' }, [dot(r.mine, 'cmp__dot--you'), dot(r.theirs, 'cmp__dot--friend')]),
+      el('div', { class: 'cmp__poles' }, [
+        el('span', { text: r.meta.low || '' }), el('span', { text: r.meta.high || '' })
+      ])
+    ]);
+  }
+
+  /* "You and your friend": the comparison when the page was opened from a ?compare= link. */
+  function friendCompare(result, primary, familyQuiz) {
+    var theirs = friendProfile();
+    var diff = theirs && AQ.compare.compare(result.profile, theirs, data);
     if (!diff) return null;
 
-    var friendTop = data.aestheticsByKey[AQ.rankProfile(theirs, data).primary.key];
-    function rows(list) {
-      return el('div', { class: 'profile__grid' }, list.map(function (r) {
-        return el('div', { class: 'profile__row' }, [
-          el('span', { class: 'profile__label', text: r.meta.label }),
-          meter(Math.round(r.mine * 100), { subtle: true, delay: 40 }),
-          el('span', { class: 'profile__value', text: String(Math.round(r.mine * 100)) }),
-          el('span', { class: 'profile__poles', text: 'friend: ' + Math.round(r.theirs * 100) })
-        ]);
-      }));
+    var theirRank = AQ.rankProfile(theirs, familyQuiz ? scoringDataFor({ quiz: familyQuiz.key }) : data);
+    var friendTop = data.aestheticsByKey[theirRank.primary.key];
+    var same = friendTop.key === primary.key;
+    var p = diff.percent;
+    var verdict = p >= 85 ? 'Almost the same mind' : p >= 70 ? 'Very alike' : p >= 55 ? 'Quite alike'
+      : p >= 40 ? 'Some common ground' : 'Pretty different';
+
+    /* How each person's aesthetic sits in the other's ranking. */
+    function pctIn(ranked, key) {
+      var r = ranked.filter(function (x) { return x.key === key; })[0];
+      return r ? r.percent : null;
     }
-    return el('section', { class: 'block' }, [
-      el('h2', { class: 'block__title', text: 'You and a friend' }),
-      el('p', { class: 'block__lede', text: diff.percent + '% alike. Your friend got ' +
-        friendTop.name + '.' }),
-      el('h3', { class: 'block__title', text: 'Most alike' }),
-      rows(diff.rows.slice(0, 3)),
-      el('h3', { class: 'block__title', text: 'Furthest apart' }),
-      rows(diff.rows.slice(-3).reverse())
+    var youOnTheirs = pctIn(theirRank.ranked, primary.key);
+    var theyOnYours = pctIn(result.ranked, friendTop.key);
+    var cross = same ? null : 'Your friend would match your ' + primary.name +
+      (youOnTheirs !== null ? ' at ' + youOnTheirs + '%' : ' a little') + ', and you would match their ' +
+      friendTop.name + (theyOnYours !== null ? ' at ' + theyOnYours + '%' : ' a little') + '.';
+
+    function person(who, a) {
+      return el('div', { class: 'cmp__person' }, [
+        plate(a, 'cmp__plate', false),
+        el('p', { class: 'cmp__who', text: who }),
+        el('p', { class: 'cmp__name', text: a.name })
+      ]);
+    }
+    var total = diff.rows.length;
+    var n = Math.min(4, Math.floor(total / 2));
+
+    return el('section', { class: 'block cmp' }, [
+      el('p', { class: 'eyebrow', text: 'You and your friend' }),
+      el('p', { class: 'cmp__score' }, [el('span', { class: 'cmp__pct', text: p + '%' }), ' alike']),
+      el('p', { class: 'cmp__verdict', text: verdict + '. ' + (same ? 'You both got ' + primary.name + '.'
+        : 'You got ' + primary.name + ', your friend got ' + friendTop.name + '.') }),
+      el('div', { class: 'cmp__people' }, [person('You', primary), person('Your friend', friendTop)]),
+      cross ? el('p', { class: 'block__lede', text: cross }) : null,
+      el('div', { class: 'cmp__legend' }, [
+        el('span', { class: 'cmp__key' }, [el('i', { class: 'cmp__dot cmp__dot--you' }), ' You']),
+        el('span', { class: 'cmp__key' }, [el('i', { class: 'cmp__dot cmp__dot--friend' }), ' Your friend'])
+      ]),
+      el('h3', { class: 'block__title', text: 'Where you agree' }),
+      el('div', { class: 'cmp__rows' }, diff.rows.slice(0, n).map(dimRow)),
+      el('h3', { class: 'block__title', text: 'Where you differ most' }),
+      el('div', { class: 'cmp__rows' }, diff.rows.slice(-n).reverse().map(dimRow)),
+      el('p', { class: 'fineprint', text: 'Compared over the ' + total + ' dimensions you were both measured on.' })
     ]);
   }
 
@@ -1390,7 +1438,7 @@
     var copyBtn = copyButton('Copy run link', seedLink);
     var pickedTopics = !preview && session.groups && session.groups.length;
 
-    var friendCode = !familyQuiz ? AQ.compare.encode(result.profile, data) : null;
+    var friendCode = AQ.compare.encode(result.profile, data);
     var friendLink = friendCode && global.location.origin + global.location.pathname + '?compare=' + friendCode;
     var siteLink = global.location.origin + global.location.pathname;
     var runners = runnersUp(result).map(function (r) {
@@ -1424,10 +1472,11 @@
         'this run later to see if your answers have changed.'
     ], copyBtn);
 
-    var friendOption = friendLink ? linkOption(['Link to compare with a friend'], [
-      'Your friend takes the full test with their own questions.',
-      'At the end they see how alike your two profiles are, where you agree and differ most, ' +
-        'and which aesthetic you got.',
+    var friendOption = friendLink ? linkOption(['Compare with a friend'], [
+      'Send this to a friend. It is for comparing the two of you, not for sharing your result.',
+      familyQuiz ? 'It opens this same quiz for them, so you both answer the same kind of statements.'
+        : 'It opens the full test for them.',
+      'At the end they see how alike you are, what you each got, and where you agree and differ.',
       'The link holds only your profile as a short code, not your answers.'
     ], copyButton('Copy compare link', friendLink)) : null;
 
@@ -1459,7 +1508,7 @@
     var wikiBlock = wikiSection(primary);
 
     var view = el('section', { class: 'screen screen--result' }, [
-      welcome, hero, !familyQuiz ? compareSection(result.profile) : null,
+      welcome, hero, friendCompare(result, primary, familyQuiz),
       whyBlock, worldBlock, runnersUpSection(result, primary, AQ.rng.rngFromSeed(seed, 'compare'), familyQuiz),
       musicSection(primary), wikiBlock, profileSection(result.profile),
       closing, otherQuizzesSection(familyQuiz || pageQuiz), footer
