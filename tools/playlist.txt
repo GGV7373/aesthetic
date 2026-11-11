@@ -137,6 +137,7 @@ Nu-Goth = https://www.youtube.com/watch?v=iCZQTCPZwBQ
 Pastel Goth = https://www.youtube.com/watch?v=hOiWsGaBfJY
 Southern Gothic = https://www.youtube.com/watch?v=qhH4D251i4Q
 
+
 # ======== JAPANESE STREET AND KAWAII ========
 City Pop = https://www.youtube.com/watch?v=YCDAp-jg7ls
 Kawaii = https://www.youtube.com/watch?v=hOiWsGaBfJY
