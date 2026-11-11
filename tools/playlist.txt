@@ -18,7 +18,7 @@ Forestpunk = https://www.youtube.com/watch?v=qhH4D251i4Q
 Gardencore = https://www.youtube.com/watch?v=8-pSMHBJg5U
 Lumberjack = https://www.youtube.com/watch?v=qhH4D251i4Q
 Naturecore = https://www.youtube.com/watch?v=qhH4D251i4Q
-Prairiecore = 
+Prairiecore = https://www.youtube.com/watch?v=djmuOu8kgvQ&t
 
 # ======== WITCHY AND FOLK ========
 Appalachian Gothic = https://www.youtube.com/watch?v=qhH4D251i4Q
@@ -136,7 +136,6 @@ Goth = https://www.youtube.com/watch?v=iEfVC2LOCv8
 Nu-Goth = https://www.youtube.com/watch?v=iCZQTCPZwBQ
 Pastel Goth = https://www.youtube.com/watch?v=hOiWsGaBfJY
 Southern Gothic = https://www.youtube.com/watch?v=qhH4D251i4Q
-
 
 # ======== JAPANESE STREET AND KAWAII ========
 City Pop = https://www.youtube.com/watch?v=YCDAp-jg7ls
