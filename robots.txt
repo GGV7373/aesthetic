@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://estetikk.com/sitemap.xml

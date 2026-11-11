@@ -106,6 +106,104 @@
     return c;
   }
 
+
+  /* ---- with photos: the winner's photo across the top, the runners as small tiles ---- */
+
+  function cover(ctx, img, x, y, w, h) {
+    var s = Math.max(w / img.width, h / img.height);
+    var sw = w / s, sh = h / s;
+    ctx.drawImage(img, (img.width - sw) / 2, (img.height - sh) / 2, sw, sh, x, y, w, h);
+  }
+
+  function drawPhotoCard(aesthetic, percent, runners, imgs) {
+    var c = document.createElement('canvas');
+    c.width = W; c.height = H;
+    var ctx = c.getContext('2d');
+    var p = aesthetic.palette;
+    var serif = '"Fraunces", Georgia, serif', sans = '"Inter", Arial, sans-serif';
+
+    ctx.fillStyle = p[0];
+    ctx.fillRect(0, 0, W, H);
+    var g = ctx.createLinearGradient(0, 0, W, H);
+    g.addColorStop(0, p[0]); g.addColorStop(0.6, p[1]); g.addColorStop(1, p[0]);
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, W, H);
+
+    var PH = 600;
+    cover(ctx, imgs.main, 0, 0, W, PH);
+    var fade = ctx.createLinearGradient(0, PH - 220, 0, PH);
+    fade.addColorStop(0, p[0] + '00'); fade.addColorStop(1, p[0]);
+    ctx.fillStyle = fade;
+    ctx.fillRect(0, PH - 220, W, 220);
+
+    var ink = luma(p[0]) + luma(p[1]) > 1.1 ? '#191c22' : '#fffcfa';
+    ctx.fillStyle = ink;
+    ctx.textBaseline = 'alphabetic';
+
+    ctx.font = '600 26px ' + sans;
+    ctx.fillText('MY AESTHETIC', 90, 600);
+    var long = aesthetic.name.length > 14;
+    var size = long ? 92 : 116;
+    ctx.font = '500 ' + size + 'px ' + serif;
+    var y = wrap(ctx, aesthetic.name, 90, 715, W - 180, Math.round(size * 1.07));
+    ctx.font = 'italic 400 36px ' + serif;
+    wrap(ctx, aesthetic.tagline, 90, y + 4, W - 180, 48);
+
+    ctx.font = '500 120px ' + serif;
+    ctx.fillText(percent + '%', 90, 985);
+    var pw = ctx.measureText(percent + '%').width;
+    ctx.font = '500 34px ' + sans;
+    ctx.fillText('match', 90 + pw + 24, 985);
+
+    var n = runners.length;
+    if (n) {
+      var gap = 30, tw = Math.floor((W - 180 - gap * (n - 1)) / n), ty = 1040, th = 170;
+      runners.forEach(function (r, i) {
+        var x = 90 + i * (tw + gap);
+        ctx.save();
+        ctx.beginPath(); ctx.rect(x, ty, tw, th); ctx.clip();
+        if (imgs.runners[i]) cover(ctx, imgs.runners[i], x, ty, tw, th);
+        else { ctx.fillStyle = p[1]; ctx.fillRect(x, ty, tw, th); }
+        ctx.restore();
+        ctx.fillStyle = ink;
+        var name = r.name;
+        ctx.font = '500 30px ' + serif;
+        while (name.length > 3 && ctx.measureText(name).width > tw - 76) name = name.slice(0, -2);
+        if (name !== r.name) name = name.replace(/s+$/, '') + '…';
+        ctx.fillText(name, x, ty + th + 44);
+        ctx.font = '500 28px ' + sans;
+        ctx.textAlign = 'right';
+        ctx.fillText(r.percent + '%', x + tw, ty + th + 44);
+        ctx.textAlign = 'left';
+      });
+    }
+
+    ctx.fillStyle = ink;
+    ctx.font = '500 28px ' + sans;
+    ctx.fillText('What Aesthetic Are You?  ·  ' + global.location.host, 90, H - 40);
+    return c;
+  }
+
+  function load(src) {
+    return new Promise(function (ok) {
+      if (!src) { ok(null); return; }
+      var im = new Image();
+      im.onload = function () { ok(im); };
+      im.onerror = function () { ok(null); };
+      im.src = src;
+    });
+  }
+
+  /* Resolves to the finished canvas. `srcs`: { main, runners: [url|null] }. No main
+     photo (or one that fails to load) gives the plain card. */
+  function drawAsync(aesthetic, percent, runners, srcs) {
+    srcs = srcs || {};
+    return Promise.all([load(srcs.main)].concat((srcs.runners || []).map(load))).then(function (all) {
+      if (!all[0]) return draw(aesthetic, percent, runners);
+      return drawPhotoCard(aesthetic, percent, runners.slice(0, 3), { main: all[0], runners: all.slice(1) });
+    });
+  }
+
   /* Resolves once every face the card uses is loaded (or failed), so a card drawn
      early doesn't fall back to Georgia/Arial. The italic tagline face may not be
      on the page yet, so asking for it by name is what triggers its download. */
@@ -118,5 +216,5 @@
     ].map(function (f) { return fonts.load(f).catch(function () {}); }));
   }
 
-  AQ.card = { draw: draw, ready: ready };
+  AQ.card = { draw: draw, drawAsync: drawAsync, ready: ready };
 })(typeof window !== 'undefined' ? window : globalThis);

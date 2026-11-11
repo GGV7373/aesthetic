@@ -1,7 +1,13 @@
-# Read by Cloudflare.
+# Read by Cloudflare. tools/serve.js sends the /* block too, so the
+# Content-Security-Policy can be tried locally. It lists everything the pages
+# load: own files, inline style attributes, Google Fonts, YouTube thumbnails and
+# data: images (the favicon and the generated mood plates).
 /*
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: DENY
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://i.ytimg.com; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'
 
 # Question and aesthetic data changes with the deploy, so it must not be cached hard.
 /data/*

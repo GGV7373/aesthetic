@@ -1,0 +1,14 @@
+# Runs the data checks on every push and pull request, so broken data is caught
+# before it is deployed.
+name: Validate
+on: [push, pull_request]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node tools/validate.js
+      - run: node tools/check-compare.js

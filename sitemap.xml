@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Every public page. tools/validate.js checks that each quiz page is listed. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://estetikk.com/</loc></url>
+  <url><loc>https://estetikk.com/quizzes/internet.html</loc></url>
+  <url><loc>https://estetikk.com/quizzes/future.html</loc></url>
+  <url><loc>https://estetikk.com/quizzes/nature.html</loc></url>
+  <url><loc>https://estetikk.com/compare-aesthetics.html</loc></url>
+  <url><loc>https://estetikk.com/updates.html</loc></url>
+  <url><loc>https://estetikk.com/credits.html</loc></url>
+  <url><loc>https://estetikk.com/privacy.html</loc></url>
+</urlset>
