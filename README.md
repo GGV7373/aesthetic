@@ -32,10 +32,15 @@ falls back to the generated, git-ignored `data/bundle.js`.
 ## Deploying
 
 A Cloudflare Worker serves the repository root (`wrangler.jsonc`), except what
-`.assetsignore` leaves out, such as `tools/`. Run
-`tools/validate.js` before pushing; the repo doesn't run it on deploy. If you add a strict
-`Content-Security-Policy`, allow `img-src https://i.ytimg.com`, or track thumbnails
-quietly stop appearing.
+`.assetsignore` leaves out, such as `tools/`. A GitHub Action
+(`.github/workflows/validate.yml`) runs `tools/validate.js` and `tools/check-compare.js`
+on every push and pull request; run them yourself before pushing, because the deploy
+does not wait for them.
+
+`_headers` sets a `Content-Security-Policy` that lists everything the pages load. A new
+outside source (a font host, an image host, an embed) has to be added there, or it is
+quietly blocked. `tools/serve.js` sends the same headers, so the browser console shows a
+blocked request locally too.
 
 `og:image`, `og:url` and the canonical link in `index.html` point at
 `https://estetikk.com`; change them if you deploy elsewhere. `assets/og.png` is
@@ -94,6 +99,9 @@ rejects gendered words anywhere else.
 
 ```
 index.html, 404.html, wrangler.jsonc, _headers, _redirects
+compare-aesthetics.html, updates.html, credits.html, privacy.html
+sitemap.xml, robots.txt   add a new page to the sitemap
+sw.js              service worker: keeps a copy of what was loaded, for offline use
 quizzes/           one page per family quiz
 assets/css/styles.css
 assets/js/
@@ -106,6 +114,7 @@ assets/js/
   visuals.js     generated mood plates (SVG)
   music.js       playlist matching for the result
   compare.js     friend comparison links (?compare=)
+  versus.js      compare-aesthetics.html: two aesthetics side by side (?a=&b=)
   card.js        "save result as image" PNG
   app.js         screens and flow
 data/
@@ -119,6 +128,7 @@ data/
   photos.json      photo file, author and licence per aesthetic
 tools/
   serve.js, build-bundle.js, validate.js
+  check-compare.js   checks every sentence compare-aesthetics.html can write
   resize-photos.py   shrinks the photos in place, writes gallery thumbnails
   og-image.html      source for assets/og.png
 ```
@@ -190,8 +200,13 @@ node tools/build-bundle.js     # only needed for opening from disk
 
 Everything runs in the browser, with no tracking. The only outside requests are
 Google Fonts and YouTube thumbnails; music links open YouTube only when
-clicked. `privacy.html` says the same to visitors, so keep the two in step. `localStorage` keeps the run in progress, question history, topic preferences
-and the name setting.
+clicked. `privacy.html` says the same to visitors, so keep the two in step. `localStorage` keeps the run in progress, question history, topic preferences,
+the name setting and the last five results (shown on the home page; the newest one
+keeps its answers so it can be opened again).
+
+`sw.js` saves a copy of every same-origin file the browser loads, and uses it only when
+the network fails, so a deploy is never hidden by an old copy. After one visit to the
+home page the tests work offline, with system fonts and without track thumbnails.
 
 ## License
 

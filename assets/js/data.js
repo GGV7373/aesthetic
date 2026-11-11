@@ -132,4 +132,10 @@
       .catch(function () { return fromBundle(); })
       .then(index);
   };
+
+  /* Offline support: sw.js keeps a copy of everything the site has loaded.
+     Service workers need http(s), and Node (tools/) has no navigator. */
+  if (global.navigator && global.navigator.serviceWorker && global.location.protocol !== 'file:') {
+    global.navigator.serviceWorker.register('/sw.js').catch(function () { /* the site works without it */ });
+  }
 })(typeof window !== 'undefined' ? window : globalThis);

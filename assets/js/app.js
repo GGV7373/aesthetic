@@ -20,6 +20,8 @@
   var STORE_SESSION = 'aq.session.v3';
   var STORE_HISTORY = 'aq.previousQuestionIds.v3';
   var STORE_PREFS = 'aq.preferences.v1';
+  var STORE_RESULTS = 'aq.results.v1'; /* the last few results, newest first, shared by all pages */
+  var RESULTS_KEPT = 5;
   var PREFS_MAX_PICKS = 5;
 
   /* The three run lengths offered on the intro. 50 is the standard the group
@@ -271,6 +273,55 @@
     return ok ? saved : null;
   }
 
+  /* ---------- past results ---------- */
+
+  function pastResults() {
+    var list = readStore(STORE_RESULTS, []);
+    return Array.isArray(list) ? list.filter(function (r) { return r && r.key; }) : [];
+  }
+
+  /* The newest entry also keeps its run (statements and answers), so that result
+     can be opened again; the stored session itself is cleared once a result shows.
+     The result screen is drawn again on Back and when the name setting changes;
+     the same run then keeps its place and its date. */
+  function rememberResult(result) {
+    var list = pastResults();
+    var again = list[0] && list[0].seed === session.seed ? list.shift() : null;
+    list.forEach(function (r) { delete r.run; });
+    list.unshift({
+      key: result.primary.key, percent: result.primary.percent,
+      seed: session.seed, at: again ? again.at : Date.now(), run: session
+    });
+    writeStore(STORE_RESULTS, list.slice(0, RESULTS_KEPT));
+  }
+
+  /* "Last time you got ..." for the intro. The result can be reopened on the page
+     it was taken on, as long as every statement in it still exists. */
+  function lastResultLine() {
+    var list = pastResults().filter(function (r) { return data.aestheticsByKey[r.key]; });
+    if (!list.length) return null;
+    var last = list[0];
+    var lastName = data.aestheticsByKey[last.key].name;
+    var earlier = [];
+    list.slice(1).forEach(function (r) {
+      var n = data.aestheticsByKey[r.key].name;
+      if (n !== lastName && earlier.indexOf(n) < 0) earlier.push(n);
+    });
+    var run = last.run;
+    var reopen = run && Array.isArray(run.questionIds) && run.answers &&
+      (run.quiz || '') === (pageQuiz ? pageQuiz.key : '') &&
+      run.questionIds.every(function (id) { return !!data.questionsById[id]; });
+    return el('p', { class: 'fineprint' }, [
+      'Last time you got ', el('strong', { text: lastName }), ' (' + last.percent + '%), ' +
+      new Date(last.at).toLocaleDateString('en-GB', { day: 'numeric', month: 'long' }) + '. ',
+      earlier.length ? 'Before that: ' + earlier.join(', ') + '. ' : null,
+      reopen ? el('button', {
+        class: 'btn btn--ghost btn--small', type: 'button',
+        onclick: function () { session = run; screenResult(); }
+      }, ['See it again']) : null
+    ]);
+  }
+
   /* ---------- browser history ---------- */
 
   /* Without this the browser's Back button (and Alt+Left, and the back gesture
@@ -516,7 +567,8 @@
             (urlQuiz ? urlQuiz.questions.length : urlLength()) +
             ' statements, in the same order, as the person who shared the link.'
           ])
-        : null
+        : null,
+      lastResultLine()
     ]);
 
     /* A family quiz page is just its own quiz. */
@@ -1381,6 +1433,7 @@
 
     var result = preview || AQ.score(sessionQuestions(), session.answers, scoringDataFor(session));
     var seed = preview ? 'preview' : session.seed;
+    if (!preview) rememberResult(result);
     var rng = AQ.rng.rngFromSeed(seed, 'narrative');
 
     var primary = data.aestheticsByKey[result.primary.key];
@@ -1521,7 +1574,9 @@
       closing, otherQuizzesSection(familyQuiz || pageQuiz), footer
     ]);
 
-    if (!preview) clearStore(STORE_SESSION);
+    /* A reopened old result must not wipe a newer run that is still in progress. */
+    var stored = readStore(STORE_SESSION, null);
+    if (!preview && (!stored || stored.seed === session.seed)) clearStore(STORE_SESSION);
     render(view);
   }
 

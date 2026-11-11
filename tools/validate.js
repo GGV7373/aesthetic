@@ -300,6 +300,12 @@ const wantPreloads = read('data/quizzes.json').quizzes.map((k) => 'data/quizzes/
   if (have !== wantPreloads) errors.push(`${page}: preloads [${have}], but data/quizzes.json lists [${wantPreloads}].`);
 });
 
+/* 0a'''. Search engines find the quiz pages through sitemap.xml. */
+const sitemap = fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8');
+familyQuizzes.forEach((qz) => {
+  if (!sitemap.includes(`/quizzes/${qz.key}.html<`)) errors.push(`sitemap.xml: quizzes/${qz.key}.html is not listed.`);
+});
+
 /* 0a'. Family quizzes stay fair: someone who answers each statement the way a
    member's profile reads gets that member for most members, and with random
    answers no member wins far more (or less) than its fair share. */
