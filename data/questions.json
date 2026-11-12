@@ -23,7 +23,7 @@
   {
     "id": 21,
     "group": "sound",
-    "cluster": "listen-alone-loud",
+    "cluster": "sound-recording-at-home",
     "text": "My favourite way to listen to music is alone, with the volume up.",
     "dimensions": { "solitude": 3, "comfort": 1, "individualism": 1, "social": -1 }
   },
@@ -280,7 +280,7 @@
   {
     "id": 212,
     "group": "nature",
-    "cluster": "nat-reclaimed",
+    "cluster": "nat-cleanly-built",
     "text": "A building with plants growing through the cracks looks more beautiful to me than one kept spotless.",
     "dimensions": { "nature": 2, "organic": 2, "order": -2, "modernity": -1, "mystery": 1 }
   },
@@ -1471,7 +1471,7 @@
   {
     "id": 120,
     "group": "order",
-    "cluster": "mess-unease",
+    "cluster": "home-bare",
     "text": "Mess around me makes me uneasy.",
     "dimensions": { "order": 3, "minimalism": 2, "chaos": -3, "maximalism": -1 }
   },
@@ -1506,7 +1506,7 @@
   {
     "id": 127,
     "group": "order",
-    "cluster": "order-messy-cope",
+    "cluster": "creative-mess",
     "text": "My files, photos and notes are a mess, and I'm mostly fine with that.",
     "dimensions": { "order": -3, "chaos": 1, "minimalism": -1 }
   },
@@ -1644,7 +1644,7 @@
   {
     "id": 266,
     "group": "style",
-    "cluster": "style-inherited-clothes",
+    "cluster": "secondhand",
     "text": "Wearing something second-hand feels better to me than wearing something brand new.",
     "dimensions": { "nostalgia": 2, "tradition": 1, "craft": 1, "modernity": -1 }
   },
@@ -1756,7 +1756,7 @@
   {
     "id": 117,
     "group": "temperament",
-    "cluster": "temp-expect-worst",
+    "cluster": "future-fear",
     "text": "I tend to expect things to go wrong.",
     "dimensions": { "optimism": -3, "melancholy": 2, "darkness": 1 }
   },
@@ -1964,14 +1964,14 @@
   {
     "id": 305,
     "group": "sound",
-    "cluster": "snd-never-quiet",
+    "cluster": "wilderness",
     "text": "Quiet is what I want most from the place I live.",
     "dimensions": { "solitude": 3, "urban": -3, "rural": 2, "social": -2 }
   },
   {
     "id": 306,
     "group": "music",
-    "cluster": "old-media",
+    "cluster": "mus-old-era",
     "text": "Music made before I was born interests me more than anything new.",
     "dimensions": { "retro": 3, "nostalgia": 2, "history": 2, "modernity": -2 }
   },
@@ -2020,7 +2020,7 @@
   {
     "id": 312,
     "group": "nature",
-    "cluster": "n-city-break",
+    "cluster": "urb-skip-cities",
     "text": "I'd pick a city break over a week in the countryside.",
     "dimensions": { "urban": 3, "rural": -3, "nature": -2, "social": 1 }
   },
@@ -2034,7 +2034,7 @@
   {
     "id": 314,
     "group": "nature",
-    "cluster": "n-weeds-pavement",
+    "cluster": "controlled-nature",
     "text": "I notice weeds pushing through the pavement more than neat flowerbeds.",
     "dimensions": { "organic": 2, "chaos": 2, "order": -2, "nature": 1 }
   },
@@ -2062,7 +2062,7 @@
   {
     "id": 317,
     "group": "weather",
-    "cluster": "n-indoors-turns",
+    "cluster": "outdoor-comfort",
     "text": "I want to go inside as soon as the weather gets bad.",
     "dimensions": { "nature": -2, "comfort": 2, "adventure": -2, "rural": -1 }
   },
@@ -2111,7 +2111,7 @@
   {
     "id": 323,
     "group": "home",
-    "cluster": "n-above-busy-street",
+    "cluster": "urb-flat-in-centre",
     "text": "I'd rather live above a busy street than down a quiet lane.",
     "dimensions": { "urban": 3, "rural": -3, "solitude": -2, "social": 1 }
   },
@@ -2167,14 +2167,14 @@
   {
     "id": 326,
     "group": "food",
-    "cluster": "n-order-in",
+    "cluster": "food-cook-by-choice",
     "text": "Most nights I'd rather order food than cook.",
     "dimensions": { "craft": -3, "comfort": 1, "modernity": 1, "tradition": -2 }
   },
   {
     "id": 327,
     "group": "food",
-    "cluster": "n-ready-made",
+    "cluster": "food-plain-quick",
     "text": "Ready-made food is a smart use of time, not a compromise.",
     "dimensions": { "craft": -3, "modernity": 2, "realism": 2, "tradition": -2 }
   },
@@ -2223,7 +2223,7 @@
   {
     "id": 331,
     "group": "past",
-    "cluster": "n-old-worn-out",
+    "cluster": "not-keeping",
     "text": "Old things mostly just look worn out to me.",
     "dimensions": { "nostalgia": -3, "history": -2, "retro": -2, "craft": -1 }
   },
@@ -2251,7 +2251,7 @@
   {
     "id": 335,
     "group": "past",
-    "cluster": "n-before-my-time",
+    "cluster": "past-museums-tire",
     "text": "History from before I was born feels far away from my own life.",
     "dimensions": { "history": -3, "tradition": -2, "nostalgia": -2, "modernity": 1 }
   },
@@ -2300,21 +2300,21 @@
   {
     "id": 342,
     "group": "screens",
-    "cluster": "n-new-devices",
+    "cluster": "fut-tech-unimpressed",
     "text": "New gadgets interest me even before they're actually useful.",
     "dimensions": { "technology": 3, "futurism": 2, "modernity": 2, "craft": -1 }
   },
   {
     "id": 343,
     "group": "screens",
-    "cluster": "n-buttons-not-screen",
+    "cluster": "hand-tools",
     "text": "I prefer a machine with buttons to one with a touchscreen.",
     "dimensions": { "technology": -2, "digital": -3, "retro": 2, "craft": 1 }
   },
   {
     "id": 344,
     "group": "screens",
-    "cluster": "n-always-reachable",
+    "cluster": "unavailable",
     "text": "I'm fine with being reachable at any hour.",
     "dimensions": { "digital": 2, "social": 2, "solitude": -2, "retro": -1 }
   },
@@ -2349,7 +2349,7 @@
   {
     "id": 348,
     "group": "future",
-    "cluster": "n-tech-solves",
+    "cluster": "fut-thinking-machines",
     "text": "Technology will solve more problems than it causes.",
     "dimensions": { "technology": 3, "futurism": 3, "optimism": 2, "realism": -1 }
   },
@@ -2475,7 +2475,7 @@
   {
     "id": 363,
     "group": "people",
-    "cluster": "mus-in-the-crowd",
+    "cluster": "ppl-recharge-with-people",
     "text": "Being part of a big crowd at an event sounds like one of life's best feelings.",
     "dimensions": { "social": 3, "community": 3, "solitude": -3, "chaos": 1 }
   },
@@ -2538,14 +2538,14 @@
   {
     "id": 371,
     "group": "imagination",
-    "cluster": "n-daydream-less",
+    "cluster": "imag-daydream-often",
     "text": "I daydream much less than most people seem to.",
     "dimensions": { "fantasy": -3, "realism": 3, "whimsy": -2, "intellect": 1 }
   },
   {
     "id": 372,
     "group": "imagination",
-    "cluster": "n-invented-worlds",
+    "cluster": "imag-worldbuilding",
     "text": "Made-up worlds hold my attention better than the real one.",
     "dimensions": { "fantasy": 3, "realism": -3, "whimsy": 2, "mystery": 1 }
   },
@@ -2573,7 +2573,7 @@
   {
     "id": 376,
     "group": "order",
-    "cluster": "n-untidy-fine",
+    "cluster": "creative-mess",
     "text": "I can relax just fine in a messy room.",
     "dimensions": { "order": -3, "chaos": 3, "comfort": 1, "minimalism": -1 }
   },
@@ -2608,7 +2608,7 @@
   {
     "id": 381,
     "group": "style",
-    "cluster": "anonymous-clothes",
+    "cluster": "style-clothes-just-clothes",
     "text": "I dress to blend in, not to be noticed.",
     "dimensions": { "individualism": -2, "ornament": -2, "minimalism": 2, "refinement": -1 }
   },
@@ -2706,7 +2706,7 @@
   {
     "id": 390,
     "group": "travel",
-    "cluster": "n-cities-wear-out",
+    "cluster": "long-walk",
     "text": "Cities wear me out after a few days.",
     "dimensions": { "urban": -3, "rural": 2, "solitude": 2, "social": -1 }
   },
@@ -2741,7 +2741,7 @@
   {
     "id": 391,
     "group": "temperament",
-    "cluster": "n-work-out",
+    "cluster": "future-fear",
     "text": "I usually expect things to work out.",
     "dimensions": { "optimism": 3, "melancholy": -2, "darkness": -2, "realism": -1 }
   },
