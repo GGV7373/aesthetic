@@ -99,8 +99,8 @@
     "name": "Cryptidcore",
     "family": "Witchy and Folk",
     "tagline": "Something is standing at the treeline, looking back",
-    "description": "Blurred photographs, local legends and places nobody can confirm. The pull isn't in the proof - it's that the explanation never arrives.",
-    "keywords": ["blurred photos", "legends", "treeline", "field reports", "grainy film"],
+    "description": "Blurred photographs, local legends about cryptids nobody can confirm, and roadside gift shops selling them on keychains. The pull isn't in the proof - it's that the explanation never arrives.",
+    "keywords": ["blurred photos", "legends", "cryptids", "tourist traps", "grainy film"],
     "palette": ["#0c0f0d", "#243026", "#6b6247", "#c9c4ac"],
     "dimensions": {
       "mystery": 0.95,
@@ -139,7 +139,7 @@
       "technology": "a cassette recorder, a disposable camera, a radio scanner full of hiss",
       "clothes": "flannel, a rucksack with too many pockets, a cap with a faded logo",
       "music": "banjo and synth at the same time, recordings that start too early",
-      "colours": "pine bark, grainy grey-brown, flash white",
+      "colours": "pine bark, grainy grey-brown, flash white, glow-in-the-dark green",
       "everyday": "driving at night, notes at three in the morning, nobody believing you"
     }
   },
@@ -241,8 +241,8 @@
     "name": "Naturecore",
     "family": "Nature and Pastoral",
     "tagline": "The world as it is, unfiltered",
-    "description": "Plain delight in the shapes nature makes: fungi, stone, birds, tides. Less fantasy than Fairycore, less gloom than Dark Naturalism - just attention.",
-    "keywords": ["fungi", "tideline", "herbarium", "seasons", "birdsong"],
+    "description": "Plain delight in the shapes nature makes: fungi, stone, birds, rivers. Less fantasy than Fairycore, less gloom than Dark Naturalism - a quiet way out of the city and away from the screen.",
+    "keywords": ["fungi", "forest walks", "wildflowers", "seasons", "birdsong"],
     "palette": ["#12180f", "#31462a", "#7d9159", "#e2dcc0"],
     "dimensions": {
       "nature": 0.98,
@@ -370,7 +370,7 @@
       "technology": "a typewriter, or a laptop you hide, otherwise paper",
       "clothes": "tweed, a wool coat, a shirt slightly too formal for the occasion",
       "music": "piano pieces in a minor key, choral works, the crackle of a record",
-      "colours": "ink, dark olive, burnt umber, old paper",
+      "colours": "ink, burgundy, dark olive, old paper",
       "everyday": "reading until two in the morning, notebooks filling faster than they are read"
     }
   },
@@ -417,7 +417,7 @@
       "interior": "white walls, a wooden desk, flowers in a glass",
       "technology": "a laptop, but preferably a pen and decent paper",
       "clothes": "linen, light knitwear, a shirt with the sleeves rolled up",
-      "music": "string quartets, early jazz, someone practising upstairs",
+      "music": "string quartets, classical piano, someone practising upstairs",
       "colours": "ivory, honey, sandstone, pale blue",
       "everyday": "reading outdoors, arguing too long, writing letters you actually send"
     }
@@ -427,7 +427,7 @@
     "name": "Romantic Academia",
     "family": "Academia and Period",
     "tagline": "Study as a love affair",
-    "description": "The literature, the longing and the passion rather than the exam. Knowledge is something you feel as much as understand.",
+    "description": "Romantic poets, love letters and longing rather than the exam. Knowledge is something you feel as much as understand.",
     "keywords": ["poetry", "letters", "roses", "diaries", "longing"],
     "palette": ["#1d141a", "#4b2b34", "#96636a", "#e6cfc2"],
     "dimensions": {
@@ -466,7 +466,7 @@
       "interior": "dried flowers between pages, letters in a drawer, far too many cushions",
       "technology": "preferably none; a phone lying face down",
       "clothes": "soft layers, a linen collar, a coat that is impractical and worth it",
-      "music": "nocturnes, songs whose words you know by heart",
+      "music": "nocturnes, The Smiths, dream pop whose words you know by heart",
       "colours": "dried rose, wine red, yellowed paper, pale gold",
       "everyday": "underlining in books, writing things you never send, long evenings"
     }
@@ -835,7 +835,7 @@
     "name": "Dieselpunk",
     "family": "Punk and Futurism",
     "tagline": "Oil, rivets and seriousness",
-    "description": "The heavy machinery of the 1920s and 30s: aircraft made of metal, engines you hear through walls, and a world built to be robust rather than comfortable.",
+    "description": "The interwar years run on diesel: riveted aircraft, engines you hear through walls, propaganda posters and a noir edge. A world built for war and work rather than comfort.",
     "keywords": ["rivets", "engines", "hangar", "oil", "interwar"],
     "palette": ["#111214", "#33302b", "#7a6244", "#c6bda9"],
     "dimensions": {
@@ -1404,8 +1404,8 @@
     "name": "Nautical",
     "family": "Adventure and Sea",
     "tagline": "Everything stowed before you sail",
-    "description": "The order and romance of seafaring: knots, brass, charts and discipline. The adventure is large, but the ship has to be tidy.",
-    "keywords": ["knots", "charts", "brass", "lighthouse", "sails"],
+    "description": "The calm and order of the coast and the sea: knots, brass, charts, crisp stripes and discipline. The adventure is large, but the ship has to be tidy.",
+    "keywords": ["knots", "charts", "brass", "lighthouse", "stripes"],
     "palette": ["#0c1522", "#173a5e", "#b98b4a", "#eef1f2"],
     "dimensions": {
       "adventure": 0.8,
@@ -1447,7 +1447,7 @@
       "technology": "a sextant, a compass, an engine that has to be maintained",
       "clothes": "a wool jumper, oilskins, stripes worn without irony",
       "music": "shanties, accordion, a foghorn",
-      "colours": "navy blue, brass, sail white, rope",
+      "colours": "navy blue, sail white, signal red, brass",
       "everyday": "checking the weather, keeping order, going out anyway"
     }
   },
@@ -1456,8 +1456,8 @@
     "name": "Oceanpunk",
     "family": "Adventure and Sea",
     "tagline": "A world of water and sail",
-    "description": "Civilisations built on sea and islands: floating cities, diving bells and trade between places no chart quite covers.",
-    "keywords": ["floating city", "diving bell", "archipelago", "sailing ship", "deep water"],
+    "description": "Science fiction built on sea and islands: floating cities, submarines, pirates and trade between places no chart quite covers.",
+    "keywords": ["floating city", "submarine", "archipelago", "sailing ship", "pirates"],
     "palette": ["#04141c", "#0f4a5c", "#3fa39a", "#e4e9d8"],
     "dimensions": {
       "adventure": 0.9,
@@ -1491,7 +1491,7 @@
       "setting": "a city made of ships lashed together, coral shallows, a storm on the horizon",
       "architecture": "platforms, rope walkways, houses of ship's planking",
       "interior": "everything hanging, everything secured, glass globes with light inside",
-      "technology": "brass diving suits, winches, navigation that is half secret",
+      "technology": "brass diving suits, submarines, navigation that is half secret",
       "clothes": "waterproof canvas, wide belts, colours that hold in salt",
       "music": "drums, part-singing, whale song in the mix",
       "colours": "deep sea blue, copper green, sail white, coral",
@@ -1911,7 +1911,7 @@
     "name": "Analog Horror",
     "family": "Internet and Liminal",
     "tagline": "The broadcast continues after closedown",
-    "description": "Horror delivered through old media: VHS noise, emergency bulletins and recordings that shouldn't exist. The fear comes from the old tape and screen itself.",
+    "description": "Found-footage horror from mid-2010s web series, told through old media: VHS noise, emergency bulletins and recordings that shouldn't exist. The fear comes from the old tape and screen itself.",
     "keywords": ["VHS", "emergency broadcast", "closedown", "recordings", "signal noise"],
     "palette": ["#0a0a0a", "#1e1a1a", "#5c2a26", "#c8c2b6"],
     "dimensions": {
@@ -2141,8 +2141,8 @@
     "name": "Normcore",
     "family": "Style and Status",
     "tagline": "Nothing to prove",
-    "description": "Being ordinary on purpose: practical clothes, familiar brands and nothing that tries to say who you are. Freedom in not having to express yourself through objects.",
-    "keywords": ["ordinary", "practical", "unsignalled", "everyday", "functional"],
+    "description": "Being ordinary on purpose: brand-less basics, relaxed jeans, plain trainers and nothing that tries to say who you are. Freedom in not having to express yourself through objects.",
+    "keywords": ["ordinary", "practical", "brand-less", "everyday", "functional"],
     "palette": ["#1a1b1c", "#3c4045", "#8b9095", "#e9e8e4"],
     "dimensions": {
       "minimalism": 0.7,
@@ -2173,7 +2173,7 @@
       "architecture": "functional buildings, nothing asking for attention",
       "interior": "furniture that works, tidy enough, no concept",
       "technology": "what everyone else has, bought because it does the job",
-      "clothes": "a jumper, jeans, trainers, no story",
+      "clothes": "a plain jumper, relaxed jeans, New Balance trainers, no logo, no story",
       "music": "whatever is on, without embarrassment",
       "colours": "grey, navy, white, beige",
       "everyday": "doing ordinary things well, without making a point of it"
@@ -2234,7 +2234,7 @@
     "name": "Jock",
     "family": "Style and Status",
     "tagline": "Peaked in the gym and proud of it",
-    "description": "American school and college sports culture: letterman jackets, varsity numbers, locker rooms and the team at the centre of school life. Wholesome, competitive and worn on the sleeve.",
+    "description": "American school and college sports culture: letterman jackets, varsity numbers, locker rooms and the team at the centre of school life. Popular, competitive and first to the party after the game.",
     "keywords": ["letterman", "varsity", "locker room", "bleachers", "team"],
     "palette": ["#10233f", "#c5a253", "#f2f2f2", "#7a1f2b"],
     "dimensions": {
@@ -2269,7 +2269,7 @@
       "clothes": "a varsity jacket, team shorts, clean high-tops",
       "music": "a hype playlist in the locker room, the marching band, the crowd",
       "colours": "school navy, gold, bleacher grey, home red",
-      "everyday": "practice before class, the game at the weekend, eating for the sport"
+      "everyday": "practice before class, the game at the weekend, the party after it"
     }
   },
   {
@@ -2324,8 +2324,8 @@
     "name": "Metalhead",
     "family": "Subculture",
     "tagline": "Loud, fast and here for the riff",
-    "description": "The heavy metal subculture: band shirts, battle jackets, long hair and a loyalty to volume. Dark imagery and technical playing over a genuinely warm community.",
-    "keywords": ["battle jacket", "band shirt", "denim", "patches", "amplifier"],
+    "description": "The heavy metal subculture: leather and studs, battle jackets, band shirts, long hair and a loyalty to volume. Dark imagery and technical playing over a genuinely warm community.",
+    "keywords": ["battle jacket", "band shirt", "leather", "studs", "patches"],
     "palette": ["#0c0c0c", "#1c1c1c", "#7a1010", "#c9c9c9"],
     "dimensions": {
       "darkness": 0.98,
@@ -2362,7 +2362,7 @@
       "architecture": "a rehearsal room lined with egg boxes, a bar that has always been a metal bar",
       "interior": "a wall of vinyl and CDs, a stack of amps, flyers and ticket stubs pinned up",
       "technology": "a good amp, a guitar set up properly, a phone full of live recordings",
-      "clothes": "a denim or leather vest heavy with patches, a black band shirt, boots",
+      "clothes": "a studded leather jacket, a denim vest heavy with patches, a black band shirt, boots",
       "music": "the whole point: heavy, technical, played and heard loud",
       "colours": "black, blood red, denim blue, chrome",
       "everyday": "learning the riff, driving hours to a show, defending the genre and meaning it"
@@ -2420,7 +2420,7 @@
     "name": "Cassette Futurism",
     "family": "Punk and Futurism",
     "tagline": "The future as imagined in 1979",
-    "description": "A retro vision of high technology: beige plastic, CRT monitors, chunky switches, magnetic tape and monochrome readouts. The future the past expected, all wires and weight.",
+    "description": "A retro vision of high technology from the 1970s to the mid-90s: beige plastic, CRT monitors, chunky switches, magnetic tape and monochrome readouts. The future the past expected, all wires and weight.",
     "keywords": ["CRT", "beige plastic", "magnetic tape", "toggle switch", "readout"],
     "palette": ["#1c1a17", "#3f4a3a", "#b9a06a", "#d9d4c6"],
     "dimensions": {
@@ -2601,8 +2601,8 @@
     "name": "Nu-Goth",
     "family": "Goth",
     "tagline": "Simple, witchy and very well dressed",
-    "description": "Goth as seen in fashion magazines - clean black clothes, a magic symbol worn as jewellery, and a feeling of expensive unease.",
-    "keywords": ["black tailoring", "occult jewellery", "wide brim hat", "minimal", "editorial"],
+    "description": "Goth reworked by 2010s Tumblr and streetwear, also called Hipster Goth - clean black clothes, a magic symbol worn as jewellery, and a feeling of expensive unease.",
+    "keywords": ["black tailoring", "occult jewellery", "wide brim hat", "minimal", "Tumblr"],
     "palette": ["#0c0c0e", "#26262b", "#585860", "#cfcfd4"],
     "dimensions": {
       "darkness": 0.85,
@@ -2752,7 +2752,7 @@
     "family": "Subculture",
     "tagline": "Feeling everything, out loud, on purpose",
     "description": "Fringe over one eye, lyrics that read like diary entries, and a belief that showing your feelings is braver than being cool. Honest to the point of embarrassment, and proud of it.",
-    "keywords": ["side fringe", "diary lyrics", "studded belt", "eyeliner", "basement show"],
+    "keywords": ["side fringe", "diary lyrics", "studded belt", "eyeliner", "MySpace"],
     "palette": ["#0d0d10", "#232431", "#5a3f63", "#d9d4dd"],
     "dimensions": {
       "melancholy": 0.92,
@@ -2784,10 +2784,10 @@
     },
     "related": ["punk", "midwest-emo", "goth", "skater"],
     "world": {
-      "setting": "a basement show where everyone knows the words and nobody is on a stage",
+      "setting": "an all-ages show in a strip-mall venue where everyone screams the words back",
       "architecture": "a house with a low ceiling and a boiler in the corner",
       "interior": "posters over posters, a guitar leaning on the bed, lyrics on the wall",
-      "technology": "a laptop for recording, a phone full of half-written songs",
+      "technology": "a MySpace profile, a laptop for recording, a phone full of half-written songs",
       "clothes": "tight jeans, a studded belt, a band shirt worn to nothing",
       "music": "guitars that go quiet then loud, a voice that cracks and keeps going",
       "colours": "black, dark plum, red, washed-out white",
@@ -2799,8 +2799,8 @@
     "name": "Hippie",
     "family": "Subculture",
     "tagline": "Barefoot, and meaning it",
-    "description": "Handwoven, sun-bleached and communal - turning away from normal society in favour of music, land and each other. Living by your ideals, full time.",
-    "keywords": ["tie-dye", "communal living", "folk", "incense", "VW bus"],
+    "description": "Handwoven, sun-bleached and communal: peace signs, psychedelic rock and turning away from normal society in favour of music, land and each other. Living by your ideals, full time.",
+    "keywords": ["tie-dye", "communal living", "folk", "peace sign", "VW bus"],
     "palette": ["#3e2f18", "#7f6a2f", "#c98a3a", "#e9dcb8"],
     "dimensions": {
       "community": 0.95,
@@ -2844,7 +2844,7 @@
       "interior": "floor cushions, rugs over rugs, plants in every gap",
       "technology": "an acoustic guitar and whatever keeps the bus running",
       "clothes": "handwoven, embroidered, tie-dyed, mostly barefoot",
-      "music": "folk harmonies, long jams, a tabla somewhere behind it",
+      "music": "psychedelic rock, folk harmonies, long jams",
       "colours": "turmeric, earth brown, sun-faded orange, unbleached cotton",
       "everyday": "cooking for everyone, growing what you eat, talking until late"
     }
@@ -3000,12 +3000,12 @@
     "name": "Princesscore",
     "family": "Soft and Romantic",
     "tagline": "The fairy tale taken entirely at face value",
-    "description": "Tulle, tiaras, castles and a ballroom at the end of the story. Fairy-tale fantasy taken completely seriously, with the volume turned all the way up.",
+    "description": "Tulle, puff sleeves, pearls, tiaras and a ballroom at the end of the story. Fairy-tale fantasy taken completely seriously, with the volume turned all the way up.",
     "gendered": {
-      "description": "Tulle, tiaras, castles and a ballroom at the end of the story. Unironic fantasy femininity with the volume turned all the way up."
+      "description": "Tulle, puff sleeves, pearls, tiaras and a ballroom at the end of the story. Unironic fantasy femininity with the volume turned all the way up."
     },
-    "keywords": ["tulle", "tiara", "castle", "ballgown", "enchanted"],
-    "palette": ["#332a4d", "#6f5ea8", "#c3a8e0", "#f7eddb"],
+    "keywords": ["tulle", "tiara", "pearls", "ballgown", "puff sleeves"],
+    "palette": ["#3a2438", "#a35a7e", "#eaa6c0", "#f7eddb"],
     "dimensions": {
       "fantasy": 0.95,
       "ornament": 0.92,
@@ -3042,9 +3042,9 @@
       "architecture": "turrets, arched windows, a palace built to be looked at",
       "interior": "gold-framed mirrors, silk drapes, a four-poster with too many pillows",
       "technology": "nothing - the fantasy does not allow it",
-      "clothes": "tulle skirts, satin gloves, something sparkling in the hair",
+      "clothes": "puff-sleeved tulle gowns, satin gloves, pearls, something sparkling in the hair",
       "music": "waltzes, harp, an orchestra swelling on cue",
-      "colours": "lavender, gold leaf, ivory, pale blue",
+      "colours": "pastel pink, gold leaf, ivory, lavender",
       "everyday": "dressing up for no occasion, believing the story, arranging flowers"
     }
   },
@@ -3189,7 +3189,7 @@
       "technology": "a record player, a radio, a laptop lost somewhere under paper",
       "clothes": "layered, patterned, nothing that matches on purpose",
       "music": "whatever record was nearest, playing a little too loud",
-      "colours": "amber, oxblood, moss, faded everything",
+      "colours": "amber, oxblood, moss and every other bright colour on the shelf",
       "everyday": "finding things, keeping things, telling people where things came from"
     }
   },
@@ -3244,8 +3244,8 @@
     "name": "City Pop",
     "family": "Japanese Street and Kawaii",
     "tagline": "A bubble-era night drive that never ends",
-    "description": "Neon reflections on wet tarmac, a convertible on an elevated expressway and a bassline that swings. Japan's 1980s boom years as pure atmosphere.",
-    "keywords": ["neon night", "expressway", "convertible", "bubble era", "AOR"],
+    "description": "Neon reflections on wet tarmac, a convertible on an elevated expressway, palm trees and a pool by a modernist house. Japan's boom years, from the mid-seventies through the eighties, as pure atmosphere.",
+    "keywords": ["neon night", "expressway", "palm trees", "bubble era", "AOR"],
     "palette": ["#0d1226", "#1f3f6b", "#e0637f", "#f2c86b"],
     "dimensions": {
       "retro": 0.92,
@@ -3279,7 +3279,7 @@
     "related": ["synthwave", "vaporwave", "lo-fi", "cyberpunk"],
     "world": {
       "setting": "an elevated expressway at 2am with the city sliding past in reflections",
-      "architecture": "glass towers, a hotel bar on the top floor, neon down every side street",
+      "architecture": "glass towers, a modernist house with a pool, neon down every side street",
       "interior": "a low-lit apartment with a city view and a very good stereo",
       "technology": "a cassette deck in the car, a boombox, a phone with a cord",
       "clothes": "a linen blazer, sunglasses after dark, gold at the wrist",
@@ -3293,8 +3293,8 @@
     "name": "Japandi",
     "family": "Home and Design",
     "tagline": "Two calm, simple styles in one room",
-    "description": "Japanese woodwork and Scandinavian warmth in one room - low furniture, pale wood, hand-thrown ceramics and a great deal of empty space left alone.",
-    "keywords": ["pale wood", "low furniture", "ceramics", "paper screens", "negative space"],
+    "description": "Japanese wabi-sabi and Scandinavian hygge in one room - low furniture, pale wood and bamboo, hand-thrown ceramics that keep their flaws, and a great deal of empty space.",
+    "keywords": ["pale wood", "low furniture", "bamboo", "wabi-sabi", "negative space"],
     "palette": ["#2f2b26", "#6e6355", "#b9ab97", "#f1ece3"],
     "dimensions": {
       "minimalism": 0.92,
@@ -3324,7 +3324,7 @@
     },
     "related": ["scandinavian-design", "minimalism", "technozen"],
     "world": {
-      "setting": "a room with one low table, a paper screen, and light moving across the floor",
+      "setting": "a room with one low table, a bamboo blind, and light moving across the floor",
       "architecture": "timber framing, sliding screens, a garden treated as part of the room",
       "interior": "pale wood, linen, one ceramic bowl that took somebody a long time",
       "technology": "hidden entirely, or genuinely absent",
@@ -3483,7 +3483,7 @@
     "tagline": "Driving into a sunset that is also a grid",
     "description": "Neon grids, chrome lettering and a coastline at dusk - the 1980s as remembered by films that were never made. Nostalgia for a decade rebuilt from its soundtrack.",
     "keywords": ["neon grid", "chrome text", "sunset", "sports car", "analog synth"],
-    "palette": ["#100a25", "#3b1a6b", "#ff2e88", "#ffb03a"],
+    "palette": ["#100a25", "#3b1a6b", "#ff2e88", "#41e0ff"],
     "dimensions": {
       "retro": 0.95,
       "nostalgia": 0.82,
@@ -3518,7 +3518,7 @@
       "technology": "analog synthesisers, a cassette deck, a car with pop-up headlights",
       "clothes": "a leather jacket, aviators worn late, nothing practical",
       "music": "arpeggiated synths, gated drums, a solo at the four-minute mark",
-      "colours": "neon magenta, deep purple, sunset orange, grid cyan",
+      "colours": "neon magenta, violet, grid cyan, sunset orange",
       "everyday": "driving with no destination, night as the only setting"
     }
   },
@@ -3527,9 +3527,9 @@
     "name": "Mallsoft",
     "family": "Internet and Liminal",
     "tagline": "Background music in a shopping centre that closed in 2003",
-    "description": "The background music of shopping centres, slowed down and full of echo until it sounds sad. Shops as a haunted place.",
+    "description": "A Vaporwave offshoot: the background music of shopping centres, slowed down and full of echo until it sounds sad. Shops as a haunted place.",
     "keywords": ["muzak", "fountain", "escalator", "reverb", "retail"],
-    "palette": ["#1e2024", "#4d5560", "#9fa9a3", "#ded6c4"],
+    "palette": ["#1e2024", "#3d6e6c", "#d8a1b0", "#ece4d8"],
     "dimensions": {
       "melancholy": 0.9,
       "nostalgia": 0.92,
@@ -3564,7 +3564,7 @@
       "technology": "a PA system playing to an empty concourse, a payphone still installed",
       "clothes": "nothing specific - you are a shopper, generically",
       "music": "shopping-centre music slowed to half speed, drowned in echo",
-      "colours": "mall beige, teal accent tile, fountain blue, brass rail",
+      "colours": "pastel pink, teal accent tile, mint, brass rail",
       "everyday": "walking the whole loop, buying nothing, staying past closing in your head"
     }
   },
@@ -3656,7 +3656,7 @@
       "technology": "iron, fire, and whatever the smith can manage",
       "clothes": "layered wool and leather, mail, a cloak that has kept out real weather",
       "music": "low drums, a bowed string, a horn from further off than expected",
-      "colours": "pitch, moss, rust, tarnished steel",
+      "colours": "pitch, crimson, moss, tarnished steel",
       "everyday": "travelling armed, trusting nobody quickly, paying for every victory"
     }
   },
@@ -3714,9 +3714,9 @@
     "name": "Sovietwave",
     "family": "Punk and Futurism",
     "tagline": "A future that was promised and quietly cancelled",
-    "description": "Concrete apartment blocks, Soviet astronauts and synth melodies full of longing. Nostalgia for an optimism that belonged to a country that no longer exists.",
+    "description": "Concrete apartment blocks, Soviet astronauts and synth melodies full of longing - Synthwave from the Eastern Bloc. Nostalgia for an optimism that belonged to a country that no longer exists.",
     "keywords": ["panel blocks", "cosmonauts", "synth melody", "space programme", "longing"],
-    "palette": ["#141a22", "#2e4257", "#8a7b5c", "#d5d8d0"],
+    "palette": ["#141a22", "#2e4257", "#a33a32", "#d5d8d0"],
     "dimensions": {
       "melancholy": 0.92,
       "nostalgia": 0.92,
@@ -3809,7 +3809,7 @@
     "name": "After Hours",
     "family": "Internet and Liminal",
     "tagline": "A place you know, with everyone gone from it",
-    "description": "The lonely feeling of a place that is usually full of people, found empty (sometimes called kenopsia). A school at midnight, a park with the gates shut, a server nobody logs into any more. Melancholy, but oddly peaceful.",
+    "description": "The lonely feeling of a place that is usually full of people, found empty (sometimes called kenopsia): a school at midnight, a park with the gates shut, a game server nobody logs into any more. Melancholy, but oddly peaceful.",
     "keywords": ["kenopsia", "empty at night", "streetlight", "nightwalking", "abandoned places"],
     "palette": ["#0c0e13", "#1c2531", "#4a4330", "#d8b269"],
     "dimensions": {
@@ -4063,8 +4063,8 @@
     "name": "High School Dream",
     "family": "Americana and Screen",
     "tagline": "The school year as the films promised it",
-    "description": "Decorated lockers, pep rallies, a gym dressed for a dance and a friendship group that never breaks up. Not any real school - the idealised one from late-nineties teen films.",
-    "keywords": ["lockers", "pep rally", "school colours", "gymnasium", "teen film"],
+    "description": "Decorated lockers, pep rallies, a gym dressed for a dance and a friendship group that never breaks up. Not any real school - the idealised one from teen films of the eighties to the 2000s.",
+    "keywords": ["lockers", "pep rally", "school colours", "prom", "teen film"],
     "palette": ["#16233d", "#2f5ba8", "#c8342f", "#f2e7cf"],
     "dimensions": {
       "social": 0.92,
@@ -4102,7 +4102,7 @@
       "interior": "lockers in the school colours, a trophy cabinet, tables in the cafeteria",
       "technology": "a phone passed around, a camcorder for the yearbook, a PA that crackles",
       "clothes": "a letterman jacket, a team shirt on game day, everything colour-matched",
-      "music": "pop-punk over the pep rally, a slow song saved for the end of the dance",
+      "music": "teen pop over the pep rally, a slow song saved for prom",
       "colours": "school navy and red, polished floor, locker blue, pennant gold",
       "everyday": "the same table every lunchtime, the game on Friday, everything feeling enormous"
     }
@@ -4362,8 +4362,8 @@
     "name": "Prairiecore",
     "family": "Nature and Pastoral",
     "tagline": "Big sky, calico and a homestead to keep",
-    "description": "Life on the open plains: calico dresses, wooden porches, wheat to the horizon and a kitchen that feeds whoever turns up. Hardworking, rooted and wide open.",
-    "keywords": ["calico", "wheat fields", "homestead", "big sky", "quilts"],
+    "description": "Pioneer life on the open plains: prairie dresses, wooden porches, wheat to the horizon and a kitchen that feeds whoever turns up. Hardworking, free and wide open.",
+    "keywords": ["prairie dress", "wheat fields", "homestead", "big sky", "pioneer"],
     "palette": ["#2a2117", "#7a6040", "#c9a86a", "#f0e6cf"],
     "dimensions": {
       "rural": 0.98,
@@ -4399,9 +4399,9 @@
       "architecture": "a timber homestead with a wide porch and a windmill out back",
       "interior": "patchwork quilts, a cast-iron stove, jars on every shelf",
       "technology": "a hand pump, an oil lamp, a radio for the weather and nothing else",
-      "clothes": "calico dresses, aprons, work boots, a sun bonnet",
+      "clothes": "calico prairie dresses with puffed sleeves, aprons, work boots, a sun bonnet",
       "music": "fiddle tunes, hymns on the porch, wind through the grass",
-      "colours": "wheat gold, prairie sky blue, barn red, flour white",
+      "colours": "wheat gold, sage green, prairie sky blue, flour white",
       "everyday": "up before the sun, chores till noon, neighbours to supper"
     }
   },
@@ -4410,8 +4410,8 @@
     "name": "Gardencore",
     "family": "Nature and Pastoral",
     "tagline": "A life arranged around what grows",
-    "description": "Seed packets, muddy knees, a greenhouse warm on a cold day and a table full of what came up this week. A home measured in seasons and bean rows.",
-    "keywords": ["greenhouse", "seed packets", "vegetable beds", "watering can", "flowers"],
+    "description": "Seed packets, muddy knees, a compost heap and a garden patched together from old tins, crates and anything else worth reusing. A home measured in seasons and bean rows.",
+    "keywords": ["greenhouse", "seed packets", "vegetable beds", "compost", "upcycled pots"],
     "palette": ["#1d2a17", "#4f6b35", "#a7bf6e", "#f1ead2"],
     "dimensions": {
       "nature": 0.95,
@@ -4446,8 +4446,8 @@
     "wiki": "Gardencore",
     "world": {
       "setting": "an allotment behind the houses, a robin following the spade",
-      "architecture": "a cottage with a glasshouse leaning on its south wall",
-      "interior": "seedlings on every windowsill, twine and labels in a biscuit tin",
+      "architecture": "a cottage with a glasshouse built from old windows, leaning on its south wall",
+      "interior": "seedlings in old tins on every windowsill, twine and labels in a biscuit tin",
       "technology": "a hose, a seed-saving notebook, a weather app checked twice a day",
       "clothes": "dungarees, gardening gloves, wellies by the back door",
       "music": "birdsong, a radio play, gentle acoustic songs",
@@ -4907,8 +4907,8 @@
     "name": "Winter",
     "family": "Nature and Pastoral",
     "tagline": "Snow outside, a blanket and a lamp inside",
-    "description": "Still white mornings, frost on the glass and early dark. Quiet and a little hushed: wool, candles, hot drinks and the particular cosiness of being warm while it is cold.",
-    "keywords": ["snow", "frost", "candles", "wool", "early dark"],
+    "description": "Still white mornings, frost on the glass and early dark. Quiet and a little hushed: wool, candles, hot cocoa and the particular cosiness of being warm while it is cold.",
+    "keywords": ["snow", "frost", "candles", "hot cocoa", "pine trees"],
     "palette": ["#16222e", "#4d6a85", "#c9d8e6", "#f6f8fb"],
     "dimensions": {
       "nature": 0.75,
@@ -4943,11 +4943,11 @@
     "world": {
       "setting": "a street after the first snow, footprints and one lit window",
       "architecture": "a wooden cabin with a snow-heavy roof, a church with its door open",
-      "interior": "a wool blanket, candles on the sill, a radiator with socks drying",
+      "interior": "a wool blanket, candles on the sill, pine and red ribbon on the mantel",
       "technology": "a kettle, string lights, an old radio with the news low",
       "clothes": "a long coat, a hat pulled down, thick socks, mittens on a string",
       "music": "quiet piano, choirs from a distance, a record by the fire",
-      "colours": "snow white, frost blue, charcoal, candle gold",
+      "colours": "snow white, frost blue, pine green, berry red, candle gold",
       "everyday": "stamping off boots, soup, reading under a blanket, watching it snow"
     }
   },
@@ -4956,7 +4956,7 @@
     "name": "90s Cool",
     "family": "Internet and Liminal",
     "tagline": "Black leather, bullet time and green code raining down",
-    "description": "The action-film look of 1997-2004 after The Matrix: slow-motion fight scenes full of computer effects, long black coats, wraparound sunglasses and a screen-green tint over everything. Cool, armoured and convinced the world is a simulation.",
+    "description": "The action-film look of the mid-1990s to mid-2000s, peaking with The Matrix: slow-motion fight scenes full of computer effects, long black coats, wraparound sunglasses and a screen-green tint over everything. Cool, armoured and convinced the world is a simulation.",
     "keywords": ["bullet time", "trench coat", "wraparound sunglasses", "green code", "slow motion"],
     "palette": ["#050805", "#1b2b1c", "#3fa34d", "#c9f5c1"],
     "dimensions": {
@@ -5085,8 +5085,8 @@
     "name": "Technozen",
     "family": "Internet and Liminal",
     "tagline": "A Wii menu, a quiet train and a cute robot",
-    "description": "The calm, clean side of mid-to-late 2000s Japanese technology: the Wii and DS, Aibo and Asimo, brain-training games, flip phones and electronic dictionaries. Cool, sterile and professional, and at the same time soft, friendly and cute.",
-    "keywords": ["Nintendo Wii", "Nintendo DS", "white plastic", "Japanese tech", "calm"],
+    "description": "The calm, clean side of mid-to-late 2000s Japanese technology: the Wii and DS, Aibo and Asimo, brain-training games, flip phones and electronic dictionaries. Technology in harmony with nature and your health: cool and professional, but soft, friendly and cute.",
+    "keywords": ["Nintendo Wii", "Nintendo DS", "white plastic", "Japanese tech", "wellbeing"],
     "palette": ["#2a3a44", "#8fc6dc", "#dfeef4", "#ffffff"],
     "dimensions": {
       "technology": 0.9,
@@ -5118,7 +5118,7 @@
     "world": {
       "setting": "a quiet commuter train in Tokyo, a living room with the Wii menu on",
       "architecture": "a clean white station, a convenience store at night",
-      "interior": "white furniture, soft light, a small robot dog asleep in the corner",
+      "interior": "white furniture and pale wood, a plant in the window, a small robot dog asleep in the corner",
       "technology": "a Wii, a DS with a stylus, a flip phone, an electronic dictionary",
       "clothes": "neat, soft layers in white and light grey",
       "music": "the Wii menu, the Mii channel, a gentle piano loop",
