@@ -123,13 +123,19 @@
     return Math.max(floor, Math.abs(v - 0.5) * 2);
   }
 
-  function scoreAesthetic(aesthetic, profile, matching) {
-    var dims = Object.keys(aesthetic.dimensions);
+  /* Every aesthetic is measured on every dimension. One that leaves a dimension
+     out is read as indifferent to it (0.5, lowest weight) rather than skipping
+     it - skipped, it had fewer ways to disagree with anyone, so thinly defined
+     aesthetics won more people than they fit. Filled-in dimensions still count,
+     but are left out of `parts`, so no "why" text cites what the aesthetic
+     never said. */
+  function scoreAesthetic(aesthetic, profile, matching, dimensionKeys) {
     var sum = 0, weight = 0;
     var parts = [];
 
-    dims.forEach(function (k) {
-      var target = aesthetic.dimensions[k];
+    dimensionKeys.forEach(function (k) {
+      var defined = aesthetic.dimensions[k] !== undefined;
+      var target = defined ? aesthetic.dimensions[k] : 0.5;
       var user = profile.value[k];
       if (user === undefined) return;
       var w = salience(target, matching.minSalience) * (profile.confidence[k] || 0);
@@ -137,7 +143,7 @@
       var agreement = 1 - Math.abs(target - user); /* 0..1 */
       sum += w * agreement;
       weight += w;
-      parts.push({ key: k, weight: w, agreement: agreement, target: target, user: user });
+      if (defined) parts.push({ key: k, weight: w, agreement: agreement, target: target, user: user });
     });
 
     var similarity = weight > 0 ? sum / weight : 0.5;
@@ -236,7 +242,7 @@
     var matching = data.config.matching;
     var ranked = assignPercentages(
       data.aesthetics
-        .map(function (a) { return scoreAesthetic(a, profile, matching); })
+        .map(function (a) { return scoreAesthetic(a, profile, matching, data.dimensionKeys); })
         .sort(function (x, y) { return y.similarity - x.similarity; }),
       matching
     );
