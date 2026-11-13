@@ -71,10 +71,10 @@
  },
  "medievalcore": {
   "file": "assets/img/photos/medievalcore/medievalcore.jpg",
-  "artist": "Diliff",
-  "licence": "CC BY-SA 4.0",
-  "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "source": "https://commons.wikimedia.org/wiki/File:Leeds_Castle,_Kent,_England_3_-_May_09.jpg"
+  "artist": "@timreb9",
+  "licence": "Unsplash License",
+  "licenceUrl": "https://unsplash.com/license",
+  "source": "https://unsplash.com/@timreb9"
  },
  "art-deco": {
   "file": "assets/img/photos/art-deco/art-deco.jpg",
