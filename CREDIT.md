@@ -74,7 +74,7 @@ They are resized copies of the originals.
 | Lunarpunk | `assets/img/photos/lunarpunk/lunarpunk.jpg` | @sippakorn | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@sippakorn) |
 | Mallsoft | `assets/img/photos/mallsoft/mallsoft.jpg` | @krzhck | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@krzhck) |
 | Maximalism | `assets/img/photos/maximalism/maximalism.jpg` | @stephwilll | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@stephwilll) |
-| Medievalcore | `assets/img/photos/medievalcore/medievalcore.jpg` | Diliff | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Source](https://commons.wikimedia.org/wiki/File:Leeds_Castle,_Kent,_England_3_-_May_09.jpg) |
+| Medievalcore | `assets/img/photos/medievalcore/medievalcore.jpg` | @timreb9 | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@timreb9) |
 | Metalhead | `assets/img/photos/metalhead/metalhead.jpg` | @igrindphoto | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@igrindphoto) |
 | Midwest Emo | `assets/img/photos/midwest-emo/midwest-emo.jpg` | @jakobethekid | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@jakobethekid) |
 | Midwest Gothic | `assets/img/photos/midwest-gothic/midwest-gothic.jpg` | @pray4bokeh | [Unsplash License](https://unsplash.com/license) | [Source](https://unsplash.com/@pray4bokeh) |
